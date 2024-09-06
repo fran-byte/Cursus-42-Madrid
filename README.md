@@ -1,14 +1,13 @@
 # 42_cursus_fran
-
+```
            :::      ::::::::   
          :+:      :+:    :+:   
        +:+ +:+         +:+     
      +#+  +:+       +#+        
    +#+#+#+#+#+   +#+           
         #+#    #+#             
-       ###   ########.fr       
-
-
+       ###   ########.fr
+```
 42 Madrid is the innovative and free programming campus. With a revolutionary methodology and an average duration of three years, it is open 24 hours a day, 7 days a week so you can learn at your own pace.
 
 ---
