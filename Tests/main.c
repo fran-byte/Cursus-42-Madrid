@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 18:13:40 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/13 18:41:36 by frromero         ###   ########.fr       */
+/*   Updated: 2024/09/13 18:53:58 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main(void) {
     
     ft_putnbr(42);
     ft_putchar('\n');
-    ft_putnbr(ft_atoi("1234"));
+    ft_putnbr(ft_atoi("157 -1234"));
     ft_putchar('\n');
     return 0;
 }
