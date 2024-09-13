@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/16 12:19:42 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/13 18:24:59 by frromero         ###   ########.fr       */
+/*   Created: 2024/09/13 18:13:40 by frromero          #+#    #+#             */
+/*   Updated: 2024/09/13 18:41:36 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "funciones.h"
 
-void	ft_putnbr(int nb)
-{
-	int	number;
-
-	if (nb < 0 && nb * -1)
-	{
-		ft_putchar('-');
-	}
-	number = nb;
-	if (number < 10)
-		ft_putchar(number + 48);
-	else
-	{
-		ft_putnbr(number / 10);
-		ft_putchar((number % 10) + 48);
-	}
+int main(void) {
+    
+    ft_putnbr(42);
+    ft_putchar('\n');
+    ft_putnbr(ft_atoi("1234"));
+    ft_putchar('\n');
+    return 0;
 }

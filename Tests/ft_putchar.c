@@ -6,11 +6,11 @@
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 17:55:42 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/13 17:55:52 by frromero         ###   ########.fr       */
+/*   Updated: 2024/09/13 18:24:57 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "funciones.h"
 
 void	ft_putchar(char a)
 {
