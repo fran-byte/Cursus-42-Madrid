@@ -7,13 +7,16 @@ int ft_isdigit(char c); OK
 int ft_isascii(char c); OK
 int ft_isprint(char c); OK 
 int ft_strlen (char *str); OK
+int ft_toupper (char c); OK 
+int ft_tolower (char c); OK 
+
 ft_bzero.c
 ft_memchr.c 
 ft_memcmp.c 
 ft_memcpy.c 
 ft_memmove.c
 ft_menset.c 
-unsigned int(char *dst, const char *src, unsigned int size);  OK (revisar  unsigned int o size_t)
+unsigned int ft_strlcpy(char *dst, const char *src, unsigned int size);  OK (revisar  unsigned int o size_t)
 
 
 
