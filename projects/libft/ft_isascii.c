@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/13 21:00:56 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/14 10:48:24 by frromero         ###   ########.fr       */
+/*   Created: 2024/09/14 10:23:03 by frromero          #+#    #+#             */
+/*   Updated: 2024/09/14 10:28:47 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+/* Checks if a character is an ASCII value between 0 and 127 */
 
-int ft_isalpha(char c);
-int ft_isalnum(char c);
-int ft_isdigit(char c);
-int ft_isascii(char c);
-int ft_isprint(char c);
-int ft_strlen (char *str);
+#include "libft.h"
 
-#endif
+int ft_isascii(char c)
+{
+    if(c >= 0 && c <= 127)
+        return (1);
+    return (0);
+}
