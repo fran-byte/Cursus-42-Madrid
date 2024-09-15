@@ -18,9 +18,9 @@
 
 ## Biblioteca <string.h> (Funciones de manejo de cadenas y memoria)
 
-strchr: Busca la primera aparición de un carácter en una cadena. **Retorna un puntero** a la primera ocurrencia del carácter. Si el carácter no se encuentra, retorna NULL.
+strchr: Busca la primera aparición de un carácter en una cadena. **Retorna un puntero** a la primera ocurrencia del carácter. Si el carácter no se encuentra, retorna NULL o el equivalente **return (0)** Debemos hacer un casteo en la devolución: return ((**char ***)&s[i]);
 
-strrchr: Busca la última aparición de un carácter en una cadena. **Retorna un puntero** a la última ocurrencia del carácter. Si el carácter no se encuentra, retorna NULL.
+strrchr: Busca la última aparición de un carácter en una cadena. **Retorna un puntero** a la última ocurrencia del carácter. Si el carácter no se encuentra, retorna **NULL** o el equivalente **return (0)**
 
 **strlen:** Calcula la longitud de una cadena. Excluyendo el carácter nulo de terminación. **Retorna el número de caracteres** en la cadena. 
 
@@ -42,7 +42,7 @@ memset: **Rellena** una región de **memoria** con un **valor específico**, rep
 
 bzero: Establece en **cero** una **región de memoria**, reemplazando el uso de memset para esta tarea. Se considera obsoleto, ya que memset es más versátil.
 
-memchr: **Busca un valor** específico en una región de memoria y **retorna un puntero** a la primera aparición de dicho valor. Si el valor no se encuentra, retorna NULL.
+memchr: **Busca un valor** específico en una región de memoria y **retorna un puntero** a la primera aparición de dicho valor. Si el valor no se encuentra, retorna NULL o el equivalente **return (0)**.
 
 memcpy: **Copia** un **bloque** de memoria de **una ubicación a otra**. **No verifica superposición** de áreas de memoria, por lo que se deben manejar cuidadosamente las áreas de origen y destino.
 
