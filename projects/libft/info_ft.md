@@ -2,19 +2,19 @@
 
 ## Biblioteca <ctype.h> (Funciones de caracteres)
 
-*isalpha: Verifica si un carácter es una letra del alfabeto.
+**isalpha:** Verifica si un carácter es una letra del alfabeto.
 
-*toupper: Convierte un carácter a mayúscula.
+**toupper:** Convierte un carácter a mayúscula.
 
-*tolower: Convierte un carácter a minúscula.
+**tolower:** Convierte un carácter a minúscula.
 
-*isdigit: Verifica si un carácter es un dígito.
+**isdigit:** Verifica si un carácter es un dígito.
 
-*isalnum: Verifica si un carácter es una letra o un dígito.
+**isalnum:** Verifica si un carácter es una letra o un dígito.
 
-*isascii: Verifica si un carácter pertenece al conjunto ASCII.
+**isascii:** Verifica si un carácter pertenece al conjunto ASCII.
 
-*isprint: Verifica si un carácter es imprimible.
+**isprint:** Verifica si un carácter es imprimible.
 
 ## Biblioteca <string.h> (Funciones de manejo de cadenas y memoria)
 
@@ -22,15 +22,15 @@ strchr: Busca la primera aparición de un carácter en una cadena.
 
 strrchr: Busca la última aparición de un carácter en una cadena.
 
-*strlen: Calcula la longitud de una cadena.
+**strlen:** Calcula la longitud de una cadena.
 
 strncmp: Compara las primeras 'n' posiciones de dos cadenas.
 
 strnstr: Busca una subcadena dentro de otra, hasta un número limitado de caracteres.
 
-*strlcpy: Copia una cadena a un destino, garantizando la terminación nula.
+**strlcpy:** Copia una cadena a un destino, garantizando la terminación nula.
 
-*strlcat: Concatena dos cadenas, garantizando la terminación nula.
+**strlcat:** Concatena dos cadenas, garantizando la terminación nula.
 
 ## Biblioteca <stdlib.h> (Funciones de conversión y utilidades)
 
