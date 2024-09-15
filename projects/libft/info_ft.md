@@ -20,7 +20,7 @@
 
 **strchr:** Busca la primera aparición de un carácter en una cadena. **Retorna un puntero** a la primera ocurrencia del carácter. Si el carácter no se encuentra, retorna NULL o el equivalente **return (0)** Debemos hacer un casteo en la devolución: return ((**char ***)&s[i]);
 
-strrchr: Busca la última aparición de un carácter en una cadena. **Retorna un puntero** a la última ocurrencia del carácter. Si el carácter no se encuentra, retorna **NULL** o el equivalente **return (0)**
+**strrchr:** Busca la última aparición de un carácter en una cadena. **Retorna un puntero** a la última ocurrencia del carácter. Si el carácter no se encuentra, retorna **NULL** o el equivalente **return (0)** Se debe saber la longitud del str para decrementar desde la ultima posición ('/0')
 
 **strlen:** Calcula la longitud de una cadena. Excluyendo el carácter nulo de terminación. **Retorna el número de caracteres** en la cadena. 
 
