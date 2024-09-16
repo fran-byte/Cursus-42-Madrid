@@ -22,7 +22,20 @@ int main() {
     int size_dest1 = ft_strlen(dest1);
     int len = ft_strlcpy(dest1, src, size_dest1);
     printf("strlcpy: Copied \"%s\" to dest. Length: %d. Dest: \"%s\"\n", src, len, dest1);
+        // Prueba de strlcpy dest < src
+    char dest1_b[5];
+    int size_dest1_b = ft_strlen(dest1_b);
+    int len = ft_strlcpy(dest1_b, src, size_dest1_b);
+    printf("strlcpy:(dest < src) Copied \"%s\" to dest. Length: %d. Dest: \"%s\"\n", src, len, dest1);
 
+     // Prueba de strlcpy dest < src
+    char dest2_b[50];
+    int size_dest2_b = ft_strlen(dest1_b);
+    int len = ft_strlcpy(dest2_b, src, 10);
+    printf("strlcpy:(dest < buff sended) Copied \"%s\" to dest. Length: %d. Dest: \"%s\"\n", src, len, dest1);
+
+
+    
     // Prueba de strlcat
     char dest2[50] = "Initial";
     char append[] = " - Appended";
