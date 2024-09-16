@@ -24,9 +24,9 @@
 
 **strlen:** Calcula la longitud de una cadena. Excluyendo el carácter nulo de terminación. **Retorna el número de caracteres** en la cadena. 
 
-#strncmp: Compara las primeras 'n' posiciones de dos cadenas. Retorna un valor **negativo, cero o positivo** dependiendo de si la primera cadena es **menor, igual o mayor** que la segunda, respectivamente.
+**strncmp:** Compara las primeras 'n' posiciones de dos cadenas. Retorna un valor **negativo, cero o positivo** dependiendo de si la primera cadena es **menor, igual o mayor** que la segunda, respectivamente.
 
-#strnstr: Busca una subcadena dentro de otra, hasta un número limitado de caracteres. Limitando la búsqueda a un número especificado de caracteres. **Retorna un puntero** a la primera aparición de la subcadena o NULL si no se encuentra.
+**strnstr:** Busca una subcadena dentro de otra, hasta un número limitado de caracteres. Limitando la búsqueda a un número especificado de caracteres. **Retorna un puntero** a la primera aparición de la subcadena o NULL si no se encuentra.
 
 **strlcpy:** Copia hasta un máximo de 'size-1' caracteres de una cadena fuente a un destino, asegurando que el destino esté terminado con un carácter nulo. **Retorna la longitud total de la cadena fuente.**
 
@@ -34,18 +34,18 @@
 
 ## Biblioteca <stdlib.h> (Funciones de conversión y utilidades)
 
-atoi: Convierte una **cadena de caracteres** que representa un **número entero** en un valor entero. Los espacios iniciales se omiten y la conversión se detiene en el primer carácter no numérico.
+**atoi:** Convierte una **cadena de caracteres** que representa un **número entero** en un valor entero. Los espacios iniciales se omiten y la conversión se detiene en el primer carácter no numérico.
 
 ## Biblioteca <string.h> (Funciones de manejo de memoria)
 
-memset: **Rellena** una región de **memoria** con un **valor específico**, repitiendo el valor dado para cada byte en el rango de memoria especificado. Utilizado para inicializar o establecer valores en bloques de memoria.
+**memset:** **Rellena** una región de **memoria** con un **valor específico**, repitiendo el valor dado para cada byte en el rango de memoria especificado. Utilizado para inicializar o establecer valores en bloques de memoria.
 
-bzero: Establece en **cero** una **región de memoria**, reemplazando el uso de memset para esta tarea. Se considera obsoleto, ya que memset es más versátil.
+**bzero:** Establece en **cero** una **región de memoria**, reemplazando el uso de memset para esta tarea. Se considera obsoleto, ya que memset es más versátil.
 
-memchr: **Busca un valor** específico en una región de memoria y **retorna un puntero** a la primera aparición de dicho valor. Si el valor no se encuentra, retorna NULL o el equivalente **return (0)**.
+**memchr:** **Busca un valor** específico en una región de memoria y **retorna un puntero** a la primera aparición de dicho valor. Si el valor no se encuentra, retorna NULL o el equivalente **return (0)**.
 
-memcpy: **Copia** un **bloque** de memoria de **una ubicación a otra**. **No verifica superposición** de áreas de memoria, por lo que se deben manejar cuidadosamente las áreas de origen y destino.
+**memcpy:** **Copia** un **bloque** de memoria de **una ubicación a otra**. **No verifica superposición** de áreas de memoria, por lo que se deben manejar cuidadosamente las áreas de origen y destino.
 
-memcmp: **Compara** dos **bloques** de memoria de tamaño específico byte a byte. **Retorna** un valor **negativo, cero o positivo** dependiendo de si el primer bloque es **menor, igual o mayor** que el segundo.
+**memcmp:** **Compara** dos **bloques** de memoria de tamaño específico byte a byte. **Retorna** un valor **negativo, cero o positivo** dependiendo de si el primer bloque es **menor, igual o mayor** que el segundo.
 
-memmove: **Copia** un **bloque** de memoria **a otro**, **manejando** adecuadamente las **superposiciones** entre las áreas de origen y destino. Asegura que el contenido original de la memoria no se sobrescriba antes de ser copiado.
+**memmove:** **Copia** un **bloque** de memoria **a otro**, **manejando** adecuadamente las **superposiciones** entre las áreas de origen y destino. Asegura que el contenido original de la memoria no se sobrescriba antes de ser copiado.
