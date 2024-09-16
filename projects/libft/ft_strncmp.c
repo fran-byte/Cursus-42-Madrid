@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 22:46:06 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/16 23:49:03 by frromero         ###   ########.fr       */
+/*   Updated: 2024/09/17 00:07:05 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,10 @@ int ft_strncmp(const char *s1, const char *s2, unsigned int n)
 
 int main()
 {
+    // s1 vacía, s2 vacía
+    printf("Ejemplo 1: %d\n", ft_strncmp("", "", 4)); 
+    //  0 ('\0' - '\0' = 0)
+
     // s1 vacía, s2 no vacía
     printf("Ejemplo 1: %d\n", ft_strncmp("", "abc", 4)); 
     //  -97 ('\0' - 'a' = -97)
