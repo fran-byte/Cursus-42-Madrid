@@ -24,9 +24,9 @@
 
 **strlen:** Calcula la longitud de una cadena. Excluyendo el carácter nulo de terminación. **Retorna el número de caracteres** en la cadena. 
 
-strncmp: Compara las primeras 'n' posiciones de dos cadenas. Retorna un valor **negativo, cero o positivo** dependiendo de si la primera cadena es **menor, igual o mayor** que la segunda, respectivamente.
+#strncmp: Compara las primeras 'n' posiciones de dos cadenas. Retorna un valor **negativo, cero o positivo** dependiendo de si la primera cadena es **menor, igual o mayor** que la segunda, respectivamente.
 
-strnstr: Busca una subcadena dentro de otra, hasta un número limitado de caracteres. Limitando la búsqueda a un número especificado de caracteres. **Retorna un puntero** a la primera aparición de la subcadena o NULL si no se encuentra.
+#strnstr: Busca una subcadena dentro de otra, hasta un número limitado de caracteres. Limitando la búsqueda a un número especificado de caracteres. **Retorna un puntero** a la primera aparición de la subcadena o NULL si no se encuentra.
 
 **strlcpy:** Copia hasta un máximo de 'size-1' caracteres de una cadena fuente a un destino, asegurando que el destino esté terminado con un carácter nulo. **Retorna la longitud total de la cadena fuente.**
 
