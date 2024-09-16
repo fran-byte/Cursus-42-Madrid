@@ -28,11 +28,11 @@ int main() {
     int len = ft_strlcpy(dest1_b, src, size_dest1_b);
     printf("strlcpy:(dest < src) Copied \"%s\" to dest. Length: %d. Dest: \"%s\"\n", src, len, dest1);
 
-     // Prueba de strlcpy dest < src
+     // Prueba de strlcpy size_dest send < size_dest_real
     char dest2_b[50];
     int size_dest2_b = ft_strlen(dest1_b);
     int len = ft_strlcpy(dest2_b, src, 10);
-    printf("strlcpy:(dest[50] > buff[10] sended) Copied \"%s\" to dest. Length: %d. Dest: \"%s\"\n", src, len, dest2_b);
+    printf("strlcpy:(dest[50] > size_dest_send[10]) Copied \"%s\" to dest. Length: %d. Dest: \"%s\"\n", src, len, dest2_b);
 
 
     
