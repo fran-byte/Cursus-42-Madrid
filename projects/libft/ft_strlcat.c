@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 22:51:06 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/15 21:45:00 by frromero         ###   ########.fr       */
+/*   Updated: 2024/09/16 22:42:07 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,4 @@ unsigned int ft_strlcat(char *dst, const char *src, unsigned int size)
         dst[i + sz_dst] = '\0';
         return (sz_src + sz_dst);
     }
-}
-int main()
-{
-    char destino[50] = "Era se una vez_";
-    char fuente[] = "la tierra.dentro del paraiso que viene siendo tambien la tierra, por ejemplo.";
-    printf("\nImprimiendo retorno de la función: ft_strlcat : \n%u", ft_strlcat(destino, fuente, 50));
-    printf("\nImprimiendo cadena -dst- : \n%s", destino);
-
-    return 0;
 }
