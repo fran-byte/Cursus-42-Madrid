@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
         ft_memset(buf2, 'a', 3);
         printf("Resultado: %s\n", buf2);
     }
-//ft_bzero	
+//ft_bzero
 	else if (ft_strcmp(argv[1], "ft_bzero") == 0)
 	{        
         char buf[50] = "Hello, World!";
