@@ -6,7 +6,7 @@ int main(int argc, char *argv[])
 {
     if (argc != 2)
     {       
-        printf("Funciones disponibles: ft_strlen, ft_memset, ft_bzero, ft_memcpy, ft_memmove, ft_strlcpy, ft_strlcat, ft_toupper, ft_tolower, ft_strchr, ft_strrchr, ft_strncmp, ft_memchr, ft_memcmp, ft_strnstr, ft_atoi, ft_strdup, ft_calloc\n");
+        printf("Solamente puedes testear estas Funciones: ft_strlen, ft_memset, ft_bzero, ft_memcpy, ft_memmove, ft_strlcpy, ft_strlcat, ft_toupper, ft_tolower, ft_strchr, ft_strrchr, ft_strncmp, ft_memchr, ft_memcmp, ft_strnstr, ft_atoi, ft_strdup, ft_calloc\n");
         return 1;
     }
 //ft_strlen
