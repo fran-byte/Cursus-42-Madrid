@@ -205,7 +205,7 @@ int main(int argc, char *argv[])
         free(zero_size);
     }
 // ft_substr
-    if (ft_strcmp(argv[1], "ft_substr") == 0)
+    else if (ft_strcmp(argv[1], "ft_substr") == 0)
     {
         printf("Testeando ft_substr:\n");
         printf("Test 1: Substring en rango\n");
