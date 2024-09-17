@@ -204,6 +204,109 @@ int main(int argc, char *argv[])
         printf("Resultado: %p\n", zero_size);
         free(zero_size);
     }
+// ft_substr
+    if (ft_strcmp(argv[1], "ft_substr") == 0)
+    {
+        printf("Testeando ft_substr:\n");
+        printf("Test 1: Substring en rango\n");
+        char *sub1 = ft_substr("Hello, World!", 7, 5);
+        printf("Resultado: %s\n", sub1);
+        free(sub1);
+
+        printf("Test 2: Substring más larga de lo que queda\n");
+        char *sub2 = ft_substr("Hello", 2, 10);
+        printf("Resultado: %s\n", sub2);
+        free(sub2);
+    }
+// ft_strjoin
+    else if (ft_strcmp(argv[1], "ft_strjoin") == 0)
+    {
+        printf("Testeando ft_strjoin:\n");
+        printf("Test 1: Concatenar dos strings\n");
+        char *joined = ft_strjoin("Hello, ", "World!");
+        printf("Resultado: %s\n", joined);
+        free(joined);
+    }
+// ft_strtrim
+    else if (ft_strcmp(argv[1], "ft_strtrim") == 0)
+    {
+        printf("Testeando ft_strtrim:\n");
+        printf("Test 1: Eliminar espacios en blanco\n");
+        char *trimmed = ft_strtrim("   Hello, World!   ", " ");
+        printf("Resultado: '%s'\n", trimmed);
+        free(trimmed);
+    }
+    // ft_split
+    else if (ft_strcmp(argv[1], "ft_split") == 0)
+    {
+        printf("Testeando ft_split:\n");
+        printf("Test 1: Separar por espacios\n");
+        char **split = ft_split("Hello World Test", ' ');
+        for (int i = 0; split[i] != NULL; i++)
+        {
+            printf("Resultado [%d]: %s\n", i, split[i]);
+            free(split[i]);
+        }
+        free(split);
+    }
+    // ft_itoa
+    else if (ft_strcmp(argv[1], "ft_itoa") == 0)
+    {
+        printf("Testeando ft_itoa:\n");
+        printf("Test 1: Convertir entero a string\n");
+        char *str = ft_itoa(12345);
+        printf("Resultado: %s\n", str);
+        free(str);
+    }
+    // ft_strmapi
+    else if (ft_strcmp(argv[1], "ft_strmapi") == 0)
+    {
+        printf("Testeando ft_strmapi:\n");
+        printf("Test 1: Aplicar función a cada carácter\n");
+        char *result = ft_strmapi("Hello", [](unsigned int i, char c) { return c + i; });
+        printf("Resultado: %s\n", result);
+        free(result);
+    }
+    // ft_striteri
+    else if (ft_strcmp(argv[1], "ft_striteri") == 0)
+    {
+        printf("Testeando ft_striteri:\n");
+        printf("Test 1: Modificar caracteres de una string\n");
+        char s[] = "abcde";
+        ft_striteri(s, [](unsigned int i, char *c) { *c += i; });
+        printf("Resultado: %s\n", s);
+    }
+    // ft_putchar_fd
+    else if (ft_strcmp(argv[1], "ft_putchar_fd") == 0)
+    {
+        printf("Testeando ft_putchar_fd:\n");
+        printf("Test 1: Enviar carácter a stdout\n");
+        ft_putchar_fd('A', 1);
+        printf("\n");
+    }
+    // ft_putstr_fd
+    else if (ft_strcmp(argv[1], "ft_putstr_fd") == 0)
+    {
+        printf("Testeando ft_putstr_fd:\n");
+        printf("Test 1: Enviar string a stdout\n");
+        ft_putstr_fd("Hello, World!", 1);
+        printf("\n");
+    }
+    // ft_putendl_fd
+    else if (ft_strcmp(argv[1], "ft_putendl_fd") == 0)
+    {
+        printf("Testeando ft_putendl_fd:\n");
+        printf("Test 1: Enviar string con salto de línea a stdout\n");
+        ft_putendl_fd("Hello, World!", 1);
+    }
+    // ft_putnbr_fd
+    else if (ft_strcmp(argv[1], "ft_putnbr_fd") == 0)
+    {
+        printf("Testeando ft_putnbr_fd:\n");
+        printf("Test 1: Enviar número a stdout\n");
+        ft_putnbr_fd(12345, 1);
+        printf("\n");
+    }
     else 
     {
         printf("ft_Función no reconocida.\n");
