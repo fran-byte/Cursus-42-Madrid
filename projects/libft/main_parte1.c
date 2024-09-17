@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
         printf("Test 2: string normal\n");
         printf("Resultado: %u\n", ft_strlen("Hello, World!"));
         printf("Test 3: string con caracteres especiales\n");
-        printf("Resultado: %u\n", ft_strlen("!@#$^&*()"));
+        printf("Resultado: %u\n", ft_strlen("!!@#$#^*&*()"));
     }
 //ft_memset    
     else if (ft_strcmp(argv[1], "ft_memset") == 0) 
@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
         printf("Testeando ft_memcpy:\n");
         printf("Test 1: Copiar parte de la string\n");
         ft_memcpy(dest, src, 5);
-        dest[5] = '\0'; // Asegurarse de que la string esté terminada
+        dest[5] = '\0'; // Ojo! con esto nos aseguramos de que la string esté terminada
         printf("Resultado: %s\n", dest);
     }
 //ft_memmove
@@ -59,7 +59,7 @@ int main(int argc, char *argv[])
         printf("Testeando ft_memmove:\n");
         printf("Test 1: Mover parte de la string\n");
         ft_memmove(buf + 6, buf, 5);
-        buf[11] = '\0'; // Asegurarse de que la string esté terminada
+        buf[11] = '\0'; // Ojo! con esto nos aseguramos de que la string esté terminada
         printf("Resultado: %s\n", buf);
     }
 //ft_strlcpy	
