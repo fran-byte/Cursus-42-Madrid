@@ -236,7 +236,7 @@ int main(int argc, char *argv[])
         printf("Resultado: '%s'\n", trimmed);
         free(trimmed);
     }
-    // ft_split
+// ft_split
     else if (ft_strcmp(argv[1], "ft_split") == 0)
     {
         printf("Testeando ft_split:\n");
@@ -249,7 +249,7 @@ int main(int argc, char *argv[])
         }
         free(split);
     }
-    // ft_itoa
+// ft_itoa
     else if (ft_strcmp(argv[1], "ft_itoa") == 0)
     {
         printf("Testeando ft_itoa:\n");
@@ -258,7 +258,7 @@ int main(int argc, char *argv[])
         printf("Resultado: %s\n", str);
         free(str);
     }
-    // ft_strmapi
+// ft_strmapi
     else if (ft_strcmp(argv[1], "ft_strmapi") == 0)
     {
         printf("Testeando ft_strmapi:\n");
@@ -267,7 +267,7 @@ int main(int argc, char *argv[])
         printf("Resultado: %s\n", result);
         free(result);
     }
-    // ft_striteri
+// ft_striteri
     else if (ft_strcmp(argv[1], "ft_striteri") == 0)
     {
         printf("Testeando ft_striteri:\n");
@@ -276,7 +276,7 @@ int main(int argc, char *argv[])
         ft_striteri(s, [](unsigned int i, char *c) { *c += i; });
         printf("Resultado: %s\n", s);
     }
-    // ft_putchar_fd
+// ft_putchar_fd
     else if (ft_strcmp(argv[1], "ft_putchar_fd") == 0)
     {
         printf("Testeando ft_putchar_fd:\n");
@@ -284,7 +284,7 @@ int main(int argc, char *argv[])
         ft_putchar_fd('A', 1);
         printf("\n");
     }
-    // ft_putstr_fd
+// ft_putstr_fd
     else if (ft_strcmp(argv[1], "ft_putstr_fd") == 0)
     {
         printf("Testeando ft_putstr_fd:\n");
@@ -292,14 +292,14 @@ int main(int argc, char *argv[])
         ft_putstr_fd("Hello, World!", 1);
         printf("\n");
     }
-    // ft_putendl_fd
+// ft_putendl_fd
     else if (ft_strcmp(argv[1], "ft_putendl_fd") == 0)
     {
         printf("Testeando ft_putendl_fd:\n");
         printf("Test 1: Enviar string con salto de línea a stdout\n");
         ft_putendl_fd("Hello, World!", 1);
     }
-    // ft_putnbr_fd
+// ft_putnbr_fd
     else if (ft_strcmp(argv[1], "ft_putnbr_fd") == 0)
     {
         printf("Testeando ft_putnbr_fd:\n");
