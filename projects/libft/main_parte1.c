@@ -89,78 +89,84 @@ void test_isprint() {
 
 // strlen: Prueba la longitud de una cadena
 void test_strlen() {
-    printf("Probando strlen:\n");
     const char *str = "Hola mundo 42!";
+    printf("Probando strlen:\n");
     printf("strlen(\"%s\"): %zu\n", str, strlen(str));
 }
-/*
+
 // memset: Prueba la función memset
 void test_memset() {
-    printf("Probando memset:\n");
-    char str[50] = "Esta es una cadena original";
-    printf("Antes de memset: %s\n", str);
-    memset(str, '-', 4);
-    printf("Despues de memset: %s\n", str);
+    char str[50] = "Hola Mundo 42!!";
+    printf("Probando memset:\n");    
+    printf("Nuestra string: %s\n", str);
+    memset(str, '*', 5);
+    printf("Sobre escribimos con '*' hasta el indice 5: %s\n", str);
 }
 
 // bzero: Prueba la función bzero
 void test_bzero() {
-    printf("Probando bzero:\n");
-    char str[50] = "Hola mundo";
-    printf("Antes de bzero: %s\n", str);
-    bzero(str, 4);
-    printf("Despues de bzero: %s\n", str);
+    char str[50] = "Hola Mundo 42!!";
+    printf("Probando bzero:\n");    
+    printf("Nuestra string: %s\n", str);
+    bzero(str, 5);
+    printf("Sobre escribimos con '0' hasta el indice 5: %s\n", str);
 }
 
 // memcpy: Prueba la función memcpy
 void test_memcpy() {
-    printf("Probando memcpy:\n");
-    char src[50] = "Texto original";
+    char src[50] = "Hola Mundo 42!!";
     char dest[50];
+    printf("Probando memcpy:\n");
+    printf("Nuestra string: %s\n", src);
     memcpy(dest, src, strlen(src) + 1);
     printf("Resultado: %s\n", dest);
 }
 
 // memcpy: Prueba la función memmove
 void test_memmove() {
-    printf("Probando memmove:\n");
-    char str[50] = "Hola, Hola, Hola";
-    memmove(str + 5, str, strlen(str) - 5);  // Mueve la parte de la cadena hacia la derecha
+    char str[50] = "Hola Mundo 42!!";
+    printf("Probando memmove:\n");    
+    printf("Nuestra string: %s\n", str);
+    printf("memmove(str + 5, str, strlen(str) - 5)\n");
+    printf("Mueve la parte de la cadena hacia la derecha\n");
+    memmove(str + 5, str, strlen(str) - 5); 
     printf("Resultado: %s\n", str);
 }
 
 // calloc: Prueba la función calloc
 void test_calloc() {
-    printf("Probando calloc:\n");
+    int i = 0;    
     int *arr = (int *)calloc(5, sizeof(int));
-    for (int i = 0; i < 5; i++) {
+    printf("Probando calloc:\n");
+    while(i < 5)
+    {       
         printf("arr[%d] = %d\n", i, arr[i]);
+         i++;
     }
     free(arr);
 }
 
 // strdup: Prueba la función strdup
-void test_strdup() {
-    printf("Probando strdup:\n");
-    char *str = "Cadena a duplicar";
-   
+void test_strdup() {    
+    char *str = "Cadena a duplicar";   
     char *duplicated = strdup(str);
+    printf("Probando strdup:\n");
     printf("Cadena original: %s\n", str);
     printf("Cadena duplicada: %s\n", duplicated);
     free(duplicated);
 }
 
 // atoi: Prueba la función atoi
-void test_atoi() {
+void test_atoi() {    
+    char *num_str = "123459";
+    char *neg_num_str = "-9576";
+    char *invalid_num_str = "12asd34";
     printf("Probando atoi:\n");
-    char *num_str = "12345";
-    char *neg_num_str = "-9876";
-    char *invalid_num_str = "12abc34";
     printf("atoi(\"%s\") = %d\n", num_str, atoi(num_str));
     printf("atoi(\"%s\") = %d\n", neg_num_str, atoi(neg_num_str));
     printf("atoi(\"%s\") = %d\n", invalid_num_str, atoi(invalid_num_str));
 }
-*/
+/*
 // strlcpy: Prueba la función strlcpy
 void test_strlcpy() {
     printf("Probando strlcpy:\n");
@@ -170,7 +176,7 @@ void test_strlcpy() {
     printf("Resultado de strlcpy: %zu\n", result);
     printf("Destino: %s\n", dest);
 }
-/*
+
 // strlcat: Prueba la función strlcat
 void test_strlcat() {
     printf("Probando strlcat:\n");
@@ -180,28 +186,29 @@ void test_strlcat() {
     printf("Resultado de strlcat: %zu\n", result);
     printf("Destino: %s\n", dest);
 }
-
+*/
 // toupper: Prueba la función toupper
 void test_toupper() {
-    printf("Probando toupper:\n");
     char c = 'a';
+    printf("Probando toupper:\n");    
     printf("toupper('%c') = %c\n", c, toupper(c));
 }
 
 // tolower: Prueba la función tolower
 void test_tolower() {
-    printf("Probando tolower:\n");
     char c = 'A';
+    printf("Probando tolower:\n");    
     printf("tolower('%c') = %c\n", c, tolower(c));
 }
 
 // strchr: Prueba la función strchr
 void test_strchr() {
-    printf("Probando strchr:\n");
     char str[] = "Hola, mundo";
     char *result = strchr(str, 'm');
+    printf("Probando strchr:\n");
     if (result) {
-        printf("Encontrado: %s\n", result);
+        printf("Buscando primer caracter 'm' en: 'Hola, mundo'\n");
+        printf("Primero: %s\n", result);
     } else {
         printf("No encontrado\n");
     }
@@ -209,11 +216,12 @@ void test_strchr() {
 
 // strrchr: Prueba la función strrchr
 void test_strrchr() {
+    char str[] = "Hello, World!!";
+    char *result = strrchr(str, 'o');
     printf("Probando strrchr:\n");
-    char str[] = "Hola, mundo, mundo";
-    char *result = strrchr(str, 'm');
+    printf("Buscando último caracter 'o' en: 'Hello, World!!'\n");
     if (result) {
-        printf("Última ocurrencia: %s\n", result);
+        printf("Último: %s\n", result);
     } else {
         printf("No encontrado\n");
     }
@@ -221,41 +229,48 @@ void test_strrchr() {
 
 // strncmp: Prueba la función strncmp
 void test_strncmp() {
+    char *str1 = "Hola";
+    char *str2 = "Hola42Madrid";
+    printf("str1: 'Hola'\n");
+    printf("str2: 'Hola42Madrid'\n");
     printf("Probando strncmp:\n");
-    char *s1 = "Hola";
-    char *s2 = "Holanda";
-    printf("strncmp(s1, s2, 4) = %d\n", strncmp(s1, s2, 4));
-    printf("strncmp(s1, s2, 6) = %d\n", strncmp(s1, s2, 6));
+    printf("strncmp(str1, str2, 4) = %d\n", strncmp(str1, str2, 4));
+    printf("strncmp(str1, str2, 6) = %d\n", strncmp(str1, str2, 6));
 }
 
 // memchr: Prueba la función memchr
 void test_memchr() {
+    char str[] = "Hola42Madrid";
+    char *result = memchr(str, '4', strlen(str));
     printf("Probando memchr:\n");
-    char str[] = "Hola mundo";
-    char *result = memchr(str, 'm', strlen(str));
+    printf("str: 'Hola42Madrid'\n");
+    printf("memchr(str, '4', strlen(str))");
     if (result) {
-        printf("Encontrado: %s\n", result);
+        printf("\nEncontrado: '4' %s\n", result);
     } else {
         printf("No encontrado\n");
     }
 }
 
 // memcmp: Prueba la función memcmp
-void test_memcmp() {
+void test_memcmp() {    
+    char *str1 = "Hola42Madrid";
+    char *str2 = "Hola42Madrid";
+    char *str3 = "Hola43";
     printf("Probando memcmp:\n");
-    char *str1 = "Hola";
-    char *str2 = "Hola";
-    char *str3 = "Holb";
+    printf("\n*str1 = \"Hola42Madrid\"");
+    printf("\n*str2 = \"Hola42Madrid\"");
+    printf("\n*str3 = \"Hola43\"\n");
     printf("memcmp(str1, str2, 4) = %d\n", memcmp(str1, str2, 4));
-    printf("memcmp(str1, str3, 4) = %d\n", memcmp(str1, str3, 4));
+    printf("memcmp(str1, str3, 6) = %d\n", memcmp(str1, str3, 6));
 }
-
+/*
 // strnstr: Prueba la función strnstr
-void test_strnstr() {
+void test_strnstr() {    
+    char *str = "Este es un ejemplo";
+    char *substr = "un";
+    char *result = strnstr(str, substr, strlen(str));
     printf("Probando strnstr:\n");
-    char *haystack = "Este es un ejemplo";
-    char *needle = "un";
-    char *result = strnstr(haystack, needle, strlen(haystack));
     if (result) {
         printf("Encontrado: %s\n", result);
     } else {
@@ -264,31 +279,25 @@ void test_strnstr() {
 }
 
 // substr: Prueba la función substr
-void test_substr() {
-    printf("Probando substr:\n");
+void test_substr() {    
     char *str = "Hola mundo";
-    char *sub = strndup(str + 5, 5);  // "mundo"
+    char *sub = substr(str + 5, 5);  // "mundo"
+    printf("Probando substr:\n");
     printf("Subcadena: %s\n", sub);
     free(sub);
 }
 
 // strjoin: Prueba la función strjoin
 void test_strjoin() {
-    printf("Probando strjoin:\n");
-    char *s1 = "Hola";
-    char *s2 = " Mundo";
-    char *joined = malloc(strlen(s1) + strlen(s2) + 1);
-    strcpy(joined, s1);
-    strcat(joined, s2);
-    printf("Cadena unida: %s\n", joined);
-    free(joined);
+
 }
 
+
 // strtrim: Prueba la función strtrim
-void test_strtrim() {
-    printf("Probando strtrim:\n");
+void test_strtrim() {    
     char *str = "   Hola mundo   ";
     char *trimmed = str + 3; // Simulación de recortar los espacios de inicio y fin
+    printf("Probando strtrim:\n");
     trimmed[strlen(trimmed) - 3] = '\0';  // Simulación de recortar el final
     printf("Cadena recortada: '%s'\n", trimmed);
 }
@@ -305,10 +314,11 @@ void test_split() {
 }
 
 // itoa: Prueba la función itoa
-void test_itoa() {
-    printf("Probando itoa:\n");
+void test_itoa() {    
     int num = 12345;
     char buffer[20];
+    printf("Probando itoa:\n");
+    printf("Probando itoa:\n");
     snprintf(buffer, sizeof(buffer), "%d", num);  // Simulación de itoa
     printf("itoa(%d) = %s\n", num, buffer);
 }
@@ -377,27 +387,25 @@ void test_putnbr_fd() {
         close(fd);
     }
 }
-
 */
+
 int main(int argc, char *argv[]) {
     if (argc < 2) {
         printf("Uso: %s <funcion>\n", argv[0]);
         return 1;
-    }
-
-    // Compara el argumento ingresado con el nombre de las funciones a testear
+    }   
     if (strcmp(argv[1], "isalpha") == 0) test_isalpha();
     else if (strcmp(argv[1], "isdigit") == 0) test_isdigit();
     else if (strcmp(argv[1], "isalnum") == 0) test_isalnum();
     else if (strcmp(argv[1], "isascii") == 0) test_isascii();
     else if (strcmp(argv[1], "isprint") == 0) test_isprint();
     else if (strcmp(argv[1], "strlen") == 0) test_strlen();
- /*   else if (strcmp(argv[1], "memset") == 0) test_memset();
+    else if (strcmp(argv[1], "memset") == 0) test_memset();
     else if (strcmp(argv[1], "bzero") == 0) test_bzero();
     else if (strcmp(argv[1], "memcpy") == 0) test_memcpy();
-    else if (strcmp(argv[1], "memmove") == 0) test_memmove();*/
-    else if (strcmp(argv[1], "strlcpy") == 0) test_strlcpy();
-  /*  else if (strcmp(argv[1], "strlcat") == 0) test_strlcat();
+    else if (strcmp(argv[1], "memmove") == 0) test_memmove();
+   /* else if (strcmp(argv[1], "strlcpy") == 0) test_strlcpy();  No disponible OBSOLETO
+    else if (strcmp(argv[1], "strlcat") == 0) test_strlcat(); No disponible OBSOLETO */
     else if (strcmp(argv[1], "toupper") == 0) test_toupper();
     else if (strcmp(argv[1], "tolower") == 0) test_tolower();
     else if (strcmp(argv[1], "strchr") == 0) test_strchr();
@@ -405,15 +413,15 @@ int main(int argc, char *argv[]) {
     else if (strcmp(argv[1], "strncmp") == 0) test_strncmp();
     else if (strcmp(argv[1], "memchr") == 0) test_memchr();
     else if (strcmp(argv[1], "memcmp") == 0) test_memcmp();
-    else if (strcmp(argv[1], "strnstr") == 0) test_strnstr();
+  /*  else if (strcmp(argv[1], "strnstr") == 0) test_strnstr();  No disponible OBSOLETO */
     else if (strcmp(argv[1], "atoi") == 0) test_atoi();
     else if (strcmp(argv[1], "calloc") == 0) test_calloc();
     else if (strcmp(argv[1], "strdup") == 0) test_strdup();
-    else if (strcmp(argv[1], "substr") == 0) test_substr();
-    else if (strcmp(argv[1], "strjoin") == 0) test_strjoin();
-    else if (strcmp(argv[1], "strtrim") == 0) test_strtrim();
-    else if (strcmp(argv[1], "split") == 0) test_split();
-    else if (strcmp(argv[1], "itoa") == 0) test_itoa();
+   /* else if (strcmp(argv[1], "substr") == 0) test_substr();  No disponible OBSOLETO
+    else if (strcmp(argv[1], "strjoin") == 0) test_strjoin();No disponible OBSOLETO 
+    else if (strcmp(argv[1], "strtrim") == 0) test_strtrim(); No disponible OBSOLETO 
+    else if (strcmp(argv[1], "split") == 0) test_split();*/
+    /*else if (strcmp(argv[1], "itoa") == 0) test_itoa();
     else if (strcmp(argv[1], "strmapi") == 0) test_strmapi();
     else if (strcmp(argv[1], "striteri") == 0) test_striteri();
     else if (strcmp(argv[1], "putchar_fd") == 0) test_putchar_fd();
