@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 15:31:49 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/19 17:53:04 by frromero         ###   ########.fr       */
+/*   Updated: 2024/09/19 17:55:58 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -448,11 +448,6 @@ void test_strdup() {
 
 /*
 
-
-
-// calloc: Prueba la función calloc
-
-// substr: Prueba la función substr
 void test_substr() {
     char *str = "Hola mundo";
     char *sub = substr(str + 5, 5);  // "mundo"
@@ -461,13 +456,11 @@ void test_substr() {
     free(sub);
 }
 
-// strjoin: Prueba la función strjoin
 void test_strjoin() {
 
 }
 
 
-// strtrim: Prueba la función strtrim
 void test_strtrim() {
     char *str = "   Hola mundo   ";
     char *trimmed = str + 3; // Simulación de recortar los espacios de inicio y fin
@@ -476,7 +469,6 @@ void test_strtrim() {
     printf("Cadena recortada: '%s'\n", trimmed);
 }
 
-// split: Prueba la función split
 void test_split() {
     printf("Probando split:\n");
     char *str = "Hola mundo de C";
@@ -487,7 +479,6 @@ void test_split() {
     }
 }
 
-// itoa: Prueba la función itoa
 void test_itoa() {
     int num = 12345;
     char buffer[20];
@@ -497,7 +488,6 @@ void test_itoa() {
     printf("itoa(%d) = %s\n", num, buffer);
 }
 
-// strmapi: Prueba la función strmapi
 void test_strmapi() {
     printf("Probando strmapi:\n");
     char *str = "abc";
@@ -509,7 +499,6 @@ void test_strmapi() {
     free(mapped);
 }
 
-// striteri: Prueba la función striteri
 void test_striteri() {
     printf("Probando striteri:\n");
     char str[] = "abc";
@@ -519,7 +508,6 @@ void test_striteri() {
     printf("Cadena iterada: %s\n", str);
 }
 
-// putchar_fd: Prueba la función putchar_fd
 void test_putchar_fd() {
     printf("Probando putchar_fd:\n");
     int fd = open("output.txt", O_WRONLY | O_CREAT, 0644);
@@ -529,7 +517,6 @@ void test_putchar_fd() {
     }
 }
 
-// putstr_fd: Prueba la función putstr_fd
 void test_putstr_fd() {
     printf("Probando putstr_fd:\n");
     int fd = open("output.txt", O_WRONLY | O_CREAT, 0644);
@@ -539,7 +526,6 @@ void test_putstr_fd() {
     }
 }
 
-// putendl_fd: Prueba la función putendl_fd
 void test_putendl_fd() {
     printf("Probando putendl_fd:\n");
     int fd = open("output.txt", O_WRONLY | O_CREAT, 0644);
@@ -549,7 +535,6 @@ void test_putendl_fd() {
     }
 }
 
-// putnbr_fd: Prueba la función putnbr_fd
 void test_putnbr_fd() {
     printf("Probando putnbr_fd:\n");
     int fd = open("output.txt", O_WRONLY | O_CREAT, 0644);
@@ -602,6 +587,7 @@ int main(int argc, char *argv[]) {
     else if (strcmp(argv[1], "putstr_fd") == 0) test_putstr_fd();
     else if (strcmp(argv[1], "putendl_fd") == 0) test_putendl_fd();
     else if (strcmp(argv[1], "putnbr_fd") == 0) test_putnbr_fd();
+	// BONUS
     else if (strcmp(argv[1], "lstnew") == 0) test_lstnew();
     else if (strcmp(argv[1], "lstadd_front") == 0) test_lstadd_front();
     else if (strcmp(argv[1], "lstsize") == 0) test_lstsize();
