@@ -1,15 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_menset.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 10:50:46 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/14 11:24:57 by frromero         ###   ########.fr       */
+/*   Updated: 2024/09/19 18:06:42 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// ?  En progreso verificar los parametros de la funcion sobretodo del puntero
-
 #include "libft.h"
+
+void	*ft_memset(void *b, int c, size_t len)
+{
+
+}

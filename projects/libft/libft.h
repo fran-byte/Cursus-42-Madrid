@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 21:00:56 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/17 00:29:46 by frromero         ###   ########.fr       */
+/*   Updated: 2024/09/19 18:06:13 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 # define LIBFT_H
 
 unsigned int ft_strlen(const char *str);
-void *ft_memset(void *s, int c, unsigned int n);
-void ft_bzero(void *s, unsigned int n);
-void *ft_memcpy(void *dest, const void *src, unsigned int n);
-void *ft_memmove(void *dest, const void *src, unsigned int n);
+void *ft_memset(void *b, int c, size_t len);
+void ft_bzero(void *s, size_t n);
+void *ft_memcpy(void *dst, const void *src, size_t n);
+void *ft_memmove(void *dst, const void *src, size_t len);
 unsigned int ft_strlcpy(char *dst, const char *src, unsigned int dstsize);
 unsigned int ft_strlcat(char *dst, const char *src, unsigned int dstsize);
 int ft_toupper(int c);

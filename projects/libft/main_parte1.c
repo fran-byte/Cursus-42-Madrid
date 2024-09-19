@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 15:31:49 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/19 17:55:58 by frromero         ###   ########.fr       */
+/*   Updated: 2024/09/19 17:56:31 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -579,8 +579,8 @@ int main(int argc, char *argv[]) {
    /* else if (strcmp(argv[1], "substr") == 0) test_substr();  No disponible OBSOLETO
     else if (strcmp(argv[1], "strjoin") == 0) test_strjoin();No disponible OBSOLETO
     else if (strcmp(argv[1], "strtrim") == 0) test_strtrim(); No disponible OBSOLETO
-    else if (strcmp(argv[1], "split") == 0) test_split();*/
-    /*else if (strcmp(argv[1], "itoa") == 0) test_itoa();
+    else if (strcmp(argv[1], "split") == 0) test_split();
+    else if (strcmp(argv[1], "itoa") == 0) test_itoa();
     else if (strcmp(argv[1], "strmapi") == 0) test_strmapi();
     else if (strcmp(argv[1], "striteri") == 0) test_striteri();
     else if (strcmp(argv[1], "putchar_fd") == 0) test_putchar_fd();
