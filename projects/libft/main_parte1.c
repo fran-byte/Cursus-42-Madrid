@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -56,19 +57,37 @@ void test_lstmap();
 // Implementaciones
 // isalpha: Prueba si un carácter es alfabético
 void test_isalpha() {
-    printf("Probando isalpha:\n");
+    printf("   __   _             _                 _           _             \n");
+    printf("  / _| | |_          (_)  ___    __ _  | |  _ __   | |__     __ _ \n");
+    printf(" | |_  | __|         | | / __|  / _` | | | | '_ \\  | '_ \\   / _` |\n");
+    printf(" |  _| | |_          | | \\__ \\ | (_| | | | | |_) | | | | | | (_| |\n");
+    printf(" |_|    \\__|  _____  |_| |___/  \\__,_| |_| | .__/  |_| |_|  \\__,_|\n");
+    printf("             |_____|                       |_|                         \n");
+    printf("\nProbando isalpha:\n");
     printf("isalpha('A'): %d\n", isalpha('A'));
     printf("isalpha('1'): %d\n", isalpha('1'));
 }
 
 // isdigit: Prueba si un carácter es un dígito
 void test_isdigit() {
+    printf("   __   _             _             _   _           _   _   \n");
+    printf("  / _| | |_          (_)  ___    __| | (_)   __ _  (_) | |_ \n");
+    printf(" | |_  | __|         | | / __|  / _` | | |  / _` | | | | __|\n");
+    printf(" |  _| | |_          | | \\__ \\ | (_| | | | | (_| | | | | |_ \n");
+    printf(" |_|    \\__|  _____  |_| |___/  \\__,_| |_|  \\__, | |_|  \\__|\n");
+    printf("             |_____|                        |___/          \n");
     printf("Probando isdigit:\n");
     printf("isdigit('5'): %d\n", isdigit('5'));
     printf("isdigit('f'): %d\n", isdigit('f'));
 }
 // isalnum: Prueba si un carácter es un dígito o carácter es alfabético (TESTEAR DE NUEVO)
 void test_isalnum() {
+    printf("   __   _             _                 _                             \n");
+    printf("  / _| | |_          (_)  ___    __ _  | |  _ __    _   _   _ __ ___  \n");
+    printf(" | |_  | __|         | | / __|  / _` | | | | '_ \\  | | | | | '_ ` _ \\ \n");
+    printf(" |  _| | |_          | | \\__ \\ | (_| | | | | | | | | |_| | | | | | | |\n");
+    printf(" |_|    \\__|  _____  |_| |___/  \\__,_| |_| |_| |_|  \\__,_| |_| |_| |_|\n");
+    printf("             |_____|                                                 \n");
     printf("Probando isalnum:\n");
     printf("isalnum('5'): %d\n", isalnum('5'));
     printf("isalnum('f'): %d\n", isalnum('f'));
@@ -76,19 +95,38 @@ void test_isalnum() {
 }
 // isdigit: Prueba si un carácter es un isascii
 void test_isascii() {
+    printf("   __   _             _                              _   _ \n");
+    printf("  / _| | |_          (_)  ___    __ _   ___    ___  (_) (_)\n");
+    printf(" | |_  | __|         | | / __|  / _` | / __|  / __| | | | |\n");
+    printf(" |  _| | |_          | | \\__ \\ | (_| | \\__ \\ | (__  | | | |\n");
+    printf(" |_|    \\__|  _____  |_| |___/  \\__,_| |___/  \\___| |_| |_|\n");
+    printf("             |_____|                                      \n");
     printf("Probando isdigit:\n");
     printf("isascii('5'): %d\n", isascii('5'));
     printf("isascii('f'): %d\n", isascii('f'));
+    printf("isascii('ú'): %d\n", isascii('ú'));
 }
-// isdigit: Prueba si un carácter imprimible
+// isprint: Prueba si un carácter imprimible
 void test_isprint() {
-    printf("Probando isdigit:\n");
+    printf("   __   _             _                        _           _   \n");
+    printf("  / _| | |_          (_)  ___   _ __    _ __  (_)  _ __   | |_ \n");
+    printf(" | |_  | __|         | | / __| | '_ \\  | '__| | | | '_ \\  | __|\n");
+    printf(" |  _| | |_          | | \\__ \\ | |_) | | |    | | | | | | | |_ \n");
+    printf(" |_|    \\__|  _____  |_| |___/ | .__/  |_|    |_| |_| |_|  \\__|\n");
+    printf("             |_____|           |_|                            \n");
+    printf("Probando isprint:\n");
     printf("isprint('5'): %d\n", isprint('5'));
-    printf("isprint('barra inv n'): %d\n", isprint('\n'));
+    printf("isprint('barra inv \\n'): %d\n", isprint('\n'));
 }
 
 // strlen: Prueba la longitud de una cadena
 void test_strlen() {
+    printf("   __   _                   _            _                \n");
+    printf("  / _| | |_           ___  | |_   _ __  | |   ___   _ __  \n");
+    printf(" | |_  | __|         / __| | __| | '__| | |  / _ \\ | '_ \\ \n");
+    printf(" |  _| | |_          \\__ \\ | |_  | |    | | |  __/ | | | |\n");
+    printf(" |_|    \\__|  _____  |___/  \\__| |_|    |_|  \\___| |_| |_|\n");
+    printf("             |_____|                                      \n");
     const char *str = "Hola mundo 42!";
     printf("Probando strlen:\n");
     printf("strlen(\"%s\"): %zu\n", str, strlen(str));
@@ -97,7 +135,7 @@ void test_strlen() {
 // memset: Prueba la función memset
 void test_memset() {
     char str[50] = "Hola Mundo 42!!";
-    printf("Probando memset:\n");    
+    printf("Probando memset:\n");
     printf("Nuestra string: %s\n", str);
     memset(str, '*', 5);
     printf("Sobre escribimos con '*' hasta el indice 5: %s\n", str);
@@ -106,7 +144,7 @@ void test_memset() {
 // bzero: Prueba la función bzero
 void test_bzero() {
     char str[50] = "Hola Mundo 42!!";
-    printf("Probando bzero:\n");    
+    printf("Probando bzero:\n");
     printf("Nuestra string: %s\n", str);
     bzero(str, 5);
     printf("Sobre escribimos con '0' hasta el indice 5: %s\n", str);
@@ -125,21 +163,21 @@ void test_memcpy() {
 // memcpy: Prueba la función memmove
 void test_memmove() {
     char str[50] = "Hola Mundo 42!!";
-    printf("Probando memmove:\n");    
+    printf("Probando memmove:\n");
     printf("Nuestra string: %s\n", str);
     printf("memmove(str + 5, str, strlen(str) - 5)\n");
     printf("Mueve la parte de la cadena hacia la derecha\n");
-    memmove(str + 5, str, strlen(str) - 5); 
+    memmove(str + 5, str, strlen(str) - 5);
     printf("Resultado: %s\n", str);
 }
 
 // calloc: Prueba la función calloc
 void test_calloc() {
-    int i = 0;    
+    int i = 0;
     int *arr = (int *)calloc(5, sizeof(int));
     printf("Probando calloc:\n");
     while(i < 5)
-    {       
+    {
         printf("arr[%d] = %d\n", i, arr[i]);
          i++;
     }
@@ -147,8 +185,8 @@ void test_calloc() {
 }
 
 // strdup: Prueba la función strdup
-void test_strdup() {    
-    char *str = "Cadena a duplicar";   
+void test_strdup() {
+    char *str = "Cadena a duplicar";
     char *duplicated = strdup(str);
     printf("Probando strdup:\n");
     printf("Cadena original: %s\n", str);
@@ -157,7 +195,7 @@ void test_strdup() {
 }
 
 // atoi: Prueba la función atoi
-void test_atoi() {    
+void test_atoi() {
     char *num_str = "123459";
     char *neg_num_str = "-9576";
     char *invalid_num_str = "12asd34";
@@ -190,14 +228,14 @@ void test_strlcat() {
 // toupper: Prueba la función toupper
 void test_toupper() {
     char c = 'a';
-    printf("Probando toupper:\n");    
+    printf("Probando toupper:\n");
     printf("toupper('%c') = %c\n", c, toupper(c));
 }
 
 // tolower: Prueba la función tolower
 void test_tolower() {
     char c = 'A';
-    printf("Probando tolower:\n");    
+    printf("Probando tolower:\n");
     printf("tolower('%c') = %c\n", c, tolower(c));
 }
 
@@ -253,7 +291,7 @@ void test_memchr() {
 }
 
 // memcmp: Prueba la función memcmp
-void test_memcmp() {    
+void test_memcmp() {
     char *str1 = "Hola42Madrid";
     char *str2 = "Hola42Madrid";
     char *str3 = "Hola43";
@@ -266,7 +304,7 @@ void test_memcmp() {
 }
 /*
 // strnstr: Prueba la función strnstr
-void test_strnstr() {    
+void test_strnstr() {
     char *str = "Este es un ejemplo";
     char *substr = "un";
     char *result = strnstr(str, substr, strlen(str));
@@ -279,7 +317,7 @@ void test_strnstr() {
 }
 
 // substr: Prueba la función substr
-void test_substr() {    
+void test_substr() {
     char *str = "Hola mundo";
     char *sub = substr(str + 5, 5);  // "mundo"
     printf("Probando substr:\n");
@@ -294,7 +332,7 @@ void test_strjoin() {
 
 
 // strtrim: Prueba la función strtrim
-void test_strtrim() {    
+void test_strtrim() {
     char *str = "   Hola mundo   ";
     char *trimmed = str + 3; // Simulación de recortar los espacios de inicio y fin
     printf("Probando strtrim:\n");
@@ -314,7 +352,7 @@ void test_split() {
 }
 
 // itoa: Prueba la función itoa
-void test_itoa() {    
+void test_itoa() {
     int num = 12345;
     char buffer[20];
     printf("Probando itoa:\n");
@@ -393,7 +431,7 @@ int main(int argc, char *argv[]) {
     if (argc < 2) {
         printf("Uso: %s <funcion>\n", argv[0]);
         return 1;
-    }   
+    }
     if (strcmp(argv[1], "isalpha") == 0) test_isalpha();
     else if (strcmp(argv[1], "isdigit") == 0) test_isdigit();
     else if (strcmp(argv[1], "isalnum") == 0) test_isalnum();
@@ -418,8 +456,8 @@ int main(int argc, char *argv[]) {
     else if (strcmp(argv[1], "calloc") == 0) test_calloc();
     else if (strcmp(argv[1], "strdup") == 0) test_strdup();
    /* else if (strcmp(argv[1], "substr") == 0) test_substr();  No disponible OBSOLETO
-    else if (strcmp(argv[1], "strjoin") == 0) test_strjoin();No disponible OBSOLETO 
-    else if (strcmp(argv[1], "strtrim") == 0) test_strtrim(); No disponible OBSOLETO 
+    else if (strcmp(argv[1], "strjoin") == 0) test_strjoin();No disponible OBSOLETO
+    else if (strcmp(argv[1], "strtrim") == 0) test_strtrim(); No disponible OBSOLETO
     else if (strcmp(argv[1], "split") == 0) test_split();*/
     /*else if (strcmp(argv[1], "itoa") == 0) test_itoa();
     else if (strcmp(argv[1], "strmapi") == 0) test_strmapi();
