@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 15:31:49 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/19 17:40:17 by frromero         ###   ########.fr       */
+/*   Updated: 2024/09/19 17:53:04 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -578,8 +578,8 @@ int main(int argc, char *argv[]) {
     else if (strcmp(argv[1], "bzero") == 0) test_bzero();
     else if (strcmp(argv[1], "memcpy") == 0) test_memcpy();
     else if (strcmp(argv[1], "memmove") == 0) test_memmove();
-   /* else if (strcmp(argv[1], "strlcpy") == 0) test_strlcpy();  No disponible OBSOLETO
-    else if (strcmp(argv[1], "strlcat") == 0) test_strlcat(); No disponible OBSOLETO */
+   	else if (strcmp(argv[1], "strlcpy") == 0) test_strlcpy();	// OBSOLETO
+    else if (strcmp(argv[1], "strlcat") == 0) test_strlcat();	// OBSOLETO
     else if (strcmp(argv[1], "toupper") == 0) test_toupper();
     else if (strcmp(argv[1], "tolower") == 0) test_tolower();
     else if (strcmp(argv[1], "strchr") == 0) test_strchr();
@@ -587,7 +587,7 @@ int main(int argc, char *argv[]) {
     else if (strcmp(argv[1], "strncmp") == 0) test_strncmp();
     else if (strcmp(argv[1], "memchr") == 0) test_memchr();
     else if (strcmp(argv[1], "memcmp") == 0) test_memcmp();
-  /*  else if (strcmp(argv[1], "strnstr") == 0) test_strnstr();  No disponible OBSOLETO */
+	else if (strcmp(argv[1], "strnstr") == 0) test_strnstr();	// OBSOLETO
     else if (strcmp(argv[1], "atoi") == 0) test_atoi();
     else if (strcmp(argv[1], "calloc") == 0) test_calloc();
     else if (strcmp(argv[1], "strdup") == 0) test_strdup();
@@ -613,9 +613,29 @@ int main(int argc, char *argv[]) {
     else if (strcmp(argv[1], "lstmap") == 0) test_lstmap();*/
 	else if (strcmp(argv[1], "all") == 0)
 		{
-
-
-
+			test_isalpha();
+			test_isdigit();
+			test_isalnum();
+			test_isascii();
+			test_isprint();
+			test_strlen();
+			test_memset();
+			test_bzero();
+			test_memcpy();
+			test_memmove();
+			test_strlcpy();
+			test_strlcat();
+			test_toupper();
+			test_tolower();
+			test_strchr();
+			test_strrchr();
+			test_strncmp();
+			test_memchr();
+			test_memcmp();
+			test_strnstr();
+			test_atoi();
+			test_calloc();
+			test_strdup();
 
 		}
     else
