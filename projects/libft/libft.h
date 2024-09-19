@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 21:00:56 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/19 18:40:08 by frromero         ###   ########.fr       */
+/*   Updated: 2024/09/19 20:19:20 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <unistd.h>
 
 unsigned int ft_strlen(const char *str);
-void *ft_memset(void *b, int c, size_t len);
+void *ft_memset(void *s, int c, size_t n);
 void ft_bzero(void *s, size_t n);
 void *ft_memcpy(void *dst, const void *src, size_t n);
 void *ft_memmove(void *dst, const void *src, size_t len);

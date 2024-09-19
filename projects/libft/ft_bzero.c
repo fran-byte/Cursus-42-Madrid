@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 11:15:06 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/19 18:03:51 by frromero         ###   ########.fr       */
+/*   Updated: 2024/09/19 20:13:35 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,4 +14,14 @@
 
 void	ft_bzero(void *s, size_t n)
 {
+	size_t	i;
+	char	*buf;
+
+	i = 0;
+	buf = s;
+	while(i < n)
+	{
+		buf[i] = '0';
+		i++;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 15:31:49 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/19 17:56:31 by frromero         ###   ########.fr       */
+/*   Updated: 2024/09/19 20:24:13 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,9 +127,9 @@ void test_memset() {
     ft_memset(str, '*', 5);
     printf("ft_memset(str, '*', 5): %s\n", str);
 	printf("\nProbando Función ORIGINAL:\n");
-	char str[50] = "Hola Mundo 42!!";
-	memset(str, '*', 5);
-	printf("Sobre escribimos con '*' hasta el indice 5: %s\n", str);
+	char str2[50] = "Hola Mundo 42!!";
+	memset(str2, '*', 5);
+	printf("Sobre escribimos con '*' 5 indices: %s\n", str2);
 }
 
 void test_bzero() {
@@ -144,9 +144,9 @@ void test_bzero() {
     ft_bzero(str, 5);
     printf("ft_bzero(str, 5): %s\n", str);
 	printf("\nProbando Función ORIGINAL:\n");
-	char str[50] = "Hola Mundo 42!!";
-	bzero(str, 5);
-	printf("Sobre escribimos con '0' hasta el indice 5: %s\n", str);
+	char str2[50] = "Hola Mundo 42!!";
+	bzero(str2, 5);
+	printf("Sobre escribimos con '0' 5 indices: %s\n", str2);
 }
 
 void test_memcpy() {
