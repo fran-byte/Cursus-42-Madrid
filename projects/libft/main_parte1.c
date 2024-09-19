@@ -63,8 +63,11 @@ void test_isalpha() {
     printf(" |  _| | |_          | | \\__ \\ | (_| | | | | |_) | | | | | | (_| |\n");
     printf(" |_|    \\__|  _____  |_| |___/  \\__,_| |_| | .__/  |_| |_|  \\__,_|\n");
     printf("             |_____|                       |_|                         \n");
-    printf("\nProbando isalpha:\n");
-    printf("isalpha('A'): %d\n", isalpha('A'));
+    printf("\nProbando ft_isalpha:\n");
+    printf("ft_isalpha('A'): %d\n", isalpha('A'));
+    printf("tr_isalpha('1'): %d\n\n", isalpha('1'));
+	printf("\nProbando Función ORIGINAL:\n");
+	printf("isalpha('A'): %d\n", isalpha('A'));
     printf("isalpha('1'): %d\n", isalpha('1'));
 }
 
@@ -475,7 +478,15 @@ int main(int argc, char *argv[]) {
     else if (strcmp(argv[1], "lstclear") == 0) test_lstclear();
     else if (strcmp(argv[1], "lstiter") == 0) test_lstiter();
     else if (strcmp(argv[1], "lstmap") == 0) test_lstmap();*/
-    else printf("Funcion no reconocida: %s\n", argv[1]);
+	else if (strcmp(argv[1], "all") == 0)
+		{
+		test_lstmap();
+
+
+
+		}
+    else
+		printf("Funcion no reconocida: %s\n", argv[1]);
 
     return 0;
 }
