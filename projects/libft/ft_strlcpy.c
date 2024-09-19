@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 11:24:13 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/14 19:23:54 by frromero         ###   ########.fr       */
+/*   Updated: 2024/09/19 18:14:30 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 #include "libft.h"
 
-unsigned int ft_strlcpy(char *dst, const char *src, unsigned int size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-    unsigned int i;
+    size_t	i;
 
     i = 0;
     if(size == 0)

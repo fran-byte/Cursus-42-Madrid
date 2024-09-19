@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/16 22:46:06 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/19 18:25:21 by frromero         ###   ########.fr       */
+/*   Created: 2024/09/19 18:36:53 by frromero          #+#    #+#             */
+/*   Updated: 2024/09/19 18:37:27 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-    size_t i;
 
-    i =0;
-    while(s1[i] == s2[i] && i < n)
-        i++;
-    return (s1[i] - s2[i]);
 }
