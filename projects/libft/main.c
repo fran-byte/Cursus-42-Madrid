@@ -59,7 +59,11 @@ void test_isalnum() {
     printf("             |_____|                                                 \n");
     printf("ft_isalnum('5'): %d\n", isalnum('5'));
     printf("ft_isalnum('f'): %d\n", isalnum('f'));
-    printf("ft_isalnum('?'): %d\n", isalnum('?'));ascii() {
+    printf("ft_isalnum('?'): %d\n", isalnum('?'));
+}
+
+void test_ascii() 
+{
     printf("   __   _             _                              _   _ \n");
     printf("  / _| | |_          (_)  ___    __ _   ___    ___  (_) (_)\n");
     printf(" | |_  | __|         | | / __|  / _` | / __|  / __| | | | |\n");
