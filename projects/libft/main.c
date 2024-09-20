@@ -28,7 +28,8 @@ typedef struct s_list {
 
 */
 
-void test_isalpha() {
+void test_isalpha() 
+{
     printf("   __   _             _                 _           _             \n");
     printf("  / _| | |_          (_)  ___    __ _  | |  _ __   | |__     __ _ \n");
     printf(" | |_  | __|         | | / __|  / _` | | | | '_ \\  | '_ \\   / _` |\n");
@@ -39,7 +40,8 @@ void test_isalpha() {
     printf("tr_isalpha('1'): %d\n\n", ft_isalpha('1'));
 }
 
-void test_isdigit() {
+void test_isdigit() 
+{
     printf("   __   _             _             _   _           _   _   \n");
     printf("  / _| | |_          (_)  ___    __| | (_)   __ _  (_) | |_ \n");
     printf(" | |_  | __|         | | / __|  / _` | | |  / _` | | | | __|\n");
@@ -50,7 +52,8 @@ void test_isdigit() {
     printf("ft_isdigit('f'): %d\n", ft_isdigit('f'));
 }
 
-void test_isalnum() {
+void test_isalnum() 
+{
     printf("   __   _             _                 _                             \n");
     printf("  / _| | |_          (_)  ___    __ _  | |  _ __    _   _   _ __ ___  \n");
     printf(" | |_  | __|         | | / __|  / _` | | | | '_ \\  | | | | | '_ ` _ \\ \n");
@@ -75,7 +78,8 @@ void test_ascii()
     printf("ft_isascii('Ç'): %d\n", ft_isascii(128));
 }
 
-void test_isprint() {
+void test_isprint() 
+{
     printf("   __   _             _                        _           _   \n");
     printf("  / _| | |_          (_)  ___   _ __    _ __  (_)  _ __   | |_ \n");
     printf(" | |_  | __|         | | / __| | '_ \\  | '__| | | | '_ \\  | __|\n");
@@ -86,7 +90,8 @@ void test_isprint() {
     printf("ft_isprint('\\n'): %d\n", ft_isprint('\n'));
 }
 
-void test_strlen() {
+void test_strlen() 
+{
     printf("   __   _                   _            _                \n");
     printf("  / _| | |_           ___  | |_   _ __  | |   ___   _ __  \n");
     printf(" | |_  | __|         / __| | __| | '__| | |  / _ \\ | '_ \\ \n");
@@ -98,7 +103,8 @@ void test_strlen() {
     printf("ft_strlen(\"%s\"): %zu\n", str, ft_strlen(str));
 }
 
-void test_memset() {
+void test_memset() 
+{
     printf("   __   _                                                         _   \n");
     printf("  / _| | |_           _ __ ___     ___   _ __ ___    ___    ___  | |_ \n");
     printf(" | |_  | __|         | '_ ` _ \\   / _ \\ | '_ ` _ \\  / __|  / _ \\ | __|\n");
@@ -111,7 +117,8 @@ void test_memset() {
     printf("ft_memset(str, '*', 5): %s\n", str);
 }
 
-void test_bzero() {
+void test_bzero() 
+{
     printf("   __   _             _                                 \n");
     printf("  / _| | |_          | |__    ____   ___   _ __    ___  \n");
     printf(" | |_  | __|         | '_ \\  |_  /  / _ \\ | '__|  / _ \\ \n");
@@ -124,7 +131,8 @@ void test_bzero() {
     printf("ft_bzero(str, 5): %s\n", str);
 }
 
-void test_memcpy() {
+void test_memcpy() 
+{
     printf("   __   _                                                                 \n");
     printf("  / _| | |_           _ __ ___     ___   _ __ ___     ___   _ __    _   _ \n");
     printf(" | |_  | __|         | '_ ` _ \\   / _ \\ | '_ ` _ \\   / __| | '_ \\  | | | |\n");
@@ -140,7 +148,8 @@ void test_memcpy() {
     printf("Resultado: %s\n", dest);
 }
 
-void test_memmove() {
+void test_memmove() 
+{
     printf("   __   _                                                                             \n");
     printf("  / _| | |_           _ __ ___     ___   _ __ ___    _ __ ___     ___   __   __   ___ \n");
     printf(" | |_  | __|         | '_ ` _ \\   / _ \\ | '_ ` _ \\  | '_ ` _ \\   / _ \\  \\ \\ / /  / _ \\n");
@@ -155,7 +164,8 @@ void test_memmove() {
     printf("Resultado: %s\n", str);
 }
 
-void test_strlcpy() {
+void test_strlcpy() 
+{
 printf("   __   _                   _            _                        \n");
 printf("  / _| | |_           ___  | |_   _ __  | |   ___   _ __    _   _ \n");
 printf(" | |_  | __|         / __| | __| | '__| | |  / __| | '_ \\  | | | |\n");
@@ -180,7 +190,8 @@ printf("             |_____|                               |_|      |___/ \n");
     printf("Destino: %s\n", dest);
 }
 
-void test_toupper() {
+void test_toupper() 
+{
 	printf("   __   _             _                                                 \n");
 	printf("  / _| | |_          | |_    ___    _   _   _ __    _ __     ___   _ __ \n");
 	printf(" | |_  | __|         | __|  / _ \\  | | | | | '_ \\  | '_ \\   / _ \\ | '__|\n");
@@ -191,7 +202,8 @@ void test_toupper() {
     printf("ft_toupper('%c') = %c\n", c, ft_toupper(c));
 }
 
-void test_tolower() {
+void test_tolower() 
+{
 	printf("   __   _             _             _                                  \n");
 	printf("  / _| | |_          | |_    ___   | |   ___   __      __   ___   _ __ \n");
 	printf(" | |_  | __|         | __|  / _ \\  | |  / _ \\  \\ \\ /\\ / /  / _ \\ | '__|\n");
@@ -202,7 +214,8 @@ void test_tolower() {
     printf("ft_tolower('%c') = %c\n", c, ft_tolower(c));
 }
 
-void test_strchr() {
+void test_strchr() 
+{
 	printf("   __   _                   _                   _            \n");
 	printf("  / _| | |_           ___  | |_   _ __    ___  | |__    _ __ \n");
 	printf(" | |_  | __|         / __| | __| | '__|  / __| | '_ \\  | '__|\n");
@@ -219,7 +232,8 @@ void test_strchr() {
     }
 }
 
-void test_strrchr() {
+void test_strrchr() 
+{
 	printf("   __   _                   _                          _            \n");
 	printf("  / _| | |_           ___  | |_   _ __   _ __    ___  | |__    _ __ \n");
 	printf(" | |_  | __|         / __| | __| | '__| | '__|  / __| | '_ \\  | '__|\n");
@@ -236,7 +250,8 @@ void test_strrchr() {
     }
 }
 
-void test_strncmp() {
+void test_strncmp() 
+{
 	printf("   __   _                   _                                             \n");
 	printf("  / _| | |_           ___  | |_   _ __   _ __     ___   _ __ ___    _ __  \n");
 	printf(" | |_  | __|         / __| | __| | '__| | '_ \\   / __| | '_ ` _ \\  | '_ \ \n");
@@ -251,7 +266,8 @@ void test_strncmp() {
     printf("ft_strncmp(str1, str2, 6) = %d\n", ft_strncmp(str1, str2, 6));
 }
 
-void test_memchr() {
+void test_memchr() 
+{
 	printf("   __   _                                                   _            \n");
 	printf("  / _| | |_           _ __ ___     ___   _ __ ___     ___  | |__    _ __ \n");
 	printf(" | |_  | __|         | '_ ` _ \\   / _ \\ | '_ ` _ \\   / __| | '_ \\  | '__|\n");
@@ -270,7 +286,8 @@ void test_memchr() {
 }
 
 
-void test_memcmp() {
+void test_memcmp() 
+{
 	printf("   __   _                                                                     \n");
 	printf("  / _| | |_           _ __ ___     ___   _ __ ___     ___   _ __ ___    _ __  \n");
 	printf(" | |_  | __|         | '_ ` _ \\   / _ \\ | '_ ` _ \\   / __| | '_ ` _ \\  | '_ \ \n");
@@ -287,7 +304,8 @@ void test_memcmp() {
     printf("ft_memcmp(str1, str3, 6) = %d\n", ft_memcmp(str1, str3, 6));
 }
 
-void test_strnstr() {
+void test_strnstr() 
+{
 	printf("   __   _                   _                          _          \n");
 	printf("  / _| | |_           ___  | |_   _ __   _ __    ___  | |_   _ __ \n");
 	printf(" | |_  | __|         / __| | __| | '__| | '_ \\  / __| | __| | '__|\n");
@@ -305,7 +323,8 @@ void test_strnstr() {
     }
 }
 
-void test_atoi() {
+void test_atoi() 
+{
 	printf("   __   _                     _             _ \n");
 	printf("  / _| | |_            __ _  | |_    ___   (_)\n");
 	printf(" | |_  | __|          / _` | | __|  / _ \\  | |\n");
@@ -320,7 +339,8 @@ void test_atoi() {
     printf("ft_atoi(\"%s\") = %d\n", invalid_num_str, ft_atoi(invalid_num_str));
 }
 
-void test_calloc() {
+void test_calloc() 
+{
 	printf("   __   _                            _   _                \n");
 	printf("  / _| | |_            ___    __ _  | | | |   ___     ___ \n");
 	printf(" | |_  | __|          / __|  / _` | | | | |  / _ \\   / __|\n");
@@ -338,7 +358,8 @@ void test_calloc() {
     free(arr);
 }
 
-void test_strdup() {
+void test_strdup() 
+{
 	printf("   __   _                   _                _                 \n");
 	printf("  / _| | |_           ___  | |_   _ __    __| |  _   _   _ __  \n");
 	printf(" | |_  | __|         / __| | __| | '__|  / _` | | | | | | '_ \\ \n");
@@ -355,7 +376,8 @@ void test_strdup() {
 
 /*
 
-void test_substr() {
+void test_substr() 
+{
     char *str = "Hola mundo";
     char *sub = substr(str + 5, 5);  // "mundo"
     printf("Probando substr:\n");
@@ -363,12 +385,14 @@ void test_substr() {
     free(sub);
 }
 
-void test_strjoin() {
+void test_strjoin() 
+{
 
 }
 
 
-void test_strtrim() {
+void test_strtrim() 
+{
     char *str = "   Hola mundo   ";
     char *trimmed = str + 3; // Simulación de recortar los espacios de inicio y fin
     printf("Probando strtrim:\n");
@@ -376,7 +400,8 @@ void test_strtrim() {
     printf("Cadena recortada: '%s'\n", trimmed);
 }
 
-void test_split() {
+void test_split() 
+{
     printf("Probando split:\n");
     char *str = "Hola mundo de C";
     char *token = strtok(str, " ");
@@ -386,7 +411,8 @@ void test_split() {
     }
 }
 
-void test_itoa() {
+void test_itoa() 
+{
     int num = 12345;
     char buffer[20];
     printf("Probando itoa:\n");
@@ -395,7 +421,8 @@ void test_itoa() {
     printf("itoa(%d) = %s\n", num, buffer);
 }
 
-void test_strmapi() {
+void test_strmapi() 
+{
     printf("Probando strmapi:\n");
     char *str = "abc";
     char *mapped = strdup(str);
@@ -406,7 +433,8 @@ void test_strmapi() {
     free(mapped);
 }
 
-void test_striteri() {
+void test_striteri() 
+{
     printf("Probando striteri:\n");
     char str[] = "abc";
     for (int i = 0; str[i]; i++) {
@@ -415,7 +443,8 @@ void test_striteri() {
     printf("Cadena iterada: %s\n", str);
 }
 
-void test_putchar_fd() {
+void test_putchar_fd() 
+{
     printf("Probando putchar_fd:\n");
     int fd = open("output.txt", O_WRONLY | O_CREAT, 0644);
     if (fd != -1) {
@@ -433,7 +462,8 @@ void test_putstr_fd() {
     }
 }
 
-void test_putendl_fd() {
+void test_putendl_fd()
+{
     printf("Probando putendl_fd:\n");
     int fd = open("output.txt", O_WRONLY | O_CREAT, 0644);
     if (fd != -1) {
@@ -442,7 +472,8 @@ void test_putendl_fd() {
     }
 }
 
-void test_putnbr_fd() {
+void test_putnbr_fd() 
+{
     printf("Probando putnbr_fd:\n");
     int fd = open("output.txt", O_WRONLY | O_CREAT, 0644);
     if (fd != -1) {
@@ -455,7 +486,8 @@ void test_putnbr_fd() {
 }
 */
 
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[]) 
+{
     if (argc < 2) {
         printf("Uso: %s <funcion>\n", argv[0]);
         return 1;
