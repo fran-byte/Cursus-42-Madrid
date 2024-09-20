@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 15:31:49 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/20 15:43:24 by frromero         ###   ########.fr       */
+/*   Updated: 2024/09/20 18:46:14 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,12 +139,32 @@ void test_memcpy()
 	printf(" |_|    \\__|  _____  |_| |_| |_|  \\___| |_| |_| |_|  \\___| | .__/   \\__, |\n");
 	printf("             |_____|                                       |_|      |___/	\n");
 	char src[50] = "Hola Mundo 42!!";
-	char dest[50];
-	printf("Probando memcpy:\n");
-	printf("Nuestra string: %s\n", src);
-	printf("ft_memcpy(dest, src, strlen(src) + 1): %s\n", src);
-	ft_memcpy(dest, src, ft_strlen(src) + 1);
-	printf("Resultado: %s\n", dest);
+	char dest[50] = "Hello world 42!! Madrid";
+	printf("src: %s\n", src);
+	printf("dest: %s\n", dest);
+	void *result = ft_memcpy(dest, src, strlen(src) + 1);
+	if (result != 0)
+		printf("ft_memcpy(dest, src, strlen(src) + 1): %s", (char *)result);
+	else
+		printf("ft_memcpy(dest, src, strlen(src) + 1) : NULL\n\n");
+	char src2[50] = "Hola Mundo 42!!";
+	char *dest2 = 0;
+	printf("\n\nsrc: %s\n", src2);
+	printf("dest: %s\n", dest2);
+	void *result2 = ft_memcpy(dest2, src2, strlen(src2) + 1);
+	if (result2 != 0)
+		printf("%sft_memcpy(dest, src, strlen(src) + 1) :", (char *)result2);
+	else
+		printf("ft_memcpy(dest, src, strlen(src) + 1) : NULL\n\n");
+	char dest3[50] = "Hola Mundo 42!!";
+	char *src3 = 0;
+	printf("src: %s\n", src3);
+	printf("dest: %s\n", dest3);
+	void *result3 = ft_memcpy(dest3, src3, 0 + 1);
+	if (result3 != 0)
+		printf("%sft_memcpy(dest, src, strlen(src) + 1) :", (char *)result3);
+	else
+		printf("ft_memcpy(dest, src, strlen(src) + 1) : NULL\n");
 }
 
 void test_memmove()
