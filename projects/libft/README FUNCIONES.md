@@ -1,3 +1,101 @@
+## [ft_isalpha](libft/ft_isalpha.c)
+
+`int        ft_isalpha(int c)`
+
+Descripción | Param. #1 | Valor de Retorno
+:-----------: | :-----------: | :-----------:
+Verifica si es un carácter alfabético. Es equivalente a ([ft_isupper](#ft_isupper)(c) o [ft_islower](#ft_islower)(c)) | El carácter a probar | 0 si el carácter es falso y 1 si el carácter es verdadero
+
+
+---
+
+## [ft_isdigit](libft/ft_isdigit.c)
+
+`int         ft_isdigit(int c)`
+
+Descripción | Param. #1 | Valor de Retorno
+:-----------: | :-----------: | :-----------:
+Verifica si es un dígito (0 a 9) | El carácter a probar | 0 si el carácter es falso y 1 si el carácter es verdadero
+
+---
+# [ft_isalnum](libft/ft_isalnum.c)
+
+`int        ft_isalnum(int c)`
+
+Descripción | Param. #1 | Valor de Retorno
+:-----------: | :-----------: | :-----------:
+Verifica si es un carácter alfanumérico; es equivalente a ([ft_isalpha](#ft_isalpha) o [ft_isdigit](#ft_isdigit)) | El carácter a probar | 0 si el carácter es falso y 1 si el carácter es verdadero
+
+---
+
+## [ft_isascii](libft/ft_isascii.c)
+
+`int        ft_isascii(int c)`
+
+Descripción | Param. #1 | Valor de Retorno
+:-----------: | :-----------: | :-----------:
+Verifica si es un carácter ASCII, que es cualquier carácter entre 0 y octal 0177 inclusive | El carácter a probar | 0 si el carácter es falso y 1 si el carácter es verdadero
+
+---
+
+## [ft_isprint](libft/ft_isprint.c)
+
+`int        ft_isprint(int c)`
+
+Descripción | Param. #1 | Valor de Retorno
+:-----------: | :-----------: | :-----------:
+Verifica si es un carácter imprimible, incluido el espacio | El carácter a probar | 0 si el carácter es falso y 1 si el carácter es verdadero
+
+---
+## [ft_strlen](libft/ft_strlen.c)
+`size_t     ft_strlen(const char *s)`
+
+Descripción | Param. #1 | Valores de Retorno
+:-----------: | :-----------: | :-----------:
+Calcula la longitud de la cadena apuntada por "s", excluyendo el byte nulo de terminación ('\0') | La cadena a calcular | Número de caracteres en la cadena apuntada por "s"
+
+---
+## [ft_memset](libft/ft_memset.c)
+
+`void       *ft_memset(void *s, int c, size_t len)`
+
+Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
+:-----------: | :-----------: | :-----------: | :-----------: | :-----------:
+Rellena con "len" bytes de "c" la memoria de "s" | La cadena sobre la que operar | Valor c (convertido a unsigned char) | El número de bytes | Un puntero al área de memoria s
+
+---
+
+## [ft_bzero](libft/ft_bzero.c)
+
+`void       *ft_bzero(void *s, size_t n)`
+
+Descripción | Param. #1 | Param. #2 | Valor de Retorno
+:-----------: | :-----------: | :-----------: | :-----------: | :-----------:
+Rellena con 0 "len" bytes de la memoria de "s" | La cadena sobre la que operar | El número de bytes | Un puntero al área de memoria s
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ---
 
@@ -356,7 +454,6 @@ Asigna (con malloc) y devuelve una cadena que representa el entero recibido como
 
 
 ---
-
 ## [ft_islower](libft/ft_islower.c)
 
 `int  ft_islower(int c)`
