@@ -492,52 +492,55 @@ int main(int argc, char *argv[])
         printf("Uso: %s <funcion>\n", argv[0]);
         return 1;
     }
-    if (strcmp(argv[1], "isalpha") == 0) test_isalpha();
-    else if (strcmp(argv[1], "isdigit") == 0) test_isdigit();
-    else if (strcmp(argv[1], "isalnum") == 0) test_isalnum();
-    else if (strcmp(argv[1], "isascii") == 0) test_isascii();
-    else if (strcmp(argv[1], "isprint") == 0) test_isprint();
-    else if (strcmp(argv[1], "strlen") == 0) test_strlen();
-    else if (strcmp(argv[1], "memset") == 0) test_memset();
-    else if (strcmp(argv[1], "bzero") == 0) test_bzero();
-    else if (strcmp(argv[1], "memcpy") == 0) test_memcpy();
-    else if (strcmp(argv[1], "memmove") == 0) test_memmove();
-   	else if (strcmp(argv[1], "strlcpy") == 0) test_strlcpy();	// OBSOLETO
-    else if (strcmp(argv[1], "strlcat") == 0) test_strlcat();	// OBSOLETO
-    else if (strcmp(argv[1], "toupper") == 0) test_toupper();
-    else if (strcmp(argv[1], "tolower") == 0) test_tolower();
-    else if (strcmp(argv[1], "strchr") == 0) test_strchr();
-    else if (strcmp(argv[1], "strrchr") == 0) test_strrchr();
-    else if (strcmp(argv[1], "strncmp") == 0) test_strncmp();
-    else if (strcmp(argv[1], "memchr") == 0) test_memchr();
-    else if (strcmp(argv[1], "memcmp") == 0) test_memcmp();
-	else if (strcmp(argv[1], "strnstr") == 0) test_strnstr();	// OBSOLETO
-    else if (strcmp(argv[1], "atoi") == 0) test_atoi();
-    else if (strcmp(argv[1], "calloc") == 0) test_calloc();
-    else if (strcmp(argv[1], "strdup") == 0) test_strdup();
-   /* else if (strcmp(argv[1], "substr") == 0) test_substr();  No disponible OBSOLETO
-    else if (strcmp(argv[1], "strjoin") == 0) test_strjoin();No disponible OBSOLETO
-    else if (strcmp(argv[1], "strtrim") == 0) test_strtrim(); No disponible OBSOLETO
-    else if (strcmp(argv[1], "split") == 0) test_split();
-    else if (strcmp(argv[1], "itoa") == 0) test_itoa();
-    else if (strcmp(argv[1], "strmapi") == 0) test_strmapi();
-    else if (strcmp(argv[1], "striteri") == 0) test_striteri();
-    else if (strcmp(argv[1], "putchar_fd") == 0) test_putchar_fd();
-    else if (strcmp(argv[1], "putstr_fd") == 0) test_putstr_fd();
-    else if (strcmp(argv[1], "putendl_fd") == 0) test_putendl_fd();
-    else if (strcmp(argv[1], "putnbr_fd") == 0) test_putnbr_fd();
-	// BONUS
-    else if (strcmp(argv[1], "lstnew") == 0) test_lstnew();
-    else if (strcmp(argv[1], "lstadd_front") == 0) test_lstadd_front();
-    else if (strcmp(argv[1], "lstsize") == 0) test_lstsize();
-    else if (strcmp(argv[1], "lstlast") == 0) test_lstlast();
-    else if (strcmp(argv[1], "lstadd_back") == 0) test_lstadd_back();
-    else if (strcmp(argv[1], "lstdelone") == 0) test_lstdelone();
-    else if (strcmp(argv[1], "lstclear") == 0) test_lstclear();
-    else if (strcmp(argv[1], "lstiter") == 0) test_lstiter();
-    else if (strcmp(argv[1], "lstmap") == 0) test_lstmap();*/
-	else if (strcmp(argv[1], "all") == 0)
-		{
+/* Parte 1 Funciones de libc */
+    if (strcmp(argv[1], "ft_isalpha") == 0) test_isalpha();
+    else if (strcmp(argv[1], "ft_isdigit") == 0) test_isdigit();
+    else if (strcmp(argv[1], "ft_isalnum") == 0) test_isalnum();
+    else if (strcmp(argv[1], "ft_isascii") == 0) test_isascii();
+    else if (strcmp(argv[1], "ft_isprint") == 0) test_isprint();
+    else if (strcmp(argv[1], "ft_strlen") == 0) test_strlen();
+    else if (strcmp(argv[1], "ft_memset") == 0) test_memset();
+    else if (strcmp(argv[1], "ft_bzero") == 0) test_bzero();
+    else if (strcmp(argv[1], "ft_memcpy") == 0) test_memcpy();
+    else if (strcmp(argv[1], "ft_memmove") == 0) test_memmove();
+    else if (strcmp(argv[1], "ft_strlcpy") == 0) test_strlcpy();	// OBSOLETO
+    else if (strcmp(argv[1], "ft_strlcat") == 0) test_strlcat();	// OBSOLETO
+    else if (strcmp(argv[1], "ft_toupper") == 0) test_toupper();
+    else if (strcmp(argv[1], "ft_tolower") == 0) test_tolower();
+    else if (strcmp(argv[1], "ft_strchr") == 0) test_strchr();
+    else if (strcmp(argv[1], "ft_strrchr") == 0) test_strrchr();
+    else if (strcmp(argv[1], "ft_strncmp") == 0) test_strncmp();
+    else if (strcmp(argv[1], "ft_memchr") == 0) test_memchr();
+    else if (strcmp(argv[1], "ft_memcmp") == 0) test_memcmp();
+    else if (strcmp(argv[1], "ft_strnstr") == 0) test_strnstr();	// OBSOLETO
+    else if (strcmp(argv[1], "ft_atoi") == 0) test_atoi();
+    else if (strcmp(argv[1], "ft_calloc") == 0) test_calloc();
+    else if (strcmp(argv[1], "ft_strdup") == 0) test_strdup();
+/* Parte 2 - Funciones adicionales */	    
+    else if (strcmp(argv[1], "ft_substr") == 0) test_substr();   // No disponible OBSOLETO
+    else if (strcmp(argv[1], "ft_strjoin") == 0) test_strjoin(); // No disponible OBSOLETO
+    else if (strcmp(argv[1], "ft_strtrim") == 0) test_strtrim();  // No disponible OBSOLETO
+    else if (strcmp(argv[1], "ft_split") == 0) test_split();
+    else if (strcmp(argv[1], "ft_itoa") == 0) test_itoa();
+    else if (strcmp(argv[1], "ft_strmapi") == 0) test_strmapi();
+    else if (strcmp(argv[1], "ft_striteri") == 0) test_striteri();
+    else if (strcmp(argv[1], "ft_putchar_fd") == 0) test_putchar_fd();
+    else if (strcmp(argv[1], "ft_putstr_fd") == 0) test_putstr_fd();
+    else if (strcmp(argv[1], "ft_putendl_fd") == 0) test_putendl_fd();
+    else if (strcmp(argv[1], "ft_putnbr_fd") == 0) test_putnbr_fd();
+/* BONUS */
+    else if (strcmp(argv[1], "ft_lstnew") == 0) test_lstnew();
+    else if (strcmp(argv[1], "ft_lstadd_front") == 0) test_lstadd_front();
+    else if (strcmp(argv[1], "ft_lstsize") == 0) test_lstsize();
+    else if (strcmp(argv[1], "ft_lstlast") == 0) test_lstlast();
+    else if (strcmp(argv[1], "ft_lstadd_back") == 0) test_lstadd_back();
+    else if (strcmp(argv[1], "ft_lstdelone") == 0) test_lstdelone();
+    else if (strcmp(argv[1], "ft_lstclear") == 0) test_lstclear();
+    else if (strcmp(argv[1], "ft_lstiter") == 0) test_lstiter();
+    else if (strcmp(argv[1], "ft_lstmap") == 0) test_lstmap();
+/* All (+Bonus) */
+    else if (strcmp(argv[1], "all_bonus") == 0)
+    {
 			test_isalpha();
 			test_isdigit();
 			test_isalnum();
@@ -548,23 +551,80 @@ int main(int argc, char *argv[])
 			test_bzero();
 			test_memcpy();
 			test_memmove();
-			test_strlcpy();
-			test_strlcat();
+			test_strlcpy(); // OBSOLETO
+			test_strlcat(); // OBSOLETO
 			test_toupper();
 			test_tolower();
 			test_strchr();
 			test_strrchr();
 			test_strncmp();
-			test_memchr();
+			test_memchr(); 
 			test_memcmp();
-			test_strnstr();
+			test_strnstr();  // OBSOLETO
 			test_atoi();
 			test_calloc();
 			test_strdup();
-
-		}
+			test_substr();  // OBSOLETO
+			test_strjoin(); // OBSOLETO
+			test_strtrim(); // OBSOLETO
+			test_split();
+			test_itoa();
+			test_strmapi();
+			test_striteri();
+			test_putchar_fd();
+			test_putstr_fd();
+			test_putendl_fd();
+			test_putnbr_fd();
+			/* BONUS */
+			test_lstnew();
+			test_lstadd_front();
+			test_lstsize();
+			test_lstlast();
+			test_lstadd_back();
+			test_lstdelone();
+			test_lstclear();
+			test_lstiter();
+			test_lstmap();
+    }
+    else if (strcmp(argv[1], "all_mandatory") == 0)
+    {
+	    		test_isalpha();
+			test_isdigit();
+			test_isalnum();
+			test_isascii();
+			test_isprint();
+			test_strlen();
+			test_memset();
+			test_bzero();
+			test_memcpy();
+			test_memmove();
+			test_strlcpy(); // OBSOLETO
+			test_strlcat(); // OBSOLETO
+			test_toupper();
+			test_tolower();
+			test_strchr();
+			test_strrchr();
+			test_strncmp();
+			test_memchr(); 
+			test_memcmp();
+			test_strnstr();  // OBSOLETO
+			test_atoi();
+			test_calloc();
+			test_strdup();
+			test_substr();  // OBSOLETO
+			test_strjoin(); // OBSOLETO
+			test_strtrim(); // OBSOLETO
+			test_split();
+			test_itoa();
+			test_strmapi();
+			test_striteri();
+			test_putchar_fd();
+			test_putstr_fd();
+			test_putendl_fd();
+			test_putnbr_fd();	    
+    }
     else
-		printf("Funcion no reconocida: %s\n", argv[1]);
+	    printf("Funcion no reconocida: %s\n", argv[1]);
 
     return 0;
 }
