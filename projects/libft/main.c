@@ -541,87 +541,87 @@ int main(int argc, char *argv[])
 /* All (+Bonus) */
     else if (strcmp(argv[1], "all_bonus") == 0)
     {
-			test_isalpha();
-			test_isdigit();
-			test_isalnum();
-			test_isascii();
-			test_isprint();
-			test_strlen();
-			test_memset();
-			test_bzero();
-			test_memcpy();
-			test_memmove();
-			test_strlcpy(); // OBSOLETO
-			test_strlcat(); // OBSOLETO
-			test_toupper();
-			test_tolower();
-			test_strchr();
-			test_strrchr();
-			test_strncmp();
-			test_memchr(); 
-			test_memcmp();
-			test_strnstr();  // OBSOLETO
-			test_atoi();
-			test_calloc();
-			test_strdup();
-			test_substr();  // OBSOLETO
-			test_strjoin(); // OBSOLETO
-			test_strtrim(); // OBSOLETO
-			test_split();
-			test_itoa();
-			test_strmapi();
-			test_striteri();
-			test_putchar_fd();
-			test_putstr_fd();
-			test_putendl_fd();
-			test_putnbr_fd();
-			/* BONUS */
-			test_lstnew();
-			test_lstadd_front();
-			test_lstsize();
-			test_lstlast();
-			test_lstadd_back();
-			test_lstdelone();
-			test_lstclear();
-			test_lstiter();
-			test_lstmap();
+	    test_isalpha();
+	    test_isdigit();
+	    test_isalnum();
+	    test_isascii();
+	    test_isprint();
+	    test_strlen();
+	    test_memset();
+	    test_bzero();
+	    test_memcpy();
+	    test_memmove();
+	    test_strlcpy(); // OBSOLETO
+	    test_strlcat(); // OBSOLETO
+	    test_toupper();
+	    test_tolower();
+	    test_strchr();
+	    test_strrchr();
+	    test_strncmp();
+	    test_memchr(); 
+	    test_memcmp();
+	    test_strnstr();  // OBSOLETO
+	    test_atoi();
+	    test_calloc();
+	    test_strdup();
+	    test_substr();  // OBSOLETO
+	    test_strjoin(); // OBSOLETO
+	    test_strtrim(); // OBSOLETO
+	    test_split();
+	    test_itoa();
+	    test_strmapi();
+	    test_striteri();
+	    test_putchar_fd();
+	    test_putstr_fd();
+	    test_putendl_fd();
+	    test_putnbr_fd();
+	/* BONUS */
+	    test_lstnew();
+	    test_lstadd_front();
+	    test_lstsize();
+	    test_lstlast();
+	    test_lstadd_back();
+	    test_lstdelone();
+	    test_lstclear();
+	    test_lstiter();
+	    test_lstmap();
     }
     else if (strcmp(argv[1], "all_mandatory") == 0)
     {
-	    		test_isalpha();
-			test_isdigit();
-			test_isalnum();
-			test_isascii();
-			test_isprint();
-			test_strlen();
-			test_memset();
-			test_bzero();
-			test_memcpy();
-			test_memmove();
-			test_strlcpy(); // OBSOLETO
-			test_strlcat(); // OBSOLETO
-			test_toupper();
-			test_tolower();
-			test_strchr();
-			test_strrchr();
-			test_strncmp();
-			test_memchr(); 
-			test_memcmp();
-			test_strnstr();  // OBSOLETO
-			test_atoi();
-			test_calloc();
-			test_strdup();
-			test_substr();  // OBSOLETO
-			test_strjoin(); // OBSOLETO
-			test_strtrim(); // OBSOLETO
-			test_split();
-			test_itoa();
-			test_strmapi();
-			test_striteri();
-			test_putchar_fd();
-			test_putstr_fd();
-			test_putendl_fd();
-			test_putnbr_fd();	    
+	    test_isalpha();
+	    test_isdigit();
+	    test_isalnum();
+	    test_isascii();
+	    test_isprint();
+	    test_strlen();
+	    test_memset();
+	    test_bzero();
+	    test_memcpy();
+	    test_memmove();
+	    test_strlcpy(); // OBSOLETO
+	    test_strlcat(); // OBSOLETO
+	    test_toupper();
+	    test_tolower();
+	    test_strchr();
+	    test_strrchr();
+	    test_strncmp();
+	    test_memchr(); 
+	    test_memcmp();
+	    test_strnstr();  // OBSOLETO
+	    test_atoi();
+	    test_calloc();
+	    test_strdup();
+	    test_substr();  // OBSOLETO
+	    test_strjoin(); // OBSOLETO
+	    test_strtrim(); // OBSOLETO
+	    test_split();
+	    test_itoa();
+	    test_strmapi();
+	    test_striteri();
+	    test_putchar_fd();
+	    test_putstr_fd();
+	    test_putendl_fd();
+	    test_putnbr_fd();	    
     }
     else
 	    printf("Funcion no reconocida: %s\n", argv[1]);
