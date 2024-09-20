@@ -95,9 +95,6 @@ Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
 Localiza la primera ocurrencia de "c" en la cadena apuntada por "s". El carácter nulo de terminación se considera parte de la cadena, por lo tanto, si "c" es '\0', localiza el '\0' final | Puntero a la cadena | Carácter a localizar | Un puntero a la primera ocurrencia del carácter "c" en la cadena o NULL si no se encuentra el carácter
 
----
-
-¿Te gustaría que continúe con la traducción del archivo completo?
 
 ---
 
@@ -173,9 +170,7 @@ Descripción | Param. #1 | Valor de Retorno
 :-----------: | :-----------: | :-----------:
 Verifica si es un carácter alfabético. Es equivalente a ([ft_isupper](#ft_isupper)(c) o [ft_islower](#ft_islower)(c)) | El carácter a probar | 0 si el carácter es falso y 1 si el carácter es verdadero
 
----
 
-¿Deseas que siga con más funciones?
 ---
 
 ## [ft_isdigit](libft/ft_isdigit.c)
@@ -359,9 +354,7 @@ Descripción | Param. #1 | Valor de Retorno
 :-----------: | :-----------: | :-----------:
 Asigna (con malloc) y devuelve una cadena que representa el entero recibido como argumento. Los números negativos deben ser manejados | El entero a convertir | La cadena que representa el entero. NULL si la asignación falla
 
----
 
-¿Te gustaría continuar con más funciones?
 ---
 
 ## [ft_islower](libft/ft_islower.c)
