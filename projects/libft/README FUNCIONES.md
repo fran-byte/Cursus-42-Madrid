@@ -7,7 +7,6 @@ Descripción | Param. #1 | Valor de Retorno
 Verifica si es un carácter alfabético. Es equivalente a ([ft_isupper](#ft_isupper)(c) o [ft_islower](#ft_islower)(c)) | El carácter a probar | 0 si el carácter es falso y 1 si el carácter es verdadero
 
 
----
 
 ## [ft_isdigit](libft/ft_isdigit.c)
 
@@ -17,7 +16,7 @@ Descripción | Param. #1 | Valor de Retorno
 :-----------: | :-----------: | :-----------:
 Verifica si es un dígito (0 a 9) | El carácter a probar | 0 si el carácter es falso y 1 si el carácter es verdadero
 
----
+
 # [ft_isalnum](libft/ft_isalnum.c)
 
 `int        ft_isalnum(int c)`
@@ -26,7 +25,7 @@ Descripción | Param. #1 | Valor de Retorno
 :-----------: | :-----------: | :-----------:
 Verifica si es un carácter alfanumérico; es equivalente a ([ft_isalpha](#ft_isalpha) o [ft_isdigit](#ft_isdigit)) | El carácter a probar | 0 si el carácter es falso y 1 si el carácter es verdadero
 
----
+
 
 ## [ft_isascii](libft/ft_isascii.c)
 
@@ -36,7 +35,7 @@ Descripción | Param. #1 | Valor de Retorno
 :-----------: | :-----------: | :-----------:
 Verifica si es un carácter ASCII, que es cualquier carácter entre 0 y octal 0177 inclusive | El carácter a probar | 0 si el carácter es falso y 1 si el carácter es verdadero
 
----
+
 
 ## [ft_isprint](libft/ft_isprint.c)
 
@@ -67,53 +66,12 @@ Rellena con "len" bytes de "c" la memoria de "s" | La cadena sobre la que operar
 
 ## [ft_bzero](libft/ft_bzero.c)
 
-`void       *ft_bzero(void *s, size_t n)`
-
-Descripción | Param. #1 | Param. #2 | Valor de Retorno
-:-----------: | :-----------: | :-----------: | :-----------: | :-----------:
-Rellena con 0 "len" bytes de la memoria de "s" | La cadena sobre la que operar | El número de bytes | Un puntero al área de memoria s
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
----
-
-## [ft_memset](libft/ft_memset.c)
-
-`void       *ft_memset(void *s, int c, size_t len)`
-
-Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
-:-----------: | :-----------: | :-----------: | :-----------: | :-----------:
-Rellena con "len" bytes de "c" la memoria de "s" | La cadena sobre la que operar | Valor c (convertido a unsigned char) | El número de bytes | Un puntero al área de memoria s
-
-## [ft_bzero](libft/ft_bzero.c)
-
 `void       *ft_bzero(void *s,  size_t n)`
 
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
 Borra los datos en los "n" bytes de la memoria comenzando en la ubicación señalada por "s", escribiendo ceros | La cadena sobre la que operar | El número de bytes | Ninguno
+
 
 ## [ft_memcpy](libft/ft_memcpy.c)
 
@@ -123,6 +81,14 @@ Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
 Copia "n" bytes del área de memoria "src" a la memoria de "dst". Las áreas de memoria no deben solaparse. Usa [ft_memmove](#ft_memmove) si las áreas de memoria se solapan. | Área de memoria dst | Área de memoria src | El número de bytes | Un puntero al área de memoria dst
 
+## [ft_memmove](libft/ft_memmove.c)
+
+`void       *ft_memmove(void *dst, const void *src, size_t len)`
+
+Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
+:-----------: | :-----------: | :-----------: | :-----------: | :-----------:
+Copia "len" bytes de la memoria de "src" a "dst". Las memorias pueden solaparse. Primero, los bytes en "src" se copian en un arreglo temporal y luego a "dst". | Área de memoria dst | Área de memoria src | El número de bytes | Un puntero al área de memoria dst
+
 ## [ft_memccpy](libft/ft_memccpy.c)
 
 `void       *ft_memccpy(void *dst, const void *src, int c, size_t n)`
@@ -131,13 +97,7 @@ Descripción | Param. #1 | Param. #2 | Param. #3 | Param. #4 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
 Copia "n" bytes del área de memoria "src" al área de memoria "dst", deteniéndose cuando se encuentra el carácter "c", o después de copiar "n" caracteres, lo que ocurra primero. Si la copia se realiza entre objetos que se solapan, el comportamiento es indefinido. | Área de memoria dst | Área de memoria src | Un carácter a buscar | Número de bytes que memccpy() copió | Un puntero al siguiente carácter en "dst" después de "c", o NULL si "c" no se encontró en los primeros "n" bytes
 
-## [ft_memmove](libft/ft_memmove.c)
 
-`void       *ft_memmove(void *dst, const void *src, size_t len)`
-
-Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
-:-----------: | :-----------: | :-----------: | :-----------: | :-----------:
-Copia "len" bytes de la memoria de "src" a "dst". Las memorias pueden solaparse. Primero, los bytes en "src" se copian en un arreglo temporal y luego a "dst". | Área de memoria dst | Área de memoria src | El número de bytes | Un puntero al área de memoria dst
 
 ## [ft_memchr](libft/ft_memchr.c)
 
@@ -260,48 +220,6 @@ Descripción | Param. #1 | Valor de Retorno
 :-----------: | :-----------: | :-----------:
 Convierte una cadena en un entero | La cadena a convertir en entero | El valor convertido
 
-## [ft_isalpha](libft/ft_isalpha.c)
-
-`int        ft_isalpha(int c)`
-
-Descripción | Param. #1 | Valor de Retorno
-:-----------: | :-----------: | :-----------:
-Verifica si es un carácter alfabético. Es equivalente a ([ft_isupper](#ft_isupper)(c) o [ft_islower](#ft_islower)(c)) | El carácter a probar | 0 si el carácter es falso y 1 si el carácter es verdadero
-
-
----
-
-## [ft_isdigit](libft/ft_isdigit.c)
-
-`int         ft_isdigit(int c)`
-
-Descripción | Param. #1 | Valor de Retorno
-:-----------: | :-----------: | :-----------:
-Verifica si es un dígito (0 a 9) | El carácter a probar | 0 si el carácter es falso y 1 si el carácter es verdadero
-
-## [ft_isalnum](libft/ft_isalnum.c)
-
-`int        ft_isalnum(int c)`
-
-Descripción | Param. #1 | Valor de Retorno
-:-----------: | :-----------: | :-----------:
-Verifica si es un carácter alfanumérico; es equivalente a ([ft_isalpha](#ft_isalpha) o [ft_isdigit](#ft_isdigit)) | El carácter a probar | 0 si el carácter es falso y 1 si el carácter es verdadero
-
-## [ft_isascii](libft/ft_isascii.c)
-
-`int        ft_isascii(int c)`
-
-Descripción | Param. #1 | Valor de Retorno
-:-----------: | :-----------: | :-----------:
-Verifica si es un carácter ASCII, que es cualquier carácter entre 0 y octal 0177 inclusive | El carácter a probar | 0 si el carácter es falso y 1 si el carácter es verdadero
-
-## [ft_isprint](libft/ft_isprint.c)
-
-`int        ft_isprint(int c)`
-
-Descripción | Param. #1 | Valor de Retorno
-:-----------: | :-----------: | :-----------:
-Verifica si es un carácter imprimible, incluido el espacio | El carácter a probar | 0 si el carácter es falso y 1 si el carácter es verdadero
 
 ## [ft_toupper](libft/ft_toupper.c)
 
