@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 15:31:49 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/20 15:36:00 by frromero         ###   ########.fr       */
+/*   Updated: 2024/09/20 15:43:24 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -176,511 +176,512 @@ void test_strlcpy()
 	size_t result = ft_strlcpy(dest, src, sizeof(dest));
 	printf("ft_strlcpy(dest, src, sizeof(dest)): %zu\n", result);
 	printf("Destino: %s\n", dest);
-	rlcat()
+}
+void test_strlcat()
+{
+	printf("   __   _                   _            _                  _   \n");
+	printf("  / _| | |_           ___  | |_   _ __  | |   ___    __ _  | |_ \n");
+	printf(" | |_  | __|         / __| | __| | '__| | |  / __|  / _` | | __|\n");
+	printf(" |  _| | |_          \\__ \\ | |_  | |    | | | (__  | (_| | | |_ \n");
+	printf(" |_|    \\__|  _____  |___/  \\__| |_|    |_|  \\___|  \\__,_|  \\__|\n");
+	printf("             |_____|                                            \n");
+	char dest[30] = "Hola";
+	char src[] = " Mundo!";
+	size_t result = ft_strlcat(dest, src, sizeof(dest));
+	printf("Resultado de strlcat: %zu\n", result);
+	printf("Destino: %s\n", dest);
+}
+
+void test_toupper()
+{
+	printf("   __   _             _                                                 \n");
+	printf("  / _| | |_          | |_    ___    _   _   _ __    _ __     ___   _ __ \n");
+	printf(" | |_  | __|         | __|  / _ \\  | | | | | '_ \\  | '_ \\   / _ \\ | '__|\n");
+	printf(" |  _| | |_          | |_  | (_) | | |_| | | |_) | | |_) | |  __/ | |   \n");
+	printf(" |_|    \\__|  _____   \\__|  \\___/   \\__,_| | .__/  | .__/   \\___| |_|   \n");
+	printf("            |_____|                       |_|     |_|                 \n");
+	char c = 'a';
+	printf("ft_toupper('%c') = %c\n", c, ft_toupper(c));
+}
+
+void test_tolower()
+{
+	printf("   __   _             _             _                                  \n");
+	printf("  / _| | |_          | |_    ___   | |   ___   __      __   ___   _ __ \n");
+	printf(" | |_  | __|         | __|  / _ \\  | |  / _ \\  \\ \\ /\\ / /  / _ \\ | '__|\n");
+	printf(" |  _| | |_          | |_  | (_) | | | | (_) |  \\ V  V /  |  __/ | |   \n");
+	printf(" |_|    \\__|  _____   \\__|  \\___/  |_|  \\___/    \\_/\\_/    \\___| |_|   \n");
+	printf("             |_____|                                                   \n");
+	char c = 'A';
+	printf("ft_tolower('%c') = %c\n", c, ft_tolower(c));
+}
+
+void test_strchr()
+{
+	printf("   __   _                   _                   _            \n");
+	printf("  / _| | |_           ___  | |_   _ __    ___  | |__    _ __ \n");
+	printf(" | |_  | __|         / __| | __| | '__|  / __| | '_ \\  | '__|\n");
+	printf(" |  _| | |_          \\__ \\ | |_  | |    | (__  | | | | | |   \n");
+	printf(" |_|    \\__|  _____  |___/  \\__| |_|     \\___| |_| |_| |_|   \n");
+	printf("             |_____|                                         \n");
+	char str[] = "Hola, mundo";
+	char *result = ft_strchr(str, 'm');
+	if (result)
 	{
-		printf("   __   _                   _            _                  _   \n");
-		printf("  / _| | |_           ___  | |_   _ __  | |   ___    __ _  | |_ \n");
-		printf(" | |_  | __|         / __| | __| | '__| | |  / __|  / _` | | __|\n");
-		printf(" |  _| | |_          \\__ \\ | |_  | |    | | | (__  | (_| | | |_ \n");
-		printf(" |_|    \\__|  _____  |___/  \\__| |_|    |_|  \\___|  \\__,_|  \\__|\n");
-		printf("             |_____|                                            \n");
-		char dest[30] = "Hola";
-		char src[] = " Mundo!";
-		size_t result = ft_strlcat(dest, src, sizeof(dest));
-		printf("Resultado de strlcat: %zu\n", result);
-		printf("Destino: %s\n", dest);
+		printf("Buscando primer caracter 'm' en: 'Hola, mundo'\n");
+		printf("Primero: %s\n", result);
 	}
-
-	void test_toupper()
+	else
 	{
-		printf("   __   _             _                                                 \n");
-		printf("  / _| | |_          | |_    ___    _   _   _ __    _ __     ___   _ __ \n");
-		printf(" | |_  | __|         | __|  / _ \\  | | | | | '_ \\  | '_ \\   / _ \\ | '__|\n");
-		printf(" |  _| | |_          | |_  | (_) | | |_| | | |_) | | |_) | |  __/ | |   \n");
-		printf(" |_|    \\__|  _____   \\__|  \\___/   \\__,_| | .__/  | .__/   \\___| |_|   \n");
-		printf("            |_____|                       |_|     |_|                 \n");
-		char c = 'a';
-		printf("ft_toupper('%c') = %c\n", c, ft_toupper(c));
+		printf("No encontrado\n");
 	}
+}
 
-	void test_tolower()
+void test_strrchr()
+{
+	printf("   __   _                   _                          _            \n");
+	printf("  / _| | |_           ___  | |_   _ __   _ __    ___  | |__    _ __ \n");
+	printf(" | |_  | __|         / __| | __| | '__| | '__|  / __| | '_ \\  | '__|\n");
+	printf(" |  _| | |_          \\__ \\ | |_  | |    | |    | (__  | | | | | |   \n");
+	printf(" |_|    \\__|  _____  |___/  \\__| |_|    |_|     \\___| |_| |_| |_|   \n");
+	printf("             |_____|                                                \n");
+	char str[] = "Hello, World!!";
+	char *result = ft_strrchr(str, 'o');
+	printf("Buscando último caracter 'o' en: 'Hello, World!!'\n");
+	if (result)
 	{
-		printf("   __   _             _             _                                  \n");
-		printf("  / _| | |_          | |_    ___   | |   ___   __      __   ___   _ __ \n");
-		printf(" | |_  | __|         | __|  / _ \\  | |  / _ \\  \\ \\ /\\ / /  / _ \\ | '__|\n");
-		printf(" |  _| | |_          | |_  | (_) | | | | (_) |  \\ V  V /  |  __/ | |   \n");
-		printf(" |_|    \\__|  _____   \\__|  \\___/  |_|  \\___/    \\_/\\_/    \\___| |_|   \n");
-		printf("             |_____|                                                   \n");
-		char c = 'A';
-		printf("ft_tolower('%c') = %c\n", c, ft_tolower(c));
+		printf("Último: %s\n", result);
 	}
-
-	void test_strchr()
+	else
 	{
-		printf("   __   _                   _                   _            \n");
-		printf("  / _| | |_           ___  | |_   _ __    ___  | |__    _ __ \n");
-		printf(" | |_  | __|         / __| | __| | '__|  / __| | '_ \\  | '__|\n");
-		printf(" |  _| | |_          \\__ \\ | |_  | |    | (__  | | | | | |   \n");
-		printf(" |_|    \\__|  _____  |___/  \\__| |_|     \\___| |_| |_| |_|   \n");
-		printf("             |_____|                                         \n");
-		char str[] = "Hola, mundo";
-		char *result = ft_strchr(str, 'm');
-		if (result)
-		{
-			printf("Buscando primer caracter 'm' en: 'Hola, mundo'\n");
-			printf("Primero: %s\n", result);
-		}
-		else
-		{
-			printf("No encontrado\n");
-		}
+		printf("No encontrado\n");
 	}
+}
 
-	void test_strrchr()
+void test_strncmp()
+{
+	printf("   __   _                   _                                             \n");
+	printf("  / _| | |_           ___  | |_   _ __   _ __     ___   _ __ ___    _ __  \n");
+	printf(" | |_  | __|         / __| | __| | '__| | '_ \\   / __| | '_ ` _ \\  | '_ \ \n");
+	printf(" |  _| | |_          \\__ \\ | |_  | |    | | | | | (__  | | | | | | | |_) |\n");
+	printf(" |_|    \\__|  _____  |___/  \\__| |_|    |_| |_|  \\___| |_| |_| |_| | .__/ \n");
+	printf("             |_____|                                               |_|    \n");
+	char *str1 = "Hola";
+	char *str2 = "Hola42Madrid";
+	printf("str1: 'Hola'\n");
+	printf("str2: 'Hola42Madrid'\n");
+	printf("ft_strncmp(str1, str2, 4) = %d\n", ft_strncmp(str1, str2, 4));
+	printf("ft_strncmp(str1, str2, 6) = %d\n", ft_strncmp(str1, str2, 6));
+}
+
+void test_memchr()
+{
+	printf("   __   _                                                   _            \n");
+	printf("  / _| | |_           _ __ ___     ___   _ __ ___     ___  | |__    _ __ \n");
+	printf(" | |_  | __|         | '_ ` _ \\   / _ \\ | '_ ` _ \\   / __| | '_ \\  | '__|\n");
+	printf(" |  _| | |_          | | | | | | |  __/ | | | | | | | (__  | | | | | |   \n");
+	printf(" |_|    \\__|  _____  |_| |_| |_|  \\___| |_| |_| |_|  \\___| |_| |_| |_|   \n");
+	printf("             |_____|                                                     \n");
+	char str[] = "Hola42Madrid";
+	char *result = ft_memchr(str, '4', ft_strlen(str));
+	printf("str: 'Hola42Madrid'\n");
+	printf("ft_memchr(str, '4', ft_strlen(str))");
+	if (result)
 	{
-		printf("   __   _                   _                          _            \n");
-		printf("  / _| | |_           ___  | |_   _ __   _ __    ___  | |__    _ __ \n");
-		printf(" | |_  | __|         / __| | __| | '__| | '__|  / __| | '_ \\  | '__|\n");
-		printf(" |  _| | |_          \\__ \\ | |_  | |    | |    | (__  | | | | | |   \n");
-		printf(" |_|    \\__|  _____  |___/  \\__| |_|    |_|     \\___| |_| |_| |_|   \n");
-		printf("             |_____|                                                \n");
-		char str[] = "Hello, World!!";
-		char *result = ft_strrchr(str, 'o');
-		printf("Buscando último caracter 'o' en: 'Hello, World!!'\n");
-		if (result)
-		{
-			printf("Último: %s\n", result);
-		}
-		else
-		{
-			printf("No encontrado\n");
-		}
+		printf("\nEncontrado: '4' %s\n", result);
 	}
-
-	void test_strncmp()
+	else
 	{
-		printf("   __   _                   _                                             \n");
-		printf("  / _| | |_           ___  | |_   _ __   _ __     ___   _ __ ___    _ __  \n");
-		printf(" | |_  | __|         / __| | __| | '__| | '_ \\   / __| | '_ ` _ \\  | '_ \ \n");
-		printf(" |  _| | |_          \\__ \\ | |_  | |    | | | | | (__  | | | | | | | |_) |\n");
-		printf(" |_|    \\__|  _____  |___/  \\__| |_|    |_| |_|  \\___| |_| |_| |_| | .__/ \n");
-		printf("             |_____|                                               |_|    \n");
-		char *str1 = "Hola";
-		char *str2 = "Hola42Madrid";
-		printf("str1: 'Hola'\n");
-		printf("str2: 'Hola42Madrid'\n");
-		printf("ft_strncmp(str1, str2, 4) = %d\n", ft_strncmp(str1, str2, 4));
-		printf("ft_strncmp(str1, str2, 6) = %d\n", ft_strncmp(str1, str2, 6));
+		printf("No encontrado\n");
 	}
+}
 
-	void test_memchr()
+void test_memcmp()
+{
+	printf("   __   _                                                                     \n");
+	printf("  / _| | |_           _ __ ___     ___   _ __ ___     ___   _ __ ___    _ __  \n");
+	printf(" | |_  | __|         | '_ ` _ \\   / _ \\ | '_ ` _ \\   / __| | '_ ` _ \\  | '_ \ \n");
+	printf(" |  _| | |_          | | | | | | |  __/ | | | | | | | (__  | | | | | | | |_) |\n");
+	printf(" |_|    \\__|  _____  |_| |_| |_|  \\___| |_| |_| |_|  \\___| |_| |_| |_| | .__/ \n");
+	printf("             |_____|                                                   |_|    \n");
+	char *str1 = "Hola42Madrid";
+	char *str2 = "Hola42Madrid";
+	char *str3 = "Hola43";
+	printf("\n*str1 = \"Hola42Madrid\"");
+	printf("\n*str2 = \"Hola42Madrid\"");
+	printf("\n*str3 = \"Hola43\"\n");
+	printf("ft_memcmp(str1, str2, 4) = %d\n", ft_memcmp(str1, str2, 4));
+	printf("ft_memcmp(str1, str3, 6) = %d\n", ft_memcmp(str1, str3, 6));
+}
+
+void test_strnstr()
+{
+	printf("   __   _                   _                          _          \n");
+	printf("  / _| | |_           ___  | |_   _ __   _ __    ___  | |_   _ __ \n");
+	printf(" | |_  | __|         / __| | __| | '__| | '_ \\  / __| | __| | '__|\n");
+	printf(" |  _| | |_          \\__ \\ | |_  | |    | | | | \\__ \\ | |_  | |   \n");
+	printf(" |_|    \\__|  _____  |___/  \\__| |_|    |_| |_| |___/  \\__| |_|   \n");
+	printf("             |_____|                                              \n");
+	char *str = "Hola42Madrid";
+	char *substr = "42";
+	char *result = ft_strnstr(str, substr, ft_strlen(str));
+	printf("ftstrnstr(str, substr, ft_strlen(str))");
+	if (result)
 	{
-		printf("   __   _                                                   _            \n");
-		printf("  / _| | |_           _ __ ___     ___   _ __ ___     ___  | |__    _ __ \n");
-		printf(" | |_  | __|         | '_ ` _ \\   / _ \\ | '_ ` _ \\   / __| | '_ \\  | '__|\n");
-		printf(" |  _| | |_          | | | | | | |  __/ | | | | | | | (__  | | | | | |   \n");
-		printf(" |_|    \\__|  _____  |_| |_| |_|  \\___| |_| |_| |_|  \\___| |_| |_| |_|   \n");
-		printf("             |_____|                                                     \n");
-		char str[] = "Hola42Madrid";
-		char *result = ft_memchr(str, '4', ft_strlen(str));
-		printf("str: 'Hola42Madrid'\n");
-		printf("ft_memchr(str, '4', ft_strlen(str))");
-		if (result)
-		{
-			printf("\nEncontrado: '4' %s\n", result);
-		}
-		else
-		{
-			printf("No encontrado\n");
-		}
+		printf("Encontrado: %s\n", result);
 	}
-
-	void test_memcmp()
+	else
 	{
-		printf("   __   _                                                                     \n");
-		printf("  / _| | |_           _ __ ___     ___   _ __ ___     ___   _ __ ___    _ __  \n");
-		printf(" | |_  | __|         | '_ ` _ \\   / _ \\ | '_ ` _ \\   / __| | '_ ` _ \\  | '_ \ \n");
-		printf(" |  _| | |_          | | | | | | |  __/ | | | | | | | (__  | | | | | | | |_) |\n");
-		printf(" |_|    \\__|  _____  |_| |_| |_|  \\___| |_| |_| |_|  \\___| |_| |_| |_| | .__/ \n");
-		printf("             |_____|                                                   |_|    \n");
-		char *str1 = "Hola42Madrid";
-		char *str2 = "Hola42Madrid";
-		char *str3 = "Hola43";
-		printf("\n*str1 = \"Hola42Madrid\"");
-		printf("\n*str2 = \"Hola42Madrid\"");
-		printf("\n*str3 = \"Hola43\"\n");
-		printf("ft_memcmp(str1, str2, 4) = %d\n", ft_memcmp(str1, str2, 4));
-		printf("ft_memcmp(str1, str3, 6) = %d\n", ft_memcmp(str1, str3, 6));
+		printf("No encontrado\n");
 	}
+}
 
-	void test_strnstr()
+void test_atoi()
+{
+	printf("   __   _                     _             _ \n");
+	printf("  / _| | |_            __ _  | |_    ___   (_)\n");
+	printf(" | |_  | __|          / _` | | __|  / _ \\  | |\n");
+	printf(" |  _| | |_          | (_| | | |_  | (_) | | |\n");
+	printf(" |_|    \\__|  _____   \\__,_|  \\__|  \\___/  |_|\n");
+	printf("             |_____|                          	\n");
+	char *num_str = "123459";
+	char *neg_num_str = "-9576";
+	char *invalid_num_str = "12asd34";
+	printf("ft_atoi(\"%s\") = %d\n", num_str, ft_atoi(num_str));
+	printf("ft_atoi(\"%s\") = %d\n", neg_num_str, ft_atoi(neg_num_str));
+	printf("ft_atoi(\"%s\") = %d\n", invalid_num_str, ft_atoi(invalid_num_str));
+}
+
+void test_calloc()
+{
+	printf("   __   _                            _   _                \n");
+	printf("  / _| | |_            ___    __ _  | | | |   ___     ___ \n");
+	printf(" | |_  | __|          / __|  / _` | | | | |  / _ \\   / __|\n");
+	printf(" |  _| | |_          | (__  | (_| | | | | | | (_) | | (__ \n");
+	printf(" |_|    \\__|  _____   \\___|  \\__,_| |_| |_|  \\___/   \\___|\n");
+	printf("            |_____|                                      \n");
+	int i = 0;
+	int *arr = (int *)ft_calloc(5, sizeof(int));
+	printf("int *arr = (int *)ft_calloc(5, sizeof(int))");
+	while (i < 5)
 	{
-		printf("   __   _                   _                          _          \n");
-		printf("  / _| | |_           ___  | |_   _ __   _ __    ___  | |_   _ __ \n");
-		printf(" | |_  | __|         / __| | __| | '__| | '_ \\  / __| | __| | '__|\n");
-		printf(" |  _| | |_          \\__ \\ | |_  | |    | | | | \\__ \\ | |_  | |   \n");
-		printf(" |_|    \\__|  _____  |___/  \\__| |_|    |_| |_| |___/  \\__| |_|   \n");
-		printf("             |_____|                                              \n");
-		char *str = "Hola42Madrid";
-		char *substr = "42";
-		char *result = ft_strnstr(str, substr, ft_strlen(str));
-		printf("ftstrnstr(str, substr, ft_strlen(str))");
-		if (result)
-		{
-			printf("Encontrado: %s\n", result);
-		}
-		else
-		{
-			printf("No encontrado\n");
-		}
+		printf("arr[%d] = %d\n", i, arr[i]);
+		i++;
 	}
+	free(arr);
+}
 
-	void test_atoi()
-	{
-		printf("   __   _                     _             _ \n");
-		printf("  / _| | |_            __ _  | |_    ___   (_)\n");
-		printf(" | |_  | __|          / _` | | __|  / _ \\  | |\n");
-		printf(" |  _| | |_          | (_| | | |_  | (_) | | |\n");
-		printf(" |_|    \\__|  _____   \\__,_|  \\__|  \\___/  |_|\n");
-		printf("             |_____|                          	\n");
-		char *num_str = "123459";
-		char *neg_num_str = "-9576";
-		char *invalid_num_str = "12asd34";
-		printf("ft_atoi(\"%s\") = %d\n", num_str, ft_atoi(num_str));
-		printf("ft_atoi(\"%s\") = %d\n", neg_num_str, ft_atoi(neg_num_str));
-		printf("ft_atoi(\"%s\") = %d\n", invalid_num_str, ft_atoi(invalid_num_str));
+void test_strdup()
+{
+	printf("   __   _                   _                _                 \n");
+	printf("  / _| | |_           ___  | |_   _ __    __| |  _   _   _ __  \n");
+	printf(" | |_  | __|         / __| | __| | '__|  / _` | | | | | | '_ \\ \n");
+	printf(" |  _| | |_          \\__ \\ | |_  | |    | (_| | | |_| | | |_) |\n");
+	printf(" |_|    \\__|  _____  |___/  \\__| |_|     \\__,_|  \\__,_| | .__/ \n");
+	printf("             |_____|                                    |_|    \n");
+	char *str = "Hola42Madrid";
+	char *duplicated = ft_strdup(str);
+	printf("ft_strdup(str)\n");
+	printf("Cadena original: %s\n", str);
+	printf("Cadena duplicada: %s\n", duplicated);
+	free(duplicated);
+}
+
+/*
+
+void test_substr()
+{
+	char *str = "Hola mundo";
+	char *sub = substr(str + 5, 5);  // "mundo"
+	printf("Probando substr:\n");
+	printf("Subcadena: %s\n", sub);
+	free(sub);
+}
+
+void test_strjoin()
+{
+
+}
+
+
+void test_strtrim()
+{
+	char *str = "   Hola mundo   ";
+	char *trimmed = str + 3; // Simulación de recortar los espacios de inicio y fin
+	printf("Probando strtrim:\n");
+	trimmed[strlen(trimmed) - 3] = '\0';  // Simulación de recortar el final
+	printf("Cadena recortada: '%s'\n", trimmed);
+}
+
+void test_split()
+{
+	printf("Probando split:\n");
+	char *str = "Hola mundo de C";
+	char *token = strtok(str, " ");
+	while (token) {
+		printf("Token: %s\n", token);
+		token = strtok(NULL, " ");
 	}
+}
 
-	void test_calloc()
-	{
-		printf("   __   _                            _   _                \n");
-		printf("  / _| | |_            ___    __ _  | | | |   ___     ___ \n");
-		printf(" | |_  | __|          / __|  / _` | | | | |  / _ \\   / __|\n");
-		printf(" |  _| | |_          | (__  | (_| | | | | | | (_) | | (__ \n");
-		printf(" |_|    \\__|  _____   \\___|  \\__,_| |_| |_|  \\___/   \\___|\n");
-		printf("            |_____|                                      \n");
-		int i = 0;
-		int *arr = (int *)ft_calloc(5, sizeof(int));
-		printf("int *arr = (int *)ft_calloc(5, sizeof(int))");
-		while (i < 5)
-		{
-			printf("arr[%d] = %d\n", i, arr[i]);
-			i++;
-		}
-		free(arr);
+void test_itoa()
+{
+	int num = 12345;
+	char buffer[20];
+	printf("Probando itoa:\n");
+	printf("Probando itoa:\n");
+	snprintf(buffer, sizeof(buffer), "%d", num);  // Simulación de itoa
+	printf("itoa(%d) = %s\n", num, buffer);
+}
+
+void test_strmapi()
+{
+	printf("Probando strmapi:\n");
+	char *str = "abc";
+	char *mapped = strdup(str);
+	for (int i = 0; mapped[i]; i++) {
+		mapped[i] = mapped[i] + 1;  // Simple modificación de la cadena
 	}
+	printf("Cadena modificada: %s\n", mapped);
+	free(mapped);
+}
 
-	void test_strdup()
-	{
-		printf("   __   _                   _                _                 \n");
-		printf("  / _| | |_           ___  | |_   _ __    __| |  _   _   _ __  \n");
-		printf(" | |_  | __|         / __| | __| | '__|  / _` | | | | | | '_ \\ \n");
-		printf(" |  _| | |_          \\__ \\ | |_  | |    | (_| | | |_| | | |_) |\n");
-		printf(" |_|    \\__|  _____  |___/  \\__| |_|     \\__,_|  \\__,_| | .__/ \n");
-		printf("             |_____|                                    |_|    \n");
-		char *str = "Hola42Madrid";
-		char *duplicated = ft_strdup(str);
-		printf("ft_strdup(str)\n");
-		printf("Cadena original: %s\n", str);
-		printf("Cadena duplicada: %s\n", duplicated);
-		free(duplicated);
+void test_striteri()
+{
+	printf("Probando striteri:\n");
+	char str[] = "abc";
+	for (int i = 0; str[i]; i++) {
+		str[i] = str[i] + i;  // Modificación en función de la posición
 	}
+	printf("Cadena iterada: %s\n", str);
+}
 
-	/*
-
-	void test_substr()
-	{
-		char *str = "Hola mundo";
-		char *sub = substr(str + 5, 5);  // "mundo"
-		printf("Probando substr:\n");
-		printf("Subcadena: %s\n", sub);
-		free(sub);
+void test_putchar_fd()
+{
+	printf("Probando putchar_fd:\n");
+	int fd = open("output.txt", O_WRONLY | O_CREAT, 0644);
+	if (fd != -1) {
+		write(fd, "A", 1);  // Simulación de putchar_fd
+		close(fd);
 	}
+}
 
-	void test_strjoin()
-	{
-
+void test_putstr_fd() {
+	printf("Probando putstr_fd:\n");
+	int fd = open("output.txt", O_WRONLY | O_CREAT, 0644);
+	if (fd != -1) {
+		write(fd, "Hola mundo\n", 11);  // Simulación de putstr_fd
+		close(fd);
 	}
+}
 
-
-	void test_strtrim()
-	{
-		char *str = "   Hola mundo   ";
-		char *trimmed = str + 3; // Simulación de recortar los espacios de inicio y fin
-		printf("Probando strtrim:\n");
-		trimmed[strlen(trimmed) - 3] = '\0';  // Simulación de recortar el final
-		printf("Cadena recortada: '%s'\n", trimmed);
+void test_putendl_fd()
+{
+	printf("Probando putendl_fd:\n");
+	int fd = open("output.txt", O_WRONLY | O_CREAT, 0644);
+	if (fd != -1) {
+		write(fd, "Hola mundo\n", 11);  // Simulación de putendl_fd
+		close(fd);
 	}
+}
 
-	void test_split()
-	{
-		printf("Probando split:\n");
-		char *str = "Hola mundo de C";
-		char *token = strtok(str, " ");
-		while (token) {
-			printf("Token: %s\n", token);
-			token = strtok(NULL, " ");
-		}
-	}
-
-	void test_itoa()
-	{
-		int num = 12345;
+void test_putnbr_fd()
+{
+	printf("Probando putnbr_fd:\n");
+	int fd = open("output.txt", O_WRONLY | O_CREAT, 0644);
+	if (fd != -1) {
 		char buffer[20];
-		printf("Probando itoa:\n");
-		printf("Probando itoa:\n");
-		snprintf(buffer, sizeof(buffer), "%d", num);  // Simulación de itoa
-		printf("itoa(%d) = %s\n", num, buffer);
+		int num = 12345;
+		snprintf(buffer, sizeof(buffer), "%d", num);  // Simulación de putnbr_fd
+		write(fd, buffer, strlen(buffer));
+		close(fd);
 	}
+}
+*/
 
-	void test_strmapi()
+int main(int argc, char *argv[])
+{
+	if (argc < 2)
 	{
-		printf("Probando strmapi:\n");
-		char *str = "abc";
-		char *mapped = strdup(str);
-		for (int i = 0; mapped[i]; i++) {
-			mapped[i] = mapped[i] + 1;  // Simple modificación de la cadena
-		}
-		printf("Cadena modificada: %s\n", mapped);
-		free(mapped);
+		printf("Uso: %s <funcion>\n", argv[0]);
+		return 1;
 	}
-
-	void test_striteri()
+	/* Parte 1 Funciones de libc */
+	if (strcmp(argv[1], "ft_isalpha") == 0)
+		test_isalpha();
+	else if (strcmp(argv[1], "ft_isdigit") == 0)
+		test_isdigit();
+	else if (strcmp(argv[1], "ft_isalnum") == 0)
+		test_isalnum();
+	else if (strcmp(argv[1], "ft_isascii") == 0)
+		test_isascii();
+	else if (strcmp(argv[1], "ft_isprint") == 0)
+		test_isprint();
+	else if (strcmp(argv[1], "ft_strlen") == 0)
+		test_strlen();
+	else if (strcmp(argv[1], "ft_memset") == 0)
+		test_memset();
+	else if (strcmp(argv[1], "ft_bzero") == 0)
+		test_bzero();
+	else if (strcmp(argv[1], "ft_memcpy") == 0)
+		test_memcpy();
+	else if (strcmp(argv[1], "ft_memmove") == 0)
+		test_memmove();
+	else if (strcmp(argv[1], "ft_strlcpy") == 0)
+		test_strlcpy(); // OBSOLETO
+	else if (strcmp(argv[1], "ft_strlcat") == 0)
+		test_strlcat(); // OBSOLETO
+	else if (strcmp(argv[1], "ft_toupper") == 0)
+		test_toupper();
+	else if (strcmp(argv[1], "ft_tolower") == 0)
+		test_tolower();
+	else if (strcmp(argv[1], "ft_strchr") == 0)
+		test_strchr();
+	else if (strcmp(argv[1], "ft_strrchr") == 0)
+		test_strrchr();
+	else if (strcmp(argv[1], "ft_strncmp") == 0)
+		test_strncmp();
+	else if (strcmp(argv[1], "ft_memchr") == 0)
+		test_memchr();
+	else if (strcmp(argv[1], "ft_memcmp") == 0)
+		test_memcmp();
+	else if (strcmp(argv[1], "ft_strnstr") == 0)
+		test_strnstr(); // OBSOLETO
+	else if (strcmp(argv[1], "ft_atoi") == 0)
+		test_atoi();
+	else if (strcmp(argv[1], "ft_calloc") == 0)
+		test_calloc();
+	else if (strcmp(argv[1], "ft_strdup") == 0)
+		test_strdup();
+	/*	Parte 2 - Funciones adicionales	*/
+	else if (strcmp(argv[1], "ft_substr") == 0)
+		test_substr(); // OBSOLETO
+	else if (strcmp(argv[1], "ft_strjoin") == 0)
+		test_strjoin(); // OBSOLETO
+	else if (strcmp(argv[1], "ft_strtrim") == 0)
+		test_strtrim(); // OBSOLETO
+	else if (strcmp(argv[1], "ft_split") == 0)
+		test_split();
+	else if (strcmp(argv[1], "ft_itoa") == 0)
+		test_itoa();
+	else if (strcmp(argv[1], "ft_strmapi") == 0)
+		test_strmapi();
+	else if (strcmp(argv[1], "ft_striteri") == 0)
+		test_striteri();
+	else if (strcmp(argv[1], "ft_putchar_fd") == 0)
+		test_putchar_fd();
+	else if (strcmp(argv[1], "ft_putstr_fd") == 0)
+		test_putstr_fd();
+	else if (strcmp(argv[1], "ft_putendl_fd") == 0)
+		test_putendl_fd();
+	else if (strcmp(argv[1], "ft_putnbr_fd") == 0)
+		test_putnbr_fd();
+	/* ** BONUS ** */
+	else if (strcmp(argv[1], "ft_lstnew") == 0)
+		test_lstnew();
+	else if (strcmp(argv[1], "ft_lstadd_front") == 0)
+		test_lstadd_front();
+	else if (strcmp(argv[1], "ft_lstsize") == 0)
+		test_lstsize();
+	else if (strcmp(argv[1], "ft_lstlast") == 0)
+		test_lstlast();
+	else if (strcmp(argv[1], "ft_lstadd_back") == 0)
+		test_lstadd_back();
+	else if (strcmp(argv[1], "ft_lstdelone") == 0)
+		test_lstdelone();
+	else if (strcmp(argv[1], "ft_lstclear") == 0)
+		test_lstclear();
+	else if (strcmp(argv[1], "ft_lstiter") == 0)
+		test_lstiter();
+	else if (strcmp(argv[1], "ft_lstmap") == 0)
+		test_lstmap();
+	/* All (+Bonus) */
+	else if (strcmp(argv[1], "all_bonus") == 0)
 	{
-		printf("Probando striteri:\n");
-		char str[] = "abc";
-		for (int i = 0; str[i]; i++) {
-			str[i] = str[i] + i;  // Modificación en función de la posición
-		}
-		printf("Cadena iterada: %s\n", str);
-	}
-
-	void test_putchar_fd()
-	{
-		printf("Probando putchar_fd:\n");
-		int fd = open("output.txt", O_WRONLY | O_CREAT, 0644);
-		if (fd != -1) {
-			write(fd, "A", 1);  // Simulación de putchar_fd
-			close(fd);
-		}
-	}
-
-	void test_putstr_fd() {
-		printf("Probando putstr_fd:\n");
-		int fd = open("output.txt", O_WRONLY | O_CREAT, 0644);
-		if (fd != -1) {
-			write(fd, "Hola mundo\n", 11);  // Simulación de putstr_fd
-			close(fd);
-		}
-	}
-
-	void test_putendl_fd()
-	{
-		printf("Probando putendl_fd:\n");
-		int fd = open("output.txt", O_WRONLY | O_CREAT, 0644);
-		if (fd != -1) {
-			write(fd, "Hola mundo\n", 11);  // Simulación de putendl_fd
-			close(fd);
-		}
-	}
-
-	void test_putnbr_fd()
-	{
-		printf("Probando putnbr_fd:\n");
-		int fd = open("output.txt", O_WRONLY | O_CREAT, 0644);
-		if (fd != -1) {
-			char buffer[20];
-			int num = 12345;
-			snprintf(buffer, sizeof(buffer), "%d", num);  // Simulación de putnbr_fd
-			write(fd, buffer, strlen(buffer));
-			close(fd);
-		}
-	}
-	*/
-
-	int main(int argc, char *argv[])
-	{
-		if (argc < 2)
-		{
-			printf("Uso: %s <funcion>\n", argv[0]);
-			return 1;
-		}
-		/* Parte 1 Funciones de libc */
-		if (strcmp(argv[1], "ft_isalpha") == 0)
-			test_isalpha();
-		else if (strcmp(argv[1], "ft_isdigit") == 0)
-			test_isdigit();
-		else if (strcmp(argv[1], "ft_isalnum") == 0)
-			test_isalnum();
-		else if (strcmp(argv[1], "ft_isascii") == 0)
-			test_isascii();
-		else if (strcmp(argv[1], "ft_isprint") == 0)
-			test_isprint();
-		else if (strcmp(argv[1], "ft_strlen") == 0)
-			test_strlen();
-		else if (strcmp(argv[1], "ft_memset") == 0)
-			test_memset();
-		else if (strcmp(argv[1], "ft_bzero") == 0)
-			test_bzero();
-		else if (strcmp(argv[1], "ft_memcpy") == 0)
-			test_memcpy();
-		else if (strcmp(argv[1], "ft_memmove") == 0)
-			test_memmove();
-		else if (strcmp(argv[1], "ft_strlcpy") == 0)
-			test_strlcpy(); // OBSOLETO
-		else if (strcmp(argv[1], "ft_strlcat") == 0)
-			test_strlcat(); // OBSOLETO
-		else if (strcmp(argv[1], "ft_toupper") == 0)
-			test_toupper();
-		else if (strcmp(argv[1], "ft_tolower") == 0)
-			test_tolower();
-		else if (strcmp(argv[1], "ft_strchr") == 0)
-			test_strchr();
-		else if (strcmp(argv[1], "ft_strrchr") == 0)
-			test_strrchr();
-		else if (strcmp(argv[1], "ft_strncmp") == 0)
-			test_strncmp();
-		else if (strcmp(argv[1], "ft_memchr") == 0)
-			test_memchr();
-		else if (strcmp(argv[1], "ft_memcmp") == 0)
-			test_memcmp();
-		else if (strcmp(argv[1], "ft_strnstr") == 0)
-			test_strnstr(); // OBSOLETO
-		else if (strcmp(argv[1], "ft_atoi") == 0)
-			test_atoi();
-		else if (strcmp(argv[1], "ft_calloc") == 0)
-			test_calloc();
-		else if (strcmp(argv[1], "ft_strdup") == 0)
-			test_strdup();
-		/* Parte 2 - Funciones adicionales */
-		else if (strcmp(argv[1], "ft_substr") == 0)
-			test_substr(); // OBSOLETO
-		else if (strcmp(argv[1], "ft_strjoin") == 0)
-			test_strjoin(); // OBSOLETO
-		else if (strcmp(argv[1], "ft_strtrim") == 0)
-			test_strtrim(); // OBSOLETO
-		else if (strcmp(argv[1], "ft_split") == 0)
-			test_split();
-		else if (strcmp(argv[1], "ft_itoa") == 0)
-			test_itoa();
-		else if (strcmp(argv[1], "ft_strmapi") == 0)
-			test_strmapi();
-		else if (strcmp(argv[1], "ft_striteri") == 0)
-			test_striteri();
-		else if (strcmp(argv[1], "ft_putchar_fd") == 0)
-			test_putchar_fd();
-		else if (strcmp(argv[1], "ft_putstr_fd") == 0)
-			test_putstr_fd();
-		else if (strcmp(argv[1], "ft_putendl_fd") == 0)
-			test_putendl_fd();
-		else if (strcmp(argv[1], "ft_putnbr_fd") == 0)
-			test_putnbr_fd();
+		test_isalpha();
+		test_isdigit();
+		test_isalnum();
+		test_isascii();
+		test_isprint();
+		test_strlen();
+		test_memset();
+		test_bzero();
+		test_memcpy();
+		test_memmove();
+		test_strlcpy(); // OBSOLETO
+		test_strlcat(); // OBSOLETO
+		test_toupper();
+		test_tolower();
+		test_strchr();
+		test_strrchr();
+		test_strncmp();
+		test_memchr();
+		test_memcmp();
+		test_strnstr(); // OBSOLETO
+		test_atoi();
+		test_calloc();
+		test_strdup();
+		test_substr();	// OBSOLETO
+		test_strjoin(); // OBSOLETO
+		test_strtrim(); // OBSOLETO
+		test_split();
+		test_itoa();
+		test_strmapi();
+		test_striteri();
+		test_putchar_fd();
+		test_putstr_fd();
+		test_putendl_fd();
+		test_putnbr_fd();
 		/* BONUS */
-		else if (strcmp(argv[1], "ft_lstnew") == 0)
-			test_lstnew();
-		else if (strcmp(argv[1], "ft_lstadd_front") == 0)
-			test_lstadd_front();
-		else if (strcmp(argv[1], "ft_lstsize") == 0)
-			test_lstsize();
-		else if (strcmp(argv[1], "ft_lstlast") == 0)
-			test_lstlast();
-		else if (strcmp(argv[1], "ft_lstadd_back") == 0)
-			test_lstadd_back();
-		else if (strcmp(argv[1], "ft_lstdelone") == 0)
-			test_lstdelone();
-		else if (strcmp(argv[1], "ft_lstclear") == 0)
-			test_lstclear();
-		else if (strcmp(argv[1], "ft_lstiter") == 0)
-			test_lstiter();
-		else if (strcmp(argv[1], "ft_lstmap") == 0)
-			test_lstmap();
-		/* All (+Bonus) */
-		else if (strcmp(argv[1], "all_bonus") == 0)
-		{
-			test_isalpha();
-			test_isdigit();
-			test_isalnum();
-			test_isascii();
-			test_isprint();
-			test_strlen();
-			test_memset();
-			test_bzero();
-			test_memcpy();
-			test_memmove();
-			test_strlcpy(); // OBSOLETO
-			test_strlcat(); // OBSOLETO
-			test_toupper();
-			test_tolower();
-			test_strchr();
-			test_strrchr();
-			test_strncmp();
-			test_memchr();
-			test_memcmp();
-			test_strnstr(); // OBSOLETO
-			test_atoi();
-			test_calloc();
-			test_strdup();
-			test_substr();	// OBSOLETO
-			test_strjoin(); // OBSOLETO
-			test_strtrim(); // OBSOLETO
-			test_split();
-			test_itoa();
-			test_strmapi();
-			test_striteri();
-			test_putchar_fd();
-			test_putstr_fd();
-			test_putendl_fd();
-			test_putnbr_fd();
-			/* BONUS */
-			test_lstnew();
-			test_lstadd_front();
-			test_lstsize();
-			test_lstlast();
-			test_lstadd_back();
-			test_lstdelone();
-			test_lstclear();
-			test_lstiter();
-			test_lstmap();
-		}
-		else if (strcmp(argv[1], "all_mandatory") == 0)
-		{
-			test_isalpha();
-			test_isdigit();
-			test_isalnum();
-			test_isascii();
-			test_isprint();
-			test_strlen();
-			test_memset();
-			test_bzero();
-			test_memcpy();
-			test_memmove();
-			test_strlcpy(); // OBSOLETO
-			test_strlcat(); // OBSOLETO
-			test_toupper();
-			test_tolower();
-			test_strchr();
-			test_strrchr();
-			test_strncmp();
-			test_memchr();
-			test_memcmp();
-			test_strnstr(); // OBSOLETO
-			test_atoi();
-			test_calloc();
-			test_strdup();
-			test_substr();	// OBSOLETO
-			test_strjoin(); // OBSOLETO
-			test_strtrim(); // OBSOLETO
-			test_split();
-			test_itoa();
-			test_strmapi();
-			test_striteri();
-			test_putchar_fd();
-			test_putstr_fd();
-			test_putendl_fd();
-			test_putnbr_fd();
-		}
-		else
-			printf("Funcion no encontrada: %s\n", argv[1]);
-
-		return 0;
+		test_lstnew();
+		test_lstadd_front();
+		test_lstsize();
+		test_lstlast();
+		test_lstadd_back();
+		test_lstdelone();
+		test_lstclear();
+		test_lstiter();
+		test_lstmap();
 	}
+	else if (strcmp(argv[1], "all_mandatory") == 0)
+	{
+		test_isalpha();
+		test_isdigit();
+		test_isalnum();
+		test_isascii();
+		test_isprint();
+		test_strlen();
+		test_memset();
+		test_bzero();
+		test_memcpy();
+		test_memmove();
+		test_strlcpy(); // OBSOLETO
+		test_strlcat(); // OBSOLETO
+		test_toupper();
+		test_tolower();
+		test_strchr();
+		test_strrchr();
+		test_strncmp();
+		test_memchr();
+		test_memcmp();
+		test_strnstr(); // OBSOLETO
+		test_atoi();
+		test_calloc();
+		test_strdup();
+		test_substr();	// OBSOLETO
+		test_strjoin(); // OBSOLETO
+		test_strtrim(); // OBSOLETO
+		test_split();
+		test_itoa();
+		test_strmapi();
+		test_striteri();
+		test_putchar_fd();
+		test_putstr_fd();
+		test_putendl_fd();
+		test_putnbr_fd();
+	}
+	else
+		printf("Funcion no encontrada: %s\n", argv[1]);
+
+	return 0;
+}
