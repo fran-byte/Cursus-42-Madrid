@@ -624,7 +624,7 @@ int main(int argc, char *argv[])
 	    test_putnbr_fd();	    
     }
     else
-	    printf("Funcion no reconocida: %s\n", argv[1]);
+	    printf("Funcion no encontrada: %s\n", argv[1]);
 
     return 0;
 }
