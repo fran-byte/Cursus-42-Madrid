@@ -37,9 +37,6 @@ void test_isalpha() {
     printf("             |_____|                       |_|                         \n");
     printf("ft_isalpha('A'): %d\n", ft_isalpha('A'));
     printf("tr_isalpha('1'): %d\n\n", ft_isalpha('1'));
-	printf("\nProbando Función ORIGINAL:\n");
-	printf("isalpha('A'): %d\n", isalpha('A'));
-    printf("isalpha('1'): %d\n", isalpha('1'));
 }
 
 void test_isdigit() {
@@ -51,9 +48,6 @@ void test_isdigit() {
     printf("             |_____|                        |___/          \n");
     printf("ft_isdigit('5'): %d\n", ft_isdigit('5'));
     printf("ft_isdigit('f'): %d\n", ft_isdigit('f'));
-	printf("\nFunción ORIGINAL isdigit:\n");
-	printf("isdigit('5'): %d\n", isdigit('5'));
-    printf("isdigit('f'): %d\n", isdigit('f'));
 }
 
 void test_isalnum() {
@@ -65,14 +59,7 @@ void test_isalnum() {
     printf("             |_____|                                                 \n");
     printf("ft_isalnum('5'): %d\n", isalnum('5'));
     printf("ft_isalnum('f'): %d\n", isalnum('f'));
-    printf("ft_isalnum('?'): %d\n", isalnum('?'));
-	printf("\nProbando Función ORIGINAL:\n");
-    printf("ft_isalnum('5'): %d\n", isalnum('5'));
-    printf("ft_isalnum('f'): %d\n", isalnum('f'));
-    printf("ft_isalnum('?'): %d\n", isalnum('?'));
-}
-
-void test_isascii() {
+    printf("ft_isalnum('?'): %d\n", isalnum('?'));ascii() {
     printf("   __   _             _                              _   _ \n");
     printf("  / _| | |_          (_)  ___    __ _   ___    ___  (_) (_)\n");
     printf(" | |_  | __|         | | / __|  / _` | / __|  / __| | | | |\n");
@@ -82,9 +69,6 @@ void test_isascii() {
     printf("ft_sascii('5'): %d\n", ft_isascii('5'));
     printf("ft_isascii('f'): %d\n", ft_isascii('f'));
     printf("ft_isascii('Ç'): %d\n", ft_isascii(128));
-	printf("\nProbando Función ORIGINAL:\n");
-    printf("isascii('5'): %d\n", isascii('5'));
-    printf("isascii('f'): %d\n", isascii('f'));
 }
 
 void test_isprint() {
@@ -96,9 +80,6 @@ void test_isprint() {
     printf("             |_____|           |_|                            \n");
     printf("ft_isprint('5'): %d\n", ft_isprint('5'));
     printf("ft_isprint('\\n'): %d\n", ft_isprint('\n'));
-	printf("\nProbando Función ORIGINAL:\n");
-    printf("isprint('5'): %d\n", isprint('5'));
-    printf("isprint('\\n'): %d\n", isprint('\n'));
 }
 
 void test_strlen() {
@@ -111,8 +92,6 @@ void test_strlen() {
     const char *str = "Hola mundo 42!";
 	printf("*str = \"Hola mundo 42!\"");
     printf("ft_strlen(\"%s\"): %zu\n", str, ft_strlen(str));
-	printf("\nProbando Función ORIGINAL:\n");
-    printf("strlen(\"%s\"): %zu\n", str, strlen(str));
 }
 
 void test_memset() {
@@ -126,10 +105,6 @@ void test_memset() {
     printf("Nuestra string: %s\n", str);
     ft_memset(str, '*', 5);
     printf("ft_memset(str, '*', 5): %s\n", str);
-	printf("\nProbando Función ORIGINAL:\n");
-	char str2[50] = "Hola Mundo 42!!";
-	memset(str2, '*', 5);
-	printf("Sobre escribimos con '*' 5 indices: %s\n", str2);
 }
 
 void test_bzero() {
@@ -143,10 +118,6 @@ void test_bzero() {
     printf("Nuestra string: %s\n", str);
     ft_bzero(str, 5);
     printf("ft_bzero(str, 5): %s\n", str);
-	printf("\nProbando Función ORIGINAL:\n");
-	char str2[50] = "Hola Mundo 42!!";
-	bzero(str2, 5);
-	printf("Sobre escribimos con '0' 5 indices: %s\n", str2);
 }
 
 void test_memcpy() {
@@ -163,11 +134,6 @@ void test_memcpy() {
 	printf("ft_memcpy(dest, src, strlen(src) + 1): %s\n", src);
     ft_memcpy(dest, src, ft_strlen(src) + 1);
     printf("Resultado: %s\n", dest);
-	printf("\nProbando Función ORIGINAL:\n");
-	char src[50] = "Hola Mundo 42!!";
-    char dest[50];
-    memcpy(dest, src, ft_strlen(src) + 1);
-    printf("Resultado: %s\n", dest);
 }
 
 void test_memmove() {
@@ -183,10 +149,6 @@ void test_memmove() {
     printf("Mueve la parte de la cadena hacia la derecha\n");
     ft_memmove(str + 5, str, ft_strlen(str) - 5);
     printf("Resultado: %s\n", str);
-	printf("\nProbando Función ORIGINAL:\n");
-    char str[50] = "Hola Mundo 42!!";
-    memmove(str + 5, str, ft_strlen(str) - 5);
-    printf("Resultado: %s\n", str);
 }
 
 void test_strlcpy() {
@@ -200,11 +162,7 @@ printf("             |_____|                               |_|      |___/ \n");
     char dest[20];
     size_t result = ft_strlcpy(dest, src, sizeof(dest));
     printf("ft_strlcpy(dest, src, sizeof(dest)): %zu\n", result);
-    printf("Destino: %s\n", dest);
-	printf("\nFunción ORIGINAL - OBSOLETA -\n");
-}
-
-void test_strlcat() {
+    printf("Destino: %s\n", dest);rlcat() {
 	printf("   __   _                   _            _                  _   \n");
 	printf("  / _| | |_           ___  | |_   _ __  | |   ___    __ _  | |_ \n");
 	printf(" | |_  | __|         / __| | __| | '__| | |  / __|  / _` | | __|\n");
@@ -216,7 +174,6 @@ void test_strlcat() {
     size_t result = ft_strlcat(dest, src, sizeof(dest));
     printf("Resultado de strlcat: %zu\n", result);
     printf("Destino: %s\n", dest);
-	printf("\nFunción ORIGINAL - OBSOLETA -\n");
 }
 
 void test_toupper() {
@@ -228,8 +185,6 @@ void test_toupper() {
 	printf("            |_____|                       |_|     |_|                 \n");
     char c = 'a';
     printf("ft_toupper('%c') = %c\n", c, ft_toupper(c));
-	printf("\nProbando Función ORIGINAL:\n");
-    printf("toupper('%c') = %c\n", c, toupper(c));
 }
 
 void test_tolower() {
@@ -241,8 +196,6 @@ void test_tolower() {
 	printf("             |_____|                                                   \n");
     char c = 'A';
     printf("ft_tolower('%c') = %c\n", c, ft_tolower(c));
-	printf("\nProbando Función ORIGINAL:\n");
-    printf("toupper('%c') = %c\n", c, tolower(c));
 }
 
 void test_strchr() {
@@ -257,13 +210,6 @@ void test_strchr() {
     if (result) {
         printf("Buscando primer caracter 'm' en: 'Hola, mundo'\n");
         printf("Primero: %s\n", result);
-    } else {
-        printf("No encontrado\n");
-    }
-	printf("\nProbando Función ORIGINAL:\n");
-    char *result2 = strchr(str, 'm');
-    if (result2) {
-        printf("Primero: %s\n", result2);
     } else {
         printf("No encontrado\n");
     }
@@ -284,13 +230,6 @@ void test_strrchr() {
     } else {
         printf("No encontrado\n");
     }
-	printf("\nProbando Función ORIGINAL:\n");
-    char *result3 = strrchr(str, 'o');
-    if (result3) {
-        printf("Último: %s\n", result3);
-    } else {
-        printf("No encontrado\n");
-    }
 }
 
 void test_strncmp() {
@@ -306,9 +245,6 @@ void test_strncmp() {
     printf("str2: 'Hola42Madrid'\n");
     printf("ft_strncmp(str1, str2, 4) = %d\n", ft_strncmp(str1, str2, 4));
     printf("ft_strncmp(str1, str2, 6) = %d\n", ft_strncmp(str1, str2, 6));
-	printf("\nProbando Función ORIGINAL:\n");
-    printf("strncmp(str1, str2, 4) = %d\n", strncmp(str1, str2, 4));
-    printf("strncmp(str1, str2, 6) = %d\n", strncmp(str1, str2, 6));
 }
 
 void test_memchr() {
@@ -322,15 +258,6 @@ void test_memchr() {
     char *result = ft_memchr(str, '4', ft_strlen(str));
     printf("str: 'Hola42Madrid'\n");
     printf("ft_memchr(str, '4', ft_strlen(str))");
-    if (result) {
-        printf("\nEncontrado: '4' %s\n", result);
-    } else {
-        printf("No encontrado\n");
-    }
-	printf("\nProbando Función ORIGINAL:\n");
-    char *result = memchr(str, '4', ft_strlen(str));
-    printf("str: 'Hola42Madrid'\n");
-    printf("memchr(str, '4', ft_strlen(str))");
     if (result) {
         printf("\nEncontrado: '4' %s\n", result);
     } else {
@@ -354,9 +281,6 @@ void test_memcmp() {
     printf("\n*str3 = \"Hola43\"\n");
     printf("ft_memcmp(str1, str2, 4) = %d\n", ft_memcmp(str1, str2, 4));
     printf("ft_memcmp(str1, str3, 6) = %d\n", ft_memcmp(str1, str3, 6));
-	printf("\nProbando Función ORIGINAL:\n");
-	printf("memcmp(str1, str2, 4) = %d\n", memcmp(str1, str2, 4));
-    printf("memcmp(str1, str3, 6) = %d\n", memcmp(str1, str3, 6));
 }
 
 void test_strnstr() {
@@ -375,7 +299,6 @@ void test_strnstr() {
     } else {
         printf("No encontrado\n");
     }
-	printf("\nFunción ORIGINAL - OBSOLETA -\n");
 }
 
 void test_atoi() {
@@ -391,10 +314,6 @@ void test_atoi() {
     printf("ft_atoi(\"%s\") = %d\n", num_str, ft_atoi(num_str));
     printf("ft_atoi(\"%s\") = %d\n", neg_num_str, ft_atoi(neg_num_str));
     printf("ft_atoi(\"%s\") = %d\n", invalid_num_str, ft_atoi(invalid_num_str));
-	printf("\nProbando Función ORIGINAL:\n");
-   	printf("atoi(\"%s\") = %d\n", num_str, atoi(num_str));
-    printf("atoi(\"%s\") = %d\n", neg_num_str, atoi(neg_num_str));
-    printf("atoi(\"%s\") = %d\n", invalid_num_str, atoi(invalid_num_str));
 }
 
 void test_calloc() {
@@ -413,16 +332,6 @@ void test_calloc() {
          i++;
     }
     free(arr);
-	printf("\nProbando Función ORIGINAL:\n");
-	printf("int *arr = (int *)calloc(5, sizeof(int))");
-    int i2 = 0;
-    int *arr2 = (int *)calloc(5, sizeof(int));
-    while(i2 < 5)
-    {
-        printf("arr[%d] = %d\n", i2, arr2[i2]);
-         i2++;
-    }
-    free(arr2);
 }
 
 void test_strdup() {
@@ -438,12 +347,6 @@ void test_strdup() {
     printf("Cadena original: %s\n", str);
     printf("Cadena duplicada: %s\n", duplicated);
     free(duplicated);
-	printf("\nProbando Función ORIGINAL:\n");
-    char *duplicated2 = strdup(str);
-	printf("strdup(str)\n");
-    printf("Cadena original: %s\n", str);
-    printf("Cadena duplicada: %s\n", duplicated2);
-    free(duplicated2);
 }
 
 /*
