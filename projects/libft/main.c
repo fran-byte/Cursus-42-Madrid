@@ -517,9 +517,9 @@ int main(int argc, char *argv[])
     else if (strcmp(argv[1], "ft_calloc") == 0) test_calloc();
     else if (strcmp(argv[1], "ft_strdup") == 0) test_strdup();
 /* Parte 2 - Funciones adicionales */	    
-    else if (strcmp(argv[1], "ft_substr") == 0) test_substr();   // No disponible OBSOLETO
-    else if (strcmp(argv[1], "ft_strjoin") == 0) test_strjoin(); // No disponible OBSOLETO
-    else if (strcmp(argv[1], "ft_strtrim") == 0) test_strtrim();  // No disponible OBSOLETO
+    else if (strcmp(argv[1], "ft_substr") == 0) test_substr();   // OBSOLETO
+    else if (strcmp(argv[1], "ft_strjoin") == 0) test_strjoin(); // OBSOLETO
+    else if (strcmp(argv[1], "ft_strtrim") == 0) test_strtrim();  // OBSOLETO
     else if (strcmp(argv[1], "ft_split") == 0) test_split();
     else if (strcmp(argv[1], "ft_itoa") == 0) test_itoa();
     else if (strcmp(argv[1], "ft_strmapi") == 0) test_strmapi();
