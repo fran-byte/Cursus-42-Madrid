@@ -6,13 +6,12 @@
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 11:19:12 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/19 18:04:59 by frromero         ###   ########.fr       */
+/*   Updated: 2024/09/20 16:02:12 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void *ft_memcpy(void *dst, const void *src, size_t n)
 {
-
 }

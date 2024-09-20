@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 20:32:54 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/14 10:18:40 by frromero         ###   ########.fr       */
+/*   Updated: 2024/09/20 15:48:54 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int ft_isalpha(char c)
 {
-    if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <='z'))
-        return (1);
-    return (0);
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+		return (1);
+	return (0);
 }
