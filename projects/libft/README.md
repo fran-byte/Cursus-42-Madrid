@@ -1,5 +1,6 @@
 # Parte 1 - Funciones de libc
 
+<br><br>
 
 ## [ft_isalpha](libft/ft_isalpha.c)
 
@@ -210,12 +211,11 @@ Descripción | Param. #1 | Valores de Retorno
 :-----------: | :-----------: | :-----------:
 Duplica la cadena "s". La memoria para la nueva cadena se obtiene con malloc y puede ser liberada con free | La cadena a duplicar | Un puntero a la cadena duplicada. NULL si no había suficiente memoria disponible
 
-
-
+<br><br><br><br>
 
 # Parte 2 - Funciones adicionales
 
-
+<br>
 
 ## [ft_substr](libft/ft_substr.c)
 
@@ -319,13 +319,15 @@ void ft_putnbr_fd(int n, int fd)`
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
 Envía el número entero `n` al file descriptor especificado utilizando la función `write`. Esta función convierte el número a su representación en caracteres y luego lo envía al file descriptor. | El número entero que se va a enviar | El file descriptor sobre el cual escribir: `0` (stdin), `1` (stdout), `2` (stderr) o cualquier descriptor de archivo válido | No devuelve ningún valor (`void`).
+<br><br><br><br>
 
 # Parte bonus
 
+<br><br>
 
 ## Añade la declaración a tu archivo libft.h :
 
-
+<br><br>
 
 ``` c
 typedef	struct	s_list
