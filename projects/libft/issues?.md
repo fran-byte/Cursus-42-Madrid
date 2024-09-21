@@ -1,6 +1,5 @@
 # VERICAR POSIBLES FALLOS
 
-Claro, aquí tienes las funciones con sus posibles problemas:
 
 ### ft_isalpha
 - **Problema:** Puede devolver resultados inesperados si se le pasa un valor que no es un carácter (por ejemplo, un entero fuera del rango de caracteres).
