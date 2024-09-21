@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 10:29:23 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/20 15:50:20 by frromero         ###   ########.fr       */
+/*   Updated: 2024/09/21 14:17:47 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include "libft.h"
 
-int ft_isprint(char c)
+int ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
 		return (1);
