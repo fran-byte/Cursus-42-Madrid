@@ -299,7 +299,8 @@ typedef	struct	s_list
 Los miembros de la estructura t_list son:
 
 • **content:** la información contenida por el nodo.
-**void  ***: permite guardar cualquier tipo de información.
+
+__void  *__: permite guardar cualquier tipo de información.
 
 • **next:** la dirección del siguiente nodo, o NULL si el siguiente nodo es el último.
 
