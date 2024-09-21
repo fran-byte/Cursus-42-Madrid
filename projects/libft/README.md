@@ -166,7 +166,7 @@ void *ft_memchr (const void *s, int c, size_t n)`
 ```
 Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
-Escanea los primeros "n" bytes de "s" en busca de la primera instancia de "c" | Área de memoria s | Un carácter a buscar | El número de bytes | Un puntero al byte coincidente o NULL si el carácter no aparece en el área de memoria dada
+**Escanea** los primeros "n" bytes de "s" en busca de la primera instancia de "c" | Área de memoria s | Un carácter a buscar | El número de bytes | Un puntero al byte coincidente o NULL si el carácter no aparece en el área de memoria dada
 
 ## [ft_memcmp](libft/ft_memcmp.c)
 
@@ -175,7 +175,7 @@ void *ft_memcmp (void *dst, const void *src, size_t n)`
 ```
 Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
-Compara la cadena de bytes "s1" con la cadena de bytes "s2" | Área de memoria s1 | Área de memoria s2 | El número de bytes | < 0 si s1 es menor que s2, > 0 si s1 es mayor que s2, = 0 si s1 es igual a s2
+**Compara** la cadena de bytes "s1" con la cadena de bytes "s2" | Área de memoria s1 | Área de memoria s2 | El número de bytes | < 0 si s1 es menor que s2, > 0 si s1 es mayor que s2, = 0 si s1 es igual a s2
 
 ## [ft_strnstr](libft/ft_strnstr.c)
 
@@ -184,7 +184,7 @@ char *ft_strnstr (const char *haystack, const char *needle, size_t len)`
 ```
 Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
-Localiza una subcadena, donde no se buscan más de "len" caracteres. Encuentra la primera ocurrencia de la subcadena "needle" en la cadena "haystack". Los bytes nulos de terminación ('\0') no se comparan | Cadena donde buscar | La subcadena a buscar en "haystack" | El número máximo de caracteres a buscar | Un puntero al primer carácter de la primera ocurrencia de "needle". NULL si la subcadena no se encuentra. Si "needle" es una cadena vacía, se devuelve "haystack"
+**Localiza** una subcadena, donde no se buscan más de "len" caracteres. Encuentra la primera ocurrencia de la subcadena "needle" en la cadena "haystack". Los bytes nulos de terminación ('\0') no se comparan | Cadena donde buscar | La subcadena a buscar en "haystack" | El número máximo de caracteres a buscar | Un puntero al primer carácter de la primera ocurrencia de "needle". NULL si la subcadena no se encuentra. Si "needle" es una cadena vacía, se devuelve "haystack"
 
 ## [ft_atoi](libft/ft_atoi.c)
 
@@ -193,7 +193,7 @@ int ft_atoi (const char *str)`
 ```
 Descripción | Param. #1 | Valor de Retorno
 :-----------: | :-----------: | :-----------:
-Convierte una cadena en un entero | La cadena a convertir en entero | El valor convertido
+**Convierte** una cadena en un entero | La cadena a convertir en entero | El valor convertido
 
 
 ## [ft_calloc](libft/ft_calloc.c)
@@ -203,7 +203,7 @@ void *ft_calloc (size_t count, size_t size)`
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
-Asigna suficiente espacio para "count" objetos, cada uno de "size" bytes de memoria, y devuelve un puntero a la memoria asignada. La memoria asignada se llena con bytes de valor cero | Número de elementos a asignar | Tamaño de los elementos | Un puntero a la memoria asignada, o NULL si la solicitud falla
+**Asigna** suficiente espacio para "count" objetos, cada uno de "size" bytes de memoria, y devuelve un puntero a la memoria asignada. La memoria asignada se llena con bytes de valor cero | Número de elementos a asignar | Tamaño de los elementos | Un puntero a la memoria asignada, o NULL si la solicitud falla
 
 
 ## [ft_strdup](libft/ft_strdup.c)
@@ -213,7 +213,7 @@ char *ft_strdup (const char *s)`
 ```
 Descripción | Param. #1 | Valores de Retorno
 :-----------: | :-----------: | :-----------:
-Duplica la cadena "s". La memoria para la nueva cadena se obtiene con malloc y puede ser liberada con free | La cadena a duplicar | Un puntero a la cadena duplicada. NULL si no había suficiente memoria disponible
+**Duplica** la cadena "s". La memoria para la nueva cadena se obtiene con malloc y puede ser liberada con free | La cadena a duplicar | Un puntero a la cadena duplicada. NULL si no había suficiente memoria disponible
 
 <br><br><br><br><br>
 
@@ -226,7 +226,7 @@ char *ft_substr (char const *s, unsigned int start, size_t len)`
 ```
 Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
-Asigna (con malloc) y devuelve una subcadena de la cadena dada como argumento. La subcadena comienza en el índice "start" y tiene un tamaño máximo de "len" | La cadena de la cual crear la subcadena | El índice de inicio de la subcadena en la cadena | La longitud máxima de la subcadena | La subcadena. NULL si la asignación falla
+**Asigna** (con malloc) y devuelve una subcadena de la cadena dada como argumento. La subcadena comienza en el índice "start" y tiene un tamaño máximo de "len" | La cadena de la cual crear la subcadena | El índice de inicio de la subcadena en la cadena | La longitud máxima de la subcadena | La subcadena. NULL si la asignación falla
 
 ## [ft_strjoin](libft/ft_strjoin.c)
 
@@ -235,7 +235,7 @@ char *ft_strjoin (char const *s1, char const *s2)`
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
-Asigna (con malloc) y devuelve una nueva cadena, resultado de la concatenación de "s1" y "s2" | La cadena prefijo | La cadena sufijo | La nueva cadena. NULL si la asignación falla
+**Asigna** (con malloc) y devuelve una nueva cadena, resultado de la concatenación de "s1" y "s2" | La cadena prefijo | La cadena sufijo | La nueva cadena. NULL si la asignación falla
 
 ## [ft_strtrim](libft/ft_strtrim.c)
 
@@ -244,7 +244,7 @@ char *ft_strjoin (char const *s1, char const *set)`
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
-Asigna (con malloc) y devuelve una copia de la cadena dada como argumento sin los caracteres especificados en el argumento "set" al principio y al final de la cadena | La cadena a recortar | El conjunto de caracteres de referencia para recortar | La cadena recortada. NULL si la asignación falla
+**Asigna** (con malloc) y devuelve una copia de la cadena dada como argumento sin los caracteres especificados en el argumento "set" al principio y al final de la cadena | La cadena a recortar | El conjunto de caracteres de referencia para recortar | La cadena recortada. NULL si la asignación falla
 
 ## [ft_split](libft/ft_split.c)
 
@@ -253,7 +253,7 @@ char **ft_split (char const *s, char c)`
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
-Asigna (con malloc) y devuelve un array de cadenas (terminado por un puntero NULL) obtenidas al dividir la cadena "s" usando el carácter "c" como delimitador. No incluye el delimitador en las cadenas resultantes. | La cadena a dividir | El carácter delimitador usado para separar las subcadenas | Un array de cadenas resultante de la división. NULL si la asignación falla
+**Asigna** (con malloc) y devuelve un array de cadenas (terminado por un puntero NULL) obtenidas al dividir la cadena "s" usando el carácter "c" como delimitador. No incluye el delimitador en las cadenas resultantes. | La cadena a dividir | El carácter delimitador usado para separar las subcadenas | Un array de cadenas resultante de la división. NULL si la asignación falla
 
 ## [ft_itoa](libft/ft_itoa.c)
 
@@ -262,7 +262,7 @@ char   *ft_itoa (int n)`
 ```
 Descripción | Param. #1 | Valor de Retorno
 :-----------: | :-----------: | :-----------:
-Asigna (con malloc) y devuelve una cadena que representa el entero recibido como argumento. Los números negativos deben ser manejados | El entero a convertir | La cadena que representa el entero. NULL si la asignación falla
+**Asigna** (con malloc) y devuelve una cadena que representa el entero recibido como argumento. Los números negativos deben ser manejados | El entero a convertir | La cadena que representa el entero. NULL si la asignación falla
 
 ## [ft_strmapi](libft/ft_strmapi.c)
 
@@ -271,7 +271,7 @@ char *ft_strmapi (char const *s, char (*f)(unsigned int, char))`
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
-Aplica la función "f" a cada carácter de la cadena pasada como argumento para crear una nueva cadena (con malloc) resultante de las aplicaciones sucesivas de "f" | La cadena sobre la que iterar | La función a aplicar a cada carácter | La cadena creada a partir de las aplicaciones sucesivas de "f". Devuelve NULL si la asignación falla
+**Aplica** la función "f" a cada carácter de la cadena pasada como argumento para crear una nueva cadena (con malloc) resultante de las aplicaciones sucesivas de "f" | La cadena sobre la que iterar | La función a aplicar a cada carácter | La cadena creada a partir de las aplicaciones sucesivas de "f". Devuelve NULL si la asignación falla
 
 ## [ft_striteri](libft/ft_striteri.c)
 
@@ -280,7 +280,7 @@ void ft_striteri (char *s, void (*f)(unsigned int, char*))`
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
-Aplica la función "f" a cada carácter de la cadena "s", proporcionando su índice como primer argumento. La función `f` puede modificar los caracteres directamente en la cadena. Es útil para modificar los caracteres de una cadena de manera indexada, sin necesidad de devolver una nueva cadena. | La cadena sobre la que se aplicará la función, pasada como modificable. | La función que se aplicará a cada carácter, recibe el índice del carácter como primer parámetro y un puntero al carácter en la cadena como segundo parámetro. | No devuelve ningún valor (función `void`).
+**Aplica** la función "f" a cada carácter de la cadena "s", proporcionando su índice como primer argumento. La función `f` puede modificar los caracteres directamente en la cadena. Es útil para modificar los caracteres de una cadena de manera indexada, sin necesidad de devolver una nueva cadena. | La cadena sobre la que se aplicará la función, pasada como modificable. | La función que se aplicará a cada carácter, recibe el índice del carácter como primer parámetro y un puntero al carácter en la cadena como segundo parámetro. | No devuelve ningún valor (función `void`).
 
 
 ## [ft_putchar_fd](libft/ft_putchar_fd.c)
@@ -290,7 +290,7 @@ void ft_putchar_fd (char c, int fd)`
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
-Envía el carácter 'c' al file descriptor especificado utilizando la función `write`. Es útil para escribir en cualquier salida, como el terminal (stdout), un archivo o un socket, dependiendo del file descriptor. | El carácter que se va a enviar | El file descriptor sobre el cual escribir: `0` (stdin), `1` (stdout), `2` (stderr) o cualquier descriptor de archivo válido | No devuelve ningún valor (`void`).
+**Envía** el carácter 'c' al file descriptor especificado utilizando la función `write`. Es útil para escribir en cualquier salida, como el terminal (stdout), un archivo o un socket, dependiendo del file descriptor. | El carácter que se va a enviar | El file descriptor sobre el cual escribir: `0` (stdin), `1` (stdout), `2` (stderr) o cualquier descriptor de archivo válido | No devuelve ningún valor (`void`).
 
 
 ## [ft_putstr_fd](libft/ft_putstr_fd.c)
@@ -300,7 +300,7 @@ void ft_putstr_fd (char *s, int fd)`
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
-Envía la cadena de caracteres `s` al file descriptor especificado utilizando la función `write`. Es útil para escribir en cualquier salida, como el terminal (stdout), un archivo o un socket, dependiendo del file descriptor. | La cadena de caracteres que se va a enviar | El file descriptor sobre el cual escribir: `0` (stdin), `1` (stdout), `2` (stderr) o cualquier descriptor de archivo válido | No devuelve ningún valor (`void`).
+**Envía** la cadena de caracteres `s` al file descriptor especificado utilizando la función `write`. Es útil para escribir en cualquier salida, como el terminal (stdout), un archivo o un socket, dependiendo del file descriptor. | La cadena de caracteres que se va a enviar | El file descriptor sobre el cual escribir: `0` (stdin), `1` (stdout), `2` (stderr) o cualquier descriptor de archivo válido | No devuelve ningún valor (`void`).
 
 
 ## [ft_putendl_fd](libft/ft_putendl_fd.c)
@@ -310,7 +310,7 @@ void ft_putendl_fd(char *s, int fd)`
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
-Envía la cadena de caracteres `s` al file descriptor especificado, seguido de un salto de línea (`'\n'`), utilizando la función `write`. Es útil para escribir una cadena seguida de un salto de línea en cualquier salida, como la terminal (stdout), un archivo o un socket, dependiendo del file descriptor. | La cadena de caracteres que se va a enviar | El file descriptor sobre el cual escribir: `0` (stdin), `1` (stdout), `2` (stderr) o cualquier descriptor de archivo válido | No devuelve ningún valor (`void`).
+**Envía** la cadena de caracteres `s` al file descriptor especificado, seguido de un salto de línea (`'\n'`), utilizando la función `write`. Es útil para escribir una cadena seguida de un salto de línea en cualquier salida, como la terminal (stdout), un archivo o un socket, dependiendo del file descriptor. | La cadena de caracteres que se va a enviar | El file descriptor sobre el cual escribir: `0` (stdin), `1` (stdout), `2` (stderr) o cualquier descriptor de archivo válido | No devuelve ningún valor (`void`).
 
 
 ## [ft_putnbr_fd](libft/ft_putnbr_fd.c)
@@ -320,7 +320,7 @@ void ft_putnbr_fd(int n, int fd)`
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
-Envía el número entero `n` al file descriptor especificado utilizando la función `write`. Esta función convierte el número a su representación en caracteres y luego lo envía al file descriptor. | El número entero que se va a enviar | El file descriptor sobre el cual escribir: `0` (stdin), `1` (stdout), `2` (stderr) o cualquier descriptor de archivo válido | No devuelve ningún valor (`void`).
+**Envía** el número entero `n` al file descriptor especificado utilizando la función `write`. Esta función convierte el número a su representación en caracteres y luego lo envía al file descriptor. | El número entero que se va a enviar | El file descriptor sobre el cual escribir: `0` (stdin), `1` (stdout), `2` (stderr) o cualquier descriptor de archivo válido | No devuelve ningún valor (`void`).
 
 <br><br><br><br><br>
 
@@ -355,7 +355,7 @@ t_list *ft_lstnew(void *content)`
 ```
 Descripción | Param. #1 | Valor de Retorno
 :-----------: | :-----------: | :-----------:
-Crea un nuevo nodo de tipo `t_list` utilizando `malloc`. La variable miembro `content` se inicializa con el contenido del parámetro `content`, y la variable `next` se inicializa en `NULL`. | El contenido que se asignará al nuevo nodo | Un puntero al nuevo nodo creado. NULL si la asignación falla.
+**Crea** un nuevo nodo de tipo `t_list` utilizando `malloc`. La variable miembro `content` se inicializa con el contenido del parámetro `content`, y la variable `next` se inicializa en `NULL`. | El contenido que se asignará al nuevo nodo | Un puntero al nuevo nodo creado. NULL si la asignación falla.
 
 
 ## [ft_lstadd_front](libft/ft_lstadd_front.c)
@@ -365,7 +365,7 @@ void ft_lstadd_front(t_list **lst, t_list *new)`
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
-Añade el nodo `new` al principio de la lista `lst`. Actualiza el puntero de la lista para que apunte al nuevo nodo, convirtiéndolo en el primer nodo de la lista. | La dirección de un puntero al primer nodo de la lista | Un puntero al nodo que se añadirá al principio de la lista | No devuelve ningún valor (`void`).
+**Añade** el nodo `new` al principio de la lista `lst`. Actualiza el puntero de la lista para que apunte al nuevo nodo, convirtiéndolo en el primer nodo de la lista. | La dirección de un puntero al primer nodo de la lista | Un puntero al nodo que se añadirá al principio de la lista | No devuelve ningún valor (`void`).
 
 
 ## [ft_lstsize](libft/ft_lstsize.c)
@@ -375,7 +375,7 @@ int ft_lstsize(t_list *lst)`
 ```
 Descripción | Param. #1 | Valor de Retorno
 :-----------: | :-----------: | :-----------:
-Cuenta el número de nodos en la lista enlazada comenzando desde el nodo `lst`. | El puntero al primer nodo de la lista | La longitud de la lista (número de nodos).
+**Cuenta** el número de nodos en la lista enlazada comenzando desde el nodo `lst`. | El puntero al primer nodo de la lista | La longitud de la lista (número de nodos).
 
 
 ## [ft_lstlast](libft/ft_lstlast.c)
@@ -385,7 +385,7 @@ t_list *ft_lstlast(t_list *lst)`
 ```
 Descripción | Param. #1 | Valor de Retorno
 :-----------: | :-----------: | :-----------:
-Devuelve el último nodo de la lista enlazada comenzando desde el nodo `lst`. | El puntero al primer nodo de la lista | Un puntero al último nodo de la lista. Si la lista está vacía, devuelve `NULL`.
+**Devuelve** el último nodo de la lista enlazada comenzando desde el nodo `lst`. | El puntero al primer nodo de la lista | Un puntero al último nodo de la lista. Si la lista está vacía, devuelve `NULL`.
 
 
 ## [ft_lstadd_back](libft/ft_lstadd_back.c)
@@ -395,7 +395,7 @@ void ft_lstadd_back(t_list **lst, t_list *new)`
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
-Añade el nodo `new` al final de la lista `lst`. Si la lista está vacía, `new` se convierte en el primer nodo. | Un puntero al puntero que apunta al primer nodo de la lista | Un puntero al nodo que se añadirá al final de la lista | No devuelve ningún valor (`void`).
+**Añade** el nodo `new` al final de la lista `lst`. Si la lista está vacía, `new` se convierte en el primer nodo. | Un puntero al puntero que apunta al primer nodo de la lista | Un puntero al nodo que se añadirá al final de la lista | No devuelve ningún valor (`void`).
 
 
 ## [ft_lstdelone](libft/ft_lstdelone.c)
@@ -405,7 +405,7 @@ void ft_lstdelone(t_list *lst, void (*del)(void *))`
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
-Toma como parámetro un nodo `lst` y libera la memoria del contenido utilizando la función `del` dada como parámetro, además de liberar el nodo en sí. La memoria de `next` no debe liberarse. | El nodo que se va a liberar | Un puntero a la función utilizada para liberar el contenido del nodo | No devuelve ningún valor (`void`).
+**Toma** como parámetro un nodo `lst` y libera la memoria del contenido utilizando la función `del` dada como parámetro, además de liberar el nodo en sí. La memoria de `next` no debe liberarse. | El nodo que se va a liberar | Un puntero a la función utilizada para liberar el contenido del nodo | No devuelve ningún valor (`void`).
 
 
 ## [ft_lstclear](libft/ft_lstclear.c)
@@ -415,7 +415,7 @@ void ft_lstclear(t_list **lst, void (*del)(void *))`
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
-Elimina y libera el nodo `lst` dado y todos los nodos consecutivos, utilizando la función `del` para liberar el contenido de cada nodo, y `free` para liberar los nodos en sí. Al final, el puntero a la lista debe ser `NULL`. | La dirección de un puntero al primer nodo de la lista | Un puntero a la función utilizada para eliminar el contenido de cada nodo | No devuelve ningún valor (`void`).
+**Elimina** y libera el nodo `lst` dado y todos los nodos consecutivos, utilizando la función `del` para liberar el contenido de cada nodo, y `free` para liberar los nodos en sí. Al final, el puntero a la lista debe ser `NULL`. | La dirección de un puntero al primer nodo de la lista | Un puntero a la función utilizada para eliminar el contenido de cada nodo | No devuelve ningún valor (`void`).
 
 
 ## [ft_lstiter](libft/ft_lstiter.c)
@@ -425,7 +425,7 @@ void ft_lstiter(t_list *lst, void (*f)(void *))`
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
-Itera sobre la lista `lst` y aplica la función `f` al contenido de cada nodo. | Un puntero al primer nodo de la lista | Un puntero a la función que se aplicará a cada nodo | No devuelve ningún valor (`void`).
+**Itera** sobre la lista `lst` y aplica la función `f` al contenido de cada nodo. | Un puntero al primer nodo de la lista | Un puntero a la función que se aplicará a cada nodo | No devuelve ningún valor (`void`).
 
 ## [ft_lstmap](libft/ft_lstmap.c)
 
@@ -434,5 +434,5 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))`
 ```
 Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
-Itera sobre la lista `lst` y aplica la función `f` al contenido de cada nodo, creando una nueva lista con los resultados. La función `del` se utiliza para eliminar el contenido de un nodo si es necesario. | Un puntero al primer nodo de la lista | La dirección de un puntero a la función que transforma el contenido de cada nodo | Un puntero a la función que se utiliza para liberar el contenido de un nodo, si es necesario | Un puntero a la nueva lista creada. `NULL` si falla la reserva de memoria.
+**Itera** sobre la lista `lst` y aplica la función `f` al contenido de cada nodo, creando una nueva lista con los resultados. La función `del` se utiliza para eliminar el contenido de un nodo si es necesario. | Un puntero al primer nodo de la lista | La dirección de un puntero a la función que transforma el contenido de cada nodo | Un puntero a la función que se utiliza para liberar el contenido de un nodo, si es necesario | Un puntero a la nueva lista creada. `NULL` si falla la reserva de memoria.
 
