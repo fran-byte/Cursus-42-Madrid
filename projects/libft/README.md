@@ -246,7 +246,6 @@ Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
 Aplica la función "f" a cada carácter de la cadena "s", proporcionando su índice como primer argumento. La función `f` puede modificar los caracteres directamente en la cadena. Es útil para modificar los caracteres de una cadena de manera indexada, sin necesidad de devolver una nueva cadena. | La cadena sobre la que se aplicará la función, pasada como modificable. | La función que se aplicará a cada carácter, recibe el índice del carácter como primer parámetro y un puntero al carácter en la cadena como segundo parámetro. | No devuelve ningún valor (función `void`).
 
-Aquí tienes la documentación para la función `ft_putchar_fd` siguiendo el mismo estilo:
 
 ## [ft_putchar_fd](libft/ft_putchar_fd.c)
 
@@ -256,7 +255,6 @@ Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
 Envía el carácter 'c' al file descriptor especificado utilizando la función `write`. Es útil para escribir en cualquier salida, como el terminal (stdout), un archivo o un socket, dependiendo del file descriptor. | El carácter que se va a enviar | El file descriptor sobre el cual escribir: `0` (stdin), `1` (stdout), `2` (stderr) o cualquier descriptor de archivo válido | No devuelve ningún valor (`void`).
 
-Aquí tienes la documentación para la función **`ft_putstr_fd`**:
 
 ## [ft_putstr_fd](libft/ft_putstr_fd.c)
 
@@ -266,7 +264,6 @@ Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
 Envía la cadena de caracteres `s` al file descriptor especificado utilizando la función `write`. Es útil para escribir en cualquier salida, como el terminal (stdout), un archivo o un socket, dependiendo del file descriptor. | La cadena de caracteres que se va a enviar | El file descriptor sobre el cual escribir: `0` (stdin), `1` (stdout), `2` (stderr) o cualquier descriptor de archivo válido | No devuelve ningún valor (`void`).
 
-Aquí tienes la documentación para la función **`ft_putendl_fd`**:
 
 ## [ft_putendl_fd](libft/ft_putendl_fd.c)
 
@@ -276,7 +273,6 @@ Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
 Envía la cadena de caracteres `s` al file descriptor especificado, seguido de un salto de línea (`'\n'`), utilizando la función `write`. Es útil para escribir una cadena seguida de un salto de línea en cualquier salida, como la terminal (stdout), un archivo o un socket, dependiendo del file descriptor. | La cadena de caracteres que se va a enviar | El file descriptor sobre el cual escribir: `0` (stdin), `1` (stdout), `2` (stderr) o cualquier descriptor de archivo válido | No devuelve ningún valor (`void`).
 
-Aquí tienes la documentación para la función **`ft_putnbr_fd`**:
 
 ## [ft_putnbr_fd](libft/ft_putnbr_fd.c)
 
@@ -309,8 +305,6 @@ En tu Makefile, añade una regla make bonus que incorpore las funciones bonus a 
 libft.a
 
 
-Aquí tienes la documentación para la función **`ft_lstnew`** siguiendo el formato que has utilizado:
-
 ## [ft_lstnew](libft/ft_lstnew.c)
 
 `t_list *ft_lstnew(void *content)`
@@ -319,7 +313,6 @@ Descripción | Param. #1 | Valor de Retorno
 :-----------: | :-----------: | :-----------:
 Crea un nuevo nodo de tipo `t_list` utilizando `malloc`. La variable miembro `content` se inicializa con el contenido del parámetro `content`, y la variable `next` se inicializa en `NULL`. | El contenido que se asignará al nuevo nodo | Un puntero al nuevo nodo creado. NULL si la asignación falla.
 
-Aquí tienes la documentación para la función **`ft_lstadd_front`**:
 
 ## [ft_lstadd_front](libft/ft_lstadd_front.c)
 
@@ -329,7 +322,6 @@ Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
 Añade el nodo `new` al principio de la lista `lst`. Actualiza el puntero de la lista para que apunte al nuevo nodo, convirtiéndolo en el primer nodo de la lista. | La dirección de un puntero al primer nodo de la lista | Un puntero al nodo que se añadirá al principio de la lista | No devuelve ningún valor (`void`).
 
-Aquí tienes la documentación para la función **`ft_lstsize`**:
 
 ## [ft_lstsize](libft/ft_lstsize.c)
 
@@ -339,7 +331,6 @@ Descripción | Param. #1 | Valor de Retorno
 :-----------: | :-----------: | :-----------:
 Cuenta el número de nodos en la lista enlazada comenzando desde el nodo `lst`. | El puntero al primer nodo de la lista | La longitud de la lista (número de nodos).
 
-Aquí tienes la documentación para la función **`ft_lstlast`**:
 
 ## [ft_lstlast](libft/ft_lstlast.c)
 
@@ -349,7 +340,6 @@ Descripción | Param. #1 | Valor de Retorno
 :-----------: | :-----------: | :-----------:
 Devuelve el último nodo de la lista enlazada comenzando desde el nodo `lst`. | El puntero al primer nodo de la lista | Un puntero al último nodo de la lista. Si la lista está vacía, devuelve `NULL`.
 
-Aquí tienes la documentación para la función **`ft_lstadd_back`**:
 
 ## [ft_lstadd_back](libft/ft_lstadd_back.c)
 
@@ -359,7 +349,6 @@ Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
 Añade el nodo `new` al final de la lista `lst`. Si la lista está vacía, `new` se convierte en el primer nodo. | Un puntero al puntero que apunta al primer nodo de la lista | Un puntero al nodo que se añadirá al final de la lista | No devuelve ningún valor (`void`).
 
-Aquí tienes la documentación para la función **`ft_lstdelone`**:
 
 ## [ft_lstdelone](libft/ft_lstdelone.c)
 
@@ -369,7 +358,6 @@ Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
 Toma como parámetro un nodo `lst` y libera la memoria del contenido utilizando la función `del` dada como parámetro, además de liberar el nodo en sí. La memoria de `next` no debe liberarse. | El nodo que se va a liberar | Un puntero a la función utilizada para liberar el contenido del nodo | No devuelve ningún valor (`void`).
 
-Aquí tienes la documentación para la función **`ft_lstclear`**:
 
 ## [ft_lstclear](libft/ft_lstclear.c)
 
@@ -379,7 +367,6 @@ Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
 Elimina y libera el nodo `lst` dado y todos los nodos consecutivos, utilizando la función `del` para liberar el contenido de cada nodo, y `free` para liberar los nodos en sí. Al final, el puntero a la lista debe ser `NULL`. | La dirección de un puntero al primer nodo de la lista | Un puntero a la función utilizada para eliminar el contenido de cada nodo | No devuelve ningún valor (`void`).
 
-Aquí tienes la documentación para la función **`ft_lstiter`**:
 
 ## [ft_lstiter](libft/ft_lstiter.c)
 
@@ -388,8 +375,6 @@ Aquí tienes la documentación para la función **`ft_lstiter`**:
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
 Itera sobre la lista `lst` y aplica la función `f` al contenido de cada nodo. | Un puntero al primer nodo de la lista | Un puntero a la función que se aplicará a cada nodo | No devuelve ningún valor (`void`).
-
-Aquí tienes la documentación para la función **`ft_lstmap`**:
 
 ## [ft_lstmap](libft/ft_lstmap.c)
 
