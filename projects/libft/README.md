@@ -1,5 +1,5 @@
 
-# BIBLIOTECA de FUNCIONES BÁSICAS libft.a
+# BIBLIOTECA de FUNCIONES BÁSICAS ( libft.a )
 
 <br>
 
