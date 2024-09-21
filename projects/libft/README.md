@@ -309,4 +309,93 @@ En tu Makefile, añade una regla make bonus que incorpore las funciones bonus a 
 libft.a
 
 
+Aquí tienes la documentación para la función **`ft_lstnew`** siguiendo el formato que has utilizado:
+
+## [ft_lstnew](libft/ft_lstnew.c)
+
+`t_list *ft_lstnew(void *content)`
+
+Descripción | Param. #1 | Valor de Retorno
+:-----------: | :-----------: | :-----------:
+Crea un nuevo nodo de tipo `t_list` utilizando `malloc`. La variable miembro `content` se inicializa con el contenido del parámetro `content`, y la variable `next` se inicializa en `NULL`. | El contenido que se asignará al nuevo nodo | Un puntero al nuevo nodo creado. NULL si la asignación falla.
+
+Aquí tienes la documentación para la función **`ft_lstadd_front`**:
+
+## [ft_lstadd_front](libft/ft_lstadd_front.c)
+
+`void ft_lstadd_front(t_list **lst, t_list *new)`
+
+Descripción | Param. #1 | Param. #2 | Valor de Retorno
+:-----------: | :-----------: | :-----------: | :-----------:
+Añade el nodo `new` al principio de la lista `lst`. Actualiza el puntero de la lista para que apunte al nuevo nodo, convirtiéndolo en el primer nodo de la lista. | La dirección de un puntero al primer nodo de la lista | Un puntero al nodo que se añadirá al principio de la lista | No devuelve ningún valor (`void`).
+
+Aquí tienes la documentación para la función **`ft_lstsize`**:
+
+## [ft_lstsize](libft/ft_lstsize.c)
+
+`int ft_lstsize(t_list *lst)`
+
+Descripción | Param. #1 | Valor de Retorno
+:-----------: | :-----------: | :-----------:
+Cuenta el número de nodos en la lista enlazada comenzando desde el nodo `lst`. | El puntero al primer nodo de la lista | La longitud de la lista (número de nodos).
+
+Aquí tienes la documentación para la función **`ft_lstlast`**:
+
+## [ft_lstlast](libft/ft_lstlast.c)
+
+`t_list *ft_lstlast(t_list *lst)`
+
+Descripción | Param. #1 | Valor de Retorno
+:-----------: | :-----------: | :-----------:
+Devuelve el último nodo de la lista enlazada comenzando desde el nodo `lst`. | El puntero al primer nodo de la lista | Un puntero al último nodo de la lista. Si la lista está vacía, devuelve `NULL`.
+
+Aquí tienes la documentación para la función **`ft_lstadd_back`**:
+
+## [ft_lstadd_back](libft/ft_lstadd_back.c)
+
+`void ft_lstadd_back(t_list **lst, t_list *new)`
+
+Descripción | Param. #1 | Param. #2 | Valor de Retorno
+:-----------: | :-----------: | :-----------: | :-----------:
+Añade el nodo `new` al final de la lista `lst`. Si la lista está vacía, `new` se convierte en el primer nodo. | Un puntero al puntero que apunta al primer nodo de la lista | Un puntero al nodo que se añadirá al final de la lista | No devuelve ningún valor (`void`).
+
+Aquí tienes la documentación para la función **`ft_lstdelone`**:
+
+## [ft_lstdelone](libft/ft_lstdelone.c)
+
+`void ft_lstdelone(t_list *lst, void (*del)(void *))`
+
+Descripción | Param. #1 | Param. #2 | Valor de Retorno
+:-----------: | :-----------: | :-----------: | :-----------:
+Toma como parámetro un nodo `lst` y libera la memoria del contenido utilizando la función `del` dada como parámetro, además de liberar el nodo en sí. La memoria de `next` no debe liberarse. | El nodo que se va a liberar | Un puntero a la función utilizada para liberar el contenido del nodo | No devuelve ningún valor (`void`).
+
+Aquí tienes la documentación para la función **`ft_lstclear`**:
+
+## [ft_lstclear](libft/ft_lstclear.c)
+
+`void ft_lstclear(t_list **lst, void (*del)(void *))`
+
+Descripción | Param. #1 | Param. #2 | Valor de Retorno
+:-----------: | :-----------: | :-----------: | :-----------:
+Elimina y libera el nodo `lst` dado y todos los nodos consecutivos, utilizando la función `del` para liberar el contenido de cada nodo, y `free` para liberar los nodos en sí. Al final, el puntero a la lista debe ser `NULL`. | La dirección de un puntero al primer nodo de la lista | Un puntero a la función utilizada para eliminar el contenido de cada nodo | No devuelve ningún valor (`void`).
+
+Aquí tienes la documentación para la función **`ft_lstiter`**:
+
+## [ft_lstiter](libft/ft_lstiter.c)
+
+`void ft_lstiter(t_list *lst, void (*f)(void *))`
+
+Descripción | Param. #1 | Param. #2 | Valor de Retorno
+:-----------: | :-----------: | :-----------: | :-----------:
+Itera sobre la lista `lst` y aplica la función `f` al contenido de cada nodo. | Un puntero al primer nodo de la lista | Un puntero a la función que se aplicará a cada nodo | No devuelve ningún valor (`void`).
+
+Aquí tienes la documentación para la función **`ft_lstmap`**:
+
+## [ft_lstmap](libft/ft_lstmap.c)
+
+`t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))`
+
+Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
+:-----------: | :-----------: | :-----------: | :-----------: | :-----------:
+Itera sobre la lista `lst` y aplica la función `f` al contenido de cada nodo, creando una nueva lista con los resultados. La función `del` se utiliza para eliminar el contenido de un nodo si es necesario. | Un puntero al primer nodo de la lista | La dirección de un puntero a la función que transforma el contenido de cada nodo | Un puntero a la función que se utiliza para liberar el contenido de un nodo, si es necesario | Un puntero a la nueva lista creada. `NULL` si falla la reserva de memoria.
 
