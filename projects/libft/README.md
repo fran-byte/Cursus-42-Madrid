@@ -215,7 +215,7 @@ Descripción | Param. #1 | Valores de Retorno
 :-----------: | :-----------: | :-----------:
 Duplica la cadena "s". La memoria para la nueva cadena se obtiene con malloc y puede ser liberada con free | La cadena a duplicar | Un puntero a la cadena duplicada. NULL si no había suficiente memoria disponible
 
-<br><br><br><br>
+<br><br><br><br><br>
 
 # Parte 2 - Funciones adicionales
 
@@ -322,7 +322,7 @@ Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
 Envía el número entero `n` al file descriptor especificado utilizando la función `write`. Esta función convierte el número a su representación en caracteres y luego lo envía al file descriptor. | El número entero que se va a enviar | El file descriptor sobre el cual escribir: `0` (stdin), `1` (stdout), `2` (stderr) o cualquier descriptor de archivo válido | No devuelve ningún valor (`void`).
 
-<br><br><br><br><br><br>
+<br><br><br><br><br>
 
 # Parte bonus
 
