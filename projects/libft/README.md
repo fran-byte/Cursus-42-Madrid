@@ -85,7 +85,7 @@ void *ft_memcpy (void *dst, const void *src, size_t n)`
 ```
 Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
-**Copia** "n" bytes del área de memoria "src" a la memoria de "dst". Las áreas de memoria no deben solaparse (Si el tamaño de dst es menor que n) **puede sobrescribir memoria adyacente**. Si dst o src son nulos (0) provocará un comportamiento indefinido (posible segmentation fault) Usa [ft_memmove](#ft_memmove) si las áreas de memoria se solapan. | Área de memoria dst | Área de memoria src | El número de bytes | Un puntero al área de memoria dst
+**Copia** "n" bytes del área de memoria "src" a la memoria de "dst". Las áreas de memoria no deben solaparse (Si el tamaño de dst es menor que n) **puede sobrescribir memoria adyacente**. Usa [ft_memmove](#ft_memmove) si las áreas de memoria se solapan. | Área de memoria dst | Área de memoria src | El número de bytes | Un puntero al área de memoria dst
 
 ## [ft_memmove](libft/ft_memmove.c)
 
@@ -94,7 +94,7 @@ void *ft_memmove (void *dst, const void *src, size_t len)`
 ```
 Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
-**Copia** "len" bytes de la memoria de "src" a "dst". Las memorias pueden solaparse. Primero, los bytes en "src" se copian en un arreglo temporal y luego a "dst". (Si el tamaño de dst es menor que n) **puede sobrescribir memoria adyacente** Si dst o src son nulos (0) provocará un comportamiento indefinido (posible segmentation fault) | Área de memoria dst | Área de memoria src | El número de bytes | Un puntero al área de memoria dst
+**Copia** "len" bytes de la memoria de "src" a "dst". Las memorias pueden solaparse. Primero, los bytes en "src" se copian en un arreglo temporal y luego a "dst". (Si el tamaño de dst es menor que n) **puede sobrescribir memoria adyacente** | Área de memoria dst | Área de memoria src | El número de bytes | Un puntero al área de memoria dst
 
 ## [ft_strlcpy](libft/ft_strlcpy.c)
 

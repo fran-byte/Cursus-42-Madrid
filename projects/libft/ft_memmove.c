@@ -6,12 +6,9 @@
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 11:21:28 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/21 20:35:03 by frromero         ###   ########.fr       */
+/*   Updated: 2024/09/21 20:45:02 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/* Si dst o src son nulos (0) provocará un comportamiento indefinido  */
-/* (posible segmentation fault) */
 
 #include "libft.h"
 
