@@ -2,7 +2,9 @@
 
 ## [ft_isalpha](libft/ft_isalpha.c)
 
-`int ft_isalpha (int c)`
+``` c
+int ft_isalpha (int c)
+```
 
 Descripción | Param. #1 | Valor de Retorno
 :-----------: | :-----------: | :-----------:
@@ -145,7 +147,7 @@ Escanea los primeros "n" bytes de "s" en busca de la primera instancia de "c" | 
 
 ## [ft_memcmp](libft/ft_memcmp.c)
 
-`void       *ft_memcmp (void *dst, const void *src, size_t n)`
+`void *ft_memcmp (void *dst, const void *src, size_t n)`
 
 Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
@@ -153,7 +155,7 @@ Compara la cadena de bytes "s1" con la cadena de bytes "s2" | Área de memoria s
 
 ## [ft_strnstr](libft/ft_strnstr.c)
 
-`char       *ft_strnstr (const char *haystack, const char *needle, size_t len)`
+`char *ft_strnstr (const char *haystack, const char *needle, size_t len)`
 
 Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
@@ -161,7 +163,7 @@ Localiza una subcadena, donde no se buscan más de "len" caracteres. Encuentra l
 
 ## [ft_atoi](libft/ft_atoi.c)
 
-`int        ft_atoi (const char *str)`
+`int ft_atoi (const char *str)`
 
 Descripción | Param. #1 | Valor de Retorno
 :-----------: | :-----------: | :-----------:
@@ -170,7 +172,7 @@ Convierte una cadena en un entero | La cadena a convertir en entero | El valor c
 
 ## [ft_calloc](libft/ft_calloc.c)
 
-`void       *ft_calloc (size_t count, size_t size)`
+`void *ft_calloc (size_t count, size_t size)`
 
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
@@ -178,7 +180,7 @@ Asigna suficiente espacio para "count" objetos, cada uno de "size" bytes de memo
 
 
 ## [ft_strdup](libft/ft_strdup.c)
-`char       *ft_strdup (const char *s)`
+`char *ft_strdup (const char *s)`
 
 Descripción | Param. #1 | Valores de Retorno
 :-----------: | :-----------: | :-----------:
@@ -190,7 +192,7 @@ Duplica la cadena "s". La memoria para la nueva cadena se obtiene con malloc y p
 
 ## [ft_substr](libft/ft_substr.c)
 
-`char   *ft_substr (char const *s, unsigned int start, size_t len)`
+`char *ft_substr (char const *s, unsigned int start, size_t len)`
 
 Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
