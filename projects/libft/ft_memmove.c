@@ -6,23 +6,37 @@
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 11:21:28 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/21 13:55:34 by frromero         ###   ########.fr       */
+/*   Updated: 2024/09/21 20:35:03 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"   // MODIFICAR ****************************************
+/* Si dst o src son nulos (0) provocará un comportamiento indefinido  */
+/* (posible segmentation fault) */
+
+#include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t i;
+	size_t	i;
+	unsigned char *tmp_dst;
+	unsigned char *tmp_src;
 
+	tmp_dst = (unsigned char *)dst;
+	tmp_src = (unsigned char *)src;
 	i = 0;
-	if (dst == 0 || src == 0)
-		return (0);
-	while (i < len)
-	{
-		*(unsigned char *)(dst + i) = *(unsigned char *)(src + i);
-		i++;
-	}
+    if (src < dst)
+    {
+        while(len-- > 0)
+        {
+            tmp_dst[len] = tmp_src[len];
+        }
+    }
+    else
+        while(i < len)
+        {
+            tmp_dst[i] = tmp_src[i];
+            i++;
+        }
+
 	return (dst);
 }
