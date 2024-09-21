@@ -289,7 +289,8 @@ Envía el número entero `n` al file descriptor especificado utilizando la funci
 # Parte bonus
 
 ## Añade la declaración a tu archivo libft.h :
-```
+
+``` c
 typedef	struct	s_list
 {
 	void			*content;
@@ -300,7 +301,7 @@ Los miembros de la estructura t_list son:
 
 • **content:** la información contenida por el nodo.
 
-__void  *__: permite guardar cualquier tipo de información.
+ __void  *__: permite guardar cualquier tipo de información.
 
 • **next:** la dirección del siguiente nodo, o NULL si el siguiente nodo es el último.
 
@@ -308,154 +309,4 @@ En tu Makefile, añade una regla make bonus que incorpore las funciones bonus a 
 libft.a
 
 
-
-
-## [ft_strndup](libft/ft_strndup.c)
-
-`char       *ft_strndup(const char *s, size_t n)`
-
-Descripción | Param. #1 | Param. #2 | Valor de Retorno
-:-----------: | :-----------: | :-----------: | :-----------:
-Asigna una cantidad específica de memoria para copiar una cadena | La cadena a copiar | La cantidad máxima de caracteres a copiar de la cadena | Un puntero a la nueva cadena
-
-## [ft_strcdup](libft/ft_strcdup.c)
-
-`char       *ft_strcdup(const char *s, int c)`
-
-Descripción | Param. #1 | Param. #2 | Valor de Retorno
-:-----------: | :-----------: | :-----------: | :-----------:
-Asigna una cantidad específica de memoria para copiar una cadena hasta la aparición de "c". Ejemplo: ft_strcdup("Blue", 'u') -> "Bl" | La cadena a copiar antes de "c" | El carácter "c" | Un puntero a la nueva cadena
-
-
-## [ft_strcpy](libft/ft_strcpy.c)
-
-`char       *ft_strcpy(char *dst, const char *src)`
-
-Descripción | Param. #1 | Param. #2 | Valor de Retorno
-:-----------: | :-----------: | :-----------: | :-----------:
-Copia una cadena, incluyendo el byte nulo de terminación ('\0') | Arreglo de destino | Cadena a copiar | Un puntero a la cadena de destino "dst"
-
-
-## [ft_strcat](libft/ft_strcat.c)
-
-`char       *ft_strcat(char *dst, const char *src)`
-
-Descripción | Param. #1 | Param. #2 | Valor de Retorno
-:-----------: | :-----------: | :-----------: | :-----------:
-Concatena dos cadenas (agrega "s2" a "s1"), incluyendo el byte nulo de terminación ('\0') | Arreglo de destino | Cadena a agregar a "dst" | Un puntero a la cadena resultante "dst"
-
-
-## [ft_strstr](libft/ft_strstr.c)
-
-`char       *ft_strstr(const char *haystack, const char *needle)`
-
-Descripción | Param. #1 | Param. #2 | Valor de Retorno
-:-----------: | :-----------: | :-----------: | :-----------:
-Localiza una subcadena. Encuentra la primera ocurrencia de la subcadena "needle" en la cadena "haystack". Los bytes nulos de terminación ('\0') no se comparan | Cadena donde buscar | La subcadena a buscar en la cadena "haystack" | Un puntero al comienzo de la subcadena encontrada. NULL si la subcadena no se encuentra. Si "needle" es una cadena vacía, se devuelve "haystack"
-
-
-## [ft_strrchr](libft/ft_strrchr.c)
-
-`char		*ft_strrchr(const char *s, int c)`
-
-Descripción | Param. #1 | Param. #2 | Valor de Retorno
-:-----------: | :-----------: | :-----------: | :-----------:
-Localiza la última ocurrencia de "c" en la cadena apuntada por "s". El carácter nulo de terminación se considera parte de la cadena, por lo tanto, si "c" es '\0', localiza el '\0' final | Puntero a la cadena | Carácter a localizar | Un puntero a la última ocurrencia del carácter "c" en la cadena o NULL si no se encuentra el carácter
-
-## [ft_strcpy](libft/ft_strcpy.c)
-
-`char       *ft_strcpy(char *dst, const char *src)`
-
-Descripción | Param. #1 | Param. #2 | Valor de Retorno
-:-----------: | :-----------: | :-----------: | :-----------:
-Copia una cadena, incluyendo el byte nulo de terminación ('\0') | Arreglo de destino | Cadena a copiar | Un puntero a la cadena de destino "dst"
-
-## [ft_strlcpy](libft/ft_strlcpy.c)
-
-`size_t     ft_strlcpy(char *dst, const char *src, size_t dstsize)`
-
-Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
-:-----------: | :-----------: | :-----------: | :-----------: | :-----------:
-Copia hasta "dstsize - 1" caracteres de la cadena terminada en NUL "src" a "dst", terminando en NUL el resultado | Arreglo de destino | Cadena a copiar | Número de caracteres a copiar de "src" | Longitud total de la cadena creada (longitud de "src")
-
-## [ft_strcat](libft/ft_strcat.c)
-
-`char       *ft_strcat(char *dst, const char *src)`
-
-Descripción | Param. #1 | Param. #2 | Valor de Retorno
-:-----------: | :-----------: | :-----------: | :-----------:
-Concatena dos cadenas (agrega "s2" a "s1"), incluyendo el byte nulo de terminación ('\0') | Arreglo de destino | Cadena a agregar a "dst" | Un puntero a la cadena resultante "dst"
-
-## [ft_strlcat](libft/ft_strlcat.c)
-
-`size_t     ft_strlcat(char *dst, const char *src, size_t size)`
-
-Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
-:-----------: | :-----------: | :-----------: | :-----------: | :-----------:
-Concatena la cadena "src" al final de "dst". Concatenará como máximo "size - strlen(dst) - 1" bytes, terminando en NUL el resultado | Arreglo de destino | Cadena a agregar a "dst" | Número máximo de caracteres a agregar | La longitud inicial de "dst" más la longitud de "src"
-
-## [ft_strstr](libft/ft_strstr.c)
-
-`char       *ft_strstr(const char *haystack, const char *needle)`
-
-Descripción | Param. #1 | Param. #2 | Valor de Retorno
-:-----------: | :-----------: | :-----------: | :-----------:
-Localiza una subcadena. Encuentra la primera ocurrencia de la subcadena "needle" en la cadena "haystack". Los bytes nulos de terminación ('\0') no se comparan | Cadena donde buscar | La subcadena a buscar en la cadena "haystack" | Un puntero al comienzo de la subcadena encontrada. NULL si la subcadena no se encuentra. Si "needle" es una cadena vacía, se devuelve "haystack"
-
-## [ft_strnstr](libft/ft_strnstr.c)
-
-`char       *ft_strnstr(const char *haystack, const char *needle, size_t len)`
-
-Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
-:-----------: | :-----------: | :-----------: | :-----------: | :-----------:
-Localiza una subcadena, donde no se buscan más de "len" caracteres. Encuentra la primera ocurrencia de la subcadena "needle" en la cadena "haystack". Los bytes nulos de terminación ('\0') no se comparan | Cadena donde buscar | La subcadena a buscar en "haystack" | El número máximo de caracteres a buscar | Un puntero al primer carácter de la primera ocurrencia de "needle". NULL si la subcadena no se encuentra. Si "needle" es una cadena vacía, se devuelve "haystack"
-
-## [ft_atoi](libft/ft_atoi.c)
-
-`int        ft_atoi(const char *str)`
-
-Descripción | Param. #1 | Valor de Retorno
-:-----------: | :-----------: | :-----------:
-Convierte una cadena en un entero | La cadena a convertir en entero | El valor convertido
-
-## [ft_isalpha](libft/ft_isalpha.c)
-
-`int        ft_isalpha(int c)`
-
-Descripción | Param. #1 | Valor de Retorno
-:-----------: | :-----------: | :-----------:
-Verifica si es un carácter alfabético. Es equivalente a ([ft_isupper](#ft_isupper)(c) o [ft_islower](#ft_islower)(c)) | El carácter a probar | 0 si el carácter es falso y 1 si el carácter es verdadero
-
-
-
-Descripción | Param. #1 | Param. #2 | Valor de Retorno
-:-----------: | :-----------: | :-----------: | :-----------:
-Asigna (con malloc) y devuelve un arreglo de cadenas obtenido al dividir "s" usando el carácter "c" como delimitador. El arreglo debe terminar con un puntero NULL | La cadena a dividir | El carácter delimitador | El arreglo de nuevas cadenas resultado de la división. NULL si la asignación falla
-
-
-
-
-## [ft_islower](libft/ft_islower.c)
-
-`int  ft_islower(int c)`
-
-Descripción | Param. #1 | Valor de Retorno
-:-----------: | :-----------: | :-----------:
-Verifica si es un carácter en minúscula | El carácter a probar | 0 si el carácter es falso y 1 si el carácter es verdadero
-
-## [ft_isupper](libft/ft_isupper.c)
-
-`int ft_isupper(int c)`
-
-Descripción | Param. #1 | Valor de Retorno
-:-----------: | :-----------: | :-----------:
-Verifica si es un carácter en mayúscula | El carácter a probar | 0 si el carácter es falso y 1 si el carácter es verdadero
-
-## [ft_isspace](libft/ft_isspace.c)
-
-`int ft_isspace(int c)`
-
-Descripción | Param. #1 | Valor de Retorno
-:-----------: | :-----------: | :-----------:
-Verifica si es un carácter de espacio en blanco. Estos son: espacio, avance de página ('\f'), nueva línea ('\n'), retorno de carro ('\r'), tabulador horizontal ('\t') y tabulador vertical ('\v') | El carácter a probar | 0 si el carácter es falso y 1 si el carácter es verdadero
 
