@@ -1,5 +1,5 @@
 
-# -  libft.a  -
+# ** -  libft.a  - **
 
 <br>
 
