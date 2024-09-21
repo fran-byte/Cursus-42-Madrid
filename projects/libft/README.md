@@ -328,7 +328,6 @@ Envía el número entero `n` al file descriptor especificado utilizando la funci
 
 ## Añade la declaración a tu archivo libft.h :
 
-<br><br>
 
 ``` c
 typedef	struct	s_list
