@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 18:36:53 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/19 18:37:27 by frromero         ###   ########.fr       */
+/*   Updated: 2024/09/22 09:13:10 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,4 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-
 }

@@ -6,15 +6,13 @@
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 10:29:23 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/21 14:17:47 by frromero         ###   ########.fr       */
+/*   Updated: 2024/09/22 08:35:13 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Checks if a character is printable (ASCII 32-126) */
-
 #include "libft.h"
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
 		return (1);

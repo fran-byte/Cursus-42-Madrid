@@ -6,16 +6,16 @@
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 11:15:06 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/20 16:01:07 by frromero         ###   ########.fr       */
+/*   Updated: 2024/09/22 08:32:10 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-	size_t i;
-	char *buf;
+	size_t	i;
+	char	*buf;
 
 	i = 0;
 	buf = s;
