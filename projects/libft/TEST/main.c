@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 15:31:49 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/22 19:49:01 by frromero         ###   ########.fr       */
+/*   Updated: 2024/09/22 20:15:12 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -579,14 +579,26 @@ void test_memcmp()
 	printf(" |  _| | |_          | | | | | | |  __/ | | | | | | | (__  | | | | | | | |_) |\n");
 	printf(" |_|    \\__|  _____  |_| |_| |_|  \\___| |_| |_| |_|  \\___| |_| |_| |_| | .__/ \n");
 	printf("             |_____|                                                   |_|    \n");
+
+	// TEST1
+
 	char *str1 = "Hola42Madrid";
 	char *str2 = "Hola42Madrid";
 	char *str3 = "Hola43";
-	printf("\n*str1 = \"Hola42Madrid\"");
-	printf("\n*str2 = \"Hola42Madrid\"");
-	printf("\n*str3 = \"Hola43\"\n");
+
+	printf("\n*str1 = Hola42Madrid\n");
+	printf("*str2 = Hola42Madrid\n");
+	printf("*str3 = Hola42Madrid\n\n");
 	printf("ft_memcmp(str1, str2, 4) = %d\n", ft_memcmp(str1, str2, 4));
 	printf("ft_memcmp(str1, str3, 6) = %d\n", ft_memcmp(str1, str3, 6));
+
+	// TEST2
+
+	char *str4 = "Hola42Madrid";
+	char *str5 = "Hola42Madrid";
+	char *str6 = "Hola43";
+	printf("\nmemcmp(str1, str2, 4) = %d\n", memcmp(str4, str5, 4));
+	printf("memcmp(str1, str3, 6) = %d\n", memcmp(str4, str6, 6));
 }
 
 void test_strnstr()
