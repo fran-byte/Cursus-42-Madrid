@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 15:31:49 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/22 20:15:12 by frromero         ###   ########.fr       */
+/*   Updated: 2024/09/23 18:37:07 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -609,10 +609,16 @@ void test_strnstr()
 	printf(" |  _| | |_          \\__ \\ | |_  | |    | | | | \\__ \\ | |_  | |   \n");
 	printf(" |_|    \\__|  _____  |___/  \\__| |_|    |_| |_| |___/  \\__| |_|   \n");
 	printf("             |_____|                                              \n");
+
+	//TEST 1
+
 	char *str = "Hola42Madrid";
-	char *substr = "42";
-	char *result = ft_strnstr(str, substr, ft_strlen(str));
-	printf("ftstrnstr(str, substr, ft_strlen(str))");
+	char *substr = "42Madrid";
+	char *result = ft_strnstr(str, substr, strlen(substr));
+
+	printf("\n*str = 'Hola42Madrid'\n");
+	printf("*substr = '42Madrid'\n");
+	printf("ftstrnstr(str, substr, ft_strlen(substr))");
 	if (result)
 	{
 		printf("Encontrado: %s\n", result);
@@ -621,6 +627,32 @@ void test_strnstr()
 	{
 		printf("No encontrado\n");
 	}
+
+	//TEST 2
+
+	char *str2 = "Hola42Madrid";
+	char *substr2 = "";
+	char *result2 = ft_strnstr(str2, substr2, strlen(substr2));
+
+	printf("\n*str = 'Hola42Madrid'\n");
+	printf("*substr = ''\n");
+	printf("ftstrnstr(str, substr, ft_strlen(substr))");
+	if (result2)
+	{
+		printf("Encontrado: %s\n", result2);
+	}
+	else
+	{
+		printf("No encontrado\n");
+	}
+
+}
+
+int main()
+{
+    test_strnstr();
+
+    return 0;
 }
 
 void test_atoi()
