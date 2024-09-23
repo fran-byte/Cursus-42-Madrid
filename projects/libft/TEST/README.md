@@ -184,7 +184,7 @@ char *ft_strnstr (const char *haystack, const char *needle, size_t len)`
 ```
 Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
-**Localiza** una subcadena, donde no se buscan más de "len" caracteres. Encuentra la primera ocurrencia de la subcadena "needle" en la cadena "haystack". Los bytes nulos de terminación ('\0') no se comparan | Cadena donde buscar | La subcadena a buscar en "haystack" | El número máximo de caracteres a buscar | Un puntero al primer carácter de la primera ocurrencia de "needle". NULL si la subcadena no se encuentra. Si "needle" es una cadena vacía, se devuelve "haystack"
+**Localiza** una subcadena, donde solo se buscan "len" caracteres. Encuentra la primera ocurrencia de la subcadena "needle" en la cadena "haystack". Los bytes nulos de terminación ('\0') no se comparan | Cadena donde buscar | La subcadena a buscar en "haystack" | El número máximo de caracteres a buscar | Un puntero al primer carácter de la primera ocurrencia de "needle". NULL si la subcadena no se encuentra. Si "needle" es una cadena vacía, se devuelve "haystack"
 
 ## [ft_atoi](libft/ft_atoi.c)
 
