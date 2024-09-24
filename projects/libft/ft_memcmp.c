@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Compares two memory areas byte by byte, returns comparison result */
+/* Compares the first `n` bytes of two memory areas (`s1` and `s2`) */
+/* Returns a value indicating whether the memory areas are equal,*/
+/* or which is greater */
 
 #include "libft.h"
 
