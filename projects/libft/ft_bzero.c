@@ -13,8 +13,6 @@
 /* Zeroes out `n` bytes of memory starting from the location pointed to by `s`*/
 /* It is used to initialize memory to zero.*/
 
-/*Zeroes out the memory for the given number of bytes starting from a location*/
-
 #include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
