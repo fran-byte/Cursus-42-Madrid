@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Allocates and zeroes memory for a specified number of elements */
+
 #include "libft.h"
 
 void	*ft_calloc(size_t nitems, size_t size)
