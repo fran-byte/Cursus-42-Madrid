@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Fills memory with a specified byte for a given length, */
+/* returns pointer to memory */
+
 #include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
