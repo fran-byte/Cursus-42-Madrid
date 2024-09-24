@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Copies memory with overlap support from source to destination, */
+*/ returns destination */
+
 #include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
