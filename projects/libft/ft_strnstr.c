@@ -33,7 +33,7 @@ char	*ft_strnstr(const char *big, const char *tiny, size_t len)
 			t++;
 		}
 		if (tiny[t] == '\0')
-			return ((char *)big[b]);
+			return ((char *)big + b);
 		b++;
 	}
 	return (0);
