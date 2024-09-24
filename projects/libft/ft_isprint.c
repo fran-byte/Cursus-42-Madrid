@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Checks if the character is printable, returning Non-Zero for true */
+/* and 0 for false */
+
 #include "libft.h"
 
 int	ft_isprint(int c)
