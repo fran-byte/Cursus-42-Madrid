@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Searches memory for a byte value, returns pointer to match */
+/* or NULL if not found */
+
 #include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
