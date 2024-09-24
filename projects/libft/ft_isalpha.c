@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Checks if the character is alphabetic, returning Non-Zero for true */ 
-/* and 0 for false */
+/*Checks if the character is alphabetic (either uppercase or lowercase) */
+/* Returns Non-Zero for true and 0 for false */ 
 
 #include "libft.h"
 
