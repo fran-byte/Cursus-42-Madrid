@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Checks if the character is part of the ASCII table, returning Non-Zero */
+/* for true and 0 for false */
+
 #include "libft.h"
 
 int	ft_isascii(int c)
