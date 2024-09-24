@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Finds the last occurrence of a character `c` in the string `s`. */
+/* If found, returns a pointer to the character; otherwise, returns `NULL`. */
+
 #include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
