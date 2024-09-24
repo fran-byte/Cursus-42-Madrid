@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Convert a character from uppercase to lowercase */
+/* Converts an uppercase letter to lowercase if applicable. Returns the */
+/* lowercase equivalent, or the original character if not uppercase */
 
 #include "libft.h"
 
