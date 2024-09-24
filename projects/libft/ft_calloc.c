@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Allocates memory for an array of `count` elements, each of `size` bytes,   */
+/*and initializes all bytes to zero. Returns a pointer to the allocated memory*/
+
 /* Allocates and zeroes memory for a specified number of elements */
 
 #include "libft.h"
