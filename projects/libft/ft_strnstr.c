@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 /* Locates the first occurrence of the substring `tiny` within the first `len`*/
-/* characters of `big`. Returns a pointer to the found substring or `NULL` */
+/* characters of `big`. Returns a pointer to the found substring or `NULL`  */
 
 #include "libft.h"
 
