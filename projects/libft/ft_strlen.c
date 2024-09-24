@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Calculates the length of the string, excluding the null-terminating */
+/* byte ('\0'). Returns the total number of characters */
+
 #include "libft.h"
 
 size_t	ft_strlen(const char *str)
