@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Checks if the character is printable, returning Non-Zero for true */
-/* and 0 for false */
+/* Checks if the character is part of the standard ASCII table (values 0–127)*/
+/* Returns Non-Zero for true, and 0 for false */
 
 #include "libft.h"
 
