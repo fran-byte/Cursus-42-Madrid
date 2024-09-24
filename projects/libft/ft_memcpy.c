@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Copies n bytes from source memory to destination, */
+/* returns pointer to destination */
+
 #include "libft.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
