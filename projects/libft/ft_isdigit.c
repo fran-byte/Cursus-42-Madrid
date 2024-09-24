@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Checks if the character is a digit (0-9), returning Non-Zero for true */
+/* and 0 for false */
+
 #include "libft.h"
 
 int	ft_isdigit(int c)
