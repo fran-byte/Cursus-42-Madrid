@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Copies memory with overlap support from source to destination, */
-*/ returns destination */
+/* Copies `len` bytes from `src` to `dst`, allowing overlap of memory areas.  */
+/* Returns a pointer to the destination `dst`. */
 
 #include "libft.h"
 
