@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Converts a lowercase letter to uppercase if applicable. Returns the */
+/* uppercase equivalent, or the original character if not lowercase. */
+
 #include "libft.h"
 
 int	ft_toupper(char c)
