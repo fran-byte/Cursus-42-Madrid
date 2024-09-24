@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Compares two memory areas byte by byte, returns comparison result */
+
 #include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
