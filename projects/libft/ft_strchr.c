@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Finds the first occurrence of a character in a string, */
+/* returns pointer or NULL */
+
 #include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
