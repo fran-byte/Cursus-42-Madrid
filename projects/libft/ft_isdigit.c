@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Checks if the character is a digit (0-9), returning Non-Zero for true */
-/* and 0 for false */
+/* Checks if the character is a digit (0-9). Returns Non-Zero if true */
+/* and 0 if false */
 
 #include "libft.h"
 
