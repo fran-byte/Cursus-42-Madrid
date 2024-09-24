@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*Checks if the character is alphanumeric, returning Non-Zero for true */
-/* and 0 for false */
+/*Checks if the character is alphanumeric (either a digit or an alphabetic */
+/* character). Returns Non-Zero for true, 0 for false.*/
 
 #include "libft.h"
 
