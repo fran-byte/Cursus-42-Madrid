@@ -10,6 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Copies up to `size - 1` characters from the source string to the */
+/* destination, ensuring null termination. Returns the total length of the */
+/* source string. */
+
 #include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
