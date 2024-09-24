@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Compares the first `n` characters of two strings (`s1` and `s2`). */
+/* Returns a negative, zero, or positive integer based on the comparison */
+
 #include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
