@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Searches memory for a byte value, returns pointer to match */
-/* or NULL if not found */
+/* Searches the first `n` bytes of memory area `s` for the byte `c` */
+/* Returns a pointer to the first occurrence, or `NULL` if not found */
 
 #include "libft.h"
 
