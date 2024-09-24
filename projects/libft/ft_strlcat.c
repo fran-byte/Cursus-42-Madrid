@@ -10,6 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Appends the source string to the destination string, with a size limit, */
+/* and ensures null termination. Returns the total length of the concatenated */
+/* string. */
+
 #include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
