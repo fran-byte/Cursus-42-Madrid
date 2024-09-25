@@ -58,7 +58,7 @@ size_t ft_strlen (const char *s)`
 ```
 Descripción | Param. #1 | Valores de Retorno
 :-----------: | :-----------: | :-----------:
-Calcula la **longitud** de la cadena proporcionada, excluyendo el byte nulo (`'\0'`) al final. Devuelve el número de caracteres presentes en la cadena. Es útil para determinar el tamaño de las cadenas antes de manipularlas. | La cadena a calcular | Número de caracteres en la cadena apuntada por ´s´
+Calcula la **longitud** de la cadena proporcionada, excluyendo el byte nulo (`'\0'`) al final. Devuelve el número de caracteres presentes en la cadena. Es útil para determinar el tamaño de las cadenas antes de manipularlas. | La cadena a calcular | Número de caracteres en la cadena apuntada por `s`
 
 ## [ft_memset](libft/ft_memset.c)
 
