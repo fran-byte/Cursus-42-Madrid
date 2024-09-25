@@ -85,7 +85,7 @@ void *ft_memcpy (void *dst, const void *src, size_t n)`
 ```
 Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
-**Copia** `n` bytes del área de memoria `src` a `dst`. Las áreas de memoria no deben solaparse; si lo hacen, es mejor utilizar `ft_memmove`. Esta función es rápida, pero si se superponen, puede sobrescribir memoria | Área de memoria dst | Área de memoria src | El número de bytes | Un puntero al área de memoria dst
+**Copia** `n` bytes del área de memoria `src` a `dst`. Las áreas de memoria no deben solaparse; si lo hacen, es mejor utilizar `ft_memmove`. Esta función es rápida, pero si se superponen, puede sobrescribir memoria | Área de memoria ´dst´ | Área de memoria ´src´ | El número de bytes | Un puntero al área de memoria ´dst´
 
 ## [ft_memmove](libft/ft_memmove.c)
 
@@ -103,7 +103,7 @@ size_t ft_strlcpy (char *dst, const char *src, size_t dstsize)`
 ```
 Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
-**Copia** hasta `dstsize - 1` caracteres de la cadena `src` a `dst`, garantizando la terminación con `'\0'` si `dstsize` es mayor que 0. Se utiliza para evitar desbordamientos en la copia de cadenas.  | Cadena de destino donde se copiarán los caracteres de src | Cadena de origen que se desea copiar. | Tamaño del buffer de destino dst.| Devuelve la longitud total de la cadena de origen src. Si dstsize es 0, no se realiza ninguna copia y se devuelve la longitud de src
+**Copia** hasta `dstsize - 1` caracteres de la cadena `src` a `dst`, garantizando la terminación con `'\0'` si `dstsize` es mayor que 0. Se utiliza para evitar desbordamientos en la copia de cadenas.  | Cadena de destino donde se copiarán los caracteres de src | Cadena de origen que se desea copiar. | Tamaño del buffer de destino ´dst´.| Devuelve la longitud total de la cadena de origen ´src´. Si dstsize es 0, no se realiza ninguna copia y se devuelve la longitud de ´src´
 
 ## [ft_strlcat](libft/ft_strlcat.c)
 
@@ -112,7 +112,7 @@ size_t ft_strlcat (char *dst, const char *src, size_t size)`
 ```
 Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
-**Concatena** la cadena `src` al final de `dst`, hasta un máximo de `size - strlen(dst) - 1` bytes, asegurando la terminación con `'\0'`. Esta función es útil para evitar desbordamientos al concatenar cadenas.  | Arreglo de destino | Cadena a agregar a "dst" | Número máximo de caracteres a agregar | La longitud inicial de "dst" más la longitud de "src"
+**Concatena** la cadena `src` al final de `dst`, hasta un máximo de `size - strlen(dst) - 1` bytes, asegurando la terminación con `'\0'`. Esta función es útil para evitar desbordamientos al concatenar cadenas.  | Arreglo de destino | Cadena a agregar a ´dst´ | Número máximo de caracteres a agregar | La longitud inicial de ´dst´ más la longitud de ´src´
 
 ## [ft_toupper](libft/ft_toupper.c)
 
@@ -130,7 +130,7 @@ int ft_tolower (int c)`
 ```
 Descripción | Param. #1 | Valor de Retorno
 :-----------: | :-----------: | :-----------:
-Convierte un carácter mayúscula a su equivalente en minúscula, si es aplicable. Si el carácter no es una letra mayúscula, se devuelve sin cambios. | El carácter a convertir | Si "c" es una letra mayúscula, devuelve su equivalente en minúscula. De lo contrario, devuelve "c"
+Convierte un carácter mayúscula a su equivalente en minúscula, si es aplicable. Si el carácter no es una letra mayúscula, se devuelve sin cambios. | El carácter a convertir | Si ´c´ es una letra mayúscula, devuelve su equivalente en minúscula. De lo contrario, devuelve ´c´
 
 ## [ft_strchr](libft/ft_strchr.c)
 
@@ -139,7 +139,7 @@ char *ft_strchr (const char *s, int c)`
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
-Esta función localiza la **primera** ocurrencia del carácter `c` en la cadena apuntada por `s`. El carácter nulo de terminación (`'\0'`) es considerado parte de la cadena, por lo tanto, si `c` es `'\0'`, la función localizará el `'\0'` final. Es útil para buscar caracteres específicos en una cadena. | Puntero a la cadena | Carácter a localizar | Un puntero a la primera ocurrencia del carácter "c" en la cadena o NULL si no se encuentra el carácter
+Esta función localiza la **primera** ocurrencia del carácter `c` en la cadena apuntada por `s`. El carácter nulo de terminación (`'\0'`) es considerado parte de la cadena, por lo tanto, si `c` es `'\0'`, la función localizará el `'\0'` final. Es útil para buscar caracteres específicos en una cadena. | Puntero a la cadena | Carácter a localizar | Un puntero a la primera ocurrencia del carácter ´c´ en la cadena o ´NULL´ si no se encuentra el carácter
 
 ## [ft_strrchr](libft/ft_strrchr.c)
 
@@ -148,7 +148,7 @@ char *ft_strrchr (const char *s, int c)`
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
-Localiza la **última** ocurrencia del carácter `c` en la cadena apuntada por `s`. El carácter nulo de terminación (`'\0'`) es considerado parte de la cadena, por lo tanto, si `c` es `'\0'`, la función localizará el `'\0'` final. Esta función es útil cuando se desea encontrar la última aparición de un carácter específico. | Puntero a la cadena | Carácter a localizar | Un puntero a la última ocurrencia del carácter "c" en la cadena o NULL si no se encuentra el carácter
+Localiza la **última** ocurrencia del carácter `c` en la cadena apuntada por `s`. El carácter nulo de terminación (`'\0'`) es considerado parte de la cadena, por lo tanto, si `c` es `'\0'`, la función localizará el `'\0'` final. Esta función es útil cuando se desea encontrar la última aparición de un carácter específico. | Puntero a la cadena | Carácter a localizar | Un puntero a la última ocurrencia del carácter ´c´ en la cadena o ´NULL´ si no se encuentra el carácter
 
 ## [ft_strncmp](libft/ft_strncmp.c)
 
@@ -167,7 +167,7 @@ void *ft_memchr (const void *s, int c, size_t n)`
 Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
 **Escanea** los primeros `n` bytes del área de memoria `s` en busca de la primera instancia del valor `c`. Es útil para buscar un valor específico dentro de una región de memoria.
- | El número de bytes | Un puntero al byte coincidente o NULL si el carácter no aparece en el área de memoria dada
+ | El número de bytes | Un puntero al byte coincidente o ´NULL´ si el carácter no aparece en el área de memoria dada
 
 ## [ft_memcmp](libft/ft_memcmp.c)
 
@@ -176,7 +176,7 @@ void *ft_memcmp (void *dst, const void *src, size_t n)`
 ```
 Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
-**Compara** los primeros `n` bytes de las áreas de memoria `s1` y `s2`. Devuelve un valor negativo, cero o positivo según si `s1` es menor, igual o mayor que `s2`. Es útil para comparar bloques de memoria de tamaño fijo. | Área de memoria s1 | Área de memoria s2 | El número de bytes | < 0 si s1 es menor que s2, > 0 si s1 es mayor que s2, = 0 si s1 es igual a s2
+**Compara** los primeros `n` bytes de las áreas de memoria `s1` y `s2`. Devuelve un valor negativo, cero o positivo según si `s1` es menor, igual o mayor que `s2`. Es útil para comparar bloques de memoria de tamaño fijo. | Área de memoria ´s1´ | Área de memoria ´s2´ | El número de bytes | < 0 si ´s1´ es menor que ´s2´, > 0 si ´s1´ es mayor que ´s2´, = 0 si ´s1´ es igual a ´s2´
 
 ## [ft_strnstr](libft/ft_strnstr.c)
 
@@ -185,7 +185,7 @@ char *ft_strnstr (const char *haystack, const char *needle, size_t len)`
 ```
 Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
-**Busca** la primera aparición de la subcadena `big` en la cadena `tiny`, buscando solo en los primeros `len` caracteres de `big`. Esta función asegura que la búsqueda no exceda el límite de `len`. Es útil cuando se necesita encontrar una subcadena en un rango restringido de una cadena. | Cadena donde buscar | La subcadena a buscar en "big" | El número máximo de caracteres a buscar | Un puntero al primer carácter de la primera ocurrencia de "tiny". NULL si la subcadena no se encuentra. Si "needle" es una cadena vacía, se devuelve "big"
+**Busca** la primera aparición de la subcadena `big` en la cadena `tiny`, buscando solo en los primeros `len` caracteres de `big`. Esta función asegura que la búsqueda no exceda el límite de `len`. Es útil cuando se necesita encontrar una subcadena en un rango restringido de una cadena. | Cadena donde buscar | La subcadena a buscar en ´big´ | El número máximo de caracteres a buscar | Un puntero al primer carácter de la primera ocurrencia de ´tiny´. ´NULL´ si la subcadena no se encuentra. Si "needle" es una cadena vacía, se devuelve ´big´
 
 ## [ft_atoi](libft/ft_atoi.c)
 
