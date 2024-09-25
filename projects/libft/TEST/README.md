@@ -157,7 +157,7 @@ int ft_strncmp (const char *s1, const char *s2, size_t n)`
 ```
 Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
-**Compara** compara dos cadenas (s1 y s2) carácter por carácter, hasta un máximo de n caracteres. S| Primera cadena a comparar | Segunda cadena a comparar | Número máximo de caracteres a comparar | Si las cadenas son idénticas en esos primeros `n` caracteres, devuelve **0**. Negativo `s1` < `s2` y positivo si `s1` > `s2`. Es útil para comparar prefijos de cadenas. .
+**Compara** dos cadenas (s1 y s2) carácter por carácter, hasta un máximo de n caracteres. S| Primera cadena a comparar | Segunda cadena a comparar | Número máximo de caracteres a comparar | Si las cadenas son idénticas en esos primeros `n` caracteres, devuelve **0**. Negativo `s1` < `s2` y positivo si `s1` > `s2`. Es útil para comparar prefijos de cadenas. .
 
 ## [ft_memchr](libft/ft_memchr.c)
 
