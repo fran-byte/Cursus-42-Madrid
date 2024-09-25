@@ -241,11 +241,11 @@ Descripción | Param. #1 | Param. #2 | Valor de Retorno
 ## [ft_strtrim](libft/ft_strtrim.c)
 
 ``` c
-char *ft_strjoin (char const *s1, char const *set)`
+char *ft_strtrim (char const *s1, char const *set)`
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
-**Asigna** (con malloc) y devuelve una copia de la cadena dada como argumento sin los caracteres especificados en el argumento "set" al principio y al final de la cadena | La cadena a recortar | El conjunto de caracteres de referencia para recortar | La cadena recortada. NULL si la asignación falla
+**Asigna memoria (con `malloc`) y devuelve una copia de `s1` sin los caracteres especificados en `set` al principio y al final de la cadena. Es útil para eliminar caracteres indeseados (como espacios en blanco) de los extremos de una cadena. | La cadena prefijo | La cadena sufijo | La nueva cadena. NULL si la asignación falla | La cadena a recortar | El conjunto de caracteres de referencia para recortar | La cadena recortada. NULL si la asignación falla
 
 ## [ft_split](libft/ft_split.c)
 
@@ -254,7 +254,7 @@ char **ft_split (char const *s, char c)`
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
-**Asigna** (con malloc) y devuelve un array de cadenas (terminado por un puntero NULL) obtenidas al dividir la cadena "s" usando el carácter "c" como delimitador. No incluye el delimitador en las cadenas resultantes. | La cadena a dividir | El carácter delimitador usado para separar las subcadenas | Un array de cadenas resultante de la división. NULL si la asignación falla
+**Asigna** memoria (con `malloc`) y devuelve un array de cadenas, obtenido dividiendo la cadena `s` utilizando el carácter `c` como delimitador. Las subcadenas no incluyen el delimitador, y el array resultante termina con un puntero `NULL`. Es útil para dividir una cadena en partes según un delimitador específico. | La cadena a dividir | El carácter delimitador usado para separar las subcadenas | Un array de cadenas resultante de la división. NULL si la asignación falla
 
 ## [ft_itoa](libft/ft_itoa.c)
 
