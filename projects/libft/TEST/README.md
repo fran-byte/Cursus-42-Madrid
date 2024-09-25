@@ -14,7 +14,7 @@ int ft_isalpha (int c)
 
 Descripción | Param. #1 | Valor de Retorno
 :-----------: | :-----------: | :-----------:
-Verifica si el carácter dado es **alfabético** (letra mayúscula o minúscula).   | El carácter a probar | Devuelve valor **distinto de 0** si el carácter pertenece al alfabeto (A-Z o a-z) y 0 en caso contrario.
+Verifica si el carácter dado es **alfabético** (letra mayúscula o minúscula).   | El carácter a probar | Devuelve un valor **distinto de 0** si el carácter pertenece al alfabeto (A-Z o a-z) y 0 en caso contrario.
 
 ## [ft_isdigit](libft/ft_isdigit.c)
 
@@ -23,7 +23,7 @@ int ft_isdigit (int c)
 ```
 Descripción | Param. #1 | Valor de Retorno
 :-----------: | :-----------: | :-----------:
-Verifica si el carácter dado es un **dígito** (0 a 9) | El carácter a probar | Devuelve valor **distinto de 0** si el carácter es un dígito numérico (entre '0' y '9') y 0 en caso contrario.
+Verifica si el carácter dado es un **dígito** (0 a 9) | El carácter a probar | Devuelve un valor **distinto de 0** si el carácter es un dígito numérico (entre '0' y '9') y 0 en caso contrario.
 
 ## [ft_isalnum](libft/ft_isalnum.c)
 
@@ -32,7 +32,7 @@ int ft_isalnum (int c)
 ```
 Descripción | Param. #1 | Valor de Retorno
 :-----------: | :-----------: | :-----------:
-Verifica si es un carácter **alfanumérico** | El carácter a probar | Devuelve valor **distinto de 0** si el carácter es alfanumérico y 0 si es falso.
+Verifica si es un carácter **alfanumérico** | El carácter a probar | Devuelve un valor **distinto de 0** si el carácter es alfanumérico y 0 si es falso.
 
 ## [ft_isascii](libft/ft_isascii.c)
 
@@ -41,7 +41,7 @@ int ft_isascii (int c)
 ```
 Descripción | Param. #1 | Valor de Retorno
 :-----------: | :-----------: | :-----------:
-Verifica si es un carácter **ASCII**, que es cualquier carácter entre 0 y 126 inclusive | El carácter a probar | **distinto de 0**  si el carácter es ascii y 0 si el carácter es falso.
+Verifica si es un carácter **ASCII**, que es cualquier carácter entre 0 y 126 inclusive | El carácter a probar | Devuelve un valor **distinto de 0**  si el carácter es ascii y 0 si el carácter es falso.
 
 ## [ft_isprint](libft/ft_isprint.c)
 
@@ -50,7 +50,7 @@ int ft_isprint (int c)
 ```
 Descripción | Param. #1 | Valor de Retorno
 :-----------: | :-----------: | :-----------:
-Verifica si es un carácter **imprimible**, incluido el espacio | El carácter a probar | **distinto de 0**  si el carácter es imprimible y 0 si el carácter es falso.
+Verifica si es un carácter **imprimible**, incluido el espacio | El carácter a probar | Devuelve un valor **distinto de 0**  si el carácter es imprimible y 0 si el carácter es falso.
 
 ## [ft_strlen](libft/ft_strlen.c)
 ``` c
