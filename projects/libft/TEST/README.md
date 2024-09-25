@@ -103,7 +103,7 @@ size_t ft_strlcpy (char *dst, const char *src, size_t dstsize)`
 ```
 Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
-**Copia** hasta `dstsize - 1` caracteres de la cadena `src` a `dst`, garantizando la terminación con `'\0'` si `dstsize` es mayor que 0. Se utiliza para evitar desbordamientos en la copia de cadenas.  | Cadena a copiar | Número de caracteres a copiar de "src" | Longitud total de la cadena creada (longitud de "src") | Retorna el puntero a la nueva subcadena que ha sido extraída de `dst`
+**Copia** hasta `dstsize - 1` caracteres de la cadena `src` a `dst`, garantizando la terminación con `'\0'` si `dstsize` es mayor que 0. Se utiliza para evitar desbordamientos en la copia de cadenas.  | Cadena de destino donde se copiarán los caracteres de src | Cadena de origen que se desea copiar. | Tamaño del buffer de destino dst.| Devuelve la longitud total de la cadena de origen src. Si dstsize es 0, no se realiza ninguna copia y se devuelve la longitud de src
 
 ## [ft_strlcat](libft/ft_strlcat.c)
 
