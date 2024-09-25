@@ -19,7 +19,7 @@ Verifica si el carácter dado es **alfabético** (letra mayúscula o minúscula)
 ## [ft_isdigit](libft/ft_isdigit.c)
 
 ``` c
-int ft_isdigit (int c)`
+int ft_isdigit (int c)
 ```
 Descripción | Param. #1 | Valor de Retorno
 :-----------: | :-----------: | :-----------:
@@ -28,7 +28,7 @@ Verifica si el carácter dado es un **dígito** (0 a 9) | El carácter a probar 
 ## [ft_isalnum](libft/ft_isalnum.c)
 
 ``` c
-int ft_isalnum (int c)`
+int ft_isalnum (int c)
 ```
 Descripción | Param. #1 | Valor de Retorno
 :-----------: | :-----------: | :-----------:
@@ -37,7 +37,7 @@ Verifica si es un carácter **alfanumérico** | El carácter a probar | 0 si el 
 ## [ft_isascii](libft/ft_isascii.c)
 
 ``` c
-int ft_isascii (int c)`
+int ft_isascii (int c)
 ```
 Descripción | Param. #1 | Valor de Retorno
 :-----------: | :-----------: | :-----------:
@@ -46,7 +46,7 @@ Verifica si es un carácter **ASCII**, que es cualquier carácter entre 0 y octa
 ## [ft_isprint](libft/ft_isprint.c)
 
 ``` c
-int ft_isprint (int c)`
+int ft_isprint (int c)
 ```
 Descripción | Param. #1 | Valor de Retorno
 :-----------: | :-----------: | :-----------:
@@ -54,7 +54,7 @@ Verifica si es un carácter **imprimible**, incluido el espacio | El carácter a
 
 ## [ft_strlen](libft/ft_strlen.c)
 ``` c
-size_t ft_strlen (const char *s)`
+size_t ft_strlen (const char *s)
 ```
 Descripción | Param. #1 | Valores de Retorno
 :-----------: | :-----------: | :-----------:
@@ -63,7 +63,7 @@ Calcula la **longitud** de la cadena proporcionada, excluyendo el byte nulo (`'\
 ## [ft_memset](libft/ft_memset.c)
 
 ``` c
-void *ft_memset (void *s, int c, size_t len)`
+void *ft_memset (void *s, int c, size_t len)
 ```
 Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
@@ -72,7 +72,7 @@ Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 ## [ft_bzero](libft/ft_bzero.c)
 
 ``` c
-void *ft_bzero (void *s,  size_t n)`
+void *ft_bzero (void *s,  size_t n)
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
@@ -81,7 +81,7 @@ Descripción | Param. #1 | Param. #2 | Valor de Retorno
 ## [ft_memcpy](libft/ft_memcpy.c)
 
 ``` c
-void *ft_memcpy (void *dst, const void *src, size_t n)`
+void *ft_memcpy (void *dst, const void *src, size_t n)
 ```
 Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
@@ -90,7 +90,7 @@ Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 ## [ft_memmove](libft/ft_memmove.c)
 
 ``` c
-void *ft_memmove (void *dst, const void *src, size_t len)`
+void *ft_memmove (void *dst, const void *src, size_t len)
 ```
 Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
@@ -99,7 +99,7 @@ Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 ## [ft_strlcpy](libft/ft_strlcpy.c)
 
 ``` c
-size_t ft_strlcpy (char *dst, const char *src, size_t dstsize)`
+size_t ft_strlcpy (char *dst, const char *src, size_t dstsize)
 ```
 Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
@@ -108,7 +108,7 @@ Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 ## [ft_strlcat](libft/ft_strlcat.c)
 
 ``` c
-size_t ft_strlcat (char *dst, const char *src, size_t size)`
+size_t ft_strlcat (char *dst, const char *src, size_t size)
 ```
 Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
@@ -117,7 +117,7 @@ Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 ## [ft_toupper](libft/ft_toupper.c)
 
 ``` c
-int ft_toupper (int c)`
+int ft_toupper (int c)
 ```
 Descripción | Param. #1 | Valor de Retorno
 :-----------: | :-----------: | :-----------:
@@ -126,7 +126,7 @@ Convierte un carácter en minúscula a su equivalente en mayúscula. Si el cará
 ## [ft_tolower](libft/ft_tolower.c)
 
 ``` c
-int ft_tolower (int c)`
+int ft_tolower (int c)
 ```
 Descripción | Param. #1 | Valor de Retorno
 :-----------: | :-----------: | :-----------:
@@ -135,7 +135,7 @@ Convierte un carácter mayúscula a su equivalente en minúscula, si es aplicabl
 ## [ft_strchr](libft/ft_strchr.c)
 
 ``` c
-char *ft_strchr (const char *s, int c)`
+char *ft_strchr (const char *s, int c)
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
@@ -144,7 +144,7 @@ Esta función localiza la **primera** ocurrencia del carácter `c` en la cadena 
 ## [ft_strrchr](libft/ft_strrchr.c)
 
 ``` c
-char *ft_strrchr (const char *s, int c)`
+char *ft_strrchr (const char *s, int c)
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
@@ -153,7 +153,7 @@ Localiza la **última** ocurrencia del carácter `c` en la cadena apuntada por `
 ## [ft_strncmp](libft/ft_strncmp.c)
 
 ``` c
-int ft_strncmp (const char *s1, const char *s2, size_t n)`
+int ft_strncmp (const char *s1, const char *s2, size_t n)
 ```
 Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
@@ -162,7 +162,7 @@ Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 ## [ft_memchr](libft/ft_memchr.c)
 
 ``` c
-void *ft_memchr (const void *s, int c, size_t n)`
+void *ft_memchr (const void *s, int c, size_t n)
 ```
 Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
@@ -171,7 +171,7 @@ Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 ## [ft_memcmp](libft/ft_memcmp.c)
 
 ``` c
-void *ft_memcmp (void *dst, const void *src, size_t n)`
+void *ft_memcmp (void *dst, const void *src, size_t n)
 ```
 Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
@@ -180,7 +180,7 @@ Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 ## [ft_strnstr](libft/ft_strnstr.c)
 
 ``` c
-char *ft_strnstr (const char *haystack, const char *needle, size_t len)`
+char *ft_strnstr (const char *haystack, const char *needle, size_t len)
 ```
 Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
@@ -189,7 +189,7 @@ Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 ## [ft_atoi](libft/ft_atoi.c)
 
 ``` c
-int ft_atoi (const char *str)`
+int ft_atoi (const char *str)
 ```
 Descripción | Param. #1 | Valor de Retorno
 :-----------: | :-----------: | :-----------:
@@ -199,7 +199,7 @@ Descripción | Param. #1 | Valor de Retorno
 ## [ft_calloc](libft/ft_calloc.c)
 
 ``` c
-void *ft_calloc (size_t count, size_t size)`
+void *ft_calloc (size_t count, size_t size)
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
@@ -209,7 +209,7 @@ Descripción | Param. #1 | Param. #2 | Valor de Retorno
 ## [ft_strdup](libft/ft_strdup.c)
 
 ``` c
-char *ft_strdup (const char *s)`
+char *ft_strdup (const char *s)
 ```
 Descripción | Param. #1 | Valores de Retorno
 :-----------: | :-----------: | :-----------:
@@ -222,7 +222,7 @@ Descripción | Param. #1 | Valores de Retorno
 ## [ft_substr](libft/ft_substr.c)
 
 ``` c
-char *ft_substr (char const *s, unsigned int start, size_t len)`
+char *ft_substr (char const *s, unsigned int start, size_t len)
 ```
 Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
@@ -231,7 +231,7 @@ Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 ## [ft_strjoin](libft/ft_strjoin.c)
 
 ``` c
-char *ft_strjoin (char const *s1, char const *s2)`
+char *ft_strjoin (char const *s1, char const *s2)
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
@@ -240,7 +240,7 @@ Descripción | Param. #1 | Param. #2 | Valor de Retorno
 ## [ft_strtrim](libft/ft_strtrim.c)
 
 ``` c
-char *ft_strtrim (char const *s1, char const *set)`
+char *ft_strtrim (char const *s1, char const *set)
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
@@ -249,7 +249,7 @@ Descripción | Param. #1 | Param. #2 | Valor de Retorno
 ## [ft_split](libft/ft_split.c)
 
 ``` c
-char **ft_split (char const *s, char c)`
+char **ft_split (char const *s, char c)
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
@@ -258,7 +258,7 @@ Descripción | Param. #1 | Param. #2 | Valor de Retorno
 ## [ft_itoa](libft/ft_itoa.c)
 
 ``` c
-char   *ft_itoa (int n)`
+char   *ft_itoa (int n)
 ```
 Descripción | Param. #1 | Valor de Retorno
 :-----------: | :-----------: | :-----------:
@@ -267,7 +267,7 @@ Descripción | Param. #1 | Valor de Retorno
 ## [ft_strmapi](libft/ft_strmapi.c)
 
 ``` c
-char *ft_strmapi (char const *s, char (*f)(unsigned int, char))`
+char *ft_strmapi (char const *s, char (*f)(unsigned int, char))
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
@@ -276,7 +276,7 @@ Descripción | Param. #1 | Param. #2 | Valor de Retorno
 ## [ft_striteri](libft/ft_striteri.c)
 
 ``` c
-void ft_striteri (char *s, void (*f)(unsigned int, char*))`
+void ft_striteri (char *s, void (*f)(unsigned int, char*))
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
@@ -286,7 +286,7 @@ Descripción | Param. #1 | Param. #2 | Valor de Retorno
 ## [ft_putchar_fd](libft/ft_putchar_fd.c)
 
 ``` c
-void ft_putchar_fd (char c, int fd)`
+void ft_putchar_fd (char c, int fd)
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
@@ -296,7 +296,7 @@ Descripción | Param. #1 | Param. #2 | Valor de Retorno
 ## [ft_putstr_fd](libft/ft_putstr_fd.c)
 
 ``` c
-void ft_putstr_fd (char *s, int fd)`
+void ft_putstr_fd (char *s, int fd)
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
@@ -306,7 +306,7 @@ Descripción | Param. #1 | Param. #2 | Valor de Retorno
 ## [ft_putendl_fd](libft/ft_putendl_fd.c)
 
 ``` c
-void ft_putendl_fd(char *s, int fd)`
+void ft_putendl_fd(char *s, int fd)
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
@@ -316,7 +316,7 @@ Descripción | Param. #1 | Param. #2 | Valor de Retorno
 ## [ft_putnbr_fd](libft/ft_putnbr_fd.c)
 
 ``` c
-void ft_putnbr_fd(int n, int fd)`
+void ft_putnbr_fd(int n, int fd)
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
@@ -351,7 +351,7 @@ libft.a
 ## [ft_lstnew](libft/ft_lstnew.c)
 
 ``` c
-t_list *ft_lstnew(void *content)`
+t_list *ft_lstnew(void *content)
 ```
 Descripción | Param. #1 | Valor de Retorno
 :-----------: | :-----------: | :-----------:
@@ -361,7 +361,7 @@ Descripción | Param. #1 | Valor de Retorno
 ## [ft_lstadd_front](libft/ft_lstadd_front.c)
 
 ``` c
-void ft_lstadd_front(t_list **lst, t_list *new)`
+void ft_lstadd_front(t_list **lst, t_list *new)
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
@@ -371,7 +371,7 @@ Descripción | Param. #1 | Param. #2 | Valor de Retorno
 ## [ft_lstsize](libft/ft_lstsize.c)
 
 ``` c
-int ft_lstsize(t_list *lst)`
+int ft_lstsize(t_list *lst)
 ```
 Descripción | Param. #1 | Valor de Retorno
 :-----------: | :-----------: | :-----------:
@@ -381,7 +381,7 @@ Descripción | Param. #1 | Valor de Retorno
 ## [ft_lstlast](libft/ft_lstlast.c)
 
 ``` c
-t_list *ft_lstlast(t_list *lst)`
+t_list *ft_lstlast(t_list *lst)
 ```
 Descripción | Param. #1 | Valor de Retorno
 :-----------: | :-----------: | :-----------:
@@ -391,7 +391,7 @@ Descripción | Param. #1 | Valor de Retorno
 ## [ft_lstadd_back](libft/ft_lstadd_back.c)
 
 ``` c
-void ft_lstadd_back(t_list **lst, t_list *new)`
+void ft_lstadd_back(t_list **lst, t_list *new)
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
@@ -401,7 +401,7 @@ Descripción | Param. #1 | Param. #2 | Valor de Retorno
 ## [ft_lstdelone](libft/ft_lstdelone.c)
 
 ``` c
-void ft_lstdelone(t_list *lst, void (*del)(void *))`
+void ft_lstdelone(t_list *lst, void (*del)(void *))
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
@@ -411,7 +411,7 @@ Descripción | Param. #1 | Param. #2 | Valor de Retorno
 ## [ft_lstclear](libft/ft_lstclear.c)
 
 ``` c
-void ft_lstclear(t_list **lst, void (*del)(void *))`
+void ft_lstclear(t_list **lst, void (*del)(void *))
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
@@ -421,7 +421,7 @@ Descripción | Param. #1 | Param. #2 | Valor de Retorno
 ## [ft_lstiter](libft/ft_lstiter.c)
 
 ``` c
-void ft_lstiter(t_list *lst, void (*f)(void *))`
+void ft_lstiter(t_list *lst, void (*f)(void *))
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
@@ -430,7 +430,7 @@ Descripción | Param. #1 | Param. #2 | Valor de Retorno
 ## [ft_lstmap](libft/ft_lstmap.c)
 
 ``` c
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))`
+t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 ```
 Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
