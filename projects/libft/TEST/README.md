@@ -85,7 +85,7 @@ void *ft_memcpy (void *dst, const void *src, size_t n)`
 ```
 Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
-**Copia** `n` bytes del área de memoria `src` a `dst`. Las áreas de memoria no deben solaparse; si lo hacen, es mejor utilizar `ft_memmove`. Esta función es rápida, pero si se superponen, puede sobrescribir memoria | Área de memoria ´dst´ | Área de memoria `src` | El número de bytes | Un puntero al área de memoria `dst`
+**Copia** `n` bytes del área de memoria `src` a `dst`. Las áreas de memoria no deben solaparse; si lo hacen, es mejor utilizar `ft_memmove`. Esta función es rápida, pero si se superponen, puede sobrescribir memoria | Área de memoria `dst` | Área de memoria `src` | El número de bytes | Un puntero al área de memoria `dst`
 
 ## [ft_memmove](libft/ft_memmove.c)
 
