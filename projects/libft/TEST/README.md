@@ -310,8 +310,7 @@ void ft_putendl_fd(char *s, int fd)`
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
-**Envía** la cadena `s` al file descriptor especificado, seguida de un salto de línea (`'\n'`), utilizando la función `write`. Es útil para escribir una cadena seguida de un salto de línea en cualquier salida.
- | La cadena de caracteres que se va a enviar | El file descriptor sobre el cual escribir: `0` (stdin), `1` (stdout), `2` (stderr) o cualquier descriptor de archivo válido | No devuelve ningún valor (`void`).
+**Envía** la cadena `s` al file descriptor especificado, seguida de un salto de línea (`'\n'`), utilizando la función `write`. Es útil para escribir una cadena seguida de un salto de línea en cualquier salida. | La cadena de caracteres que se va a enviar | El file descriptor sobre el cual escribir: `0` (stdin), `1` (stdout), `2` (stderr) o cualquier descriptor de archivo válido | No devuelve ningún valor (`void`).
 
 
 ## [ft_putnbr_fd](libft/ft_putnbr_fd.c)
