@@ -320,7 +320,7 @@ void ft_putnbr_fd(int n, int fd)`
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
-**Envía** el número entero `n` al file descriptor especificado utilizando la función `write`. La función convierte el número en su representación en caracteres antes de enviarlo. Es útil para escribir números en salidas como archivos o terminales.| El file descriptor sobre el cual escribir: `0` (stdin), `1` (stdout), `2` (stderr) o cualquier descriptor de archivo válido | No devuelve ningún valor (`void`).
+**Envía** el número entero `n` al file descriptor especificado utilizando la función `write`. La función convierte el número en su representación en caracteres antes de enviarlo. Es útil para escribir números en salidas como archivos o terminales.| `n` El número entero que se desea imprimir. | El file descriptor sobre el cual escribir: `0` (stdin), `1` (stdout), `2` (stderr) o cualquier descriptor de archivo válido | No devuelve ningún valor (`void`).
 
 <br><br><br><br><br>
 
