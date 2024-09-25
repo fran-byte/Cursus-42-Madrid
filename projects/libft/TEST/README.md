@@ -227,7 +227,7 @@ char *ft_substr (char const *s, unsigned int start, size_t len)`
 ```
 Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
-**Asigna** (con malloc) y devuelve una subcadena de la cadena dada como argumento. La subcadena comienza en el índice "start" y tiene un tamaño máximo de "len" | La cadena de la cual crear la subcadena | El índice de inicio de la subcadena en la cadena | La longitud máxima de la subcadena | La subcadena. NULL si la asignación falla
+**Asigna** (con `malloc`) y devuelve una subcadena de `s`. La subcadena comienza en el índice `start` y tiene un tamaño máximo de `len` caracteres. Es útil para extraer partes de una cadena más grande | La cadena de la cual crear la subcadena | El índice de inicio de la subcadena en la cadena | La longitud máxima de la subcadena | La subcadena. NULL si la asignación falla
 
 ## [ft_strjoin](libft/ft_strjoin.c)
 
@@ -236,7 +236,7 @@ char *ft_strjoin (char const *s1, char const *s2)`
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
-**Asigna** (con malloc) y devuelve una nueva cadena, resultado de la concatenación de "s1" y "s2" | La cadena prefijo | La cadena sufijo | La nueva cadena. NULL si la asignación falla
+**Asigna** memoria (con `malloc`) y devuelve una nueva cadena, resultado de la concatenación de `s1` y `s2`. La nueva cadena incluye el contenido de ambas, comenzando por `s1` seguido de `s2`. Es útil para combinar dos cadenas en una sola | La cadena prefijo | La cadena sufijo | La nueva cadena. NULL si la asignación falla
 
 ## [ft_strtrim](libft/ft_strtrim.c)
 
