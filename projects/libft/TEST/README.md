@@ -67,7 +67,7 @@ void *ft_memset (void *s, int c, size_t len)`
 ```
 Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
-**Llena** un bloque de memoria con el valor especificado (convertido a un `unsigned char`). La función escribe `len` bytes del valor `c` en la memoria apuntada por `s`. Es útil para inicializar o resetear bloques de memoria. | La cadena sobre la que operar | Valor c (convertido a unsigned char) | El número de bytes | Un puntero al área de memoria s
+**Llena** un bloque de memoria con el valor especificado (convertido a un `unsigned char`). La función escribe `len` bytes del valor `c` en la memoria apuntada por `s`. Es útil para inicializar o resetear bloques de memoria. | La cadena sobre la que operar | Valor c (convertido a unsigned char) | El número de bytes | Un puntero al área de memoria `s`
 
 ## [ft_bzero](libft/ft_bzero.c)
 
