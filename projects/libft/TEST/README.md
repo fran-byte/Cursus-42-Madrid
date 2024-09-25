@@ -227,8 +227,7 @@ char *ft_substr (char const *s, unsigned int start, size_t len)`
 ```
 Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
-**Asigna** (con `malloc`) y devuelve una subcadena de `s`. La subcadena comienza en el índice `start` y tiene un tamaño máximo de `len` caracteres. Es útil para extraer partes de una cadena más grande | La cadena de la cual crear la subcadena | El índice de inicio de la subcadena en la cadena | La longitud máxima de la subcadena | La subcadena. Si la cadena `s` es NULL, la función retorna NULL para indicar un error. Si el índice ´start´ es mayor o igual a la longitud de la cadena ´s´, la función retorna una cadena vacía (strdup("")), indicando que no hay nada que extraer.
-El Usuario es el encargado de liberar la memoria asignada para evitar fugas de memoria en el programa.
+**Asigna** (con `malloc`) y devuelve una subcadena de `s`. La subcadena comienza en el índice `start` y tiene un tamaño máximo de `len` caracteres. Es útil para extraer partes de una cadena más grande | La cadena de la cual crear la subcadena | El índice de inicio de la subcadena en la cadena | La longitud máxima de la subcadena | La subcadena. Si la cadena `s` es NULL, la función retorna NULL para indicar un error. Si el índice ´start´ es mayor o igual a la longitud de la cadena ´s´, la función retorna una cadena vacía (strdup("")), indicando que no hay nada que extraer. El Usuario es el encargado de liberar la memoria asignada para evitar fugas de memoria en el programa.
 
 ## [ft_strjoin](libft/ft_strjoin.c)
 
