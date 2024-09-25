@@ -94,7 +94,7 @@ void *ft_memmove (void *dst, const void *src, size_t len)`
 ```
 Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
-**Copia** `len` bytes de la memoria `src` a `dst`, pero a diferencia de `ft_memcpy`, maneja correctamente las áreas de memoria superpuestas. Primero copia a un buffer temporal y luego a `dst`. Se usa para evitar sobrescribir los datos cuando `src` y `dst` se solapan, **puede sobrescribir memoria adyacente** | Área de memoria dst | Área de memoria src | El número de bytes | Un puntero al área de memoria dst
+**Copia** `len` bytes de la memoria `src` a `dst`, pero a diferencia de `ft_memcpy`, maneja correctamente las áreas de memoria superpuestas. Primero copia a un buffer temporal y luego a `dst`. Se usa para evitar sobrescribir los datos cuando `src` y `dst` se solapan, **puede sobrescribir memoria adyacente** | Área de memoria `dst` | Área de memoria `src` | El número de bytes | Un puntero al área de memoria `dst`
 
 ## [ft_strlcpy](libft/ft_strlcpy.c)
 
