@@ -166,8 +166,7 @@ void *ft_memchr (const void *s, int c, size_t n)`
 ```
 Descripción | Param. #1 | Param. #2 | Param. #3 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------: | :-----------:
-**Escanea** los primeros `n` bytes del área de memoria `s` en busca de la primera instancia del valor `c`. Es útil para buscar un valor específico dentro de una región de memoria.
- | El número de bytes | Un puntero al byte coincidente o `NULL` si el carácter no aparece en el área de memoria dada
+**Escanea** los primeros `n` bytes del área de memoria `s` en busca de la primera instancia del valor `c`. Es útil para buscar un valor específico dentro de una región de memoria. | `s` Un puntero al bloque de memoria donde se realiza la búsqueda | `c El carácter que se busca (se convierte a unsigned char). | `n` El número de bytes en los que se va a buscar. | Un puntero al byte coincidente o `NULL` si el carácter no aparece en el área de memoria dada
 
 ## [ft_memcmp](libft/ft_memcmp.c)
 
