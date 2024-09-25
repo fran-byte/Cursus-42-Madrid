@@ -300,7 +300,7 @@ void ft_putstr_fd (char *s, int fd)`
 ```
 Descripción | Param. #1 | Param. #2 | Valor de Retorno
 :-----------: | :-----------: | :-----------: | :-----------:
-**Envía** la cadena de caracteres `s` al file descriptor especificado utilizando la función `write`. Es útil para escribir cadenas en diferentes salidas, como archivos, sockets o terminales. | El file descriptor sobre el cual escribir: `0` (stdin), `1` (stdout), `2` (stderr) o cualquier descriptor de archivo válido | No devuelve ningún valor (`void`).
+**Envía** la cadena de caracteres `s` al file descriptor especificado utilizando la función `write`. Es útil para escribir cadenas en diferentes salidas, como archivos, sockets o terminales. | `s` Un puntero a la cadena de caracteres que se desea imprimir. |El file descriptor sobre el cual escribir: `0` (stdin), `1` (stdout), `2` (stderr) o cualquier descriptor de archivo válido | No devuelve ningún valor (`void`).
 
 
 ## [ft_putendl_fd](libft/ft_putendl_fd.c)
