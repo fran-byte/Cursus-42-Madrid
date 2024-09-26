@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/13 20:32:54 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/26 16:25:43 by frromero         ###   ########.fr       */
+/*   Created: 2024/09/26 15:26:37 by frromero          #+#    #+#             */
+/*   Updated: 2024/09/26 18:20:02 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*Checks if the character is alphabetic (either uppercase or lowercase) */
-/* Returns Non-Zero for true and 0 for false */
-
 #include "libft.h"
 
-int	ft_isalpha(int c)
+char	*ft_strjoin(char const *s1, char const *s2)  // VERICAR ******
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (1);
-	return (0);
+	int		total_sz;
+	char	*str;
+
+	total_sz = ft_strlen(s1) + ft_strlen(s2);
+	str = (char *)malloc(sizeof(*str) * (total_sz + 1));
+	if (str == NULL)
+		return (NULL);
+	ft_strcpy(str, s1);
+	ft_strcat(str, s2);
+	return (str);
 }
