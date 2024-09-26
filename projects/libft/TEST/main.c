@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 15:31:49 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/26 23:50:17 by frromero         ###   ########.fr       */
+/*   Updated: 2024/09/27 00:01:38 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,12 @@ typedef struct s_list {
 void info()
 {
     printf(
-		"\nEjemplo de Ejecución: /a.out ft_islapha\n\n"
-		"\n\nNOTAS PREVIAS, estas funciones podrían tener 'Segmentation Fault'\n"
-		"si le pasamos un puntero/string nulo, tanto original como clonada(ft_):\n\n");
+		"\nInformación de testeo de las funciones de libft:\n\n"
+		"\nEjecución individual                         : /a.out ft_islapha\n"
+		"\nEjecución de funciones obligatorias Sin Bonus: /a.out all_mandatory\n"
+		"\nEjecución de funciones obligatorias + Bonus  : /a.out all_bonus\n\n"
+		"\n\n* NOTAS A TENER EN CUENTA, estas funciones podrían tener 'Segmentation Fault'\n"
+		"si le pasamos un puntero/string nulo, tanto a la función original como clonada(ft_):\n\n");
 	printf(
         "ft_memset(void *s, int c, size_t n) - Si s es un puntero nulo, intentaría acceder a memoria inválida.\n"
         "ft_bzero(void *s, size_t n) - Similar a ft_memset, podría causar un error de segmentación si s es nulo.\n"
