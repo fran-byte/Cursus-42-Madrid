@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 15:31:49 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/23 18:37:07 by frromero         ###   ########.fr       */
+/*   Updated: 2024/09/26 16:42:30 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -648,27 +648,36 @@ void test_strnstr()
 
 }
 
-int main()
-{
-    test_strnstr();
-
-    return 0;
-}
-
 void test_atoi()
 {
-	printf("   __   _                     _             _ \n");
-	printf("  / _| | |_            __ _  | |_    ___   (_)\n");
-	printf(" | |_  | __|          / _` | | __|  / _ \\  | |\n");
-	printf(" |  _| | |_          | (_| | | |_  | (_) | | |\n");
-	printf(" |_|    \\__|  _____   \\__,_|  \\__|  \\___/  |_|\n");
-	printf("             |_____|                          	\n");
-	char *num_str = "123459";
-	char *neg_num_str = "-9576";
-	char *invalid_num_str = "12asd34";
-	printf("ft_atoi(\"%s\") = %d\n", num_str, ft_atoi(num_str));
-	printf("ft_atoi(\"%s\") = %d\n", neg_num_str, ft_atoi(neg_num_str));
-	printf("ft_atoi(\"%s\") = %d\n", invalid_num_str, ft_atoi(invalid_num_str));
+    printf("   __   _                     _             _ \n");
+    printf("  / _| | |_            __ _  | |_    ___   (_)\n");
+    printf(" | |_  | __|          / _` | | __|  / _ \\  | |\n");
+    printf(" |  _| | |_          | (_| | | |_  | (_) | | |\n");
+    printf(" |_|    \\__|  _____   \\__,_|  \\__|  \\___/  |_|\n");
+    printf("             |_____|                              \n");
+    char *num_str = "     123459";
+    char *neg_num_str = "-9576";
+    char *invalid_num_str = " 12asd34";
+    char *num_str_invalid1 = "--123459";
+    char *num_str_invalid2 = "+a9576";
+    char *num_str_invalid3 = "  ++12asd34";
+
+    printf("ft_atoi(\"%s\") = %d\n", num_str, ft_atoi(num_str));
+    printf("ft_atoi(\"%s\") = %d\n", neg_num_str, ft_atoi(neg_num_str));
+    printf("ft_atoi(\"%s\") = %d\n", invalid_num_str, ft_atoi(invalid_num_str));
+    printf("ft_atoi(\"%s\") = %d\n", num_str_invalid1, ft_atoi(num_str_invalid1));
+    printf("ft_atoi(\"%s\") = %d\n", num_str_invalid2, ft_atoi(num_str_invalid2));
+    printf("ft_atoi(\"%s\") = %d\n", num_str_invalid3, ft_atoi(num_str_invalid3));
+
+	// Test Original function
+	printf("\n\nOriginal function:\n\n");
+	printf("atoi(\"%s\") = %d\n", num_str, atoi(num_str));
+    printf("atoi(\"%s\") = %d\n", neg_num_str, atoi(neg_num_str));
+    printf("atoi(\"%s\") = %d\n", invalid_num_str, atoi(invalid_num_str));
+    printf("atoi(\"%s\") = %d\n", num_str_invalid1, atoi(num_str_invalid1));
+    printf("atoi(\"%s\") = %d\n", num_str_invalid2, atoi(num_str_invalid2));
+    printf("atoi(\"%s\") = %d\n", num_str_invalid3, atoi(num_str_invalid3));
 }
 
 void test_calloc()
@@ -677,11 +686,11 @@ void test_calloc()
 	printf("  / _| | |_            ___    __ _  | | | |   ___     ___ \n");
 	printf(" | |_  | __|          / __|  / _` | | | | |  / _ \\   / __|\n");
 	printf(" |  _| | |_          | (__  | (_| | | | | | | (_) | | (__ \n");
-	printf(" |_|    \\__|  _____   \\___|  \\__,_| |_| |_|  \\___/   \\___|\n");
+	printf(" |_|    \\__| _____    \\___|  \\__,_| |_| |_|  \\___/   \\___|\n");
 	printf("            |_____|                                      \n");
 	int i = 0;
 	int *arr = (int *)ft_calloc(5, sizeof(int));
-	printf("int *arr = (int *)ft_calloc(5, sizeof(int))");
+	printf("int *arr = (int *)ft_calloc(5, sizeof(int))\n");
 	while (i < 5)
 	{
 		printf("arr[%d] = %d\n", i, arr[i]);
@@ -698,37 +707,76 @@ void test_strdup()
 	printf(" |  _| | |_          \\__ \\ | |_  | |    | (_| | | |_| | | |_) |\n");
 	printf(" |_|    \\__|  _____  |___/  \\__| |_|     \\__,_|  \\__,_| | .__/ \n");
 	printf("             |_____|                                    |_|    \n");
+
+	//Test1
+
 	char *str = "Hola42Madrid";
 	char *duplicated = ft_strdup(str);
+
 	printf("ft_strdup(str)\n");
 	printf("Cadena original: %s\n", str);
 	printf("Cadena duplicada: %s\n", duplicated);
 	free(duplicated);
+
+	//Test2
+
+	char *str2 = "Hola42Madrid";
+	char *duplicated2 = ft_strdup(str2);
+
+	printf("\nstrdup(str)\n");
+	printf("Cadena original: %s\n", str2);
+	printf("Cadena duplicada: %s\n", duplicated2);
+	free(duplicated2);
 }
 
-/*
+
 
 void test_substr()
 {
+	printf("███████ ████████         ███████ ██    ██ ██████  ███████ ████████ ██████  \n");
+	printf("██         ██            ██      ██    ██ ██   ██ ██         ██    ██   ██ \n");
+	printf("█████      ██            ███████ ██    ██ ██████  ███████    ██    ██████  \n");
+	printf("██         ██                 ██ ██    ██ ██   ██      ██    ██    ██   ██ \n");
+	printf("██         ██    ███████ ███████  ██████  ██████  ███████    ██    ██   ██\n");
+
+	//TEST 1
+
 	char *str = "Hola mundo";
-	char *sub = substr(str + 5, 5);  // "mundo"
-	printf("Probando substr:\n");
+	char *sub = ft_substr(str, 5, 5);
+
+	printf("\n str: 'Hola mundo'\n");
+	printf("\nft_substr(str + 5, 5)\n");
 	printf("Subcadena: %s\n", sub);
 	free(sub);
 }
-
 void test_strjoin()
 {
+	printf("███████ ████████         ███████ ████████ ██████       ██  ██████  ██ ███    ██ \n");
+	printf("██         ██            ██         ██    ██   ██      ██ ██    ██ ██ ████   ██ \n");
+	printf("█████      ██            ███████    ██    ██████       ██ ██    ██ ██ ██ ██  ██ \n");
+	printf("██         ██                 ██    ██    ██   ██ ██   ██ ██    ██ ██ ██  ██ ██ \n");
+	printf("██         ██    ███████ ███████    ██    ██   ██  █████   ██████  ██ ██   ████ \n");
+
+
+	char const *str1 = "Hola mundo";
+	char const *str2 = " 42!!!";
+	char *str3 = ft_strjoin(str1, str2);
+
+	printf("\n str1: 'Hola mundo'\n");
+	printf("\n str2: ' 42!!!'\n");
+	printf("\nft_strjoin(str1, str2): %s\n", str3);
+	free(str3);
 
 }
-
+/*
 
 void test_strtrim()
 {
+	// TEST1 recortar los espacios de inicio y fin (3 espacios)
 	char *str = "   Hola mundo   ";
-	char *trimmed = str + 3; // Simulación de recortar los espacios de inicio y fin
+	char *trimmed = str + 3; // Simulación de
 	printf("Probando strtrim:\n");
-	trimmed[strlen(trimmed) - 3] = '\0';  // Simulación de recortar el final
+	trimmed[strlen(trimmed) - 3] = '\0';
 	printf("Cadena recortada: '%s'\n", trimmed);
 }
 
