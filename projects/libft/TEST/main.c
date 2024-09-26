@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 15:31:49 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/26 23:48:01 by frromero         ###   ########.fr       */
+/*   Updated: 2024/09/26 23:50:17 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void info()
 {
     printf(
 		"\nEjemplo de Ejecución: /a.out ft_islapha\n\n"
-		"\n\nNOTAS PREVIAS, estas funciones podrina tener 'Segmentation Fault'\n"
+		"\n\nNOTAS PREVIAS, estas funciones podrían tener 'Segmentation Fault'\n"
 		"si le pasamos un puntero/string nulo, tanto original como clonada(ft_):\n\n");
 	printf(
         "ft_memset(void *s, int c, size_t n) - Si s es un puntero nulo, intentaría acceder a memoria inválida.\n"
