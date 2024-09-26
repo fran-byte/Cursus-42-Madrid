@@ -193,10 +193,25 @@ void test_strlen()
 	printf(" |  _| | |_          \\__ \\ | |_  | |    | | |  __/ | | | |\n");
 	printf(" |_|    \\__|  _____  |___/  \\__| |_|    |_|  \\___| |_| |_|\n");
 	printf("             |_____|                                      \n");
+	
+	//Test 1
+	
 	const char *str = "Hola mundo 42!";
+	const char *str_null = NULL;
 	printf("*str = \"Hola mundo 42!\"");
 	printf("ft_strlen(\"%s\"): %zu\n", str, ft_strlen(str));
 	printf("strlen(\"%s\"): %zu\n", str, strlen(str));
+
+	//TEST2
+    	
+	// Llamar a ft_strlen  con un puntero nulo (segmentación fault)
+    	size_t longitud = strlen(str_null);
+
+   	 // Llamar a strlen Original con un puntero nulo (segmentación fault)
+    	// size_t longitud = strlen(str_null);
+  
+
+
 }
 
 void test_memset()
