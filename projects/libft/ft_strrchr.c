@@ -30,5 +30,5 @@ char	*ft_strrchr(const char *s, int c)
 		}
 		sz_s--;
 	}
-	return (0);
+	return (NULL);
 }
