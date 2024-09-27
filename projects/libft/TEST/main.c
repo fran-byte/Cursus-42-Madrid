@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 15:31:49 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/27 00:01:38 by frromero         ###   ########.fr       */
+/*   Updated: 2024/09/27 19:08:01 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void info()
 		"\nEjecución individual                         : /a.out ft_islapha\n"
 		"\nEjecución de funciones obligatorias Sin Bonus: /a.out all_mandatory\n"
 		"\nEjecución de funciones obligatorias + Bonus  : /a.out all_bonus\n\n"
-		"\n\n* NOTAS A TENER EN CUENTA, estas funciones podrían tener 'Segmentation Fault'\n"
+		"\n\n* NOTAS A TENER EN CUENTA, para la Parte 1 - Funciones de libc, se ha replicado la función Original igualmente podrían tener 'Segmentation Fault' \n"
 		"si le pasamos un puntero/string nulo, tanto a la función original como clonada(ft_):\n\n");
 	printf(
         "ft_memset(void *s, int c, size_t n) - Si s es un puntero nulo, intentaría acceder a memoria inválida.\n"
@@ -47,16 +47,19 @@ void info()
         "ft_strlcpy(char *dst, const char *src, size_t size) - Si dst es nulo, intentaría escribir en una dirección inválida.\n"
         "ft_strlcat(char *dst, const char *src, size_t size) - Similar a strlcpy, podría causar errores si dst es nulo.\n"
         "ft_strdup(const char *s1) - Intentaría crear una copia de una cadena a partir de un puntero nulo.\n"
-        "ft_substr(char const *s, unsigned int start, size_t len) - Podría intentar acceder a memoria a través de s.\n"
-        "ft_strjoin(char const *s1, char const *s2) - Podría intentar usar punteros nulos como argumentos.\n"
-        "ft_strtrim(char const *s1, char const *set) - Podría intentar acceder a memoria a través de s1.\n"
-        "ft_split(char const *s, char c) - Podría intentar usar punteros nulos como argumentos.\n"
-        "ft_strmapi(char const *s, char (*f)(unsigned int, char)) - Podría intentar usar punteros nulos como argumentos.\n"
-        "ft_striteri(char *s, void (*f)(unsigned int, char*)) - Podría intentar usar punteros nulos como argumentos.\n"
+		"\n-\n\n"
+        "ft_substr(char const *s, unsigned int start, size_t len) - 'DOPADA' NULL si falla la reserva de memoria\n"
+        "ft_strjoin(char const *s1, char const *s2) - 'DOPADA' NULL si falla la reserva de memoria.\n"
+        "ft_strtrim(char const *s1, char const *set) - 'DOPADA' NULL si falla la reserva de memoria.\n"
+        "ft_itoa(int n) - 'DOPADA' NULL si falla la reserva de memoria.\n"
+		"ft_split(char const *s, char c) - 'DOPADA' NULL si falla la reserva de memoria.\n"
+        "ft_strmapi(char const *s, char (*f)(unsigned int, char)) - 'DOPADA' NULL si falla la reserva de memoria.\n"
+        "ft_striteri(char *s, void (*f)(unsigned int, char*)) - 'DOPADA' NULL si falla la reserva de memoria.\n"
         "ft_putstr_fd(char *s, int fd) - Si s es nulo, intentaría escribir en una dirección inválida.\n"
         "ft_putendl_fd(char *s, int fd) - Similar a putstr, podría causar errores si s es nulo.\n"
         "ft_putnbr_fd(int n, int fd) - No debería causar errores de segmentación por sí solo, pero podría hacerlo si se usa incorrectamente.\n"
-        "ft_lstnew(void *content) - Podría intentar usar el contenido de un puntero nulo.\n"
+        "\n-\n\n"
+		"ft_lstnew(void *content) - Podría intentar usar el contenido de un puntero nulo.\n"
         "ft_lstadd_front(t_list **lst, t_list *new) - Podría intentar modificar una estructura a través de un puntero nulo.\n"
         "ft_lstadd_back(t_list **lst, t_list *new) - Similar a ft_lstadd_front, podría causar errores si lst es nulo.\n"
         "ft_lstdelone(t_list *lst, void (*del)(void *)) - Podría intentar liberar memoria a través de un puntero nulo.\n"
@@ -807,21 +810,33 @@ void test_strjoin()
 	printf("\nft_strjoin(str1, str2): %s\n", str3);
 	free(str3);
 }
-/*
+
 
 void test_strtrim()
 {
+	printf("███████ ████████         ███████ ████████ ██████  ████████ ██████  ██ ███    ███ \n");
+	printf("██         ██            ██         ██    ██   ██    ██    ██   ██ ██ ████  ████ \n");
+	printf("█████      ██            ███████    ██    ██████     ██    ██████  ██ ██ ████ ██ \n");
+	printf("██         ██                 ██    ██    ██   ██    ██    ██   ██ ██ ██  ██  ██ \n");
+	printf("██         ██    ███████ ███████    ██    ██   ██    ██    ██   ██ ██ ██      ██ \n");
+
 	// TEST1 recortar los espacios de inicio y fin (3 espacios)
 	char *str = "   Hola mundo   ";
 	char *trimmed = str + 3; // Simulación de
-	printf("Probando strtrim:\n");
+
 	trimmed[strlen(trimmed) - 3] = '\0';
 	printf("Cadena recortada: '%s'\n", trimmed);
 }
 
+
 void test_split()
 {
-	printf("Probando split:\n");
+	printf("███████ ████████         ███████ ██████  ██      ██ ████████ \n");
+	printf("██         ██            ██      ██   ██ ██      ██    ██    \n");
+	printf("█████      ██            ███████ ██████  ██      ██    ██    \n");
+	printf("██         ██                 ██ ██      ██      ██    ██    \n");
+	printf("██         ██    ███████ ███████ ██      ███████ ██    ██ \n");
+
 	char *str = "Hola mundo de C";
 	char *token = strtok(str, " ");
 	while (token) {
@@ -832,17 +847,27 @@ void test_split()
 
 void test_itoa()
 {
+	printf("███████ ████████         ██ ████████  ██████   █████  \n");
+	printf("██         ██            ██    ██    ██    ██ ██   ██ \n");
+	printf("█████      ██            ██    ██    ██    ██ ███████ \n");
+	printf("██         ██            ██    ██    ██    ██ ██   ██ \n");
+	printf("██         ██    ███████ ██    ██     ██████  ██   ██ \n");
+
 	int num = 12345;
 	char buffer[20];
-	printf("Probando itoa:\n");
-	printf("Probando itoa:\n");
+
 	snprintf(buffer, sizeof(buffer), "%d", num);  // Simulación de itoa
 	printf("itoa(%d) = %s\n", num, buffer);
 }
 
 void test_strmapi()
 {
-	printf("Probando strmapi:\n");
+	printf("███████ ████████         ███████ ████████ ██████  ███    ███  █████  ██████  ██ \n");
+	printf("██         ██            ██         ██    ██   ██ ████  ████ ██   ██ ██   ██ ██ \n");
+	printf("█████      ██            ███████    ██    ██████  ██ ████ ██ ███████ ██████  ██ \n");
+	printf("██         ██                 ██    ██    ██   ██ ██  ██  ██ ██   ██ ██      ██ \n");
+	printf("██         ██    ███████ ███████    ██    ██   ██ ██      ██ ██   ██ ██      ██ \n");
+
 	char *str = "abc";
 	char *mapped = strdup(str);
 	for (int i = 0; mapped[i]; i++) {
@@ -854,7 +879,12 @@ void test_strmapi()
 
 void test_striteri()
 {
-	printf("Probando striteri:\n");
+	printf("███████ ████████         ███████ ████████ ██████  ██ ████████ ███████ ██████  ██ \n");
+	printf("██         ██            ██         ██    ██   ██ ██    ██    ██      ██   ██ ██ \n");
+	printf("█████      ██            ███████    ██    ██████  ██    ██    █████   ██████  ██ \n");
+	printf("██         ██                 ██    ██    ██   ██ ██    ██    ██      ██   ██ ██ \n");
+	printf("██         ██    ███████ ███████    ██    ██   ██ ██    ██    ███████ ██   ██ ██ \n");
+
 	char str[] = "abc";
 	for (int i = 0; str[i]; i++) {
 		str[i] = str[i] + i;  // Modificación en función de la posición
@@ -864,7 +894,12 @@ void test_striteri()
 
 void test_putchar_fd()
 {
-	printf("Probando putchar_fd:\n");
+	printf("███████ ████████         ██████  ██    ██ ████████  ██████ ██   ██  █████  ██████          ███████ ██████  \n");
+	printf("██         ██            ██   ██ ██    ██    ██    ██      ██   ██ ██   ██ ██   ██         ██      ██   ██ \n");
+	printf("█████      ██            ██████  ██    ██    ██    ██      ███████ ███████ ██████          █████   ██   ██ \n");
+	printf("██         ██            ██      ██    ██    ██    ██      ██   ██ ██   ██ ██   ██         ██      ██   ██ \n");
+	printf("██         ██    ███████ ██       ██████     ██     ██████ ██   ██ ██   ██ ██   ██ ███████ ██      ██████  \n");
+
 	int fd = open("output.txt", O_WRONLY | O_CREAT, 0644);
 	if (fd != -1) {
 		write(fd, "A", 1);  // Simulación de putchar_fd
@@ -872,8 +907,14 @@ void test_putchar_fd()
 	}
 }
 
-void test_putstr_fd() {
-	printf("Probando putstr_fd:\n");
+void test_putstr_fd()
+{
+	printf("███████ ████████         ██████  ██    ██ ████████ ███████ ████████ ██████          ███████ ██████  \n");
+	printf("██         ██            ██   ██ ██    ██    ██    ██         ██    ██   ██         ██      ██   ██ \n");
+	printf("█████      ██            ██████  ██    ██    ██    ███████    ██    ██████          █████   ██   ██ \n");
+	printf("██         ██            ██      ██    ██    ██         ██    ██    ██   ██         ██      ██   ██ \n");
+	printf("██         ██    ███████ ██       ██████     ██    ███████    ██    ██   ██ ███████ ██      ██████ 	\n");
+
 	int fd = open("output.txt", O_WRONLY | O_CREAT, 0644);
 	if (fd != -1) {
 		write(fd, "Hola mundo\n", 11);  // Simulación de putstr_fd
@@ -883,7 +924,12 @@ void test_putstr_fd() {
 
 void test_putendl_fd()
 {
-	printf("Probando putendl_fd:\n");
+	printf("██████  ██    ██ ████████ ███████ ███    ██ ██████  ██              ███████ ██████  \n");
+	printf("██   ██ ██    ██    ██    ██      ████   ██ ██   ██ ██              ██      ██   ██ \n");
+	printf("██████  ██    ██    ██    █████   ██ ██  ██ ██   ██ ██              █████   ██   ██ \n");
+	printf("██      ██    ██    ██    ██      ██  ██ ██ ██   ██ ██              ██      ██   ██ \n");
+	printf("██       ██████     ██    ███████ ██   ████ ██████  ███████ ███████ ██      ██████ \n");
+
 	int fd = open("output.txt", O_WRONLY | O_CREAT, 0644);
 	if (fd != -1) {
 		write(fd, "Hola mundo\n", 11);  // Simulación de putendl_fd
@@ -893,7 +939,12 @@ void test_putendl_fd()
 
 void test_putnbr_fd()
 {
-	printf("Probando putnbr_fd:\n");
+	printf("██████  ██    ██ ████████ ███    ██ ██████  ██████          ███████ ██████  \n");
+	printf("██   ██ ██    ██    ██    ████   ██ ██   ██ ██   ██         ██      ██   ██ \n");
+	printf("██████  ██    ██    ██    ██ ██  ██ ██████  ██████          █████   ██   ██ \n");
+	printf("██      ██    ██    ██    ██  ██ ██ ██   ██ ██   ██         ██      ██   ██ \n");
+	printf("██       ██████     ██    ██   ████ ██████  ██   ██ ███████ ██      ██████ 	\n");
+
 	int fd = open("output.txt", O_WRONLY | O_CREAT, 0644);
 	if (fd != -1) {
 		char buffer[20];
@@ -903,7 +954,7 @@ void test_putnbr_fd()
 		close(fd);
 	}
 }
-*/
+
 
 int main(int argc, char *argv[])
 {

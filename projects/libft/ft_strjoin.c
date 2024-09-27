@@ -6,13 +6,13 @@
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 15:26:37 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/26 18:20:02 by frromero         ###   ########.fr       */
+/*   Updated: 2024/09/27 19:18:01 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)  // VERICAR ******
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		total_sz;
 	char	*str;
