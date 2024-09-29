@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yurolive <yurolive@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/14 10:50:46 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/29 16:42:35 by frromero         ###   ########.fr       */
+/*   Created: 2023/04/11 18:39:40 by yuolivei          #+#    #+#             */
+/*   Updated: 2024/09/18 11:41:35 by yurolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Fills memory with a specified byte for a given length, */
-/* returns pointer to memory */
-
 #include "libft.h"
+/*Añade el nodo ’new’ al principio de la lista ’lst’.*/
 
-void	*ft_memset(void *s, int c, size_t n)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	size_t				i;
-	unsigned char		*buf;
-
-	i = 0;
-	buf = (unsigned char *)s;
-	while (i < n)
-	{
-		buf[i] = c;
-		i++;
-	}
-	return (s);
+	if (!lst || !new)
+		return ;
+	new->next = *lst;
+	*lst = new;
 }

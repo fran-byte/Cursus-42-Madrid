@@ -6,48 +6,48 @@
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 18:37:47 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/27 18:39:31 by frromero         ###   ########.fr       */
+/*   Updated: 2024/09/28 17:19:28 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 /* Convert an integer into its string representation*/
 
-static void	ft_isnegat(size_t size, char *str, long nbr)
+static void	ft_isnegative(size_t sz, char *string, long nbr)
 {
-	*(str + size--) = '\0';
+	*(string + sz--) = '\0';
 	while (nbr > 0)
 	{
-		*(str + size--) = nbr % 10 + '0';
+		*(string + sz--) = nbr % 10 + '0';
 		nbr /= 10;
 	}
-	if (size == 0 && str[1] == '\0')
-		*(str + size) = '0';
-	else if (size == 0 && str[1] != '\0')
-		*(str + size) = '-';
+	if (string[1] == '\0' && sz == 0)
+		*(string + sz) = '0';
+	else if (string[1] != '\0' && sz == 0)
+		*(string + sz) = '-';
 }
 
 char	*ft_itoa(int n)
 {
-	char	*str;
-	long	nbr;
-	size_t	size;
+	long	numbr;
+	size_t	sz;
+	char	*string;
 
-	size = 0;
-	nbr = n;
+	numbr = n;
+	sz = 0;
 	if (n <= 0)
 	{
-		nbr = -nbr;
-		size = 1;
+		numbr = -numbr;
+		sz = 1;
 	}
 	while (n)
 	{
 		n /= 10;
-		size++;
+		sz++;
 	}
-	str = (char *)malloc(size + 1);
-	if (!(str))
+	string = (char *)malloc(sz + 1);
+	if (!(string))
 		return (0);
-	ft_isnegat(size, str, nbr);
-	return (str);
+	ft_isnegative(sz, string, numbr);
+	return (string);
 }

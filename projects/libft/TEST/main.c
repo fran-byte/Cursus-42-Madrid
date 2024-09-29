@@ -6,11 +6,11 @@
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 15:31:49 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/27 19:08:01 by frromero         ###   ########.fr       */
+/*   Updated: 2024/09/29 21:10:48 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -31,17 +31,20 @@ typedef struct s_list {
 void info()
 {
     printf(
-		"\nInformación de testeo de las funciones de libft:\n\n"
-		"\nEjecución individual                         : /a.out ft_islapha\n"
-		"\nEjecución de funciones obligatorias Sin Bonus: /a.out all_mandatory\n"
+		"\n****************************************************\n"
+		"\n* Información de testeo de las funciones de libft: *\n"
+		"\n****************************************************\n"
+		"\nEjecución individual                         : /a.out ft_islapha"
+		"\nEjecución de funciones obligatorias Sin Bonus: /a.out all_mandatory"
 		"\nEjecución de funciones obligatorias + Bonus  : /a.out all_bonus\n\n"
-		"\n\n* NOTAS A TENER EN CUENTA, para la Parte 1 - Funciones de libc, se ha replicado la función Original igualmente podrían tener 'Segmentation Fault' \n"
+		"* NOTAS A TENER EN CUENTA,\nParte 1 - Funciones basadasa en la libreía libc, replicado la función Original e igualmente podrían\ntener 'Segmentation Fault'"
 		"si le pasamos un puntero/string nulo, tanto a la función original como clonada(ft_):\n\n");
 	printf(
-        "ft_memset(void *s, int c, size_t n) - Si s es un puntero nulo, intentaría acceder a memoria inválida.\n"
-        "ft_bzero(void *s, size_t n) - Similar a ft_memset, podría causar un error de segmentación si s es nulo.\n"
-        "ft_memcpy(void *dst, const void *src, size_t n) - Al igual que ft_memset, podría causar un error si dst o src son nulos.\n"
-        "ft_memmove(void *dst, const void *src, size_t len) - Función similar a memcpy, también podría causar errores si los punteros son nulos.\n"
+		"ft_strlen / strlen - Si le pasamos una String o puntero nulo, provocaría 'Segmentation fault (core dumped)'\n"
+        "ft_memset / memset - Si le pasamos una String o puntero nulo, provocaría 'Segmentation fault (core dumped)\n"
+        "ft_bzero  / bzero (Obsoteta) - Si le pasamos una String o puntero nulo, provocaría 'Segmentation fault (core dumped)\n"
+        "ft_memcpy / memcpy - Si le pasamos una String o puntero nulo, a src o dst provocaría 'Segmentation fault (core dumped)\n"
+        "ft_memmove / memmove -Si le pasamos una String o puntero nulo, a src o dst provocaría 'Segmentation fault (core dumped)\n"
         "ft_memchr(const void *s, int c, size_t n) - Intentaría acceder a memoria a través del puntero s.\n"
         "ft_memcmp(const void *s1, const void *s2, size_t n) - Podría comparar punteros nulos entre sí.\n"
         "ft_strlcpy(char *dst, const char *src, size_t size) - Si dst es nulo, intentaría escribir en una dirección inválida.\n"
@@ -163,7 +166,7 @@ void test_isalnum()
 	printf("isalnum(300): %d\n\n", result300_original);
 }
 
-void test_ascii()
+void test_isascii()
 {
 	int resultA;
 	int resultA_original;
@@ -237,18 +240,23 @@ void test_strlen()
 	// Test 1
 
 	const char *str = "Hola mundo 42!";
-	const char *str_null = NULL;
-	printf("*str = \"Hola mundo 42!\"");
-	printf("ft_strlen(\"%s\"): %zu\n", str, ft_strlen(str));
-	printf("strlen(\"%s\"): %zu\n", str, strlen(str));
+	printf("*str = Hola mundo 42!\n\n");
+	printf("ft_strlen( %s ): %zu\n\n", str, ft_strlen(str));
+	printf("strlen( %s ): %zu\n\n", str, strlen(str));
 
 	// TEST2
+	//const char *str_null = NULL;
+	// Llamar a ft_strlen  con un puntero nulo = (segmentación fault)
+	//printf("Llamar a ft_strlen  con un puntero nulo\n\n");
+	//size_t longitud = ft_strlen(str_null);
+	//printf("Longitur: %zu", longitud);
 
-	// Llamar a ft_strlen  con un puntero nulo (segmentación fault)
-	size_t longitud = strlen(str_null);
-
-	// Llamar a strlen Original con un puntero nulo (segmentación fault)
-	// size_t longitud = strlen(str_null);
+	// TEST3
+	//const char *str_null = NULL;
+	// Llamar a strlen Original con un puntero nulo = (segmentación fault)
+	//printf("Llamar a strlen  con un puntero nulo\n\n");
+	//size_t longitud2 = strlen(str_null);
+	//printf("Longitur: %zu", longitud2);
 }
 
 void test_memset()
@@ -259,6 +267,8 @@ void test_memset()
 	printf(" |  _| | |_          | | | | | | |  __/ | | | | | | \\__ \\ |  __/ | |_ \n");
 	printf(" |_|    \\__|  _____  |_| |_| |_|  \\___| |_| |_| |_| |___/  \\___|  \\__|\n");
 	printf("             |_____|                                                  \n");
+
+	// TEST1
 	char str[50] = "Hola Mundo 42!!";
 	char str2[50] = "Hola Mundo 42!!";
 	printf("Nuestra string: %s\n", str);
@@ -266,6 +276,19 @@ void test_memset()
 	memset(str2, '*', 5);
 	printf("ft_memset(str, '*', 5): %s\n", str);
 	printf("memset(str, '*', 5): %s\n", str);
+
+	// TEST2  Llamar a ft_memset con un puntero nulo = (segmentación fault)
+	//char *str_null = NULL;
+	//printf("Llamar a ft_menset con un puntero nulo\n\n");
+	//ft_memset(str_null, '*', 5);
+	//printf("ft_memset(str_null, '*', 5): %s\n", str);
+
+	// TEST3  Llamar a memset con un puntero nulo = (segmentación fault)
+	//char *str_null = NULL;
+	//printf("Llamar a menset con un puntero nulo\n\n");
+	//memset(str_null, '*', 5);
+	//printf("memset(str_null, '*', 5): %s\n", str);
+
 }
 
 void test_bzero() //  REVISAR SI TRABAJA LA ORIGINAL, NO FUNCIONA ********
@@ -283,25 +306,77 @@ void test_bzero() //  REVISAR SI TRABAJA LA ORIGINAL, NO FUNCIONA ********
 	bzero(str2, 5);
 	printf("ft_bzero(str, 5): %s\n", str);
 	printf("bzero(str, 5): %s\n", str2);
+
+	//TEST2  Llamar a ft_bzero con un puntero nulo = (segmentación fault)
+	//char *str_null = NULL;
+	//printf("Llamar a ft_bzero con un puntero nulo\n\n");
+	//ft_bzero(str_null, 5);
+	//printf("ft_bzero(str_null, 5): %s\n", str);
+
+	//Función Original OBSOLETA
 }
 
 void test_memmove()
 {
 	printf("   __   _                                                                             \n");
 	printf("  / _| | |_           _ __ ___     ___   _ __ ___    _ __ ___     ___   __   __   ___ \n");
-	printf(" | |_  | __|         | '_ ` _ \\   / _ \\ | '_ ` _ \\  | '_ ` _ \\   / _ \\  \\ \\ / /  / _ \\n");
+	printf(" | |_  | __|         | '_ ` _ \\   / _ \\ | '_ ` _ \\  | '_ ` _ \\   / _ \\  \\ \\ / /  / _ \\\n");
 	printf(" |  _| | |_          | | | | | | |  __/ | | | | | | | | | | | | | (_) |  \\ V /  |  __/\n");
 	printf(" |_|    \\__|  _____  |_| |_| |_|  \\___| |_| |_| |_| |_| |_| |_|  \\___/    \\_/    \\___|\n");
 	printf("             |_____|                                                                  \n");
-	char str[50] = "Hola Mundo 42!!";
-	char str2[50] = "Hola Mundo 42!!";
-	printf("Nuestra string: %s\n", str);
-	printf("ft_memmove(str + 5, str, strlen(str) - 5)\n");
-	printf("Mueve la parte de la cadena hacia la derecha\n");
-	ft_memmove(str + 5, str, ft_strlen(str) - 5);
-	memmove(str2 + 5, str2, ft_strlen(str2) - 5);
-	printf("Resultado: %s\n", str);
-	printf("Resultado: %s\n", str2);
+
+	//TEST1
+	char src[50] = "Hola Mundo 42!!";
+	char dest[50] = "***** 42!!";
+	printf("src %s\n", src);
+	printf("dst %s\n\n", dest);
+	printf("ft_memmove(dest, src, 5)\n");
+	ft_memmove(dest, src, 4);
+	printf("Resultado dst : %s\n\n", dest);
+
+	//TEST2
+	char src2[50] = "Hola Mundo 42!!";
+	char dest2[50] = "***** 42!!";
+	printf("memmove(dest, src, 5)\n");
+	memmove(dest2, src2, 4);
+	printf("Resultado dst : %s\n\n", dest2);
+
+	//TEST3  Con puntero NULO a src ft_memmove
+	//char *src3 = NULL;
+	//char dest3[50] = "***** 42!!";
+	//printf("ft_memmove(dest, src, 5)\n");
+	//printf("src %s\n", src3);
+	//printf("dst %s\n\n", dest3);
+	//ft_memmove(dest3, src3, 4);
+	//printf("Resultado dst : %s\n\n", dest3);
+
+	//TEST4  Con puntero NULO a dst ft_memmove
+	//char *dest3 = NULL;
+	//char src3[50] = "***** 42!!";
+	//printf("ft_memmove(dest, src, 5)\n");
+	//printf("src %s\n", src3);
+	//printf("dst %s\n\n", dest3);
+	//ft_memmove(dest3, src3, 4);
+	//printf("Resultado dst : %s\n\n", dest3);
+
+	//TEST5  Con puntero NULO a src memmove
+	//char *src3 = NULL;
+	//char dest3[50] = "***** 42!!";
+	//printf("memmove(dest, src, 5)\n");
+	//printf("src %s\n", src3);
+	//printf("dst %s\n\n", dest3);
+	//memmove(dest3, src3, 4);
+	//printf("Resultado dst : %s\n\n", dest3);
+
+	//TEST6  Con puntero NULO a dst memmove
+	//char *dest3 = NULL;
+	//char src3[50] = "***** 42!!";
+	//printf("memmove(dest, src, 5)\n");
+	//printf("src %s\n", src3);
+	//printf("dst %s\n\n", dest3);
+	//memmove(dest3, src3, 4);
+	//printf("Resultado dst : %s\n\n", dest3);
+
 }
 
 void test_memcpy()
@@ -313,69 +388,58 @@ void test_memcpy()
 	printf(" |_|    \\__|  _____  |_| |_| |_|  \\___| |_| |_| |_|  \\___| | .__/   \\__, |\n");
 	printf("             |_____|                                       |_|      |___/	\n");
 
-	/*TEST 1*/
-
+//TEST1
 	char src[50] = "Hola Mundo 42!!";
-	char dest[50] = "Hello world 42!! Madrid";
-	char src_original[50] = "Hola Mundo 42!!";
-	char dest_original[50] = "Hello world 42!! Madrid";
+	char dest[50] = "***** 42!!";
+	printf("src %s\n", src);
+	printf("dst %s\n\n", dest);
+	printf("ft_memcpy(dest, src, 5)\n");
+	ft_memcpy(dest, src, 4);
+	printf("Resultado dst : %s\n\n", dest);
 
-	printf("src: %s\n", src);
-	printf("dest: %s\n\n", dest);
-	void *result = ft_memcpy(dest, src, strlen(src) + 1);
-	void *result_original = memcpy(dest_original, src_original, strlen(src_original) + 1);
-	printf("ft_memcpy(dest, src, strlen(src) + 1): %s\n", (char *)result);
-	printf("memcpy(dest, src, strlen(src) + 1): %s\n", (char *)result_original);
-	// Comparamos ambos resultados
-	assert(!strcmp(result, result_original));
+	//TEST2
+	char src2[50] = "Hola Mundo 42!!";
+	char dest2[50] = "***** 42!!";
+	printf("memcpy(dest, src, 5)\n");
+	memcpy(dest2, src2, 4);
+	printf("Resultado dst : %s\n\n", dest2);
 
-	/*TEST 2*/
+	//TEST3  Con puntero NULO a src ft_memcpy
+	//char *src3 = NULL;
+	//char dest3[50] = "***** 42!!";
+	//printf("ft_memcpy(dest, src, 5)\n");
+	//printf("src %s\n", src3);
+	//printf("dst %s\n\n", dest3);
+	//ft_memcpy(dest3, src3, 4);
+	//printf("Resultado dst : %s\n\n", dest3);
 
-	char *src2 = 0; // PUNTERO NULO
-	char dest2[50] = "Hello world 42!! Madrid";
-	char *src_original2 = 0; // PUNTERO NULO
-	char dest_original2[50] = "Hello world 42!! Madrid";
+	//TEST4  Con puntero NULO a dst ft_memcpy
+	//char *dest3 = NULL;
+	//char src3[50] = "***** 42!!";
+	//printf("ft_memcpy(dest, src, 5)\n");
+	//printf("src %s\n", src3);
+	//printf("dst %s\n\n", dest3);
+	//ft_memcpy(dest3, src3, 4);
+	//printf("Resultado dst : %s\n\n", dest3);
 
-	printf("src: %s\n", src2);
-	printf("dest: %s\n\n", dest2);
-	void *result2 = ft_memcpy(dest2, src2, strlen(src2) + 1);
-	void *result_original2 = memcpy(dest_original2, src_original2, strlen(src_original2) + 1);
-	printf("ft_memcpy(dest2, src2, strlen(src2) + 1): %s\n", (char *)result2);
-	printf("memcpy(dest2, src2, strlen(src2) + 1): %s\n", (char *)result_original2);
-	// Comparamos ambos resultados
-	assert(!strcmp(result2, result_original2));
+	//TEST5  Con puntero NULO a src memcpy
+	//char *src3 = NULL;
+	//char dest3[50] = "***** 42!!";
+	//printf("memcpy(dest, src, 5)\n");
+	//printf("src %s\n", src3);
+	//printf("dst %s\n\n", dest3);
+	//memcpy(dest3, src3, 4);
+	//printf("Resultado dst : %s\n\n", dest3);
 
-	/*TEST 3*/
+	//TEST6  Con puntero NULO a dst memcpy
+	//char *dest3 = NULL;
+	//char src3[50] = "***** 42!!";
+	//printf("memcpy(dest, src, 5)\n");
+	//printf("src %s\n", src3);
+	//printf("dst %s\n\n", dest3);
+	//memcpy(dest3, src3, 4);
+	//printf("Resultado dst : %s\n\n", dest3);
 
-	char *dest3 = 0; // PUNTERO NULO
-	char src3[50] = "Hello world 42!! Madrid";
-	char *src_original3 = 0; // PUNTERO NULO
-	char dest_original3[50] = "Hello world 42!! Madrid";
-
-	printf("src: %s\n", src3);
-	printf("dest: %s\n\n", dest3);
-	void *result3 = ft_memcpy(dest3, src3, strlen(src3) + 1);
-	void *result_original3 = memcpy(dest_original3, src_original3, strlen(src_original3) + 1);
-	printf("ft_memcpy(dest, src, strlen(src) + 1): %s\n", (char *)result3);
-	printf("memcpy(dest, src, strlen(src) + 1): %s\n", (char *)result_original3);
-	// Comparamos ambos resultados
-	assert(!strcmp(result3, result_original3));
-
-	/*TEST 4*/
-
-	char *dest4 = 0;		 // PUNTERO NULO
-	char *src4 = 0;			 // PUNTERO NULO
-	char *src_original4 = 0; // PUNTERO NULO
-	char dest_original4[50] = "Hello world 42!! Madrid";
-
-	printf("src: %s\n", src4);
-	printf("dest: %s\n\n", dest4);
-	void *result4 = ft_memcpy(dest4, src4, strlen(src4) + 1);
-	void *result_original4 = memcpy(dest_original4, src_original4, strlen(src_original4) + 1);
-	printf("ft_memcpy(dest, src, strlen(src) + 1): %s\n", (char *)result4);
-	printf("memcpy(dest, src, strlen(src) + 1): %s\n", (char *)result_original4);
-	// Comparamos ambos resultados
-	assert(!strcmp(result4, result_original4));
 }
 
 void test_strlcpy()
@@ -491,7 +555,7 @@ void test_strchr()
 	if (result)
 	{
 		printf("Buscando ft_strchr(str, 'm') en: 'Hola, mundo'\n");
-		printf("Primero: %s\n", result);
+		printf("Puntero a la primera 'm' : %s\n\n", result);
 	}
 	else
 	{
@@ -505,7 +569,7 @@ void test_strchr()
 	if (result2)
 	{
 		printf("Buscando strchr(str, 'm') en: 'Hola, mundo'\n");
-		printf("Primero: %s\n", result2);
+		printf("Puntero a la primera 'm' : %s\n", result2);
 	}
 	else
 	{
@@ -529,11 +593,11 @@ void test_strrchr()
 	printf("Buscando ft_strrchr(str, 'o') en: 'Hello, World!!'\n");
 	if (result)
 	{
-		printf("Último: %s\n", result);
+		printf("Puntero a la última 'o' : %s\n\n", result);
 	}
 	else
 	{
-		printf("No encontrado\n");
+		printf("No encontrado\n\n");
 	}
 
 	// TEST 2
@@ -543,7 +607,7 @@ void test_strrchr()
 	printf("Buscando strrchr(str, 'o') en: 'Hello, World!!'\n");
 	if (result2)
 	{
-		printf("Último: %s\n", result2);
+		printf("Puntero a la última 'o' : %s\n", result2);
 	}
 	else
 	{
@@ -748,35 +812,57 @@ void test_calloc()
 
 void test_strdup()
 {
-	printf("   __   _                   _                _                 \n");
-	printf("  / _| | |_           ___  | |_   _ __    __| |  _   _   _ __  \n");
-	printf(" | |_  | __|         / __| | __| | '__|  / _` | | | | | | '_ \\ \n");
-	printf(" |  _| | |_          \\__ \\ | |_  | |    | (_| | | |_| | | |_) |\n");
-	printf(" |_|    \\__|  _____  |___/  \\__| |_|     \\__,_|  \\__,_| | .__/ \n");
-	printf("             |_____|                                    |_|    \n");
+    printf("   __   _                   _                _                 \n");
+    printf("  / _| | |_           ___  | |_   _ __    __| |  _   _   _ __  \n");
+    printf(" | |_  | __|         / __| | __| | '__|  / _` | | | | | | '_ \\ \n");
+    printf(" |  _| | |_          \\__ \\ | |_  | |    | (_| | | |_| | | |_) |\n");
+    printf(" |_|    \\__|  _____  |___/  \\__| |_|     \\__,_|  \\__,_| | .__/ \n");
+    printf("             |_____|                                    |_|    \n");
 
-	// Test1
+    // Test1
 
-	char *str = "Hola42Madrid";
-	char *duplicated = ft_strdup(str);
+    char *str = "Hola42Madrid";
+    char *duplicated = ft_strdup(str);
 
-	printf("ft_strdup(str)\n");
-	printf("Cadena original: %s\n", str);
-	printf("Cadena duplicada: %s\n", duplicated);
-	free(duplicated);
+    printf("ft_strdup(str)\n");
+    printf("Cadena original: %s\n", str);
+    printf("Cadena duplicada: %s\n", duplicated);
+    free(duplicated);
 
-	// Test2
+    // Test2
 
-	char *str2 = "Hola42Madrid";
-	char *duplicated2 = ft_strdup(str2);
+    char *str2 = "Hola42Madrid";
+    char *duplicated2 = strdup(str2);
 
-	printf("\nstrdup(str)\n");
-	printf("Cadena original: %s\n", str2);
-	printf("Cadena duplicada: %s\n", duplicated2);
-	free(duplicated2);
+    printf("\nstrdup(str)\n");
+    printf("Cadena original: %s\n", str2);
+    printf("Cadena duplicada: %s\n\n", duplicated2);
+    free(duplicated2);
+
+    // TEST 3 Puntero NULO a nuestra ft
+
+    //char *str3 = NULL;
+    //printf("\nstrdup(str)\n");
+    //printf("Cadena original: %s\n", str3);
+    //char *duplicated3 = ft_strdup(str3);
+
+
+    //printf("Cadena duplicada: %s\n", duplicated3);
+    //free(duplicated3);
+
+     //TEST 4 Puntero NULO a la ORIGINAL
+
+    //char *str3 = NULL;
+    //char *duplicated3 = ft_strdup(str3);
+
+    //printf("\nstrdup(str)\n");
+    //printf("Cadena original: %s\n", str3);
+    //printf("Cadena duplicada: %s\n", duplicated3);
+    //free(duplicated3);
 }
 
-void test_substr(){
+void test_substr()
+{
 	printf("███████ ████████         ███████ ██    ██ ██████  ███████ ████████ ██████  \n");
 	printf("██         ██            ██      ██    ██ ██   ██ ██         ██    ██   ██ \n");
 	printf("█████      ██            ███████ ██    ██ ██████  ███████    ██    ██████  \n");
@@ -789,8 +875,8 @@ void test_substr(){
 	char *sub = ft_substr(str, 5, 5);
 
 	printf("\n str: 'Hola mundo'\n");
-	printf("\nft_substr(str + 5, 5)\n");
-	printf("Subcadena: %s\n", sub);
+	printf("\nft_substr(str, 5 ,5)\n");
+	printf("Subcadena: %s\n\n", sub);
 	free(sub);
 }
 void test_strjoin()
@@ -807,7 +893,7 @@ void test_strjoin()
 
 	printf("\n str1: 'Hola mundo'\n");
 	printf("\n str2: ' 42!!!'\n");
-	printf("\nft_strjoin(str1, str2): %s\n", str3);
+	printf("\nft_strjoin(str1, str2): %s\n\n", str3);
 	free(str3);
 }
 
@@ -820,12 +906,13 @@ void test_strtrim()
 	printf("██         ██                 ██    ██    ██   ██    ██    ██   ██ ██ ██  ██  ██ \n");
 	printf("██         ██    ███████ ███████    ██    ██   ██    ██    ██   ██ ██ ██      ██ \n");
 
-	// TEST1 recortar los espacios de inicio y fin (3 espacios)
-	char *str = "   Hola mundo   ";
-	char *trimmed = str + 3; // Simulación de
+    // TEST1 recortar los espacios de inicio y fin (3 espacios)
+    char *str = " ..  Hola mundo ..  ";
+    char *set = "' .'";
 
-	trimmed[strlen(trimmed) - 3] = '\0';
-	printf("Cadena recortada: '%s'\n", trimmed);
+	printf("str: %s\n", str);
+	printf("set: %s\n", set);
+    printf("Cadena recortada: '%s'\n\n", ft_strtrim(str, set));
 }
 
 
@@ -837,12 +924,20 @@ void test_split()
 	printf("██         ██                 ██ ██      ██      ██    ██    \n");
 	printf("██         ██    ███████ ███████ ██      ███████ ██    ██ \n");
 
-	char *str = "Hola mundo de C";
-	char *token = strtok(str, " ");
-	while (token) {
-		printf("Token: %s\n", token);
-		token = strtok(NULL, " ");
+	char	**result;
+
+	const char *str = "¡Hola, Mundo 42!";
+	char c = ' ';
+	int i = 0;
+	result = ft_split(str, c);
+	printf("\n*str = '¡Hola, Mundo 42!'\n");
+	printf("*c = ' '\n\n");
+	while (result && result[i] != NULL)
+	{
+        printf("Indice %d: %s\n", i + 1, result[i]);
+        i++;
 	}
+	printf("\n");
 }
 
 void test_itoa()
@@ -857,7 +952,7 @@ void test_itoa()
 	char buffer[20];
 
 	snprintf(buffer, sizeof(buffer), "%d", num);  // Simulación de itoa
-	printf("itoa(%d) = %s\n", num, buffer);
+	printf("itoa(%d) = %s\n\n", num, buffer);
 }
 
 void test_strmapi()
@@ -868,13 +963,30 @@ void test_strmapi()
 	printf("██         ██                 ██    ██    ██   ██ ██  ██  ██ ██   ██ ██      ██ \n");
 	printf("██         ██    ███████ ███████    ██    ██   ██ ██      ██ ██   ██ ██      ██ \n");
 
-	char *str = "abc";
-	char *mapped = strdup(str);
-	for (int i = 0; mapped[i]; i++) {
-		mapped[i] = mapped[i] + 1;  // Simple modificación de la cadena
-	}
-	printf("Cadena modificada: %s\n", mapped);
-	free(mapped);
+    const char *str = "hola mundo 42";
+    char *new_str;
+
+    // Definimos la función apply_toupper dentro del main
+    char apply_toupper(unsigned int i, char c)
+    {
+        // Convertimos a mayúsculas
+        return toupper(c);
+		i = 1;
+		i = i + 1;
+    }
+    // Aplicar ft_strmapi con la función apply_toupper
+    new_str = ft_strmapi(str, apply_toupper);
+
+    printf("Cadena original: %s\n", str);
+
+    printf("Cadena modificada: ");
+    int i = 0; // Inicializamos el índice
+    while (new_str[i] != '\0') {
+        printf("%c", new_str[i]);
+        i++;
+    }
+    printf("\n\n");
+    free(new_str);
 }
 
 void test_striteri()
@@ -889,7 +1001,7 @@ void test_striteri()
 	for (int i = 0; str[i]; i++) {
 		str[i] = str[i] + i;  // Modificación en función de la posición
 	}
-	printf("Cadena iterada: %s\n", str);
+	printf("Cadena iterada: %s\n\n", str);
 }
 
 void test_putchar_fd()
@@ -966,6 +1078,8 @@ int main(int argc, char *argv[])
 	/* Parte 1 Funciones de libc */
 	if (strcmp(argv[1], "ft_isalpha") == 0)
 		test_isalpha();
+	else if (strcmp(argv[1], "ft_help") == 0)
+		info();
 	else if (strcmp(argv[1], "ft_isdigit") == 0)
 		test_isdigit();
 	else if (strcmp(argv[1], "ft_isalnum") == 0)
@@ -1034,7 +1148,7 @@ int main(int argc, char *argv[])
 	else if (strcmp(argv[1], "ft_putnbr_fd") == 0)
 		test_putnbr_fd();
 	/* ** BONUS ** */
-	else if (strcmp(argv[1], "ft_lstnew") == 0)
+	/*else if (strcmp(argv[1], "ft_lstnew") == 0)
 		test_lstnew();
 	else if (strcmp(argv[1], "ft_lstadd_front") == 0)
 		test_lstadd_front();
@@ -1052,7 +1166,7 @@ int main(int argc, char *argv[])
 		test_lstiter();
 	else if (strcmp(argv[1], "ft_lstmap") == 0)
 		test_lstmap();
-	/* All (+Bonus) */
+	 All (+Bonus)
 	else if (strcmp(argv[1], "all_bonus") == 0)
 	{
 		test_isalpha();
@@ -1089,7 +1203,7 @@ int main(int argc, char *argv[])
 		test_putstr_fd();
 		test_putendl_fd();
 		test_putnbr_fd();
-		/* BONUS */
+
 		test_lstnew();
 		test_lstadd_front();
 		test_lstsize();
@@ -1099,7 +1213,7 @@ int main(int argc, char *argv[])
 		test_lstclear();
 		test_lstiter();
 		test_lstmap();
-	}
+	}*/
 	else if (strcmp(argv[1], "all_mandatory") == 0)
 	{
 		test_isalpha();
@@ -1141,4 +1255,52 @@ int main(int argc, char *argv[])
 		printf("Funcion no encontrada: %s\n", argv[1]);
 
 	return 0;
+ /*
+ Para tetear:
+
+ make
+gcc -Wall -Werror -Wextra -c main.c -o main.o
+
+gcc main.o -L. -lft -z noexecstack -o p     Enlaza main.o con libft.a y crea el ejecutable p
+
+
+
+
+ Añadir libft.h
+ void 				info();
+void				test_isalpha();
+void				test_isdigit();
+void				test_isalnum();
+void				test_isascii();
+void				test_isprint();
+void				test_strlen();
+void				test_memset();
+void				test_bzero() ;//  REVISAR SI TRABAJA LA ORIGINAL, NO FUNCIONA ********
+void				test_memmove();
+void				test_memcpy();
+void				test_strlcpy();
+void				test_strlcat();
+void				test_toupper();
+void				test_tolower();
+void				test_strchr();
+void				test_strrchr();
+void				test_strncmp();
+void				test_memchr();
+void				test_memcmp();
+void				test_strnstr();
+void				test_atoi();
+void				test_calloc();
+void				test_strdup();
+void				test_substr();
+void				test_strjoin();
+void				test_strtrim();
+void				test_split();
+void				test_itoa();
+void				test_strmapi();
+void				test_striteri();
+void				test_putchar_fd();
+void				test_putstr_fd();
+void				test_putendl_fd();
+void				test_putnbr_fd();
+*/
 }

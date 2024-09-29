@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yurolive <yurolive@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/14 10:50:46 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/29 16:42:35 by frromero         ###   ########.fr       */
+/*   Created: 2023/04/11 19:09:11 by yuolivei          #+#    #+#             */
+/*   Updated: 2024/09/18 11:41:16 by yurolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Fills memory with a specified byte for a given length, */
-/* returns pointer to memory */
-
 #include "libft.h"
+/*Itera la lista ’lst’ y aplica la función ’f’ en el
+contenido de cada nodo.*/
 
-void	*ft_memset(void *s, int c, size_t n)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	size_t				i;
-	unsigned char		*buf;
-
-	i = 0;
-	buf = (unsigned char *)s;
-	while (i < n)
+	if (!lst || !f)
+		return ;
+	while (lst)
 	{
-		buf[i] = c;
-		i++;
+		f(lst->content);
+		lst = lst->next;
 	}
-	return (s);
 }

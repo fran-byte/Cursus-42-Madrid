@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 16:40:08 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/22 08:54:47 by frromero         ###   ########.fr       */
+/*   Updated: 2024/09/29 16:44:50 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,8 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
 	int	sz_s;
 
-	i = 0;
 	sz_s = ft_strlen(s);
 	while (sz_s >= 0)
 	{

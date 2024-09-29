@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yurolive <yurolive@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/14 10:50:46 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/29 16:42:35 by frromero         ###   ########.fr       */
+/*   Created: 2023/04/11 18:48:51 by yuolivei          #+#    #+#             */
+/*   Updated: 2024/09/18 11:40:54 by yurolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Fills memory with a specified byte for a given length, */
-/* returns pointer to memory */
-
 #include "libft.h"
+/*Devuelve el último nodo de la lista.*/
 
-void	*ft_memset(void *s, int c, size_t n)
+t_list	*ft_lstlast(t_list *lst)
 {
-	size_t				i;
-	unsigned char		*buf;
-
-	i = 0;
-	buf = (unsigned char *)s;
-	while (i < n)
-	{
-		buf[i] = c;
-		i++;
-	}
-	return (s);
+	if (!lst)
+		return (NULL);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }

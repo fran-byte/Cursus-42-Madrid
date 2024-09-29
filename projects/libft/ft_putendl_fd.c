@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yurolive <yurolive@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/14 10:50:46 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/29 16:42:35 by frromero         ###   ########.fr       */
+/*   Created: 2023/03/23 20:01:50 by yuolivei          #+#    #+#             */
+/*   Updated: 2024/09/18 11:39:02 by yurolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Fills memory with a specified byte for a given length, */
-/* returns pointer to memory */
-
 #include "libft.h"
+/*Envía la string ’s’ al file descriptor dado,
+seguido de un salto de línea.*/
 
-void	*ft_memset(void *s, int c, size_t n)
+void	ft_putendl_fd(char *s, int fd)
 {
-	size_t				i;
-	unsigned char		*buf;
-
-	i = 0;
-	buf = (unsigned char *)s;
-	while (i < n)
+	if (s)
 	{
-		buf[i] = c;
-		i++;
+		ft_putstr_fd(s, fd);
+		ft_putchar_fd('\n', fd);
 	}
-	return (s);
 }
