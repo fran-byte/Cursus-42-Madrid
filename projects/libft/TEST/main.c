@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 15:31:49 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/29 21:10:48 by frromero         ###   ########.fr       */
+/*   Updated: 2024/09/30 22:05:22 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,8 @@ void info() {
         "\n* Información de testeo de las funciones de libft: *\n"
         "\n****************************************************\n"
         "\nEjecución individual                  : /a.out ft_islapha"
-        "\nEjecución de funciones obligatorias   : /a.out all_mandatory"
-        "\nSin Bonus                             "
-        "\nEjecución de funciones obligatorias + : /a.out all_bonus\n\n"
+        "\nEjecución de funciones obligatorias   : /a.out ft_mandatory"
+        "\nEjecución de funciones obligatorias + Bonus: /a.out ft_bonus\n\n"
         "* NOTAS A TENER EN CUENTA,\nParte 1 - Funciones basadas en la libreía libc,\n"
         "replicado la función Original e igualmente podrían tener 'Segmentation\n"
         "Fault' si le pasamos un puntero/string nulo, tanto a la función original\n"
@@ -145,10 +144,10 @@ void test_isdigit()
 	result1_original = isdigit('1');
 	result300 = ft_isdigit(300);
 	result300_original = isdigit(300);
-	printf("  _                                      \n")
-	printf("_|_  _|_      o   _   _|  o   _   o  _|_ \n")
- 	printf(" |    |_      |  _>  (_|  |  (_|  |   |_ \n")
-	printf("           __                  _|        \n");
+	printf("  _                                      \n");
+	printf("_|_  _|_      o   _   _|  o   _   o  _|_ \n");
+ 	printf(" |    |_      |  _>  (_|  |  (_|  |   |_ \n");
+	printf("           __                 _|        \n");
 	printf("ft_isdigit('A'): %d\n", resultA);
 	printf("isdigit('A'): %d\n\n", resultA_original);
 	/* TEST 2*/
@@ -174,12 +173,10 @@ void test_isalnum()
 	result1_original = isalnum('1');
 	result300 = ft_isalnum(300);
 	result300_original = isalnum(300);
-	printf("   __   _             _                 _                             \n");
-	printf("  / _| | |_          (_)  ___    __ _  | |  _ __    _   _   _ __ ___  \n");
-	printf(" | |_  | __|         | | / __|  / _` | | | | '_ \\  | | | | | '_ ` _ \\ \n");
-	printf(" |  _| | |_          | | \\__ \\ | (_| | | | | | | | | |_| | | | | | | |\n");
-	printf(" |_|    \\__|  _____  |_| |___/  \\__,_| |_| |_| |_|  \\__,_| |_| |_| |_|\n");
-	printf("             |_____|                                                 \n");
+	printf("   _                                         \n");
+	printf("_|_  _|_      o   _   _.  |  ._        ._ _  \n");
+	printf(" |    |_      |  _>  (_|  |  | |  |_|  | | | \n");
+	printf("          __                                \n");
 	printf("ft_isalnum('A'): %d\n", resultA);
 	printf("isalnum('A'): %d\n\n", resultA_original);
 	/* TEST 2*/
@@ -205,12 +202,10 @@ void test_isascii()
 	result1_original = isascii('1');
 	result300 = ft_isascii(300);
 	result300_original = isascii(300);
-	printf("   __   _             _                              _   _ \n");
-	printf("  / _| | |_          (_)  ___    __ _   ___    ___  (_) (_)\n");
-	printf(" | |_  | __|         | | / __|  / _` | / __|  / __| | | | |\n");
-	printf(" |  _| | |_          | | \\__ \\ | (_| | \\__ \\ | (__  | | | |\n");
-	printf(" |_|    \\__|  _____  |_| |___/  \\__,_| |___/  \\___| |_| |_|\n");
-	printf("             |_____|                                      \n");
+	printf("   _                                   \n");
+ 	printf("_|_  _|_      o   _   _.   _   _  o  o \n");
+ 	printf(" |    |_      |  _>  (_|  _>  (_  |  | \n");
+ 	printf("          __                           \n");
 	printf("ft_isascii('A'): %d\n", resultA);
 	printf("isascii('A'): %d\n\n", resultA_original);
 	/* TEST 2*/
@@ -252,12 +247,10 @@ void test_isprint()
 
 void test_strlen()
 {
-	printf("   __   _                   _            _                \n");
-	printf("  / _| | |_           ___  | |_   _ __  | |   ___   _ __  \n");
-	printf(" | |_  | __|         / __| | __| | '__| | |  / _ \\ | '_ \\ \n");
-	printf(" |  _| | |_          \\__ \\ | |_  | |    | | |  __/ | | | |\n");
-	printf(" |_|    \\__|  _____  |___/  \\__| |_|    |_|  \\___| |_| |_|\n");
-	printf("             |_____|                                      \n");
+	printf("  _                                    \n");
+ 	printf("_|_  _|_       _  _|_  ._  |   _   ._  \n");
+	printf(" |    |_      _>   |_  |   |  (/_  | | \n");
+	printf("          __                        \n");
 
 	// Test 1
 
@@ -283,12 +276,10 @@ void test_strlen()
 
 void test_memset()
 {
-	printf("   __   _                                                         _   \n");
-	printf("  / _| | |_           _ __ ___     ___   _ __ ___    ___    ___  | |_ \n");
-	printf(" | |_  | __|         | '_ ` _ \\   / _ \\ | '_ ` _ \\  / __|  / _ \\ | __|\n");
-	printf(" |  _| | |_          | | | | | | |  __/ | | | | | | \\__ \\ |  __/ | |_ \n");
-	printf(" |_|    \\__|  _____  |_| |_| |_|  \\___| |_| |_| |_| |___/  \\___|  \\__|\n");
-	printf("             |_____|                                                  \n");
+	printf("   _                                           \n");
+	printf(" _|_  _|_      ._ _    _   ._ _    _   _   _|_ \n");
+	printf("  |    |_      | | |  (/_  | | |  _>  (/_   |_ \n");
+	printf("           __                                  \n");
 
 	// TEST1
 	char str[50] = "Hola Mundo 42!!";
@@ -315,12 +306,10 @@ void test_memset()
 
 void test_bzero() //  REVISAR SI TRABAJA LA ORIGINAL, NO FUNCIONA ********
 {
-	printf("   __   _             _                                 \n");
-	printf("  / _| | |_          | |__    ____   ___   _ __    ___  \n");
-	printf(" | |_  | __|         | '_ \\  |_  /  / _ \\ | '__|  / _ \\ \n");
-	printf(" |  _| | |_          | |_) |  / /  |  __/ | |    | (_) |\n");
-	printf(" |_|    \\__|  _____  |_.__/  /___|  \\___| |_|     \\___/ \n");
-	printf("             |_____|                                    \n");
+	printf("   _                                 \n");
+	printf(" _|_  _|_      |_   _    _   ._   _  \n");
+	printf("  |    |_      |_)  /_  (/_  |   (_) \n");
+	printf("           __                        \n");
 	char str[50] = "Hola Mundo 42!!";
 	char str2[50] = "Hola Mundo 42!!";
 	printf("Nuestra string: %s\n", str);
@@ -340,12 +329,10 @@ void test_bzero() //  REVISAR SI TRABAJA LA ORIGINAL, NO FUNCIONA ********
 
 void test_memmove()
 {
-	printf("   __   _                                                                             \n");
-	printf("  / _| | |_           _ __ ___     ___   _ __ ___    _ __ ___     ___   __   __   ___ \n");
-	printf(" | |_  | __|         | '_ ` _ \\   / _ \\ | '_ ` _ \\  | '_ ` _ \\   / _ \\  \\ \\ / /  / _ \\\n");
-	printf(" |  _| | |_          | | | | | | |  __/ | | | | | | | | | | | | | (_) |  \\ V /  |  __/\n");
-	printf(" |_|    \\__|  _____  |_| |_| |_|  \\___| |_| |_| |_| |_| |_| |_|  \\___/    \\_/    \\___|\n");
-	printf("             |_____|                                                                  \n");
+	printf("   _                                                  \n");
+	printf(" _|_  _|_      ._ _    _   ._ _   ._ _    _        _  \n");
+	printf("  |    |_      | | |  (/_  | | |  | | |  (_)  \\/  (/_ \n");
+	printf("           __                                         \n");
 
 	//TEST1
 	char src[50] = "Hola Mundo 42!!";
@@ -403,12 +390,10 @@ void test_memmove()
 
 void test_memcpy()
 {
-	printf("   __   _                                                                 \n");
-	printf("  / _| | |_           _ __ ___     ___   _ __ ___     ___   _ __    _   _ \n");
-	printf(" | |_  | __|         | '_ ` _ \\   / _ \\ | '_ ` _ \\   / __| | '_ \\  | | | |\n");
-	printf(" |  _| | |_          | | | | | | |  __/ | | | | | | | (__  | |_) | | |_| |\n");
-	printf(" |_|    \\__|  _____  |_| |_| |_|  \\___| |_| |_| |_|  \\___| | .__/   \\__, |\n");
-	printf("             |_____|                                       |_|      |___/	\n");
+	printf("   _                                 \n");
+	printf(" _|_  _|_      ._ _    _   ._ _    _  ._      \n");
+	printf("  |    |_      | | |  (/_  | | |  (_  |_)  \\/ \n");
+	printf("           __                         |    /  \n");
 
 //TEST1
 	char src[50] = "Hola Mundo 42!!";
@@ -466,12 +451,10 @@ void test_memcpy()
 
 void test_strlcpy()
 {
-	printf("   __   _                   _            _                        \n");
-	printf("  / _| | |_           ___  | |_   _ __  | |   ___   _ __    _   _ \n");
-	printf(" | |_  | __|         / __| | __| | '__| | |  / __| | '_ \\  | | | |\n");
-	printf(" |  _| | |_          \\__ \\ | |_  | |    | | | (__  | |_) | | |_| |\n");
-	printf(" |_|    \\__|  _____  |___/  \\__| |_|    |_|  \\___| | .__/   \\__, |\n");
-	printf("             |_____|                               |_|      |___/ \n");
+	printf("   _                            \n");
+	printf(" _|_  _|_       _  _|_  ._  |   _  ._      \n");
+	printf("  |    |_      _>   |_  |   |  (_  |_)  \\/ \n");
+	printf("           __                      |    /  \n");
 
 	// TEST 1
 	char src[] = "Hola Mundo 42!!";
@@ -500,12 +483,10 @@ void test_strlcpy()
 }
 void test_strlcat()
 {
-	printf("   __   _                   _            _                  _   \n");
-	printf("  / _| | |_           ___  | |_   _ __  | |   ___    __ _  | |_ \n");
-	printf(" | |_  | __|         / __| | __| | '__| | |  / __|  / _` | | __|\n");
-	printf(" |  _| | |_          \\__ \\ | |_  | |    | | | (__  | (_| | | |_ \n");
-	printf(" |_|    \\__|  _____  |___/  \\__| |_|    |_|  \\___|  \\__,_|  \\__|\n");
-	printf("             |_____|                                            \n");
+	printf("   _                                  \n");
+	printf(" _|_  _|_       _  _|_  ._  |   _   _.  _|_ \n");
+	printf("  |    |_      _>   |_  |   |  (_  (_|   |_ \n");
+	printf("           __                               \n");
 
 	// TEST 1
 
@@ -518,12 +499,10 @@ void test_strlcat()
 
 void test_toupper()
 {
-	printf("   __   _             _                                                 \n");
-	printf("  / _| | |_          | |_    ___    _   _   _ __    _ __     ___   _ __ \n");
-	printf(" | |_  | __|         | __|  / _ \\  | | | | | '_ \\  | '_ \\   / _ \\ | '__|\n");
-	printf(" |  _| | |_          | |_  | (_) | | |_| | | |_) | | |_) | |  __/ | |   \n");
-	printf(" |_|    \\__|  _____   \\__|  \\___/   \\__,_| | .__/  | .__/   \\___| |_|   \n");
-	printf("            |_____|                       |_|     |_|                 \n");
+	printf("   _                                            \n");
+	printf(" _|_  _|_      _|_   _        ._   ._    _   ._ \n");
+	printf("  |    |_       |_  (_)  |_|  |_)  |_)  (/_  |  \n");
+	printf("           __                 |    |            \n");
 
 	// TEST 1
 
@@ -541,12 +520,10 @@ void test_toupper()
 
 void test_tolower()
 {
-	printf("   __   _             _             _                                  \n");
-	printf("  / _| | |_          | |_    ___   | |   ___   __      __   ___   _ __ \n");
-	printf(" | |_  | __|         | __|  / _ \\  | |  / _ \\  \\ \\ /\\ / /  / _ \\ | '__|\n");
-	printf(" |  _| | |_          | |_  | (_) | | | | (_) |  \\ V  V /  |  __/ | |   \n");
-	printf(" |_|    \\__|  _____   \\__|  \\___/  |_|  \\___/    \\_/\\_/    \\___| |_|   \n");
-	printf("             |_____|                                                   \n");
+	printf("   _                                           \n");
+	printf(" _|_  _|_      _|_   _   |   _          _   ._ \n");
+	printf("  |    |_       |_  (_)  |  (_)  \\/\\/  (/_  |  \n");
+	printf("           __                                  \n");
 	char c = 'A';
 	char b = '5';
 
@@ -563,12 +540,10 @@ void test_tolower()
 
 void test_strchr()
 {
-	printf("   __   _                   _                   _            \n");
-	printf("  / _| | |_           ___  | |_   _ __    ___  | |__    _ __ \n");
-	printf(" | |_  | __|         / __| | __| | '__|  / __| | '_ \\  | '__|\n");
-	printf(" |  _| | |_          \\__ \\ | |_  | |    | (__  | | | | | |   \n");
-	printf(" |_|    \\__|  _____  |___/  \\__| |_|     \\___| |_| |_| |_|   \n");
-	printf("             |_____|                                         \n");
+	printf("   _                                    \n");
+	printf(" _|_  _|_       _  _|_  ._   _  |_   ._ \n");
+	printf("  |    |_      _>   |_  |   (_  | |  |  \n");
+	printf("           __                           \n");
 
 	// TEST 1
 
@@ -601,12 +576,10 @@ void test_strchr()
 
 void test_strrchr()
 {
-	printf("   __   _                   _                          _            \n");
-	printf("  / _| | |_           ___  | |_   _ __   _ __    ___  | |__    _ __ \n");
-	printf(" | |_  | __|         / __| | __| | '__| | '__|  / __| | '_ \\  | '__|\n");
-	printf(" |  _| | |_          \\__ \\ | |_  | |    | |    | (__  | | | | | |   \n");
-	printf(" |_|    \\__|  _____  |___/  \\__| |_|    |_|     \\___| |_| |_| |_|   \n");
-	printf("             |_____|                                                \n");
+	printf("   _                                        \n");
+	printf(" _|_  _|_       _  _|_  ._  ._   _  |_   ._ \n");
+	printf("  |    |_      _>   |_  |   |   (_  | |  |  \n");
+	printf("           __                              \n");
 
 	// TEST 1
 
@@ -639,12 +612,10 @@ void test_strrchr()
 
 void test_strncmp()
 {
-	printf("   __   _                   _                                             \n");
-	printf("  / _| | |_           ___  | |_   _ __   _ __     ___   _ __ ___    _ __  \n");
-	printf(" | |_  | __|         / __| | __| | '__| | '_ \\   / __| | '_ ` _ \\  | '_ \\ \n");
-	printf(" |  _| | |_          \\__ \\ | |_  | |    | | | | | (__  | | | | | | | |_) |\n");
-	printf(" |_|    \\__|  _____  |___/  \\__| |_|    |_| |_|  \\___| |_| |_| |_| | .__/ \n");
-	printf("             |_____|                                               |_|    \n");
+	printf("   _                                            \n");
+	printf(" _|_  _|_       _  _|_  ._  ._    _  ._ _   ._  \n");
+	printf("  |    |_      _>   |_  |   | |  (_  | | |  |_) \n");
+	printf("          __                               |   \n");
 
 	// TEST 1
 
@@ -667,12 +638,10 @@ void test_strncmp()
 
 void test_memchr()
 {
-	printf("   __   _                                                   _            \n");
-	printf("  / _| | |_           _ __ ___     ___   _ __ ___     ___  | |__    _ __ \n");
-	printf(" | |_  | __|         | '_ ` _ \\   / _ \\ | '_ ` _ \\   / __| | '_ \\  | '__|\n");
-	printf(" |  _| | |_          | | | | | | |  __/ | | | | | | | (__  | | | | | |   \n");
-	printf(" |_|    \\__|  _____  |_| |_| |_|  \\___| |_| |_| |_|  \\___| |_| |_| |_|   \n");
-	printf("             |_____|                                                     \n");
+	printf("   _                                          \n");
+	printf(" _|_  _|_      ._ _    _   ._ _    _  |_   ._ \n");
+	printf("  |    |_      | | |  (/_  | | |  (_  | |  |  \n");
+	printf("           __                                 \n");
 
 	// TEST 1
 
@@ -707,12 +676,10 @@ void test_memchr()
 
 void test_memcmp()
 {
-	printf("   __   _                                                                     \n");
-	printf("  / _| | |_           _ __ ___     ___   _ __ ___     ___   _ __ ___    _ __  \n");
-	printf(" | |_  | __|         | '_ ` _ \\   / _ \\ | '_ ` _ \\   / __| | '_ ` _ \\  | '_ \\ \n");
-	printf(" |  _| | |_          | | | | | | |  __/ | | | | | | | (__  | | | | | | | |_) |\n");
-	printf(" |_|    \\__|  _____  |_| |_| |_|  \\___| |_| |_| |_|  \\___| |_| |_| |_| | .__/ \n");
-	printf("             |_____|                                                   |_|    \n");
+	printf("   _                                             \n");
+	printf(" _|_  _|_      ._ _    _   ._ _    _  ._ _   ._  \n");
+	printf("  |    |_      | | |  (/_  | | |  (_  | | |  |_) \n");
+	printf("           __                                |   \n");
 
 	// TEST1
 
@@ -737,12 +704,10 @@ void test_memcmp()
 
 void test_strnstr()
 {
-	printf("   __   _                   _                          _          \n");
-	printf("  / _| | |_           ___  | |_   _ __   _ __    ___  | |_   _ __ \n");
-	printf(" | |_  | __|         / __| | __| | '__| | '_ \\  / __| | __| | '__|\n");
-	printf(" |  _| | |_          \\__ \\ | |_  | |    | | | | \\__ \\ | |_  | |   \n");
-	printf(" |_|    \\__|  _____  |___/  \\__| |_|    |_| |_| |___/  \\__| |_|   \n");
-	printf("             |_____|                                              \n");
+	printf("   _                                         \n");
+	printf(" _|_  _|_       _  _|_  ._  ._    _  _|_  ._ \n");
+	printf("  |    |_      _>   |_  |   | |  _>   |_  |  \n");
+	printf("           __                                \n");
 
 	// TEST 1
 
@@ -752,7 +717,7 @@ void test_strnstr()
 
 	printf("\n*str = 'Hola42Madrid'\n");
 	printf("*substr = '42Madrid'\n");
-	printf("ftstrnstr(str, substr, ft_strlen(substr))");
+	printf("ft_strnstr(str, substr, ft_strlen(substr))");
 	if (result)
 	{
 		printf("Encontrado: %s\n", result);
@@ -783,12 +748,10 @@ void test_strnstr()
 
 void test_atoi()
 {
-	printf("   __   _                     _             _ \n");
-	printf("  / _| | |_            __ _  | |_    ___   (_)\n");
-	printf(" | |_  | __|          / _` | | __|  / _ \\  | |\n");
-	printf(" |  _| | |_          | (_| | | |_  | (_) | | |\n");
-	printf(" |_|    \\__|  _____   \\__,_|  \\__|  \\___/  |_|\n");
-	printf("             |_____|                              \n");
+	printf("   _                            \n");
+	printf(" _|_  _|_       _.  _|_   _   o \n");
+	printf("  |    |_      (_|   |_  (_)  | \n");
+	printf("           __                   \n");
 	char *num_str = "     123459";
 	char *neg_num_str = "-9576";
 	char *invalid_num_str = " 12asd34";
@@ -815,12 +778,12 @@ void test_atoi()
 
 void test_calloc()
 {
-	printf("   __   _                            _   _                \n");
-	printf("  / _| | |_            ___    __ _  | | | |   ___     ___ \n");
-	printf(" | |_  | __|          / __|  / _` | | | | |  / _ \\   / __|\n");
-	printf(" |  _| | |_          | (__  | (_| | | | | | | (_) | | (__ \n");
-	printf(" |_|    \\__| _____    \\___|  \\__,_| |_| |_|  \\___/   \\___|\n");
-	printf("            |_____|                                      \n");
+	printf("   _                                  \n");
+	printf(" _|_  _|_       _   _.  |  |   _    _ \n");
+	printf("  |    |_      (_  (_|  |  |  (_)  (_ \n");
+	printf("           __                        \n");
+
+	//Test1
 	int i = 0;
 	int *arr = (int *)ft_calloc(5, sizeof(int));
 	printf("int *arr = (int *)ft_calloc(5, sizeof(int))\n");
@@ -830,16 +793,25 @@ void test_calloc()
 		i++;
 	}
 	free(arr);
+
+	//Test2
+		int i2 = 0;
+	int *arr2 = (int *)calloc(5, sizeof(int));
+	printf("\nint *arr = (int *)calloc(5, sizeof(int))\n");
+	while (i2 < 5)
+	{
+		printf("arr[%d] = %d\n", i2, arr2[i2]);
+		i2++;
+	}
+	free(arr2);
 }
 
 void test_strdup()
 {
-    printf("   __   _                   _                _                 \n");
-    printf("  / _| | |_           ___  | |_   _ __    __| |  _   _   _ __  \n");
-    printf(" | |_  | __|         / __| | __| | '__|  / _` | | | | | | '_ \\ \n");
-    printf(" |  _| | |_          \\__ \\ | |_  | |    | (_| | | |_| | | |_) |\n");
-    printf(" |_|    \\__|  _____  |___/  \\__| |_|     \\__,_|  \\__,_| | .__/ \n");
-    printf("             |_____|                                    |_|    \n");
+    printf("   _                                      \n");
+    printf(" _|_  _|_       _  _|_  ._   _|       ._  \n");
+    printf("  |    |_      _>   |_  |   (_|  |_|  |_) \n");
+    printf("           __                         |   \n");
 
     // Test1
 
@@ -885,29 +857,36 @@ void test_strdup()
 
 void test_substr()
 {
-	printf("███████ ████████         ███████ ██    ██ ██████  ███████ ████████ ██████  \n");
-	printf("██         ██            ██      ██    ██ ██   ██ ██         ██    ██   ██ \n");
-	printf("█████      ██            ███████ ██    ██ ██████  ███████    ██    ██████  \n");
-	printf("██         ██                 ██ ██    ██ ██   ██      ██    ██    ██   ██ \n");
-	printf("██         ██    ███████ ███████  ██████  ██████  ███████    ██    ██   ██\n");
+	printf("   _                                     \n");
+	printf(" _|_  _|_       _       |_    _  _|_  ._ \n");
+	printf("  |    |_      _>  |_|  |_)  _>   |_  |  \n");
+	printf("           __                            \n");
 
 	// TEST 1
 
 	char *str = "Hola mundo";
 	char *sub = ft_substr(str, 5, 5);
 
-	printf("\n str: 'Hola mundo'\n");
+	printf("\nstr: 'Hola mundo'\n");
 	printf("\nft_substr(str, 5 ,5)\n");
 	printf("Subcadena: %s\n\n", sub);
 	free(sub);
+
+
+	char *str2 = "Hola mundo";
+	char *sub2 = ft_substr(str2, 5, 5);
+
+	printf("\n\nstr: 'Hola mundo'\n");
+	printf("\nsubstr(str, 5 ,5)\n");
+	printf("Subcadena: %s\n\n", sub2);
+	free(sub2);
 }
 void test_strjoin()
 {
-	printf("███████ ████████         ███████ ████████ ██████       ██  ██████  ██ ███    ██ \n");
-	printf("██         ██            ██         ██    ██   ██      ██ ██    ██ ██ ████   ██ \n");
-	printf("█████      ██            ███████    ██    ██████       ██ ██    ██ ██ ██ ██  ██ \n");
-	printf("██         ██                 ██    ██    ██   ██ ██   ██ ██    ██ ██ ██  ██ ██ \n");
-	printf("██         ██    ███████ ███████    ██    ██   ██  █████   ██████  ██ ██   ████ \n");
+	printf("   _                                        \n");
+	printf(" _|_  _|_       _  _|_  ._   o   _   o  ._  \n");
+	printf("  |    |_      _>   |_  |    |  (_)  |  | | \n");
+	printf("           __               _|              \n");
 
 	char const *str1 = "Hola mundo";
 	char const *str2 = " 42!!!";
@@ -922,11 +901,10 @@ void test_strjoin()
 
 void test_strtrim()
 {
-	printf("███████ ████████         ███████ ████████ ██████  ████████ ██████  ██ ███    ███ \n");
-	printf("██         ██            ██         ██    ██   ██    ██    ██   ██ ██ ████  ████ \n");
-	printf("█████      ██            ███████    ██    ██████     ██    ██████  ██ ██ ████ ██ \n");
-	printf("██         ██                 ██    ██    ██   ██    ██    ██   ██ ██ ██  ██  ██ \n");
-	printf("██         ██    ███████ ███████    ██    ██   ██    ██    ██   ██ ██ ██      ██ \n");
+	printf("   _                                          \n");
+	printf(" _|_  _|_       _  _|_  ._  _|_  ._  o  ._ _  \n");
+	printf("  |    |_      _>   |_  |    |_  |   |  | | | \n");
+	printf("           __                                 \n");
 
     // TEST1 recortar los espacios de inicio y fin (3 espacios)
     char *str = " ..  Hola mundo ..  ";
@@ -940,11 +918,10 @@ void test_strtrim()
 
 void test_split()
 {
-	printf("███████ ████████         ███████ ██████  ██      ██ ████████ \n");
-	printf("██         ██            ██      ██   ██ ██      ██    ██    \n");
-	printf("█████      ██            ███████ ██████  ██      ██    ██    \n");
-	printf("██         ██                 ██ ██      ██      ██    ██    \n");
-	printf("██         ██    ███████ ███████ ██      ███████ ██    ██ \n");
+	printf("   _                              \n");
+	printf(" _|_  _|_       _  ._   |  o  _|_ \n");
+	printf("  |    |_      _>  |_)  |  |   |_ \n");
+	printf("           __      |              \n");
 
 	char	**result;
 
@@ -964,75 +941,50 @@ void test_split()
 
 void test_itoa()
 {
-	printf("███████ ████████         ██ ████████  ██████   █████  \n");
-	printf("██         ██            ██    ██    ██    ██ ██   ██ \n");
-	printf("█████      ██            ██    ██    ██    ██ ███████ \n");
-	printf("██         ██            ██    ██    ██    ██ ██   ██ \n");
-	printf("██         ██    ███████ ██    ██     ██████  ██   ██ \n");
+	printf("   _\n");
+	printf(" _|_  _|_      o  _|_   _    _.\n");
+	printf("  |    |_      |   |_  (_)  (_|\n");
+	printf("           __                   \n");
 
-	int num = 12345;
-	char buffer[20];
+	int num = 35;
 
-	snprintf(buffer, sizeof(buffer), "%d", num);  // Simulación de itoa
-	printf("itoa(%d) = %s\n\n", num, buffer);
+	printf("ft_itoa(%d) = %s\n\n", num, ft_itoa(num));
+	printf("itoa(%d) = %s\n\n", num, ft_itoa(num));
 }
 
 void test_strmapi()
 {
-	printf("███████ ████████         ███████ ████████ ██████  ███    ███  █████  ██████  ██ \n");
-	printf("██         ██            ██         ██    ██   ██ ████  ████ ██   ██ ██   ██ ██ \n");
-	printf("█████      ██            ███████    ██    ██████  ██ ████ ██ ███████ ██████  ██ \n");
-	printf("██         ██                 ██    ██    ██   ██ ██  ██  ██ ██   ██ ██      ██ \n");
-	printf("██         ██    ███████ ███████    ██    ██   ██ ██      ██ ██   ██ ██      ██ \n");
+	printf("   _                                           \n");
+	printf(" _|_  _|_       _  _|_  ._  ._ _    _.  ._   o \n");
+	printf("  |    |_      _>   |_  |   | | |  (_|  |_)  | \n");
+	printf("           __                           |      \n");
 
     const char *str = "hola mundo 42";
-    char *new_str;
 
-    // Definimos la función apply_toupper dentro del main
-    char apply_toupper(unsigned int i, char c)
-    {
-        // Convertimos a mayúsculas
-        return toupper(c);
-		i = 1;
-		i = i + 1;
-    }
-    // Aplicar ft_strmapi con la función apply_toupper
-    new_str = ft_strmapi(str, apply_toupper);
+
 
     printf("Cadena original: %s\n", str);
 
     printf("Cadena modificada: ");
-    int i = 0; // Inicializamos el índice
-    while (new_str[i] != '\0') {
-        printf("%c", new_str[i]);
-        i++;
-    }
-    printf("\n\n");
-    free(new_str);
+
 }
 
 void test_striteri()
 {
-	printf("███████ ████████         ███████ ████████ ██████  ██ ████████ ███████ ██████  ██ \n");
-	printf("██         ██            ██         ██    ██   ██ ██    ██    ██      ██   ██ ██ \n");
-	printf("█████      ██            ███████    ██    ██████  ██    ██    █████   ██████  ██ \n");
-	printf("██         ██                 ██    ██    ██   ██ ██    ██    ██      ██   ██ ██ \n");
-	printf("██         ██    ███████ ███████    ██    ██   ██ ██    ██    ███████ ██   ██ ██ \n");
+	printf("   _                                           \n");
+	printf(" _|_  _|_       _  _|_  ._  o  _|_   _   ._  o \n");
+	printf("  |    |_      _>   |_  |   |   |_  (/_  |   | \n");
+	printf("           __                                  \n");
 
-	char str[] = "abc";
-	for (int i = 0; str[i]; i++) {
-		str[i] = str[i] + i;  // Modificación en función de la posición
-	}
-	printf("Cadena iterada: %s\n\n", str);
+
 }
 
 void test_putchar_fd()
 {
-	printf("███████ ████████         ██████  ██    ██ ████████  ██████ ██   ██  █████  ██████          ███████ ██████  \n");
-	printf("██         ██            ██   ██ ██    ██    ██    ██      ██   ██ ██   ██ ██   ██         ██      ██   ██ \n");
-	printf("█████      ██            ██████  ██    ██    ██    ██      ███████ ███████ ██████          █████   ██   ██ \n");
-	printf("██         ██            ██      ██    ██    ██    ██      ██   ██ ██   ██ ██   ██         ██      ██   ██ \n");
-	printf("██         ██    ███████ ██       ██████     ██     ██████ ██   ██ ██   ██ ██   ██ ███████ ██      ██████  \n");
+	printf("   _                                                  _      \n");
+	printf(" _|_  _|_      ._        _|_   _  |_    _.  ._      _|_   _| \n");
+	printf("  |    |_      |_)  |_|   |_  (_  | |  (_|  |        |   (_| \n");
+	printf("           __  |                                __           \n");
 
 	int fd = open("output.txt", O_WRONLY | O_CREAT, 0644);
 	if (fd != -1) {
@@ -1043,11 +995,10 @@ void test_putchar_fd()
 
 void test_putstr_fd()
 {
-	printf("███████ ████████         ██████  ██    ██ ████████ ███████ ████████ ██████          ███████ ██████  \n");
-	printf("██         ██            ██   ██ ██    ██    ██    ██         ██    ██   ██         ██      ██   ██ \n");
-	printf("█████      ██            ██████  ██    ██    ██    ███████    ██    ██████          █████   ██   ██ \n");
-	printf("██         ██            ██      ██    ██    ██         ██    ██    ██   ██         ██      ██   ██ \n");
-	printf("██         ██    ███████ ██       ██████     ██    ███████    ██    ██   ██ ███████ ██      ██████ 	\n");
+	printf("   _                                             _      \n");
+	printf(" _|_  _|_      ._        _|_   _  _|_  ._      _|_   _| \n");
+	printf("  |    |_      |_)  |_|   |_  _>   |_  |        |   (_| \n");
+	printf("           __  |                           __           \n");
 
 	int fd = open("output.txt", O_WRONLY | O_CREAT, 0644);
 	if (fd != -1) {
@@ -1058,11 +1009,10 @@ void test_putstr_fd()
 
 void test_putendl_fd()
 {
-	printf("██████  ██    ██ ████████ ███████ ███    ██ ██████  ██              ███████ ██████  \n");
-	printf("██   ██ ██    ██    ██    ██      ████   ██ ██   ██ ██              ██      ██   ██ \n");
-	printf("██████  ██    ██    ██    █████   ██ ██  ██ ██   ██ ██              █████   ██   ██ \n");
-	printf("██      ██    ██    ██    ██      ██  ██ ██ ██   ██ ██              ██      ██   ██ \n");
-	printf("██       ██████     ██    ███████ ██   ████ ██████  ███████ ███████ ██      ██████ \n");
+	printf("   _                                                  _      \n");
+	printf(" _|_  _|_      ._        _|_   _   ._    _|  |      _|_   _| \n");
+	printf("  |    |_      |_)  |_|   |_  (/_  | |  (_|  |       |   (_| \n");
+	printf("           __  |                                __           \n");
 
 	int fd = open("output.txt", O_WRONLY | O_CREAT, 0644);
 	if (fd != -1) {
@@ -1073,11 +1023,10 @@ void test_putendl_fd()
 
 void test_putnbr_fd()
 {
-	printf("██████  ██    ██ ████████ ███    ██ ██████  ██████          ███████ ██████  \n");
-	printf("██   ██ ██    ██    ██    ████   ██ ██   ██ ██   ██         ██      ██   ██ \n");
-	printf("██████  ██    ██    ██    ██ ██  ██ ██████  ██████          █████   ██   ██ \n");
-	printf("██      ██    ██    ██    ██  ██ ██ ██   ██ ██   ██         ██      ██   ██ \n");
-	printf("██       ██████     ██    ██   ████ ██████  ██   ██ ███████ ██      ██████ 	\n");
+	printf("   _                                              _      \n");
+	printf(" _|_  _|_      ._        _|_  ._   |_   ._      _|_   _| \n");
+	printf("  |    |_      |_)  |_|   |_  | |  |_)  |        |   (_| \n");
+	printf("           __  |                            __           \n");
 
 	int fd = open("output.txt", O_WRONLY | O_CREAT, 0644);
 	if (fd != -1) {
@@ -1236,7 +1185,7 @@ int main(int argc, char *argv[])
 		test_lstiter();
 		test_lstmap();
 	}*/
-	else if (strcmp(argv[1], "all_mandatory") == 0)
+	else if (strcmp(argv[1], "ft_mandatory") == 0)
 	{
 		test_isalpha();
 		test_isdigit();
