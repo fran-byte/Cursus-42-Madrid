@@ -87,12 +87,10 @@ void test_isalpha()
 	result1_original = isalpha('1');
 	result300 = ft_isalpha(300);
 	result300_original = isalpha(300);
-	printf("   __   _             _                 _           _             \n");
-	printf("  / _| | |_          (_)  ___    __ _  | |  _ __   | |__     __ _ \n");
-	printf(" | |_  | __|         | | / __|  / _` | | | | '_ \\  | '_ \\   / _` |\n");
-	printf(" |  _| | |_          | | \\__ \\ | (_| | | | | |_) | | | | | | (_| |\n");
-	printf(" |_|    \\__|  _____  |_| |___/  \\__,_| |_| | .__/  |_| |_|  \\__,_|\n");
-	printf("             |_____|                       |_|                         \n");
+	printf("   _                                        \n");
+	printf(" _|_  _|_      o   _   _.  |  ._   |_    _. \n");
+	printf("  |    |_      |  _>  (_|  |  |_)  | |  (_| \n");
+	printf("           __                 |             \n");
 	/* TEST 1*/
 	printf("ft_isalpha('A'): %d\n", resultA);
 	printf("isalpha(''): %d\n\n", resultA_original);
