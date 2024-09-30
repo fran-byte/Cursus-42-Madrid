@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yurolive <yurolive@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/11 18:48:51 by yuolivei          #+#    #+#             */
-/*   Updated: 2024/09/18 11:40:54 by yurolive         ###   ########.fr       */
+/*   Created: 2024/09/30 15:56:25 by frromero          #+#    #+#             */
+/*   Updated: 2024/09/30 15:57:43 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*Devuelve el último nodo de la lista.*/
+/*Añade el nodo ’new’ al principio de la lista ’lst’.*/
 
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (!lst)
-		return (NULL);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
+	if (!lst || !new)
+		return ;
+	new->next = *lst;
+	*lst = new;
 }

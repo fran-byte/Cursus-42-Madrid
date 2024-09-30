@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 16:40:08 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/29 16:44:50 by frromero         ###   ########.fr       */
+/*   Updated: 2024/09/30 17:34:17 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strrchr(const char *s, int c)
 	sz_s = ft_strlen(s);
 	while (sz_s >= 0)
 	{
-		if (s[sz_s] == c)
+		if (s[sz_s] == (char)c)
 		{
 			return ((char *)&s[sz_s]);
 		}

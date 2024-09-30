@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 18:36:53 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/26 16:29:27 by frromero         ###   ########.fr       */
+/*   Updated: 2024/09/30 17:26:43 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ char	*ft_strnstr(const char *big, const char *tiny, size_t len)
 	while (big[b] != '\0')
 	{
 		l = 0;
-		while (big[b + l] == tiny[l] && (b + l < len))
+		while (big[b + l] == tiny[l] && (b + l) < len)
 		{
 			if (big[b + l] == '\0' && tiny[l] == '\0')
 				return ((char *)&big[b]);
 			l++;
 		}
-		if (tiny[b + l] == '\0')
+		if (tiny[l] == '\0')
 			return ((char *)big + b);
 		b++;
 	}

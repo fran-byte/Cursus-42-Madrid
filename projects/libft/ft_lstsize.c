@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yurolive <yurolive@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/11 18:52:23 by yuolivei          #+#    #+#             */
-/*   Updated: 2024/09/18 11:41:38 by yurolive         ###   ########.fr       */
+/*   Created: 2024/09/30 15:57:32 by frromero          #+#    #+#             */
+/*   Updated: 2024/09/30 15:57:34 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*Añade el nodo ’new’ al final de la lista ’lst’.*/
-
-void	ft_lstadd_back(t_list **lst, t_list *new)
+/*Cuenta el número de nodos de una lista.*/
+int	ft_lstsize(t_list *lst)
 {
-	t_list	*last;
+	int	i;
 
-	if (!lst || !new)
-		return ;
-	if (!*lst)
+	i = 0;
+	while (lst)
 	{
-		*lst = new;
-		return ;
+		lst = lst->next;
+		i++;
 	}
-	last = ft_lstlast(*lst);
-	last->next = new;
+	return (i);
 }

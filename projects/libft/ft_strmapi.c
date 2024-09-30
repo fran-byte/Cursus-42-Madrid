@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yurolive <yurolive@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/23 20:34:10 by yuolivei          #+#    #+#             */
-/*   Updated: 2024/09/18 11:37:42 by yurolive         ###   ########.fr       */
+/*   Created: 2024/09/30 15:58:35 by frromero          #+#    #+#             */
+/*   Updated: 2024/09/30 15:58:38 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

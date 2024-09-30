@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yurolive <yurolive@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 20:43:12 by yuolivei          #+#    #+#             */
-/*   Updated: 2024/09/18 11:38:19 by yurolive         ###   ########.fr       */
+/*   Created: 2024/09/30 16:00:46 by frromero          #+#    #+#             */
+/*   Updated: 2024/09/30 16:00:48 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

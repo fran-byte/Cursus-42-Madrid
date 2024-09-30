@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yurolive <yurolive@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/23 20:01:50 by yuolivei          #+#    #+#             */
-/*   Updated: 2024/09/18 11:39:02 by yurolive         ###   ########.fr       */
+/*   Created: 2024/09/30 15:59:48 by frromero          #+#    #+#             */
+/*   Updated: 2024/09/30 15:59:53 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

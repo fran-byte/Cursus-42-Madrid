@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yurolive <yurolive@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/23 19:57:16 by yuolivei          #+#    #+#             */
-/*   Updated: 2024/09/18 11:38:53 by yurolive         ###   ########.fr       */
+/*   Created: 2024/09/30 16:00:05 by frromero          #+#    #+#             */
+/*   Updated: 2024/09/30 16:00:07 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 18:38:27 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/29 16:33:10 by frromero         ###   ########.fr       */
+/*   Updated: 2024/09/30 16:50:09 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_calloc(size_t count, size_t size)
 	void	*ptr;
 
 	ptr = malloc(count * size);
-	if (ptr == 0 || size == 0)
+	if (ptr == NULL)
 		return (NULL);
 	ft_memset(ptr, 0, count * size);
 	return (ptr);
