@@ -212,12 +212,10 @@ void test_isprint()
 	result1_original = isprint('1');
 	result300 = ft_isprint(300);
 	result300_original = isprint(300);
-	printf("   __   _             _                        _           _   \n");
-	printf("  / _| | |_          (_)  ___   _ __    _ __  (_)  _ __   | |_ \n");
-	printf(" | |_  | __|         | | / __| | '_ \\  | '__| | | | '_ \\  | __|\n");
-	printf(" |  _| | |_          | | \\__ \\ | |_) | | |    | | | | | | | |_ \n");
-	printf(" |_|    \\__|  _____  |_| |___/ | .__/  |_|    |_| |_| |_|  \\__|\n");
-	printf("             |_____|           |_|                            \n");
+	printf("   _                                       \n");
+	printf(" _|_  _|_      o   _  ._   ._  o  ._   _|_ \n");
+	printf("  |    |_      |  _>  |_)  |   |  | |   |_ \n");
+	printf("           __         |                   \n");
 	printf("ft_isprint('A'): %d\n", resultA);
 	printf("isprint('A'): %d\n\n", resultA_original);
 	/* TEST 2*/
