@@ -117,12 +117,10 @@ void test_isdigit()
 	result1_original = isdigit('1');
 	result300 = ft_isdigit(300);
 	result300_original = isdigit(300);
-	printf("   __   _             _             _   _           _   _   \n");
-	printf("  / _| | |_          (_)  ___    __| | (_)   __ _  (_) | |_ \n");
-	printf(" | |_  | __|         | | / __|  / _` | | |  / _` | | | | __|\n");
-	printf(" |  _| | |_          | | \\__ \\ | (_| | | | | (_| | | | | |_ \n");
-	printf(" |_|    \\__|  _____  |_| |___/  \\__,_| |_|  \\__, | |_|  \\__|\n");
-	printf("             |_____|                        |___/          \n");
+	printf("  _                                      \n")
+	printf("_|_  _|_      o   _   _|  o   _   o  _|_ \n")
+ 	printf(" |    |_      |  _>  (_|  |  (_|  |   |_ \n")
+	printf("           __                  _|        \n");
 	printf("ft_isdigit('A'): %d\n", resultA);
 	printf("isdigit('A'): %d\n\n", resultA_original);
 	/* TEST 2*/
