@@ -35,7 +35,7 @@ BONUS_SRC = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 OBJ = ${SRC:.c=.o}
 BONUS_OBJ = ${BONUS_SRC:.c=.o}
 
-# rules
+# rules ---------------------------------------------
 all: ${NAME}
 
 # create the library from object files
