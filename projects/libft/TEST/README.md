@@ -6,7 +6,7 @@
 # Parte 1 - Funciones de libc
 
 
-## [ft_isalpha](42_cursus_fran/projects/libft/ft_isalpha.c)
+## [ft_isalpha](projects/libft/ft_isalpha.c
 
 ``` c
 int ft_isalpha (int c)
