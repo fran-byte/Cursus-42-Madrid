@@ -6,7 +6,7 @@
 # Parte 1 - Funciones de libc
 
 
-## [ft_isalpha](../libft/ft_isalpha.c)
+## [ft_isalpha](Test/libft/ft_isalpha.c)
 
 ``` c
 int ft_isalpha (int c)
