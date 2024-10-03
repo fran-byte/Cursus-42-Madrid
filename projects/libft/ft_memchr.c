@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: frromero <frromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 11:22:12 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/26 16:31:29 by frromero         ###   ########.fr       */
+/*   Updated: 2024/10/03 21:07:14 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ void	*ft_memchr(const void *s, int c, size_t n)
 			return ((void *)str + i);
 		i++;
 	}
-	return (0);
+	return (NULL);
 }

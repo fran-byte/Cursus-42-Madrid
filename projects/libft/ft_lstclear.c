@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: frromero <frromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 15:56:35 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/30 15:56:39 by frromero         ###   ########.fr       */
+/*   Updated: 2024/10/03 21:30:24 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Deletes and frees the given node 'lst' and all consecutive nodes, using the
+'del' function and free. At the end, the pointer to the list should be NULL. */
+
 #include "libft.h"
-/*Elimina y libera el nodo ’lst’ dado y todos los consecutivos
-de ese nodo, utilizando la función ’del’ y free. Al final, el
-puntero a la lista debe ser NULL.*/
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {

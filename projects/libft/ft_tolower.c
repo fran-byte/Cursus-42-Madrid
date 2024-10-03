@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: frromero <frromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 22:42:52 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/30 18:21:48 by frromero         ###   ########.fr       */
+/*   Updated: 2024/10/03 21:30:34 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: frromero <frromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 15:57:16 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/30 15:57:20 by frromero         ###   ########.fr       */
+/*   Updated: 2024/10/03 20:56:52 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*Itera la lista ’lst’ y aplica la función ’f’ al contenido de cada nodo.
-Crea una lista resultante de la aplicación correcta y sucesiva de la función
-’f’ sobre cada nodo. La función ’del’ se utiliza para eliminar el contenido de
-un nodo, si hace falta.*/
+/*Iterates the list 'lst' and applies the function 'f' to the content of each
+node. Creates a list resulting from the correct and successive application of
+the function 'f' over each node. The 'del' function is used to delete the
+content of a node, if necessary.*/
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {

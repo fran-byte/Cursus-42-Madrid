@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: frromero <frromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 16:23:11 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/28 10:36:55 by frromero         ###   ########.fr       */
+/*   Updated: 2024/10/03 21:20:08 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 /* Removes leading and trailing characters specified in 'set' from string 's1'*/
+
+#include "libft.h"
 
 char	*ft_strtrim(char const *s1, char const *set)
 {

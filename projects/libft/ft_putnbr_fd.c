@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: frromero <frromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 15:59:59 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/30 16:00:00 by frromero         ###   ########.fr       */
+/*   Updated: 2024/10/03 21:25:40 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Sends the number 'n' to the given file descriptor. */
+
 #include "libft.h"
-/*Envía el número ’n’ al file descriptor dado.*/
 
 void	ft_putnbr_fd(int n, int fd)
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: frromero <frromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 21:00:56 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/30 18:44:50 by frromero         ###   ########.fr       */
+/*   Updated: 2024/10/03 20:45:12 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,39 +68,4 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
-void 				info();
-void				test_isalpha();
-void				test_isdigit();
-void				test_isalnum();
-void				test_isascii();
-void				test_isprint();
-void				test_strlen();
-void				test_memset();
-void				test_bzero() ;//  REVISAR SI TRABAJA LA ORIGINAL, NO FUNCIONA ********
-void				test_memmove();
-void				test_memcpy();
-void				test_strlcpy();
-void				test_strlcat();
-void				test_toupper();
-void				test_tolower();
-void				test_strchr();
-void				test_strrchr();
-void				test_strncmp();
-void				test_memchr();
-void				test_memcmp();
-void				test_strnstr();
-void				test_atoi();
-void				test_calloc();
-void				test_strdup();
-void				test_substr();
-void				test_strjoin();
-void				test_strtrim();
-void				test_split();
-void				test_itoa();
-void				test_strmapi();
-void				test_striteri();
-void				test_putchar_fd();
-void				test_putstr_fd();
-void				test_putendl_fd();
-void				test_putnbr_fd();
 #endif
