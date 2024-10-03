@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frromero <frromero@student.42madrid.com>    +#+  +:+       +#+        */
+/*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 11:22:12 by frromero          #+#    #+#             */
 /*   Updated: 2024/09/26 16:31:29 by frromero         ###   ########.fr       */
