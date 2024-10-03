@@ -6,15 +6,15 @@
 /*   By: frromero <frromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 18:36:53 by frromero          #+#    #+#             */
-/*   Updated: 2024/10/03 21:55:11 by frromero         ###   ########.fr       */
+/*   Updated: 2024/10/03 21:57:03 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* This function locates the first occurrence of the substring `substr` in the
- * string `src`, searching within the first `len` characters of `src`. If `substr`
- * is an empty string, it returns `src`. It returns a pointer to the start of
- * the located substring, or NULL if the substring is not found within the
- * specified length.*/
+string `src`, searching within the first `len` characters of `src`.
+If `substr` is an empty string, it returns `src`. It returns a pointer to the
+start of the located substring, or NULL if the substring is not found within the
+specified length.*/
 
 #include "libft.h"
 
