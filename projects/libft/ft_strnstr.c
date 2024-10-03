@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 18:36:53 by frromero          #+#    #+#             */
-/*   Updated: 2024/10/03 21:57:03 by frromero         ###   ########.fr       */
+/*   Updated: 2024/10/03 23:50:00 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,24 +20,24 @@ specified length.*/
 
 char	*ft_strnstr(const char *src, const char *substr, size_t len)
 {
-	size_t	b;
-	size_t	l;
+	size_t	i_sr;
+	size_t	i_sb;
 
-	b = 0;
+	i_sr = 0;
 	if (*substr == '\0')
 		return ((char *)src);
-	while (src[b] != '\0')
+	while (src[i_sr] != '\0')
 	{
-		l = 0;
-		while (src[b + l] == substr[l] && (b + l) < len)
+		i_sb = 0;
+		while (src[i_sr + i_sb] == substr[i_sb] && (i_sr + i_sb) < len)
 		{
-			if (src[b + l] == '\0' && substr[l] == '\0')
-				return ((char *)&src[b]);
-			l++;
+			if (src[i_sr + i_sb] == '\0' && substr[i_sb] == '\0')
+				return ((char *)&src[i_sr]);
+			i_sb++;
 		}
-		if (substr[l] == '\0')
-			return ((char *)src + b);
-		b++;
+		if (substr[i_sb] == '\0')
+			return ((char *)src + i_sr);
+		i_sr++;
 	}
 	return (NULL);
 }
