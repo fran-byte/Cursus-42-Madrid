@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
+/*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 20:50:13 by frromero          #+#    #+#             */
 /*   Updated: 2024/09/30 15:48:58 by frromero         ###   ########.fr       */
