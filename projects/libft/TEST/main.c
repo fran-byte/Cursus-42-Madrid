@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 15:31:49 by frromero          #+#    #+#             */
-/*   Updated: 2024/10/06 00:02:27 by frromero         ###   ########.fr       */
+/*   Updated: 2024/10/06 00:13:51 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1126,13 +1126,13 @@ void	del(void *content)
 // Función para imprimir el contenido (asumimos que es un string)
 void	print_content(void *content)
 {
-	printf("%s\n", (char *)content);
+	printf("%s\n", (char *)content);  // Lo casteamos primero
 }
 
 // Función que transforma el contenido (duplicar string en este caso)
 void	*duplicate_content(void *content)
 {
-	char *str = (char *)content;
+	char *str = (char *)content; // Lo casteamos primero
 	char *new_str = strdup(str); // Usamos strdup para duplicar el string
 	return (new_str);
 }
@@ -1146,6 +1146,12 @@ int	test_bonus(void)
 	t_list	*last_node;
 	t_list	*mapped_lst;
 	t_list	*tmp;
+
+	printf("\n▗▄▄▖  ▗▄▖ ▗▖  ▗▖▗▖ ▗▖ ▗▄▄▖\n");
+	printf("▐▌ ▐▌▐▌ ▐▌▐▛▚▖▐▌▐▌ ▐▌▐▌   \n");
+	printf("▐▛▀▚▖▐▌ ▐▌▐▌ ▝▜▌▐▌ ▐▌ ▝▀▚▖\n");
+	printf("▐▙▄▞▘▝▚▄▞▘▐▌  ▐▌▝▚▄▞▘▗▄▄▞▘\n\n");
+
 
 	// Crear nodos y añadirlos a la lista
 	new_node = ft_lstnew(strdup("Nodo 1"));
