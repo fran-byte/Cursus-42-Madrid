@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frromero <frromero@student.42.fr>          +#+  +:+       +#+        */
+/*   By: frromero <frromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 15:31:49 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/30 22:05:22 by frromero         ###   ########.fr       */
+/*   Updated: 2024/10/06 00:02:27 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,10 +114,12 @@ void test_isalpha()
 	result1_original = isalpha('1');
 	result300 = ft_isalpha(300);
 	result300_original = isalpha(300);
+	printf("\n\n********************************************\n");
 	printf("   _                                        \n");
 	printf(" _|_  _|_      o   _   _.  |  ._   |_    _. \n");
 	printf("  |    |_      |  _>  (_|  |  |_)  | |  (_| \n");
 	printf("           __                 |             \n");
+	printf("********************************************\n");
 	/* TEST 1*/
 	printf("ft_isalpha('A'): %d\n", resultA);
 	printf("isalpha(''): %d\n\n", resultA_original);
@@ -144,10 +146,12 @@ void test_isdigit()
 	result1_original = isdigit('1');
 	result300 = ft_isdigit(300);
 	result300_original = isdigit(300);
+	printf("\n\n*****************************************\n");
 	printf("  _                                      \n");
 	printf("_|_  _|_      o   _   _|  o   _   o  _|_ \n");
  	printf(" |    |_      |  _>  (_|  |  (_|  |   |_ \n");
-	printf("           __                 _|        \n");
+	printf("           __                 _|         \n");
+	printf("*****************************************\n");
 	printf("ft_isdigit('A'): %d\n", resultA);
 	printf("isdigit('A'): %d\n\n", resultA_original);
 	/* TEST 2*/
@@ -173,10 +177,12 @@ void test_isalnum()
 	result1_original = isalnum('1');
 	result300 = ft_isalnum(300);
 	result300_original = isalnum(300);
+	printf("\n\n*********************************************\n");
 	printf("   _                                         \n");
 	printf("_|_  _|_      o   _   _.  |  ._        ._ _  \n");
 	printf(" |    |_      |  _>  (_|  |  | |  |_|  | | | \n");
-	printf("          __                                \n");
+	printf("          __                                 \n");
+	printf("*********************************************\n");
 	printf("ft_isalnum('A'): %d\n", resultA);
 	printf("isalnum('A'): %d\n\n", resultA_original);
 	/* TEST 2*/
@@ -202,10 +208,12 @@ void test_isascii()
 	result1_original = isascii('1');
 	result300 = ft_isascii(300);
 	result300_original = isascii(300);
+	printf("\n\n***************************************\n");
 	printf("   _                                   \n");
  	printf("_|_  _|_      o   _   _.   _   _  o  o \n");
  	printf(" |    |_      |  _>  (_|  _>  (_  |  | \n");
  	printf("          __                           \n");
+	printf("***************************************\n");
 	printf("ft_isascii('A'): %d\n", resultA);
 	printf("isascii('A'): %d\n\n", resultA_original);
 	/* TEST 2*/
@@ -231,10 +239,12 @@ void test_isprint()
 	result1_original = isprint('1');
 	result300 = ft_isprint(300);
 	result300_original = isprint(300);
+	printf("\n\n*******************************************\n");
 	printf("   _                                       \n");
 	printf(" _|_  _|_      o   _  ._   ._  o  ._   _|_ \n");
 	printf("  |    |_      |  _>  |_)  |   |  | |   |_ \n");
-	printf("           __         |                   \n");
+	printf("           __         |                    \n");
+	printf("*******************************************\n");
 	printf("ft_isprint('A'): %d\n", resultA);
 	printf("isprint('A'): %d\n\n", resultA_original);
 	/* TEST 2*/
@@ -247,10 +257,12 @@ void test_isprint()
 
 void test_strlen()
 {
+	printf("\n\n***************************************\n");
 	printf("  _                                    \n");
  	printf("_|_  _|_       _  _|_  ._  |   _   ._  \n");
 	printf(" |    |_      _>   |_  |   |  (/_  | | \n");
-	printf("          __                        \n");
+	printf("          __                           \n");
+		printf("***********************************\n");
 
 	// Test 1
 
@@ -276,10 +288,12 @@ void test_strlen()
 
 void test_memset()
 {
+	printf("\n\n***********************************************\n");
 	printf("   _                                           \n");
 	printf(" _|_  _|_      ._ _    _   ._ _    _   _   _|_ \n");
 	printf("  |    |_      | | |  (/_  | | |  _>  (/_   |_ \n");
 	printf("           __                                  \n");
+	printf("***********************************************\n");
 
 	// TEST1
 	char str[50] = "Hola Mundo 42!!";
@@ -306,10 +320,12 @@ void test_memset()
 
 void test_bzero() //  REVISAR SI TRABAJA LA ORIGINAL, NO FUNCIONA ********
 {
+	printf("\n\n*************************************\n");
 	printf("   _                                 \n");
 	printf(" _|_  _|_      |_   _    _   ._   _  \n");
 	printf("  |    |_      |_)  /_  (/_  |   (_) \n");
 	printf("           __                        \n");
+	printf("*************************************\n");
 	char str[50] = "Hola Mundo 42!!";
 	char str2[50] = "Hola Mundo 42!!";
 	printf("Nuestra string: %s\n", str);
@@ -329,10 +345,12 @@ void test_bzero() //  REVISAR SI TRABAJA LA ORIGINAL, NO FUNCIONA ********
 
 void test_memmove()
 {
+	printf("\n\n******************************************************\n");
 	printf("   _                                                  \n");
 	printf(" _|_  _|_      ._ _    _   ._ _   ._ _    _        _  \n");
 	printf("  |    |_      | | |  (/_  | | |  | | |  (_)  \\/  (/_ \n");
 	printf("           __                                         \n");
+	printf("******************************************************\n");
 
 	//TEST1
 	char src[50] = "Hola Mundo 42!!";
@@ -390,10 +408,12 @@ void test_memmove()
 
 void test_memcpy()
 {
-	printf("   _                                 \n");
+	printf("\n\n**********************************************\n");
+	printf("   _                                          \n");
 	printf(" _|_  _|_      ._ _    _   ._ _    _  ._      \n");
 	printf("  |    |_      | | |  (/_  | | |  (_  |_)  \\/ \n");
 	printf("           __                         |    /  \n");
+	printf("**********************************************\n");
 
 //TEST1
 	char src[50] = "Hola Mundo 42!!";
@@ -451,10 +471,12 @@ void test_memcpy()
 
 void test_strlcpy()
 {
-	printf("   _                            \n");
+	printf("\n\n*******************************************\n");
+	printf("   _                                       \n");
 	printf(" _|_  _|_       _  _|_  ._  |   _  ._      \n");
 	printf("  |    |_      _>   |_  |   |  (_  |_)  \\/ \n");
 	printf("           __                      |    /  \n");
+	printf("*******************************************\n");
 
 	// TEST 1
 	char src[] = "Hola Mundo 42!!";
@@ -483,10 +505,12 @@ void test_strlcpy()
 }
 void test_strlcat()
 {
+	printf("\n\n********************************************\n");
 	printf("   _                                  \n");
 	printf(" _|_  _|_       _  _|_  ._  |   _   _.  _|_ \n");
 	printf("  |    |_      _>   |_  |   |  (_  (_|   |_ \n");
 	printf("           __                               \n");
+	printf("********************************************\n");
 
 	// TEST 1
 
@@ -499,10 +523,12 @@ void test_strlcat()
 
 void test_toupper()
 {
+	printf("\n\n************************************************\n");
 	printf("   _                                            \n");
 	printf(" _|_  _|_      _|_   _        ._   ._    _   ._ \n");
 	printf("  |    |_       |_  (_)  |_|  |_)  |_)  (/_  |  \n");
 	printf("           __                 |    |            \n");
+	printf("************************************************\n");
 
 	// TEST 1
 
@@ -520,10 +546,12 @@ void test_toupper()
 
 void test_tolower()
 {
+	printf("\n\n***********************************************\n");
 	printf("   _                                           \n");
 	printf(" _|_  _|_      _|_   _   |   _          _   ._ \n");
 	printf("  |    |_       |_  (_)  |  (_)  \\/\\/  (/_  |  \n");
 	printf("           __                                  \n");
+	printf("***********************************************\n");
 	char c = 'A';
 	char b = '5';
 
@@ -540,10 +568,12 @@ void test_tolower()
 
 void test_strchr()
 {
+	printf("\n\n****************************************\n");
 	printf("   _                                    \n");
 	printf(" _|_  _|_       _  _|_  ._   _  |_   ._ \n");
 	printf("  |    |_      _>   |_  |   (_  | |  |  \n");
 	printf("           __                           \n");
+	printf("****************************************\n");
 
 	// TEST 1
 
@@ -576,10 +606,12 @@ void test_strchr()
 
 void test_strrchr()
 {
+	printf("\n\n********************************************\n");
 	printf("   _                                        \n");
 	printf(" _|_  _|_       _  _|_  ._  ._   _  |_   ._ \n");
 	printf("  |    |_      _>   |_  |   |   (_  | |  |  \n");
-	printf("           __                              \n");
+	printf("           __                               \n");
+	printf("********************************************\n");
 
 	// TEST 1
 
@@ -612,10 +644,12 @@ void test_strrchr()
 
 void test_strncmp()
 {
+	printf("\n\n************************************************\n");
 	printf("   _                                            \n");
 	printf(" _|_  _|_       _  _|_  ._  ._    _  ._ _   ._  \n");
 	printf("  |    |_      _>   |_  |   | |  (_  | | |  |_) \n");
-	printf("          __                               |   \n");
+	printf("          __                               |    \n");
+	printf("************************************************\n");
 
 	// TEST 1
 
@@ -638,10 +672,12 @@ void test_strncmp()
 
 void test_memchr()
 {
+	printf("\n\n**********************************************\n");
 	printf("   _                                          \n");
 	printf(" _|_  _|_      ._ _    _   ._ _    _  |_   ._ \n");
 	printf("  |    |_      | | |  (/_  | | |  (_  | |  |  \n");
 	printf("           __                                 \n");
+	printf("**********************************************\n");
 
 	// TEST 1
 
@@ -676,10 +712,12 @@ void test_memchr()
 
 void test_memcmp()
 {
+	printf("\n\n*************************************************\n");
 	printf("   _                                             \n");
 	printf(" _|_  _|_      ._ _    _   ._ _    _  ._ _   ._  \n");
 	printf("  |    |_      | | |  (/_  | | |  (_  | | |  |_) \n");
 	printf("           __                                |   \n");
+	printf("*************************************************\n");
 
 	// TEST1
 
@@ -704,10 +742,12 @@ void test_memcmp()
 
 void test_strnstr()
 {
+	printf("\n\n*********************************************\n");
 	printf("   _                                         \n");
 	printf(" _|_  _|_       _  _|_  ._  ._    _  _|_  ._ \n");
 	printf("  |    |_      _>   |_  |   | |  _>   |_  |  \n");
 	printf("           __                                \n");
+	printf("*********************************************\n");
 
 	// TEST 1
 
@@ -748,10 +788,12 @@ void test_strnstr()
 
 void test_atoi()
 {
+	printf("\n\n********************************\n");
 	printf("   _                            \n");
 	printf(" _|_  _|_       _.  _|_   _   o \n");
 	printf("  |    |_      (_|   |_  (_)  | \n");
 	printf("           __                   \n");
+	printf("********************************\n");
 	char *num_str = "     123459";
 	char *neg_num_str = "-9576";
 	char *invalid_num_str = " 12asd34";
@@ -778,10 +820,12 @@ void test_atoi()
 
 void test_calloc()
 {
+	printf("\n\n**************************************\n");
 	printf("   _                                  \n");
 	printf(" _|_  _|_       _   _.  |  |   _    _ \n");
 	printf("  |    |_      (_  (_|  |  |  (_)  (_ \n");
-	printf("           __                        \n");
+	printf("           __                         \n");
+	printf("**************************************\n");
 
 	//Test1
 	int i = 0;
@@ -808,10 +852,12 @@ void test_calloc()
 
 void test_strdup()
 {
+	printf("\n\n******************************************\n");
     printf("   _                                      \n");
     printf(" _|_  _|_       _  _|_  ._   _|       ._  \n");
     printf("  |    |_      _>   |_  |   (_|  |_|  |_) \n");
     printf("           __                         |   \n");
+	printf("******************************************\n");
 
     // Test1
 
@@ -857,10 +903,12 @@ void test_strdup()
 
 void test_substr()
 {
+	printf("\n\n*****************************************\n");
 	printf("   _                                     \n");
 	printf(" _|_  _|_       _       |_    _  _|_  ._ \n");
 	printf("  |    |_      _>  |_|  |_)  _>   |_  |  \n");
 	printf("           __                            \n");
+	printf("*****************************************\n");
 
 	// TEST 1
 
@@ -883,10 +931,12 @@ void test_substr()
 }
 void test_strjoin()
 {
+	printf("\n\n********************************************\n");
 	printf("   _                                        \n");
 	printf(" _|_  _|_       _  _|_  ._   o   _   o  ._  \n");
 	printf("  |    |_      _>   |_  |    |  (_)  |  | | \n");
 	printf("           __               _|              \n");
+	printf("********************************************\n");
 
 	char const *str1 = "Hola mundo";
 	char const *str2 = " 42!!!";
@@ -901,10 +951,12 @@ void test_strjoin()
 
 void test_strtrim()
 {
+	printf("\n\n**********************************************\n");
 	printf("   _                                          \n");
 	printf(" _|_  _|_       _  _|_  ._  _|_  ._  o  ._ _  \n");
 	printf("  |    |_      _>   |_  |    |_  |   |  | | | \n");
 	printf("           __                                 \n");
+	printf("**********************************************\n");
 
     // TEST1 recortar los espacios de inicio y fin (3 espacios)
     char *str = " ..  Hola mundo ..  ";
@@ -918,10 +970,12 @@ void test_strtrim()
 
 void test_split()
 {
+	printf("\n\n**********************************\n");
 	printf("   _                              \n");
 	printf(" _|_  _|_       _  ._   |  o  _|_ \n");
 	printf("  |    |_      _>  |_)  |  |   |_ \n");
 	printf("           __      |              \n");
+	printf("**********************************\n");
 
 	char	**result;
 
@@ -941,101 +995,206 @@ void test_split()
 
 void test_itoa()
 {
-	printf("   _\n");
-	printf(" _|_  _|_      o  _|_   _    _.\n");
-	printf("  |    |_      |   |_  (_)  (_|\n");
+	printf("\n\n********************************\n");
+	printf("   _                            \n");
+	printf(" _|_  _|_      o  _|_   _    _  \n");
+	printf("  |    |_      |   |_  (_)  (_| \n");
 	printf("           __                   \n");
+	printf("********************************\n");
 
 	int num = 35;
 
 	printf("ft_itoa(%d) = %s\n\n", num, ft_itoa(num));
 	printf("itoa(%d) = %s\n\n", num, ft_itoa(num));
 }
-
+char  aux_strmapi(unsigned int i, char c)
+{
+	// Utilizaremos solo uno de los 2 argumentos
+	printf("\nNuestro indice: %d",i);
+	if(c >= 'A' && c <= 'Z')
+		c = (c + 32);
+	return(c);
+}
 void test_strmapi()
 {
+	printf("\n\n***********************************************\n");
 	printf("   _                                           \n");
 	printf(" _|_  _|_       _  _|_  ._  ._ _    _.  ._   o \n");
 	printf("  |    |_      _>   |_  |   | | |  (_|  |_)  | \n");
 	printf("           __                           |      \n");
+	printf("***********************************************\n");
 
-    const char *str = "hola mundo 42";
-
-
-
-    printf("Cadena original: %s\n", str);
-
-    printf("Cadena modificada: ");
-
+  	char s[] = "HOLA MUNDO!!";
+	printf("Indice de nuestra string = %s", s);
+	printf("\nLa devolución de ft_strmapi(s, aux_strmapi) = %s\n", ft_strmapi(s, aux_strmapi));
 }
-
+void  aux_striteri(unsigned int a, char *s)
+{
+	// Utilizaremos solo uno de los 2 argumentos
+	printf("\nNuestro indice: %d",a);
+	if(s[0] >= 'a' && s[0] <= 'z')
+		s[0] = (s[0] - 32);
+}
 void test_striteri()
 {
+	printf("\n\n***********************************************\n");
 	printf("   _                                           \n");
 	printf(" _|_  _|_       _  _|_  ._  o  _|_   _   ._  o \n");
 	printf("  |    |_      _>   |_  |   |   |_  (/_  |   | \n");
 	printf("           __                                  \n");
-
+	printf("***********************************************\n");
+	char s[] = "hola mundo!!";
+	printf("\nIndice de nuestra string = %s", s);
+	ft_striteri(s, aux_striteri);
+	printf("\nConvertida a Mayúsculas = %s\n", s);
 
 }
 
 void test_putchar_fd()
 {
+	printf("\n\n*************************************************************\n");
 	printf("   _                                                  _      \n");
 	printf(" _|_  _|_      ._        _|_   _  |_    _.  ._      _|_   _| \n");
 	printf("  |    |_      |_)  |_|   |_  (_  | |  (_|  |        |   (_| \n");
 	printf("           __  |                                __           \n");
+	printf("*************************************************************\n");
 
-	int fd = open("output.txt", O_WRONLY | O_CREAT, 0644);
-	if (fd != -1) {
-		write(fd, "A", 1);  // Simulación de putchar_fd
-		close(fd);
+	int	i;
+	i = 0;
+	char s[] = "Hola mundo!!";
+	printf("\nIterando esta string: Hola mundo!!  hacia ft_putchar_fd()\n");
+	while (s[i] != '\0')
+	{
+		ft_putchar_fd(s[i], 1);
+		i++;
 	}
 }
 
 void test_putstr_fd()
 {
+	printf("\n\n\n********************************************************\n");
 	printf("   _                                             _      \n");
 	printf(" _|_  _|_      ._        _|_   _  _|_  ._      _|_   _| \n");
 	printf("  |    |_      |_)  |_|   |_  _>   |_  |        |   (_| \n");
 	printf("           __  |                           __           \n");
+	printf("********************************************************\n");
 
-	int fd = open("output.txt", O_WRONLY | O_CREAT, 0644);
-	if (fd != -1) {
-		write(fd, "Hola mundo\n", 11);  // Simulación de putstr_fd
-		close(fd);
-	}
+
+	char s[] = "Hola mundo!!";
+	printf("\nHola mundo!!  =  Hacia ft_putstr_fd()\n");
+	ft_putstr_fd(s, 1);
 }
 
 void test_putendl_fd()
 {
+	printf("\n\n\n************************************************************\n");
 	printf("   _                                                  _      \n");
 	printf(" _|_  _|_      ._        _|_   _   ._    _|  |      _|_   _| \n");
 	printf("  |    |_      |_)  |_|   |_  (/_  | |  (_|  |       |   (_| \n");
 	printf("           __  |                                __           \n");
+	printf("*************************************************************\n");
 
-	int fd = open("output.txt", O_WRONLY | O_CREAT, 0644);
-	if (fd != -1) {
-		write(fd, "Hola mundo\n", 11);  // Simulación de putendl_fd
-		close(fd);
-	}
+	char s[] = "Hola mundo!!";
+	printf("\nHola mundo!!   =  Hacia ft_putendl_fd()\n");
+	ft_putendl_fd(s, 1);
+	printf("Aquí estamos después del salto de línea de ft_putendl\n");
 }
 
 void test_putnbr_fd()
 {
+	printf("\n\n\n*********************************************************\n");
 	printf("   _                                              _      \n");
 	printf(" _|_  _|_      ._        _|_  ._   |_   ._      _|_   _| \n");
 	printf("  |    |_      |_)  |_|   |_  | |  |_)  |        |   (_| \n");
 	printf("           __  |                            __           \n");
+	printf("*********************************************************\n");
 
-	int fd = open("output.txt", O_WRONLY | O_CREAT, 0644);
-	if (fd != -1) {
-		char buffer[20];
-		int num = 12345;
-		snprintf(buffer, sizeof(buffer), "%d", num);  // Simulación de putnbr_fd
-		write(fd, buffer, strlen(buffer));
-		close(fd);
-	}
+
+	char s[] = "12345";
+	printf("\nEl entero: 12345   =  Hacia ft_putnbr_fd()\n");
+	ft_putendl_fd(s, 1);
+}
+
+
+
+// Función para liberar la memoria del contenido
+void	del(void *content)
+{
+	free(content);
+}
+
+// Función para imprimir el contenido (asumimos que es un string)
+void	print_content(void *content)
+{
+	printf("%s\n", (char *)content);
+}
+
+// Función que transforma el contenido (duplicar string en este caso)
+void	*duplicate_content(void *content)
+{
+	char *str = (char *)content;
+	char *new_str = strdup(str); // Usamos strdup para duplicar el string
+	return (new_str);
+}
+#include <stdio.h>
+#include <stdlib.h>
+#include "libft.h"
+int	test_bonus(void)
+{
+	t_list	*lst = NULL;
+	t_list	*new_node;
+	t_list	*last_node;
+	t_list	*mapped_lst;
+	t_list	*tmp;
+
+	// Crear nodos y añadirlos a la lista
+	new_node = ft_lstnew(strdup("Nodo 1"));
+	ft_lstadd_back(&lst, new_node);//Empezamos añadiendo 1 Nodo
+	new_node = ft_lstnew(strdup("Nodo 2"));
+	ft_lstadd_back(&lst, new_node);// este lo enviamos atrás
+	new_node = ft_lstnew(strdup("Nodo 3"));
+	ft_lstadd_front(&lst, new_node); // Este al frente
+	new_node = ft_lstnew(strdup("Nodo 4"));
+	ft_lstadd_front(&lst, new_node); // Volvemos a añadir al frente
+
+	// Imprimir la lista completa
+	printf("\nLista después de añadir nodos:\n");
+	printf("\nft_lstiter(lst, print_content)\n");
+	ft_lstiter(lst, print_content);
+
+	// Tamaño de la lista
+	printf("\nTamaño de la lista ft_lstsize(lst) : %d\n", ft_lstsize(lst));
+
+	// Último nodo
+	last_node = ft_lstlast(lst);
+	printf("\nÚltimo nodo ft_lstlast(lst) : %s\n", (char *)last_node->content);
+
+	// Crear una nueva lista mapeada
+	mapped_lst = ft_lstmap(lst, duplicate_content, del);
+	printf("\nLista mapeada (duplicada) ft_lstiter(mapped_lst, print_content) :\n");
+	ft_lstiter(mapped_lst, print_content);
+
+	// Borrar el primer nodo (Nodo 1)
+	printf("\nBorrar el primer Nodo:\n");
+	tmp = lst->next;        // Guarda el siguiente nodo antes de borrar
+	ft_lstdelone(lst, del); // Borra el nodo actual
+	lst = tmp;              // Avanza al siguiente nodo
+
+	// Imprimir lista después de borrar un nodo
+	printf("\nLista después de borrar Nodo ft_lstiter(lst, print_content) :\n");
+	ft_lstiter(lst, print_content);
+
+	// Limpiar toda la lista
+	ft_lstclear(&lst, del);
+	ft_lstclear(&mapped_lst, del);
+
+	printf("\nLista vacía después de limpiar ft_lstclear(&lst, del) y ft_lstclear(&mapped_lst, del) :\n");
+	if (lst == NULL)
+		printf("\nLa lista está vacía.\n");
+	if (mapped_lst == NULL)
+		printf("\nLa lista mapeada está vacía.\n");
+
+	return 0;
 }
 
 
@@ -1222,6 +1381,8 @@ int main(int argc, char *argv[])
 		test_putendl_fd();
 		test_putnbr_fd();
 	}
+	else if (strcmp(argv[1], "ft_bonus") == 0)
+		test_bonus();
 	else
 		printf("Funcion no encontrada: %s\n", argv[1]);
 
@@ -1232,7 +1393,7 @@ int main(int argc, char *argv[])
  make
 gcc -Wall -Werror -Wextra -c main.c -o main.o
 
-gcc main.o -L. -lft -z noexecstack -o p     Enlaza main.o con libft.a y crea el ejecutable p
+gcc main.o -L. -lft -z noexecstack -o a  (Enlaza main.o con libft.a y crea el ejecutable p)
 
 
 

@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: frromero <frromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 15:56:18 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/30 15:57:39 by frromero         ###   ########.fr       */
+/*   Created: 2024/09/30 15:56:52 by frromero          #+#    #+#             */
+/*   Updated: 2024/10/05 22:20:13 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Iterates through the list 'lst' and applies the function 'f' to the content
+of each node.*/
+
 #include "libft.h"
-/*Añade el nodo ’new’ al final de la lista ’lst’.*/
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list	*last;
-
-	if (!lst || !new)
+	if (!lst || !f)
 		return ;
-	if (!*lst)
+	while (lst)
 	{
-		*lst = new;
-		return ;
+		f(lst->content);
+		lst = lst->next;
 	}
-	last = ft_lstlast(*lst);
-	last->next = new;
 }

@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frromero <frromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 15:56:52 by frromero          #+#    #+#             */
-/*   Updated: 2024/10/03 21:29:01 by frromero         ###   ########.fr       */
+/*   Created: 2024/09/30 15:57:32 by frromero          #+#    #+#             */
+/*   Updated: 2024/10/05 22:19:34 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Iterates through the list 'lst' and applies the function 'f' to the content
-of each node.*/
+/* Counts the number of nodes in a list. */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+int	ft_lstsize(t_list *lst)
 {
-	if (!lst || !f)
-		return ;
+	int	i;
+
+	i = 0;
 	while (lst)
 	{
-		f(lst->content);
 		lst = lst->next;
+		i++;
 	}
+	return (i);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: frromero <frromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 18:38:27 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/30 16:50:09 by frromero         ###   ########.fr       */
+/*   Updated: 2024/10/05 22:31:59 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
