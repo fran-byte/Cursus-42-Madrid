@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 15:31:49 by frromero          #+#    #+#             */
-/*   Updated: 2024/10/06 17:45:09 by frromero         ###   ########.fr       */
+/*   Updated: 2024/10/06 22:00:51 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1521,7 +1521,7 @@ void test_putendl_fd()
 void test_putnbr_fd()
 {
 	printf("\n=========================================\n");
-	printf("           ft _ putendl_fd                 \n");
+	printf("           ft _ putnbr_fd                 \n");
 	printf("==========================================\n");
 	printf("		⠀⠀⠀⠀⠀⠀⠀⡀⠀⢀⣀⠀⠀⡀⠀⠀⠀⠀⠀⠀\n");
 	printf("		⢰⣦⣄⣾⠻⣦⡾⠻⣦⡟⠹⣦⡾⢻⣤⡾⢷⣀⣴⡆\n");
@@ -1614,7 +1614,28 @@ int	test_bonus(void)
 	printf("⠀⠀⠀⠀⠀⠀⠀⢠⡏⠀⣤⣴⡾⢧⣴⣶⣤⣄⡉⠀⠀⠀⢻⠛⠛⢻⡟⠒⠒⠒⠒⠒⠛⠉⠀⠀⠀⠀⢀⣿⠀\n");
 	printf("⠀⠀⠀⠀⠀⠀⠀⠀⠻⣆⠀⠀⠀⠀⣴⡇⢸⣿⢷⣄⠀⠀⢸⡇⠀⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⠀\n");
 	printf("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠓⠦⣀⣠⡟⢀⣼⣫⣬⠿⠦⣤⡞⠀⠀⢠⡟⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⡾⠏⣿⠀\n");
-	printf("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠉⠁⠀⠀⠀⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠷⠶⠶⠿⠇\n\n");
+	printf("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠉⠁⠀⠀⠀⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠷⠶⠶⠿⠇\n\n\n");
+
+    	printf("+-------------------+\n");
+    	printf("| lst (ptr a        |\n");
+    	printf("| puntero t_list)   |  <--- 1. Este es el puntero que se pasa a las funciones\n");
+    	printf("+-------------------+\n");
+     	printf("         |\n");
+     	printf("         v\n");
+    	printf("+-------------------+\n");
+    	printf("| lst_head (ptr a   |  <--- 2. Este es el puntero que apunta al primer nodo\n");
+    	printf("| el primer nodo)   |\n");
+    	printf("+-------------------+\n");
+    	printf("          |\n");
+    	printf("          v\n");
+    	printf("+-------------------+       +-------------------+       +-------------------+\n");
+    	printf("|     Nodo 1        |  +--->|     Nodo 2        |  +--->|     Nodo 3        |--->NULL\n");
+    	printf("+-------------------+  |    +-------------------+  |    +-------------------+\n");
+    	printf("| content           |  |    | content           |  |    | content           |\n");
+    	printf("| (e.g., Dato 1)    |  |    | (e.g., Dato 2)    |  |    | (e.g., Dato 3)    |\n");
+    	printf("+-------------------+  |    +-------------------+  |    +-------------------+\n");
+    	printf("| next  (&dirección)|--+    | next  (&dirección)|--+    |next  (&dirección) |\n");
+    	printf("|-------------------|       |-------------------|       |-------------------|\n");
 
 
 
@@ -1884,7 +1905,7 @@ void				test_bzero() ;//  REVISAR SI TRABAJA LA ORIGINAL, NO FUNCIONA ********
 void				test_memmove();
 void				test_memcpy();
 void				test_strlcpy();
-void				test_strlcat();
+void				test_strlcat(); // REVISAR SALIDAS CON PTR NULOS
 void				test_toupper();
 void				test_tolower();
 void				test_strchr();
