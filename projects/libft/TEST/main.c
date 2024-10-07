@@ -1887,10 +1887,14 @@ int main(int argc, char *argv[])
  make
 gcc -Wall -Werror -Wextra -c main.c -o main.o
 
-gcc main.o -L. -lft -z noexecstack -o a  (Enlaza main.o con libft.a y crea el ejecutable p)
+gcc main.o -L. -lft -z noexecstack -o a  (Enlaza main.o con libft.a y crea el ejecutable a)
 
-
-
+-L  (enlazador )
+. (directorio Actual)
+-lft -l le dice al enlazador que lo que sigue es la biblioteca (ft) se obvia lb
+-z noexecstack  Medida de seguridad para evita la ejecucion de codigo malicioso en este enlace
+-o (opcional) le dice al compilador/enlazador que el output file  debetener un nombre especifico
+a (ejecutable)
 
  Añadir libft.h
  void 				info();
