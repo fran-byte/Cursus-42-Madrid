@@ -1,4 +1,4 @@
--**VARIABLES**
+- **VARIABLES**
 ```make
 # variables
 FLAG = -Wall -Wextra -Werror
