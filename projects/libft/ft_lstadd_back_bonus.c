@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-/*Añade el nodo ’new’ al final de la lista ’lst’.*/
+/*Add the 'new' node to the end of the 'lst' list.*/
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
