@@ -144,3 +144,64 @@ re: fclean all
 - **.PHONY**: Esta línea indica que las reglas listadas (`all`, `clean`, `fclean`, `re`, `bonus`) son "phony" (no representan archivos reales). Esto significa que siempre se ejecutarán, incluso si hay archivos en el directorio con el mismo nombre.
 
 ---
+# POR LINEA DE COMADOS
+### 1. **Compilar los archivos fuente y crear la librería**
+
+```bash
+# Compilar cada archivo .c en su correspondiente .o
+gcc -Wall -Wextra -Werror -c ft_isalpha.c -o ft_isalpha.o
+gcc -Wall -Wextra -Werror -c ft_isdigit.c -o ft_isdigit.o
+...resto de archivos .c ........
+
+# Crear la librería estática a partir de los archivos objeto
+ar rcs libft.a ft_isalpha.o ft_isdigit.o
+...resto de archivos .o
+```
+
+### 2. **Compilar los archivos de bonificación (opcional)**
+
+```bash
+# Compilar los archivos bonus
+gcc -Wall -Wextra -Werror -c ft_lstnew_bonus.c -o ft_lstnew_bonus.o
+gcc -Wall -Wextra -Werror -c ft_lstadd_front_bonus.c -o ft_lstadd_front_bonus.o
+...resto de archivos .o
+
+# Añadir los archivos objeto de bonificación a la librería
+ar rcs libft.a ft_lstnew_bonus.o ft_lstadd_front_bonus.o 
+resto de archivos .o del bonus ...
+```
+
+### 3. **Limpiar archivos objeto**
+
+```bash
+# Eliminar los archivos objeto generados
+rm -f ft_isalpha.o ft_isdigit.o
+resto de archivos .o  ...
+```
+
+### 4. **Eliminar la librería y los archivos objeto**
+
+```bash
+# Eliminar la librería y los archivos objeto
+rm -f libft.a ft_isalpha.o ft_isdigit.o
+resto de archivos .o  ...
+```
+
+### 5. **Limpiar todo y recompilar**
+
+```bash
+# Limpiar
+rm -f libft.a ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o \
+resto de archivos .o  ...
+
+# Volver a compilar y crear la librería estática desde cero
+gcc -Wall -Wextra -Werror -c ft_isalpha.c -o ft_isalpha.o
+gcc -Wall -Wextra -Werror -c ft_isdigit
+resto de archivos ...
+
+
+# Crear la librería estática a partir de los archivos objeto recompilados
+ar rcs libft.a ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o \
+ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memmove.o ft_strlcpy.o \
+resto de archivos .o  ...
+```
