@@ -13,7 +13,7 @@
 # variables
 FLAG = -Wall -Wextra -Werror
 NAME = libft.a
-CC = gcc
+CC = cc
 RM = rm -f
 AR = ar rcs
 
@@ -41,12 +41,12 @@ all: ${NAME}
 # create the library from object files
 ${NAME}: ${OBJ}
 	${AR} ${NAME} ${OBJ}
-	@echo "\n****** Library ${NAME} created ******"
+#	@echo "\n****** Library ${NAME} created ******"
 
 # compile the bonus part
 bonus: ${BONUS_OBJ}
-	${AR} ${NAME} ${BONUS_OBJ}
-	@echo "\n****** Bonus part compiled and added to ${NAME} ******"
+	@${AR} ${NAME} ${BONUS_OBJ}
+#	@echo "\n****** Bonus part compiled and added to ${NAME} ******"
 
 # compile source files into object files
 %.o: %.c
@@ -55,12 +55,12 @@ bonus: ${BONUS_OBJ}
 # remove object files
 clean:
 	${RM} ${OBJ} ${BONUS_OBJ}
-	@echo "\n****** Object files cleaned ******"
+#	@echo "\n****** Object files cleaned ******"
 
 # remove object files and the library
 fclean: clean
 	${RM} ${NAME}
-	@echo "\n****** Library and object files cleaned ******"
+#	@echo "\n****** Library and object files cleaned ******"
 
 # rebuild everything (clean and then compile everything)
 re: fclean all

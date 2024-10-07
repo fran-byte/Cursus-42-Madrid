@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 15:31:49 by frromero          #+#    #+#             */
-/*   Updated: 2024/10/06 22:00:51 by frromero         ###   ########.fr       */
+/*   Updated: 2024/10/07 16:50:51 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ void info() {
         "\n****************************************************\n"
         "\n* Información de testeo de las funciones de libft: *\n"
         "\n****************************************************\n"
-        "\nEjecución individual                  : /a.out ft_islapha"
-        "\nEjecución de funciones obligatorias   : /a.out ft_mandatory"
-        "\nEjecución de funciones obligatorias + Bonus: /a.out ft_bonus\n\n"
+        "\nEjecución individual                  : ./[program] ft_islapha"
+        "\nEjecución de funciones obligatorias   : ./[program] ft_mandatory"
+        "\nEjecución de funciones obligatorias + Bonus: ./[program] ft_bonus\n\n"
         "* NOTAS A TENER EN CUENTA,\nParte 1 - Funciones basadas en la libreía libc,\n"
         "replicado la función Original e igualmente podrían tener 'Segmentation\n"
         "Fault' si le pasamos un puntero/string nulo, tanto a la función original\n"
@@ -525,7 +525,7 @@ void test_memcpy()
 	//printf("ft_memcpy(dest, src, 5)\n");
 	//printf("src %s\n", src3);
 	//printf("dst %s\n\n", dest3);
-	//ft_memcpy(dest3, src3, 4);
+	//memcpy(dest3, src3, 4);
 	//printf("Resultado dst : %s\n\n", dest3);
 
 	//TEST5  Con puntero NULO a src memcpy
@@ -1556,10 +1556,10 @@ void	del(void *content)
 	free(content);
 }
 
-// Función para imprimir el contenido (asumimos que es un string)
+// Función para imprimir el contenido (Pero.....asumimos que es un string)
 void	print_content(void *content)
 {
-	printf("%s\n", (char *)content);  // Lo casteamos primero
+	printf("%s\n", (char *)content);  // Lo casteamos primero a char *
 }
 
 // Función que transforma el contenido (duplicar string en este caso)
@@ -1623,7 +1623,7 @@ int	test_bonus(void)
      	printf("         |\n");
      	printf("         v\n");
     	printf("+-------------------+\n");
-    	printf("| lst_head (ptr a   |  <--- 2. Este es el puntero que apunta al primer nodo\n");
+    	printf("| lst_head (ptr a   |  <--- 2. Este es el puntero(lst actual) que apunta al primer nodo\n");
     	printf("| el primer nodo)   |\n");
     	printf("+-------------------+\n");
     	printf("          |\n");
@@ -1771,7 +1771,7 @@ int main(int argc, char *argv[])
 		test_putendl_fd();
 	else if (strcmp(argv[1], "ft_putnbr_fd") == 0)
 		test_putnbr_fd();
-	/* ** BONUS ** */
+	/* ** BONUS individual ** */
 	/*else if (strcmp(argv[1], "ft_lstnew") == 0)
 		test_lstnew();
 	else if (strcmp(argv[1], "ft_lstadd_front") == 0)
@@ -1882,17 +1882,21 @@ int main(int argc, char *argv[])
 
 	return 0;
  /*
- Para tetear:
+ Para testear:
 
  make
-gcc -Wall -Werror -Wextra -c main.c -o main.o
+cc -Wall -Werror -Wextra -c main.c -o main.o
 
-gcc main.o -L. -lft -z noexecstack -o a  (Enlaza main.o con libft.a y crea el ejecutable p)
+cc main.o -L. -lft -z noexecstack -o a  (Enlaza main.o con libft.a y crea el ejecutable a)
 
+-L  (enlazador )
+. (directorio Actual)
+-lft -l le dice al enlazador que lo que sigue es la biblioteca (ft) se obvia lb
+-z noexecstack  Medida de seguridad para evita la ejecucion de codigo malicioso en este enlace
+-o (opcional) le dice al compilador/enlazador que el output file  debetener un nombre especifico
+a (ejecutable)
 
-
-
- Añadir libft.h
+ Añadir libft.h por si queremos incluirla directamente en la libreria
  void 				info();
 void				test_isalpha();
 void				test_isdigit();
