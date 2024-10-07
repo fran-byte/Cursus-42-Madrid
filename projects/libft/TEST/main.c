@@ -1887,7 +1887,11 @@ int main(int argc, char *argv[])
  make
 cc -Wall -Werror -Wextra -c main.c -o main.o
 
+<<<<<<< HEAD
 cc main.o -L. -lft -z noexecstack -o a  (Enlaza main.o con libft.a y crea el ejecutable a)
+=======
+gcc main.o -L. -lft -z noexecstack -o a  (Enlaza main.o con libft.a y crea el ejecutable a)
+>>>>>>> 6eab0296d6f5351d7d64e598aabab99643cdbb1a
 
 -L  (enlazador )
 . (directorio Actual)
@@ -1896,7 +1900,11 @@ cc main.o -L. -lft -z noexecstack -o a  (Enlaza main.o con libft.a y crea el eje
 -o (opcional) le dice al compilador/enlazador que el output file  debetener un nombre especifico
 a (ejecutable)
 
+<<<<<<< HEAD
  Añadir libft.h por si queremos incluirla directamente en la libreria
+=======
+ Añadir libft.h
+>>>>>>> 6eab0296d6f5351d7d64e598aabab99643cdbb1a
  void 				info();
 void				test_isalpha();
 void				test_isdigit();
