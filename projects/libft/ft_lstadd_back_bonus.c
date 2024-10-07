@@ -6,11 +6,14 @@
 /*   By: frromero <frromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 15:56:18 by frromero          #+#    #+#             */
-/*   Updated: 2024/10/05 22:20:47 by frromero         ###   ########.fr       */
+/*   Updated: 2024/10/07 21:39:03 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*Add the 'new' node to the end of the 'lst' list.*/
+/* Adds the node 'new' to the end of the linked list 'lst'. If the list is
+   empty, the new node becomes the head of the list. If the list is not empty,
+   the function finds the last node and updates its 'next' pointer to point to
+   the new node.*/
 
 #include "libft.h"
 

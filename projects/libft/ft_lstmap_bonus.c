@@ -6,14 +6,15 @@
 /*   By: frromero <frromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 15:57:16 by frromero          #+#    #+#             */
-/*   Updated: 2024/10/07 17:50:07 by frromero         ###   ########.fr       */
+/*   Updated: 2024/10/07 21:41:16 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*Iterates the list 'lst' and applies the function 'f' to the content of each
-node. Creates a list resulting from the correct and successive application of
-the function 'f' over each node. The 'del' function is used to delete the
-content of a node, if necessary.*/
+/* Iterates through the list 'lst', applying the function 'f' to the content
+   of each node to create a new list. Each element of the new list is generated
+   by applying 'f' to the corresponding element of the original list.
+   If memory allocation fails, or if 'f' is NULL, the contents of the new list
+   are deleted using the 'del' function.*/
 
 #include "libft.h"
 

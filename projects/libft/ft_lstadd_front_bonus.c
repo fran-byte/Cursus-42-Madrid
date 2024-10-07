@@ -6,11 +6,13 @@
 /*   By: frromero <frromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 15:56:25 by frromero          #+#    #+#             */
-/*   Updated: 2024/10/05 22:16:25 by frromero         ###   ########.fr       */
+/*   Updated: 2024/10/07 21:39:23 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*Add the 'new' node to the beginning of the 'lst' list*/
+/* Adds the node 'new' to the beginning of the linked list 'lst'. The 'next'
+   pointer of the new node is updated to point to the current first node,
+   and the head of the list is updated to the new node.*/
 
 #include "libft.h"
 

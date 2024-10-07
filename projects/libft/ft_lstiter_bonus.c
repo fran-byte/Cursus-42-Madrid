@@ -6,12 +6,12 @@
 /*   By: frromero <frromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 15:56:52 by frromero          #+#    #+#             */
-/*   Updated: 2024/10/05 22:20:13 by frromero         ###   ########.fr       */
+/*   Updated: 2024/10/07 21:31:39 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Iterates through the list 'lst' and applies the function 'f' to the content
-of each node.*/
+/* Iterates through each node of the linked list 'lst' and applies the
+   function 'f' to the content of every node*/
 
 #include "libft.h"
 

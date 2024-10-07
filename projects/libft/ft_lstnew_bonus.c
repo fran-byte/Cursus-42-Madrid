@@ -6,13 +6,13 @@
 /*   By: frromero <frromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 15:57:26 by frromero          #+#    #+#             */
-/*   Updated: 2024/10/06 18:08:42 by frromero         ###   ########.fr       */
+/*   Updated: 2024/10/07 21:27:04 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Creates a new node using malloc. The member variable 'content' is initialized
-with the content of the parameter 'content'. The 'next' variable is initialized
-to NULL. We now have the new node, but it's still outside the list.*/
+/* Creates a new node for a singly linked list using malloc. The content
+   of the node is initialized with the provided parameter 'content', and
+   the 'next' pointer is set to NULL. The node is not yet linked to a list.*/
 
 #include "libft.h"
 
