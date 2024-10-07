@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 15:31:49 by frromero          #+#    #+#             */
-/*   Updated: 2024/10/07 16:50:51 by frromero         ###   ########.fr       */
+/*   Updated: 2024/10/08 01:09:16 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -384,11 +384,29 @@ void test_bzero() //  REVISAR SI TRABAJA LA ORIGINAL, NO FUNCIONA ********
 	printf("==================================\n");
 	char str[50] = "Hola Mundo 42!!";
 	char str2[50] = "Hola Mundo 42!!";
+	size_t size = strlen(str);
 	printf("Nuestra string: %s\n", str);
-	ft_bzero(str, 5);
-	bzero(str2, 5);
-	printf("ft_bzero(str, 5): %s\n", str);
+	size_t n = 5;
+	ft_bzero(str, n);
+	bzero(str2, n);
+	printf("\nft_bzero(str, 5): %s\n", str);
 	printf("bzero(str, 5): %s\n", str2);
+	printf("\nComo no podemos imprimir una cadena que ya empieza por  '\\0'");
+    // Imprimir cadena después de ft_bzero
+    printf("\n\nCadena después de ft_bzero: \n");
+    size_t i = 0;
+    while (i < size) {
+        printf("str[%zu]: '%c' (ASCII: %d)\n", i, str[i], str[i]);
+        i++; // Incrementamos el índice
+    }
+
+	// Imprimir cadena después de bzero
+    printf("\n\nCadena después de bzero: \n");
+    size_t i2 = 0;
+    while (i2 < size) {
+        printf("str[%zu]: '%c' (ASCII: %d)\n", i2, str2[i2], str2[i2]);
+        i2++; // Incrementamos el índice
+    }
 
 	//TEST2  Llamar a ft_bzero con un puntero nulo = (segmentación fault)
 	//char *str_null = NULL;

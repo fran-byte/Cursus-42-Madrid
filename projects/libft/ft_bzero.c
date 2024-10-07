@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: frromero <frromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 11:15:06 by frromero          #+#    #+#             */
-/*   Updated: 2024/09/30 16:20:29 by frromero         ###   ########.fr       */
+/*   Updated: 2024/10/08 00:50:01 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
