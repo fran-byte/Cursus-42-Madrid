@@ -10,8 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 /* Convert an integer into its string representation*/
+
+#include "libft.h"
 
 static void	ft_isnegative(size_t sz, char *string, long nbr)
 {
