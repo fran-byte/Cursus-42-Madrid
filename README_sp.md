@@ -13,7 +13,7 @@
 Este repositorio es el alojamiento de mis proyectos que voy realizando en el curso.
 ## [MileStone 1](projects/libft)
 
-# Notas
+## Notas
 
 **-[1.MAKEFILES](documentation/makefile.md)**
 
