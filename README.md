@@ -1,5 +1,5 @@
 # 42_cursus_fran
-:point_right:**[go to Spanish Version](README_sp.md)**
+:point_right:**[Spanish Version](README_sp.md)**
     
 ```
            :::      ::::::::   
