@@ -1,4 +1,4 @@
-# 42_cursus_fran  [Spanis Version](README_sp.md)
+# 42_cursus_fran  [Spanish Version](README_sp.md)
 ```
            :::      ::::::::   
          :+:      :+:    :+:   
