@@ -7,7 +7,7 @@
      +#+  +:+       +#+              /  |/  /___ _____/ /____(_)___/ /
    +#+#+#+#+#+   +#+                / /|_/ / __ `/ __  / ___/ / __  / 
         #+#    #+#                 / /  / / /_/ / /_/ / /  / / /_/ /  
-       ###   ########.fr          /_/  /_/\__,_/\__,_/_/  /_/\__,_/  
+       ###   ########             /_/  /_/\__,_/\__,_/_/  /_/\__,_/  
 ```
 42 Madrid es un campus de programación gratuito y revolucionario. Abierto 24/7, permite aprender a tu ritmo con una duración media de tres años. Este repositorio contiene mis proyectos del curso.
 
