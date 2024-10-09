@@ -1835,4 +1835,4 @@ cc main.o -L. -lft -z noexecstack -o name_program  (Enlaza main.o con libft.a y 
 -z noexecstack  Medida de seguridad para evita la ejecucion de codigo malicioso en este enlace (OPCIONAL)
 -o (opcional) le dice al compilador/enlazador que el output file  debetener un nombre especifico
 name_program (ejecutable)
-}
+}*/
