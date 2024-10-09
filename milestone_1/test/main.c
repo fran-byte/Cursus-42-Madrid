@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 15:31:49 by frromero          #+#    #+#             */
-/*   Updated: 2024/10/08 01:09:16 by frromero         ###   ########.fr       */
+/*   Updated: 2024/10/09 15:36:30 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 #include <ctype.h>
 #include <assert.h>
 
-void info() 
+void info()
 {
     printf(
         "\n****************************************************\n"
@@ -37,62 +37,60 @@ void info()
     );
     printf("Funciones de string:\n");
     printf("ft_strlen / strlen - Si le pasamos una String o puntero nulo,\n"
-           "'Segmentation fault (core dumped)'%s\n",
+           "'Segmentation fault (core dumped)'\n" \
            "\nft_memset / memset - Si le pasamos una String o puntero nulo,\n"
-           "'Segmentation fault (core dumped)'%s\n",
+           "'Segmentation fault (core dumped)'\n" \
            "\nft_bzero  / bzero (Obsoleta) - Si le pasamos una String o puntero nulo,\n"
-           "'Segmentation fault (core dumped)'%s\n",
-           "\nft_memcpy / memcpy - Si le pasamos una String o puntero nulo, a src o dst\n"
-           "'Segmentation fault (core dumped)'%s\n",
-           "\nft_memmove / memmove - Si le pasamos una String o puntero nulo, a src o dst\n"
-           "'Segmentation fault (core dumped)'%s\n",
+           "'Segmentation fault (core dumped)'\n" \
+           "\nft_memcpy / memcpy - Si le pasamos una String o puntero nulo  a src o dst\n"
+           "'Segmentation fault (core dumped)'\n" \
+           "\nft_memmove / memmove - Si le pasamos una String o puntero nulo  a src o dst\n"
+           "'Segmentation fault (core dumped)'\n" \
            "\nft_memchr(const void *s, int c, size_t n) - Intentaría acceder a memoria\n"
-           "a través del puntero s.%s\n",
+           "a través del puntero s.\n" \
            "\nft_memcmp(const void *s1, const void *s2, size_t n) - Podría comparar\n"
-           "punteros nulos entre sí.%s\n",
+           "punteros nulos entre sí.\n" \
            "\nft_strlcpy(char *dst, const char *src, size_t size) - Si dst es nulo,\n"
-           "intentaría escribir en una dirección inválida.%s\n",
+           "intentaría escribir en una dirección inválida.\n" \
            "\nft_strlcat(char *dst, const char *src, size_t size) - Similar a strlcpy,\n"
-           "podría causar errores si dst es nulo.%s\n",
+           "podría causar errores si dst es nulo.\n" \
            "\nft_strdup(const char *s1) - Intentaría crear una copia de una cadena\n"
-           "a partir de un puntero nulo.%s\n",
-           "");
+           "a partir de un puntero nulo.\n");
     printf("Funciones de memoria:\n");
     printf("ft_substr(char const *s, unsigned int start, size_t len) - 'DOPADA' NULL\n"
-           "si falla la reserva de memoria.%s\n",
+           "si falla la reserva de memoria.\n" \
            "\nft_strjoin(char const *s1, char const *s2) - 'DOPADA' NULL si falla la\n"
-           "reserva de memoria.%s\n",
+           "reserva de memoria.\n" \
            "\nft_strtrim(char const *s1, char const *set) - 'DOPADA' NULL si falla la\n"
-           "reserva de memoria.%s\n",
-           "\nft_itoa(int n) - 'DOPADA' NULL si falla la reserva de memoria.%s\n",
+           "reserva de memoria.\n" \
+           "\nft_itoa(int n) - 'DOPADA' NULL si falla la reserva de memoria.\n" \
            "\nft_split(char const *s, char c) - 'DOPADA' NULL si falla la reserva de\n"
-           "memoria.%s\n",
+           "memoria.\n" \
            "\nft_strmapi(char const *s, char (*f)(unsigned int, char)) - 'DOPADA' NULL\n"
-           "si falla la reserva de memoria.%s\n",
+           "si falla la reserva de memoria.\n" \
            "\nft_striteri(char *s, void (*f)(unsigned int, char*)) - 'DOPADA' NULL\n"
-           "si falla la reserva de memoria.%s\n",
+           "si falla la reserva de memoria.\n" \
            "\nft_putstr_fd(char *s, int fd) - Si s es nulo, intentaría escribir en una\n"
-           "dirección inválida.%s\n",
+           "dirección inválida.\n" \
            "\nft_putendl_fd(char *s, int fd) - Similar a putstr, podría causar errores\n"
-           "si s es nulo.%s\n",
+           "si s es nulo.\n" \
            "\nft_putnbr_fd(int n, int fd) - No debería causar errores de segmentación,\n"
-           "pero podría hacerlo si se usa incorrectamente.%s\n",
-           "");
+           "pero podría hacerlo si se usa incorrectamente.\n");
     printf("Funciones de lista:\n");
     printf("ft_lstnew(void *content) - Podría intentar usar el contenido de un puntero\n"
-           "nulo.%s\n",
+           "nulo.\n" \
            "\nft_lstadd_front(t_list **lst, t_list *new) - Podría intentar modificar\n"
-           "una estructura a través de un puntero nulo.%s\n",
+           "una estructura a través de un puntero nulo.\n" \
            "\nft_lstadd_back(t_list **lst, t_list *new) - Similar a ft_lstadd_front,\n"
-           "podría causar errores si lst es nulo.%s\n",
+           "podría causar errores si lst es nulo.\n" \
            "\nft_lstdelone(t_list *lst, void (*del)(void *)) - Podría intentar liberar\n"
-           "memoria a través de un puntero nulo.%s\n",
+           "memoria a través de un puntero nulo.\n" \
            "\nft_lstclear(t_list **lst, void (*del)(void *)) - Podría intentar liberar\n"
-           "múltiples elementos a través de punteros nulos.%s\n",
+           "múltiples elementos a través de punteros nulos.\n" \
            "\nft_lstiter(t_list *lst, void (*f)(void *)) - Podría intentar iterar sobre\n"
-           "una lista a través de punteros nulos.%s\n",
+           "una lista a través de punteros nulos.\n" \
            "\nft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *)) - Podría\n"
-           "intentar mapear una lista utilizando punteros nulos.%s\n",
+           "intentar mapear una lista utilizando punteros nulos.\n" \
            "");
 }
 
@@ -1793,8 +1791,8 @@ int main(int argc, char *argv[])
 		test_bzero();
 		test_memcpy();
 		test_memmove();
-		test_strlcpy(); // OBSOLETO
-		test_strlcat(); // OBSOLETO
+		test_strlcpy();
+		test_strlcat();
 		test_toupper();
 		test_tolower();
 		test_strchr();
@@ -1802,13 +1800,13 @@ int main(int argc, char *argv[])
 		test_strncmp();
 		test_memchr();
 		test_memcmp();
-		test_strnstr(); // OBSOLETO
+		test_strnstr();
 		test_atoi();
 		test_calloc();
 		test_strdup();
-		test_substr();	// OBSOLETO
-		test_strjoin(); // OBSOLETO
-		test_strtrim(); // OBSOLETO
+		test_substr();
+		test_strjoin();
+		test_strtrim();
 		test_split();
 		test_itoa();
 		test_strmapi();
@@ -1823,6 +1821,7 @@ int main(int argc, char *argv[])
 	else
 		printf("Funcion no encontrada: %s\n", argv[1]);
 	return 0;
+
  /* NOTAS para tu make y compilación:
 
 cc -Wall -Werror -Wextra -c main.c -o main.o
@@ -1836,3 +1835,4 @@ cc main.o -L. -lft -z noexecstack -o name_program  (Enlaza main.o con libft.a y 
 -o (opcional) le dice al compilador/enlazador que el output file  debetener un nombre especifico
 name_program (ejecutable)
 }*/
+}
