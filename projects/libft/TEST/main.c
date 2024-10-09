@@ -20,15 +20,8 @@
 #include <ctype.h>
 #include <assert.h>
 
-/*
-// Definición de la estructura t_list
-typedef struct s_list {
-	void *content;
-	struct s_list *next;
-} t_list;
-
-*/
-void info() {
+void info() 
+{
     printf(
         "\n****************************************************\n"
         "\n* Información de testeo de las funciones de libft: *\n"
@@ -102,7 +95,7 @@ void info() {
            "intentar mapear una lista utilizando punteros nulos.%s\n",
            "");
 }
-}
+
 void test_isalpha()
 {
 	int resultA;
@@ -619,6 +612,7 @@ void test_strlcpy()
 	printf("\n-------- TEST COMPLETED ---------\n");
 	printf("==================================\n\n");
 }
+
 void test_strlcat()
 {
 	printf("\n==================================\n");
@@ -764,7 +758,6 @@ void test_strchr()
 	else
 	{
 		printf("No encontrado\n");
-
 	}
 
 	// TEST 2
@@ -1254,6 +1247,7 @@ void test_substr()
 	printf("\n-------- TEST COMPLETED ---------\n");
 	printf("==================================\n\n");
 }
+
 void test_strjoin()
 {
 	printf("\n=========================================\n");
@@ -1286,7 +1280,6 @@ void test_strjoin()
 	printf("==================================\n\n");
 }
 
-
 void test_strtrim()
 {
 	printf("\n=========================================\n");
@@ -1316,7 +1309,6 @@ void test_strtrim()
 	printf("\n-------- TEST COMPLETED ---------\n");
 	printf("==================================\n\n");
 }
-
 
 void test_split()
 {
@@ -1386,6 +1378,7 @@ void test_itoa()
 	printf("ft_itoa(%d) = %s\n\n", num, ft_itoa(num));
 	printf("itoa(%d) = %s\n\n", num, ft_itoa(num));
 }
+
 char  aux_strmapi(unsigned int i, char c)
 {
 	// Utilizaremos solo uno de los 2 argumentos
@@ -1396,6 +1389,7 @@ char  aux_strmapi(unsigned int i, char c)
 	printf("\n-------- TEST COMPLETED ---------\n");
 	printf("==================================\n\n");
 }
+
 void test_strmapi()
 {
 	printf("\n=========================================\n");
@@ -1570,8 +1564,6 @@ void test_putnbr_fd()
 	printf("==================================\n\n");
 }
 
-
-
 // Función para liberar la memoria del contenido
 void	del(void *content)
 {
@@ -1659,8 +1651,6 @@ int	test_bonus(void)
     	printf("| next  (&dirección)|--+    | next  (&dirección)|--+    |next  (&dirección) |\n");
     	printf("|-------------------|       |-------------------|       |-------------------|\n");
 
-
-
 	// Crear nodos y añadirlos a la lista
 	new_node = ft_lstnew(strdup("Nodo 1"));
 	ft_lstadd_back(&lst, new_node);//Empezamos añadiendo 1 Nodo
@@ -1712,8 +1702,6 @@ int	test_bonus(void)
 	printf("==================================\n\n");
 	return 0;
 }
-
-
 int main(int argc, char *argv[])
 {
 	if (argc < 2)
@@ -1793,73 +1781,6 @@ int main(int argc, char *argv[])
 		test_putendl_fd();
 	else if (strcmp(argv[1], "ft_putnbr_fd") == 0)
 		test_putnbr_fd();
-	/* ** BONUS individual ** */
-	/*else if (strcmp(argv[1], "ft_lstnew") == 0)
-		test_lstnew();
-	else if (strcmp(argv[1], "ft_lstadd_front") == 0)
-		test_lstadd_front();
-	else if (strcmp(argv[1], "ft_lstsize") == 0)
-		test_lstsize();
-	else if (strcmp(argv[1], "ft_lstlast") == 0)
-		test_lstlast();
-	else if (strcmp(argv[1], "ft_lstadd_back") == 0)
-		test_lstadd_back();
-	else if (strcmp(argv[1], "ft_lstdelone") == 0)
-		test_lstdelone();
-	else if (strcmp(argv[1], "ft_lstclear") == 0)
-		test_lstclear();
-	else if (strcmp(argv[1], "ft_lstiter") == 0)
-		test_lstiter();
-	else if (strcmp(argv[1], "ft_lstmap") == 0)
-		test_lstmap();
-	 All (+Bonus)
-	else if (strcmp(argv[1], "all_bonus") == 0)
-	{
-		test_isalpha();
-		test_isdigit();
-		test_isalnum();
-		test_isascii();
-		test_isprint();
-		test_strlen();
-		test_memset();
-		test_bzero();
-		test_memcpy();
-		test_memmove();
-		test_strlcpy(); // OBSOLETO
-		test_strlcat(); // OBSOLETO
-		test_toupper();
-		test_tolower();
-		test_strchr();
-		test_strrchr();
-		test_strncmp();
-		test_memchr();
-		test_memcmp();
-		test_strnstr(); // OBSOLETO
-		test_atoi();
-		test_calloc();
-		test_strdup();
-		test_substr();	// OBSOLETO
-		test_strjoin(); // OBSOLETO
-		test_strtrim(); // OBSOLETO
-		test_split();
-		test_itoa();
-		test_strmapi();
-		test_striteri();
-		test_putchar_fd();
-		test_putstr_fd();
-		test_putendl_fd();
-		test_putnbr_fd();
-
-		test_lstnew();
-		test_lstadd_front();
-		test_lstsize();
-		test_lstlast();
-		test_lstadd_back();
-		test_lstdelone();
-		test_lstclear();
-		test_lstiter();
-		test_lstmap();
-	}*/
 	else if (strcmp(argv[1], "ft_mandatory") == 0)
 	{
 		test_isalpha();
@@ -1901,7 +1822,6 @@ int main(int argc, char *argv[])
 		test_bonus();
 	else
 		printf("Funcion no encontrada: %s\n", argv[1]);
-
 	return 0;
  /* NOTAS para tu make y compilación:
 
@@ -1915,5 +1835,4 @@ cc main.o -L. -lft -z noexecstack -o name_program  (Enlaza main.o con libft.a y 
 -z noexecstack  Medida de seguridad para evita la ejecucion de codigo malicioso en este enlace (OPCIONAL)
 -o (opcional) le dice al compilador/enlazador que el output file  debetener un nombre especifico
 name_program (ejecutable)
-
 }
