@@ -11,7 +11,9 @@
 ```
 42 Madrid es el campus de programación innovador y gratuito. Con una metodología revolucionaria y una duración media de tres años, está abierto las 24 horas del día, 7 días a la semana donde puedes aprender a tu ritmo.
 Este repositorio es el alojamiento de mis proyectos que voy realizando en el curso.
-## DOCUMENTACIÓN
+## [MileStone 1](projects/libft)
+
+# Notas
 
 **-[1.MAKEFILES](documentation/makefile.md)**
 
