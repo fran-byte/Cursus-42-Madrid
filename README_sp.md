@@ -9,8 +9,8 @@
         #+#    #+#                 / /  / / /_/ / /_/ / /  / / /_/ /  
        ###   ########.fr          /_/  /_/\__,_/\__,_/_/  /_/\__,_/  
 ```
-42 Madrid es el campus de programación innovador y gratuito. Con una metodología revolucionaria y una duración media de tres años, está abierto las 24 horas del día, 7 días a la semana donde puedes aprender a tu ritmo.
-Este repositorio es el alojamiento de mis proyectos que voy realizando en el curso.
+42 Madrid es un campus de programación gratuito y revolucionario. Abierto 24/7, permite aprender a tu ritmo con una duración media de tres años. Este repositorio contiene mis proyectos del curso.
+
 ## [MileStone 1](projects/libft)
 
 ## Notas
