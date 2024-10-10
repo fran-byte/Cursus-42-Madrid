@@ -1,6 +1,6 @@
 
 # BIBLIOTECA de FUNCIONES BÁSICAS ( libft.a ) 📚
-
+:point_right:**[English Version](README_en.md)**
 <br>
 
 # Parte 1 - Funciones de libc
