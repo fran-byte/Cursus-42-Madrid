@@ -6,6 +6,7 @@
 - **va_start**: Inicializa la variable del tipo ```va_list``` con los parámetros variables.
 - **va_arg**: Se utiliza para extraer cada argumento.
 - **va_end**: Limpia la lista de argumentos cuando se han procesado todos.
+
   En el siguiente programa en la funcion: ```int sumatorio(int n, ...)``` ese 1º parámetro lo vamos a utilizar para decirle el nº de argumentos que le van a seguir, no es una regla definida pero lo usaremos de esta forma.
 ```c
 #include <stdio.h>
@@ -40,5 +41,3 @@ int sumatorio(int n, ...)
 	return (0);
 }
 ```
-## va_list
--
