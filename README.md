@@ -7,7 +7,7 @@
 <img src=documentation/logo.jpg">
 </p>
 </div>
-![](documentation/logo.jpg)
+![documentation/logo.jpg](documentation/logo.jpg)
 
 [42 Madrid](https://www.42madrid.com/) es un campus de programación gratuito y revolucionario. Abierto 24/7, permite aprender a tu ritmo con una duración media de tres años. Este repositorio contiene mis proyectos del curso.
 
