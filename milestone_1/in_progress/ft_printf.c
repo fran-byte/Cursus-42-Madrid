@@ -29,8 +29,8 @@ void	put_pointer(const char *str_tokens, va_list vargs, int *index)
 }
 void	put_num(int number_vargs, int base, int *index)
 {
-	long long int    nb;
-
+	long long int nb;
+	
 	nb = number_vargs;
 	if (nb < 0)
 	{
@@ -41,19 +41,16 @@ void	put_num(int number_vargs, int base, int *index)
 	{
 		if (nb >= 10)
 			put_num(nb / 10, 0, index);
-		(*index) += write(1, &"0123456789"[nb % 10], 1);
+		*index += write(1, &"0123456789"[nb % 10], 1);
 	}
-if (base == 1)
+	else if (base == 1 || base == 2)
 	{
 		if (nb >= 16)
-			put_num(nb / 16, 1, index);
-		(*index) += write(1, &"0123456789abcdef"[nb % 16], 1);
-	}
-if (base == 2)
-	{
-		if (nb >= 16)
-			put_num(nb / 16, 1, index);
-		(*index) += write(1, &"0123456789ABCDEF"[nb % 16], 1);
+			put_num(nb / 16, base, index);
+		if (base == 1)
+			*index += write(1, &"0123456789abcdef"[nb % 16], 1);
+		else
+			*index += write(1, &"0123456789ABCDEF"[nb % 16], 1);
 	}
 }
 
