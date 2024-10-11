@@ -126,57 +126,62 @@ Para evitar conflictos con archivos del mismo nombre que tus reglas (`clean`, `f
 
 ### Makefile completo
 
-Aquí tienes un Makefile que sigue las reglas generales que has proporcionado:
 
 ```makefile
-# Nombre del ejecutable
-NAME = mi_programa
 
-# Compilador
-CC = gcc
+# variables
+FLAG = -Wall -Wextra -Werror
+NAME = libft.a
+CC = cc
+RM = rm -f
+AR = ar rcs
 
-# Flags de compilación
-CFLAGS = -Wall -Wextra -Werror
+# mandatory files
+SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
+		ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c \
+		ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c \
+		ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c \
+		ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c \
+		ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
+		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
-# Archivos fuente
-SRC = main.c archivo1.c archivo2.c
-OBJ = $(SRC:.c=.o)
+# bonus files
+BONUS_SRC = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
+			ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
+			ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
 
-# Librerías (si utilizas libft)
-LIBFT = libft/libft.a
+# objects
+OBJ = ${SRC:.c=.o}
+BONUS_OBJ = ${BONUS_SRC:.c=.o}
 
-# Archivos de bonus
-BONUS_SRC = archivo_bonus1.c archivo_bonus2.c
-BONUS_OBJ = $(BONUS_SRC:.c=.o)
+# rules ---------------------------------------------
+all: ${NAME}
 
-# Regla principal: compila todo
-all: $(NAME)
+# create the library from object files
+${NAME}: ${OBJ}
+	${AR} ${NAME} ${OBJ}
+	@echo "\n****** Library ${NAME} created ******"
 
-$(NAME): $(OBJ)
-$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
+# compile the bonus part
+bonus: ${BONUS_OBJ}
+	@${AR} ${NAME} ${BONUS_OBJ}
 
-# Compilar la librería libft si es necesario
-$(LIBFT):
-make -C libft
+# compile source files into object files
+%.o: %.c
+	${CC} ${FLAG} -c $< -o $@
 
-# Limpia los archivos objeto
+# remove object files
 clean:
-rm -f $(OBJ)
-make clean -C libft
+	${RM} ${OBJ} ${BONUS_OBJ}
 
-# Limpia todo, incluyendo el ejecutable
+# remove object files and the library
 fclean: clean
-rm -f $(NAME)
-make fclean -C libft
+	${RM} ${NAME}
 
-# Vuelve a compilar desde cero
+# rebuild everything (clean and then compile everything)
 re: fclean all
 
-# Compilar bonus
-bonus: $(BONUS_OBJ)
-$(CC) $(CFLAGS) -o $(NAME)_bonus $(BONUS_OBJ)
-
-# Asegura que ciertas reglas no generen archivos con esos nombres
+# prevent conflicts with files named like them
 .PHONY: all clean fclean re bonus
 ```
 
