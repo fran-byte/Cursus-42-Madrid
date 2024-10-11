@@ -11,8 +11,10 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-static void	ft_put_str_char(char *str_tokens, int *index)
+static void	ft_put_str_char(char *str_tokens, va_list vargs, int *index)
 {
+	int	print_char_tokens;
+	
 	if(!str_tokens)
 	{
 		write(1, "(null)", 6);
@@ -20,7 +22,8 @@ static void	ft_put_str_char(char *str_tokens, int *index)
 	}
 	else if(str_tokens == 'c')
 	{
-		write(1, str_tokens, 1);
+		print_char_tokens = va_arg(vargs, int);
+		write(1, print_char_tokens, 1);
 		str_tokens++;
 		*index++;
 	}
@@ -28,7 +31,8 @@ static void	ft_put_str_char(char *str_tokens, int *index)
 	{
 		while(*str_tokens)
 		{	
-			write(1, str_tokens, 1);
+			print_char_tokens = va_arg(vargs, int);
+			write(1, print_char_tokens, 1);
 			str_tokens++;
 			*index++;
 		}
