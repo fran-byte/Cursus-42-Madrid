@@ -11,9 +11,28 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-void	ft_put_str_char(char *str, int *index)
+static void	ft_put_str_char(char *str_tokens, int *index)
 {
-
+	if(!str_tokens)
+	{
+		write(1, "(null)", 6);
+		return;
+	}
+	else if(str_tokens == 'c')
+	{
+		write(1, str_tokens, 1);
+		str_tokens++;
+		*index++;
+	}
+	else
+	{
+		while(*str_tokens)
+		{	
+			write(1, str_tokens, 1);
+			str_tokens++;
+			*index++;
+		}
+	}	
 }
 static void	process_char(char const *str_tokens, va_list vargs, int *index)
 {
