@@ -1,4 +1,4 @@
-:point_right:**[Spanish Version](README.md)**
+:point_right: **[English Version](README_en.md)**
 
 ![](documentation/logo2.jpg)
 
