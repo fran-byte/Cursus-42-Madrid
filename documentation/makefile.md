@@ -26,7 +26,7 @@ En la parte superior del Makefile, define algunas variables comunes. Estas varia
 NAME = mi_programa
 
 # Compilador
-CC = gcc
+CC = cc
 
 # Flags de compilación
 CFLAGS = -Wall -Wextra -Werror
