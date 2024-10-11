@@ -11,13 +11,14 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
 void	put_pointer(const char *str_tokens, va_list vargs, int *index)
 {
 	unsigned long long ptr_addres;
 
 	if (*str_tokens == 'p')
 	{
-		ptr_addres = (unsigned long long)va_arg(vargs, void *);  // Obtener el puntero como unsigned long long
+		ptr_addres = (unsigned long long)va_arg(vargs, void *);
 		if (ptr_addres == 0)
 		{
 			*index += write(1, "(nil)", 5);
@@ -70,6 +71,7 @@ void	extract_formt_two(const char *str_tokens, va_list vargs, int *index)
 		(*index) +=  write(1, "%", 1);
 
 }
+
 void	extract_formt(const char *str_tokens, va_list vargs, int *index)
 {
 
