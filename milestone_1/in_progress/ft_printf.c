@@ -11,7 +11,22 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+void	put_pointer(const char *str_tokens, va_list vargs, int *index)
+{
+	unsigned long long ptr_addres;
 
+	if (*str_tokens == 'p')
+	{
+		ptr_addres = (unsigned long long)va_arg(vargs, void *);  // Obtener el puntero como unsigned long long
+		if (ptr_addres == 0)
+		{
+			*index += write(1, "(nil)", 5);
+			return ;
+		}
+		*index += write(1, "0x", 2);
+		print_base(ptr_addres, "0123456789abcdef", 16, index);
+	}
+}
 void	put_num(int number_vargs, int base, int *index)
 {
 	long long int    nb;
@@ -45,21 +60,15 @@ if (base == 2)
 void	extract_formt_two(const char *str_tokens, va_list vargs, int *index)
 {
 	if (*str_tokens == 'd' || *str_tokens == 'i')
-	{
 		put_num(va_arg(vargs, int), 0, index);
-	}
-    else if (*str_tokens == 'u')
-	{
+        else if (*str_tokens == 'u')
 		put_num(va_arg(vargs, int), 0, index);
-	}
 	else if (*str_tokens == 'x')
-	{
 		put_num(va_arg(vargs, int), 1, index);
-	}
 	else if (*str_tokens == 'X')
-	{
 		put_num(va_arg(vargs, int), 2, index);
-	}
+	else if (*str_tokens == 'p')
+	        put_pointer(str_tokens, vargs, index);
 	else if (*str_tokens == '%')
 		(*index) +=  write(1, "%", 1);
 
