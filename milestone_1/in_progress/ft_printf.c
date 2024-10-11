@@ -34,8 +34,8 @@ static void    ft_put_str_char(char const *str_tokens, va_list vargs, int *index
     
     else
     {
-        print_char_tokens = va_arg(vargs, int);
-        write(1, &print_char_tokens, 1);
+        char c_vargs = (char)va_arg(vargs, int);
+        write(1, &c_vargs, 1);
         str_tokens++;
         *index++;
     }    
