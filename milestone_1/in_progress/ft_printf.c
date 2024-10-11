@@ -46,7 +46,7 @@ static void	process_char(char const *str_tokens, va_list vargs, int *index)
 static void	extract_formt(char const *str_tokens, va_list vargs, int *index)
 {
 	if(str_tokens == 's' || str_tokens == 'c')
-		process_char(str_tokens, vargs, index);
+		ft_put_str_char(str_tokens, vargs, index);
 }
 
 
