@@ -1,4 +1,5 @@
-# 42_cursus_fran
+![](documentation/logo2.jpg)
+
 :point_right:**[Spanish Version](README.md)**
     
 ![](documentation/logo.jpg)
