@@ -4,7 +4,7 @@
 
 <div>
 <p style = 'text-align:center;'>
-<img src=documentation/logo.jpg">
+<img src="documentation/logo.jpg">
 </p>
 </div>
 
