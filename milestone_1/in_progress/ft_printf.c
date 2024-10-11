@@ -23,7 +23,7 @@ static void	ft_put_str_char(char *str_tokens, va_list vargs, int *index)
 	else if(str_tokens == 'c')
 	{
 		print_char_tokens = va_arg(vargs, int);
-		write(1, print_char_tokens, 1);
+		write(1, &print_char_tokens, 1);
 		str_tokens++;
 		*index++;
 	}
@@ -32,7 +32,7 @@ static void	ft_put_str_char(char *str_tokens, va_list vargs, int *index)
 		while(*str_tokens)
 		{	
 			print_char_tokens = va_arg(vargs, int);
-			write(1, print_char_tokens, 1);
+			write(1, 6print_char_tokens, 1);
 			str_tokens++;
 			*index++;
 		}
