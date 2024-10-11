@@ -14,7 +14,7 @@ int ft_isalpha (int c)
 
 Description | Param. #1 | Return Value
 :-----------: | :-----------: | :-----------:
-Checks if it is an **alphabetic** character. It is equivalent to ([ft_isupper](#ft_isupper)(c) or [ft_islower](#ft_islower)(c)) | The character to test | 0 if the character is false and 1 if the character is true
+Checks if it is an **alphabetic** character. | The character to test | 0 if the character is false and 1 if the character is true
 
 ## [ft_isdigit](../0/libft/ft_isdigit.c)
 
@@ -32,7 +32,7 @@ int ft_isalnum (int c)
 ```
 Description | Param. #1 | Return Value
 :-----------: | :-----------: | :-----------:
-Checks if it is an **alphanumeric** character; it is equivalent to ([ft_isalpha](#ft_isalpha) or [ft_isdigit](#ft_isdigit)) | The character to test | 0 if the character is false and 1 if the character is true
+Checks if it is an **alphanumeric** character. | The character to test | 0 if the character is false and 1 if the character is true
 
 ## [ft_isascii](../0/libft/ft_isascii.c)
 
