@@ -11,65 +11,67 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-static void    ft_put_str_char(char const *str_tokens, va_list vargs, int *index)
+
+void extract_formt(const char *str_tokens, va_list vargs, int *index)
 {
-    int    print_char_tokens;
-    
-    if(!str_tokens)
+    if (*str_tokens == 'c')
     {
-        write(1, "(null)", 6);
-        return;
+        char c = (char)va_arg(vargs, int);
+        write(1, &c, 1);
+        (*index)++;
     }
-    else if(*str_tokens == 's')
+    else if (*str_tokens == 's')
     {
-        char *str_vargs = va_arg(vargs, char *); // Recupera el argumento de tipo string
-        while(*str_vargs)
-        {    
-            //print_char_tokens = va_arg(vargs, int);
-            write(1,str_vargs , 1);
-            str_vargs++;
-            *index++;
-        } 
+        char *str = va_arg(vargs, char *);
+        if (str == NULL)
+            str = "(null)";
+        while (*str)
+        {
+            write(1, str, 1);
+            (*index)++;
+            str++;
+        }
     }
-    
-    else
-    {
-        char c_vargs = (char)va_arg(vargs, int);
-        write(1, &c_vargs, 1);
-        str_tokens++;
-        *index++;
-    }    
 }
 
-static void    extract_formt(char const *str_tokens, va_list vargs, int *index)
+int ft_printf(const char *str_tokens, ...)
 {
-    if(*str_tokens == 's' || *str_tokens == 'c')
-        ft_put_str_char(str_tokens, vargs, index);
-}
+    va_list vargs;
+    int index = 0;
 
-
-int    ft_printf(char const *str_tokens, ...)
-{
-    va_list    vargs;
-    int    index;
-
-    index = 0;
+    if (str_tokens == NULL)
+    {
+      write(1, "(null)", 6);
+      return;
+    }
     va_start(vargs, str_tokens);
-    while(*str_tokens)
+    while (*str_tokens)
     {
-        if(*str_tokens == '%' && *(str_tokens + 1))
-        {
-            str_tokens++;
-            extract_formt(str_tokens, vargs, &index);
-        }
-        else
-        {
-            write(1, str_tokens, 1);
-            index++;
-            //str_tokens++;
-        }
-    str_tokens++;
+      if (*str_tokens == '%' && *(str_tokens + 1))
+      {
+          str_tokens++;
+          extract_formt(str_tokens, vargs, &index);
+      }
+      else
+      {
+          write(1, str_tokens, 1);
+          index++;
+      }
+        str_tokens++;
     }
     va_end(vargs);
-    return(index);
+    return index;
 }
+
+/*int main()
+{
+    int index_print;
+    
+    char str2 = 'B';
+    //char *str2 = NULL;
+    //char str2[] = "Hola Mundo!";
+    index_print = 0;
+    index_print = ft_printf("el Caracter es : %c y acabamos", str2);
+    printf("\nn.caracteres= : %d", index_print);
+    return 0;
+}*/
