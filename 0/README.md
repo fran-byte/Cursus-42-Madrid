@@ -14,7 +14,7 @@ int ft_isalpha (int c)
 
 Descripción | Param. #1 | Valor de Retorno
 :-----------: | :-----------: | :-----------:
-Verifica si es un carácter **alfabético**. Es equivalente a ([ft_isupper](#ft_isupper)(c) o [ft_islower](#ft_islower)(c)) | El carácter a probar | 0 si el carácter es falso y 1 si el carácter es verdadero
+Verifica si es un carácter **alfabético**.) | El carácter a probar | 0 si el carácter es falso y 1 si el carácter es verdadero
 
 ## [ft_isdigit](../0/libft/ft_isdigit.c)
 
@@ -32,7 +32,7 @@ int ft_isalnum (int c)
 ```
 Descripción | Param. #1 | Valor de Retorno
 :-----------: | :-----------: | :-----------:
-Verifica si es un carácter **alfanumérico**; es equivalente a ([ft_isalpha](#ft_isalpha) o [ft_isdigit](#ft_isdigit)) | El carácter a probar | 0 si el carácter es falso y 1 si el carácter es verdadero
+Verifica si es un carácter **alfanumérico** | El carácter a probar | 0 si el carácter es falso y 1 si el carácter es verdadero
 
 ## [ft_isascii](../0/libft/ft_isascii.c)
 
