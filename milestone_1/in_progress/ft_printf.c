@@ -50,7 +50,7 @@ static void	extract_formt(char const *str_tokens, va_list vargs, int *index)
 }
 
 
-int	ft_printf(char const *str_tokens ...)
+int	ft_printf(char const *str_tokens, ...)
 {
 	va_list	vargs;
 	int	index;
