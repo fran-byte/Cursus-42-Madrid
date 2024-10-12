@@ -6,130 +6,117 @@
 /*   By: frromero <frromero@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 20:28:22 by frromero          #+#    #+#             */
-/*   Updated: 2024/10/11 20:07:54 by frromero         ###   ########.fr       */
+/*   Updated: 2024/10/12 16:07:48 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	put_pointer(const char *str_tokens, va_list vargs, int *index)
+static void	put_num(unsigned long long number_vargs, int base, int *index)
 {
-	unsigned long long ptr_addres;
-
-	if (*str_tokens == 'p')
-	{
-		ptr_addres = (unsigned long long)va_arg(vargs, void *);
-		if (ptr_addres == 0)
-		{
-			*index += write(1, "(nil)", 5);
-			return ;
-		}
-		*index += write(1, "0x", 2);
-		print_base(ptr_addres, "0123456789abcdef", 16, index);
-	}
-}
-void	put_num(int number_vargs, int base, int *index)
-{
-	long long int nb;
-	
-	nb = number_vargs;
-	if (nb < 0)
-	{
-		*index += write(1, "-", 1);
-		nb = -nb;
-	}
 	if (base == 0)
 	{
-		if (nb >= 10)
-			put_num(nb / 10, 0, index);
-		*index += write(1, &"0123456789"[nb % 10], 1);
+		if (number_vargs >= 10)
+			put_num(number_vargs / 10, 0, index);
+		*index += write(1, &"0123456789"[number_vargs % 10], 1);
 	}
-	else if (base == 1 || base == 2)
+	else if (base == 1)
 	{
-		if (nb >= 16)
-			put_num(nb / 16, base, index);
-		if (base == 1)
-			*index += write(1, &"0123456789abcdef"[nb % 16], 1);
-		else
-			*index += write(1, &"0123456789ABCDEF"[nb % 16], 1);
+		if (number_vargs >= 16)
+			put_num(number_vargs / 16, 1, index);
+		*index += write(1, &"0123456789abcdef"[number_vargs % 16], 1);
+	}
+	else if (base == 2)
+	{
+		if (number_vargs >= 16)
+			put_num(number_vargs / 16, 2, index);
+		*index += write(1, &"0123456789ABCDEF"[number_vargs % 16], 1);
 	}
 }
 
-void	extract_formt_two(const char *str_tokens, va_list vargs, int *index)
+static void	put_pointer(va_list vargs, int *index)
 {
-	if (*str_tokens == 'd' || *str_tokens == 'i')
-		put_num(va_arg(vargs, int), 0, index);
-        else if (*str_tokens == 'u')
-		put_num(va_arg(vargs, int), 0, index);
-	else if (*str_tokens == 'x')
-		put_num(va_arg(vargs, int), 1, index);
-	else if (*str_tokens == 'X')
-		put_num(va_arg(vargs, int), 2, index);
-	else if (*str_tokens == 'p')
-	        put_pointer(str_tokens, vargs, index);
-	else if (*str_tokens == '%')
-		(*index) +=  write(1, "%", 1);
+	unsigned long long	ptr_address;
 
+	ptr_address = va_arg(vargs, unsigned long long);
+	if (ptr_address == 0)
+	{
+		*index += write(1, "(nil)", 5);
+		return ;
+	}
+	*index += write(1, "0x", 2);
+	put_num(ptr_address, 1, index);
 }
 
-void	extract_formt(const char *str_tokens, va_list vargs, int *index)
+static void	extract_formt_two(char const *format, va_list vargs, int *index)
 {
+	int	nb;
 
-	if (str_tokens == NULL)
+	if (*format == 'd' || *format == 'i')
+	{
+		nb = va_arg(vargs, int);
+		if (nb < 0)
+		{
+			*index += write(1, "-", 1);
+			put_num((unsigned long long)(-(long long)nb), 0, index);
+		}
+		else
+			put_num((unsigned long long)(nb), 0, index);
+	}
+	else if (*format == 'u')
+		put_num(va_arg(vargs, unsigned int), 0, index);
+	else if (*format == 'x')
+		put_num(va_arg(vargs, unsigned int), 1, index);
+	else if (*format == 'X')
+		put_num(va_arg(vargs, unsigned int), 2, index);
+	else if (*format == 'p')
+		put_pointer(vargs, index);
+	else if (*format == '%')
+		(*index) += write(1, "%", 1);
+}
+
+static void	extract_formt(char const *format, va_list vargs, int *index)
+{
+	char	c;
+	char	*str;
+
+	if (format == NULL)
 	{
 		write(1, "(null)", 6);
 		return ;
-    }
-	else if (*str_tokens == 'c')
-	{
-		char c = (char)va_arg(vargs, int);
-			(*index) += write(1, &c, 1);
 	}
-	else if (*str_tokens == 's')
+	else if (*format == 'c')
 	{
-		char *str = va_arg(vargs, char *);
+		c = (char)va_arg(vargs, int);
+		(*index) += write(1, &c, 1);
+	}
+	else if (*format == 's')
+	{
+		str = va_arg(vargs, char *);
 		if (str == NULL)
 			str = "(null)";
 		while (*str++)
-			(*index) += write(1, str-1, 1);
+			(*index) += write(1, str - 1, 1);
 	}
 	else
-		extract_formt_two(str_tokens, vargs, index);
+		extract_formt_two(format, vargs, index);
 }
 
-int	ft_printf(const char *str_tokens, ...)
+int	ft_printf(char const *format, ...)
 {
-	va_list vargs;
-	int	index;
+	va_list	vargs;
+	int		index;
 
 	index = 0;
-	if (str_tokens == NULL)
+	va_start(vargs, format);
+	while (*format)
 	{
-		write(1, "(null)", 6);
-		return;
-	}
-	va_start(vargs, str_tokens);
-	while (*str_tokens)
-	{
-		if (*str_tokens == '%' && *(str_tokens + 1))
-			extract_formt(++str_tokens, vargs, &index);
+		if (*format == '%' && *(format + 1))
+			extract_formt(++format, vargs, &index);
 		else
-			index += write(1, str_tokens, 1);
-		str_tokens++;
+			index += write(1, format, 1);
+		format++;
 	}
 	va_end(vargs);
-	return index;
+	return (index);
 }
-
-/*int main()
-{
-    int index_print;
-
-    char str2 = 'B';
-    //char *str2 = NULL;
-    //char str2[] = "Hola Mundo!";
-    index_print = 0;
-    index_print = ft_printf("el Caracter es : %c y acabamos", str2);
-    printf("\nn.caracteres= : %d", index_print);
-    return 0;
-}*/
