@@ -69,9 +69,9 @@
 
 <img width="632" alt="" src="img/almacenamientoseleccionarchivo.png">
 
-1. Seleccionaremos la ISO que tenemos y le damos a **Abrir** / **Aceptar**.
+9. Seleccionaremos la ISO que tenemos y le damos a **Abrir** / **Aceptar**.
 
-2.  Ya podemos **Iniciar** nuestra máquina virtual.
+10.  Ya podemos **Iniciar** nuestra máquina virtual.
 
 <img width="83" alt="" src="img/flecha.png">
 
