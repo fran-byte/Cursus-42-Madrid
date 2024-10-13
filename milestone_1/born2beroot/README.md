@@ -5,6 +5,7 @@
 # ¿ Por qué trabajar sobre una máquina virtual (VM) ?
 
 ➤ Una máquina virtual es una máquina que se encuentra dentro de una máquina anfitriona.
+
 ➤ Se comportará de la misma manera que cualquier otra máquina; tiene un sistema operativo y algunas aplicaciones.
 
 ➤ Existen varias ventajas de tener una máquina virtual:
