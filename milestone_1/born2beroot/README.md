@@ -102,9 +102,9 @@
 
 <img width="632" alt="" src="img/host.jpg">
 
-7. **Domain name** apartado que dejaremos vacío, en el subject no menciona rellenarl, y le damos a continuar .
+7. **Domain name** apartado que dejaremos vacío, en el subject no menciona rellenarlo, y le damos a continuar .
 
-8. Nuestra contraseña de la cuenta de administración del sistema. **Apuntala**, la usaremos. Asegurate que la has escrito correctamente, tabula hasta la opción **Show Password in Clear** dale a la barra espaciadora y podrás ver tu clave.
+8. Nuestra contraseña de la cuenta de administración del sistema. **Apúntala**, la usaremos. Asegurate que la has escrito correctamente, tabula hasta la opción **Show Password in Clear** dale a la barra espaciadora y podrás ver tu clave.
 
 <img width="632" alt="" src="img/pass.jpg">
 
@@ -114,7 +114,7 @@
 
 <img width="632" alt="" src="img/user.jpg">
 
-11. Introduciremos la contraseña de nuestro nuevo usuario. repitiendolo dos veces el proceso, es importante que la guardes por que la utilizaremos.
+11. Introduciremos la contraseña de nuestro nuevo usuario. repitiendolo dos veces el proceso, es importante que la guardes porque la utilizaremos.
 
 <img width="632" alt="" src="img/pass1.jpg">
 
@@ -196,6 +196,13 @@ GNU GRUB (GNU GRand Unified Bootloader) es un cargador de arranque múltiple, de
 <img width="632" alt="" src="img/finish.jpg">
 
 ## 4 Configurando máquina virtual (VM)
+
+- En esta parte, configurarás los primeros elementos de tu máquina. Harás lo siguiente:
+
+ - Seleccionar el idioma, la zona horaria y el país en el que funcionará tu máquina.
+ - Crear un nombre de host (tu_login_42) y una contraseña para tu máquina.
+ - Crear un primer usuario simple (tu_login_42) y una contraseña para dicho usuario.
+ - Configurar las particiones de tu máquina.
 
 ➤ Seleccionamos **Debian GNU/Linux**.
 
