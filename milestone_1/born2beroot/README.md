@@ -79,13 +79,11 @@
 
 7 ◦ **Domain name** apartado que dejaremos vacío, en el subject no menciona rellenarl, y le damos a continuar .
 
-
-
 8 ◦ Nuestra contraseña de la cuenta de administración del sistema. **Apuntala**, la usaremos. Asegurate que la has escrito correctamente, tabula hasta la opción **Show Password in Clear** dale a la barra espaciadora y podrás ver tu clave.
 
-<img width="632" alt="" src="">
+<img width="632" alt="" src="img/pass.jpg">
 
-11 ◦ Repetimos el proceso de nuevo para comprobar que no la hayamos escrito mal.
+10 ◦ Repetimos el proceso de nuevo para comprobar que no la hayamos escrito mal.
 
 <img width="751" alt="Screen Shot 2022-11-18 at 2 33 15 PM" src="https://user-images.githubusercontent.com/66915274/202716814-df6aa34a-e118-47cd-ac7e-ff7d35a3ef90.png">
 
