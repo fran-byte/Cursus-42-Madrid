@@ -37,43 +37,43 @@
 
 1. Abrirmos VirtualBox y clikeamos en **Nueva**
 
-<img width="632" alt="" src="img/añadir.jpg">
+<img width="632" alt="" src="img/nueva.png">
 
 2. Pondremos nombre de nuestra máquina y ubicación, debe de ir la carpeta **sgoinfre**, para no quedaremos sin espacio.
 
-<img width="632" alt="" src="img/nameOS.jpg">
+<img width="632" alt="" src="img/nombremaquina.png">
 
 3. Seleccionamos la cantidad de memoria RAM que reservaremos para la máquina.
 
-<img width="632" alt="" src="img/tamaño.jpg">
+<img width="632" alt="" src="img/ram.png">
 
 4. **Disco duro**, seleccionamos la segunda opción para así crear un disco duro **virtual ahora**.
 
-<img width="632" alt="" src="img/ssd.jpg">
+<img width="632" alt="" src="img/ssd.png">
 
 5. Tipo de **archivo**, escogemos la primera opción **VDI**, ya que nos hemos descargado una imagen de disco.
 
-<img width="632" alt="" src="img/archivo.jpg">
+<img width="632" alt="" src="img/tipoarchivo.png">
 
 6. Seleccionamos  **Reservado dinámicamente**ya que nos irá reservando memoria en la máquina real según la utilicemos hasta límite máximo disponible en la VM.
 
-<img width="632" alt="" src="img/reserva.jpg">
+<img width="632" alt="" src="img/unidadfisica.png">
 
 7. Después de elegir la cantidad de memoria recomendada **12 GB** o **30 Gb** si hacemos bonus, y le damos a **crear**.
 
-<img width="632" alt="" src="img/crear.jpg">
+<img width="632" alt="" src="img/ubicaciontamaño.png">
 
 8. Ahora nos vamos a **Configuración** / **Almacenamiento** / **Controlador IDE** / **Vacío** y nos vamos a **unidad óptica** / y sobre **IDE secundario maestro** clickeamos en el icono del **disco** y elegimos **Seleccionar un archivo de disco**...
 
-<img width="100" alt="" src="img/conf.jpg">
+<img width="60" alt="" src="img/configuracion.png">
 
-<img width="632" alt="" src="img/archdisco.jpg">
+<img width="632" alt="" src="img/almacenamientoseleccionarchivo.png">
 
-9. Seleccionaremos la ISO que tenemos y le damos a **Abrir** / **Aceptar**.
+1. Seleccionaremos la ISO que tenemos y le damos a **Abrir** / **Aceptar**.
 
-10. Ya podemos **Iniciar** nuestra máquina virtual.
+2.  Ya podemos **Iniciar** nuestra máquina virtual.
 
-<img width="83" alt="" src="img/inicia.jpg">
+<img width="83" alt="" src="img/flecha.png">
 
 
 ## 3- Instalación Debian en nuestra VM
