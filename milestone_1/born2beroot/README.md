@@ -85,18 +85,13 @@
 
 9 ◦ Repetimos el proceso de nuevo.
 
-10 ◦ Nombre de nuestro nuevo usuario. tenemos que crear un usuario adicional como menciona el subject y no debe de ser el root con nuestro login, así que llamaremos **frromero** al nuevo usuario.
+10 ◦ Nombre de nuestro nuevo usuario. tenemos que crear un usuario adicional como menciona el subject y no debe de ser el root con nuestro login, así que llamaremos **frromero** al nuevo usuario, y nos lo vuelve a pedir de nuevo.
 
 <img width="632" alt="" src="img/user.jpg">
 
-Volvemos a poner el nombre de usuario.
+11 ◦ Introduciremos la contraseña de nuestro nuevo usuario. repitiendolo dos veces el proceso, es importante que la guardes por que la utilizaremos.
 
-![image](https://user-images.githubusercontent.com/66915274/182679675-4d3805a9-34c9-4ba3-9488-1a7fe30f2519.png)
-
-
-13 ◦ Ahora debemos introducir la contraseña de nuestro nuevo usuario. Como la anterior, repetiremos el proceso para comprobar que no la hayas escrito mal y también es importante que la guardes porque le daremos uso más adelante.
-
-<img width="790" alt="Captura de pantalla 2022-07-13 a las 19 30 08" src="https://user-images.githubusercontent.com/66915274/178794862-94de8c7a-282e-4a83-9903-d3b8439122ea.png">
+<img width="632" alt="" src="img/pass.jpg">
 
 14 ◦ Seleccionamos la hora de nuestra ubicación.
 
