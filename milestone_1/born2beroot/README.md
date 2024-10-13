@@ -93,22 +93,22 @@
 
 <img width="632" alt="" src="img/pass.jpg">
 
-14 ◦ Seleccionamos la hora de nuestra ubicación.
+13 ◦ Colocamos la hora de nuestra localización.
 
-<img width="796" alt="Captura de pantalla 2022-07-13 a las 19 31 41" src="https://user-images.githubusercontent.com/66915274/178795105-956854e1-deff-4851-8eba-26cdefb1e06f.png">
+<img width="632" alt="" src="">
 
 15 ◦ Escogeremos la tercera opción ```Guied - use entire disk and set up encrypted LVM```, ya que el subject nos dice que deben ser particiones cifradas. ⚠️❗️ Si quieres hacer el bonus deberás darle a ```Manual``` y [hacer click aquí](#8--bonus-%EF%B8%8F) ❗️⚠️
 
-<img width="796" alt="Captura de pantalla 2022-07-13 a las 19 33 13" src="https://user-images.githubusercontent.com/66915274/178795367-b82018de-edc8-47d3-8cd6-b90c5e3be2fa.png">
+<img width="632" alt="" src="img/hora.jpg">
 
 
 16 ◦ Seleccionamos el disco en el que queremos hacer el particionado (Solo debe haber un disco).
 
-<img width="789" alt="Captura de pantalla 2022-07-13 a las 19 40 03" src="https://user-images.githubusercontent.com/66915274/178796481-29ef7ebc-0518-40f0-9429-3f43316b35d3.png">
+<img width="632" alt="Captura de pantalla 2022-07-13 a las 19 40 03" src="https://user-images.githubusercontent.com/66915274/178796481-29ef7ebc-0518-40f0-9429-3f43316b35d3.png">
 
 17 ◦ Una vez hayamos escogido el disco deberemos hacer el particionado tal y como nos piden. Para realizarlo adecuadamente debemos seleccionar la segunda opción ```Separate /home partition```.
 
-<img width="787" alt="Screen Shot 2023-03-08 at 1 44 16 PM" src="https://user-images.githubusercontent.com/66915274/223716446-9ffb6f66-1ad3-4bfe-81ce-1f297bed0ede.png">
+<img width="632" alt="Screen Shot 2023-03-08 at 1 44 16 PM" src="https://user-images.githubusercontent.com/66915274/223716446-9ffb6f66-1ad3-4bfe-81ce-1f297bed0ede.png">
 
 18 ◦ Escogemos la opción ```Yes``` para que así se escriban los cambios en el disco y podamos configurar el gestor de volúmenes lógicos (LVM).
 
