@@ -93,37 +93,37 @@
 
 <img width="632" alt="" src="img/pass.jpg">
 
-13. Colocamos la hora de nuestra localización.
+12. Colocamos la hora de nuestra localización.
 
 <img width="632" alt="" src="img/hora.jpg">
 
-14. Selecionamos la tercera opción **Guied - use entire disk and set up encrypted LVM**, el subject nos comenta que deben ser particiones cifradas, **Manual** para el bonus (pero no te sirve este tutorial)
+13. Selecionamos la tercera opción **Guied - use entire disk and set up encrypted LVM**, el subject nos comenta que deben ser particiones cifradas, **Manual** para el bonus (pero no te sirve este tutorial)
 
 <img width="632" alt="" src="img/particion.jpg">
 
-16. Disco en el que queremos hacer el particionado (Debe de haber solo un disco).
+14. Disco en el que queremos hacer el particionado (Debe de haber solo un disco).
 
 <img width="632" alt="" src="img/disk.jpg">
 
-17. **Particiones**, seleccionar la segunda opción **Separate /home partition**.
+15. **Particiones**, seleccionar la segunda opción **Separate /home partition**.
 
 <img width="632" alt="" src="img/separada.jpg">
 
-18. Validamos **Yes**``` para guardar los cambios en el disco y configurar el gestor de volúmenes lógicos (LVM).
+16. Validamos **Yes** para guardar los cambios en el disco y configurar el gestor de volúmenes lógicos (LVM).
 
 <img width="632" alt="" src="img/guardar.jpg">
 
-19 Le damos a Cancel, ya que el borrado de datos en el disco no es necesario.
+17. No es necesario borrar los datos, lo estamos haciendo en un entrono virtual **Cancel**.
 
-<img width="782" alt="Captura de pantalla 2022-07-13 a las 19 46 45" src="https://user-images.githubusercontent.com/66915274/178797666-78cdf892-1a83-4c68-8f85-0d5440cd4854.png">
+<img width="632" alt="C" src="img/cancel.jpg">
 
-20 De nuevo deberemos poner una contraseña, esta vez será la frase de encriptación. Como te he comentado previamente deberás repetir el proceso y la debes anotar, ya que será importante en un futuro.
+1.  De nuevo deberemos poner una contraseña, esta vez será la frase de encriptación. Como te he comentado previamente deberás repetir el proceso y la debes anotar, ya que será importante en un futuro.
 
-<img width="777" alt="Captura de pantalla 2022-07-13 a las 19 51 17" src="https://user-images.githubusercontent.com/66915274/178798491-4c9b4a0c-d698-47c7-9579-10b16aa47275.png">
+<img width="632" alt="Captura de pantalla 2022-07-13 a las 19 51 17" src="https://user-images.githubusercontent.com/66915274/178798491-4c9b4a0c-d698-47c7-9579-10b16aa47275.png">
 
-21 En este paso debemos introducir la cantidad de volumen que usaremos para la partición guiada. Debemos introducir ```max``` o el número de tamaño máximo disponible en mi caso es ```12.4 GB```.
+20. En este paso debemos introducir la cantidad de volumen que usaremos para la partición guiada. Debemos introducir ```max``` o el número de tamaño máximo disponible en mi caso es ```12.4 GB```.
 
-<img width="794" alt="Captura de pantalla 2022-07-13 a las 19 55 02" src="https://user-images.githubusercontent.com/66915274/178799165-c6b05fd2-86ad-45b7-a026-9ee169eda5d5.png">
+<img width="632" alt="Captura de pantalla 2022-07-13 a las 19 55 02" src="https://user-images.githubusercontent.com/66915274/178799165-c6b05fd2-86ad-45b7-a026-9ee169eda5d5.png">
 
 22 Para finalizar la partición y escribir los cambios en el disco le daremos a la opción ```Finish partitioning and write changes to disk```.
 
