@@ -129,31 +129,31 @@
 
 <img width="632" alt="" src="img/fin.jpg">
 
-21. Seleccionamos la opción ```Yes``` para continuar y confirmar que no queremos hacer más cambios en el disco.
+21. **Yes** para continuar y confirmar los cambios en el disco.
 
-<img width="632" alt="" src="">
+<img width="632" alt="" src="img/confirm.jpg">
 
-22. Seleccionamos la opción ```No```, ya que no necesitamos paquetes adicionales.
+22. **No** necesitamos paquetes adicionales.
 
-<img width="632" alt="" src="">
+<img width="632" alt="" src="img/paquetes.jpg">
 
-23. Escogemos nuestro País.
+23. **Package Manager** elegimos nuestro país.
 
-<img width="632" alt="" src="">
+<img width="632" alt="" src="img/configure.jpg">
 
-24. Escogemos ```deb.debian.org```, ya que es lo que recomienda Debian.
+24. **Configure package manager**, elegimos la opción recomendada **deb.debian.org**
 
-<img width="632" alt="" src="">
+<img width="632" alt="" src="img/recomendado.jpg">
 
-27 Esta opción la dejaremos vacía y le daremos ```Continue```.
+25. El proxy lo dejamos vacío y le daremos **Continue**.
 
-<img width="632" alt="" src="">
+<img width="632" alt="" src="img/configure.jpg">
 
-28 Seleccionamos la opcion ```No```, ya que no queremos que los developers vean nuestras estadísticas aunque sean anónimas.
+26. **No** para que los developers vean nuestras estadísticas aunque sean anónimas.
 
-<img width="632" alt="" src="">
+<img width="632" alt="" src="img/proxy.jpg">
 
-29 Quitaremos todas las opciones de software (con la barra espaciadora) y le daremos a ```Continue```.
+27. Quitaremos todas las opciones de software (con la barra espaciadora) y le daremos a ```Continue```.
 
 <img width="632" alt="" src="">
 
