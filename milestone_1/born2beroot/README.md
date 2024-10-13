@@ -4,10 +4,10 @@
 
 # ¿ Por qué trabajar sobre una máquina virtual (VM) ?
 
-- Una máquina virtual es una máquina que se encuentra dentro de una máquina anfitriona.
-- Se comportará de la misma manera que cualquier otra máquina; tiene un sistema operativo y algunas aplicaciones.
+➤ Una máquina virtual es una máquina que se encuentra dentro de una máquina anfitriona.
+➤ Se comportará de la misma manera que cualquier otra máquina; tiene un sistema operativo y algunas aplicaciones.
 
-- Existen varias ventajas de tener una máquina virtual:
+➤ Existen varias ventajas de tener una máquina virtual:
 
 	- Económica
 	- Ahorro de espacio físico (almacenamiento)
@@ -15,19 +15,19 @@
 	- Respaldo de datos simplificado
 	- Mayor seguridad
 
-- Creamos la máquina virtual y la imagen de Debian en mi directorio sgoinfre.
+➤ Creamos la máquina virtual y la imagen de Debian en mi directorio sgoinfre.
 
-- **Sgoinfre** es un servidor accesible desde la red de la Escuela 42 y disponible desde cada computadora. Es un servidor de documentos donde tienes un directorio con tu nombre de usuario al que solo tú puedes acceder.
+➤ **Sgoinfre** es un servidor accesible desde la red de la Escuela 42 y disponible desde cada computadora. Es un servidor de documentos donde tienes un directorio con tu nombre de usuario al que solo tú puedes acceder.
 
-- En cada computadora también hay una carpeta llamada **goinfre**. Esta carpeta te permite almacenar algunos documentos. Es diferente en cada computadora y es más grande que el almacenamiento de tu sesión.
+➤ En cada computadora también hay una carpeta llamada **goinfre**. Esta carpeta te permite almacenar algunos documentos. Es diferente en cada computadora y es más grande que el almacenamiento de tu sesión.
 
-- Si colocas tu máquina virtual en el servidor **sgoinfre**, puedes cambiar de computadora durante tu proyecto. Si la colocas en la carpeta **goinfre**, tienes que quedarte en la misma computadora todo el tiempo.
+➤ Si colocas tu máquina virtual en el servidor **sgoinfre**, puedes cambiar de computadora durante tu proyecto. Si la colocas en la carpeta **goinfre**, tienes que quedarte en la misma computadora todo el tiempo.
 
 ## 1- Descargando ISO de Debian e instalando Virtual Box
 
-- Crearemos una máquina virtual vacía. Es como si estuvieras configurando una computadora desde cero.
+➤ Crearemos una máquina virtual vacía. Es como si estuvieras configurando una computadora desde cero.
 
-- Lins de descarga:
+➤ Lins de descarga:
 
 :point_right: [Click](https://www.debian.org/distrib/index.es.html) URL  ISO Debian
 
@@ -77,6 +77,44 @@
 
 
 ## 3- Instalación Debian en nuestra VM
+
+➤ En esta parte, configurarás los primeros elementos de tu máquina. Harás lo siguiente:
+
+ - Seleccionar el idioma, la zona horaria y el país en el que funcionará tu máquina.
+ - Crear un nombre de host (tu_login_42) y una contraseña para tu máquina.
+ - Crear un primer usuario simple (tu_login_42) y una contraseña para dicho usuario.
+ - Configurar las particiones de tu máquina.
+
+### ¿Qué es el particionamiento de disco con LVM?
+
+El **particionamiento de disco** es la creación de una o más regiones de almacenamiento (llamadas particiones), de manera que cada región pueda gestionarse por separado.
+
+Cada sistema operativo tiene una forma diferente de designar las particiones. En Linux (y por lo tanto en Debian o CentOS), se designan de la siguiente manera: `sdXN`, donde `X` es una letra que representa el medio y `N` es el número de la partición en el medio (por ejemplo, `sdb3` para la tercera partición del disco b).
+
+El particionamiento ofrece muchas ventajas en términos de seguridad.
+
+Es común reservar particiones para servicios que pueden generar un gran volumen de datos para evitar saturar las particiones del sistema.
+
+Aquí tienes una breve lista de particiones que pueden existir (y que usamos en este proyecto):
+
+- `/`
+  Contiene el resto del árbol del sistema.
+
+- `/boot`
+  Contiene datos que se utilizan antes de que el kernel comience a ejecutar programas en modo usuario.
+
+- `/var`
+  Contiene archivos variables.
+
+- `/tmp`
+  Contiene archivos temporales.
+
+- `/home`
+  Contiene los directorios de los usuarios.
+
+### ¿Y qué es LVM?
+
+Puedes pensar en **LVM** (Logical Volume Manager) como "particiones dinámicas", lo que significa que puedes crear, redimensionar o eliminar particiones LVM (llamadas "volúmenes lógicos" en el lenguaje de LVM) desde la línea de comandos mientras tu sistema Linux está en funcionamiento. No es necesario reiniciar el sistema para que el kernel reconozca las particiones recién creadas o redimensionadas.
 
 1. Versión **SIN** interfaz gráfica **Install**, (indicado por el subject)
 
@@ -183,7 +221,7 @@
 <img width="632" alt="" src="img/software.jpg">
 
 28. **Yes** para instalar **GRUB boot**.
-GNU GRUB (GNU GRand Unified Bootloader) es un cargador de arranque múltiple, desarrollado por el proyecto GNU que nos permite **elegir qué Sistema Operativo** arrancar de los instalados.
+➤ GNU GRUB (GNU GRand Unified Bootloader) es un cargador de arranque múltiple, desarrollado por el proyecto GNU que nos permite **elegir qué Sistema Operativo** arrancar de los instalados.
 
 <img width="632" alt="" src="img/boot.jpg">
 
@@ -197,12 +235,6 @@ GNU GRUB (GNU GRand Unified Bootloader) es un cargador de arranque múltiple, de
 
 ## 4 Configurando máquina virtual (VM)
 
-- En esta parte, configurarás los primeros elementos de tu máquina. Harás lo siguiente:
-
- - Seleccionar el idioma, la zona horaria y el país en el que funcionará tu máquina.
- - Crear un nombre de host (tu_login_42) y una contraseña para tu máquina.
- - Crear un primer usuario simple (tu_login_42) y una contraseña para dicho usuario.
- - Configurar las particiones de tu máquina.
 
 ➤ Seleccionamos **Debian GNU/Linux**.
 
