@@ -235,6 +235,99 @@ Puedes pensar en **LVM** (Logical Volume Manager) como "particiones dinámicas",
 
 ## 4 Configurando máquina virtual (VM)
 
+➤ Ahora que has instalado tu máquina virtual, debes llenarla. Imagina que en esta etapa solo tienes una máquina vacía y no puedes hacer nada. Debes agregar las herramientas que quieras usar.
+apt vs aptitude
+
+➤ Probablemente notaste que usaste mucho el comando apt durante la configuración de tu VM. En realidad, aptitude y apt son dos herramientas populares que gestionan el manejo de paquetes. En este proyecto usamos apt en lugar de aptitude. Aunque ambas ofrecen la misma funcionalidad básica, instalar y eliminar paquetes desde la línea de comandos, tienen una pequeña diferencia:
+
+    - **aptitude** recuerda qué paquetes se solicitaron explícitamente y cuáles se instalaron solo debido a dependencias. Desinstalará automáticamente los paquetes que no se solicitaron explícitamente cuando ya no sean necesarios.
+    - **apt** solo hará exactamente lo que se le indique en la línea de comandos.
+
+# APPArmor
+
+➤ Es un sistema de seguridad en Linux que proporciona control de acceso obligatorio (MAC). Permite al administrador del sistema restringir las acciones que los procesos pueden realizar. Está incluido por defecto en Debian.
+
+➤ Ejecuta aa-status para comprobar si está funcionando.
+
+# Git y Vim
+
+➤ Si estás haciendo este proyecto, ya has usado Git y Vim en el pasado. Instalarás estas herramientas en tu VM para poder usarlas.
+
+# SSH (Secure Shell)
+
+➤ SSH significa "Secure Shell", por lo tanto, es un "shell" (o terminal) seguro. Un shell te permitirá administrar tus servidores Linux, tanto localmente, es decir, cuando estás físicamente frente a tu servidor, como de forma remota, gracias a SSH.
+
+➤ El uso del protocolo SSH te permitirá conectarte de forma remota a tus servidores para administrarlos. Por ejemplo, puedes estar en Nueva York y administrar tu computadora en París con unos pocos clics.
+
+# UFW (Uncomplicated Firewall)
+
+➤ Un firewall es un elemento de la red informática. Su función es proteger una red definiendo las comunicaciones permitidas o prohibidas mediante reglas. En otras palabras, supervisa el tráfico de red entrante y saliente y decide si bloquear o permitir dicho tráfico.
+
+➤En este proyecto se te pedirá que configures tu sistema operativo con el firewall UFW y que dejes abierto solo el puerto 4242. Deberás configurar una regla para esto.
+
+# Política de Contraseñas
+
+➤ Una política de contraseñas es un conjunto de reglas diseñadas para mejorar la seguridad alentando a los usuarios a usar contraseñas relativamente seguras y a usarlas correctamente. Por ejemplo, en este proyecto, se pide implementar una política de contraseñas segura (que expire cada 30 días, tenga más de 10 caracteres y no contenga secuencias lógicas, y que contenga letras mayúsculas, caracteres especiales y números).
+
+➤ Cada usuario de tu máquina virtual deberá seguir las siguientes reglas de contraseñas:
+
+    PASS_MAX_DAYS 30
+    PASS_MIN_DAYS 2
+    PASS_WARN_AGE 7
+
+Es posible que tu usuario predeterminado no tenga estas modificaciones, por lo que deberás hacerlo manualmente.
+
+Para ver qué parámetros de contraseña están asociados a un usuario, puedes escribir este comando:
+
+➤ bash
+
+➤ sudo chage -l nombre_usuario
+
+➤ Si los valores no corresponden a los indicados, deben cambiarse manualmente de la siguiente manera:
+
+``` bash
+
+sudo chage -M 30 <usuario>
+sudo chage -m 2 <usuario>
+sudo chage -W 7 <usuario>
+```
+# Grupos y usuarios
+
+➤ Linux utiliza grupos como una forma de organizar a los usuarios. Existen para simplificar la gestión de permisos de archivos y carpetas. Linux está diseñado para permitir que varios usuarios accedan al sistema al mismo tiempo, pero con permisos diferentes.
+Root
+
+➤ **root** es el superusuario y tiene la capacidad de hacer cualquier cosa en el sistema. Por lo tanto, para tener una capa adicional de seguridad, generalmente se usa un usuario sudo en lugar de root.
+Sudo
+
+➤ Necesitarás instalar sudo. Sudo significa "superuser do". En pocas palabras, sudo le otorga al usuario designado un "superpoder" para actuar como administrador temporalmente. sudo se utiliza para dar a otro usuario acceso limitado a la cuenta de otro con el fin de realizar tareas administrativas. Permite que un usuario tenga privilegios de administrador sin iniciar sesión directamente como root.
+
+➤Esta gestión de derechos asignados a los usuarios está contenida en el archivo /etc/sudoers.
+
+# Crontab
+
+➤ Cron es un programa que permite a los usuarios de sistemas Unix ejecutar automáticamente scripts, comandos o software en una fecha y hora predefinidas o en un ciclo predefinido.
+
+➤ En este proyecto tendrás que publicar un mensaje cada 10 minutos. Necesitarás cron para hacerlo. Así es como funciona:
+
+    Creas un script (en nuestro caso será el script de monitoreo que contiene toda la información) que quieras ejecutar usando cron.
+    Luego, escribes sudo crontab -u root -e para abrir crontab y agregar una regla.
+
+La regla debe escribirse así:
+
+``` bash
+
+* * * * * <ruta>/<nombre_del_programa_a_ejecutar>
+
+Donde * * * * * significa cada minuto de cada hora de cada día de cada mes y cada día de la semana. Algunos ejemplos:
+
+    0 * * * *: esto significa que cron se ejecutará siempre cuando los minutos sean 0 (entonces, cada hora).
+    0 1 * * *: esto significa que cron se ejecutará siempre a la 1 en punto.
+    * 1 * * *: esto significa que cron se ejecutará cada minuto cuando la hora sea la 1, es decir, 1:00, 1:01... hasta las 1:59.
+    */10 * * * *: significa que cron se ejecutará cada 10 minutos.
+```
+# Parte 7 - Signature.txt
+
+➤ Una firma es un número identificador único para un disco duro u otro dispositivo de almacenamiento de datos. Un sistema operativo la utiliza para diferenciar entre los dispositivos de almacenamiento en tu computadora.
 
 ➤ Seleccionamos **Debian GNU/Linux**.
 
