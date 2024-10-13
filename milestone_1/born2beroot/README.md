@@ -91,7 +91,7 @@
 
 11. Introduciremos la contraseña de nuestro nuevo usuario. repitiendolo dos veces el proceso, es importante que la guardes por que la utilizaremos.
 
-<img width="632" alt="" src="img/pass.jpg">
+<img width="632" alt="" src="img/pass1.jpg">
 
 12. Colocamos la hora de nuestra localización.
 
@@ -113,13 +113,13 @@
 
 <img width="632" alt="" src="img/guardar.jpg">
 
-17. No es necesario borrar los datos, lo estamos haciendo en un entrono virtual **Cancel**.
+17. No es necesario borrar los datos, daremos a **Cancel** ya que lo estamos haciendo en un entrono virtual .
 
 <img width="632" alt="C" src="img/cancel.jpg">
 
-1.  De nuevo deberemos poner una contraseña, esta vez será la frase de encriptación. Como te he comentado previamente deberás repetir el proceso y la debes anotar, ya que será importante en un futuro.
+18. Otra contraseña, ahora será la frase de encriptación. Repites proceso, y anótala la usaremos después.
 
-<img width="632" alt="Captura de pantalla 2022-07-13 a las 19 51 17" src="https://user-images.githubusercontent.com/66915274/178798491-4c9b4a0c-d698-47c7-9579-10b16aa47275.png">
+<img width="632" alt="img/pass3.jpg" src="">
 
 20. En este paso debemos introducir la cantidad de volumen que usaremos para la partición guiada. Debemos introducir ```max``` o el número de tamaño máximo disponible en mi caso es ```12.4 GB```.
 
