@@ -233,7 +233,7 @@ Puedes pensar en **LVM** (Logical Volume Manager) como "particiones dinámicas",
 
 <img width="632" alt="" src="img/finish.jpg">
 
-# 4 Configurando máquina virtual (VM)
+# 4 Configurando la máquina virtual (VM)
 
 ➤ Ahora que has instalado tu máquina virtual, debes llenarla. Imagina que en esta etapa solo tienes una máquina vacía y no puedes hacer nada. Debes agregar las herramientas que quieras usar.
 apt vs aptitude
