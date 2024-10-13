@@ -14,7 +14,7 @@
 
 <img width="632" alt="" src="img/añadir.jpg">
 
-2 ◦ Pondremos nombre de nuestra máquina y ubicación. debe de ir la carpeta **sgoinfre**, para no quedaremos sin espacio,
+2 ◦ Pondremos nombre de nuestra máquina y ubicación, debe de ir la carpeta **sgoinfre**, para no quedaremos sin espacio.
 
 <img width="632" alt="" src="img/nameOS.jpg">
 
@@ -26,25 +26,26 @@
 
 <img width="632" alt="" src="img/ssd.jpg">
 
-5 ◦ Tipo de **archivo**, Escogemos la primera opción **VDI**, ya que nos hemos descargado una imagen de disco.
+5 ◦ Tipo de **archivo**, escogemos la primera opción **VDI**, ya que nos hemos descargado una imagen de disco.
 
 <img width="632" alt="" src="img/archivo.jpg">
 
-6 ◦ Seleccionamos  **Reservado dinámicamente** nos irá reservando memoria en la máquina real según la utilicemos hasta límite máximo disponible en la VM.
+6 ◦ Seleccionamos  **Reservado dinámicamente**ya que nos irá reservando memoria en la máquina real según la utilicemos hasta límite máximo disponible en la VM.
 
 <img width="632" alt="" src="img/reserva.jpg">
 
-7 ◦ Después de elegir la cantidad de memoria recomendada **12 GB** o **30 Gb** si hacemos bonus le damos a **crear**.
+7 ◦ Después de elegir la cantidad de memoria recomendada **12 GB** o **30 Gb** si hacemos bonus, y le damos a **crear**.
 
 <img width="632" alt="" src="img/crear.jpg">
 
-8 ◦ Ahora nos vamos a **Configuración** / **Almacenamiento** / **Controlador IDE** / **Vacío** y Nos vamos a **unidad óptica** / y sobre **IDE secundario maestro** clickeamos en el icono del **disco** y elegimos **Seleccionar un archivo de disco**...
+8 ◦ Ahora nos vamos a **Configuración** / **Almacenamiento** / **Controlador IDE** / **Vacío** y nos vamos a **unidad óptica** / y sobre **IDE secundario maestro** clickeamos en el icono del **disco** y elegimos **Seleccionar un archivo de disco**...
 
 <img width="100" alt="" src="img/conf.jpg">
 
 <img width="632" alt="" src="img/archdisco.jpg">
 
 9 ◦ Seleccionaremos la ISO que tenemos y le damos a **Abrir** / **Aceptar**.
+
 10.  ◦ Ya podemos **Iniciar** nuestra máquina virtual.
 
 <img width="83" alt="" src="img/inicia.jpg">
