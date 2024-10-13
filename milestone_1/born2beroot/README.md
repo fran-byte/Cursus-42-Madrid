@@ -122,7 +122,7 @@ Puedes pensar en **LVM** (Logical Volume Manager) como "particiones dinámicas",
 
 2. Seleción de idioma que usaremos para instalar y el predeterminado de nuestro sistema **English**.
 
-<img width="632" alt="" src="img/178789949-4fe83ac8-23b8-4f82-a034-a6d5e81d4f17.png">
+<img width="632" alt="" src="img/17.png">
 
 3. Introducimos el País, territorio o zona. para colocar España nos vamos a **Other** / **Europe** / **Spain**.
 
