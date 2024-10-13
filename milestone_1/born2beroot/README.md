@@ -46,7 +46,7 @@
 
 9 ◦ Seleccionaremos la ISO que tenemos y le damos a **Abrir** / **Aceptar**.
 
-10.  ◦ Ya podemos **Iniciar** nuestra máquina virtual.
+10 ◦ Ya podemos **Iniciar** nuestra máquina virtual.
 
 <img width="83" alt="" src="img/inicia.jpg">
 
