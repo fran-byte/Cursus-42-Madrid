@@ -352,9 +352,9 @@ Donde * * * * * significa cada minuto de cada hora de cada día de cada mes y ca
 
 Asegúrate de que el archivo /etc/hosts contenga la entrada correcta para el nombre del host. Haz lo siguiente:
 
-    Abre el archivo /etc/hosts para editarlo:
+Abre el archivo /etc/hosts para editarlo:
 
-    ```bash
+```bash
 
 nano /etc/hosts
 
