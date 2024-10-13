@@ -147,23 +147,24 @@
 
 25. El proxy lo dejamos vacío y le daremos **Continue**.
 
-<img width="632" alt="" src="img/configure.jpg">
+<img width="632" alt="" src="img/proxy.jpg">
 
 26. **No** para que los developers vean nuestras estadísticas aunque sean anónimas.
 
-<img width="632" alt="" src="img/proxy.jpg">
+<img width="632" alt="" src="img/developers.jpg">
 
-27. Quitaremos todas las opciones de software (con la barra espaciadora) y le daremos a ```Continue```.
+27.  Eliminamos todas las opciones de software (con barra espaciadora) y **Continue**.
 
-<img width="632" alt="" src="">
+<img width="632" alt="" src="img/software.jpg">
 
-30 Seleccionaremos ```Yes``` para instalar [GRUB boot](https://es.wikipedia.org/wiki/GNU_GRUB) en el disco duro.
+30 **Yes** para instalar **GRUB boot**.
+GNU GRUB (GNU GRand Unified Bootloader) es un cargador de arranque múltiple, desarrollado por el proyecto GNU que nos permite **elegir qué Sistema Operativo** arrancar de los instalados.
 
-<img width="632" alt="" src="">
+<img width="632" alt="" src="img/boot.jpg">
 
-31 Escogeremos el dispositivo para la instalación del cargador de arranque ```/dev/sda (ata_VBOX_HARDDISK)```.
+31 Selecionamos el dispositivo instalar del cargador de arranque **/dev/sda (ata_VBOX_HARDDISK)**.
 
-<img width="632" alt="" src="">
+<img width="632" alt="" src="img/grub.jpg">
 
 32 Le daremos a ```Continue``` para finalizar la instalación.
 
