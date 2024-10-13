@@ -1,6 +1,6 @@
 # Born2BeRoot en Debian
 
-# Tutorial
+# Tutorial (Solo Parte Obligatoria)
 
 ## 1- Descargar ISO de Debian e instalar Virtual Box
 
@@ -95,16 +95,15 @@
 
 13 ◦ Colocamos la hora de nuestra localización.
 
-<img width="632" alt="" src="">
+<img width="632" alt="" src="img/hora.jpg">
 
-15 ◦ Escogeremos la tercera opción ```Guied - use entire disk and set up encrypted LVM```, ya que el subject nos dice que deben ser particiones cifradas. ⚠️❗️ Si quieres hacer el bonus deberás darle a ```Manual``` y [hacer click aquí](#8--bonus-%EF%B8%8F) ❗️⚠️
+14 ◦ Selecionamos la tercera opción **Guied - use entire disk and set up encrypted LVM**, el subject nos comenta que deben ser particiones cifradas, **Manual** para el bonus (pero no te sirve este tutorial)
 
 <img width="632" alt="" src="img/hora.jpg">
 
-
 16 ◦ Seleccionamos el disco en el que queremos hacer el particionado (Solo debe haber un disco).
 
-<img width="632" alt="Captura de pantalla 2022-07-13 a las 19 40 03" src="https://user-images.githubusercontent.com/66915274/178796481-29ef7ebc-0518-40f0-9429-3f43316b35d3.png">
+<img width="632" alt="" src="">
 
 17 ◦ Una vez hayamos escogido el disco deberemos hacer el particionado tal y como nos piden. Para realizarlo adecuadamente debemos seleccionar la segunda opción ```Separate /home partition```.
 
