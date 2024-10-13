@@ -17,15 +17,15 @@ Existen varias ventajas de tener una máquina virtual:
 
 - Creamos la máquina virtual y la imagen de Debian en mi directorio sgoinfre.
 
-**Sgoinfre** es un servidor accesible desde la red de la Escuela 42 y disponible desde cada computadora. Es un servidor de documentos donde tienes un directorio con tu nombre de usuario al que solo tú puedes acceder.
+- **Sgoinfre** es un servidor accesible desde la red de la Escuela 42 y disponible desde cada computadora. Es un servidor de documentos donde tienes un directorio con tu nombre de usuario al que solo tú puedes acceder.
 
-En cada computadora también hay una carpeta llamada **goinfre**. Esta carpeta te permite almacenar algunos documentos. Es diferente en cada computadora y es más grande que el almacenamiento de tu sesión.
+- En cada computadora también hay una carpeta llamada **goinfre**. Esta carpeta te permite almacenar algunos documentos. Es diferente en cada computadora y es más grande que el almacenamiento de tu sesión.
 
-Si colocas tu máquina virtual en el servidor **sgoinfre**, puedes cambiar de computadora durante tu proyecto. Si la colocas en la carpeta **goinfre**, tienes que quedarte en la misma computadora todo el tiempo.
+- Si colocas tu máquina virtual en el servidor **sgoinfre**, puedes cambiar de computadora durante tu proyecto. Si la colocas en la carpeta **goinfre**, tienes que quedarte en la misma computadora todo el tiempo.
 
 ## 1- Descargando ISO de Debian e instalar Virtual Box
 
-Crearemos una máquina virtual vacía. Es como si estuvieras configurando una computadora desde cero.
+- Crearemos una máquina virtual vacía. Es como si estuvieras configurando una computadora desde cero.
 
 Lins de descarga:
 
