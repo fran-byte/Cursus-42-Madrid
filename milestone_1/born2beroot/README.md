@@ -157,18 +157,18 @@
 
 <img width="632" alt="" src="img/software.jpg">
 
-30 **Yes** para instalar **GRUB boot**.
+28. **Yes** para instalar **GRUB boot**.
 GNU GRUB (GNU GRand Unified Bootloader) es un cargador de arranque múltiple, desarrollado por el proyecto GNU que nos permite **elegir qué Sistema Operativo** arrancar de los instalados.
 
 <img width="632" alt="" src="img/boot.jpg">
 
-31 Selecionamos el dispositivo instalar del cargador de arranque **/dev/sda (ata_VBOX_HARDDISK)**.
+29. Selecionamos el dispositivo instalar del cargador de arranque **/dev/sda (ata_VBOX_HARDDISK)**.
 
 <img width="632" alt="" src="img/grub.jpg">
 
-32 Le daremos a ```Continue``` para finalizar la instalación.
+30. **Continue** finalizar la instalación.
 
-<img width="632" alt="" src="">
+<img width="632" alt="" src="img/finish.jpg">
 
 ## 4 Configuración de la máquina virtual ⚙️
 
