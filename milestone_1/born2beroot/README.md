@@ -118,120 +118,122 @@ Puedes pensar en **LVM** (Logical Volume Manager) como "particiones dinámicas",
 
 1. Versión **SIN** interfaz gráfica **Install**, (indicado por el subject)
 
-<img width="632" alt="" src="img/installDebian.jpg">
+<img width="632" alt="" src="img/VirtualBox_born2beroot_13_10_2024_18_13_14.png">
 
 2. Seleción de idioma que usaremos para instalar y el predeterminado de nuestro sistema **English**.
 
-<img width="632" alt="" src="img/idioma.jpg">
+<img width="632" alt="" src="img/VirtualBox_born2beroot_13_10_2024_18_13_14.png">
 
 3. Introducimos el País, territorio o zona. para colocar España nos vamos a **Other** / **Europe** / **Spain**.
 
-<img width="632" alt="" src="img/location.jpg">
+<img width="632" alt="" src="img/VirtualBox_born2beroot_13_10_2024_18_12_47.png">
+<img width="632" alt="" src="img/VirtualBox_born2beroot_13_10_2024_18_13_14.png">
+<img width="632" alt="" src="img/VirtualBox_born2beroot_13_10_2024_18_13_28.png">
 
 4. Combinación lenguaje / país **Configure locales** seleccionamos **United States**.
 
-<img width="632" alt="" src="img/locat.jpg">
+<img width="632" alt="" src="img/VirtualBox_born2beroot_13_10_2024_18_13_56.png">
 
 5. Debemos seleccionar **American English** en configuración de teclado, si no habrá problemas de teclas mal enlazadas.
 
-<img width="632" alt="" src="img/keyb.jpg">
+<img width="632" alt="" src="img/VirtualBox_born2beroot_13_10_2024_18_14_06.png">
 
 6. Nombre de **Host Name** de la máquina, será tu login seguido de 42.
 
-<img width="632" alt="" src="img/host.jpg">
+<img width="632" alt="" src="img/VirtualBox_born2beroot_13_10_2024_18_14_42.png">
 
 7. **Domain name** apartado que dejaremos vacío, en el subject no menciona rellenarlo, y le damos a continuar .
 
 8. Nuestra contraseña de la cuenta de administración del sistema. **Apúntala**, la usaremos. Asegurate que la has escrito correctamente, tabula hasta la opción **Show Password in Clear** dale a la barra espaciadora y podrás ver tu clave.
 
-<img width="632" alt="" src="img/pass.jpg">
+<img width="632" alt="" src="img/VirtualBox_born2beroot_13_10_2024_18_20_29.png">
 
 9. Repetimos el proceso de nuevo.
 
 10. Nombre de nuestro nuevo usuario. tenemos que crear un usuario adicional como menciona el subject y no debe de ser el root con nuestro login, así que llamaremos **frromero** al nuevo usuario, y nos lo vuelve a pedir de nuevo.
 
-<img width="632" alt="" src="img/user.jpg">
+<img width="632" alt="" src="img/VirtualBox_born2beroot_13_10_2024_18_22_50.png">
 
 11. Introduciremos la contraseña de nuestro nuevo usuario. repitiendolo dos veces el proceso, es importante que la guardes porque la utilizaremos.
 
-<img width="632" alt="" src="img/pass1.jpg">
+<img width="632" alt="" src="img/VirtualBox_born2beroot_13_10_2024_18_28_09.png">
 
 12. Colocamos la hora de nuestra localización.
 
-<img width="632" alt="" src="img/hora.jpg">
+<img width="632" alt="" src="img/VirtualBox_born2beroot_13_10_2024_18_28_52.png">
 
 13. Selecionamos la tercera opción **Guied - use entire disk and set up encrypted LVM**, el subject nos comenta que deben ser particiones cifradas, **Manual** para el bonus (pero no te sirve este tutorial)
 
-<img width="632" alt="" src="img/particion.jpg">
+<img width="632" alt="" src="img/VirtualBox_born2beroot_13_10_2024_18_29_28.png">
 
 14. Disco en el que queremos hacer el particionado (Debe de haber solo un disco).
 
-<img width="632" alt="" src="img/disk.jpg">
+<img width="632" alt="" src="img/VirtualBox_born2beroot_13_10_2024_18_29_38.png">
 
 15. **Particiones**, seleccionar la segunda opción **Separate /home partition**.
 
-<img width="632" alt="" src="img/separada.jpg">
+<img width="632" alt="" src="img/VirtualBox_born2beroot_13_10_2024_18_30_18.png">
 
 16. Validamos **Yes** para guardar los cambios en el disco y configurar el gestor de volúmenes lógicos (LVM).
 
-<img width="632" alt="" src="img/guardar.jpg">
+<img width="632" alt="" src="img/VirtualBox_born2beroot_13_10_2024_18_30_32.png">
 
 17. No es necesario borrar los datos, daremos a **Cancel** ya que lo estamos haciendo en un entrono virtual .
 
-<img width="632" alt="C" src="img/cancel.jpg">
+<img width="632" alt="C" src="img/VirtualBox_born2beroot_13_10_2024_18_31_37.png">
 
 18. Otra contraseña, ahora será la frase de encriptación. Repites proceso, y anótala la usaremos después.
 
-<img width="632" alt="" src="img/pass3.jpg">
+<img width="632" alt="" src="img/VirtualBox_born2beroot_13_10_2024_18_33_38.png">
 
 19. Colocar la cantidad de volumen que usaremos en la partición guiada. ponemos **max** o el número máximo disponible.
 
-<img width="632" alt="" src="img/12gb.jpg">
+<img width="632" alt="" src="img/VirtualBox_born2beroot_13_10_2024_18_34_18.png">
 
 20. Finalizamos y escribimos los cambios, selecionamos **Finish partitioning and write changes to disk**.
 
-<img width="632" alt="" src="img/fin.jpg">
+<img width="632" alt="" src="img/VirtualBox_born2beroot_13_10_2024_18_34_29.png">
 
 21. **Yes** para continuar y confirmar los cambios en el disco.
 
-<img width="632" alt="" src="img/confirm.jpg">
+<img width="632" alt="" src="img/VirtualBox_born2beroot_13_10_2024_18_34_55.png">
 
 22. **No** necesitamos paquetes adicionales.
 
-<img width="632" alt="" src="img/paquetes.jpg">
+<img width="632" alt="" src="img/VirtualBox_born2beroot_13_10_2024_18_46_34.png">
 
 23. **Package Manager** elegimos nuestro país.
 
-<img width="632" alt="" src="img/configure.jpg">
+<img width="632" alt="" src="img/VirtualBox_born2beroot_13_10_2024_18_46_51.png">
 
 24. **Configure package manager**, elegimos la opción recomendada **deb.debian.org**
 
-<img width="632" alt="" src="img/recomendado.jpg">
+<img width="632" alt="" src="img/VirtualBox_born2beroot_13_10_2024_18_47_06.png">
 
 25. El proxy lo dejamos vacío y le daremos **Continue**.
 
-<img width="632" alt="" src="img/proxy.jpg">
+<img width="632" alt="" src="img/VirtualBox_born2beroot_13_10_2024_18_47_29.png">
 
 26. **No** para que los developers vean nuestras estadísticas aunque sean anónimas.
 
-<img width="632" alt="" src="img/developers.jpg">
+<img width="632" alt="" src="img/VirtualBox_born2beroot_13_10_2024_18_49_29.png">
 
 27.  Eliminamos todas las opciones de software (con barra espaciadora) y **Continue**.
 
-<img width="632" alt="" src="img/software.jpg">
+<img width="632" alt="" src="img/VirtualBox_born2beroot_13_10_2024_18_49_56.png">
 
 28. **Yes** para instalar **GRUB boot**.
 ➤ GNU GRUB (GNU GRand Unified Bootloader) es un cargador de arranque múltiple, desarrollado por el proyecto GNU que nos permite **elegir qué Sistema Operativo** arrancar de los instalados.
 
-<img width="632" alt="" src="img/boot.jpg">
+<img width="632" alt="" src="img/VirtualBox_born2beroot_13_10_2024_18_52_27.png">
 
 29. Selecionamos el dispositivo instalar del cargador de arranque **/dev/sda (ata_VBOX_HARDDISK)**.
 
-<img width="632" alt="" src="img/grub.jpg">
+<img width="632" alt="" src="img/VirtualBox_born2beroot_13_10_2024_18_52_35.png">
 
 30. **Continue** finalizar la instalación.
 
-<img width="632" alt="" src="img/finish.jpg">
+<img width="632" alt="" src="img/VirtualBox_born2beroot_13_10_2024_18_54_22.png">
 
 # 4 Configurando la máquina virtual (VM)
 
@@ -333,9 +335,9 @@ Donde * * * * * significa cada minuto de cada hora de cada día de cada mes y ca
 
 ➤ Nos pide la contraseña de encriptación.
 
-<img width="632" alt="" src="img/">
+<img width="632" alt="" src="img/VirtualBox_born2beroot_13_10_2024_18_55_04.png">
 
-➤ Debemos introducir el usuario y contraseña que hemos creado. En mi caso el usuario es ```gemartin``` y la contraseña ```Hola42spain```.
+➤ Debemos introducir el usuario y contraseña que hemos creado. Usuario **frromero** y la contraseña **42Madrid13/12**
 
 <img width="798" alt="Captura de pantalla 2022-07-13 a las 20 48 38" src="https://user-images.githubusercontent.com/66915274/178808994-664025ac-36df-4332-8e44-505ecd2ca305.png">
 
