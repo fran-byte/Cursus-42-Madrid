@@ -10,102 +10,102 @@
 
 ## 2- Instalación VM de Debian
 
-2.1 Abrirmos VirtualBox y clikeamos en **Nueva**
+1. Abrirmos VirtualBox y clikeamos en **Nueva**
 
 <img width="632" alt="" src="img/añadir.jpg">
 
-2 Pondremos nombre de nuestra máquina y ubicación, debe de ir la carpeta **sgoinfre**, para no quedaremos sin espacio.
+2. Pondremos nombre de nuestra máquina y ubicación, debe de ir la carpeta **sgoinfre**, para no quedaremos sin espacio.
 
 <img width="632" alt="" src="img/nameOS.jpg">
 
-3 Seleccionamos la cantidad de memoria RAM que reservaremos para la máquina.
+3. Seleccionamos la cantidad de memoria RAM que reservaremos para la máquina.
 
 <img width="632" alt="" src="img/tamaño.jpg">
 
-4 **Disco duro**, seleccionamos la segunda opción para así crear un disco duro **virtual ahora**.
+4. **Disco duro**, seleccionamos la segunda opción para así crear un disco duro **virtual ahora**.
 
 <img width="632" alt="" src="img/ssd.jpg">
 
-5 Tipo de **archivo**, escogemos la primera opción **VDI**, ya que nos hemos descargado una imagen de disco.
+5. Tipo de **archivo**, escogemos la primera opción **VDI**, ya que nos hemos descargado una imagen de disco.
 
 <img width="632" alt="" src="img/archivo.jpg">
 
-6 Seleccionamos  **Reservado dinámicamente**ya que nos irá reservando memoria en la máquina real según la utilicemos hasta límite máximo disponible en la VM.
+6. Seleccionamos  **Reservado dinámicamente**ya que nos irá reservando memoria en la máquina real según la utilicemos hasta límite máximo disponible en la VM.
 
 <img width="632" alt="" src="img/reserva.jpg">
 
-7 Después de elegir la cantidad de memoria recomendada **12 GB** o **30 Gb** si hacemos bonus, y le damos a **crear**.
+7. Después de elegir la cantidad de memoria recomendada **12 GB** o **30 Gb** si hacemos bonus, y le damos a **crear**.
 
 <img width="632" alt="" src="img/crear.jpg">
 
-8 Ahora nos vamos a **Configuración** / **Almacenamiento** / **Controlador IDE** / **Vacío** y nos vamos a **unidad óptica** / y sobre **IDE secundario maestro** clickeamos en el icono del **disco** y elegimos **Seleccionar un archivo de disco**...
+8. Ahora nos vamos a **Configuración** / **Almacenamiento** / **Controlador IDE** / **Vacío** y nos vamos a **unidad óptica** / y sobre **IDE secundario maestro** clickeamos en el icono del **disco** y elegimos **Seleccionar un archivo de disco**...
 
 <img width="100" alt="" src="img/conf.jpg">
 
 <img width="632" alt="" src="img/archdisco.jpg">
 
-9 Seleccionaremos la ISO que tenemos y le damos a **Abrir** / **Aceptar**.
+9. Seleccionaremos la ISO que tenemos y le damos a **Abrir** / **Aceptar**.
 
-10 Ya podemos **Iniciar** nuestra máquina virtual.
+10. Ya podemos **Iniciar** nuestra máquina virtual.
 
 <img width="83" alt="" src="img/inicia.jpg">
 
 
 ## 3- Instalación Debian
 
-1 Versión sin interfaz gráfica **Install**, (indicado por el subject)
+1. Versión sin interfaz gráfica **Install**, (indicado por el subject)
 
 <img width="632" alt="" src="img/installDebian.jpg">
 
-2 Seleción de idioma que usaremos para instalar y el predeterminado de nuestro sistema **English**.
+2. Seleción de idioma que usaremos para instalar y el predeterminado de nuestro sistema **English**.
 
 <img width="632" alt="" src="img/idioma.jpg">
 
-3 Introducimos el País, territorio o zona. para colocar España nos vamos a **Other** / **Europe** / **Spain**.
+3. Introducimos el País, territorio o zona. para colocar España nos vamos a **Other** / **Europe** / **Spain**.
 
 <img width="632" alt="" src="img/location.jpg">
 
-4 Combinación lenguaje / país **Configure locales** seleccionamos **United States**.
+4. Combinación lenguaje / país **Configure locales** seleccionamos **United States**.
 
 <img width="632" alt="" src="img/locat.jpg">
 
-5 Debemos seleccionar **American English** en configuración de teclado, si no habrá problemas de teclas mal enlazadas.
+5. Debemos seleccionar **American English** en configuración de teclado, si no habrá problemas de teclas mal enlazadas.
 
 <img width="632" alt="" src="img/keyb.jpg">
 
-6 Nombre de **Host Name** de la máquina, será tu login seguido de 42.
+6. Nombre de **Host Name** de la máquina, será tu login seguido de 42.
 
 <img width="632" alt="" src="img/host.jpg">
 
-7 **Domain name** apartado que dejaremos vacío, en el subject no menciona rellenarl, y le damos a continuar .
+7. **Domain name** apartado que dejaremos vacío, en el subject no menciona rellenarl, y le damos a continuar .
 
-8 Nuestra contraseña de la cuenta de administración del sistema. **Apuntala**, la usaremos. Asegurate que la has escrito correctamente, tabula hasta la opción **Show Password in Clear** dale a la barra espaciadora y podrás ver tu clave.
+8. Nuestra contraseña de la cuenta de administración del sistema. **Apuntala**, la usaremos. Asegurate que la has escrito correctamente, tabula hasta la opción **Show Password in Clear** dale a la barra espaciadora y podrás ver tu clave.
 
 <img width="632" alt="" src="img/pass.jpg">
 
-9 Repetimos el proceso de nuevo.
+9. Repetimos el proceso de nuevo.
 
-10 Nombre de nuestro nuevo usuario. tenemos que crear un usuario adicional como menciona el subject y no debe de ser el root con nuestro login, así que llamaremos **frromero** al nuevo usuario, y nos lo vuelve a pedir de nuevo.
+10. Nombre de nuestro nuevo usuario. tenemos que crear un usuario adicional como menciona el subject y no debe de ser el root con nuestro login, así que llamaremos **frromero** al nuevo usuario, y nos lo vuelve a pedir de nuevo.
 
 <img width="632" alt="" src="img/user.jpg">
 
-11 Introduciremos la contraseña de nuestro nuevo usuario. repitiendolo dos veces el proceso, es importante que la guardes por que la utilizaremos.
+11. Introduciremos la contraseña de nuestro nuevo usuario. repitiendolo dos veces el proceso, es importante que la guardes por que la utilizaremos.
 
 <img width="632" alt="" src="img/pass.jpg">
 
-13 Colocamos la hora de nuestra localización.
+13. Colocamos la hora de nuestra localización.
 
 <img width="632" alt="" src="img/hora.jpg">
 
-14 Selecionamos la tercera opción **Guied - use entire disk and set up encrypted LVM**, el subject nos comenta que deben ser particiones cifradas, **Manual** para el bonus (pero no te sirve este tutorial)
+14. Selecionamos la tercera opción **Guied - use entire disk and set up encrypted LVM**, el subject nos comenta que deben ser particiones cifradas, **Manual** para el bonus (pero no te sirve este tutorial)
 
 <img width="632" alt="" src="img/hora.jpg">
 
-16 Seleccionamos el disco en el que queremos hacer el particionado (Solo debe haber un disco).
+16. Seleccionamos el disco en el que queremos hacer el particionado (Solo debe haber un disco).
 
 <img width="632" alt="" src="">
 
-17 Una vez hayamos escogido el disco deberemos hacer el particionado tal y como nos piden. Para realizarlo adecuadamente debemos seleccionar la segunda opción ```Separate /home partition```.
+17. Una vez hayamos escogido el disco deberemos hacer el particionado tal y como nos piden. Para realizarlo adecuadamente debemos seleccionar la segunda opción ```Separate /home partition```.
 
 <img width="632" alt="Screen Shot 2023-03-08 at 1 44 16 PM" src="https://user-images.githubusercontent.com/66915274/223716446-9ffb6f66-1ad3-4bfe-81ce-1f297bed0ede.png">
 
