@@ -56,7 +56,7 @@
 
 <img width="632" alt="" src="img/tipoarchivo.png">
 
-6. Seleccionamos  **Reservado dinámicamente**ya que nos irá reservando memoria en la máquina real según la utilicemos hasta límite máximo disponible en la VM.
+6. Seleccionamos  **Reservado dinámicamente** ya que nos irá reservando memoria en la máquina real según la utilicemos hasta límite máximo disponible en la VM.
 
 <img width="632" alt="" src="img/unidadfisica.png">
 
