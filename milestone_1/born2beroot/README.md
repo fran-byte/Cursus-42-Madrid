@@ -119,7 +119,7 @@
 
 18. Otra contraseña, ahora será la frase de encriptación. Repites proceso, y anótala la usaremos después.
 
-<img width="632" alt="img/pass3.jpg" src="">
+<img width="632" alt="" src="img/pass3.jpg">
 
 20. En este paso debemos introducir la cantidad de volumen que usaremos para la partición guiada. Debemos introducir ```max``` o el número de tamaño máximo disponible en mi caso es ```12.4 GB```.
 
