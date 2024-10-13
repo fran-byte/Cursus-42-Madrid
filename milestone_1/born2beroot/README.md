@@ -77,13 +77,13 @@
 
 <img width="632" alt="" src="img/host.jpg">
 
-9 ◦ Este apartado lo dejaremos vacío, ya que el subject no mencionada nada de ```Domain name```.
+7 ◦ **Domain name** apartado que dejaremos vacío, en el subject no menciona rellenarl, y le damos a continuar .
 
-<img width="792" alt="Captura de pantalla 2022-07-13 a las 19 20 29" src="https://user-images.githubusercontent.com/66915274/178793113-b0934aac-fac4-4844-8412-aca124038fd0.png">
 
-10 ◦ Debemos introducir una contraseña para la cuenta de administración del sistema. Importante apuntarla o hacer una foto, ya que le daremos uso. Si quieres ver la contraseña para asegurarte de que la has escrito correctamente debes tabular hasta llegar a la opción ```Show Password in Clear``` debes darle a la barra espaciadora y se mostrará la clave.
 
-<img width="760" alt="Screen Shot 2022-11-18 at 2 32 55 PM" src="https://user-images.githubusercontent.com/66915274/202716754-cf30a8b0-0f3b-4aca-803e-57416a1667fa.png">
+8 ◦ Nuestra contraseña de la cuenta de administración del sistema. **Apuntala**, la usaremos. Asegurate que la has escrito correctamente, tabula hasta la opción **Show Password in Clear** dale a la barra espaciadora y podrás ver tu clave.
+
+<img width="632" alt="" src="">
 
 11 ◦ Repetimos el proceso de nuevo para comprobar que no la hayamos escrito mal.
 
