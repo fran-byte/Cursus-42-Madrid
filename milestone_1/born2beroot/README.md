@@ -125,49 +125,49 @@
 
 <img width="632" alt="" src="img/12gb.jpg">
 
-20. Para finalizar la partición y escribir los cambios en el disco le daremos a la opción ```Finish partitioning and write changes to disk```.
+20. Finalizamos y escribimos los cambios, selecionamos **Finish partitioning and write changes to disk**.
 
-<img width="789" alt="Screen Shot 2023-03-08 at 1 46 17 PM" src="https://user-images.githubusercontent.com/66915274/223716909-c20cea01-950f-49cd-9ce6-99ec0eab0ea4.png">
+<img width="632" alt="" src="img/fin.jpg">
 
-23 Seleccionamos la opción ```Yes``` para continuar y confirmar que no queremos hacer más cambios en el disco.
+21. Seleccionamos la opción ```Yes``` para continuar y confirmar que no queremos hacer más cambios en el disco.
 
-<img width="770" alt="Screen Shot 2023-03-08 at 1 46 52 PM" src="https://user-images.githubusercontent.com/66915274/223716940-b2e29ee7-3c98-434e-bccd-ac21d72eda2d.png">
+<img width="632" alt="" src="">
 
-24 Seleccionamos la opción ```No```, ya que no necesitamos paquetes adicionales.
+22. Seleccionamos la opción ```No```, ya que no necesitamos paquetes adicionales.
 
-<img width="770" alt="Captura de pantalla 2022-07-13 a las 20 05 42" src="https://user-images.githubusercontent.com/66915274/178801099-2dda24f5-0d46-4184-8c44-a8fe0bf46527.png">
+<img width="632" alt="" src="">
 
-25 Escogemos nuestro País.
+23. Escogemos nuestro País.
 
-<img width="756" alt="Captura de pantalla 2022-07-13 a las 20 14 23" src="https://user-images.githubusercontent.com/66915274/178802653-d9e8504a-b60b-4441-8ee3-8d48ca4a6bf0.png">
+<img width="632" alt="" src="">
 
-26 Escogemos ```deb.debian.org```, ya que es lo que recomienda Debian.
+24. Escogemos ```deb.debian.org```, ya que es lo que recomienda Debian.
 
-<img width="792" alt="Captura de pantalla 2022-07-13 a las 20 15 00" src="https://user-images.githubusercontent.com/66915274/178802772-4f67cd99-60d5-4439-8502-317e81e07d70.png">
+<img width="632" alt="" src="">
 
 27 Esta opción la dejaremos vacía y le daremos ```Continue```.
 
-<img width="797" alt="Captura de pantalla 2022-07-13 a las 20 17 24" src="https://user-images.githubusercontent.com/66915274/178803208-2969acae-3fa7-423e-8a3c-bb7c76eff824.png">
+<img width="632" alt="" src="">
 
 28 Seleccionamos la opcion ```No```, ya que no queremos que los developers vean nuestras estadísticas aunque sean anónimas.
 
-<img width="796" alt="Captura de pantalla 2022-07-13 a las 20 21 54" src="https://user-images.githubusercontent.com/66915274/178803926-a4efbc70-f3e2-4e6c-9809-9152478d8237.png">
+<img width="632" alt="" src="">
 
 29 Quitaremos todas las opciones de software (con la barra espaciadora) y le daremos a ```Continue```.
 
-<img width="797" alt="Captura de pantalla 2022-07-13 a las 20 24 17" src="https://user-images.githubusercontent.com/66915274/178804377-e775b89e-93d4-482f-a4d0-0ef126f47719.png">
+<img width="632" alt="" src="">
 
 30 Seleccionaremos ```Yes``` para instalar [GRUB boot](https://es.wikipedia.org/wiki/GNU_GRUB) en el disco duro.
 
-<img width="792" alt="Captura de pantalla 2022-07-13 a las 20 26 24" src="https://user-images.githubusercontent.com/66915274/178804771-ba16e0b7-9f06-4c5b-9451-0bfd65efd2bb.png">
+<img width="632" alt="" src="">
 
 31 Escogeremos el dispositivo para la instalación del cargador de arranque ```/dev/sda (ata_VBOX_HARDDISK)```.
 
-<img width="792" alt="Captura de pantalla 2022-07-13 a las 20 35 46" src="https://user-images.githubusercontent.com/66915274/178806441-f1bf3159-4e09-4c9a-9102-b3261c9000d8.png">
+<img width="632" alt="" src="">
 
 32 Le daremos a ```Continue``` para finalizar la instalación.
 
-<img width="794" alt="Captura de pantalla 2022-07-13 a las 20 39 30" src="https://user-images.githubusercontent.com/66915274/178807102-e2a9722e-791f-48a0-ae35-b05b36a37ed2.png">
+<img width="632" alt="" src="">
 
 ## 4 Configuración de la máquina virtual ⚙️
 
