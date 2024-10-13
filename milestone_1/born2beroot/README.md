@@ -1,6 +1,6 @@
 # Born2BeRoot en Debian
 
-# Índice
+# Tutorial
 
 - [Born2BeRoot en Debian](#born2beroot-en-debian)
 
