@@ -1,6 +1,6 @@
 # Born2BeRoot en Debian
 
-# Tutorial (Solo Parte Obligatoria)
+# Tutorial  (Solamente Parte Obligatoria)
 
 ## 1- Descargar ISO de Debian e instalar Virtual Box
 
