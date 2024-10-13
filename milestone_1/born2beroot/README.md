@@ -7,7 +7,7 @@
 - Una máquina virtual es una máquina que se encuentra dentro de una máquina anfitriona.
 - Se comportará de la misma manera que cualquier otra máquina; tiene un sistema operativo y algunas aplicaciones.
 
-Existen varias ventajas de tener una máquina virtual:
+- Existen varias ventajas de tener una máquina virtual:
 
 	- Económica
 	- Ahorro de espacio físico (almacenamiento)
@@ -23,11 +23,11 @@ Existen varias ventajas de tener una máquina virtual:
 
 - Si colocas tu máquina virtual en el servidor **sgoinfre**, puedes cambiar de computadora durante tu proyecto. Si la colocas en la carpeta **goinfre**, tienes que quedarte en la misma computadora todo el tiempo.
 
-## 1- Descargando ISO de Debian e instalar Virtual Box
+## 1- Descargando ISO de Debian e instalando Virtual Box
 
 - Crearemos una máquina virtual vacía. Es como si estuvieras configurando una computadora desde cero.
 
-Lins de descarga:
+- Lins de descarga:
 
 :point_right: [Click](https://www.debian.org/distrib/index.es.html) URL  ISO Debian
 
@@ -78,7 +78,7 @@ Lins de descarga:
 
 ## 3- Instalación Debian en nuestra VM
 
-1. Versión sin interfaz gráfica **Install**, (indicado por el subject)
+1. Versión **SIN** interfaz gráfica **Install**, (indicado por el subject)
 
 <img width="632" alt="" src="img/installDebian.jpg">
 
