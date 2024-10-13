@@ -107,11 +107,11 @@
 
 17. **Particiones**, seleccionar la segunda opción **Separate /home partition**.
 
-<img width="632" alt="" src="">
+<img width="632" alt="" src="img/separada.jpg">
 
-18 Escogemos la opción ```Yes``` para que así se escriban los cambios en el disco y podamos configurar el gestor de volúmenes lógicos (LVM).
+18. Validamos **Yes**``` para guardar los cambios en el disco y configurar el gestor de volúmenes lógicos (LVM).
 
-<img width="777" alt="Captura de pantalla 2022-07-13 a las 19 44 30" src="https://user-images.githubusercontent.com/66915274/178797258-8c34bc31-16a7-4aef-8406-cecc21fdf028.png">
+<img width="632" alt="" src="img/guardar.jpg">
 
 19 Le damos a Cancel, ya que el borrado de datos en el disco no es necesario.
 
