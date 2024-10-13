@@ -170,11 +170,11 @@ GNU GRUB (GNU GRand Unified Bootloader) es un cargador de arranque múltiple, de
 
 <img width="632" alt="" src="img/finish.jpg">
 
-## 4 Configuración de la máquina virtual ⚙️
+## 4 Configurando máquina virtual (VM)
 
-➤ Lo primero que debemos hacer es seleccionar ```Debian GNU/Linux```.
+➤ Seleccionamos **Debian GNU/Linux**.
 
-➤ Debemos introducir la contraseña de encriptación que utilizamos previamente. En mi caso es ```Hello42bcn```.
+➤ Nos pide la contraseña de encriptación.
 
 <img width="714" alt="Captura de pantalla 2022-07-13 a las 20 47 26" src="https://user-images.githubusercontent.com/66915274/178808699-f1024129-5f90-41d0-a9a8-4806f5bc114b.png">
 
