@@ -51,7 +51,7 @@
 <img width="83" alt="" src="img/inicia.jpg">
 
 
-## 3- Instalación Debian
+## 3- Instalación Debian en nuestra VM
 
 1. Versión sin interfaz gráfica **Install**, (indicado por el subject)
 
@@ -99,15 +99,15 @@
 
 14. Selecionamos la tercera opción **Guied - use entire disk and set up encrypted LVM**, el subject nos comenta que deben ser particiones cifradas, **Manual** para el bonus (pero no te sirve este tutorial)
 
-<img width="632" alt="" src="img/hora.jpg">
+<img width="632" alt="" src="img/particion.jpg">
 
-16. Seleccionamos el disco en el que queremos hacer el particionado (Solo debe haber un disco).
+16. Disco en el que queremos hacer el particionado (Debe de haber solo un disco).
+
+<img width="632" alt="" src="img/disk.jpg">
+
+17. **Particiones**, seleccionar la segunda opción **Separate /home partition**.
 
 <img width="632" alt="" src="">
-
-17. Una vez hayamos escogido el disco deberemos hacer el particionado tal y como nos piden. Para realizarlo adecuadamente debemos seleccionar la segunda opción ```Separate /home partition```.
-
-<img width="632" alt="Screen Shot 2023-03-08 at 1 44 16 PM" src="https://user-images.githubusercontent.com/66915274/223716446-9ffb6f66-1ad3-4bfe-81ce-1f297bed0ede.png">
 
 18 Escogemos la opción ```Yes``` para que así se escriban los cambios en el disco y podamos configurar el gestor de volúmenes lógicos (LVM).
 
