@@ -87,7 +87,7 @@
 
 10 ◦ Nombre de nuestro nuevo usuario. tenemos que crear un usuario adicional como menciona el subject y no debe de ser el root con nuestro login, así que llamaremos **frromero** al nuevo usuario.
 
-<img width="794" alt="Captura de pantalla 2022-07-13 a las 19 26 20" src="https://user-images.githubusercontent.com/66915274/178794178-901f7951-a978-458d-a925-4586026784f7.png">
+<img width="632" alt="" src="img/user.jpg">
 
 Volvemos a poner el nombre de usuario.
 
