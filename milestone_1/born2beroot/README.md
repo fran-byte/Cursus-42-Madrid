@@ -65,19 +65,17 @@
 
 <img width="632" alt="" src="img/location.jpg">
 
+4 ◦ Combinación lenguaje / país **Configure locales** seleccionamos **United States**.
 
+<img width="632" alt="" src="img/locat.jpg">
 
-6 ◦ Combinación lenguaje / país **Configure locales** seleccionamos **United States**.
+5 ◦ Debemos seleccionar **American English** en configuración de teclado, si no habrá problemas de teclas mal enlazadas.
 
-<img width="792" alt="" src="img/locat.jpg">
+<img width="632" alt="" src="img/keyb.jpg">
 
-7 ◦ Importante seleccionar ```American English``` como configuración de teclado, ya que si no tendremos las teclas mal enlazadas.
+6 ◦ Nombre de **Host Name** de la máquina, será tu login seguido de 42.
 
-<img width="793" alt="Captura de pantalla 2022-07-13 a las 19 02 21" src="https://user-images.githubusercontent.com/66915274/178790230-d2571d4f-a546-4b43-bd44-c6a591d92d72.png">
-
-8 ◦ En este paso debemos elegir el ```Host Name``` de la máquina, el cual debe ser tu login seguido de 42.
-
-<img width="792" alt="Captura de pantalla 2022-07-13 a las 19 17 23" src="https://user-images.githubusercontent.com/66915274/178792607-1cc585eb-ae32-4b2c-97fd-4fcf5bad4262.png">
+<img width="632" alt="" src="img/host.jpg">
 
 9 ◦ Este apartado lo dejaremos vacío, ya que el subject no mencionada nada de ```Domain name```.
 
