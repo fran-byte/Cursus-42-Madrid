@@ -2,6 +2,19 @@
 
 # Tutorial  (Solamente Parte Obligatoria)
 
+# Por qué trabajar sobre una máquina virtual (VM)
+
+- Una máquina virtual es una máquina que se encuentra dentro de una máquina anfitriona.
+- Se comportará de la misma manera que cualquier otra máquina; tiene un sistema operativo y algunas aplicaciones.
+
+Existen varias ventajas de tener una máquina virtual:
+
+	- Económica
+	- Ahorro de espacio físico (almacenamiento)
+	- Menor mantenimiento que una máquina física
+	- Respaldo de datos simplificado
+	- Mayor seguridad
+
 ## 1- Descargar ISO de Debian e instalar Virtual Box
 
 :point_right: [Click](https://www.debian.org/distrib/index.es.html) URL  ISO Debian
@@ -176,7 +189,7 @@ GNU GRUB (GNU GRand Unified Bootloader) es un cargador de arranque múltiple, de
 
 ➤ Nos pide la contraseña de encriptación.
 
-<img width="714" alt="Captura de pantalla 2022-07-13 a las 20 47 26" src="https://user-images.githubusercontent.com/66915274/178808699-f1024129-5f90-41d0-a9a8-4806f5bc114b.png">
+<img width="632" alt="" src="img/">
 
 ➤ Debemos introducir el usuario y contraseña que hemos creado. En mi caso el usuario es ```gemartin``` y la contraseña ```Hola42spain```.
 
