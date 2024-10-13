@@ -118,11 +118,11 @@ Puedes pensar en **LVM** (Logical Volume Manager) como "particiones dinámicas",
 
 1. Versión **SIN** interfaz gráfica **Install**, (indicado por el subject)
 
-<img width="632" alt="" src="img/VirtualBox_born2beroot_13_10_2024_18_13_14.png">
+<img width="632" alt="" src="img/1-install.png">
 
 2. Seleción de idioma que usaremos para instalar y el predeterminado de nuestro sistema **English**.
 
-<img width="632" alt="" src="img/VirtualBox_born2beroot_13_10_2024_18_13_14.png">
+<img width="632" alt="" src="img/178789949-4fe83ac8-23b8-4f82-a034-a6d5e81d4f17.png">
 
 3. Introducimos el País, territorio o zona. para colocar España nos vamos a **Other** / **Europe** / **Spain**.
 
@@ -144,7 +144,9 @@ Puedes pensar en **LVM** (Logical Volume Manager) como "particiones dinámicas",
 
 7. **Domain name** apartado que dejaremos vacío, en el subject no menciona rellenarlo, y le damos a continuar .
 
-8. Nuestra contraseña de la cuenta de administración del sistema. **Apúntala**, la usaremos. Asegurate que la has escrito correctamente, tabula hasta la opción **Show Password in Clear** dale a la barra espaciadora y podrás ver tu clave.
+<img width="632" alt="" src="img/VirtualBox_born2beroot_13_10_2024_18_16_30.png">
+
+1. Nuestra contraseña de la cuenta de administración del sistema. **Apúntala**, la usaremos. Asegurate que la has escrito correctamente, tabula hasta la opción **Show Password in Clear** dale a la barra espaciadora y podrás ver tu clave.
 
 <img width="632" alt="" src="img/VirtualBox_born2beroot_13_10_2024_18_20_29.png">
 
