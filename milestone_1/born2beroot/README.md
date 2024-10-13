@@ -347,6 +347,26 @@ Donde * * * * * significa cada minuto de cada hora de cada día de cada mes y ca
 
 ### 4.1 - Instalación de sudo y configuración de usuarios y grupos 👤
 
+- Si por algún motivo detectas algún error con tu etc/hosts
+  Puedes verificar y corrigir el archivo /etc/hosts
+
+Asegúrate de que el archivo /etc/hosts contenga la entrada correcta para el nombre del host. Haz lo siguiente:
+
+    Abre el archivo /etc/hosts para editarlo:
+
+    ```bash
+
+nano /etc/hosts
+
+Asegúrate de que haya una línea que se vea así:
+
+plaintext
+
+127.0.0.1   localhost
+127.0.1.1   frromero42
+
+```
+
 1 Para la instalación de sudo primero debemos estar en el usuario root, para ello pondremos ```Su``` en el terminal e introduciremos la contraseña, en mi caso es ```Hola42bcn```. Una vez hemos accedido al usuario root, debemos poner el comando ```apt install sudo``` para así instalar los paquetes necesarios.
 
 <img width="796" alt="Captura de pantalla 2022-07-14 a las 1 36 46" src="https://user-images.githubusercontent.com/66915274/178855273-fc76689c-224b-4368-b7b1-5d1954427aff.png">
