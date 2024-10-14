@@ -369,7 +369,7 @@ nano /etc/hosts
 
 1 Para la instalación de sudo primero debemos estar en el usuario root, para ello pondremos **Su** en el terminal e introduciremos la contraseña, en mi caso es **42Madrid13/12**. Una vez hemos accedido al usuario root, debemos poner el comando **apt install sudo** para así instalar los paquetes necesarios.
 
-<img width="796" alt="Captura de pantalla 2022-07-14 a las 1 36 46" src="https://user-images.githubusercontent.com/66915274/178855273-fc76689c-224b-4368-b7b1-5d1954427aff.png">
+<img width="796" alt="Captura de pantalla 2022-07-14 a las 1 36 46" src="img/">
 
 2 Debemos reiniciar la máquina para que se apliquen los cambios. Para ello haremos uso del comando **sudo reboot** y esperaremos a que se reinicie.
 
@@ -425,17 +425,15 @@ Para comprobar que se haya instalado correctamente haremos **sudo service ssh st
 
 3 Una vez terminada la instalación se han creado algunos ficheros que debemos configurar. Para ello utilizaremos [Nano](https://es.wikipedia.org/wiki/GNU_Nano), o si tú lo prefieres, otro editor de texto. El primer fichero que editaremos será **/etc/ssh/sshd_config**. Si no estas desde el usuario root no tendrás permisos de escritura, para ello haremos **su** y ponemos la contraseña para entrar al usuario root o si no quieres entrar en el usuario root, ponemos sudo al principio del comando **sudo nano /etc/ssh/sshd_config**.
 
-<img width="497" alt="Captura de pantalla 2022-07-14 a las 3 24 21" src="https://user-images.githubusercontent.com/66915274/178867150-273c75c1-c935-45f0-a551-1a115d3f6f6a.png">
+<img width="497" alt="Captura de pantalla 2022-07-14 a las 3 24 21" src="img/editconfssh.png">
 
 4 Los **#** al comienzo de una línea significan que está comentada, las líneas que vayamos a modificar deberás quitarle el comentario. Una vez estemos editando el fichero deberemos modificar las siguientes líneas:
 
 ➤ #Port 22 -> Port 4242
 
-<img width="807" alt="Captura de pantalla 2022-07-14 a las 3 31 04" src="https://user-images.githubusercontent.com/66915274/178867929-0f8be11e-d0ca-4445-af05-a693d01411bd.png">
-
 ➤ #PermitRootLogin prohibit-password -> PermitRootLogin no
 
-<img width="798" alt="Captura de pantalla 2022-07-14 a las 3 34 13" src="https://user-images.githubusercontent.com/66915274/178868266-fc6d6684-8196-4021-b884-a047a443a3ec.png">
+<img width="632" alt="" src="img/editportpass.png">
 
 Una vez hayamos modificado esas líneas debemos guardar los cambios realizados sobre el fichero y dejar de editarlo.
 
