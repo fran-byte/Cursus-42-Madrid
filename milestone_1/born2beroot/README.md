@@ -469,11 +469,17 @@ Para comprobar que se haya instalado correctamente haremos **sudo service ssh st
 ## DESGLOSANDO LOS COMANDOS
 
 Defaults  passwd_tries=3 (nº de reintentos)
+
 Defaults  badpass_message="Password entry failure!"
+
 Defaults  logfile="/var/log/sudo/sudo_config" (archivos de registro de comandos sudo lanzados)
+
 Defaults  log_input, log_output (comandos tanto imput como output quedarán registrados en el siguiente directorio)
+
 Defaults  iolog_dir="/var/log/sudo"
+
 Defaults  requiretty  (activar modo TTY)
+
 Defaults  secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin  (restringir los directorios utilizables por sudo)
 
 <img width="802" alt="Captura de pantalla 2022-07-16 a las 2 04 56" src="https://user-images.githubusercontent.com/66915274/179326915-b374f679-fa2e-4e02-8b38-cdb53c6354a6.png">
