@@ -448,43 +448,37 @@ Para comprobar que se haya instalado correctamente haremos **sudo service ssh st
 
 4.  Y lo comprobaremos con el comando **sudo ufw status**.
 
-<img width="575" alt="" src="img/permitirpuerto.png">
+<img width="632" alt="" src="img/permitirpuerto.png">
 
-### 4-4 Configurar contraseña fuerte para sudo
+### 4-4 Configurando contraseña fuerte para sudo
 
-1 Crearemos un fichero en la ruta /etc/sudoers.d/ a mi fichero yo le he decidido llamar sudo_config, ya que en ese fichero se almacenará la configuración de la contraseña. El comando exacto para crear el fichero es **touch /etc/sudoers.d/sudo_config**.
+1. Crearemos un fichero en la ruta **/etc/sudoers.d/** le pondremos de nombre sudo_config, almacenará la configuración de la contraseña. lo crearemos con **touch /etc/sudoers.d/sudo_config**.
 
-<img width="511" alt="Captura de pantalla 2022-07-14 a las 22 00 40" src="https://user-images.githubusercontent.com/66915274/179072822-2f86bd8b-216e-45e4-a15b-8fe3a49149ff.png">
+<img width="632" alt="" src="img/sudoconfig.png">
 
-2 Debemos crear el directorio sudo en la ruta /var/log porque cada comando que ejecutemos con sudo, tanto el input como el output, debe quedar almacenado en ese directorio. Para crearlo utilizaremos el comando **mkdir /var/log/sudo**.
+2. Hay que crear el directorio sudo en la ruta /var/log yºa que cada comando que ejecutemos con sudo, tanto el input como el output, debe quedar almacenado en ese directorio. **mkdir /var/log/sudo**.
 
-<img width="502" alt="Captura de pantalla 2022-07-14 a las 21 56 53" src="https://user-images.githubusercontent.com/66915274/179072210-ad99e50d-fa57-494b-999d-3a80dd0f7849.png">
+<img width="632" alt="" src="img/dirsudo.png">
 
-3 Debemos editar el fichero creado en el paso 1. Como he comentado anteriormente, puedes utilizar el editor que más te guste, pero yo haré uso de nano. Comando para editar el fichero:  **nano /etc/sudoers.d/sudo_config**.
+3. Editaremos el fichero de configuracion de sudo con  **nano /etc/sudoers.d/sudo_config**.
 
-<img width="502" alt="Captura de pantalla 2022-07-14 a las 22 04 10" src="https://user-images.githubusercontent.com/66915274/179073389-5b2a9c16-811c-4133-87c6-479e770c880b.png">
+4. Una vez estamos editando el fichero deberemos introducir los siguientes comandos para cumplir todos los requisitos que pide el subject.
 
-4 Una vez estamos editando el fichero deberemos introducir los siguientes comandos para cumplir todos los requisitos que pide el subject.
+<img width="632" alt="" src="img/fileconfgsudo.png">
 
-```
-Defaults  passwd_tries=3
-Defaults  badpass_message="Mensaje de error personalizado"
-Defaults  logfile="/var/log/sudo/sudo_config"
-Defaults  log_input, log_output
+## DESGLOSANDO LOS COMANDOS
+
+Defaults  passwd_tries=3 (nº de reintentos)
+Defaults  badpass_message="Password entry failure!"
+Defaults  logfile="/var/log/sudo/sudo_config" (archivos de registro de comandos sudo lanzados)
+Defaults  log_input, log_output (comandos tanto imput como output quedarán registrados en el siguiente directorio)
 Defaults  iolog_dir="/var/log/sudo"
-Defaults  requiretty
-Defaults  secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"
-```
-
-➤ Como debería verse el fichero.
-
-<img width="1202" alt="Captura de pantalla 2022-07-16 a las 2 03 45" src="https://user-images.githubusercontent.com/66915274/179326003-1fd67295-4be2-47bd-98fc-d5821f5f1c4d.png">
-
-🤔 <b>Qué hace cada comando❓ </b>
+Defaults  requiretty  (activar modo TTY)
+Defaults  secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin  (restringir los directorios utilizables por sudo)
 
 <img width="802" alt="Captura de pantalla 2022-07-16 a las 2 04 56" src="https://user-images.githubusercontent.com/66915274/179326915-b374f679-fa2e-4e02-8b38-cdb53c6354a6.png">
 
-### 4-5 Configuración de política de contraseñas fuerte 🔑
+### 4-5 Configuración de política de contraseñas fuerte
 
 1 El primer paso será editar el fichero login.defs.
 
@@ -572,19 +566,19 @@ Una vez aplicados los cambios asi se deberia ver:
 
 ### 4-6 Conectarse vía SSH 🗣
 
-1 Para conectarnos por SSH debemos cerrar la máquina, abrir VirtualBox y darle a configuración.
+1. Para conectarnos por SSH debemos cerrar la máquina, abrir VirtualBox y darle a configuración.
 
 <img width="832" alt="Captura de pantalla 2022-07-18 a las 10 15 13" src="https://user-images.githubusercontent.com/66915274/179470948-d9a863ef-f1a3-41fb-a103-25378064e747.png">
 
-2 Una vez en configuración debemos pinchar sobre el apartado de **Red**, pincharemos sobre **Avanzadas** para que así nos muestre más opciones y le daremos a **Reenvío de puertos**.
+2. Una vez en configuración debemos pinchar sobre el apartado de **Red**, pincharemos sobre **Avanzadas** para que así nos muestre más opciones y le daremos a **Reenvío de puertos**.
 
 <img width="684" alt="Captura de pantalla 2022-07-18 a las 10 18 32" src="https://user-images.githubusercontent.com/66915274/179471690-cfbdbf4b-ab93-4b12-9504-2482712652a3.png">
 
-3 Pincharemos sobre el siguiente emoticono para agregar una regla de reenvío.
+3. Pincharemos sobre el siguiente emoticono para agregar una regla de reenvío.
 
 <img width="585" alt="Captura de pantalla 2022-07-18 a las 10 21 24" src="https://user-images.githubusercontent.com/66915274/179471855-913a684d-c7b0-43e2-9e01-d2c954fe75a4.png">
 
-4 Por último, agregaremos el puerto **4242** al anfitrión y al invitado. Las IP's no son necesarias. Pincharemos sobre el botón de aceptar para que así se apliquen los cambios.
+4. Por último, agregaremos el puerto **4242** al anfitrión y al invitado. Las IP's no son necesarias. Pincharemos sobre el botón de aceptar para que así se apliquen los cambios.
 
 <img width="588" alt="Captura de pantalla 2022-07-18 a las 10 22 29" src="https://user-images.githubusercontent.com/66915274/179472105-5942b3ec-5c29-4d49-a00e-67f9cde289e8.png">
 
@@ -594,18 +588,6 @@ Una vez aplicados los cambios asi se deberia ver:
 
 <img width="566" alt="Screen Shot 2022-10-27 at 12 40 04 AM" src="https://user-images.githubusercontent.com/66915274/198174814-c1873c62-41dd-4c1d-ad2d-f268b2da0e4c.png">
 
-Si quieres conectarte por SSH con VMware
-
-1 Daremos click derecho sobre nuestra máquina y escogeremos la opción **Connect to SSH**.
-
-<img width="621" alt="Screen Shot 2023-12-07 at 6 54 01 AM" src="https://github.com/gemartin99/Born2beroot-Tutorial/assets/66915274/5bab8bc8-d2c2-4e35-bb84-e2491ffc7767">
-
-2 Una vez se nos abra la siguiente pestaña debemos rellenar todos los campos. En port debemos poner **4242** para indicar que queremos conectarnos por ese puerto. Los siguientes campos son el username de tu máquina, en mi caso **frromero**, y la contraseña del usuario, en mi caso **42Madrid13/12**.
-
-![image](https://github.com/gemartin99/Born2beroot-Tutorial/assets/66915274/70645e71-e19f-4161-a077-cc239fb10b52)
-
-
-También podemos conectarnos mediante el terminal, pero debemos sustituir localhost por la IP de la máquina virtual. Quedaría algo así: **ssh frromero@10.11.250.100 -p 4242**. Revisa la IP de tu máquina virtual y sustitúyela por la que pongo de ejemplo.
 
 ## 5- Script
 
