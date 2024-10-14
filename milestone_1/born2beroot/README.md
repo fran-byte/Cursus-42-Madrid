@@ -344,7 +344,7 @@ Donde * * * * * significa cada minuto de cada hora de cada día de cada mes y ca
 
 ➤ Debemos introducir el usuario y contraseña que hemos creado. Usuario **frromero** y la contraseña **42Madrid13/12**
 
-<img width="632" alt="" src="img/VirtualBox_born2beroot_13_10_2024_20_40_09.png">
+<img width="632" alt="" src="img/VirtualBox_born2beroot_13_10_2024_23_09_08.png">
 
 ### Ya tenemos todo listo para empezar a configurar nuestra máquina virtual Debian❗️
 
@@ -367,45 +367,30 @@ nano /etc/hosts
 
 ```
 
-1 Para la instalación de sudo primero debemos estar en el usuario root, para ello pondremos **Su** en el terminal e introduciremos la contraseña, en mi caso es **42Madrid13/12**. Una vez hemos accedido al usuario root, debemos poner el comando **apt install sudo** para así instalar los paquetes necesarios.
+1. Instalando **sudo**, nos pasamos usuario root, ponemos **Su** en el terminal e introduciremos la contraseña, **42Madrid13/12**. Y ahora ponemos el comando **apt install sudo** para instalar los paquetes necesarios.
 
-<img width="796" alt="Captura de pantalla 2022-07-14 a las 1 36 46" src="img/">
+<img width="514" alt="" src="img/installsudopeque.png">
 
-2 Debemos reiniciar la máquina para que se apliquen los cambios. Para ello haremos uso del comando **sudo reboot** y esperaremos a que se reinicie.
+2. Reiniciamos la máquina para aplicar cambios **sudo reboot**.
 
-<img width="514" alt="Captura de pantalla 2022-07-14 a las 2 02 24" src="https://user-images.githubusercontent.com/66915274/178857108-a51988e1-084c-498c-86c6-98ab5a3b1305.png">
+<img width="514" alt="" src="img/sudoreboot.png">
 
-3 Una vez reiniciado debemos volver a introducir las contraseñas de cifrado y del usuario. Para verificar que hayamos instalado **sudo** correctamente entraremos de nuevo en el usuario root y pondremos el comando **sudo -V**, este comando además de mostrarnos la versión de sudo también mostrará los argumentos pasados para configurar cuando se creó sudo y los plugins que pueden mostrar información más detallada. (Opcional) ➤ Puesto que el output del comando es muy largo, si deseamos verlo completamente debemos redireccionar la salida del mismo a un fichero **sudo -V > file.txt** y luego editar el fichero **nano file.txt**. O poner **| more** después del comando.
+3. Ahora de nuevo introducimos contraseñas de cifrado y usuario. Verifcamos la instalación en tramos de nuevo como usuario root y ponemos **sudo -V**, además de mostrarnos la versión de sudo, mostrará los argumentos pasados para configurar cuando se creó sudo y los plugins que pueden mostrar información más detallada. **sudo -V | more** para ver todo el contenido.
 
-<img width="799" alt="Captura de pantalla 2022-07-14 a las 2 09 59" src="https://user-images.githubusercontent.com/66915274/178857742-96356272-abd6-44c4-a3e6-5e8b9f471146.png">
+4. en **su**  crearemos un usuario con nuestro login **sudo adduser login** como ya lo habiamos hemos creado la instalación nos debe aparecer que el usuario ya existe.
 
-4 Siguiendo en el usuario root crearemos un usuario con nuestro login con el comando **sudo adduser login** como nosotros ya hemos creado el usuario en la instalación nos debe aparecer que el usuario ya existe.
+5. Ahora crearemos un nuevo grupo llamado **user42**. con **sudo addgroup user42**.
 
-<img width="509" alt="Captura de pantalla 2022-07-14 a las 2 15 11" src="https://user-images.githubusercontent.com/66915274/178858240-95ce2a2b-004a-4bcb-981a-7990c1cc4fdd.png">
+ <b>Qué es GID?</b> Es el identificador de grupo, es una abreviatura de Group ID.
 
-5 Ahora deberemos crear un nuevo grupo llamado **user42**. Para crearlo debemos hacer **sudo addgroup user42**.
+- verificado de la creación correcta de grupos: **getent group nombre_grupo** o en **cat /etc/group** y veremos todos los grupos y los usuarios que hay dentro de ellos.
 
-<img width="367" alt="Screen Shot 2022-10-26 at 6 30 52 PM" src="https://user-images.githubusercontent.com/66915274/198082677-d393243e-363a-4d1f-95d8-a6695336a47a.png">
+6. Con el comando **sudo adduser user group** incluiremos al usuario en el grupo.
+   Debemos incluir al usuario en los grupos **sudo** y **user42**.
 
-🧠 <b>Qué es GID❓</b> Es el identificador de grupo, es una abreviatura de Group 🆔.
+7. Después de incluirlos dentro de los grupos podemos ejecutar el comando **getent group nombre_grupo** o editar **nano /etc/group** y en los grupos **sudo** y **user42** deberá aparecer nuestro usuario.
 
-🤔 <b> Se ha creado correctamente el grupo? </b> Lo cierto es que sí, ya que no ha habido ningún mensaje de error, aun así podemos comprobar si se ha creado con el comando **getent group nombre_grupo** o también podemos hacer **cat /etc/group** y podremos ver todos los grupos y los usuarios que hay dentro de ellos.
-
-6 Con el comando **sudo adduser user group** incluiremos al usuario en el grupo. Debemos incluir al usuario en los grupos **sudo** y **user42**.
-
-<img width="422" alt="Screen Shot 2022-10-26 at 6 32 30 PM" src="https://user-images.githubusercontent.com/66915274/198083019-c5a442bb-c625-45ce-84e1-bcbca3a7dba5.png">
-
-<img width="404" alt="Screen Shot 2022-10-26 at 6 34 09 PM" src="https://user-images.githubusercontent.com/66915274/198083377-bd4162c6-317b-474f-8bc4-e542be4dcfde.png">
-
-7 Una vez los hayamos introducido para chequear que todo se haya hecho correctamente podemos ejecutar el comando **getent group nombre_grupo** o también podemos editar el fichero /etc/group **nano /etc/group** y en los grupos **sudo** y **user42** deberá aparecer nuestro usuario.
-
-<img width="328" alt="Screen Shot 2022-10-26 at 6 35 50 PM" src="https://user-images.githubusercontent.com/66915274/198083739-ad16e388-69c3-41d1-a061-e55dd66b0d14.png">
-
-<img width="151" alt="Screen Shot 2022-10-26 at 6 36 18 PM" src="https://user-images.githubusercontent.com/66915274/198083854-0fba5296-a49f-44cc-8427-59a692e69288.png">
-
-<img width="353" alt="Screen Shot 2022-10-26 at 6 39 22 PM" src="https://user-images.githubusercontent.com/66915274/198084464-f73352ee-ed21-478b-a44d-d86eb6d8a1cd.png">
-
-<img width="183" alt="Screen Shot 2022-10-26 at 6 38 25 PM" src="https://user-images.githubusercontent.com/66915274/198084311-45a50162-ff89-4e7d-a3c5-45e7048520a4.png">
+<img width="514" alt="" src="img/sudogroup.png">
 
 ### 4.2 - Instalación y configuración SSH 📶
 
