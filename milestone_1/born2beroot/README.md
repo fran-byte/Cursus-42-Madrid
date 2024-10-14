@@ -418,44 +418,37 @@ Para comprobar que se haya instalado correctamente haremos **sudo service ssh st
 
 <img width="632" alt="" src="img/editportpass.png">
 
-Una vez hayamos modificado esas líneas debemos guardar los cambios realizados sobre el fichero y dejar de editarlo.
+- Guardamos cambios.
 
-1. Ahora debemos editar el fichero **/etc/ssh/ssh_config**.
+5. Ahora editamos el fichero **/etc/ssh/ssh_config**.
 
-<img width="501" alt="Captura de pantalla 2022-07-14 a las 3 48 56" src="https://user-images.githubusercontent.com/66915274/178872582-8277e687-8ab7-4087-bd17-a71e5e86d5e6.png">
+- Editaremos la siguiente línea:
 
-Editaremos la siguiente línea:
+➤ #Port **22** a Port **4242**
 
-➤ #Port 22 -> Port 4242
+<img width="632" alt="" src="img/editsshconf.png">
 
-<img width="795" alt="Captura de pantalla 2022-07-14 a las 3 50 29" src="https://user-images.githubusercontent.com/66915274/178875013-1969c13f-9e43-4f2a-a037-f384a8e87a78.png">
+6. Reiniciamos el servicio ssh para actualizar los cambios **sudo service ssh restart** y revisaremos los cambios con  **sudo service ssh status** y veremos la escucha del servidor debe aparecer el Puerto **4242**.
 
-6. Por último, debemos reiniciar el servicio ssh para que así se actualicen las modificaciones que acabamos de realizar. Para ello debemos escribir el comando **sudo service ssh restart** y una vez reseteado miraremos el estado actual con **sudo service ssh status** y para confirmar que se hayan realizado los cambios en la escucha del servidor debe aparecer el Puerto 4242.
-
-<img width="713" alt="Captura de pantalla 2022-07-14 a las 3 56 56" src="https://user-images.githubusercontent.com/66915274/178880333-0e2ad7fd-674b-4b4f-b92a-25acbc36c8a5.png">
+<img width="632" alt="" src="img/verpuertos.png">
 
 
 ### 4-3 Instalación y configuración de UFW
 
-<b>Qué es [UFW](https://es.wikipedia.org/wiki/Uncomplicated_Firewall)❓</b> Es un [firewall](https://es.wikipedia.org/wiki/Cortafuegos_(inform%C3%A1tica)) el cual utiliza la línea de comandos para configurar las [iptables](https://es.wikipedia.org/wiki/Iptables) usando un pequeño número de comandos simples.
+- [UFW](https://es.wikipedia.org/wiki/Uncomplicated_Firewall) Es un [firewall](https://es.wikipedia.org/wiki/Cortafuegos_(inform%C3%A1tica)) el cual utiliza la línea de comandos para configurar las [iptables](https://es.wikipedia.org/wiki/Iptables) usando un pequeño número de comandos simples.
 
-1 Lo primero que debemos hacer el instalar UFW, para ello haremos uso del comando **sudo apt install ufw** acto seguido escribiremos una **y** para confirmar que deseamos instalarlo y esperaremos a que termine.
+1. Instalando **UFW**, con el  comando **sudo apt install ufw**
 
-<img width="771" alt="Captura de pantalla 2022-07-14 a las 19 28 55" src="https://user-images.githubusercontent.com/66915274/179045920-4a9aec64-b1d7-4785-89a1-4a299aae21a3.png">
+2. Lo habilitamos con el comando **sudo ufw enable** y veremos que el firewall está activo.
 
-<img width="802" alt="Captura de pantalla 2022-07-14 a las 19 29 25" src="https://user-images.githubusercontent.com/66915274/179045994-19cdf6e0-be61-454b-9adc-ba1f9c2dfd84.png">
+<img width="632" alt="" src="img/firewallenable.png">
 
-2 Una vez instalado debemos habilitarlo. Para ello debemos poner el siguiente comando **sudo ufw enable** y acto seguido nos debe indicar que el firewall está activo.
+3. Nuestro firewall tinen que permitir las conexiones por el puerto 4242. Lo haremos con el comando **sudo ufw allow 4242**.
 
-<img width="498" alt="Captura de pantalla 2022-07-14 a las 19 32 57" src="https://user-images.githubusercontent.com/66915274/179046565-307c042b-243e-4224-bcb2-d02859332352.png">
 
-3 Ahora lo que debemos hacer es que nuestro firewall permita las conexiones que se lleven a cabo mediante el puerto 4242. Lo haremos con el siguiente comando **sudo ufw allow 4242**.
+4.  Y lo comprobaremos con el comando **sudo ufw status**.
 
-<img width="514" alt="Captura de pantalla 2022-07-14 a las 19 34 12" src="https://user-images.githubusercontent.com/66915274/179046765-5277ec55-b8e4-4d4f-a617-a2a8758b80a8.png">
-
-4 Por último, comprobaremos que está todo correctamente configurado mirando el estado de nuestro cortafuegos, en donde ya debe aparecer como permitidas las conexiones mediante el puerto 4242. Para ver el estado daremos uso del comando **sudo ufw status**.
-
-<img width="575" alt="Captura de pantalla 2022-07-14 a las 19 38 37" src="https://user-images.githubusercontent.com/66915274/179047574-8073045c-6e78-4b6f-8487-cb0f490a2cd0.png">
+<img width="575" alt="" src="img/permitirpuerto.png">
 
 ### 4-4 Configurar contraseña fuerte para sudo
 
