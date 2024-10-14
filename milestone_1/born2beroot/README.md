@@ -346,16 +346,16 @@ Donde * * * * * significa cada minuto de cada hora de cada día de cada mes y ca
 
 <img width="632" alt="" src="img/VirtualBox_born2beroot_13_10_2024_23_09_08.png">
 
-### Ya tenemos todo listo para empezar a configurar nuestra máquina virtual Debian❗️
+### Ya tenemos todo listo para empezar a configurar nuestra máquina virtual Debian
 
-### 4.1 - Instalación de sudo y configuración de usuarios y grupos 👤
+### 4.1 - Instalación de sudo y configuración de usuarios y grupos
 
 - Si por algún motivo detectas algún error con tu etc/hosts
   Puedes verificar y corrigir el archivo /etc/hosts
 
-Asegúrate de que el archivo /etc/hosts contenga la entrada correcta para el nombre del host. Haz lo siguiente:
+- Asegúrate de que el archivo /etc/hosts contenga la entrada correcta para el nombre del host. Haz lo siguiente:
 
-Abre el archivo /etc/hosts para editarlo
+- Abre el archivo /etc/hosts para editarlo
 Asegúrate de que haya una línea que se vea así:
 
 ```bash
@@ -377,42 +377,40 @@ nano /etc/hosts
 
 3. Ahora de nuevo introducimos contraseñas de cifrado y usuario. Verifcamos la instalación en tramos de nuevo como usuario root y ponemos **sudo -V**, además de mostrarnos la versión de sudo, mostrará los argumentos pasados para configurar cuando se creó sudo y los plugins que pueden mostrar información más detallada. **sudo -V | more** para ver todo el contenido.
 
-4. en **su**  crearemos un usuario con nuestro login **sudo adduser login** como ya lo habiamos hemos creado la instalación nos debe aparecer que el usuario ya existe.
+4. Estando en super usuario: (**su**)  crearemos un usuario con nuestro login **sudo adduser login** como ya lo habiamos hemos creado la instalación nos debe aparecer que el usuario ya existe.
 
 5. Ahora crearemos un nuevo grupo llamado **user42**. con **sudo addgroup user42**.
 
- <b>Qué es GID?</b> Es el identificador de grupo, es una abreviatura de Group ID.
+ - <b>GID</b> identificador de grupo, abreviatura de Group ID.
 
-- verificado de la creación correcta de grupos: **getent group nombre_grupo** o en **cat /etc/group** y veremos todos los grupos y los usuarios que hay dentro de ellos.
+6. Verificado de la creación correcta de grupos: **getent group nombre_grupo** o en **cat /etc/group** y veremos todos los grupos y los usuarios que hay dentro de ellos.
 
-6. Con el comando **sudo adduser user group** incluiremos al usuario en el grupo.
+7. Con el comando **sudo adduser user group** incluiremos al usuario en el grupo.
    Debemos incluir al usuario en los grupos **sudo** y **user42**.
 
-7. Después de incluirlos dentro de los grupos podemos ejecutar el comando **getent group nombre_grupo** o editar **nano /etc/group** y en los grupos **sudo** y **user42** deberá aparecer nuestro usuario.
+8. Después de incluirlos dentro de los grupos podemos ejecutar el comando **getent group nombre_grupo** o editar **nano /etc/group** y en los grupos **sudo** y **user42** deberá aparecer nuestro usuario.
 
 <img width="514" alt="" src="img/sudogroup.png">
 
-### 4.2 - Instalación y configuración SSH 📶
+### 4.2 - SSH Instalación y configuración
 
-🧠 <b> Qué es SSH❓</b> Es el nombre de un protocolo y del programa que lo implementa cuya principal función es el acceso remoto a un servidor por medio de un canal seguro en el que toda la información está cifrada.
+- <b>Qué es SSH?</b> Nombre de un protocolo y programa que se encarga de dar acceso remoto a un servidor por un canal seguro donde la información va cifrada.
 
-1 Lo primero que haremos será hacer **sudo apt update** para actualizar los repositorios que definimos en el archivo /etc/apt/sources.list
+1. Actualizamos repositorios  **sudo apt update** definidos en el archivo /etc/apt/sources.list
 
-<img width="774" alt="Captura de pantalla 2022-07-14 a las 3 09 44" src="https://user-images.githubusercontent.com/66915274/178864173-aa5a08cf-8562-4484-a60a-3e1c7a533a28.png">
+2. Instalando la herramienta para este protocolo SSH, **OpenSSH**. Con el comando **sudo apt install openssh-server**.
 
-2 Acto seguido instalaremos la herramienta principal de conectividad para el inicio de sesión remoto con el protocolo SSH, esta herramienta es OpenSSH. Para instalarla debemos introducir el comando **sudo apt install openssh-server**. En el mensaje de confirmación ponemos **Y**, acto seguido esperaremos a que termine la instalación.
-
-<img width="772" alt="Captura de pantalla 2022-07-14 a las 3 14 52" src="https://user-images.githubusercontent.com/66915274/178865991-cdb90f12-ebd8-4583-bcbb-70f47c86abe6.png">
 
 Para comprobar que se haya instalado correctamente haremos **sudo service ssh status** y nos debe aparecer active.
 
-<img width="702" alt="Captura de pantalla 2022-07-14 a las 3 53 59" src="https://user-images.githubusercontent.com/66915274/178876938-7fd74214-15df-4759-bf8d-52b53a8f4251.png">
+<img width="702" alt="" src="img/sshstatus.png">
 
-3 Una vez terminada la instalación se han creado algunos ficheros que debemos configurar. Para ello utilizaremos [Nano](https://es.wikipedia.org/wiki/GNU_Nano), o si tú lo prefieres, otro editor de texto. El primer fichero que editaremos será **/etc/ssh/sshd_config**. Si no estas desde el usuario root no tendrás permisos de escritura, para ello haremos **su** y ponemos la contraseña para entrar al usuario root o si no quieres entrar en el usuario root, ponemos sudo al principio del comando **sudo nano /etc/ssh/sshd_config**.
+3. Despuésde la instalación hay ficheros que configurar. Utilizaremos [Nano](https://es.wikipedia.org/wiki/GNU_Nano),
+   - Primer fichero que editaremos será **nano /etc/ssh/sshd_config**. nos vamos a **su** para tener permisos de escritura, o **sudo nano /etc/ssh/sshd_config**
 
-<img width="497" alt="Captura de pantalla 2022-07-14 a las 3 24 21" src="img/editconfssh.png">
 
-4 Los **#** al comienzo de una línea significan que está comentada, las líneas que vayamos a modificar deberás quitarle el comentario. Una vez estemos editando el fichero deberemos modificar las siguientes líneas:
+4. Los comentarios de linea empiezan por **#**, las líneas a modificar hay que quitarle el comentario.
+   - Líneas a modificar:
 
 ➤ #Port 22 -> Port 4242
 
@@ -422,7 +420,7 @@ Para comprobar que se haya instalado correctamente haremos **sudo service ssh st
 
 Una vez hayamos modificado esas líneas debemos guardar los cambios realizados sobre el fichero y dejar de editarlo.
 
-5 Ahora debemos editar el fichero **/etc/ssh/ssh_config**.
+1. Ahora debemos editar el fichero **/etc/ssh/ssh_config**.
 
 <img width="501" alt="Captura de pantalla 2022-07-14 a las 3 48 56" src="https://user-images.githubusercontent.com/66915274/178872582-8277e687-8ab7-4087-bd17-a71e5e86d5e6.png">
 
@@ -432,7 +430,7 @@ Editaremos la siguiente línea:
 
 <img width="795" alt="Captura de pantalla 2022-07-14 a las 3 50 29" src="https://user-images.githubusercontent.com/66915274/178875013-1969c13f-9e43-4f2a-a037-f384a8e87a78.png">
 
-6 Por último, debemos reiniciar el servicio ssh para que así se actualicen las modificaciones que acabamos de realizar. Para ello debemos escribir el comando **sudo service ssh restart** y una vez reseteado miraremos el estado actual con **sudo service ssh status** y para confirmar que se hayan realizado los cambios en la escucha del servidor debe aparecer el Puerto 4242.
+6. Por último, debemos reiniciar el servicio ssh para que así se actualicen las modificaciones que acabamos de realizar. Para ello debemos escribir el comando **sudo service ssh restart** y una vez reseteado miraremos el estado actual con **sudo service ssh status** y para confirmar que se hayan realizado los cambios en la escucha del servidor debe aparecer el Puerto 4242.
 
 <img width="713" alt="Captura de pantalla 2022-07-14 a las 3 56 56" src="https://user-images.githubusercontent.com/66915274/178880333-0e2ad7fd-674b-4b4f-b92a-25acbc36c8a5.png">
 
