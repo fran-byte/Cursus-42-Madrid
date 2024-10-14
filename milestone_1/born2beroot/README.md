@@ -334,15 +334,17 @@ Donde * * * * * significa cada minuto de cada hora de cada día de cada mes y ca
 
 ➤ Una firma es un número identificador único para un disco duro u otro dispositivo de almacenamiento de datos. Un sistema operativo la utiliza para diferenciar entre los dispositivos de almacenamiento en tu computadora.
 
+# INICIANDO EL SISTEMA
+
 ➤ Seleccionamos **Debian GNU/Linux**.
 
 ➤ Nos pide la contraseña de encriptación.
 
-<img width="632" alt="" src="img/VirtualBox_born2beroot_13_10_2024_18_55_04.png">
+<img width="300" alt="" src="img/VirtualBox_born2beroot_13_10_2024_18_55_04.png">
 
 ➤ Debemos introducir el usuario y contraseña que hemos creado. Usuario **frromero** y la contraseña **42Madrid13/12**
 
-<img width="798" alt="Captura de pantalla 2022-07-13 a las 20 48 38" src="https://user-images.githubusercontent.com/66915274/178808994-664025ac-36df-4332-8e44-505ecd2ca305.png">
+<img width="632" alt="" src="img/VirtualBox_born2beroot_13_10_2024_20_40_09.png">
 
 ### Ya tenemos todo listo para empezar a configurar nuestra máquina virtual Debian❗️
 
@@ -549,11 +551,11 @@ reject_username
 difok=7
 enforce_for_root
 ```
-➤ Así debe ser la línea 
+➤ Así debe ser la línea
 
 <img width="1047" alt="Screen Shot 2023-01-03 at 7 41 57 PM" src="https://user-images.githubusercontent.com/66915274/210420896-8274b75b-86e4-4fba-9a14-ca838b61c2e6.png">
 
-➤ Así se debe ver en el fichero 
+➤ Así se debe ver en el fichero
 
 <img width="800" alt="Captura de pantalla 2022-07-16 a las 3 38 08" src="https://user-images.githubusercontent.com/66915274/179329787-1b718843-9272-43e4-8d92-8d83933cc938.png">
 
@@ -863,7 +865,7 @@ Esto es algo personal para cada uno, mi opinión: El propio subject explica que 
 
 Su objetivo es el de proporcionar un entorno de ejecución independiente de la plataforma de hardware y del sistema operativo, que oculte los detalles de la plataforma subyacente y permita que un programa se ejecute siempre de la misma forma sobre cualquier plataforma.
 
-### ▪️ Diferencias entre apt y aptitude 
+### ▪️ Diferencias entre apt y aptitude
 
 Aptitude es una versión mejorada de apt. APT es un administrador de paquetes de nivel inferior y aptitude es un administrador de paquetes de alto nivel. Otra gran diferencia es la funcionalidad que ofrecen ambas herramientas. Aptitude ofrece una mejor funcionalidad en comparación con apt-get. Ambos son capaces de proporcionar los medios necesarios para realizar la gestión de paquetes. Sin embargo, si se busca un enfoque con más características, debería ser, Aptitude.
 
