@@ -595,22 +595,80 @@ Esta es una parte muy importante del proyecto. Debes prestar atención en todo, 
 
 ### 5-1 Architecture
 
-Para poder ver la arquitectura del SO y su versión de kernel utilizaremos el comando **uname -a** ( "-a" == "--all" ) que básicamente printará toda la información, excepto si el tipo de procesador es desconocido o la plataforma de hardware.
+El comando `uname -a` muestra información completa sobre el sistema, y el argumento **`-a`** es equivalente a **`--all`**. Ambos muestran todos los detalles disponibles del sistema en una sola línea.
 
-<img width="715" alt="Screen Shot 2022-10-27 at 4 50 06 PM" src="https://user-images.githubusercontent.com/66915274/198322524-8c2d305f-bfe8-4e4a-bf31-6a883af71ad3.png">
+### Explicación de **`uname -a`**:
+El comando **`uname`** se usa para mostrar información sobre el sistema operativo y el hardware. La opción **`-a`** o **`--all`** incluye toda la información disponible.
+
+- **`-a`** o **`--all`**: Muestra toda la información disponible, que incluye:
+  - **Kernel name**: Nombre del núcleo (normalmente "Linux").
+  - **Node name**: Nombre del host (nombre de la máquina).
+  - **Kernel release**: Versión del núcleo del sistema operativo.
+  - **Kernel version**: Fecha y detalles de la compilación del núcleo.
+  - **Machine hardware name**: Tipo de hardware (como `x86_64`).
+  - **Processor type**: Tipo de procesador.
+  - **Hardware platform**: Plataforma de hardware.
+  - **Operating system**: Nombre del sistema operativo.
+
+```bash
+Linux frromero42 6.1.0-26-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.112-1 (2024-09-30) x86_64 GNU/Linux
+```
+
+### Detalle de la salida:
+- **`Linux`**: Nombre del kernel.
+- **`frromero42`**: Nombre del host.
+- **`6.1.0-26-amd64`**: Versión del kernel.
+- **`#1 SMP PREEMPT_DYNAMIC Debian 6.1.112-1 (2024-09-30)`**: Información adicional sobre el kernel (versión, compilación).
+- **`x86_64`**: Tipo de máquina (64 bits).
+- **`GNU/Linux`**: Sistema operativo.
 
 ### 5-2 Núcleos físicos
 
-Para poder mostrar el número de núcleos físicos haremos uso del fichero /proc/cpuinfo el cual  proporciona información acerca del procesador: su tipo, marca, modelo, rendimiento, etc. Usaremos el comando **grep "physical id" /proc/cpuinfo | wc -l** con el comando grep buscaremos dentro del fichero "physical id" y con wc -l contaremos las líneas del resultado de grep. Esto lo hacemos, ya que la manera de cuantificar los núcleos no es muy común. Si hay un procesador marcará 0 y si tiene más de un procesador, mostrará toda la información del procesador por separado, contando los procesadores usando la notación cero. De esta manera simplemente contaremos las líneas que hay, ya que es más cómodo cuantificarlo así.
 
-<img width="596" alt="Screen Shot 2022-10-27 at 4 50 49 PM" src="https://user-images.githubusercontent.com/66915274/198322799-4bf2131e-7fba-4c9e-8d1b-bb9cc1b89e76.png">
+
+```bash
+cpuf=$(grep "physical id" /proc/cpuinfo | wc -l)
+```
+
+1. **`/proc/cpuinfo`**:
+   - El archivo **`/proc/cpuinfo`** contiene información detallada sobre los procesadores del sistema.
+   - En particular, para cada núcleo físico de la CPU, aparece un campo llamado **"physical id"**, que identifica la CPU física a la que pertenece el núcleo.
+
+2. **`grep "physical id"`**:
+   - **`grep "physical id"`** busca todas las líneas en `/proc/cpuinfo` que contienen el texto **"physical id"**.
+   - Este campo aparece una vez por cada núcleo físico (o una vez por cada hilo, dependiendo del soporte de Hyper-Threading del sistema).
+
+3. **`wc -l`**:
+   - **`wc -l`** cuenta el número de líneas que contienen "physical id", lo que en este caso indica cuántos **núcleos físicos** o **CPUs físicas** están presentes en el sistema.
+
+### Resultado:
+- Si el sistema tiene múltiples núcleos físicos, o varios procesadores físicos, el comando devolverá un número que representa la cantidad de líneas con "physical id" (número de CPUs físicas o núcleos físicos).
+- El resultado se almacena en la variable `cpuf`.
 
 
 ### 5-3 Núcleos virtuales
 
-Para poder mostrar el número de núcleos virtuales es muy parecido al anterior. Haremos uso de nuevo del fichero /proc/cpuinfo , pero en este caso, utilizaremos el comando **grep processor /proc/cpuinfo | wc -l**. El uso es prácticamente el mismo al anterior, solo que en vez de contar las líneas de "physical id" lo haremos de processor. Lo hacemos así por el mismo motivo de antes, la manera de cuantificar marca 0 si hay un procesador.
+Este comando calcula el **número de CPUs virtuales (vCPU)** o **núcleos de procesamiento** en el sistema y almacena el resultado en la variable `cpuv`.
 
-<img width="586" alt="Screen Shot 2022-10-27 at 4 55 48 PM" src="https://user-images.githubusercontent.com/66915274/198324254-3d0f247d-b767-4e02-9e69-11b4e0586280.png">
+
+```bash
+cpuv=$(grep "processor" /proc/cpuinfo | wc -l)
+```
+
+1. **`/proc/cpuinfo`**:
+   - El archivo **`/proc/cpuinfo`** contiene información detallada sobre los procesadores del sistema, incluyendo datos como la arquitectura, modelo, velocidad y el número de CPUs disponibles (físicos y virtuales).
+   - Cada CPU (o núcleo de CPU) tiene una entrada en este archivo.
+
+2. **`grep "processor"`**:
+   - **`grep "processor"`** busca en el archivo `/proc/cpuinfo` todas las líneas que contengan la palabra **"processor"**.
+   - Las líneas que contienen `"processor"` representan cada **núcleo virtual (vCPU)** en el sistema. Por ejemplo, si tienes 4 núcleos virtuales (o 4 hilos en un sistema con Hyper-Threading), verás 4 líneas con `"processor"`.
+
+3. **`wc -l`**:
+   - **`wc -l`** cuenta el **número de líneas** que contienen la palabra `"processor"`, lo cual corresponde al **número total de CPUs virtuales (vCPU)** o núcleos en el sistema.
+
+4. **`cpuv=$(...)`**:
+   - El número resultante de la operación (la cantidad de CPUs virtuales) se almacena en la variable `cpuv`.
+
 
 
 ### 5-4 Memoria RAM
@@ -731,10 +789,29 @@ lvmu=$(if [ $(lsblk | grep "lvm" | wc -l) -gt 0 ]; then echo yes; else echo no; 
 
 ### 5-9 Conexiones TCP
 
-Para mirar el número de conexiones TCP establecidas. Utilizaremos el comando **ss** sustituyendo al ya obsoleto netstat. Filtraremos con el flag **-ta** para que solo se muestren las conexiones TCP. Por último haremos un grep para ver las que están establecidas, ya que también hay solo de escucha y cerraremos con wc -l para que cuente el número de líneas. El comando queda tal que así: **ss -ta | grep ESTAB | wc -l**.
+Este comando cuenta el número de **conexiones TCP establecidas** en el sistema y almacena el resultado.
 
-<img width="479" alt="Captura de pantalla 2022-08-03 a las 0 53 36" src="https://user-images.githubusercontent.com/66915274/182487028-746244f8-2cda-4dc7-a14c-b2e5a7e0dc51.png">
+```bash
+ss -ta | grep ESTAB | wc -l
+```
 
+1. **`ss -ta`**:
+   - **`ss`** (socket statistics) es una herramienta que muestra estadísticas de sockets, es decir, información sobre conexiones de red activas.
+   - La opción **`-t`** filtra las conexiones **TCP**.
+   - La opción **`-a`** muestra **todas** las conexiones TCP, tanto activas como en espera, con diferentes estados como LISTEN, ESTABLISHED, TIME-WAIT, etc.
+
+2. **`grep ESTAB`**:
+   - **`grep ESTAB`** filtra las conexiones TCP que están en el estado **ESTABLISHED** (establecidas).
+   - El estado **ESTABLISHED** significa que la conexión TCP está activa y completamente configurada para intercambiar datos entre dos hosts.
+
+3. **`wc -l`**:
+   - **`wc -l`** cuenta el número de líneas que devuelve el comando anterior.
+   - En este caso, cada línea representa una conexión TCP en estado **ESTABLISHED**, por lo que `wc -l` cuenta el número total de conexiones activas.
+
+
+
+### Resumen:
+Este comando cuenta cuántas **conexiones TCP están activas y establecidas** en el sistema en ese momento, usando `ss` para listar las conexiones, `grep` para filtrar las conexiones establecidas, y `wc -l` para contar el número de conexiones.
 ### 5-10 Número de usuarios
 
 Daremos uso del comando **users** que nos mostrará el nombre de los usuarios que hay, sabiendo esto, pondremos wc -w para que cuente la cantidad de palabras que hay en la salida del comando. El comando entero queda así **users | wc -w**.
