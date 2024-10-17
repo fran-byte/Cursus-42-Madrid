@@ -461,28 +461,27 @@ Para comprobar que se haya instalado correctamente haremos **sudo service ssh st
 
 ## DESGLOSANDO LOS COMANDOS
 
-Defaults  passwd_tries=3 (nº de reintentos)
+Defaults  **passwd_tries=3** (nº de reintentos)
 
-Defaults  badpass_message="Password entry failure!"
+Defaults  **badpass_message="Password entry failure!"**
 
-Defaults  logfile="/var/log/sudo/sudo_config" (archivos de registro de comandos sudo lanzados)
+Defaults  **logfile="/var/log/sudo/sudo_config"** (archivos de registro de comandos sudo lanzados)
 
-Defaults  log_input, log_output (comandos tanto imput como output quedarán registrados en el siguiente directorio)
+Defaults  **log_input, log_output** (comandos tanto imput como output quedarán registrados en el siguiente directorio)
 
-Defaults  iolog_dir="/var/log/sudo"
+Defaults  **iolog_dir="/var/log/sudo"**
 
-Defaults  requiretty  (activar modo TTY)
+Defaults  **requiretty**  (activar modo TTY)
 
-Defaults  secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin  (restringir los directorios utilizables por sudo)
+Defaults  **secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin**  (restringir los directorios utilizables por sudo)
 
 
 ### 4-5 Configuración de política de contraseñas fuerte
 
-1 El primer paso será editar el fichero login.defs.
+1. Editaremos el fichero login.defs: **nano /etc/login.defs**
 
-<img width="493" alt="Captura de pantalla 2022-07-16 a las 2 54 06" src="https://user-images.githubusercontent.com/66915274/179327943-67432d4a-7042-44ea-96f4-5975556ce4dc.png">
 
-2 Una vez estemos editando el fichero, modificaremos los siguientes parámetros:
+2. Una vez estemos editando el fichero, modificaremos los siguientes parámetros:
 
 ➤ PASS_MAX_DAYS 99999 -> PASS_MAX_DAYS 30
 
@@ -497,15 +496,13 @@ PASS_MIN_DAYS: El número mínimo de días permitido antes de modificar una cont
 
 PASS_WARN_AGE: El usuario recibirá un mensaje de aviso indicando que faltan los días especificados para que expire su contraseña.
 
-3 Para poder seguir con la configuración debemos instalar los siguientes paquetes con este comando **sudo apt install libpam-pwquality** , acto seguido pondremos **Y** para confirmar la instalación y esperaremos a que termine.
+3. Para poder seguir con la configuración debemos instalar los siguientes paquetes con este comando **sudo apt install libpam-pwquality** , acto seguido pondremos **Y** para confirmar la instalación y esperaremos a que termine.
 
-<img width="770" alt="Captura de pantalla 2022-07-16 a las 3 13 52" src="https://user-images.githubusercontent.com/66915274/179328708-c5054703-bdb0-4cca-82a8-6ab25ce42b40.png">
 
-4 Lo siguiente que debemos hacer es volver a editar un fichero y modificar algunas líneas. Haremos **nano /etc/pam.d/common-password**.
+4. Lo siguiente que debemos hacer es volver a editar un fichero y modificar algunas líneas. Haremos **nano /etc/pam.d/common-password**.
 
-<img width="500" alt="Captura de pantalla 2022-07-16 a las 3 27 02" src="https://user-images.githubusercontent.com/66915274/179329260-0e18bd27-a522-4c7c-86bf-21823eee0f8b.png">
 
-5 Después de retry=3 debemos añadir los siguientes comandos:
+5. Después de retry=3 debemos añadir los siguientes comandos:
 
 ```
 minlen=10
@@ -517,52 +514,37 @@ reject_username
 difok=7
 enforce_for_root
 ```
-➤ Así debe ser la línea
 
-<img width="1047" alt="Screen Shot 2023-01-03 at 7 41 57 PM" src="https://user-images.githubusercontent.com/66915274/210420896-8274b75b-86e4-4fba-9a14-ca838b61c2e6.png">
-
-➤ Así se debe ver en el fichero
 
 <img width="800" alt="Captura de pantalla 2022-07-16 a las 3 38 08" src="https://user-images.githubusercontent.com/66915274/179329787-1b718843-9272-43e4-8d92-8d83933cc938.png">
 
  <b>Que hace cada comando?</b>
 
-minlen=10 ➤ La cantidad mínima de caracteres que debe contener la contraseña.
+**minlen=10** ➤ La cantidad mínima de caracteres que debe contener la contraseña.
 
-ucredit=-1 ➤ Como mínimo debe contener una letra mayúscula. Ponemos el - ya que debe contener como mínimo un carácter, si ponemos + nos referimos a como máximo esos caracteres.
+**ucredit=-1** ➤ Como mínimo debe contener una letra mayúscula. Ponemos el - ya que debe contener como mínimo un carácter, si ponemos + nos referimos a como máximo esos caracteres.
 
-dcredit=-1 ➤ Como mínimo debe contener un dígito.
+**dcredit=-1** ➤ Como mínimo debe contener un dígito.
 
-lcredit=-1 ➤ Como mínimo debe contener una letra minúscula.
+**lcredit=-1** ➤ Como mínimo debe contener una letra minúscula.
 
-maxrepeat=3 ➤ No puede tener más de 3 veces seguidas el mismo carácter.
+**maxrepeat=3** ➤ No puede tener más de 3 veces seguidas el mismo carácter.
 
-reject_username ➤ No puede contener el nombre del usuario.
+**reject_username** ➤ No puede contener el nombre del usuario.
 
-difok=7 ➤  Debe tener al menos 7 caracteres que no sean parte de la antigua contraseña.
+**difok=7** ➤  Debe tener al menos 7 caracteres que no sean parte de la antigua contraseña.
 
-enforce_for_root ➤ Implementaremos esta política para el usuario root.
+**enforce_for_root** ➤ Implementaremos esta política para el usuario root.
 
-6 La política de contraseñas que acabamos de implementar afecta solo a los usuarios nuevos. Por lo tanto, es necesario actualizar las cuentas de los usuarios que fueron creadas antes de esta política para que cumplan con los nuevos requisitos de seguridad. Para comprobar si el usuario no cumple con la política haremos uso del comando **sudo chage -l username**.
-
-Asi se veria, debemos comprobar que los dias
-
-<img width="862" alt="image" src="https://github.com/yingzhan11/Born2beroot-Tutorial/assets/153290203/e95431bd-8f7c-427e-a609-115fa5a306d8">
-
-7 Si vemos que dicho usuario no cumple con la politica debemos modificar el numero minimo y maximo de dias entre cambios de contraseña, para ello usaremos el siguiente comando: **sudo chage -m <time> <username>** y **sudo chage -M <time> <username>**.
-
--m is para el numero minimo de dias y -M para el numero maximo.
-
-Asi se deben de ver los comandos
-
-![image](https://github.com/gemartin99/Born2beroot-Tutorial/assets/66915274/cb5c8574-8523-480e-9d02-41e103c4910c)
-
-Una vez aplicados los cambios asi se deberia ver:
-
-![image](https://github.com/gemartin99/Born2beroot-Tutorial/assets/66915274/c5df523d-45af-4b8f-a21e-a02b1173b4f8)
+6. **La política de contraseñas** Afecta solo a los usuarios nuevos. Es necesario actualizar las cuentas de los usuarios que fueron creadas antes de esta política para que cumplan con los nuevos requisitos de seguridad. Haremos uso del comando **sudo chage -l username**.
 
 
-### 4-6 Conectarse vía SSH 🗣
+7. Debemos **modificar** el numero minimo y maximo de dias entre cambios de contraseña: **sudo chage -m <time> <username>** y **sudo chage -M <time> <username>**.
+
+**-m** es para el número mínimo de días y **-M** para el numero máximo.
+
+
+### 4-6 Conectarse vía SSH
 
 1. Para conectarnos por SSH debemos cerrar la máquina, abrir VirtualBox y darle a configuración.
 
@@ -582,9 +564,6 @@ Una vez aplicados los cambios asi se deberia ver:
 
 ➤ Para poder conectarnos a la máquina virtual desde la real debemos abrir un terminal en la máquina real y escribir **ssh frromero@localhost -p 4242** nos pedirá la clave del usuario y una vez la introduzcamos ya nos saldrá el login en verde y eso significa que estaremos conectados.
 
-<img width="517" alt="Screen Shot 2022-10-27 at 12 40 23 AM" src="https://user-images.githubusercontent.com/66915274/198174777-28f7793b-273b-43ce-b1c2-4a890353cb8c.png">
-
-<img width="566" alt="Screen Shot 2022-10-27 at 12 40 04 AM" src="https://user-images.githubusercontent.com/66915274/198174814-c1873c62-41dd-4c1d-ad2d-f268b2da0e4c.png">
 
 
 ## 5- Script
@@ -808,15 +787,26 @@ ss -ta | grep ESTAB | wc -l
    - **`wc -l`** cuenta el número de líneas que devuelve el comando anterior.
    - En este caso, cada línea representa una conexión TCP en estado **ESTABLISHED**, por lo que `wc -l` cuenta el número total de conexiones activas.
 
-
-
-### Resumen:
-Este comando cuenta cuántas **conexiones TCP están activas y establecidas** en el sistema en ese momento, usando `ss` para listar las conexiones, `grep` para filtrar las conexiones establecidas, y `wc -l` para contar el número de conexiones.
 ### 5-10 Número de usuarios
 
-Daremos uso del comando **users** que nos mostrará el nombre de los usuarios que hay, sabiendo esto, pondremos wc -w para que cuente la cantidad de palabras que hay en la salida del comando. El comando entero queda así **users | wc -w**.
+**usuarios actualmente conectados al sistema**
 
-<img width="380" alt="Captura de pantalla 2022-08-02 a las 12 33 29" src="https://user-images.githubusercontent.com/66915274/182354436-282547cf-22c8-4b03-9484-6801c0466de7.png">
+```bash
+users | wc -w
+```
+
+1. **`users`**:
+   - Este comando muestra una lista de los nombres de los usuarios que están actualmente conectados al sistema.
+   - La salida es una lista de los nombres de usuario separados por espacios, cada uno representando a un usuario que tiene una sesión activa.
+
+   **Ejemplo de salida:**
+   ```
+   user1 user2 user3
+   ```
+
+2. **`wc -w`**:
+   - **`wc`**  **word count**. La opción **`-w`** cuenta el número de palabras en la entrada que recibe.
+   - Ees decir cuántos nombres de usuario hay en la salida del comando `users`.
 
 
 ### 5-11 Dirección IP y MAC
