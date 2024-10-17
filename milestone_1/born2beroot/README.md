@@ -753,13 +753,10 @@ wall "	Architecture: $arch
 	Network: IP $ip ($mac)
 	Sudo: $cmnd cmd"
 ```
-Script visto desde nano
 
-<img width="911" alt="Captura de pantalla 2022-08-03 a las 3 47 31" src="https://user-images.githubusercontent.com/66915274/182506484-f5a095b8-4751-461e-a114-f8e36b4cfa9a.png">
+Ejecución del script:
 
-Resultado tras la ejecución del script
-
-<img width="796" alt="Captura de pantalla 2022-08-03 a las 3 46 15" src="https://user-images.githubusercontent.com/66915274/182506357-f5466a97-380b-4b6d-9b79-89e01a31498a.png">
+<img width="622" alt="" src="img/script.png">
 
 ## 6- Crontab
 
