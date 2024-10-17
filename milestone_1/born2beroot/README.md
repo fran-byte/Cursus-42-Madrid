@@ -665,19 +665,69 @@ Todo esto excluye la partición de arranque (`/boot`) para obtener solo el uso d
 5. **`printf "%.1f" $cpu_op`**: Formatea el porcentaje de uso del CPU con un decimal, por ejemplo, `15.0%` de uso.
 
 En resumen, el código obtiene el porcentaje de tiempo que el CPU está inactivo y luego calcula el porcentaje que está siendo utilizado.
-<img width="580" alt="Captura de pantalla 2022-08-03 a las 0 33 39" src="https://user-images.githubusercontent.com/66915274/182484896-def71bf0-b7eb-49d8-b83b-a019d15f62f1.png">
 
 ### 5-7 Último reinicio
 
-Para ver la fecha y hora de nuestro último reinicio haremos uso del comando **who** con el flag **-b**, ya que con ese flag nos mostrará por pantalla el tiempo del último arranque del sistema. Como ya nos ha pasado anteriormente, nos muestra más información de la que deseamos, así que filtraremos y solo mostraremos lo que nos interesa, para ello haremos uso del comando awk y compararemos si la primera palabra de una línea es "system" se printará por pantalla la tercera palabra de esa línea, un espacio y la cuarta palabra. El comando entero sería el siguiente: **who -b | awk '$1 == "system" {print $3 " " $4}'**.
+Este comando extrae la **fecha y hora del último arranque del sistema**.
 
-<img width="661" alt="Captura de pantalla 2022-08-02 a las 12 24 58" src="https://user-images.githubusercontent.com/66915274/182352895-d985e675-5afc-445a-bcd3-68189702fe70.png">
+ **`lb=$(who -b | awk '$1 == "system" {print $3 " " $4}')`**
+
+1. **`who -b`**:
+   - El comando **`who`** muestra información sobre los usuarios conectados y eventos del sistema.
+   - La opción **`-b`** (short for "boot") muestra la **fecha y hora del último arranque del sistema**. La salida tiene un formato similar a este:
+     ```
+     system boot 2024-10-17 16:22
+     ```
+
+2. **`awk '$1 == "system" {print $3 " " $4}'`**:
+   - **`awk`** es una herramienta para procesar texto.
+   - **`$1 == "system"`**: Filtra las líneas donde la primera columna (`$1`) es igual a `"system"`, ya que indica un evento de arranque del sistema.
+   - **`{print $3 " " $4}`**: Extrae y imprime la tercera y cuarta columnas de la salida:
+     - **`$3`**: Es la **fecha del último arranque** (por ejemplo, `2024-10-17`).
+     - **`$4`**: Es la **hora del último arranque** (por ejemplo, `16:22`).
+
+   En resumen, se imprime la **fecha y hora del último arranque del sistema**.
+
+3. **`lb=$(...)`**:
+   - El resultado de este comando (`$3 " " $4`) se guarda en la variable **`lb`**, que contiene la fecha y hora del último arranque.
+
+
 
 ### 5-8 Uso LVM
 
-Para checkear si LVM está activo o no haremos uso del comando lsblk, este nos muestra información de todos los dispositivos de bloque (discos duros, SSD, memorias, etc.) entre toda la información que proporciona podemos ver lvm en el tipo de gestor. Para este comando haremos un if, ya que o printaremos Yes o No. Básicamente la condición que buscamos será contar el número de líneas en las que aparece "lvm" y si hay más de 0 printamos Yes, si hay 0 se printará No. Todo el comando sería: **if [ $(lsblk | grep "lvm" | wc -l) -gt 0 ]; then echo yes; else echo no; fi**.
+Este fragmento de código verifica si el sistema está usando **LVM (Logical Volume Manager)** y guarda el resultado en la variable `lvmu`.
 
-<img width="801" alt="Captura de pantalla 2022-08-02 a las 22 38 43" src="https://user-images.githubusercontent.com/66915274/182468904-3789e22f-dbde-4874-b153-0d86497c55e2.png">
+
+
+```bash
+lvmu=$(if [ $(lsblk | grep "lvm" | wc -l) -gt 0 ]; then echo yes; else echo no; fi)
+```
+
+1. **`lsblk`**:
+   - **`lsblk`** es el comando que lista información sobre los dispositivos de bloque (discos y particiones) del sistema.
+   - Su salida incluye información sobre el tipo de dispositivos, y si el sistema usa LVM, algunas líneas contendrán el texto **"lvm"** en la columna correspondiente al tipo de dispositivo.
+
+2. **`grep "lvm"`**:
+   - **`grep "lvm"`** busca dentro de la salida de `lsblk` cualquier línea que contenga el texto **"lvm"**, lo cual indica que el sistema está utilizando LVM en al menos una de sus particiones o volúmenes.
+
+3. **`wc -l`**:
+   - **`wc -l`** cuenta el número de líneas que contienen la palabra "lvm". Si hay **una o más líneas**, significa que LVM está en uso. Si no hay ninguna línea, entonces no se está utilizando LVM.
+
+4. **`if [ $(...) -gt 0 ]`**:
+   - Este condicional evalúa si el número de líneas encontradas por `grep "lvm"` es **mayor que 0** (`-gt 0`). Si es mayor que 0, significa que se ha detectado el uso de LVM.
+
+5. **`then echo yes; else echo no; fi`**:
+   - Si el número de líneas es mayor que 0, el comando ejecuta `echo yes`, indicando que LVM está en uso.
+   - Si el número de líneas es 0, el comando ejecuta `echo no`, indicando que LVM **no** está en uso.
+
+6. **`lvmu=$(...)`**:
+   - El resultado del bloque condicional (`yes` o `no`) se almacena en la variable `lvmu`.
+
+### Resultado:
+- Si **LVM está en uso**, la variable `lvmu` tendrá el valor `yes`.
+- Si **LVM no está en uso**, la variable `lvmu` tendrá el valor `no`.
+
+`
 
 ### 5-9 Conexiones TCP
 
