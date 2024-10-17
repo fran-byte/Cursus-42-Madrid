@@ -615,41 +615,56 @@ Para poder mostrar el número de núcleos virtuales es muy parecido al anterior.
 
 ### 5-4 Memoria RAM
 
-Para mostrar la memoria RAM haremos uso del comando **free** para así ver al momento información sobre la RAM, la parte usada, libre, reservada para otros recursos, etc. Para más info sobre el comando, pondremos free --help. Nosotros daremos uso de free --mega , ya que en el subject aparece esa unidad de medida (Megabyte). Es importante poner --mega y no -m. Con -m nos referiremos a la unidad de medida Mebibyte y no es la que especifica el subject.
+Este fragmento de código calcula el **uso total, el usado y el porcentaje de disco**.
 
-<img width="672" alt="Captura de pantalla 2022-08-02 a las 2 46 10" src="https://user-images.githubusercontent.com/66915274/182268241-86b743bb-653d-4fef-acda-e7bfa59e38d7.png">
+ 1. **`disk_total=$(df -m | grep "/dev/" | grep -v "/boot" | awk '{disk_t += $2} END {printf ("%.1fGb\n"), disk_t/1024}')`**
+   - **`df -m`**: Muestra el uso de disco en megabytes (MB).
+   - **`grep "/dev/"`**: Filtra las líneas que contienen el texto "/dev/", que representan particiones montadas en el sistema.
+   - **`grep -v "/boot"`**: Excluye las líneas que contienen "/boot", ya que no queremos incluir la partición de arranque en el cálculo.
+   - **`awk '{disk_t += $2} END {printf ("%.1fGb\n"), disk_t/1024}'`**:
+     - `disk_t += $2`: Suma los valores de la segunda columna (`$2`), que representa el **tamaño total** del disco en megabytes.
+     - **`END {printf ("%.1fGb\n"), disk_t/1024}`**: Después de procesar todas las líneas, convierte el tamaño total de MB a GB dividiendo por 1024 y lo formatea con un decimal.
 
-Una vez hemos ejecutado este comando debemos filtrar nuestra búsqueda, ya que no necesitamos toda la información que nos aporta, lo primero que debemos mostrar es la memoria usada, para ello haremos uso del comando **awk** que lo que hace este comando es para procesar datos basados en archivos de texto, es decir, podremos utilizar los datos que nos interesen de X fichero. Por último, lo que haremos será comparar si la primera palabra de una fila es igual a "Mem:" printaremos la tercera palabra de esa fila que será la memoria usada. Todo el comando junto sería **free --mega | awk '$1 == "Mem:" {print $3}'**. En el script el valor de retorno de este comando se lo asignaremos a una variable que concatenaremos con otras variables para que todo quede igual como especifica el subject.
+   **Resultado**: El total de espacio en disco (en GB) se guarda en `disk_total`.
 
-<img width="621" alt="Captura de pantalla 2022-08-02 a las 2 55 21" src="https://user-images.githubusercontent.com/66915274/182269019-d5bb3107-f091-491f-a4ab-27edd357aec8.png">
+ 2. **`disk_use=$(df -m | grep "/dev/" | grep -v "/boot" | awk '{disk_u += $3} END {print disk_u}')`**
+   - **`df -m`**: Nuevamente muestra el uso de disco en MB.
+   - **`grep "/dev/"`** y **`grep -v "/boot"`**: Filtran las particiones del sistema igual que en el primer comando.
+   - **`awk '{disk_u += $3} END {print disk_u}'`**:
+     - `disk_u += $3`: Suma los valores de la tercera columna (`$3`), que representa el **espacio usado** en megabytes.
+     - **`END {print disk_u}`**: Al final, imprime el total de MB usados.
 
-Para obtener la memoria total el comando es prácticamente igual al anterior, lo único que deberemos cambiar es que en vez de printar la tercera palabra de la fila queremos la segunda **free --mega | awk '$1 == "Mem:" {print $2}'**.
+   **Resultado**: El total de espacio usado en disco (en MB) se guarda en `disk_use`.
 
-<img width="605" alt="Captura de pantalla 2022-08-02 a las 3 00 02" src="https://user-images.githubusercontent.com/66915274/182269450-318816e1-fc71-48b0-a860-278cc6050e05.png">
+ 3. **`disk_percent=$(df -m | grep "/dev/" | grep -v "/boot" | awk '{disk_u += $3} {disk_t += $2} END {printf("%d", disk_u/disk_t*100)}')`**
+   - **`df -m`**: Muestra el uso del disco en MB.
+   - **`grep "/dev/"`** y **`grep -v "/boot"`**: Filtran las particiones del sistema como en los comandos anteriores.
+   - **`awk '{disk_u += $3} {disk_t += $2} END {printf("%d", disk_u/disk_t*100)}'`**:
+     - `disk_u += $3`: Suma el espacio usado de todas las particiones.
+     - `disk_t += $2`: Suma el tamaño total de todas las particiones.
+     - **`END {printf("%d", disk_u/disk_t*100)}`**: Al final, calcula el **porcentaje de uso de disco** dividiendo el espacio usado por el total y multiplicando por 100. El resultado es formateado como un número entero.
 
-Por última parte debemos calcular el % de memoria usada. El comando de nuevo es parecido a los anteriores, la única modificación que haremos en la parte del printeo. Como la operación para conseguir el tanto porciento no es exacta, nos puede dar muchos decimales y en el subject solo aparecen 2 así que nosotros haremos lo mismo, por eso utilizamos **%.2f** para que así solo se muestren 2 decimales. Otra cosa que quizás no sepas es en printf para que se muestre un **%** hay que poner **%%**. Todo el comando **free --mega | awk '$1 == "Mem:" {printf("(%.2f%%)\n", $3/$2*100)}'**.
+   **Resultado**: El porcentaje de uso de disco se guarda en `disk_percent`.
 
-<img width="798" alt="Captura de pantalla 2022-08-02 a las 3 51 01" src="https://user-images.githubusercontent.com/66915274/182274627-195476b2-1e17-4a4c-8d5c-2056e4e2bbb6.png">
+---
 
-### 5-5 Memoria del disco
+### Resumen:
+1. **`disk_total`**: Calcula el tamaño total de las particiones del disco (en GB).
+2. **`disk_use`**: Calcula el espacio en disco actualmente usado (en MB).
+3. **`disk_percent`**: Calcula el porcentaje del disco que está ocupado.
 
-Para poder ver la memoria del disco ocupada y disponible utilizaremos el comando **df** que significa "disk filesystem", se utiliza para obtener un resumen completo del uso del espacio en disco. Como en el subject indica la memoria utilizada se muestra en MB, así que entonces utilizaremos el flag -m. Acto seguido haremos un grep para que solo nos muestre las líneas que contengan "/dev/" y seguidamente volveremos a hacer otro grep con el flag -v para excluir las líneas que contengan "/boot". Por último utilizaremos el comando awk y sumaremos el valor de la tercera palabra de cada línea para una vez sumadas todas las líneas printar el resultado final de la suma. El comando entero es el siguiente: **df -m | grep "/dev/" | grep -v "/boot" | awk '{memory_use += $3} END {print memory_use}'**.
-
-<img width="805" alt="Captura de pantalla 2022-08-03 a las 2 26 15" src="https://user-images.githubusercontent.com/66915274/182498837-4f883b25-e316-4c74-8f6b-a5e8b5d13289.png">
-
-Para obtener el espacio total utilizaremos un comando muy parecido. Las únicas diferencias serán que los valores que sumaremos serán los $2 en vez de $3 y la otra diferencia es que en el subject aparece el tamaño total en Gb así que como el resultado de la suma nos da el número en Mb debemos transformarlo a Gb, para ello debemos dividir el número entre 1024 y quitar los decimales.
-
-<img width="1195" alt="Screen Shot 2023-03-14 at 8 54 34 PM" src="https://user-images.githubusercontent.com/66915274/225121482-93ae204e-54eb-4397-b25c-b3d99229bba5.png">
-
-
-Por último, debemos mostrar un porcentaje de la memoria usada. Para ello, de nuevo, utilizaremos un comando muy parecido a los dos anteriores. Lo único que cambiaremos es que combinaremos los dos comandos anteriores para tener dos variables, una que representa la memoria usada y la otra la total. Hecho esto haremos una operación para conseguir el tanto por ciento **use/total*100** y el resultado de esta operación lo printaremos como aparece en el subject, entre paréntesis y con el símbolo % al final. El comando final es este: **df -m | grep "/dev/" | grep -v "/boot" | awk '{use += $3} {total += $2} END {printf("(%d%%)\n"), use/total*100}'**.
-<img width="798" alt="Captura de pantalla 2022-08-03 a las 2 49 33" src="https://user-images.githubusercontent.com/66915274/182500836-dd4b068e-b6ce-4dc6-b832-f90acecfb71c.png">
-
+Todo esto excluye la partición de arranque (`/boot`) para obtener solo el uso de las particiones relevantes.
 
 ### 5-6 Porcentaje uso de CPU
 
-Para poder ver el porcentaje de uso de CPU haremos uso del comando **vmstat**. Este muestra estadísticas del sistema, permitiendo obtener un detalle general de los procesos, uso de memoria, actividad de CPU, estado del sistema, etc. Podríamos poner si ninguna opción, pero en mi caso pondré un intervalo de segundos de 1 a 4. También daremos uso del comando **tail -1**, que este lo que nos va a permitir es que solo produzca el output la última línea, entonces de las 4 generadas solo se printará la última. Por último, solo printaremos la palabra 15 que es el uso de memoria disponible. El comando entero es el siguiente: **vmstat 1 4 | tail -1 | awk '{print $15}'**. El resultado de este comando solo es una parte del resultado final, ya que todavía hay que hacer alguna operación en el script para que quede bien. Lo que habría que hacer es a 100 restarle la cantidad que nos ha devuelto nuestro comando, el resultado de esa operación lo printaremos con un decimal y un % al final y ya estaría hecha la operación.
 
+1. **`vmstat 1 2`**: Ejecuta el comando `vmstat` para recoger estadísticas del sistema cada 1 segundo, dos veces. La primera línea suele ser información acumulada, mientras que la segunda refleja el estado actual.
+2. **`tail -1`**: Selecciona la última línea de la salida, que contiene las estadísticas más recientes.
+3. **`awk '{printf $15}'`**: Extrae el valor de la 15ª columna, que corresponde al **porcentaje de tiempo que el CPU está inactivo** (`id`).
+4. **`expr 100 - $cpul`**: Calcula el **porcentaje de uso del CPU** restando el porcentaje de inactividad de 100.
+5. **`printf "%.1f" $cpu_op`**: Formatea el porcentaje de uso del CPU con un decimal, por ejemplo, `15.0%` de uso.
+
+En resumen, el código obtiene el porcentaje de tiempo que el CPU está inactivo y luego calcula el porcentaje que está siendo utilizado.
 <img width="580" alt="Captura de pantalla 2022-08-03 a las 0 33 39" src="https://user-images.githubusercontent.com/66915274/182484896-def71bf0-b7eb-49d8-b83b-a019d15f62f1.png">
 
 ### 5-7 Último reinicio
