@@ -757,6 +757,7 @@ wall "	Architecture: $arch
 Ejecución del script:
 
 <img width="622" alt="" src="img/script.png">
+<img width="" alt="" src="img/scriptdescripcion.png">
 
 ## 6- Crontab
 
