@@ -521,7 +521,7 @@ enforce_for_root
 6. **La política de contraseñas** Afecta solo a los usuarios nuevos. Es necesario actualizar las cuentas de los usuarios que fueron creadas antes de esta política para que cumplan con los nuevos requisitos de seguridad. Haremos uso del comando **sudo chage -l username**.
 
 
-7. **ssudo chage -m 2 -M 30 frromero** Cambia el mínimo a 2 dias y el maximo a 30 días.
+7. **sudo chage -m 2 -M 30 frromero** Cambia el mínimo a 2 dias y el maximo a 30 días.
 
 **-m** es para el número mínimo de días y **-M** para el numero máximo.
 
