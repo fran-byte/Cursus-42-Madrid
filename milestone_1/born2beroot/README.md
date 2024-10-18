@@ -2,31 +2,13 @@
 
 # Tutorial  (Solamente Parte Obligatoria)
 
-# ¿ Por qué trabajar sobre una máquina virtual (VM) ?
-
-➤ Una máquina virtual es una máquina que se encuentra dentro de una máquina anfitriona.
-
-➤ Se comportará de la misma manera que cualquier otra máquina; tiene un sistema operativo y algunas aplicaciones.
-
-➤ Existen varias ventajas de tener una máquina virtual:
-
-	- Económica
-	- Ahorro de espacio físico (almacenamiento)
-	- Menor mantenimiento que una máquina física
-	- Respaldo de datos simplificado
-	- Mayor seguridad
-
-➤ Creamos la máquina virtual y la imagen de Debian en mi directorio sgoinfre.
-
-➤ **Sgoinfre** es un servidor accesible desde la red de la Escuela 42 y disponible desde cada computadora. Es un servidor de documentos donde tienes un directorio con tu nombre de usuario al que solo tú puedes acceder.
-
-➤ En cada computadora también hay una carpeta llamada **goinfre**. Esta carpeta te permite almacenar algunos documentos. Es diferente en cada computadora y es más grande que el almacenamiento de tu sesión.
+➤ Creamos la máquina virtual y la imagen de Debian en mi directorio **sgoinfre** es un servidor accesible desde la red de la Escuela 42 y disponible desde cada computadora. Es un servidor de documentos donde tienes un directorio con tu nombre de usuario al que solo tú puedes acceder. Alcontrario que **goinfre**. Esta carpeta te permite almacenar algunos documentos. Es diferente en cada computadora y es más grande que el almacenamiento de tu sesión.
 
 ➤ Si colocas tu máquina virtual en el servidor **sgoinfre**, puedes cambiar de computadora durante tu proyecto. Si la colocas en la carpeta **goinfre**, tienes que quedarte en la misma computadora todo el tiempo.
 
 ## 1- Descargando ISO de Debian e instalando Virtual Box
 
-➤ Crearemos una máquina virtual vacía. Es como si estuvieras configurando una computadora desde cero.
+➤ Crearemos una máquina virtual vacía. Para configurarla posteriormenete.
 
 ➤ Lins de descarga:
 
@@ -936,7 +918,14 @@ Por último haremos **shasum nombremaquina.vdi** y esto nos dara la firma. El re
 ### ▪️ Qué es una máquina virtual?
 
 Es un software que simula un sistema de computación y puede ejecutar programas como si fuese una computadora real. Permite crear múltiples entornos simulados o recursos dedicados desde un solo sistema de hardware físico.
+➤ Existen varias ventajas de tener una máquina virtual:
 
+	- Económica
+	- Ahorro de espacio físico (almacenamiento)
+	- Menor mantenimiento que una máquina física
+	- Respaldo de datos simplificado
+	- Mayor seguridad
+ 
 ### ▪️ Porque has escogido Debian?
 
 Esto es algo personal para cada uno, mi opinión: El propio subject explica que es más sencillo hacerlo en Debian y si buscas documentación/tutoriales hay muchos y todos se han hecho en Debian.
