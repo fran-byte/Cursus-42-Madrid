@@ -912,7 +912,7 @@ Por último haremos **shasum nombremaquina.vdi** y esto nos dara la firma. El re
 <img width="416" alt="Screen Shot 2022-08-03 at 4 58 48 AM" src="https://user-images.githubusercontent.com/66915274/182514627-f11026d0-de0d-447d-a2e4-31a3c1af0f35.png">
 
 
-## 9-1 Respuestas de la evaluación
+## 9-1 Evaluación
 
 ### ▪️ Qué es una máquina virtual?
 
@@ -925,14 +925,41 @@ Es un software que simula un sistema de computación y puede ejecutar programas 
 	- Respaldo de datos simplificado
 	- Mayor seguridad
 
-### ▪️ Porque has escogido Debian?
+### ▪️ Por qué te decantaste por Debian?
 
-Esto es algo personal para cada uno, mi opinión: El propio subject explica que es más sencillo hacerlo en Debian y si buscas documentación/tutoriales hay muchos y todos se han hecho en Debian.
+ Es más sencillo y hay multitud de información.
 
 ### ▪️ Diferencias básicas entre Rocky y Debian
 
-![182516961-c3e4da77-2db8-4737-a68f-27b033908705 (1) (1)](https://user-images.githubusercontent.com/66915274/182517306-edb92eac-cba4-444a-83f8-9692bac69231.png)
+### 1. **Origen y Propósito**
+- **Rocky Linux**: Alternativa a CentOS, basada en RHEL, enfocada en estabilidad para servidores.
+- **Debian**: Distribución antigua y respetada, centrada en la libertad del software y la estabilidad.
 
+### 2. **Gestión de Paquetes**
+- **Rocky Linux**: Usa `yum`/`dnf` con paquetes RPM.
+- **Debian**: Usa `apt` con paquetes DEB.
+
+### 3. **Ciclos de Lanzamiento**
+- **Rocky Linux**: Versiones LTS, actualizaciones regulares.
+- **Debian**: Ciclo flexible con versiones estables, inestables y de prueba.
+
+### 4. **Filosofía y Comunidad**
+- **Rocky Linux**: Basado en la comunidad, influenciado por RHEL, mantenido por una fundación.
+- **Debian**: Completamente comunitaria, regida por el "Debian Social Contract".
+
+### 5. **Usos Comunes**
+- **Rocky Linux**: Ideal para servidores y aplicaciones críticas.
+- **Debian**: Usado en servidores y escritorios, flexible y personalizable.
+
+### 6. **Entornos de Escritorio**
+- **Rocky Linux**: Más común en servidores, se puede instalar un entorno de escritorio.
+- **Debian**: Ofrece múltiples entornos de escritorio en la instalación.
+
+### 7. **Configuración y Personalización**
+- **Rocky Linux**: Conservador en cambios, ideal para estabilidad.
+- **Debian**: Mayor flexibilidad y opciones de personalización.
+
+Este resumen destaca las diferencias clave entre ambas distribuciones.
 ### ▪️ Cuál es el propósito de las máquinas virtuales?
 
 Su objetivo es el de proporcionar un entorno de ejecución independiente de la plataforma de hardware y del sistema operativo, que oculte los detalles de la plataforma subyacente y permita que un programa se ejecute siempre de la misma forma sobre cualquier plataforma.
@@ -949,15 +976,15 @@ Es un módulo de seguridad del kernel Linux que permite al administrador del sis
 
 Es un gestor de volúmenes lógicos. Proporciona un método para asignar espacio en dispositivos de almacenamiento masivo, que es más flexible que los esquemas de particionado convencionales para almacenar volúmenes.
 
-## 9-2 Comandos de la evaluación ⌨️
+## 9-2 Comandos de la evaluación
 
-1 Comprobar que no haya ninguna interfaz gráfica en uso.
+1. Comprobar que no haya ninguna interfaz gráfica en uso.
 
 Utilizaremos el comando _ls /usr/bin/*session_ y nos debe aparecer el mismo resultado que en la captura. Si aparece algo diferente se está utilizando una interfaz gráfica.
 
 <img width="352" alt="Screen Shot 2022-11-25 at 12 00 02 AM" src="https://user-images.githubusercontent.com/66915274/203872315-0e87428b-5c5a-475b-9d7c-350eafbe3bea.png">
 
-2 Comprobar que el servicio UFW está en uso.
+2. Comprobar que el servicio UFW está en uso.
 
 **sudo ufw status**
 
@@ -967,19 +994,19 @@ Utilizaremos el comando _ls /usr/bin/*session_ y nos debe aparecer el mismo resu
 
 <img width="720" alt="Screen Shot 2022-11-24 at 1 25 37 AM" src="https://user-images.githubusercontent.com/66915274/203668066-6a3420d4-ae72-4263-8474-2e4946e2367a.png">
 
-3 Comprobar que el servicio SSH está en uso.
+3. Comprobar que el servicio SSH está en uso.
 
 **sudo service ssh status**
 
 <img width="711" alt="Screen Shot 2022-11-24 at 1 26 43 AM" src="https://user-images.githubusercontent.com/66915274/203668165-e642c21f-a11e-48b1-bed5-83639445251e.png">
 
-4 Comprobar que utilizas el sistema operativo Debian o CentOS.
+4. Comprobar que utilizas el sistema operativo Debian o CentOS.
 
 **uname -v** o **uname --kernel-version**
 
 <img width="306" alt="Screen Shot 2022-11-24 at 1 37 17 AM" src="https://user-images.githubusercontent.com/66915274/203669122-0be5033c-c882-4a2e-bf22-6a680f998a56.png">
 
-5 Comprobar que tu usuario este dentro de los grupos "sudo" y "user42".
+5. Comprobar que tu usuario este dentro de los grupos "sudo" y "user42".
 
 **getent group sudo**
 
@@ -987,19 +1014,19 @@ Utilizaremos el comando _ls /usr/bin/*session_ y nos debe aparecer el mismo resu
 
 <img width="314" alt="Screen Shot 2022-11-24 at 3 26 30 AM" src="https://user-images.githubusercontent.com/66915274/203680444-5fb18ae1-724e-4f78-a77f-a0f5bcc04913.png">
 
-6 Crear un nuevo usuario y mostrar que sigue la política de contraseñas que hemos creado.
+6. Crear un nuevo usuario y mostrar que sigue la política de contraseñas que hemos creado.
 
 **sudo adduser name_user** e introducimos una contraseña que siga la política.
 
 <img width="465" alt="Screen Shot 2022-11-24 at 3 29 45 AM" src="https://user-images.githubusercontent.com/66915274/203680847-b4555fd4-f847-4bce-b944-edf3e7720c99.png">
 
-7 Creamos un nuevo grupo llamado "evaluating".
+7. Creamos un nuevo grupo llamado "evaluating".
 
 **sudo addgroup evaluating**
 
 <img width="363" alt="Screen Shot 2022-11-24 at 3 30 47 AM" src="https://user-images.githubusercontent.com/66915274/203680980-784b2b60-82f4-405a-9f07-ec4948e86868.png">
 
-8 Añadimos el nuevo usuario al nuevo grupo.
+8. Añadimos el nuevo usuario al nuevo grupo.
 
 **sudo adduser name_user evaluating**
 
@@ -1009,12 +1036,12 @@ Para comprobar que se haya introducido correctamente.
 
 <img width="356" alt="Screen Shot 2022-11-24 at 3 33 31 AM" src="https://user-images.githubusercontent.com/66915274/203681267-106e4d37-0ec4-4006-95a4-88dd7109c4b6.png">
 
-9 Comprobar que el hostname de la máquina es correcto login42.
+9. Comprobar que el hostname de la máquina es correcto login42.
 
 <img width="224" alt="Screen Shot 2022-11-24 at 3 37 27 AM" src="https://user-images.githubusercontent.com/66915274/203681701-4f9b9ff1-28b6-4d06-9489-f930eee4b6e5.png">
 
 
-10 Modificar hostname para remplazar tu login por el del evaluador. En este caso lo reemplazaré por student42.
+10. Modificar hostname para remplazar tu login por el del evaluador. En este caso lo reemplazaré por student42.
 
 **sudo nano /etc/hostname** y remplazamos nuestro login por el nuevo.
 
@@ -1036,13 +1063,13 @@ Una vez nos hemos logueado de nuevo podemos ver como el hostname se ha cambiado 
 
 <img width="263" alt="Screen Shot 2022-11-24 at 3 46 30 AM" src="https://user-images.githubusercontent.com/66915274/203682819-bd35ff17-3810-4644-9c44-93957e41d181.png">
 
-11 Comprobar que todas las particiones son como indica el subject.
+11. Comprobar que todas las particiones son como indica el subject.
 
 **lsblk**
 
 <img width="495" alt="Screen Shot 2022-11-24 at 3 52 17 AM" src="https://user-images.githubusercontent.com/66915274/203683496-b49a7ada-2a0c-4f87-a013-e307370b3900.png">
 
-12 Comprobar que sudo está instalado.
+12. Comprobar que sudo está instalado.
 
 **which sudo**
 
@@ -1054,7 +1081,7 @@ Utilizar which realmente no es una buena práctica, ya que no todos los paquetes
 
 <img width="789" alt="Screen Shot 2022-11-24 at 4 02 13 AM" src="https://user-images.githubusercontent.com/66915274/203684698-d66c3c5b-2d6b-43c5-8f63-1a3cddaf7b4d.png">
 
-13 Introducimos el nuevo usuario dentro del grupo sudo.
+13. Introducimos el nuevo usuario dentro del grupo sudo.
 
 **sudo adduser name_user sudo**
 
@@ -1064,13 +1091,13 @@ Comprobamos que está dentro del grupo.
 
  <img width="415" alt="Screen Shot 2022-11-24 at 5 02 39 AM" src="https://user-images.githubusercontent.com/66915274/203691402-6b84f333-10f7-4908-8255-652613afeede.png">
 
-14 Muestra la aplicación de las reglas impuestas para sudo por el subject.
+14. Muestra la aplicación de las reglas impuestas para sudo por el subject.
 
 <img width="503" alt="Screen Shot 2022-11-24 at 5 12 02 AM" src="https://user-images.githubusercontent.com/66915274/203692615-bc1ec51c-ae5f-444f-9577-39b01112c969.png">
 
 <img width="762" alt="Screen Shot 2022-11-24 at 5 12 17 AM" src="https://user-images.githubusercontent.com/66915274/203692638-e6de6cba-ad42-48b9-ac84-21e2b8c50563.png">
 
-15 Muestra que la ruta /var/log/sudo/ existe y contiene al menos un fichero, en este se debería ver un historial de los comandos utilizados con sudo.
+15. Muestra que la ruta /var/log/sudo/ existe y contiene al menos un fichero, en este se debería ver un historial de los comandos utilizados con sudo.
 
 <img width="295" alt="Screen Shot 2022-11-24 at 5 17 54 AM" src="https://user-images.githubusercontent.com/66915274/203693244-39cb5903-7934-4f8a-8c39-f4ad94d305fb.png">
 
@@ -1082,7 +1109,7 @@ Ejecuta un comando con sudo y comprueba que se actualiza el fichero.
 
 <img width="661" alt="Screen Shot 2022-11-24 at 5 23 21 AM" src="https://user-images.githubusercontent.com/66915274/203693816-be7f7b83-d492-4d01-89cf-abff01d07d96.png">
 
-16 Comprueba que el programa UFW está instalado en la máquina virtual y comprueba que funciona correctamente.
+16. Comprueba que el programa UFW está instalado en la máquina virtual y comprueba que funciona correctamente.
 
 **dpkg -s ufw**
 
@@ -1092,13 +1119,13 @@ Ejecuta un comando con sudo y comprueba que se actualiza el fichero.
 
 <img width="704" alt="Screen Shot 2022-11-24 at 5 25 49 AM" src="https://user-images.githubusercontent.com/66915274/203694095-3bcf3a2e-04b8-4d63-a55c-b1e952e52dad.png">
 
-17 Lista las reglas activas en UFW. Si no está hecha la parte bonus, solo debe aparecer la regla para el puerto 4242.
+17. Lista las reglas activas en UFW. Si no está hecha la parte bonus, solo debe aparecer la regla para el puerto 4242.
 
 **sudo ufw status numbered**
 
 <img width="500" alt="Screen Shot 2022-11-24 at 5 27 50 AM" src="https://user-images.githubusercontent.com/66915274/203694334-08b7791e-c7b6-4325-be60-7dc4e0257411.png">
 
-18 Crea una nueva regla para el puerto 8080. Comprueba que se ha añadido a las reglas activas y acto seguido puedes borrarla.
+18. Crea una nueva regla para el puerto 8080. Comprueba que se ha añadido a las reglas activas y acto seguido puedes borrarla.
 
 **sudo ufw allow 8080** para crearla
 
@@ -1124,7 +1151,7 @@ Comprobamos que solo nos quedan las reglas requeridas en el subject.
 
 <img width="461" alt="Screen Shot 2022-11-24 at 5 34 11 AM" src="https://user-images.githubusercontent.com/66915274/203695013-6b9ff40b-d23f-4a95-9694-f4e73e17f252.png">
 
-19 Comprueba que el servicio ssh esta instalado en la máquina virtual, que funciona correctamente y que solo funciona por el puerto 4242.
+19. Comprueba que el servicio ssh esta instalado en la máquina virtual, que funciona correctamente y que solo funciona por el puerto 4242.
 
 **which ssh**
 
@@ -1134,7 +1161,7 @@ Comprobamos que solo nos quedan las reglas requeridas en el subject.
 
 <img width="616" alt="Screen Shot 2022-11-24 at 5 40 34 AM" src="https://user-images.githubusercontent.com/66915274/203695746-b8a3235d-6084-40c6-8cc0-83e78d0b497c.png">
 
-20 Usa SSH para iniciar sesión con el usuario recién creado. Asegúrate de que no puede usar SSH con el usuario root.
+20. Usa SSH para iniciar sesión con el usuario recién creado. Asegúrate de que no puede usar SSH con el usuario root.
 
 Intentamos conectarnos por SSH con el usuario root, pero no tenemos permisos.
 
@@ -1144,7 +1171,7 @@ Nos conectamos por SSH con el nuevo usuario con el comando **ssh newuser@localho
 
 <img width="1384" alt="Screen Shot 2022-11-24 at 5 48 06 AM" src="https://user-images.githubusercontent.com/66915274/203696612-f2c98ebf-be55-4830-b5ea-b0ac98de7c65.png">
 
-21 Modifica el tiempo de ejecución del script de 10 minutos a 1.
+21. Modifica el tiempo de ejecución del script de 10 minutos a 1.
 
 Ejecutamos el siguiente comando para asi modificar el fichero crontab **sudo crontab -u root -e**
 
@@ -1154,7 +1181,7 @@ Modificamos el primer paramentro, en vez de 10 lo cambiamos a 1.
 
 <img width="638" alt="Screen Shot 2022-11-24 at 6 31 44 AM" src="https://user-images.githubusercontent.com/66915274/203701944-393bd687-8b9c-4643-9d59-4789361e314d.png">
 
-22 Finalmente haz que el script deje de ejecutarse cuando el servidor se haya iniciado, pero sin modificar el script.
+22. Finalmente haz que el script deje de ejecutarse cuando el servidor se haya iniciado, pero sin modificar el script.
 
 **sudo /etc/init.d/cron stop**
 
