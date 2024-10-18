@@ -550,271 +550,190 @@ enforce_for_root
 
 ## 5- Script
 
-Esta es una parte muy importante del proyecto. Debes prestar atención en todo, muy importante no copiar y pegar directamente el fichero sin saber que hace cada cosa. En la evaluación debes explicar cada comando si el evaluador lo pide.
 
-<b>Qué es un script?</b> Es una secuencia de comandos guardada en un fichero que cuando se ejecuta hará la función de cada comando.
+Es una secuencia de comandos guardada en un fichero que cuando se ejecuta hará la función de cada comando.
+Claro, aquí está la modificación del texto, adaptando las variables del script que has proporcionado:
 
-### 5-1 Architecture
+---
 
-El comando `uname -a` muestra información completa sobre el sistema, y el argumento **`-a`** es equivalente a **`--all`**. Ambos muestran todos los detalles disponibles del sistema en una sola línea.
+### 5-1 Arquitectura
 
-### Explicación de **`uname -a`**:
-El comando **`uname`** se usa para mostrar información sobre el sistema operativo y el hardware. La opción **`-a`** o **`--all`** incluye toda la información disponible.
+El comando `uname -a` muestra información completa sobre el sistema, y el argumento `-a` es equivalente a `--all`. Ambos muestran todos los detalles disponibles del sistema en una sola línea.
 
-- **`-a`** o **`--all`**: Muestra toda la información disponible, que incluye:
-  - **Kernel name**: Nombre del núcleo (normalmente "Linux").
-  - **Node name**: Nombre del host (nombre de la máquina).
-  - **Kernel release**: Versión del núcleo del sistema operativo.
-  - **Kernel version**: Fecha y detalles de la compilación del núcleo.
-  - **Machine hardware name**: Tipo de hardware (como `x86_64`).
-  - **Processor type**: Tipo de procesador.
-  - **Hardware platform**: Plataforma de hardware.
-  - **Operating system**: Nombre del sistema operativo.
+**Explicación de `uname -a`:**
+
+El comando `uname` se usa para mostrar información sobre el sistema operativo y el hardware. La opción `-a` o `--all` incluye toda la información disponible.
 
 ```bash
-Linux frromero42 6.1.0-26-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.112-1 (2024-09-30) x86_64 GNU/Linux
+#!/bin/bash
+
+# O.S. ARCHITECTURE
+architecture=$(uname -a)
 ```
 
-### Detalle de la salida:
-- **`Linux`**: Nombre del kernel.
-- **`frromero42`**: Nombre del host.
-- **`6.1.0-26-amd64`**: Versión del kernel.
-- **`#1 SMP PREEMPT_DYNAMIC Debian 6.1.112-1 (2024-09-30)`**: Información adicional sobre el kernel (versión, compilación).
-- **`x86_64`**: Tipo de máquina (64 bits).
-- **`GNU/Linux`**: Sistema operativo.
+---
 
-### 5-2 Núcleos físicos
-
-
+### 5-2 Núcleos Físicos
 
 ```bash
-cpuf=$(grep "physical id" /proc/cpuinfo | wc -l)
+cpu_phy=$(grep "physical id" /proc/cpuinfo | wc -l)
 ```
 
-1. **`/proc/cpuinfo`**:
-   - El archivo **`/proc/cpuinfo`** contiene información detallada sobre los procesadores del sistema.
-   - En particular, para cada núcleo físico de la CPU, aparece un campo llamado **"physical id"**, que identifica la CPU física a la que pertenece el núcleo.
+- **/proc/cpuinfo**: Contiene información detallada sobre los procesadores del sistema.
+- **`grep "physical id"`**: Busca todas las líneas en `/proc/cpuinfo` que contienen "physical id". Este campo aparece una vez por cada núcleo físico o cada hilo, dependiendo del soporte de Hyper-Threading del sistema.
+- **`wc -l`**: Cuenta el número de líneas, indicando cuántos núcleos físicos o CPUs físicas están presentes en el sistema.
 
-2. **`grep "physical id"`**:
-   - **`grep "physical id"`** busca todas las líneas en `/proc/cpuinfo` que contienen el texto **"physical id"**.
-   - Este campo aparece una vez por cada núcleo físico (o una vez por cada hilo, dependiendo del soporte de Hyper-Threading del sistema).
+**Resultado**: El número se almacena en la variable `cpu_phy`.
 
-3. **`wc -l`**:
-   - **`wc -l`** cuenta el número de líneas que contienen "physical id", lo que en este caso indica cuántos **núcleos físicos** o **CPUs físicas** están presentes en el sistema.
+---
 
-### Resultado:
-- Si el sistema tiene múltiples núcleos físicos, o varios procesadores físicos, el comando devolverá un número que representa la cantidad de líneas con "physical id" (número de CPUs físicas o núcleos físicos).
-- El resultado se almacena en la variable `cpuf`.
-
-
-### 5-3 Núcleos virtuales
-
-Este comando calcula el **número de CPUs virtuales (vCPU)** o **núcleos de procesamiento** en el sistema y almacena el resultado en la variable `cpuv`.
-
+### 5-3 Núcleos Virtuales
 
 ```bash
-cpuv=$(grep "processor" /proc/cpuinfo | wc -l)
+vcpus=$(grep "processor" /proc/cpuinfo | wc -l)
 ```
 
-1. **`/proc/cpuinfo`**:
-   - El archivo **`/proc/cpuinfo`** contiene información detallada sobre los procesadores del sistema, incluyendo datos como la arquitectura, modelo, velocidad y el número de CPUs disponibles (físicos y virtuales).
-   - Cada CPU (o núcleo de CPU) tiene una entrada en este archivo.
+- **`grep "processor"`**: Busca en `/proc/cpuinfo` todas las líneas que contengan "processor", representando cada núcleo virtual (vCPU).
+- **`wc -l`**: Cuenta el número de líneas que contienen "processor", indicando el total de CPUs virtuales.
 
-2. **`grep "processor"`**:
-   - **`grep "processor"`** busca en el archivo `/proc/cpuinfo` todas las líneas que contengan la palabra **"processor"**.
-   - Las líneas que contienen `"processor"` representan cada **núcleo virtual (vCPU)** en el sistema. Por ejemplo, si tienes 4 núcleos virtuales (o 4 hilos en un sistema con Hyper-Threading), verás 4 líneas con `"processor"`.
+**Resultado**: El número se almacena en la variable `vcpus`.
 
-3. **`wc -l`**:
-   - **`wc -l`** cuenta el **número de líneas** que contienen la palabra `"processor"`, lo cual corresponde al **número total de CPUs virtuales (vCPU)** o núcleos en el sistema.
-
-4. **`cpuv=$(...)`**:
-   - El número resultante de la operación (la cantidad de CPUs virtuales) se almacena en la variable `cpuv`.
-
-
+---
 
 ### 5-4 Memoria RAM
 
-Este fragmento de código calcula el **uso total, el usado y el porcentaje de disco**.
+```bash
+total_memory=$(free --mega | awk '$1 == "Mem:" {print $2}')
+used_memory=$(free --mega | awk '$1 == "Mem:" {print $3}')
+memory_usage_percent=$(free --mega | awk '$1 == "Mem:" {printf("%.2f"), $3/$2*100}')
+```
 
- 1. **`disk_total=$(df -m | grep "/dev/" | grep -v "/boot" | awk '{disk_t += $2} END {printf ("%.1fGb\n"), disk_t/1024}')`**
-   - **`df -m`**: Muestra el uso de disco en megabytes (MB).
-   - **`grep "/dev/"`**: Filtra las líneas que contienen el texto "/dev/", que representan particiones montadas en el sistema.
-   - **`grep -v "/boot"`**: Excluye las líneas que contienen "/boot", ya que no queremos incluir la partición de arranque en el cálculo.
-   - **`awk '{disk_t += $2} END {printf ("%.1fGb\n"), disk_t/1024}'`**:
-     - `disk_t += $2`: Suma los valores de la segunda columna (`$2`), que representa el **tamaño total** del disco en megabytes.
-     - **`END {printf ("%.1fGb\n"), disk_t/1024}`**: Después de procesar todas las líneas, convierte el tamaño total de MB a GB dividiendo por 1024 y lo formatea con un decimal.
+- **`free --mega`**: Muestra el uso de memoria en megabytes (MB).
+- **`awk`**: Filtra y extrae el total de memoria y la memoria usada.
 
-   **Resultado**: El total de espacio en disco (en GB) se guarda en `disk_total`.
-
- 2. **`disk_use=$(df -m | grep "/dev/" | grep -v "/boot" | awk '{disk_u += $3} END {print disk_u}')`**
-   - **`df -m`**: Nuevamente muestra el uso de disco en MB.
-   - **`grep "/dev/"`** y **`grep -v "/boot"`**: Filtran las particiones del sistema igual que en el primer comando.
-   - **`awk '{disk_u += $3} END {print disk_u}'`**:
-     - `disk_u += $3`: Suma los valores de la tercera columna (`$3`), que representa el **espacio usado** en megabytes.
-     - **`END {print disk_u}`**: Al final, imprime el total de MB usados.
-
-   **Resultado**: El total de espacio usado en disco (en MB) se guarda en `disk_use`.
-
- 3. **`disk_percent=$(df -m | grep "/dev/" | grep -v "/boot" | awk '{disk_u += $3} {disk_t += $2} END {printf("%d", disk_u/disk_t*100)}')`**
-   - **`df -m`**: Muestra el uso del disco en MB.
-   - **`grep "/dev/"`** y **`grep -v "/boot"`**: Filtran las particiones del sistema como en los comandos anteriores.
-   - **`awk '{disk_u += $3} {disk_t += $2} END {printf("%d", disk_u/disk_t*100)}'`**:
-     - `disk_u += $3`: Suma el espacio usado de todas las particiones.
-     - `disk_t += $2`: Suma el tamaño total de todas las particiones.
-     - **`END {printf("%d", disk_u/disk_t*100)}`**: Al final, calcula el **porcentaje de uso de disco** dividiendo el espacio usado por el total y multiplicando por 100. El resultado es formateado como un número entero.
-
-   **Resultado**: El porcentaje de uso de disco se guarda en `disk_percent`.
+**Resultado**:
+- `total_memory`: Memoria total en MB.
+- `used_memory`: Memoria utilizada en MB.
+- `memory_usage_percent`: Porcentaje de uso de memoria.
 
 ---
 
-### Resumen:
-1. **`disk_total`**: Calcula el tamaño total de las particiones del disco (en GB).
-2. **`disk_use`**: Calcula el espacio en disco actualmente usado (en MB).
-3. **`disk_percent`**: Calcula el porcentaje del disco que está ocupado.
-
-Todo esto excluye la partición de arranque (`/boot`) para obtener solo el uso de las particiones relevantes.
-
-### 5-6 Porcentaje uso de CPU
-
-
-1. **`vmstat 1 2`**: Ejecuta el comando `vmstat` para recoger estadísticas del sistema cada 1 segundo, dos veces. La primera línea suele ser información acumulada, mientras que la segunda refleja el estado actual.
-2. **`tail -1`**: Selecciona la última línea de la salida, que contiene las estadísticas más recientes.
-3. **`awk '{printf $15}'`**: Extrae el valor de la 15ª columna, que corresponde al **porcentaje de tiempo que el CPU está inactivo** (`id`).
-4. **`expr 100 - $cpul`**: Calcula el **porcentaje de uso del CPU** restando el porcentaje de inactividad de 100.
-5. **`printf "%.1f" $cpu_op`**: Formatea el porcentaje de uso del CPU con un decimal, por ejemplo, `15.0%` de uso.
-
-En resumen, el código obtiene el porcentaje de tiempo que el CPU está inactivo y luego calcula el porcentaje que está siendo utilizado.
-
-### 5-7 Último reinicio
-
-Este comando extrae la **fecha y hora del último arranque del sistema**.
-
- **`lb=$(who -b | awk '$1 == "system" {print $3 " " $4}')`**
-
-1. **`who -b`**:
-   - El comando **`who`** muestra información sobre los usuarios conectados y eventos del sistema.
-   - La opción **`-b`** (short for "boot") muestra la **fecha y hora del último arranque del sistema**. La salida tiene un formato similar a este:
-     ```
-     system boot 2024-10-17 16:22
-     ```
-
-2. **`awk '$1 == "system" {print $3 " " $4}'`**:
-   - **`awk`** es una herramienta para procesar texto.
-   - **`$1 == "system"`**: Filtra las líneas donde la primera columna (`$1`) es igual a `"system"`, ya que indica un evento de arranque del sistema.
-   - **`{print $3 " " $4}`**: Extrae y imprime la tercera y cuarta columnas de la salida:
-     - **`$3`**: Es la **fecha del último arranque** (por ejemplo, `2024-10-17`).
-     - **`$4`**: Es la **hora del último arranque** (por ejemplo, `16:22`).
-
-   En resumen, se imprime la **fecha y hora del último arranque del sistema**.
-
-3. **`lb=$(...)`**:
-   - El resultado de este comando (`$3 " " $4`) se guarda en la variable **`lb`**, que contiene la fecha y hora del último arranque.
-
-
-
-### 5-8 Uso LVM
-
-Este fragmento de código verifica si el sistema está usando **LVM (Logical Volume Manager)** y guarda el resultado en la variable `lvmu`.
-
-
+### 5-5 Uso de Disco
 
 ```bash
-lvmu=$(if [ $(lsblk | grep "lvm" | wc -l) -gt 0 ]; then echo yes; else echo no; fi)
+total_disk_space=$(df -m | grep "/dev/" | grep -v "/boot" | awk '{disk_t += $2} END {printf ("%.1fGb\n"), disk_t/1024}')
+used_disk_space=$(df -m | grep "/dev/" | grep -v "/boot" | awk '{disk_u += $3} END {print disk_u}')
+disk_usage_percent=$(df -m | grep "/dev/" | grep -v "/boot" | awk '{disk_u += $3} {disk_t += $2} END {printf("%d"), disk_u/disk_t*100}')
 ```
 
-1. **`lsblk`**:
-   - **`lsblk`** es el comando que lista información sobre los dispositivos de bloque (discos y particiones) del sistema.
-   - Su salida incluye información sobre el tipo de dispositivos, y si el sistema usa LVM, algunas líneas contendrán el texto **"lvm"** en la columna correspondiente al tipo de dispositivo.
+- **`df -m`**: Muestra el uso de disco en megabytes (MB).
+- **`grep`**: Filtra las líneas que contienen "/dev/", excluyendo "/boot".
+- **`awk`**: Suma y calcula el total y uso de disco, y el porcentaje de uso.
 
-2. **`grep "lvm"`**:
-   - **`grep "lvm"`** busca dentro de la salida de `lsblk` cualquier línea que contenga el texto **"lvm"**, lo cual indica que el sistema está utilizando LVM en al menos una de sus particiones o volúmenes.
+**Resultado**:
+- `total_disk_space`: Espacio total en disco (en GB).
+- `used_disk_space`: Espacio usado en disco (en MB).
+- `disk_usage_percent`: Porcentaje de uso de disco.
 
-3. **`wc -l`**:
-   - **`wc -l`** cuenta el número de líneas que contienen la palabra "lvm". Si hay **una o más líneas**, significa que LVM está en uso. Si no hay ninguna línea, entonces no se está utilizando LVM.
+---
 
-4. **`if [ $(...) -gt 0 ]`**:
-   - Este condicional evalúa si el número de líneas encontradas por `grep "lvm"` es **mayor que 0** (`-gt 0`). Si es mayor que 0, significa que se ha detectado el uso de LVM.
+### 5-6 Porcentaje de Uso de CPU
 
-5. **`then echo yes; else echo no; fi`**:
-   - Si el número de líneas es mayor que 0, el comando ejecuta `echo yes`, indicando que LVM está en uso.
-   - Si el número de líneas es 0, el comando ejecuta `echo no`, indicando que LVM **no** está en uso.
+```bash
+inactive_cpu=$(vmstat 1 2 | tail -1 | awk '{printf $15}')
+cpu_usage=$(expr 100 - $inactive_cpu)
+formatted_cpu=$(printf "%.1f" $cpu_usage)
+```
 
-6. **`lvmu=$(...)`**:
-   - El resultado del bloque condicional (`yes` o `no`) se almacena en la variable `lvmu`.
+- **`vmstat 1 2`**: Recoge estadísticas del sistema.
+- **`tail -1`**: Selecciona la última línea con las estadísticas recientes.
+- **`awk`**: Extrae el porcentaje de tiempo que el CPU está inactivo.
+- **`expr`**: Calcula el porcentaje de uso del CPU.
 
-### Resultado:
-- Si **LVM está en uso**, la variable `lvmu` tendrá el valor `yes`.
-- Si **LVM no está en uso**, la variable `lvmu` tendrá el valor `no`.
+**Resultado**:
+- `formatted_cpu`: Porcentaje de uso del CPU con un decimal.
 
-`
+---
+
+### 5-7 Último Reinicio
+
+```bash
+last_boot=$(who -b | awk '$1 == "system" {print $3 " " $4}')
+```
+
+- **`who -b`**: Muestra la fecha y hora del último arranque del sistema.
+- **`awk`**: Filtra para extraer la fecha y hora.
+
+**Resultado**: El resultado se almacena en la variable `last_boot`.
+
+---
+
+### 5-8 Uso de LVM
+
+```bash
+lvm_use=$(if [ $(lsblk | grep "lvm" | wc -l) -gt 0 ]; then echo yes; else echo no; fi)
+```
+
+- **`lsblk`**: Lista información sobre los dispositivos de bloque.
+- **`grep "lvm"`**: Busca líneas que contengan "lvm".
+- **`wc -l`**: Cuenta las líneas.
+
+**Resultado**:
+- `lvm_use`: Contendrá "yes" si LVM está en uso, "no" si no.
+
+---
 
 ### 5-9 Conexiones TCP
 
-Este comando cuenta el número de **conexiones TCP establecidas** en el sistema y almacena el resultado.
-
 ```bash
-ss -ta | grep ESTAB | wc -l
+tcp_connections=$(ss -ta | grep ESTAB | wc -l)
 ```
 
-1. **`ss -ta`**:
-   - **`ss`** (socket statistics) es una herramienta que muestra estadísticas de sockets, es decir, información sobre conexiones de red activas.
-   - La opción **`-t`** filtra las conexiones **TCP**.
-   - La opción **`-a`** muestra **todas** las conexiones TCP, tanto activas como en espera, con diferentes estados como LISTEN, ESTABLISHED, TIME-WAIT, etc.
+- **`ss -ta`**: Muestra estadísticas de sockets de conexiones TCP.
+- **`grep ESTAB`**: Filtra las conexiones en estado ESTABLISHED.
+- **`wc -l`**: Cuenta el número total de conexiones activas.
 
-2. **`grep ESTAB`**:
-   - **`grep ESTAB`** filtra las conexiones TCP que están en el estado **ESTABLISHED** (establecidas).
-   - El estado **ESTABLISHED** significa que la conexión TCP está activa y completamente configurada para intercambiar datos entre dos hosts.
+**Resultado**: El número se almacena en la variable `tcp_connections`.
 
-3. **`wc -l`**:
-   - **`wc -l`** cuenta el número de líneas que devuelve el comando anterior.
-   - En este caso, cada línea representa una conexión TCP en estado **ESTABLISHED**, por lo que `wc -l` cuenta el número total de conexiones activas.
+---
 
-### 5-10 Número de usuarios
-
-**usuarios actualmente conectados al sistema**
+### 5-10 Número de Usuarios
 
 ```bash
-users | wc -w
+user_log=$(users | wc -w)
 ```
 
-1. **`users`**:
-   - Este comando muestra una lista de los nombres de los usuarios que están actualmente conectados al sistema.
-   - La salida es una lista de los nombres de usuario separados por espacios, cada uno representando a un usuario que tiene una sesión activa.
+- **`users`**: Muestra una lista de usuarios conectados.
+- **`wc -w`**: Cuenta el número de palabras (usuarios activos).
 
-   **Ejemplo de salida:**
-   ```
-   user1 user2 user3
-   ```
+**Resultado**: Se almacena en la variable `user_log`.
 
-2. **`wc -w`**:
-   - **`wc`**  **word count**. La opción **`-w`** cuenta el número de palabras en la entrada que recibe.
-   - Ees decir cuántos nombres de usuario hay en la salida del comando `users`.
-
+---
 
 ### 5-11 Dirección IP y MAC
 
-Para obtener la dirección del host haremos uso del comando **hostname -I** y para obtener la MAC haremos uso del comando **ip link** que se utiliza para mostrar o modificar las interfaces de red. Como aparecen más de una interfaz, IP's etc. Utilizaremos el comando grep para buscar lo que deseamos y así poder printar por pantalla solo lo que nos piden. Para ello pondremos **ip link | grep "link/ether" | awk '{print $2}'** y de esta manera solo printaremos la MAC.
-
-<img width="639" alt="Captura de pantalla 2022-08-02 a las 14 53 14" src="https://user-images.githubusercontent.com/66915274/182379380-8e3b803d-d001-42ae-8aea-467e8c9f3ea9.png">
-
-### 5-12 Número de comandos ejecutados con sudo
-
-Aquí tienes una versión más concisa del texto sobre cómo obtener el número de comandos ejecutados con `sudo`:
-
----
-
-Para obtener el número de comandos ejecutados con `sudo`, utilizaremos el comando `journalctl`, que gestiona los registros del sistema. Usaremos `_COMM=sudo` para filtrar las entradas relacionadas. Dado que los registros también incluyen inicios y cierres de sesión de root, aplicaremos `grep COMMAND` para mostrar solo las líneas de comandos. Finalmente, usaremos `wc -l` para contar las líneas. El comando completo es:
-
 ```bash
-journalctl _COMM=sudo | grep COMMAND | wc -l
+ip_net=$(hostname -I)
+mac=$(ip link | grep "link/ether" | awk '{print $2}')
 ```
 
-Para comprobar su funcionamiento, ejecuta un comando con `sudo`, luego vuelve a ejecutar el comando anterior y verifica que el número de ejecuciones haya incrementado.
+- **`hostname -I`**: Obtiene la dirección IP del host.
+- **`ip link`**: Muestra información sobre las interfaces de red.
+- **`grep` y `awk`**: Filtran y extraen la dirección MAC.
 
 ---
 
-Esta versión conserva la información esencial y mejora la claridad, manteniéndola breve.
-### 5-13 Script
+### 5-12 Número de Comandos Ejecutados con Sudo
+
+```bash
+sudo_commands=$(journalctl _COMM=sudo | grep COMMAND | wc -l)
+```
+
+Para obtener el número de comandos ejecutados con `sudo`, se utiliza `journalctl`, que recopila los registros del sistema. Se filtran las entradas con `_COMM=sudo` para especificar su ruta, y luego se aplica `grep COMMAND` para limitar los resultados solo a líneas de comandos. Finalmente, se cuenta el número de líneas con `wc -l`.
+
+Para comprobar su funcionamiento, se puede ejecutar un comando que incluya `sudo` y volver a ejecutar el comando para verificar que el número de ejecuciones de `sudo` se incrementa.
+
+---
 
 ```
 #!/bin/bash
