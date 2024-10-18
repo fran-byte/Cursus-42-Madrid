@@ -853,18 +853,18 @@ mac=$(ip link | grep "link/ether" | awk '{print $2}')
 sudo_commands=$(journalctl _COMM=sudo | grep COMMAND | wc -l)
 
 # Wall message
-wall "	#Architecture: $architecture
-	#CPU physical: $cpu_phy
-	#vCPU: $vcpus
-	#Memory Usage: $used_memory/${total_memory}MB ($memory_usage_percent%)
-	#Disk Usage: $used_disk_space/${total_disk_space} ($disk_usage_percent%)
-	#CPU load: $formatted_cpu%
-	#Last boot: $last_boot
-	#LVM use: $lvm_use
-	#TCP Connections: $tcp_connections ESTABLISHED
-	#User log: $user_log
-	#Network: IP $ip_net ($mac)
-	#Sudo: $sudo_commands cmd"
+wall "	# Architecture: $architecture
+	# CPU physical: $cpu_phy
+	# vCPU: $vcpus
+	# Memory Usage: $used_memory/${total_memory}MB ($memory_usage_percent%)
+	# Disk Usage: $used_disk_space/${total_disk_space} ($disk_usage_percent%)
+	# CPU load: $formatted_cpu%
+	# Last boot: $last_boot
+	# LVM use: $lvm_use
+	# TCP Connections: $tcp_connections ESTABLISHED
+	# User log: $user_log
+	# Network: IP $ip_net ($mac)
+	# Sudo: $sudo_commands cmd"
 ```
 
 Ejecución del script:
