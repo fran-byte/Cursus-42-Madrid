@@ -874,40 +874,37 @@ Ejecución del script:
 
 ## 6- Crontab
 
-<b>Qué es crontab? </b>Es un administrador de procesos en segundo plano. Los procesos indicados serán ejecutados en el momento que especifiques en el fichero crontab.
+**Cron** es un programa en sistemas Unix que permite ejecutar automáticamente scripts y comandos en horarios o ciclos predefinidos.
 
-Para tener correctamente crontab configurado debemos editar el fichero crontab con el siguiente comando **sudo crontab -u root -e**.
+En este proyecto, debes publicar un mensaje cada 10 minutos.
 
-En el fichero debemos añadir el siguiente comando para que el script se ejecute cada 10 minutos _*/10 * * * * sh /ruta del script_.
-
+Para ello, crea un script con la información que deseas ejecutar. Luego, utiliza sudo crontab -u root -e para abrir crontab y agregar una regla.
 <img width="798" alt="Captura de pantalla 2022-08-03 a las 4 40 18" src="https://user-images.githubusercontent.com/66915274/182512395-eaebabc2-5866-4ae3-966c-1a80818cde07.png">
 
-Funcionamiento de cada parámetro de crontab:
+m ➤ Minuto de ejecución (0-59).
 
-m ➤ Corresponde al minuto en que se va a ejecutar el script, el valor va de 0 a 59.
+h ➤ Hora de ejecución en formato 24 horas (0-23, siendo 0 medianoche).
 
-h ➤ La hora exacta, se maneja el formato de 24 horas, los valores van de 0 a 23, siendo 0 las 12:00 de la medianoche.
-dom ➤ hace referencia al día del mes, por ejemplo se puede especificar 15 si se quiere ejecutar cada día 15.
+dom ➤ Día del mes (puedes especificar un día, como 15).
 
-dow ➤ Significa el día de la semana, puede ser numérico (0 a 7, donde 0 y 7 son domingo) o las 3 primeras letras del día en inglés: mon, tue, wed, thu, fri, sat, sun.
+dow ➤ Día de la semana (0-7, donde 0 y 7 son domingo) o las tres primeras letras del día en inglés: mon, tue, wed, thu, fri, sat, sun.
 
-user ➤ Define el usuario que va a ejecutar el comando, puede ser root, u otro usuario diferente siempre y cuando tenga permisos de ejecución del script.
+user ➤ Usuario que ejecuta el comando (puede ser root u otro usuario con permisos).
 
-command ➤ Refiere al comando o a la ruta absoluta del script a ejecutar.
-
+command ➤ Comando o ruta absoluta del script a ejecutar.
 ## 7- Signature.txt 📝
 
-Para obtener la firma lo primero que debemos hacer es apagar la máquina virtual ya que una vez la enciendas o modifiques algo la firma cambiará.
-
+Ejecuta shasum nombremaquina.vdi para obtener la firma. Añade el resultado a signature.txt y súbelo al repositorio. No vuelvas a abrir la máquina para evitar cambios en la firma.
+Para realizar correcciones, clona la máquina, así podrás encenderla sin riesgo de modificar la firma.
 <img width="834" alt="Captura de pantalla 2022-08-03 a las 4 47 32" src="https://user-images.githubusercontent.com/66915274/182513283-1cfc319f-982d-47cf-a596-8475d4c96616.png">
 
 El siguiente paso será ubicarnos en la ruta donde tengamos el .vdi de nuestra máquina virtual.
 
 <img width="465" alt="Screen Shot 2022-08-03 at 4 57 37 AM" src="https://user-images.githubusercontent.com/66915274/182514499-f0ad5ba7-c0c2-493e-b0ae-9b79c970816e.png">
 
-Por último haremos **shasum nombremaquina.vdi** y esto nos dara la firma. El resultado de esta firma es lo que tendremos añadir a nuestro fichero signature.txt para posteriormente subir el fichero al repositorio de la intra. Muy importante no volver a abrir la máquina ya que se modificara la firma. Para las correcciones recuerda clonar la máquina ya que asi podras encenderla sin miedo a que cambie la firma.
+Por último haremos **shasum nombremaquina.vdi** y esto nos dara la firma y la añadiremos a nuestro fichero signature.txt para  subirla  al repositorio de la intra. Muy importante **no volver a abrir la máquina** ya que se modificara la firma. Para las correcciones recuerda clonar la máquina ya que asi podras encenderla sin miedo a que cambie la firma.
 
-🧠 <b> Qué es shasum?</b> Es un comando que permite identificar la integridad de un fichero mediante la suma de comprobación del hash SHA-1 de un archivo.
+- **shasum** Es un comando que permite identificar la integridad de un fichero mediante la suma de comprobación del hash SHA-1 de un archivo.
 
 <img width="416" alt="Screen Shot 2022-08-03 at 4 58 48 AM" src="https://user-images.githubusercontent.com/66915274/182514627-f11026d0-de0d-447d-a2e4-31a3c1af0f35.png">
 
