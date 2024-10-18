@@ -799,11 +799,21 @@ Para obtener la dirección del host haremos uso del comando **hostname -I** y pa
 
 ### 5-12 Número de comandos ejecutados con sudo
 
-Para poder obtener el número de comandos que son ejecutados con sudo haremos uso del comando journalctl que este es una herramienta que se encarga de recopilar y administrar los registros del sistema. Acto seguido pondremos **_COMM=sudo** par así filtrar las entradas especificando su ruta. En nuestro ponemos **_COMM** , ya que hace referencia a un script ejecutable. Una vez tengamos filtrada la búsqueda y solo aparezcan los registros de sudo todavía deberemos filtrar un poco más, ya que cuando inicias o cierras sesión de root también aparece en el registro, entonces para terminar de filtrar pondremos un **grep COMMAND** y asi solo aparecerán las líneas de comandos. Por último pondremos **wc -l** para que asi nos salgan enumeradas las líneas. El comando entero es el siguiente: **journalctl _COMM=sudo | grep COMMAND | wc -l)**. Para comprobar que funcione correctamente podemos correr el comando en el terminal, poner un comando que incluya sudo y volver a correr el comando y deberá
-incrementar el número de ejecuciones de sudo.
+Aquí tienes una versión más concisa del texto sobre cómo obtener el número de comandos ejecutados con `sudo`:
 
-<img width="632" alt="Captura de pantalla 2022-08-02 a las 23 50 39" src="https://user-images.githubusercontent.com/66915274/182479668-949b8eee-81f6-4593-83f4-99053d199f1b.png">
+---
 
+Para obtener el número de comandos ejecutados con `sudo`, utilizaremos el comando `journalctl`, que gestiona los registros del sistema. Usaremos `_COMM=sudo` para filtrar las entradas relacionadas. Dado que los registros también incluyen inicios y cierres de sesión de root, aplicaremos `grep COMMAND` para mostrar solo las líneas de comandos. Finalmente, usaremos `wc -l` para contar las líneas. El comando completo es:
+
+```bash
+journalctl _COMM=sudo | grep COMMAND | wc -l
+```
+
+Para comprobar su funcionamiento, ejecuta un comando con `sudo`, luego vuelve a ejecutar el comando anterior y verifica que el número de ejecuciones haya incrementado.
+
+---
+
+Esta versión conserva la información esencial y mejora la claridad, manteniéndola breve.
 ### 5-13 Script
 
 ```
