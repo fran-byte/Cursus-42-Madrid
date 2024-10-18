@@ -70,15 +70,15 @@
 
 ### ¿Qué es el particionamiento de disco con LVM?
 
-El **particionamiento de disco** es la creación de una o más regiones de almacenamiento (llamadas particiones), de manera que cada región pueda gestionarse por separado.
+El **particionamiento de disco** creación de una o más regiones de almacenamiento, cada región pueda gestionarse por separado.
 
-Cada sistema operativo tiene una forma diferente de designar las particiones. En Linux (y por lo tanto en Debian o CentOS), se designan de la siguiente manera: `sdXN`, donde `X` es una letra que representa el medio y `N` es el número de la partición en el medio (por ejemplo, `sdb3` para la tercera partición del disco b).
+Cada O.S. gestiona diferente las particiones. En Linux, se designan: `sdXN`, donde `X` es una letra que representa el medio y `N` es el número de la partición en el medio (ej:, `sdb3` para la tercera partición del disco b).
 
-El particionamiento ofrece muchas ventajas en términos de seguridad.
+El particionamiento ofrece ventajas en términos de seguridad.
 
-Es común reservar particiones para servicios que pueden generar un gran volumen de datos para evitar saturar las particiones del sistema.
+Reservar particiones para servicios que pueden generar un gran volumen de datos y evitar saturar las particiones del sistema.
 
-Aquí tienes una breve lista de particiones que pueden existir (y que usamos en este proyecto):
+Breve lista de particiones que pueden existir (y que usamos en este proyecto):
 
 - `/`
   Contiene el resto del árbol del sistema.
@@ -95,9 +95,9 @@ Aquí tienes una breve lista de particiones que pueden existir (y que usamos en 
 - `/home`
   Contiene los directorios de los usuarios.
 
-### ¿Y qué es LVM?
+### ¿Y qué es LVM?     (Logical Volume Manager)
 
-Puedes pensar en **LVM** (Logical Volume Manager) como "particiones dinámicas", lo que significa que puedes crear, redimensionar o eliminar particiones LVM (llamadas "volúmenes lógicos" en el lenguaje de LVM) desde la línea de comandos mientras tu sistema Linux está en funcionamiento. No es necesario reiniciar el sistema para que el kernel reconozca las particiones recién creadas o redimensionadas.
+"Particiones dinámicas", puedes crear, redimensionar o eliminar particiones LVM (llamadas "volúmenes lógicos" en el lenguaje de LVM) desde la línea de comandos mientras tu sistema Linux está en funcionamiento.Si reiniciar el sistema para que el kernel reconozca las particiones recién creadas o redimensionadas.
 
 1. Versión **SIN** interfaz gráfica **Install**, (indicado por el subject)
 
