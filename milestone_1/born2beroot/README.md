@@ -829,13 +829,13 @@ Para realizar correcciones, clona la máquina, así podrás encenderla sin riesg
 
 El siguiente paso será ubicarnos en la ruta donde tengamos el .vdi de nuestra máquina virtual.
 
-<img width="465" alt="Screen Shot 2022-08-03 at 4 57 37 AM" src="https://user-images.githubusercontent.com/66915274/182514499-f0ad5ba7-c0c2-493e-b0ae-9b79c970816e.png">
+
 
 Por último haremos **shasum nombremaquina.vdi** y esto nos dara la firma y la añadiremos a nuestro fichero signature.txt para  subirla  al repositorio de la intra. Muy importante **no volver a abrir la máquina** ya que se modificara la firma. Para las correcciones recuerda clonar la máquina ya que asi podras encenderla sin miedo a que cambie la firma.
 
 - **shasum** Es un comando que permite identificar la integridad de un fichero mediante la suma de comprobación del hash SHA-1 de un archivo.
 
-<img width="416" alt="Screen Shot 2022-08-03 at 4 58 48 AM" src="https://user-images.githubusercontent.com/66915274/182514627-f11026d0-de0d-447d-a2e4-31a3c1af0f35.png">
+
 
 
 ## 9-1 Evaluación
