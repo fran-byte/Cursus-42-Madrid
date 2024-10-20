@@ -2,9 +2,9 @@
 
 # Tutorial  (Solamente Parte Obligatoria)
 
-➤ Creamos la máquina virtual y la imagen de Debian en mi directorio **sgoinfre** es un servidor accesible desde la red de la Escuela 42 y disponible desde cada computadora. Es un servidor de documentos donde tienes un directorio con tu nombre de usuario al que solo tú puedes acceder. Alcontrario que **goinfre**. Esta carpeta te permite almacenar algunos documentos. Es diferente en cada computadora y es más grande que el almacenamiento de tu sesión.
+➤ Creamos la máquina virtual y la imagen de Debian en mi directorio **sgoinfre**, un servidor accesible desde la red de la Escuela 42. Este servidor de documentos tiene un directorio con tu nombre de usuario al que solo tú puedes acceder, a diferencia de **goinfre**. La carpeta **sgoinfre** permite almacenar más documentos y su contenido es diferente en cada computadora.
 
-➤ Si colocas tu máquina virtual en el servidor **sgoinfre**, puedes cambiar de computadora durante tu proyecto. Si la colocas en la carpeta **goinfre**, tienes que quedarte en la misma computadora todo el tiempo.
+➤ Si colocas tu máquina virtual en **sgoinfre**, puedes cambiar de computadora durante tu proyecto. En cambio, si la colocas en **goinfre**, debes quedarte en la misma computadora.
 
 ## 1- Descargando ISO de Debian e instalando Virtual Box
 
@@ -59,46 +59,32 @@
 <img width="83" alt="" src="img/flecha.png">
 
 
-## 3- Instalación Debian en nuestra VM
+## 3- Instalación de Debian en nuestra VM
 
-➤ En esta parte, configurarás los primeros elementos de tu máquina. Harás lo siguiente:
+➤ En esta sección, configurarás los elementos iniciales de tu máquina, incluyendo:
 
- - Seleccionar el idioma, la zona horaria y el país en el que funcionará tu máquina.
- - Crear un nombre de host (tu_login_42) y una contraseña para tu máquina.
- - Crear un primer usuario simple (tu_login_42) y una contraseña para dicho usuario.
- - Configurar las particiones de tu máquina.
+- Selección de idioma, zona horaria y país.
+- Creación de un nombre de host (tu_login_42) y una contraseña para tu máquina.
+- Creación de un primer usuario (tu_login_42) y su contraseña.
+- Configuración de las particiones de tu máquina.
 
 ### ¿Qué es el particionamiento de disco con LVM?
 
-El **particionamiento de disco** creación de una o más regiones de almacenamiento, cada región pueda gestionarse por separado.
+El **particionamiento de disco** consiste en crear una o más regiones de almacenamiento, cada una gestionable de forma independiente. En Linux, las particiones se designan como `sdXN`, donde `X` representa el medio y `N` el número de partición (por ejemplo, `sdb3`).
 
-Cada O.S. gestiona diferente las particiones. En Linux, se designan: `sdXN`, donde `X` es una letra que representa el medio y `N` es el número de la partición en el medio (ej:, `sdb3` para la tercera partición del disco b).
+El particionamiento mejora la seguridad, permitiendo reservar espacio para servicios que generan grandes volúmenes de datos y evitando la saturación de las particiones del sistema.
 
-El particionamiento ofrece ventajas en términos de seguridad.
+**Particiones comunes en este proyecto:**
 
-Reservar particiones para servicios que pueden generar un gran volumen de datos y evitar saturar las particiones del sistema.
+- `/`: Contiene el árbol del sistema.
+- `/boot`: Datos utilizados antes de que el kernel ejecute programas en modo usuario.
+- `/var`: Archivos variables.
+- `/tmp`: Archivos temporales.
+- `/home`: Directorios de los usuarios.
 
-Breve lista de particiones que pueden existir (y que usamos en este proyecto):
+### ¿Qué es LVM? (Logical Volume Manager)
 
-- `/`
-  Contiene el resto del árbol del sistema.
-
-- `/boot`
-  Contiene datos que se utilizan antes de que el kernel comience a ejecutar programas en modo usuario.
-
-- `/var`
-  Contiene archivos variables.
-
-- `/tmp`
-  Contiene archivos temporales.
-
-- `/home`
-  Contiene los directorios de los usuarios.
-
-### ¿Y qué es LVM?     (Logical Volume Manager)
-
-"Particiones dinámicas", puedes crear, redimensionar o eliminar particiones LVM (llamadas "volúmenes lógicos" en el lenguaje de LVM) desde la línea de comandos mientras tu sistema Linux está en funcionamiento.Si reiniciar el sistema para que el kernel reconozca las particiones recién creadas o redimensionadas.
-
+LVM permite crear, redimensionar o eliminar particiones dinámicamente (volúmenes lógicos) desde la línea de comandos mientras el sistema está en funcionamiento, sin reiniciar para que el kernel reconozca los cambios.
 1. Versión **SIN** interfaz gráfica **Install**, (indicado por el subject)
 
 <img width="632" alt="" src="img/1-install.png">
@@ -319,9 +305,9 @@ Donde * * * * * significa cada minuto de cada hora de cada día de cada mes y ca
 
 ### 4.1 - Instalación de sudo y configuración de usuarios y grupos
 
-Si detectas un error en **/etc/hosts**, verifica y corrige el archivo.
+➤ Si detectas un error en **/etc/hosts**, verifica y corrige el archivo.
 
-Asegúrate de que contenga la entrada correcta para el nombre del host. Edita el archivo con:
+➤ Asegúrate de que contenga la entrada correcta para el nombre del host. Edita el archivo con:
 
 ```bash
 nano /etc/hosts
@@ -336,7 +322,7 @@ nano /etc/hosts
 apt install sudo
 ```
 
-Esto instalará los paquetes necesarios.
+➤ Esto instalará los paquetes necesarios.
 
 <img width="514" alt="" src="img/installsudopeque.png">
 
@@ -350,13 +336,13 @@ Esto instalará los paquetes necesarios.
 sudo -V
 ```
 
-- Este comando muestra la versión de sudo y los argumentos usados para su configuración, además de los plugins. Para ver el contenido completo, usa:
+➤ Este comando muestra la versión de sudo y los argumentos usados para su configuración, además de los plugins. Para ver el contenido completo, usa:
 
 ```bash
 sudo -V | more
 ```
 
-Para crear un nuevo grupo llamado **user42**:
+➤ Para crear un nuevo grupo llamado **user42**:
 
 4. Crea el grupo con el siguiente comando:
 
@@ -364,14 +350,14 @@ Para crear un nuevo grupo llamado **user42**:
 sudo addgroup user42
 ```
 
-- El **GID** es el identificador de grupo (Group ID).
+➤ El **GID** es el identificador de grupo (Group ID).
 
 5. Verifica la creación correcta del grupo con:
 
 ```bash
 getent group user42
 ```
-O bien, puedes ver todos los grupos en **/etc/group** usando:
+➤ O bien, puedes ver todos los grupos en **/etc/group** usando:
 
 ```bash
 cat /etc/group
@@ -403,7 +389,7 @@ En los grupos **sudo** y **user42**, deberá aparecer tu usuario.
 
 ### 4.2 - SSH Instalación y configuración
 
-- **¿Qué es SSH?** Es un protocolo y programa que proporciona acceso remoto a un servidor a través de un canal seguro con cifrado de información.
+➤ **¿Qué es SSH?** Es un protocolo y programa que proporciona acceso remoto a un servidor a través de un canal seguro con cifrado de información.
 
 1. Actualiza los repositorios con:
 
@@ -423,25 +409,23 @@ sudo apt install openssh-server
 sudo service ssh status
 ```
 
-Debería aparecer como **active**.
+➤ Debería aparecer como **active**.
 
 <img width="702" alt="" src="img/sshstatus.png">
 
 3. Después de la instalación, hay archivos que configurar. Usaremos **Nano** para ello.
 
-   - El primer archivo que editaremos es:
+➤ El primer archivo que editaremos es:
 
    ```bash
    sudo nano /etc/ssh/sshd_config
    ```
 
-   Si necesitas permisos de escritura, puedes usar **su** o simplemente el comando anterior.
+➤ Si necesitas permisos de escritura, puedes usar **su** o simplemente el comando anterior.
 
 4. Los comentarios de línea comienzan con **#**; debes eliminar el **#** de las líneas que quieras modificar.
 
-   - Líneas a modificar, descomentalas y dejalas así:
-
-     ➤ Cambia:
+➤ Líneas a modificar, descomentalas y dejalas así:
 
      ```plaintext
      #Port 22
@@ -459,13 +443,12 @@ Debería aparecer como **active**.
 
 <img width="632" alt="" src="img/editportpass.png">
 
-- Guardamos cambios.
 
 5. Ahora editamos el fichero **/etc/ssh/ssh_config**.
 
-- Editaremos la siguiente línea:
+➤ Editaremos la siguiente línea:
 
-➤ #Port **22** a Port **4242**
+ #Port **22** a Port **4242**
 
 <img width="632" alt="" src="img/editsshconf.png">
 
@@ -476,7 +459,7 @@ Debería aparecer como **active**.
 
 ### 4-3 Instalación y configuración de UFW
 
-- **UFW** (Uncomplicated Firewall) es un firewall que utiliza la línea de comandos para configurar **iptables** mediante un conjunto sencillo de comandos.
+➤ **UFW** (Uncomplicated Firewall) es un firewall que utiliza la línea de comandos para configurar **iptables** mediante un conjunto sencillo de comandos.
 
 1. Para instalar **UFW**, ejecuta el siguiente comando:
 
@@ -536,7 +519,7 @@ sudo nano /etc/sudoers.d/sudo_config
 
 ## DESGLOSANDO LOS COMANDOS
 
-Introduce las siguientes configuraciones en el archivo **/etc/sudoers.d/sudo_config**:
+➤ Introduce las siguientes configuraciones en el archivo **/etc/sudoers.d/sudo_config**:
 
 ```plaintext
 Defaults  passwd_tries=3              # Número de reintentos
@@ -617,7 +600,7 @@ PASS_WARN_AGE 7  # El usuario recibirá un aviso 7 días antes de que expire su 
    - **-m** especifica el número mínimo de días antes de que el usuario pueda cambiar su contraseña (en este caso, **2 días**).
    - **-M** especifica el número máximo de días que puede transcurrir antes de que la contraseña deba ser cambiada (en este caso, **30 días**).
 
-Esto asegurará que la cuenta de **frromero** cumpla con las nuevas políticas de contraseñas.
+➤ Esto asegurará que la cuenta de **frromero** cumpla con las nuevas políticas de contraseñas.
 
 ### 4-6 Conectarse vía SSH
 
@@ -644,18 +627,18 @@ Esto asegurará que la cuenta de **frromero** cumpla con las nuevas políticas d
 ## 5- Script
 
 
-Es una secuencia de comandos guardada en un fichero que cuando se ejecuta hará la función de cada comando.
+➤ Es una secuencia de comandos guardada en un fichero que cuando se ejecuta hará la función de cada comando.
 Claro, aquí está la modificación del texto, adaptando las variables del script que has proporcionado:
 
 ---
 
 ### 5-1 Arquitectura
 
-El comando `uname -a` muestra información completa sobre el sistema, y el argumento `-a` es equivalente a `--all`. Ambos muestran todos los detalles disponibles del sistema en una sola línea.
+➤ El comando `uname -a` muestra información completa sobre el sistema, y el argumento `-a` es equivalente a `--all`. Ambos muestran todos los detalles disponibles del sistema en una sola línea.
 
 **Explicación de `uname -a`:**
 
-El comando `uname` se usa para mostrar información sobre el sistema operativo y el hardware. La opción `-a` o `--all` incluye toda la información disponible.
+➤ El comando `uname` se usa para mostrar información sobre el sistema operativo y el hardware. La opción `-a` o `--all` incluye toda la información disponible.
 
 ```bash
 #!/bin/bash
@@ -672,9 +655,9 @@ architecture=$(uname -a)
 cpu_phy=$(grep "physical id" /proc/cpuinfo | wc -l)
 ```
 
-- **/proc/cpuinfo**: Contiene información detallada sobre los procesadores del sistema.
-- **`grep "physical id"`**: Busca todas las líneas en `/proc/cpuinfo` que contienen "physical id". Este campo aparece una vez por cada núcleo físico o cada hilo, dependiendo del soporte de Hyper-Threading del sistema.
-- **`wc -l`**: Cuenta el número de líneas, indicando cuántos núcleos físicos o CPUs físicas están presentes en el sistema.
+➤ **/proc/cpuinfo**: Contiene información detallada sobre los procesadores del sistema.
+➤ **`grep "physical id"`**: Busca todas las líneas en `/proc/cpuinfo` que contienen "physical id". Este campo aparece una vez por cada núcleo físico o cada hilo, dependiendo del soporte de Hyper-Threading del sistema.
+➤ **`wc -l`**: Cuenta el número de líneas, indicando cuántos núcleos físicos o CPUs físicas están presentes en el sistema.
 
 **Resultado**: El número se almacena en la variable `cpu_phy`.
 
@@ -686,8 +669,8 @@ cpu_phy=$(grep "physical id" /proc/cpuinfo | wc -l)
 vcpus=$(grep "processor" /proc/cpuinfo | wc -l)
 ```
 
-- **`grep "processor"`**: Busca en `/proc/cpuinfo` todas las líneas que contengan "processor", representando cada núcleo virtual (vCPU).
-- **`wc -l`**: Cuenta el número de líneas que contienen "processor", indicando el total de CPUs virtuales.
+➤ **`grep "processor"`**: Busca en `/proc/cpuinfo` todas las líneas que contengan "processor", representando cada núcleo virtual (vCPU).
+➤ **`wc -l`**: Cuenta el número de líneas que contienen "processor", indicando el total de CPUs virtuales.
 
 **Resultado**: El número se almacena en la variable `vcpus`.
 
@@ -701,13 +684,13 @@ used_memory=$(free --mega | awk '$1 == "Mem:" {print $3}')
 memory_usage_percent=$(free --mega | awk '$1 == "Mem:" {printf("%.2f"), $3/$2*100}')
 ```
 
-- **`free --mega`**: Muestra el uso de memoria en megabytes (MB).
-- **`awk`**: Filtra y extrae el total de memoria y la memoria usada.
+➤ **`free --mega`**: Muestra el uso de memoria en megabytes (MB).
+➤ **`awk`**: Filtra y extrae el total de memoria y la memoria usada.
 
 **Resultado**:
-- `total_memory`: Memoria total en MB.
-- `used_memory`: Memoria utilizada en MB.
-- `memory_usage_percent`: Porcentaje de uso de memoria.
+➤ `total_memory`: Memoria total en MB.
+➤ `used_memory`: Memoria utilizada en MB.
+➤ `memory_usage_percent`: Porcentaje de uso de memoria.
 
 ---
 
@@ -719,14 +702,14 @@ used_disk_space=$(df -m | grep "/dev/" | grep -v "/boot" | awk '{disk_u += $3} E
 disk_usage_percent=$(df -m | grep "/dev/" | grep -v "/boot" | awk '{disk_u += $3} {disk_t += $2} END {printf("%d"), disk_u/disk_t*100}')
 ```
 
-- **`df -m`**: Muestra el uso de disco en megabytes (MB).
-- **`grep`**: Filtra las líneas que contienen "/dev/", excluyendo "/boot".
-- **`awk`**: Suma y calcula el total y uso de disco, y el porcentaje de uso.
+➤ **`df -m`**: Muestra el uso de disco en megabytes (MB).
+➤ **`grep`**: Filtra las líneas que contienen "/dev/", excluyendo "/boot".
+➤ **`awk`**: Suma y calcula el total y uso de disco, y el porcentaje de uso.
 
 **Resultado**:
-- `total_disk_space`: Espacio total en disco (en GB).
-- `used_disk_space`: Espacio usado en disco (en MB).
-- `disk_usage_percent`: Porcentaje de uso de disco.
+➤ `total_disk_space`: Espacio total en disco (en GB).
+➤ `used_disk_space`: Espacio usado en disco (en MB).
+➤ `disk_usage_percent`: Porcentaje de uso de disco.
 
 ---
 
@@ -738,13 +721,13 @@ cpu_usage=$(expr 100 - $inactive_cpu)
 formatted_cpu=$(printf "%.1f" $cpu_usage)
 ```
 
-- **`vmstat 1 2`**: Recoge estadísticas del sistema.
-- **`tail -1`**: Selecciona la última línea con las estadísticas recientes.
-- **`awk`**: Extrae el porcentaje de tiempo que el CPU está inactivo.
-- **`expr`**: Calcula el porcentaje de uso del CPU.
+➤ **`vmstat 1 2`**: Recoge estadísticas del sistema.
+➤ **`tail -1`**: Selecciona la última línea con las estadísticas recientes.
+➤ **`awk`**: Extrae el porcentaje de tiempo que el CPU está inactivo.
+➤ **`expr`**: Calcula el porcentaje de uso del CPU.
 
 **Resultado**:
-- `formatted_cpu`: Porcentaje de uso del CPU con un decimal.
+➤ `formatted_cpu`: Porcentaje de uso del CPU con un decimal.
 
 ---
 
@@ -754,8 +737,8 @@ formatted_cpu=$(printf "%.1f" $cpu_usage)
 last_boot=$(who -b | awk '$1 == "system" {print $3 " " $4}')
 ```
 
-- **`who -b`**: Muestra la fecha y hora del último arranque del sistema.
-- **`awk`**: Filtra para extraer la fecha y hora.
+➤ **`who -b`**: Muestra la fecha y hora del último arranque del sistema.
+➤ **`awk`**: Filtra para extraer la fecha y hora.
 
 **Resultado**: El resultado se almacena en la variable `last_boot`.
 
@@ -767,12 +750,12 @@ last_boot=$(who -b | awk '$1 == "system" {print $3 " " $4}')
 lvm_use=$(if [ $(lsblk | grep "lvm" | wc -l) -gt 0 ]; then echo yes; else echo no; fi)
 ```
 
-- **`lsblk`**: Lista información sobre los dispositivos de bloque.
-- **`grep "lvm"`**: Busca líneas que contengan "lvm".
-- **`wc -l`**: Cuenta las líneas.
+➤ **`lsblk`**: Lista información sobre los dispositivos de bloque.
+➤ **`grep "lvm"`**: Busca líneas que contengan "lvm".
+➤ **`wc -l`**: Cuenta las líneas.
 
 **Resultado**:
-- `lvm_use`: Contendrá "yes" si LVM está en uso, "no" si no.
+-➤ `lvm_use`: Contendrá "yes" si LVM está en uso, "no" si no.
 
 ---
 
@@ -782,9 +765,9 @@ lvm_use=$(if [ $(lsblk | grep "lvm" | wc -l) -gt 0 ]; then echo yes; else echo n
 tcp_connections=$(ss -ta | grep ESTAB | wc -l)
 ```
 
-- **`ss -ta`**: Muestra estadísticas de sockets de conexiones TCP.
-- **`grep ESTAB`**: Filtra las conexiones en estado ESTABLISHED.
-- **`wc -l`**: Cuenta el número total de conexiones activas.
+➤ **`ss -ta`**: Muestra estadísticas de sockets de conexiones TCP.
+➤ **`grep ESTAB`**: Filtra las conexiones en estado ESTABLISHED.
+➤ **`wc -l`**: Cuenta el número total de conexiones activas.
 
 **Resultado**: El número se almacena en la variable `tcp_connections`.
 
@@ -796,8 +779,8 @@ tcp_connections=$(ss -ta | grep ESTAB | wc -l)
 user_log=$(users | wc -w)
 ```
 
-- **`users`**: Muestra una lista de usuarios conectados.
-- **`wc -w`**: Cuenta el número de palabras (usuarios activos).
+➤ **`users`**: Muestra una lista de usuarios conectados.
+➤ **`wc -w`**: Cuenta el número de palabras (usuarios activos).
 
 **Resultado**: Se almacena en la variable `user_log`.
 
@@ -810,15 +793,15 @@ ip_net=$(hostname -I)
 mac=$(ip link | grep "link/ether" | awk '{print $2}')
 ```
 
-- **`hostname -I`**: Obtiene la dirección IP del host.
-- **`ip link`**: Muestra información sobre las interfaces de red.
-- **`grep` y `awk`**: Filtran y extraen la dirección MAC.
+➤ **`hostname -I`**: Obtiene la dirección IP del host.
+➤ **`ip link`**: Muestra información sobre las interfaces de red.
+➤ **`grep` y `awk`**: Filtran y extraen la dirección MAC.
 
 ---
 
 ### 5-12 Número de Comandos Ejecutados con Sudo
 
-Para obtener el número de comandos ejecutados con `sudo`, utiliza el siguiente comando:
+➤ Para obtener el número de comandos ejecutados con `sudo`, utiliza el siguiente comando:
 
 ```bash
 sudo_commands=$(journalctl _COMM=sudo | grep COMMAND | wc -l)
@@ -893,16 +876,16 @@ wall "	# Architecture: $architecture
 	# Sudo: $sudo_commands cmd"
 ```
 
-Ejecución del script:
+➤ Ejecución del script:
 
 <img width="622" alt="" src="img/script.png">
 
 
 ## 6- Crontab
 
-**Cron** es un programa en sistemas Unix que ejecuta automáticamente scripts y comandos en horarios o ciclos predefinidos.
+➤ **Cron** es un programa en sistemas Unix que ejecuta automáticamente scripts y comandos en horarios o ciclos predefinidos.
 
-En este proyecto, debes publicar un mensaje cada 10 minutos. Para ello, crea un script con la información que deseas ejecutar y utiliza el siguiente comando para abrir crontab:
+➤ En este proyecto, debes publicar un mensaje cada 10 minutos. Para ello, crea un script con la información que deseas ejecutar y utiliza el siguiente comando para abrir crontab:
 
 ```bash
 sudo crontab -u root -e
@@ -911,21 +894,22 @@ sudo crontab -u root -e
 
 ### Formato de Crontab:
 
-- **m** ➤ Minuto de ejecución (0-59).
-- **h** ➤ Hora de ejecución (0-23).
-- **dom** ➤ Día del mes (puedes especificar un día, como 15).
-- **dow** ➤ Día de la semana (0-7, donde 0 y 7 son domingo) o las primeras tres letras del día en inglés: mon, tue, wed, thu, fri, sat, sun.
-- **user** ➤ Usuario que ejecuta el comando (root u otro con permisos).
-- **command** ➤ Comando o ruta absoluta del script a ejecutar.
+➤ **m**  Minuto de ejecución (0-59).
+➤ **h**  Hora de ejecución (0-23).
+➤ **dom**  Día del mes (puedes especificar un día, como 15).
+➤ **dow**  Día de la semana (0-7, donde 0 y 7 son domingo) o las primeras tres letras del día en inglés: mon, tue, wed, thu, fri, sat, sun.
+➤ **user**  Usuario que ejecuta el comando (root u otro con permisos).
+➤ **command**  Comando o ruta absoluta del script a ejecutar.
 ## 7- Signature.txt 📝
 
-- Ejecuta `shasum nombremaquina.vdi` para obtener la firma. Añade el resultado a **signature.txt** y súbelo al repositorio. No vuelvas a abrir la máquina para evitar cambios en la firma. Para realizar correcciones, clona la máquina, así podrás encenderla sin riesgo de modificar la firma.
+➤ Ejecuta `shasum nombremaquina.vdi` para obtener la firma. Añade el resultado a **signature.txt** y súbelo al repositorio. No vuelvas a abrir la máquina para evitar cambios en la firma. Para realizar correcciones, clona la máquina, así podrás encenderla sin riesgo de modificar la firma.
 
 <img width="834" alt="Captura de pantalla 2022-08-03 a las 4 47 32" src="https://user-images.githubusercontent.com/66915274/182513283-1cfc319f-982d-47cf-a596-8475d4c96616.png">
 
-Ubica el .vdi de tu máquina virtual y ejecuta nuevamente `shasum nombremaquina.vdi`. Añade la firma generada a **signature.txt** para subirla al repositorio. Recuerda **no volver a abrir la máquina**, ya que se modificará la firma. Para correcciones, clona la máquina para encenderla sin riesgo.
+➤ Ubica el .vdi de tu máquina virtual y ejecuta nuevamente `shasum nombremaquina.vdi`. Añade la firma generada a **signature.txt** para subirla al repositorio. Recuerda **no volver a abrir la máquina**, ya que se modificará la firma.
+➤ Para correcciones, clona la máquina para encenderla sin riesgo.
 
-- **shasum**: Comando que verifica la integridad de un archivo mediante la suma de comprobación del hash SHA-1.
+➤ **shasum**: Comando que verifica la integridad de un archivo mediante la suma de comprobación del hash SHA-1.
 
 
 
@@ -933,7 +917,7 @@ Ubica el .vdi de tu máquina virtual y ejecuta nuevamente `shasum nombremaquina.
 
 ### ▪️ Qué es una máquina virtual?
 
-Es un software que simula un sistema de computación y puede ejecutar programas como si fuese una computadora real. Permite crear múltiples entornos simulados o recursos dedicados desde un solo sistema de hardware físico.
+➤ Es un software que simula un sistema de computación y puede ejecutar programas como si fuese una computadora real. Permite crear múltiples entornos simulados o recursos dedicados desde un solo sistema de hardware físico.
 ➤ Existen varias ventajas de tener una máquina virtual:
 
 	- Económica
@@ -944,54 +928,53 @@ Es un software que simula un sistema de computación y puede ejecutar programas 
 
 ### ▪️ Por qué te decantaste por Debian?
 
- Es más sencillo y hay multitud de información.
+ ➤ Es más sencillo y hay multitud de información.
 
 ### ▪️ Diferencias básicas entre Rocky y Debian
 
 ### 1. **Origen y Propósito**
-- **Rocky Linux**: Alternativa a CentOS, basada en RHEL, enfocada en estabilidad para servidores.
-- **Debian**: Distribución antigua y respetada, centrada en la libertad del software y la estabilidad.
+➤ **Rocky Linux**: Alternativa a CentOS, basada en RHEL, enfocada en estabilidad para servidores.
+➤ **Debian**: Distribución antigua y respetada, centrada en la libertad del software y la estabilidad.
 
 ### 2. **Gestión de Paquetes**
-- **Rocky Linux**: Usa `yum`/`dnf` con paquetes RPM.
-- **Debian**: Usa `apt` con paquetes DEB.
+➤ **Rocky Linux**: Usa `yum`/`dnf` con paquetes RPM.
+➤ **Debian**: Usa `apt` con paquetes DEB.
 
 ### 3. **Ciclos de Lanzamiento**
-- **Rocky Linux**: Versiones LTS, actualizaciones regulares.
-- **Debian**: Ciclo flexible con versiones estables, inestables y de prueba.
+➤ **Rocky Linux**: Versiones LTS, actualizaciones regulares.
+➤ **Debian**: Ciclo flexible con versiones estables, inestables y de prueba.
 
 ### 4. **Filosofía y Comunidad**
-- **Rocky Linux**: Basado en la comunidad, influenciado por RHEL, mantenido por una fundación.
-- **Debian**: Completamente comunitaria, regida por el "Debian Social Contract".
+➤ **Rocky Linux**: Basado en la comunidad, influenciado por RHEL, mantenido por una fundación.
+➤ **Debian**: Completamente comunitaria, regida por el "Debian Social Contract".
 
 ### 5. **Usos Comunes**
-- **Rocky Linux**: Ideal para servidores y aplicaciones críticas.
-- **Debian**: Usado en servidores y escritorios, flexible y personalizable.
+➤ **Rocky Linux**: Ideal para servidores y aplicaciones críticas.
+➤ **Debian**: Usado en servidores y escritorios, flexible y personalizable.
 
 ### 6. **Entornos de Escritorio**
-- **Rocky Linux**: Más común en servidores, se puede instalar un entorno de escritorio.
-- **Debian**: Ofrece múltiples entornos de escritorio en la instalación.
+➤ **Rocky Linux**: Más común en servidores, se puede instalar un entorno de escritorio.
+➤ **Debian**: Ofrece múltiples entornos de escritorio en la instalación.
 
 ### 7. **Configuración y Personalización**
-- **Rocky Linux**: Conservador en cambios, ideal para estabilidad.
-- **Debian**: Mayor flexibilidad y opciones de personalización.
+➤ **Rocky Linux**: Conservador en cambios, ideal para estabilidad.
+➤ **Debian**: Mayor flexibilidad y opciones de personalización.
 
-Este resumen destaca las diferencias clave entre ambas distribuciones.
 ### ▪️ Propósito de las máquinas virtuales
 
-Proporcionan un entorno de ejecución independiente de hardware y sistema operativo, ocultando los detalles de la plataforma subyacente para que un programa se ejecute de la misma forma en cualquier plataforma.
+➤ Proporcionan un entorno de ejecución independiente de hardware y sistema operativo, ocultando los detalles de la plataforma subyacente para que un programa se ejecute de la misma forma en cualquier plataforma.
 
 ### ▪️ Diferencias entre apt y aptitude
 
-**Aptitude** es una versión mejorada de **apt**. Apt es un administrador de paquetes de nivel inferior, mientras que Aptitude es de alto nivel, ofreciendo más funcionalidades y características.
+➤ **Aptitude** es una versión mejorada de **apt**. Apt es un administrador de paquetes de nivel inferior, mientras que Aptitude es de alto nivel, ofreciendo más funcionalidades y características.
 
 ### ▪️ Qué es APPArmor?
 
-Es un módulo de seguridad del kernel Linux que permite restringir las capacidades de un programa.
+➤ Es un módulo de seguridad del kernel Linux que permite restringir las capacidades de un programa.
 
 ### ▪️ Qué es LVM?
 
-Es un gestor de volúmenes lógicos que asigna espacio en dispositivos de almacenamiento masivo de manera más flexible que los esquemas de particionado convencionales.
+➤ Es un gestor de volúmenes lógicos que asigna espacio en dispositivos de almacenamiento masivo de manera más flexible que los esquemas de particionado convencionales.
 
 ## 9-2 Comandos de evaluación
 
