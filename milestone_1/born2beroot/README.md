@@ -221,10 +221,9 @@ Breve lista de particiones que pueden existir (y que usamos en este proyecto):
 <img width="632" alt="" src="img/VirtualBox_born2beroot_13_10_2024_18_54_22.png">
 
 # 4 Configurando la máquina virtual (VM)
-
+- Herramientas de gestión de paquetes:
 ## aptitude
-➤ Recuerda qué paquetes se solicitaron explícitamente y cuáles se instalaron solo debido a dependencias.
-     y  desinstalará automáticamente los paquetes que no se solicitaron explícitamente cuando ya no sean necesarios.
+➤ Recuerda qué paquetes se solicitaron explícitamente y cuáles se instalaron solo debido a dependencias. Y  desinstalará automáticamente los paquetes que no se solicitaron explícitamente cuando ya no sean necesarios.
 ## apt
 ➤ Solo hará exactamente lo que se le indique en la línea de comandos.
 
@@ -246,10 +245,9 @@ Breve lista de particiones que pueden existir (y que usamos en este proyecto):
 
 ## Política de Contraseñas
 
-➤ Es un conjunto de reglas diseñadas para mejorar la seguridad alentando a los usuarios a usar contraseñas relativamente seguras y a usarlas correctamente.
-(que expire cada 30 días, tenga más de 10 caracteres y no contenga secuencias lógicas, y que contenga letras mayúsculas, caracteres especiales y números).
+➤ Es un conjunto de reglas que mejora la seguridad alentando a usar contraseñas seguras (que expiren cada 30 días, tengan más de 10 caracteres, sin secuencias lógicas, y que incluyan mayúsculas, caracteres especiales y números).
 
-➤ Cada usuario de tu máquina virtual deberá seguir las siguientes reglas de contraseñas:
+➤ Los usuario deberá seguir las siguientes reglas de contraseñas:
 ```
     PASS_MAX_DAYS 30
     PASS_MIN_DAYS 2
@@ -258,13 +256,12 @@ Breve lista de particiones que pueden existir (y que usamos en este proyecto):
 
 Es posible que tu usuario predeterminado no tenga estas modificaciones, por lo que deberás hacerlo manualmente.
 
-Para ver qué parámetros de contraseña están asociados a un usuario, puedes escribir este comando:
+Ver los parámetros de contraseña de un usuario:
 
-➤ bash
-
-➤ sudo chage -l nombre_usuario
-
-➤ Si los valores no corresponden a los indicados, deben cambiarse manualmente de la siguiente manera:
+```bash
+sudo chage -l nombre_usuario
+```
+➤ Si no corresponde con lo indicado, deben cambiarse:
 
 ``` bash
 
@@ -274,23 +271,20 @@ sudo chage -W 7 <usuario>
 ```
 ## Grupos y usuarios
 
-➤ Linux utiliza grupos como una forma de organizar a los usuarios. Existen para simplificar la gestión de permisos de archivos y carpetas. Linux está diseñado para permitir que varios usuarios accedan al sistema al mismo tiempo, pero con permisos diferentes.
+➤ Linux usa grupos para organizar usuarios y simplificar la gestión de permisos de archivos y carpetas. Está diseñado para permitir que varios usuarios accedan al sistema simultáneamente, pero con permisos distintos.
 
 
 ➤ **root** es el superusuario y tiene la capacidad de hacer cualquier cosa en el sistema. Para tener una capa adicional de seguridad, generalmente se usa un usuario **sudo** en lugar de **root**.
 
-➤ Necesitarás instalar sudo. Sudo significa "superuser do". En pocas palabras, sudo le otorga al usuario designado un "superpoder" para actuar como administrador temporalmente. sudo se utiliza para dar a otro usuario acceso limitado a la cuenta de otro con el fin de realizar tareas administrativas. Permite que un usuario tenga privilegios de administrador sin iniciar sesión directamente como root.
-
-➤Esta gestión de derechos asignados a los usuarios está contenida en el archivo **/etc/sudoers**
+➤ Debes instalar **sudo**, significa "superuser do". Otorga al usuario permisos temporales de administrador para realizar tareas administrativas sin iniciar sesión como root. Los derechos asignados se gestionan en el archivo **/etc/sudoers**.
 
 ## Crontab
 
-➤ **Cron** es un programa que permite a los usuarios de sistemas Unix ejecutar automáticamente scripts, comandos o software en una fecha y hora predefinidas o en un ciclo predefinido.
+➤ **Cron** es un programa en sistemas Unix que ejecuta scripts o comandos automáticamente en intervalos o momentos predefinidos.
 
-➤  En este proyecto tendrás que publicar un mensaje cada 10 minutos.
+➤ En este proyecto, debes publicar un mensaje cada 10 minutos.
 
-➤ Creas un script (en nuestro caso será el script de monitoreo que contiene toda la información) que quieras ejecutar usando cron.
-Luego, escribes **sudo crontab -u root -e** para abrir crontab y agregar una regla.
+➤ Crea un script de monitoreo y usa **sudo crontab -u root -e** para abrir crontab y agregar la regla.
 
 La regla:
 
@@ -307,7 +301,7 @@ Donde * * * * * significa cada minuto de cada hora de cada día de cada mes y ca
 ```
 ## Signature.txt
 
-➤ Una firma es un número identificador único para un disco duro u otro dispositivo de almacenamiento de datos. Un sistema operativo la utiliza para diferenciar entre los dispositivos de almacenamiento en tu computadora.
+➤ Una firma es un identificador único para un disco duro u otro dispositivo de almacenamiento, que el sistema operativo usa para diferenciarlos.
 
 # INICIANDO EL SISTEMA
 
@@ -325,24 +319,24 @@ Donde * * * * * significa cada minuto de cada hora de cada día de cada mes y ca
 
 ### 4.1 - Instalación de sudo y configuración de usuarios y grupos
 
-- Si por algún motivo detectas algún error con tu etc/hosts
-  Puedes verificar y corrigir el archivo /etc/hosts
+Si detectas un error en **/etc/hosts**, verifica y corrige el archivo.
 
-- Asegúrate de que el archivo /etc/hosts contenga la entrada correcta para el nombre del host. Haz lo siguiente:
-
-- Abre el archivo /etc/hosts para editarlo
-Asegúrate de que haya una línea que se vea así:
+Asegúrate de que contenga la entrada correcta para el nombre del host. Edita el archivo con:
 
 ```bash
-
 nano /etc/hosts
 
 127.0.0.1   localhost
 127.0.1.1   frromero42
-
 ```
 
-1. Instalando **sudo**, nos pasamos usuario root, ponemos **Su** en el terminal e introduciremos la contraseña, **42Madrid13/12**. Y ahora ponemos el comando **apt install sudo** para instalar los paquetes necesarios.
+1. Para instalar **sudo**, cambia al usuario root usando **su** en el terminal e ingresa la contraseña **42Madrid13/12**. Luego, ejecuta el comando:
+
+```bash
+apt install sudo
+```
+
+Esto instalará los paquetes necesarios.
 
 <img width="514" alt="" src="img/installsudopeque.png">
 
@@ -350,46 +344,118 @@ nano /etc/hosts
 
 <img width="514" alt="" src="img/sudoreboot.png">
 
-3. Ahora de nuevo introducimos contraseñas de cifrado y usuario. Verifcamos la instalación en tramos de nuevo como usuario root y ponemos **sudo -V**, además de mostrarnos la versión de sudo, mostrará los argumentos pasados para configurar cuando se creó sudo y los plugins que pueden mostrar información más detallada. **sudo -V | more** para ver todo el contenido.
+3. Luego, introduce las contraseñas de cifrado y usuario nuevamente. Verifica la instalación como usuario root usando:
 
-4. Estando en super usuario: (**su**)  crearemos un usuario con nuestro login **sudo adduser login** como ya lo habiamos hemos creado la instalación nos debe aparecer que el usuario ya existe.
+```bash
+sudo -V
+```
 
-5. Ahora crearemos un nuevo grupo llamado **user42**. con **sudo addgroup user42**.
+- Este comando muestra la versión de sudo y los argumentos usados para su configuración, además de los plugins. Para ver el contenido completo, usa:
 
- - <b>GID</b> identificador de grupo, abreviatura de Group ID.
+```bash
+sudo -V | more
+```
 
-6. Verificado de la creación correcta de grupos: **getent group nombre_grupo** o en **cat /etc/group** y veremos todos los grupos y los usuarios que hay dentro de ellos.
+Para crear un nuevo grupo llamado **user42**:
 
-7. Con el comando **sudo adduser user group** incluiremos al usuario en el grupo.
-   Debemos incluir al usuario en los grupos **sudo** y **user42**.
+4. Crea el grupo con el siguiente comando:
 
-8. Después de incluirlos dentro de los grupos podemos ejecutar el comando **getent group nombre_grupo** o editar **nano /etc/group** y en los grupos **sudo** y **user42** deberá aparecer nuestro usuario.
+```bash
+sudo addgroup user42
+```
+
+- El **GID** es el identificador de grupo (Group ID).
+
+5. Verifica la creación correcta del grupo con:
+
+```bash
+getent group user42
+```
+O bien, puedes ver todos los grupos en **/etc/group** usando:
+
+```bash
+cat /etc/group
+```
+
+6. Para incluir al usuario en los grupos **sudo** y **user42**, usa el comando:
+
+```bash
+sudo adduser user sudo
+sudo adduser user user42
+```
+
+7. Después de incluir el usuario en los grupos, puedes verificarlo con:
+
+```bash
+getent group sudo
+getent group user42
+```
+
+- O editando **/etc/group** con:
+
+```bash
+nano /etc/group
+```
+
+En los grupos **sudo** y **user42**, deberá aparecer tu usuario.
 
 <img width="514" alt="" src="img/sudogroup.png">
 
 ### 4.2 - SSH Instalación y configuración
 
-- <b>Qué es SSH?</b> Nombre de un protocolo y programa que se encarga de dar acceso remoto a un servidor por un canal seguro donde la información va cifrada.
+- **¿Qué es SSH?** Es un protocolo y programa que proporciona acceso remoto a un servidor a través de un canal seguro con cifrado de información.
 
-1. Actualizamos repositorios  **sudo apt update** definidos en el archivo /etc/apt/sources.list
+1. Actualiza los repositorios con:
 
-2. Instalando la herramienta para este protocolo SSH, **OpenSSH**. Con el comando **sudo apt install openssh-server**.
+```bash
+sudo apt update
+```
 
+2. Instala la herramienta SSH, **OpenSSH**, con el siguiente comando:
 
-Para comprobar que se haya instalado correctamente haremos **sudo service ssh status** y nos debe aparecer active.
+```bash
+sudo apt install openssh-server
+```
+
+3. Para comprobar que se ha instalado correctamente, ejecuta:
+
+```bash
+sudo service ssh status
+```
+
+Debería aparecer como **active**.
 
 <img width="702" alt="" src="img/sshstatus.png">
 
-3. Despuésde la instalación hay ficheros que configurar. Utilizaremos [Nano](https://es.wikipedia.org/wiki/GNU_Nano),
-   - Primer fichero que editaremos será **nano /etc/ssh/sshd_config**. nos vamos a **su** para tener permisos de escritura, o **sudo nano /etc/ssh/sshd_config**
+3. Después de la instalación, hay archivos que configurar. Usaremos **Nano** para ello.
+
+   - El primer archivo que editaremos es:
+
+   ```bash
+   sudo nano /etc/ssh/sshd_config
+   ```
+
+   Si necesitas permisos de escritura, puedes usar **su** o simplemente el comando anterior.
+
+4. Los comentarios de línea comienzan con **#**; debes eliminar el **#** de las líneas que quieras modificar.
+
+   - Líneas a modificar, descomentalas y dejalas así:
+
+     ➤ Cambia:
+
+     ```plaintext
+     #Port 22
+	 #PermitRootLogin prohibit-password
+     ```
+
+     a:
+
+     ```plaintext
+     Port 4242
+     PermitRootLogin prohibit-password
+     ```
 
 
-4. Los comentarios de linea empiezan por **#**, las líneas a modificar hay que quitarle el comentario.
-   - Líneas a modificar:
-
-➤ #Port 22 -> Port 4242
-
-➤ #PermitRootLogin prohibit-password -> PermitRootLogin no
 
 <img width="632" alt="" src="img/editportpass.png">
 
@@ -410,121 +476,148 @@ Para comprobar que se haya instalado correctamente haremos **sudo service ssh st
 
 ### 4-3 Instalación y configuración de UFW
 
-- [UFW](https://es.wikipedia.org/wiki/Uncomplicated_Firewall) Es un [firewall](https://es.wikipedia.org/wiki/Cortafuegos_(inform%C3%A1tica)) el cual utiliza la línea de comandos para configurar las [iptables](https://es.wikipedia.org/wiki/Iptables) usando un pequeño número de comandos simples.
+- **UFW** (Uncomplicated Firewall) es un firewall que utiliza la línea de comandos para configurar **iptables** mediante un conjunto sencillo de comandos.
 
-1. Instalando **UFW**, con el  comando **sudo apt install ufw**
+1. Para instalar **UFW**, ejecuta el siguiente comando:
 
-2. Lo habilitamos con el comando **sudo ufw enable** y veremos que el firewall está activo.
+   ```bash
+   sudo apt install ufw
+   ```
+
+2. Habilita el firewall con:
+
+   ```bash
+   sudo ufw enable
+   ```
+
+   Verás que el firewall está activo.
 
 <img width="632" alt="" src="img/firewallenable.png">
 
-3. Nuestro firewall tinen que permitir las conexiones por el puerto 4242. Lo haremos con el comando **sudo ufw allow 4242**.
+3. Nuestro firewall debe permitir las conexiones por el puerto **4242**. Para hacerlo, ejecuta el siguiente comando:
 
+   ```bash
+   sudo ufw allow 4242
+   ```
 
-4.  Y lo comprobaremos con el comando **sudo ufw status**.
+4. Para comprobar la configuración, utiliza el comando:
+
+   ```bash
+   sudo ufw status
+   ```
 
 <img width="632" alt="" src="img/permitirpuerto.png">
-
 ### 4-4 Configurando contraseña fuerte para sudo
 
-1. Crearemos un fichero en la ruta **/etc/sudoers.d/** le pondremos de nombre sudo_config, almacenará la configuración de la contraseña. lo crearemos con **touch /etc/sudoers.d/sudo_config**.
+1. Crearemos un archivo en la ruta **/etc/sudoers.d/** llamado **sudo_config**, que almacenará la configuración de la contraseña. Puedes crearlo con el siguiente comando:
+
+   ```bash
+   sudo touch /etc/sudoers.d/sudo_config
+   ```
 
 <img width="632" alt="" src="img/sudoconfig.png">
 
-2. Hay que crear el directorio sudo en la ruta /var/log yºa que cada comando que ejecutemos con sudo, tanto el input como el output, debe quedar almacenado en ese directorio. **mkdir /var/log/sudo**.
+2. Debemos crear el directorio **sudo** en la ruta **/var/log/**, ya que cada comando que ejecutemos con **sudo**, tanto la entrada como la salida, se almacenará en ese directorio. Puedes crear el directorio con el siguiente comando:
 
+```bash
+sudo mkdir /var/log/sudo
+```
 <img width="632" alt="" src="img/dirsudo.png">
 
-3. Editaremos el fichero de configuracion de sudo con  **nano /etc/sudoers.d/sudo_config**.
+3. Edita el archivo de configuración de sudo con el siguiente comando:
 
-4. Una vez estamos editando el fichero deberemos introducir los siguientes comandos para cumplir todos los requisitos que pide el subject.
+```bash
+sudo nano /etc/sudoers.d/sudo_config
+```
+
+4. Una vez que estés editando el archivo, deberás introducir los siguientes comandos para cumplir con todos los requisitos solicitados. (Asegúrate de incluir las configuraciones específicas que se requieren en este paso).
 
 <img width="632" alt="" src="img/fileconfgsudo.png">
 
 ## DESGLOSANDO LOS COMANDOS
 
-Defaults  **passwd_tries=3** (nº de reintentos)
+Introduce las siguientes configuraciones en el archivo **/etc/sudoers.d/sudo_config**:
 
-Defaults  **badpass_message="Password entry failure!"**
-
-Defaults  **logfile="/var/log/sudo/sudo_config"** (archivos de registro de comandos sudo lanzados)
-
-Defaults  **log_input, log_output** (comandos tanto imput como output quedarán registrados en el siguiente directorio)
-
-Defaults  **iolog_dir="/var/log/sudo"**
-
-Defaults  **requiretty**  (activar modo TTY)
-
-Defaults  **secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin**  (restringir los directorios utilizables por sudo)
-
-
+```plaintext
+Defaults  passwd_tries=3              # Número de reintentos
+Defaults  badpass_message="Password entry failure!"  # Mensaje en caso de error
+Defaults  logfile="/var/log/sudo/sudo_config"        # Archivos de registro de comandos sudo
+Defaults  log_input, log_output         # Registrar tanto la entrada como la salida de los comandos
+Defaults  iolog_dir="/var/log/sudo"     # Directorio para los registros de entrada/salida
+Defaults  requiretty                    # Activar modo TTY
+Defaults  secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"  # Restringir los directorios utilizables por sudo
+```
 ### 4-5 Configuración de política de contraseñas fuerte
 
-1. Editaremos el fichero login.defs: **nano /etc/login.defs**
+1. Edita el archivo **login.defs** con el siguiente comando:
 
+   ```bash
+   sudo nano /etc/login.defs
+   ```
 
-2. Una vez estemos editando el fichero, modificaremos los siguientes parámetros:
+2. Una vez que estés editando el archivo, modifica los siguientes parámetros:
 
-➤ PASS_MAX_DAYS 99999 -> PASS_MAX_DAYS 30
-
-➤ PASS_MIN_DAYS 0 -> PASS_MIN_DAYS 2
-
+```
+PASS_MAX_DAYS 30 # Tiempo de expiración de la contraseña (30 días).
+PASS_MIN_DAYS 2  # Número mínimo de días antes de que una contraseña pueda ser cambiada.
+PASS_WARN_AGE 7  # El usuario recibirá un aviso 7 días antes de que expire su contraseña.
+```
 
 <img width="802" alt="Captura de pantalla 2022-07-16 a las 3 05 49" src="https://user-images.githubusercontent.com/66915274/179328449-32a40f67-a18d-4f29-993b-94d013cd7670.png">
 
-PASS_MAX_DAYS: Es el tiempo de expiración de la contraseña. El número corresponde a días.
+### Continuación de la configuración
 
-PASS_MIN_DAYS: El número mínimo de días permitido antes de modificar una contraseña.
+3. Para seguir con la configuración, instala el paquete **libpam-pwquality** con el siguiente comando:
 
-PASS_WARN_AGE: El usuario recibirá un mensaje de aviso indicando que faltan los días especificados para que expire su contraseña.
+   ```bash
+   sudo apt install libpam-pwquality
+   ```
 
-3. Para poder seguir con la configuración debemos instalar los siguientes paquetes con este comando **sudo apt install libpam-pwquality** , acto seguido pondremos **Y** para confirmar la instalación y esperaremos a que termine.
+   Acto seguido, presiona **Y** para confirmar la instalación y espera a que finalice.
 
+4. A continuación, edita el archivo **common-password** con el siguiente comando:
 
-4. Lo siguiente que debemos hacer es volver a editar un fichero y modificar algunas líneas. Haremos **nano /etc/pam.d/common-password**.
+   ```bash
+   sudo nano /etc/pam.d/common-password
+   ```
 
+5. Después de la línea que contiene **retry=3**, añade los siguientes comandos:
 
-5. Después de retry=3 debemos añadir los siguientes comandos:
-
-```
-minlen=10
-ucredit=-1
-dcredit=-1
-lcredit=-1
-maxrepeat=3
-reject_username
-difok=7
-enforce_for_root
-```
+   ```plaintext
+   minlen=10         # Longitud mínima de la contraseña (10 caracteres).
+   ucredit=-1        # Requiere al menos 1 carácter en minúscula.
+   dcredit=-1        # Requiere al menos 1 dígito.
+   lcredit=-1        # Requiere al menos 1 carácter en mayúscula.
+   maxrepeat=3       # Permite un máximo de 3 caracteres consecutivos iguales.
+   reject_username   # Rechaza contraseñas que contengan el nombre de usuario.
+   difok=7           # Requiere que al menos 7 caracteres sean diferentes de la contraseña anterior.
+   enforce_for_root  # Aplica las mismas reglas a la cuenta root.
+   ```
 
 
 <img width="800" alt="Captura de pantalla 2022-07-16 a las 3 38 08" src="https://user-images.githubusercontent.com/66915274/179329787-1b718843-9272-43e4-8d92-8d83933cc938.png">
 
- <b>Que hace cada comando?</b>
 
-**minlen=10** ➤ La cantidad mínima de caracteres que debe contener la contraseña.
+### Actualización de las cuentas de usuario
 
-**ucredit=-1** ➤ Como mínimo debe contener una letra mayúscula. Ponemos el - ya que debe contener como mínimo un carácter, si ponemos + nos referimos a como máximo esos caracteres.
+6. **La política de contraseñas** afecta solo a los nuevos usuarios. Para aplicar los nuevos requisitos de seguridad a las cuentas de usuario creadas antes de esta política, utiliza el siguiente comando para verificar la configuración actual de una cuenta:
 
-**dcredit=-1** ➤ Como mínimo debe contener un dígito.
+   ```bash
+   sudo chage -l username
+   ```
 
-**lcredit=-1** ➤ Como mínimo debe contener una letra minúscula.
+   Reemplaza **username** con el nombre del usuario que deseas verificar.
 
-**maxrepeat=3** ➤ No puede tener más de 3 veces seguidas el mismo carácter.
+7. Para actualizar las configuraciones de la cuenta de usuario **frromero** y establecer un mínimo de 2 días y un máximo de 30 días, ejecuta el siguiente comando:
 
-**reject_username** ➤ No puede contener el nombre del usuario.
+   ```bash
+   sudo chage -m 2 -M 30 frromero
+   ```
 
-**difok=7** ➤  Debe tener al menos 7 caracteres que no sean parte de la antigua contraseña.
+   - **-m** especifica el número mínimo de días antes de que el usuario pueda cambiar su contraseña (en este caso, **2 días**).
+   - **-M** especifica el número máximo de días que puede transcurrir antes de que la contraseña deba ser cambiada (en este caso, **30 días**).
 
-**enforce_for_root** ➤ Implementaremos esta política para el usuario root.
-
-6. **La política de contraseñas** Afecta solo a los usuarios nuevos. Es necesario actualizar las cuentas de los usuarios que fueron creadas antes de esta política para que cumplan con los nuevos requisitos de seguridad. Haremos uso del comando **sudo chage -l username**.
-
-
-7. **sudo chage -m 2 -M 30 frromero** Cambia el mínimo a 2 dias y el maximo a 30 días.
-
-**-m** es para el número mínimo de días y **-M** para el numero máximo.
-
+Esto asegurará que la cuenta de **frromero** cumpla con las nuevas políticas de contraseñas.
 
 ### 4-6 Conectarse vía SSH
 
@@ -725,13 +818,17 @@ mac=$(ip link | grep "link/ether" | awk '{print $2}')
 
 ### 5-12 Número de Comandos Ejecutados con Sudo
 
+Para obtener el número de comandos ejecutados con `sudo`, utiliza el siguiente comando:
+
 ```bash
 sudo_commands=$(journalctl _COMM=sudo | grep COMMAND | wc -l)
 ```
 
-Para obtener el número de comandos ejecutados con `sudo`, se utiliza `journalctl`, que recopila los registros del sistema. Se filtran las entradas con `_COMM=sudo` para especificar su ruta, y luego se aplica `grep COMMAND` para limitar los resultados solo a líneas de comandos. Finalmente, se cuenta el número de líneas con `wc -l`.
+1. **`journalctl _COMM=sudo`**: Utiliza `journalctl` para acceder a los registros del sistema y filtrar las entradas relacionadas con el comando `sudo`.
 
-Para comprobar su funcionamiento, se puede ejecutar un comando que incluya `sudo` y volver a ejecutar el comando para verificar que el número de ejecuciones de `sudo` se incrementa.
+2. **`grep COMMAND`**: Filtra los resultados para incluir solo las líneas que contienen la palabra **COMMAND**, limitando así los resultados a las entradas de comandos ejecutados con `sudo`.
+
+3. **`wc -l`**: Cuenta el número de líneas en la salida anterior, lo que indica cuántos comandos se han ejecutado con `sudo`.
 
 ---
 
@@ -803,38 +900,32 @@ Ejecución del script:
 
 ## 6- Crontab
 
-**Cron** es un programa en sistemas Unix que permite ejecutar automáticamente scripts y comandos en horarios o ciclos predefinidos.
+**Cron** es un programa en sistemas Unix que ejecuta automáticamente scripts y comandos en horarios o ciclos predefinidos.
 
-En este proyecto, debes publicar un mensaje cada 10 minutos.
+En este proyecto, debes publicar un mensaje cada 10 minutos. Para ello, crea un script con la información que deseas ejecutar y utiliza el siguiente comando para abrir crontab:
 
-Para ello, crea un script con la información que deseas ejecutar. Luego, utiliza sudo crontab -u root -e para abrir crontab y agregar una regla.
+```bash
+sudo crontab -u root -e
+```
 <img width="798" alt="Captura de pantalla 2022-08-03 a las 4 40 18" src="https://user-images.githubusercontent.com/66915274/182512395-eaebabc2-5866-4ae3-966c-1a80818cde07.png">
 
-m ➤ Minuto de ejecución (0-59).
+### Formato de Crontab:
 
-h ➤ Hora de ejecución en formato 24 horas (0-23, siendo 0 medianoche).
-
-dom ➤ Día del mes (puedes especificar un día, como 15).
-
-dow ➤ Día de la semana (0-7, donde 0 y 7 son domingo) o las tres primeras letras del día en inglés: mon, tue, wed, thu, fri, sat, sun.
-
-user ➤ Usuario que ejecuta el comando (puede ser root u otro usuario con permisos).
-
-command ➤ Comando o ruta absoluta del script a ejecutar.
+- **m** ➤ Minuto de ejecución (0-59).
+- **h** ➤ Hora de ejecución (0-23).
+- **dom** ➤ Día del mes (puedes especificar un día, como 15).
+- **dow** ➤ Día de la semana (0-7, donde 0 y 7 son domingo) o las primeras tres letras del día en inglés: mon, tue, wed, thu, fri, sat, sun.
+- **user** ➤ Usuario que ejecuta el comando (root u otro con permisos).
+- **command** ➤ Comando o ruta absoluta del script a ejecutar.
 ## 7- Signature.txt 📝
 
-Ejecuta shasum nombremaquina.vdi para obtener la firma. Añade el resultado a signature.txt y súbelo al repositorio. No vuelvas a abrir la máquina para evitar cambios en la firma.
-Para realizar correcciones, clona la máquina, así podrás encenderla sin riesgo de modificar la firma.
+- Ejecuta `shasum nombremaquina.vdi` para obtener la firma. Añade el resultado a **signature.txt** y súbelo al repositorio. No vuelvas a abrir la máquina para evitar cambios en la firma. Para realizar correcciones, clona la máquina, así podrás encenderla sin riesgo de modificar la firma.
+
 <img width="834" alt="Captura de pantalla 2022-08-03 a las 4 47 32" src="https://user-images.githubusercontent.com/66915274/182513283-1cfc319f-982d-47cf-a596-8475d4c96616.png">
 
-El siguiente paso será ubicarnos en la ruta donde tengamos el .vdi de nuestra máquina virtual.
+Ubica el .vdi de tu máquina virtual y ejecuta nuevamente `shasum nombremaquina.vdi`. Añade la firma generada a **signature.txt** para subirla al repositorio. Recuerda **no volver a abrir la máquina**, ya que se modificará la firma. Para correcciones, clona la máquina para encenderla sin riesgo.
 
-
-
-Por último haremos **shasum nombremaquina.vdi** y esto nos dara la firma y la añadiremos a nuestro fichero signature.txt para  subirla  al repositorio de la intra. Muy importante **no volver a abrir la máquina** ya que se modificara la firma. Para las correcciones recuerda clonar la máquina ya que asi podras encenderla sin miedo a que cambie la firma.
-
-- **shasum** Es un comando que permite identificar la integridad de un fichero mediante la suma de comprobación del hash SHA-1 de un archivo.
-
+- **shasum**: Comando que verifica la integridad de un archivo mediante la suma de comprobación del hash SHA-1.
 
 
 
@@ -886,204 +977,102 @@ Es un software que simula un sistema de computación y puede ejecutar programas 
 - **Debian**: Mayor flexibilidad y opciones de personalización.
 
 Este resumen destaca las diferencias clave entre ambas distribuciones.
-### ▪️ Cuál es el propósito de las máquinas virtuales?
+### ▪️ Propósito de las máquinas virtuales
 
-Su objetivo es el de proporcionar un entorno de ejecución independiente de la plataforma de hardware y del sistema operativo, que oculte los detalles de la plataforma subyacente y permita que un programa se ejecute siempre de la misma forma sobre cualquier plataforma.
+Proporcionan un entorno de ejecución independiente de hardware y sistema operativo, ocultando los detalles de la plataforma subyacente para que un programa se ejecute de la misma forma en cualquier plataforma.
 
 ### ▪️ Diferencias entre apt y aptitude
 
-Aptitude es una versión mejorada de apt. APT es un administrador de paquetes de nivel inferior y aptitude es un administrador de paquetes de alto nivel. Otra gran diferencia es la funcionalidad que ofrecen ambas herramientas. Aptitude ofrece una mejor funcionalidad en comparación con apt-get. Ambos son capaces de proporcionar los medios necesarios para realizar la gestión de paquetes. Sin embargo, si se busca un enfoque con más características, debería ser, Aptitude.
+**Aptitude** es una versión mejorada de **apt**. Apt es un administrador de paquetes de nivel inferior, mientras que Aptitude es de alto nivel, ofreciendo más funcionalidades y características.
 
-### ▪️ Qué es APPArmor ?
+### ▪️ Qué es APPArmor?
 
-Es un módulo de seguridad del kernel Linux que permite al administrador del sistema restringir las capacidades de un programa.
+Es un módulo de seguridad del kernel Linux que permite restringir las capacidades de un programa.
 
-### ▪️ Qué es LVM ?
+### ▪️ Qué es LVM?
 
-Es un gestor de volúmenes lógicos. Proporciona un método para asignar espacio en dispositivos de almacenamiento masivo, que es más flexible que los esquemas de particionado convencionales para almacenar volúmenes.
+Es un gestor de volúmenes lógicos que asigna espacio en dispositivos de almacenamiento masivo de manera más flexible que los esquemas de particionado convencionales.
 
-## 9-2 Comandos de la evaluación
+## 9-2 Comandos de evaluación
 
-1. Comprobar que no haya ninguna interfaz gráfica en uso.
+1. **Verificar interfaces gráficas en uso:**
+   `ls /usr/bin/*session` (no debe aparecer nada).
 
-Utilizaremos el comando _ls /usr/bin/*session_ y no debe de aparecer nada.
+2. **Comprobar estado del servicio UFW:**
+   `sudo ufw status`
+   `sudo service ufw status`
 
+3. **Comprobar estado del servicio SSH:**
+   `sudo service ssh status`
 
-2. Comprobar que el servicio UFW está en uso.
+4. **Verificar sistema operativo (Debian o CentOS):**
+   `uname -v` o `uname --kernel-version`
 
-**sudo ufw status**
+5. **Verificar pertenencia a grupos "sudo" y "user42":**
+   `getent group sudo`
+   `getent group user42`
 
+6. **Crear nuevo usuario con política de contraseñas:**
+   `sudo adduser name_user` (usar contraseña que cumpla la política).
 
-**sudo service ufw status**
+7. **Crear grupo "evaluating":**
+   `sudo addgroup evaluating`
 
+8. **Añadir usuario al grupo:**
+   `sudo adduser name_user evaluating`
 
-3. Comprobar que el servicio SSH está en uso.
+9. **Comprobar hostname:**
+   `hostname` (debe ser login42).
 
-**sudo service ssh status**
+10. **Modificar hostname:**
+    Editar `/etc/hostname` y `/etc/hosts` para reemplazar login por student42, luego reiniciar la máquina.
 
+11. **Comprobar particiones:**
+    `lsblk`
+    ![Screen Shot 2022-11-24 at 3 52 17 AM](https://user-images.githubusercontent.com/66915274/203683496-b49a7ada-2a0c-4f87-a013-e307370b3900.png)
 
-4. Comprobar que utilizas el sistema operativo Debian o CentOS.
+12. **Verificar si sudo está instalado:**
+    `which sudo` o `dpkg -s sudo`
 
-**uname -v** o **uname --kernel-version**
+13. **Agregar nuevo usuario al grupo sudo:**
+    `sudo adduser name_user sudo`
+    Verificar pertenencia al grupo.
 
+14. **Mostrar aplicación de reglas de sudo.**
 
-5. Comprobar que tu usuario este dentro de los grupos "sudo" y "user42".
+15. **Verificar existencia de /var/log/sudo/:**
+    Comprobar que contenga al menos un fichero de historial de comandos utilizados con sudo.
 
-**getent group sudo**
+16. **Verificar instalación y estado de UFW:**
+    `dpkg -s ufw`
+    `sudo service ufw status`
 
-**getent group user42**
+17. **Listar reglas activas en UFW:**
+    `sudo ufw status numbered`
 
+18. **Crear y eliminar regla para puerto 8080:**
+    `sudo ufw allow 8080`
+    `sudo ufw status numbered`
+    `sudo ufw delete num_rule` (comprobar eliminación).
 
-6. Crear un nuevo usuario y mostrar que sigue la política de contraseñas que hemos creado.
+19. **Comprobar estado de SSH y puerto 4242:**
+    `which ssh`
+    `sudo service ssh status`
 
-**sudo adduser name_user** e introducimos una contraseña que siga la política.
+20. **Iniciar sesión con el nuevo usuario via SSH:**
+    `ssh newuser@localhost -p 4242`
+    (intentar con usuario root y verificar que no se puede).
 
+21. **Modificar tiempo de ejecución del script a 1 minuto:**
+    `sudo crontab -u root -e` y cambiar el primer parámetro a 1.
 
-7. Creamos un nuevo grupo llamado "evaluating".
-
-**sudo addgroup evaluating**
-
-
-8. Añadimos el nuevo usuario al nuevo grupo.
-
-**sudo adduser name_user evaluating**
-
-
-Para comprobar que se haya introducido correctamente.
-
-
-9. Comprobar que el hostname de la máquina es correcto login42.
-
-
-
-10. Modificar hostname para remplazar tu login por el del evaluador. En este caso lo reemplazaré por student42.
-
-**sudo nano /etc/hostname** y remplazamos nuestro login por el nuevo.
-
-
-
-**sudo nano /etc/hosts** y remplazamos nuestro login por el nuevo.
-
-
-
-Reiniciamos la máquina.
-
-
-Una vez nos hemos logueado de nuevo podemos ver como el hostname se ha cambiado correctamente.
-
-
-11. Comprobar que todas las particiones son como indica el subject.
-
-**lsblk**
-
-<img width="495" alt="Screen Shot 2022-11-24 at 3 52 17 AM" src="https://user-images.githubusercontent.com/66915274/203683496-b49a7ada-2a0c-4f87-a013-e307370b3900.png">
-
-12. Comprobar que sudo está instalado.
-
-**which sudo**
-
-
-Utilizar which realmente no es una buena práctica, ya que no todos los paquetes se encuentran en las rutas donde which busca, aun asi para la evaluación es mejor, ya que es un comando sencillo y fácil de aprender. Para un mejor uso haremos uso del siguiente comando:
-
-**dpkg -s sudo**
-
-
-13. Introducimos el nuevo usuario dentro del grupo sudo.
-
-**sudo adduser name_user sudo**
-
-
-Comprobamos que está dentro del grupo.
-
-
-14. Muestra la aplicación de las reglas impuestas para sudo por el subject.
-
-
-
-15. Muestra que la ruta /var/log/sudo/ existe y contiene al menos un fichero, en este se debería ver un historial de los comandos utilizados con sudo.
-
-
-
-Ejecuta un comando con sudo y comprueba que se actualiza el fichero.
-
-
-
-16. Comprueba que el programa UFW está instalado en la máquina virtual y comprueba que funciona correctamente.
-
-**dpkg -s ufw**
-
-
-**sudo service ufw status**
-
-
-17. Lista las reglas activas en UFW. Si no está hecha la parte bonus, solo debe aparecer la regla para el puerto 4242.
-
-**sudo ufw status numbered**
-
-
-18. Crea una nueva regla para el puerto 8080. Comprueba que se ha añadido a las reglas activas y acto seguido puedes borrarla.
-
-**sudo ufw allow 8080** para crearla
-
-
-**sudo ufw status numbered**
-
-
-Para borrar la regla debemos utilizar el comando **sudo ufw delete num_rule**
-
-
-Comprobamos que se ha eliminado y vemos el numero de la siguiente regla que hay que borrar.
-
-
-Borramos de nuevo la regla.
-
-
-Comprobamos que solo nos quedan las reglas requeridas en el subject.
-
-
-19. Comprueba que el servicio ssh esta instalado en la máquina virtual, que funciona correctamente y que solo funciona por el puerto 4242.
-
-**which ssh**
-
-
-**sudo service ssh status**
-
-
-20. Usa SSH para iniciar sesión con el usuario recién creado. Asegúrate de que no puede usar SSH con el usuario root.
-
-Intentamos conectarnos por SSH con el usuario root, pero no tenemos permisos.
-
-
-Nos conectamos por SSH con el nuevo usuario con el comando **ssh newuser@localhost -p 4242**
-
-
-21. Modifica el tiempo de ejecución del script de 10 minutos a 1.
-
-Ejecutamos el siguiente comando para asi modificar el fichero crontab **sudo crontab -u root -e**
-
-
-Modificamos el primer paramentro, en vez de 10 lo cambiamos a 1.
-
-
-22. Finalmente haz que el script deje de ejecutarse cuando el servidor se haya iniciado, pero sin modificar el script.
-
-**sudo /etc/init.d/cron stop**
-
-
-Si queremos que vuelva a ejecutarse:
-
-**sudo /etc/init.d/cron start**
-
-
-
+22. **Detener ejecución del script al iniciar el servidor:**
+    `sudo /etc/init.d/cron stop`
+    (usar `sudo /etc/init.d/cron start` para reiniciar).
 
 # Contacto
 
-
 ◦ Email: frromero@student.42madrid.com
-
 
 ### - intranet de 42
 [AQUÍ](https://profile.intra.42.fr/users/frromero)
-
-
