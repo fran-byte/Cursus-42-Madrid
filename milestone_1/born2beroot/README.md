@@ -428,13 +428,15 @@ sudo service ssh status
 ➤ Líneas a modificar, descomentalas y dejalas así:
 
      ```
+     
      #Port 22
 	 #PermitRootLogin prohibit-password
-     ```
+ 
      a:
-     ```
+  
      Port 4242
      PermitRootLogin prohibit-password
+     
      ```
 
 
