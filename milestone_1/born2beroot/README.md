@@ -1012,7 +1012,8 @@ sudo crontab -u root -e
 
 11. **Comprobar particiones:**
     `lsblk`
-    <img width="632" alt="lsblk" src="/img/arbol (1).png">
+    
+    <img width="632" alt="lsblk" src="img/arbol (1).png">
 
 13. **Verificar si sudo está instalado:**
     `which sudo` o `dpkg -s sudo`
