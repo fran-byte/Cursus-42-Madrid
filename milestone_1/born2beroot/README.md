@@ -1012,44 +1012,44 @@ sudo crontab -u root -e
 
 11. **Comprobar particiones:**
     `lsblk`
-    ![lsblk](/img/arbol (1).png)
+    <img width="632" alt="lsblk" src="/img/arbol (1).png">
 
-12. **Verificar si sudo está instalado:**
+13. **Verificar si sudo está instalado:**
     `which sudo` o `dpkg -s sudo`
 
-13. **Agregar nuevo usuario al grupo sudo:**
+14. **Agregar nuevo usuario al grupo sudo:**
     `sudo adduser name_user sudo`
     Verificar pertenencia al grupo.
 
-14. **Mostrar aplicación de reglas de sudo.**
+15. **Mostrar aplicación de reglas de sudo.**
 
-15. **Verificar existencia de /var/log/sudo/:**
+16. **Verificar existencia de /var/log/sudo/:**
     Comprobar que contenga al menos un fichero de historial de comandos utilizados con sudo.
 
-16. **Verificar instalación y estado de UFW:**
+17. **Verificar instalación y estado de UFW:**
     `dpkg -s ufw`
     `sudo service ufw status`
 
-17. **Listar reglas activas en UFW:**
+18. **Listar reglas activas en UFW:**
     `sudo ufw status numbered`
 
-18. **Crear y eliminar regla para puerto 8080:**
+19. **Crear y eliminar regla para puerto 8080:**
     `sudo ufw allow 8080`
     `sudo ufw status numbered`
     `sudo ufw delete num_rule` (comprobar eliminación).
 
-19. **Comprobar estado de SSH y puerto 4242:**
+20. **Comprobar estado de SSH y puerto 4242:**
     `which ssh`
     `sudo service ssh status`
 
-20. **Iniciar sesión con el nuevo usuario via SSH:**
+21. **Iniciar sesión con el nuevo usuario via SSH:**
     `ssh newuser@localhost -p 4242`
     (intentar con usuario root y verificar que no se puede).
 
-21. **Modificar tiempo de ejecución del script a 1 minuto:**
+22. **Modificar tiempo de ejecución del script a 1 minuto:**
     `sudo crontab -u root -e` y cambiar el primer parámetro a 1.
 
-22. **Detener ejecución del script al iniciar el servidor:**
+23. **Detener ejecución del script al iniciar el servidor:**
     `sudo /etc/init.d/cron stop`
     (usar `sudo /etc/init.d/cron start` para reiniciar).
 
