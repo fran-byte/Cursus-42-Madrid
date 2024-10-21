@@ -425,22 +425,12 @@ sudo service ssh status
 
 4. Los comentarios de línea comienzan con **#**; debes eliminar el **#** de las líneas que quieras modificar.
 
-➤ Líneas a modificar, descomentalas y dejalas así:
+➤ Líneas a modificar, descomentalas y dejalas al puerto 4242 :
 
-     ```
-     
-     #Port 22
-	 #PermitRootLogin prohibit-password
  
-     a:
-  
      Port 4242
      PermitRootLogin prohibit-password
-     
-     ```
-
-
-
+    
 <img width="632" alt="" src="img/editportpass.png">
 
 
