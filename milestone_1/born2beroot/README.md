@@ -1041,7 +1041,7 @@ sudo crontab -u root -e
     `sudo crontab -u root -e` y cambiar el primer parámetro a 1.
 
 23. **Detener ejecución del script al iniciar el servidor:**
-   No utiliceis esto aparte de detener todas las tareas que puedan estar ejecutandose en cron `sudo /etc/init.d/cron stop`
+   - No utiliceis esto aparte de detener todas las tareas que puedan estar ejecutandose en cron `sudo /etc/init.d/cron stop`
    no sirve de nada porque al reiniciar el script estará de nuevo funcionando.
    podeis entrar en:
    ```bash
