@@ -427,10 +427,10 @@ sudo service ssh status
 
 ➤ Líneas a modificar, descomentalas y dejalas al puerto 4242 :
 
- 
+
      Port 4242
      PermitRootLogin prohibit-password
-    
+
 <img width="632" alt="" src="img/editportpass.png">
 
 
@@ -1002,7 +1002,7 @@ sudo crontab -u root -e
 
 11. **Comprobar particiones:**
     `lsblk`
-    
+
     <img width="632" alt="lsblk" src="img/arbol (1).png">
 
 13. **Verificar si sudo está instalado:**
@@ -1041,8 +1041,13 @@ sudo crontab -u root -e
     `sudo crontab -u root -e` y cambiar el primer parámetro a 1.
 
 23. **Detener ejecución del script al iniciar el servidor:**
-    `sudo /etc/init.d/cron stop`
-    (usar `sudo /etc/init.d/cron start` para reiniciar).
+   No utiliceis esto aparte de detener todas las tareas que puedan estar ejecutandose en cron `sudo /etc/init.d/cron stop`
+   no sirve de nada porque al reiniciar el script estará de nuevo funcionando.
+   podeis entrar en:
+   ```bash
+sudo crontab -u root -e
+```
+y comentar la linea donde hace referencia a nuestro ```monitoring.sh```
 
 # Contacto
 
