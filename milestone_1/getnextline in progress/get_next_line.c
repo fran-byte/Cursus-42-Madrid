@@ -19,20 +19,124 @@
 
 #define BUFFER_SIZE 70
 
+
+size_t	ft_strlen(const char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+}
+void	*ft_memset(void *s, int c, size_t n)
+{
+	size_t				i;
+	unsigned char		*buf;
+
+	i = 0;
+	buf = (unsigned char *)s;
+	while (i < n)
+	{
+		buf[i] = c;
+		i++;
+	}
+	return (buf);
+}
+void	*ft_calloc(size_t count, size_t size)
+{
+	void	*ptr;
+
+	ptr = malloc(count * size);
+	if (ptr == NULL)
+		return (NULL);
+	ft_memset(ptr, 0, count * size);
+	return (ptr);
+}
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+{
+	size_t	i;
+
+	i = 0;
+	if (size == 0)
+		return (ft_strlen(src));
+	while (src[i] != '\0' && i < size - 1)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (ft_strlen(src));
+}
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
+{
+	size_t	i;
+	size_t	len_dst;
+	size_t	len_src;
+
+	i = 0;
+	len_dst = ft_strlen(dst);
+	len_src = ft_strlen(src);
+	if (size == 0)
+		return (len_src);
+	if (size <= len_dst)
+		return (len_src + size);
+	while (src[i] != '\0' && (len_dst + i) < (size - 1))
+	{
+		dst[i + len_dst] = src[i];
+		i++;
+	}
+	dst[i + len_dst] = '\0';
+	return (len_src + len_dst);
+}
+
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	int		total_sz;
+	char	*str;
+
+	total_sz = ft_strlen(s1) + ft_strlen(s2);
+	str = (char *)malloc(sizeof(*str) * (total_sz + 1));
+	if (!str)
+		return (NULL);
+	ft_strlcpy(str, s1, total_sz + 1);
+	ft_strlcat(str, s2, total_sz + 1);
+	return (str);
+}
+
+char	*find_end_line(const char *s, int c)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] == (char)c)
+			return ((char *)&s[i]);
+		i++;
+	}
+	if (s[i] == (char)c)
+		return ((char *)&s[i]);
+	return (NULL);
+}
+
 char	*get_next_line(int fd)
 {
-	char *buffer;
+	static char *buffer;
 	int bytes_read;
 	char *line;
-	char * temp;
+	char *temp_buffer;
 	int 	i;
 
-	i=0;
+	i = 0;
 
 	if (fd == -1)
 		return (NULL);
 
-	buffer = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
+	buffer = (char *)malloc((BUFFER_SIZE) * sizeof(char) + 1);
 	if (!buffer)
 		return (NULL);
 
@@ -40,49 +144,40 @@ char	*get_next_line(int fd)
 	if (bytes_read <= 0)
 	{
 		free(buffer);
-		return (NULL);  // Devuelve NULL si no se leen más datos (EOF o error)
+		return (NULL);
 	}
-	while (buffer[i] != '\n' && i <= strlen(buffer))
+	temp_buffer = ft_strjoin(buffer, temp_buffer);
+	while(temp_buffer[i] != '\0')
 	{
-		printf(". %c\n",buffer[i]);
+		if(temp_buffer[i] == '\n')
+		{
+			line = find_end_line(temp_buffer, '\n');
+		}
 		i++;
 	}
-	if (buffer[i] == '\n')
-	{
-		temp = (char *)malloc((i) * sizeof(char));
-		while (i >=0)
-		{
-			temp[i] = buffer[i];
-			i--;
-		}
-		free (buffer);
-	}
 
-	//buffer[bytes_read] = '\0';  // terminar el buffer con un nulo
 
-	line = temp;
 	return (line);
 
 }
 
 int main(void) {
-    int fd;
-    char *next_line;
-    int count = 0;
+	int fd;
+	char *next_line;
+	int count = 0;
 
-    fd = open("file.txt", O_RDONLY);
-    if (fd == -1) {
-        printf("Error: no se pudo abrir el archivo.\n");
-        return 1;
-    }
+	fd = open("file.txt", O_RDONLY);
+	if (fd == -1) {
+		printf("Error: no se pudo abrir el archivo.\n");
+		return 1;
+	}
 
-    // Bucle para leer todas las líneas del archivo
-    while ((next_line = get_next_line(fd)) != NULL) {
-        count++;
-        printf("[%d]: %s", count, next_line);  // Mostrar la línea leída
+	while ((next_line = get_next_line(fd)) != NULL) {
+		count++;
+		printf("[%d]: %s", count, next_line);  // línea leída
 
-    }
-    free(next_line);  // Liberar la línea después de usarla
-    close(fd);  // Cerrar el archivo
-    return 0;   // Finalizar el programa
+	}
+	free(next_line); // Liberar la línea
+	close(fd);
+	return 0;
 }
