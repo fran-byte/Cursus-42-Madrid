@@ -93,52 +93,72 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	return (len_src + len_dst);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *buffer, char const *temp_buffer)
 {
 	int		total_sz;
 	char	*str;
 
-	total_sz = ft_strlen(s1) + ft_strlen(s2);
-	str = (char *)malloc(sizeof(*str) * (total_sz + 1));
+	total_sz = ft_strlen(buffer) + ft_strlen(temp_buffer);
+	str = (char *)malloc(sizeof(*str) * (total_sz));
 	if (!str)
 		return (NULL);
-	ft_strlcpy(str, s1, total_sz + 1);
-	ft_strlcat(str, s2, total_sz + 1);
+	ft_strlcpy(str, buffer, total_sz + 1);
+	ft_strlcat(str, temp_buffer, total_sz + 1);
+	//free(buffer);
+	//buffer = NULL;
 	return (str);
 }
 
-char	*find_end_line(const char *s, int c)
+char	*find_and_return_line(const char *s, int c)
 {
-	int	i;
+	size_t	i;
+	char *line;
 
 	i = 0;
-	while (s[i] != '\0')
+/*	while (s[i] != '\0')
 	{
 		if (s[i] == (char)c)
 			return ((char *)&s[i]);
 		i++;
-	}
+	}*/
 	if (s[i] == (char)c)
-		return ((char *)&s[i]);
+	{
+		//return ((char *)&s[i]);
+		line = ft_calloc(i, sizeof(char)+1); // reservamos solo el tamaño de line
+		line[i+1] = '\n';  // lo llenamos de ceros y colocamos el fin de linea \n
+		i = 0;
+
+		while (*line != '\n')
+		{
+			line[i] = s[i]; // rellenamos line con s(la str concatenada) solo hasta
+							// completar line, el final de line es donde estará el \n
+			i++;
+		}
+		return (line);
+	}
+	else
+		return ((char *)s);
 	return (NULL);
 }
 
 char	*get_next_line(int fd)
 {
-	static char *buffer;
+	char *buffer;
 	int bytes_read;
 	char *line;
-	char *temp_buffer;
+	static char *temp_buffer;
 	int 	i;
 
 	i = 0;
-
+	temp_buffer = NULL;
 	if (fd == -1)
 		return (NULL);
 
-	buffer = (char *)malloc((BUFFER_SIZE) * sizeof(char) + 1);
+	buffer = (char *)malloc((BUFFER_SIZE) * sizeof(char));
 	if (!buffer)
 		return (NULL);
+	if (!temp_buffer)
+			temp_buffer = ft_calloc(1, sizeof(char));  // Inicializar temp_buffer como cadena vacía
 
 	bytes_read = read(fd, buffer, BUFFER_SIZE);
 	if (bytes_read <= 0)
@@ -147,11 +167,12 @@ char	*get_next_line(int fd)
 		return (NULL);
 	}
 	temp_buffer = ft_strjoin(buffer, temp_buffer);
-	while(temp_buffer[i] != '\0')
+	while(temp_buffer[i])
 	{
 		if(temp_buffer[i] == '\n')
 		{
-			line = find_end_line(temp_buffer, '\n');
+			line = find_and_return_line(temp_buffer, '\n');
+			return (line);
 		}
 		i++;
 	}
@@ -164,19 +185,22 @@ char	*get_next_line(int fd)
 int main(void) {
 	int fd;
 	char *next_line;
-	int count = 0;
+
 
 	fd = open("file.txt", O_RDONLY);
 	if (fd == -1) {
 		printf("Error: no se pudo abrir el archivo.\n");
 		return 1;
 	}
+	next_line = get_next_line(fd);
+	printf("%s", next_line);  // línea leída
+	//next_line = get_next_line(fd);
+	//printf("%s", next_line);  // línea leída
+	//while ((next_line = get_next_line(fd)) != NULL) {
+	//	count++;
+	//	printf("[%d]: %s", count, next_line);  // línea leída
 
-	while ((next_line = get_next_line(fd)) != NULL) {
-		count++;
-		printf("[%d]: %s", count, next_line);  // línea leída
-
-	}
+	//}
 	free(next_line); // Liberar la línea
 	close(fd);
 	return 0;
