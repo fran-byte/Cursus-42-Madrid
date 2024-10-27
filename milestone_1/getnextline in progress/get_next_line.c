@@ -121,23 +121,28 @@ char	*find_and_return_line(const char *s, int c)
 			return ((char *)&s[i]);
 		i++;
 	}*/
-	if (s[i] == (char)c)
+	while(*s)
 	{
-		//return ((char *)&s[i]);
-		line = ft_calloc(i, sizeof(char)+1); // reservamos solo el tamaño de line
-		line[i+1] = '\n';  // lo llenamos de ceros y colocamos el fin de linea \n
-		i = 0;
-
-		while (*line != '\n')
+		if (s[i] == (char)c)
 		{
-			line[i] = s[i]; // rellenamos line con s(la str concatenada) solo hasta
-							// completar line, el final de line es donde estará el \n
-			i++;
+			//return ((char *)&s[i]);
+			line = ft_calloc(i, sizeof(char)+1); // reservamos solo el tamaño de line
+			//line[i+1] = '\n';  // lo llenamos de ceros y colocamos el fin de linea \n
+			i = 0;
+
+			while (s[i] != '\n')
+			{
+				line[i] = s[i]; // rellenamos line con s(la str concatenada) solo hasta
+								// completar line, el final de line es donde estará el \n
+				i++;
+			}
+			line[i] = '\n';
+			return (line);
 		}
-		return (line);
+		i++;
+		//else
+		//	return ((char *)s);
 	}
-	else
-		return ((char *)s);
 	return (NULL);
 }
 
