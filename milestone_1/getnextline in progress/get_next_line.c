@@ -16,11 +16,10 @@
 #include <stdio.h>
 #include <fcntl.h>
 #include <string.h>
-
 #define BUFFER_SIZE 70
 
 
-size_t	ft_strlen(const char *str)
+size_t	ft_strlen( char *str)
 {
 	int	i;
 
@@ -56,7 +55,7 @@ void	*ft_calloc(size_t count, size_t size)
 	return (ptr);
 }
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst,  char *src, size_t size)
 {
 	size_t	i;
 
@@ -71,7 +70,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	dst[i] = '\0';
 	return (ft_strlen(src));
 }
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst,  char *src, size_t size)
 {
 	size_t	i;
 	size_t	len_dst;
@@ -93,94 +92,113 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	return (len_src + len_dst);
 }
 
-char	*ft_strjoin(char const *buffer, char const *temp_buffer)
+char	*ft_strjoin(char  *read_bff, char  *stored_bff)
 {
 	int		total_sz;
 	char	*str;
 
-	total_sz = ft_strlen(buffer) + ft_strlen(temp_buffer);
+	total_sz = ft_strlen(read_bff) + ft_strlen(stored_bff);
 	str = (char *)malloc(sizeof(*str) * (total_sz));
 	if (!str)
 		return (NULL);
-	ft_strlcpy(str, buffer, total_sz + 1);
-	ft_strlcat(str, temp_buffer, total_sz + 1);
-	//free(buffer);
-	//buffer = NULL;
+	ft_strlcpy(str, read_bff, total_sz + 1);
+	ft_strlcat(str, stored_bff, total_sz + 1);
+	//free (read_bff);
 	return (str);
 }
 
-char	*find_and_return_line(const char *s, int c)
+char	*find_and_return_line( char *stored_bff, int c, int *ptr_n)
 {
 	size_t	i;
 	char *line;
 
 	i = 0;
-/*	while (s[i] != '\0')
-	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i++;
-	}*/
-	while(*s)
-	{
-		if (s[i] == (char)c)
-		{
-			//return ((char *)&s[i]);
-			line = ft_calloc(i, sizeof(char)+1); // reservamos solo el tamaño de line
-			//line[i+1] = '\n';  // lo llenamos de ceros y colocamos el fin de linea \n
-			i = 0;
 
-			while (s[i] != '\n')
+	while(*stored_bff)
+	{
+		if (stored_bff[i] == (char)c) //  i será el tamaño de line
+		{
+			line = ft_calloc(i, sizeof(char)+1); // reservamos solo el tamaño de line
+					 // lo llenamos de ceros y colocamos el fin de linea \n
+			i = 0;
+			while (stored_bff[i] != '\n')
 			{
-				line[i] = s[i]; // rellenamos line con s(la str concatenada) solo hasta
+				line[i] = stored_bff[i]; // rellenamos line con s(la str concatenada) solo hasta
 								// completar line, el final de line es donde estará el \n
 				i++;
 			}
-			line[i] = '\n';
+			//stored_bff = stored_bff + i+1; //dejamos stored_bff apuntando a la siguiente línea
+			line[i] = '\n'; // Acoplamos el final de linea.
+			*ptr_n = *ptr_n + i + 1;
 			return (line);
 		}
 		i++;
-		//else
-		//	return ((char *)s);
+
 	}
 	return (NULL);
 }
 
 char	*get_next_line(int fd)
 {
-	char *buffer;
+	char *read_bff;
 	int bytes_read;
 	char *line;
-	static char *temp_buffer;
+	static char *stored_bff;
 	int 	i;
+	static	int ptr_n = 0;
 
 	i = 0;
-	temp_buffer = NULL;
+
+	if (stored_bff == NULL)
+		stored_bff = NULL; // Solo se pone a NULL en la primera pasada
 	if (fd == -1)
 		return (NULL);
 
-	buffer = (char *)malloc((BUFFER_SIZE) * sizeof(char));
-	if (!buffer)
-		return (NULL);
-	if (!temp_buffer)
-			temp_buffer = ft_calloc(1, sizeof(char));  // Inicializar temp_buffer como cadena vacía
 
-	bytes_read = read(fd, buffer, BUFFER_SIZE);
-	if (bytes_read <= 0)
+	if (!stored_bff) // Si el baffer acumulado está vacio entramos y llamamos a read_bff
 	{
-		free(buffer);
-		return (NULL);
-	}
-	temp_buffer = ft_strjoin(buffer, temp_buffer);
-	while(temp_buffer[i])
-	{
-		if(temp_buffer[i] == '\n')
+
+		read_bff = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char)); // Tamaño asinado para read_bff
+		if (!read_bff)
+			return (NULL);
+		if (!stored_bff)
+				stored_bff = ft_calloc(1, sizeof(char));
+						// Inicializar stored_bff como cadena vacía
+
+		bytes_read = read(fd, read_bff, BUFFER_SIZE); // LEEMOS a buffer !!!
+		if (bytes_read <= 0)
 		{
-			line = find_and_return_line(temp_buffer, '\n');
-			return (line);
+			free(read_bff);
+			if (stored_bff[0] == '\0')
+			{ // Si no hay nada acumulado
+                free(stored_bff);
+                return NULL; // Termina la función
+			}
 		}
-		i++;
+        read_bff[bytes_read] = '\0'; // Asegúrate de que el buffer esté terminado en nulo
+		stored_bff = ft_strjoin(stored_bff, read_bff); // Contatenamos temp+buffer
+		while(stored_bff[i]) //Buscamos si hay \n y si la hay vamos a extraer la linea
+		{
+			if(stored_bff[i] == '\n') // Si hay final de línea, vamos a extraerlo
+			{
+				line = find_and_return_line(stored_bff, '\n', &ptr_n);
+				stored_bff = stored_bff + ptr_n;
+				return (line);
+			}
+			i++;
+		}
 	}
+	else // Pero si el buffer acumulado tiene algo no llamamos a read_bff
+		while(stored_bff[i]) //Buscamos si hay \n y si la hay vamos a extraer la linea
+		{
+			if(stored_bff[i] == '\n') // Si hay final de línea, vamos a extraerlo
+			{
+				line = find_and_return_line(stored_bff, '\n', &ptr_n);
+				stored_bff = stored_bff + ptr_n;
+				return (line);
+			}
+			i++;
+		}
 
 
 	return (line);
@@ -198,7 +216,13 @@ int main(void) {
 		return 1;
 	}
 	next_line = get_next_line(fd);
-	printf("%s", next_line);  // línea leída
+	printf("%s", next_line);
+	next_line = get_next_line(fd);
+	printf("%s", next_line); // línea leída
+	next_line = get_next_line(fd);
+	printf("%s", next_line); // línea leída
+	next_line = get_next_line(fd);
+	printf("%s", next_line); // línea leída
 	//next_line = get_next_line(fd);
 	//printf("%s", next_line);  // línea leída
 	//while ((next_line = get_next_line(fd)) != NULL) {
