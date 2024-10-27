@@ -164,27 +164,20 @@ char	*get_next_line(int fd)
 	if (bytes_read <= 0)
 	{
 		free(buffer);
-		return (NULL);  // Devuelve NULL si no se leen más datos (EOF o error)
+		return (NULL);
 	}
-	while (buffer[i] != '\n' && i <= strlen(buffer))
+	temp_buffer = ft_strjoin(buffer, temp_buffer);
+	while(temp_buffer[i])
 	{
-		printf(". %c\n",buffer[i]);
+		if(temp_buffer[i] == '\n')
+		{
+			line = find_and_return_line(temp_buffer, '\n');
+			return (line);
+		}
 		i++;
 	}
-	if (buffer[i] == '\n')
-	{
-		temp = (char *)malloc((i) * sizeof(char));
-		while (i >=0)
-		{
-			temp[i] = buffer[i];
-			i--;
-		}
-		free (buffer);
-	}
 
-	//buffer[bytes_read] = '\0';  // terminar el buffer con un nulo
 
-	line = temp;
 	return (line);
 
 }
