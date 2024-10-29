@@ -10,133 +10,56 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "get_next_line.h"
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <fcntl.h>
-#include <string.h>
-#define BUFFER_SIZE 70
-
-
-size_t	ft_strlen( char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-void	*ft_memset(void *s, int c, size_t n)
-{
-	size_t				i;
-	unsigned char		*buf;
-
-	i = 0;
-	buf = (unsigned char *)s;
-	while (i < n)
-	{
-		buf[i] = c;
-		i++;
-	}
-	return (buf);
-}
-void	*ft_calloc(size_t count, size_t size)
-{
-	void	*ptr;
-
-	ptr = malloc(count * size);
-	if (ptr == NULL)
-		return (NULL);
-	ft_memset(ptr, 0, count * size);
-	return (ptr);
-}
-
-size_t	ft_strlcpy(char *dst,  char *src, size_t size)
-{
-	size_t	i;
-
-	i = 0;
-	if (size == 0)
-		return (ft_strlen(src));
-	while (src[i] != '\0' && i < size - 1)
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (ft_strlen(src));
-}
-size_t	ft_strlcat(char *dst,  char *src, size_t size)
-{
-	size_t	i;
-	size_t	len_dst;
-	size_t	len_src;
-
-	i = 0;
-	len_dst = ft_strlen(dst);
-	len_src = ft_strlen(src);
-	if (size == 0)
-		return (len_src);
-	if (size <= len_dst)
-		return (len_src + size);
-	while (src[i] != '\0' && (len_dst + i) < (size - 1))
-	{
-		dst[i + len_dst] = src[i];
-		i++;
-	}
-	dst[i + len_dst] = '\0';
-	return (len_src + len_dst);
-}
-
-char	*ft_strjoin(char  *read_bff, char  *stored_bff)
-{
-	int		total_sz;
-	char	*str;
-
-	total_sz = ft_strlen(read_bff) + ft_strlen(stored_bff);
-	str = (char *)malloc(sizeof(*str) * (total_sz));
-	if (!str)
-		return (NULL);
-	ft_strlcpy(str, read_bff, total_sz + 1);
-	ft_strlcat(str, stored_bff, total_sz + 1);
-	//free (read_bff);
-	return (str);
-}
 
 char	*find_and_return_line( char *stored_bff, int c, int *ptr_n)
 {
-	size_t	i;
+	int	i;
 	char *line;
 
 	i = 0;
-
 	while(*stored_bff)
 	{
 		if (stored_bff[i] == (char)c) //  i será el tamaño de line
 		{
-			line = ft_calloc(i, sizeof(char)+1); // reservamos solo el tamaño de line
+			line = (char *)malloc(i * sizeof(char)+1); // reservamos solo el tamaño de line
 					 // lo llenamos de ceros y colocamos el fin de linea \n
 			i = 0;
 			while (stored_bff[i] != '\n')
 			{
-				line[i] = stored_bff[i]; // rellenamos line con s(la str concatenada) solo hasta
+				line[i] = stored_bff[i]; // rellenamos line con stored_bff(la str concatenada) hasta
 								// completar line, el final de line es donde estará el \n
 				i++;
 			}
-			//stored_bff = stored_bff + i+1; //dejamos stored_bff apuntando a la siguiente línea
 			line[i] = '\n'; // Acoplamos el final de linea.
 			*ptr_n = *ptr_n + i + 1;
 			return (line);
 		}
 		i++;
-
 	}
 	return (NULL);
 }
+char	*swap_delete(char *stored_bff, int ptr_n)
+{
+	int 	j;
+	char	*swap_temp;
+
+	j = 0;
+	swap_temp = (char *)malloc((ft_strlen(stored_bff) - ptr_n + 1) * sizeof(char)); // mismo tamaño que stored_bff
+	if (!swap_temp)
+		return NULL;
+	while (stored_bff[ptr_n] != '\0') // hacemos la copia
+	{
+		swap_temp[j] = stored_bff [ptr_n];
+		j++;
+		ptr_n++;
+	}
+	swap_temp[j] = '\0';
+	free (stored_bff);
+	return (swap_temp);
+}
+
 
 char	*get_next_line(int fd)
 {
@@ -145,44 +68,40 @@ char	*get_next_line(int fd)
 	char *line;
 	static char *stored_bff;
 	int 	i;
-	static	int ptr_n = 0;
+	int ptr_n;
 
 	i = 0;
-
+	ptr_n = 0;
 	if (stored_bff == NULL)
 		stored_bff = NULL; // Solo se pone a NULL en la primera pasada
 	if (fd == -1)
 		return (NULL);
-
-
-	if (!stored_bff) // Si el baffer acumulado está vacio entramos y llamamos a read_bff
+	if (!stored_bff) // Si el buffer acumulado está vacio entramos y llamamos a read_bff
 	{
-
-		read_bff = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char)); // Tamaño asinado para read_bff
+		read_bff = (char *)malloc((BUFFER_SIZE) * sizeof(char) + 1); // Tamaño asinado para read_bff
 		if (!read_bff)
 			return (NULL);
 		if (!stored_bff)
-				stored_bff = ft_calloc(1, sizeof(char));
-						// Inicializar stored_bff como cadena vacía
-
+				stored_bff =(char *)malloc(1 * sizeof(char)); // Inicializar stored_bff como cadena vacía
 		bytes_read = read(fd, read_bff, BUFFER_SIZE); // LEEMOS a buffer !!!
 		if (bytes_read <= 0)
 		{
 			free(read_bff);
-			if (stored_bff[0] == '\0')
-			{ // Si no hay nada acumulado
+			if (stored_bff[0] == '\0') // Si no hay nada acumulado
+			{
                 free(stored_bff);
                 return NULL; // Termina la función
 			}
 		}
-        read_bff[bytes_read] = '\0'; // Asegúrate de que el buffer esté terminado en nulo
+        read_bff[bytes_read] = '\0'; // buffer terminado en nulo
 		stored_bff = ft_strjoin(stored_bff, read_bff); // Contatenamos temp+buffer
 		while(stored_bff[i]) //Buscamos si hay \n y si la hay vamos a extraer la linea
 		{
 			if(stored_bff[i] == '\n') // Si hay final de línea, vamos a extraerlo
 			{
 				line = find_and_return_line(stored_bff, '\n', &ptr_n);
-				stored_bff = stored_bff + ptr_n;
+				stored_bff = swap_delete(stored_bff ,ptr_n);
+				ptr_n = 0;
 				return (line);
 			}
 			i++;
@@ -199,11 +118,9 @@ char	*get_next_line(int fd)
 			}
 			i++;
 		}
-
-
 	return (line);
-
 }
+#include <fcntl.h>
 
 int main(void) {
 	int fd;
@@ -217,19 +134,18 @@ int main(void) {
 	}
 	next_line = get_next_line(fd);
 	printf("%s", next_line);
+	free(next_line); // Liberar la línea
 	next_line = get_next_line(fd);
 	printf("%s", next_line); // línea leída
+	free(next_line); // Liberar la línea
 	next_line = get_next_line(fd);
 	printf("%s", next_line); // línea leída
+	free(next_line); // Liberar la línea
 	next_line = get_next_line(fd);
 	printf("%s", next_line); // línea leída
-	//next_line = get_next_line(fd);
-	//printf("%s", next_line);  // línea leída
-	//while ((next_line = get_next_line(fd)) != NULL) {
-	//	count++;
-	//	printf("[%d]: %s", count, next_line);  // línea leída
-
-	//}
+	free(next_line); // Liberar la línea
+	next_line = get_next_line(fd); // *******************  ESTA LINEA YA NO EXISTE
+	printf("%s", next_line); // línea leída
 	free(next_line); // Liberar la línea
 	close(fd);
 	return 0;
