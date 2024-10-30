@@ -12,6 +12,34 @@
 
 #include "get_next_line.h"
 
+char	*find_and_return_line( char *stored_bff, int c, int *ptr_n)
+{
+	int	i;
+	char *line;
+
+	i = 0;
+	while(*stored_bff)
+	{
+		if (stored_bff[i] == (char)c) //  i será el tamaño de line
+		{
+			line = (char *)malloc(i * sizeof(char)+1); // reservamos solo el tamaño de line
+					 // lo llenamos de ceros y colocamos el fin de linea \n
+			i = 0;
+			while (stored_bff[i] != '\n')
+			{
+				line[i] = stored_bff[i]; // rellenamos line con stored_bff(la str concatenada) hasta
+								// completar line, el final de line es donde estará el \n
+				i++;
+			}
+			line[i] = '\n'; // Acoplamos el final de linea.
+			*ptr_n = *ptr_n + i + 1;
+			return (line);
+		}
+		i++;
+	}
+	return (NULL);
+}
+
 char *check_free_stored_buffer(char *stored_bff, char *read_bff)
 {
 	free(read_bff);
