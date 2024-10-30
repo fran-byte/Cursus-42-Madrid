@@ -43,7 +43,7 @@ char *process_buffer_line(char *stored_bff, int *ptr_n)
     	return NULL;
 }
 
-char *extract_line_without_reading(char *stored_bff, int *ptr_n)
+char *no_read_extract_line(char *stored_bff, int *ptr_n)
 {
 	int i;
 	char *line;
@@ -73,7 +73,7 @@ char *get_next_line(int fd)
 	ptr_n = 0;
 	if (!stored_bff)
 		stored_bff = ft_strdup(""); // Inicializar stored_bff si es la primera llamada	
-	line = extract_line_without_reading(stored_bff, &ptr_n);// Verificar si stored_bff ya contiene una línea completa sin hacer una nueva lectura
+	line = no_read_extract_line(stored_bff, &ptr_n);// Verificar si stored_bff ya contiene una línea completa sin hacer una nueva lectura
 	while (1)
 	{
         	read_bff = malloc(BUFFER_SIZE + 1);
