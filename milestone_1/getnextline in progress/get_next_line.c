@@ -33,6 +33,7 @@ char	*find_and_return_line( char *stored_bff, int c, int *ptr_n)
 				i++;
 			}
 			line[i] = '\n'; // Acoplamos el final de linea.
+			line[i + 1] = '\0';
 			*ptr_n = *ptr_n + i + 1;
 			return (line);
 		}
@@ -73,7 +74,7 @@ char	*read_buffer(char *stored_bff, int fd)
 		if (bytes_read <= 0)
 		{
 			free(read_bff);
-			if (stored_bff && stored_bff[0] == '\0') // Si no hay nada acumulado
+			if (stored_bff[0] == '\0') // Si no hay nada acumulado
 			{
                 //free(stored_bff);
                 return NULL; // Termina la función
