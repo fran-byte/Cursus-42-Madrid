@@ -72,7 +72,8 @@ char *get_next_line(int fd)
 
 	ptr_n = 0;
 	if (!stored_bff)
-		stored_bff = ft_strdup(""); // Inicializar stored_bff si es la primera llamada
+		stored_bff = ft_strdup(""); // Inicializar stored_bff si es la primera llamada	
+	line = extract_line_without_reading(stored_bff, &ptr_n);// Verificar si stored_bff ya contiene una línea completa sin hacer una nueva lectura
 	while (1)
 	{
         	read_bff = malloc(BUFFER_SIZE + 1);
