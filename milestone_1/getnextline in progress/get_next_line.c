@@ -131,7 +131,7 @@ int main(void) {
 	next_line = get_next_line(fd);
 	printf("%s", next_line); // línea leída
 	free(next_line); // Liberar la línea
-	next_line = get_next_line(fd); // *******************  ESTA LINEA YA NO EXISTE
+	next_line = get_next_line(fd);
 	printf("%s", next_line); // línea leída
 	free(next_line); // Liberar la línea
 	next_line = get_next_line(fd); // *******************  ESTA LINEA YA NO EXISTE
