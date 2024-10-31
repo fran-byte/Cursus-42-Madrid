@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 14:35:46 by frromero          #+#    #+#             */
-/*   Updated: 2024/10/31 23:40:05 by frromero         ###   ########.fr       */
+/*   Updated: 2024/11/01 00:02:04 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,25 +22,22 @@ char	*find_and_return_line(char *stored_bff)
 	ln = 0;
 	while (stored_bff[ln] != '\n' && stored_bff[ln] != '\0') //calculamos longitud de line
 		ln++;
-	while(*stored_bff)									// aparece el \n menos la & de stored_bff
+	while(*stored_bff)
 	{
-		line = (char *)malloc(ln * sizeof(char)+1); // reservamos solo el tamaño de line
+		line = (char *)malloc(ln * sizeof(char)+1); // reservamos tamaño de line
 		if (!line)
-			return NULL;
-		i = 0;
-		while (i <= ln)
-		{
-			line[i] = stored_bff[i]; // rellenamos line con stored_bff hasta len_line
-			i++;
-		}
-		line[i] = '\0';
+			return (NULL);
+		i = -1;
+		while (++i <= ln)
+			line[i] = stored_bff[i]; // rellenamos line con longitud stored_bff hasta ln
+		line[i] = '\0'; // aplicamos el final de string
 		return (line);
 	}
 	return (NULL);
 }
 char	*swap_delete(char *stored_bff)
 {
-	int 	j;
+	int 	i;
 	char	*swap_temp;
 	int ln;
 	int ln_total;
@@ -49,20 +46,18 @@ char	*swap_delete(char *stored_bff)
 	ln_total = 0;
 	while (stored_bff[ln] != '\n') //calculamos longitud de line
 				ln++;
-	while (stored_bff[ln_total] != '\0') //calculamos longitud de stored_bff restante
-		ln_total++;
-
-	j = 0;
+	ln_total = ft_strlen(stored_bff); //calculamos longitud de stored_bff
+	i = 0;
 	swap_temp = (char *)malloc(ln_total  * sizeof(char) + 1); // mismo tamaño que el restante stored_bff
 	if (!swap_temp)
-		return NULL;
-	while (stored_bff[ln] != '\0') // hacemos la copia
+		return (NULL);
+	while (stored_bff[ln] != '\0') // hacemos la copia de la parte restante
 	{
-		swap_temp[j] = stored_bff [ln+1];
-		j++;
+		swap_temp[i] = stored_bff [ln+1];
+		i++;
 		ln++;
 	}
-	swap_temp[j] = '\0';
+	swap_temp[i] = '\0';
 	free (stored_bff);
 	return (swap_temp);
 }
@@ -80,18 +75,18 @@ char	*read_and_join(char *stored_bff, int fd)
 				if (!stored_bff)
 					return (NULL);
 		}
-		bytes_read = read(fd, read_bff, BUFFER_SIZE); // LEEMOS a buffer !!!
+		bytes_read = read(fd, read_bff, BUFFER_SIZE); // LEEMOS a read_bff !!!
 		if (bytes_read <= 0)
 		{
 			free(read_bff);
 			if (stored_bff[0] == '\0') // Si no hay nada acumulado
 			{
-                return NULL; // Termina la función
+                return (NULL); // Termina la función
 			}
 		}
-        read_bff[bytes_read] = '\0'; // buffer terminado en nulo
-		stored_bff = ft_strjoin(stored_bff, read_bff); // Contatenamos temp+buffer
-		free(read_bff); //liberamos el buffer que ya no utilizamos
+        read_bff[bytes_read] = '\0'; // la str de read_buff terminado en nulo
+		stored_bff = ft_strjoin(stored_bff, read_bff); // Contatenamos stored_bff+read_bff
+		free(read_bff); //liberamos el read_bff que ya no utilizamos
 		return (stored_bff);
 }
 
@@ -107,7 +102,7 @@ char	*get_next_line(int fd)
 	if (!stored_bff) // Si el buffer acumulado está vacio entramos y llamamos a read_and_join
 		stored_bff = read_and_join(stored_bff, fd); // aquí ya tenemos la cadena concatenada
 	while(ft_strchr(stored_bff, '\n') == NULL) // si el stored_buff no está vacio, pero no tiene \n
-		stored_bff = read_and_join(stored_bff, fd); //vamos a leer del buffer y concatenar hasta obtener un \n
+		stored_bff = read_and_join(stored_bff, fd); //vamos a leer del stored_bff y concatenar hasta obtener un \n
 	line = find_and_return_line(stored_bff);// vamos a filtar la stored_bff y obtener la línea
 	stored_bff = swap_delete(stored_bff);
 	return (line);
@@ -121,7 +116,7 @@ int main(void) {
 	fd = open("file.txt", O_RDONLY);
 	if (fd == -1) {
 		printf("Error: no se pudo abrir el archivo.\n");
-		return 1;
+		return (1);
 	}
 	next_line = get_next_line(fd);
 	printf("%s", next_line);
@@ -142,5 +137,5 @@ int main(void) {
 	printf("%s", next_line); // línea leída
 	free(next_line); // Liberar la línea
 	close(fd);
-	return 0;
+	return (0);
 }
