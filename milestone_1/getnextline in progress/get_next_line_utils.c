@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frromero <frromero@student.42madrid.com>   #+#  +:+       +#+        */
+/*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-10-29 14:36:13 by frromero          #+#    #+#             */
-/*   Updated: 2024-10-29 14:36:13 by frromero         ###   ########.fr       */
+/*   Created: 2024/10/29 14:36:13 by frromero          #+#    #+#             */
+/*   Updated: 2024/10/31 23:40:18 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ size_t	ft_strlen(char *str)
 	return (i);
 }
 
-size_t	ft_strlcpy(char *dst,  char *src, size_t size)
+size_t	ft_strlcpy(char *dst, char *src, size_t size)
 {
 	size_t	i;
 
@@ -38,7 +38,7 @@ size_t	ft_strlcpy(char *dst,  char *src, size_t size)
 	return (ft_strlen(src));
 }
 
-size_t	ft_strlcat(char *dst,  char *src, size_t size)
+size_t	ft_strlcat(char *dst, char *src, size_t size)
 {
 	size_t	i;
 	size_t	len_dst;
@@ -60,7 +60,7 @@ size_t	ft_strlcat(char *dst,  char *src, size_t size)
 	return (len_src + len_dst);
 }
 
-char	*ft_strjoin(char  *read_bff, char  *stored_bff)
+char	*ft_strjoin(char *read_bff, char *stored_bff)
 {
 	int		total_sz;
 	char	*str;
@@ -71,7 +71,6 @@ char	*ft_strjoin(char  *read_bff, char  *stored_bff)
 		return (NULL);
 	ft_strlcpy(str, read_bff, total_sz + 1);
 	ft_strlcat(str, stored_bff, total_sz + 1);
-	//free (read_bff);
 	return (str);
 }
 char	*ft_strchr(const char *s, int c)
