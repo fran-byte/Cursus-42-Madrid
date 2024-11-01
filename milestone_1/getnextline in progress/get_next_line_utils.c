@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 14:36:13 by frromero          #+#    #+#             */
-/*   Updated: 2024/10/31 23:40:18 by frromero         ###   ########.fr       */
+/*   Updated: 2024/11/01 19:20:32 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 size_t	ft_strlen(char *str)
 {
-	size_t i;
+	if (str == NULL)
+		return (0);
+	size_t	i;
 
 	i = 0;
 	while (str[i] != '\0')
@@ -60,11 +62,20 @@ size_t	ft_strlcat(char *dst, char *src, size_t size)
 	return (len_src + len_dst);
 }
 
-char	*ft_strjoin(char *read_bff, char *stored_bff)
+char	*special_strjoin_(char *read_bff, char *stored_bff)
 {
 	int		total_sz;
 	char	*str;
+	if (!stored_bff)
+		return (NULL);
 
+	if (!read_bff)  //revisa esta
+	{
+		read_bff = malloc(sizeof(char) + 1);
+		if (!read_bff)
+			return (0);
+		read_bff[0] = 0;
+	}
 	total_sz = ft_strlen(read_bff) + ft_strlen(stored_bff);
 	str = (char *)malloc((sizeof(char) * total_sz) + 1);
 	if (!str)
@@ -73,6 +84,7 @@ char	*ft_strjoin(char *read_bff, char *stored_bff)
 	ft_strlcat(str, stored_bff, total_sz + 1);
 	return (str);
 }
+
 char	*ft_strchr(const char *s, int c)
 {
 	int	i;
