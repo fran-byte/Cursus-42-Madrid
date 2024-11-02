@@ -13,7 +13,7 @@
 
 #include "get_next_line.h"
 
-char	*find_and_return_line(char *stored_bff)
+char	*get_line(char *stored)
 {
 	int	i;
 	char	*line;
@@ -21,23 +21,23 @@ char	*find_and_return_line(char *stored_bff)
 
 	i = 0;
 	ln = 0;
-	while (stored_bff[ln] != '\n' && stored_bff[ln] != '\0') //calculamos longitud de line
+	while (stored[ln] != '\n' && stored[ln] != '\0') //calculamos longitud de line
 		ln++;
 	if (*stored_bff)
 	{
 		line = (char *)malloc(ln * sizeof(char) + 1); // reservamos tamaño de line
 		if (line == NULL)
-			return (free(stored_bff), NULL);
+			return (free(stored), NULL);
 		i = -1;
 		while (++i <= ln)
-			line[i] = stored_bff[i]; // rellenamos line con longitud stored_bff hasta ln
+			line[i] = stored[i]; // rellenamos line con longitud stored hasta ln
 		line[i] = '\0'; // aplicamos el final de string
 		return (line);
 	}
-	return (free(stored_bff), NULL);
+	return (free(stored), NULL);
 }
 
-char	*swap_delete(char *stored_bff)
+char	*adj_storage(char *stored)
 {
 	int	i;
 	int	j;
@@ -45,23 +45,23 @@ char	*swap_delete(char *stored_bff)
 
 	i = 0;
 	j = 0;
-	while (stored_bff[i] && stored_bff[i] != '\n')
+	while (stored[i] && stored[i] != '\n')
 		i++;
-	if (!stored_bff[i++])
+	if (!stored[i++])
 	{
-		free(stored_bff);
+		free(stored);
 		return (NULL);
 	}
-	swap_temp = (char *)malloc((ft_strlen(stored_bff) - i + 1) * sizeof(char));
+	swap_temp = (char *)malloc((ft_strlen(stored) - i + 1) * sizeof(char));
 	if (!swap_temp)
-		return (free(stored_bff), NULL);
-	while (stored_bff[i])
-		swap_temp[j++] = stored_bff[i++];
+		return (free(stored), NULL);
+	while (stored[i])
+		swap_temp[j++] = stored[i++];
 	swap_temp[j] = '\0';
-	return (free(stored_bff), swap_temp);
+	return (free(stored), swap_temp);
 }
 
-char	*read_and_join(char *stored_bff, int fd) //Leer y concatenar en stored_bff
+char	*trim_line(char *stored, int fd) //Leer y concatenar en stored
 {
 	ssize_t		bytes_read;
 	char	*read_bff;
@@ -69,39 +69,39 @@ char	*read_and_join(char *stored_bff, int fd) //Leer y concatenar en stored_bff
 	read_bff = (char *)malloc(BUFFER_SIZE + 1);// Reservar espacio para leer BUFFER_SIZE
 	if (!read_bff)
 		return ( NULL);
-	if (!stored_bff)// Inicializar stored_bff como cadena vacía si es NULL
+	if (!stored)// Inicializar stored como cadena vacía si es NULL
 	{
-		stored_bff = (char *)malloc(1);
-		if (!stored_bff)
+		stored = (char *)malloc(1);
+		if (!stored)
 			return (free(read_bff), NULL);
-		*stored_bff = '\0';
+		*stored = '\0';
 	}
 	bytes_read = read(fd, read_bff, BUFFER_SIZE);// Leer hasta BUFFER_SIZE bytes en read_bff
 	if (bytes_read <= 0)
 	{
 		free(read_bff);
-		if (bytes_read == 0 && stored_bff[0] != '\0')
-			return (stored_bff);// Retornar el contenido acumulado si lo hay
-		return (free(stored_bff), NULL);// liberamos y Error o sin contenido en stored_bff
+		if (bytes_read == 0 && stored[0] != '\0')
+			return (stored);// Retornar el contenido acumulado si lo hay
+		return (free(stored), NULL);// liberamos y Error o sin contenido en stored
 	}
 	read_bff[bytes_read] = '\0';// colocamos el fin de string
-	stored_bff = special_strjoin_(stored_bff, read_bff);
-	return (stored_bff);
+	stored = special_strjoin_(stored, read_bff);
+	return (stored);
 }
 
 
 char	*get_next_line(int fd)
 {
 	char			*line;
-	static char		*stored_bff;
+	static char		*stored;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || BUFFER_SIZE >= INT_MAX)
-		return (free(stored_bff), NULL);
-	stored_bff = read_and_join(stored_bff, fd);
-	if (!stored_bff)
-		return (free(stored_bff), NULL);
-	line = find_and_return_line(stored_bff);
-	stored_bff = swap_delete(stored_bff);
+		return (free(stored), NULL);
+	stored = trim_line(stored, fd);
+	if (!stored)
+		return (free(stored), NULL);
+	line = get_line(stored);
+	stored = adj_storage(stored);
 	return (line);
 }
 /*
