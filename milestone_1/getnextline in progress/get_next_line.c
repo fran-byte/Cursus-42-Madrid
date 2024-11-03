@@ -23,7 +23,7 @@ char	*get_line(char *stored)
 	ln = 0;
 	while (stored[ln] != '\n' && stored[ln] != '\0') //calculamos longitud de line
 		ln++;
-	if (*stored_bff)
+	if (*stored)
 	{
 		line = (char *)malloc(ln * sizeof(char) + 1); // reservamos tamaño de line
 		if (line == NULL)
