@@ -62,7 +62,7 @@ size_t	ft_strlcat(char *dst, char *src, size_t size)
 	return (len_src + len_dst);
 }
 
-char	*special_strjoin_(char *read_bff, char *stored_bff)
+char	*special_strjoin_(char *read_bff, char *stored) 
 {
 	int		total_sz;
 	char	*str;
