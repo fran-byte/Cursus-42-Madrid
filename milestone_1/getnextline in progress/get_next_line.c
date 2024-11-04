@@ -6,31 +6,34 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 10:59:24 by frromero          #+#    #+#             */
-/*   Updated: 2024/11/04 21:25:45 by frromero         ###   ########.fr       */
+/*   Updated: 2024/11/04 23:41:25 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "get_next_line.h"
 
-char	*get_line(char *stored)
+char	*sget_line(char *stored)
 {
 	int	i;
 	char	*line;
 	int	ln;
 
 	i = 0;
-	ln = 0;
+	ln = 1;
 	while (stored[ln] != '\n' && stored[ln] != '\0') //calculamos longitud de line
 		ln++;
 	if (*stored)
 	{
-		line = (char *)malloc((ln+1) * sizeof(char) + 1); // reservamos tamaño de line
+		line = (char *)malloc((ln + 1) * sizeof(char)); // reservamos tamaño de line
 		if (line == NULL)
 			return (free(stored), NULL);
-		i = -1;
-		while (++i <= ln)
+		i = 0;
+		while (i < ln)
+		{
 			line[i] = stored[i]; // rellenamos line con longitud stored hasta ln
+		i++;
+		}
 		line[i] = '\0'; // aplicamos el final de string
 		return (line);
 	}
@@ -88,19 +91,19 @@ char	*trim_line(char *stored, int fd) //Leer y concatenar en stored
 	stored = special_strjoin_(stored, read_bff);
 	return (free(read_bff), stored);
 }
-
+// SER CAPAZ DE LEER UNA LINEA QUE NO TENGA  \n  si no \0 final
 
 char	*get_next_line(int fd)
 {
 	char			*line;
 	static char		*stored;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || BUFFER_SIZE >= INT_MAX)
-		return (free(stored), NULL);
+	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+		return (NULL);
 	stored = trim_line(stored, fd);
 	if (!stored)
 		return (free(stored), NULL);
-	line = get_line(stored);
+	line = sget_line(stored);
 	stored = re_adj_storage(stored);
 	return (line);
 }
@@ -119,7 +122,7 @@ int main(void)
 		return (1);
 	}
 	while ((next_line = get_next_line(fd)) != NULL) {
-		printf("%s", next_line);
+		printf("\n%s", next_line);
 		free(next_line);
 	}
 	free(next_line);
