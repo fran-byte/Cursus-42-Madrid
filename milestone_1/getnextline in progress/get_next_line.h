@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 14:35:27 by frromero          #+#    #+#             */
-/*   Updated: 2024/11/04 22:58:45 by frromero         ###   ########.fr       */
+/*   Updated: 2024/11/05 00:00:20 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 #include <unistd.h>
 #include <stdlib.h>
-#include <stdio.h>  // BORRAR****************************************
+//#include <stdio.h>  // BORRAR****************************************
 #include <limits.h>
 
-#define BUFFER_SIZE 15
+//#define BUFFER_SIZE 15  // ELIMINAR *********************************
 
 size_t	ft_strlen(char *str);
 size_t	ft_strlcpy(char *dst, char *src, size_t size);
@@ -30,6 +30,6 @@ char	*re_adj_storage(char *stored);
 char	*get_next_line(int fd);
 char	*ft_strchr(const char *s, int c);
 
-int main(void); // ELIMINAR ********************
+//int main(void); // ELIMINAR ********************
 
 #endif
