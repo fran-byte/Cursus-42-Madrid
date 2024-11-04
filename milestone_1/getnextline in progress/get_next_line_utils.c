@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 14:36:13 by frromero          #+#    #+#             */
-/*   Updated: 2024/11/01 19:20:32 by frromero         ###   ########.fr       */
+/*   Updated: 2024/11/04 21:34:59 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,26 +62,25 @@ size_t	ft_strlcat(char *dst, char *src, size_t size)
 	return (len_src + len_dst);
 }
 
-char	*special_strjoin_(char *read_bff, char *stored) 
+char	*special_strjoin_(char *stored, char *read_bff)
 {
 	int		total_sz;
 	char	*str;
-	if (!stored_bff)
-		return (NULL);
 
 	if (!read_bff)  //revisa esta
 	{
 		read_bff = malloc(sizeof(char) + 1);
 		if (!read_bff)
-			return (0);
+			return (NULL);
 		read_bff[0] = 0;
 	}
-	total_sz = ft_strlen(read_bff) + ft_strlen(stored_bff);
+	total_sz = ft_strlen(read_bff) + ft_strlen(stored);
 	str = (char *)malloc((sizeof(char) * total_sz) + 1);
 	if (!str)
 		return (NULL);
 	ft_strlcpy(str, read_bff, total_sz + 1);
-	ft_strlcat(str, stored_bff, total_sz + 1);
+	ft_strlcat(str, stored, total_sz + 1);
+	free(stored);
 	return (str);
 }
 

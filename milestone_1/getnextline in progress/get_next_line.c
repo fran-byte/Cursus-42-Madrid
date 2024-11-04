@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 10:59:24 by frromero          #+#    #+#             */
-/*   Updated: 2024/11/02 17:54:12 by frromero         ###   ########.fr       */
+/*   Updated: 2024/11/04 21:25:45 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*get_line(char *stored)
 		ln++;
 	if (*stored)
 	{
-		line = (char *)malloc(ln * sizeof(char) + 1); // reservamos tamaño de line
+		line = (char *)malloc((ln+1) * sizeof(char) + 1); // reservamos tamaño de line
 		if (line == NULL)
 			return (free(stored), NULL);
 		i = -1;
@@ -37,7 +37,7 @@ char	*get_line(char *stored)
 	return (free(stored), NULL);
 }
 
-char	*adj_storage(char *stored)
+char	*re_adj_storage(char *stored)
 {
 	int	i;
 	int	j;
@@ -49,12 +49,12 @@ char	*adj_storage(char *stored)
 		i++;
 	if (!stored[i++])
 	{
-		free(stored);
+		free(stored); // ????
 		return (NULL);
 	}
 	swap_temp = (char *)malloc((ft_strlen(stored) - i + 1) * sizeof(char));
 	if (!swap_temp)
-		return (free(stored), NULL);
+		return (NULL);
 	while (stored[i])
 		swap_temp[j++] = stored[i++];
 	swap_temp[j] = '\0';
@@ -68,7 +68,7 @@ char	*trim_line(char *stored, int fd) //Leer y concatenar en stored
 
 	read_bff = (char *)malloc(BUFFER_SIZE + 1);// Reservar espacio para leer BUFFER_SIZE
 	if (!read_bff)
-		return ( NULL);
+		return (NULL);
 	if (!stored)// Inicializar stored como cadena vacía si es NULL
 	{
 		stored = (char *)malloc(1);
@@ -86,7 +86,7 @@ char	*trim_line(char *stored, int fd) //Leer y concatenar en stored
 	}
 	read_bff[bytes_read] = '\0';// colocamos el fin de string
 	stored = special_strjoin_(stored, read_bff);
-	return (stored);
+	return (free(read_bff), stored);
 }
 
 
@@ -101,10 +101,10 @@ char	*get_next_line(int fd)
 	if (!stored)
 		return (free(stored), NULL);
 	line = get_line(stored);
-	stored = adj_storage(stored);
+	stored = re_adj_storage(stored);
 	return (line);
 }
-/*
+
 #include <fcntl.h>
 #include <stdio.h>
 
@@ -122,9 +122,11 @@ int main(void)
 		printf("%s", next_line);
 		free(next_line);
 	}
+	free(next_line);
 	close(fd);
 	return (0);
 }
-*/
-// Compilar: cc -fsanitize=leak -static-libsan get_next_line.c get_next_line_utils.c && ./a.out
+
+// Compilar: cc -g -fsanitize=address -o a.out get_next_line.c get_next_line_utils.c && ./a.out
+
 
