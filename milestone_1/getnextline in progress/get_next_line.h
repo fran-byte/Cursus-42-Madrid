@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 14:35:27 by frromero          #+#    #+#             */
-/*   Updated: 2024/11/05 17:28:13 by frromero         ###   ########.fr       */
+/*   Updated: 2024/11/05 19:16:16 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 //#include <stdio.h>  // BORRAR****************************************
 #include <limits.h>
 
-//#define BUFFER_SIZE 15  // ELIMINAR *********************************
+//#define BUFFER_SIZE 1  // ELIMINAR *********************************
 
 size_t	ft_strlen(char *str);
 size_t	ft_strlcpy(char *dst, char *src, size_t size);

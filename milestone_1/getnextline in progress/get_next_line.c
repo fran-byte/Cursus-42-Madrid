@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 10:59:24 by frromero          #+#    #+#             */
-/*   Updated: 2024/11/05 17:27:59 by frromero         ###   ########.fr       */
+/*   Updated: 2024/11/05 19:16:35 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,16 @@ char *sget_line(char *stored)
 	int ln;
 
 	i = 0;
-	ln = 1;
+	ln = 0;
 	while (stored[ln] != '\n' && stored[ln] != '\0') // calculamos longitud de line
 		ln++;
 	if (*stored)
 	{
-		line = (char *)malloc((ln + 1) * sizeof(char)); // reservamos tamaño de line
+		line = (char *)malloc((ln + 1) * sizeof(char) + 1); // reservamos tamaño de line
 		if (line == NULL)
 			return (free(stored), NULL);
 		i = 0;
-		while (i < ln)
+		while (i <= ln)
 		{
 			line[i] = stored[i]; // rellenamos line con longitud stored hasta ln
 			i++;
@@ -96,7 +96,10 @@ char *trim_line(char *stored, int fd) // Leer y concatenar en stored
 
 		// Verificar si el buffer leído tiene '\n'
 		if (ft_strchr(read_bff, '\n'))
+		{
+			//stored[-1] = '\n';
 			break;
+		}
 	}
 	free(read_bff);
 	return (stored);
@@ -122,7 +125,7 @@ char *get_next_line(int fd)
 
 int main(void)
 {
-	int fd = open("one_line.txt", O_RDONLY);
+	int fd = open("files/42_with_nl", O_RDONLY);
 	char *next_line;
 
 	if (fd == -1) {
@@ -131,7 +134,7 @@ int main(void)
 		return (1);
 	}
 	while ((next_line = get_next_line(fd)) != NULL) {
-		printf("\n%s", next_line);
+		printf("%s", next_line);
 		free(next_line);
 	}
 	free(next_line);
