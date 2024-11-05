@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 10:59:24 by frromero          #+#    #+#             */
-/*   Updated: 2024/11/05 21:40:20 by frromero         ###   ########.fr       */
+/*   Updated: 2024/11/05 21:46:15 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ char *re_adj_storage(char *stored)
 		i++;
 	if (!stored[i++])
 	{
-		free(stored); // ????
+		free(stored);
 		return (NULL);
 	}
 	swap_temp = (char *)malloc((ft_strlen(stored) - i + 1) * sizeof(char));
@@ -77,7 +77,7 @@ char *initialize_stored(char *stored, char *read_bff)
 	return (stored);
 }
 
-char *trim_line(char *stored, int fd) // Leer y concatenar en stored
+char *read_join(char *stored, int fd) // Leer y concatenar en stored
 {
 	ssize_t bytes_read;
 	char *read_bff;
@@ -112,7 +112,7 @@ char *get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)//truco para saber si el archivo esta disponible para leer
 		return (NULL);
-	stored = trim_line(stored, fd);
+	stored = read_join(stored, fd);
 	if (!stored)
 		return (free(stored), NULL);
 	line = my_line(stored);
