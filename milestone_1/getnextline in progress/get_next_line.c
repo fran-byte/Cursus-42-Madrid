@@ -6,13 +6,13 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 10:59:24 by frromero          #+#    #+#             */
-/*   Updated: 2024/11/05 19:16:35 by frromero         ###   ########.fr       */
+/*   Updated: 2024/11/05 21:40:20 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char *sget_line(char *stored)
+char *my_line(char *stored)
 {
 	int i;
 	char *line;
@@ -62,44 +62,44 @@ char *re_adj_storage(char *stored)
 	swap_temp[j] = '\0';
 	return (free(stored), swap_temp);
 }
+char *initialize_stored(char *stored, char *read_bff)
+{
+	if (!stored)
+	{
+		stored = malloc(1);
+		if (!stored)
+		{
+			free(read_bff);
+			return (NULL);
+		}
+		*stored = '\0';
+	}
+	return (stored);
+}
 
 char *trim_line(char *stored, int fd) // Leer y concatenar en stored
 {
 	ssize_t bytes_read;
 	char *read_bff;
 
-	read_bff = (char *)malloc(BUFFER_SIZE + 1); // Reservar espacio para leer BUFFER_SIZE
+	read_bff = malloc(BUFFER_SIZE + 1);
 	if (!read_bff)
 		return (NULL);
-	if (!stored) // Inicializar stored como cadena vacía si es NULL
-	{
-		stored = (char *)malloc(1);
-		if (!stored)
-			return (free(read_bff), NULL);
-		*stored = '\0';
-	}
+	stored = initialize_stored(stored, read_bff);
+	if (!stored)
+		return (NULL);
 	while (1)
 	{
-		bytes_read = read(fd, read_bff, BUFFER_SIZE); // Leer hasta BUFFER_SIZE bytes en read_bff
+		bytes_read = read(fd, read_bff, BUFFER_SIZE);
 		if (bytes_read <= 0)
 		{
 			free(read_bff);
-			if (bytes_read == 0 && stored[0] != '\0')
-				return (stored);		 // Retornar el contenido acumulado si lo hay
-			return (free(stored), NULL); // Error o sin contenido en stored
+			return (bytes_read == 0 && stored[0] != '\0') ? stored : (free(stored), NULL);
 		}
-
-		// Colocamos fin de string temporalmente en read_bff para facilitar el strjoin
 		read_bff[bytes_read] = '\0';
-
 		stored = special_strjoin_(stored, read_bff);
-
-		// Verificar si el buffer leído tiene '\n'
 		if (ft_strchr(read_bff, '\n'))
-		{
-			//stored[-1] = '\n';
 			break;
-		}
 	}
 	free(read_bff);
 	return (stored);
@@ -110,12 +110,12 @@ char *get_next_line(int fd)
 	char *line;
 	static char *stored;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)//truco para saber si el archivo esta disponible para leer
 		return (NULL);
 	stored = trim_line(stored, fd);
 	if (!stored)
 		return (free(stored), NULL);
-	line = sget_line(stored);
+	line = my_line(stored);
 	stored = re_adj_storage(stored);
 	return (line);
 }
