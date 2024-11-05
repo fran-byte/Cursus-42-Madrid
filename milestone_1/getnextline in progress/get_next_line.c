@@ -6,22 +6,21 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 10:59:24 by frromero          #+#    #+#             */
-/*   Updated: 2024/11/04 23:56:48 by frromero         ###   ########.fr       */
+/*   Updated: 2024/11/05 17:27:59 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "get_next_line.h"
 
-char	*sget_line(char *stored)
+char *sget_line(char *stored)
 {
-	int	i;
-	char	*line;
-	int	ln;
+	int i;
+	char *line;
+	int ln;
 
 	i = 0;
 	ln = 1;
-	while (stored[ln] != '\n' && stored[ln] != '\0') //calculamos longitud de line
+	while (stored[ln] != '\n' && stored[ln] != '\0') // calculamos longitud de line
 		ln++;
 	if (*stored)
 	{
@@ -32,7 +31,7 @@ char	*sget_line(char *stored)
 		while (i < ln)
 		{
 			line[i] = stored[i]; // rellenamos line con longitud stored hasta ln
-		i++;
+			i++;
 		}
 		line[i] = '\0'; // aplicamos el final de string
 		return (line);
@@ -40,11 +39,11 @@ char	*sget_line(char *stored)
 	return (free(stored), NULL);
 }
 
-char	*re_adj_storage(char *stored)
+char *re_adj_storage(char *stored)
 {
-	int	i;
-	int	j;
-	char	*swap_temp;
+	int i;
+	int j;
+	char *swap_temp;
 
 	i = 0;
 	j = 0;
@@ -64,39 +63,49 @@ char	*re_adj_storage(char *stored)
 	return (free(stored), swap_temp);
 }
 
-char	*trim_line(char *stored, int fd) //Leer y concatenar en stored
+char *trim_line(char *stored, int fd) // Leer y concatenar en stored
 {
-	ssize_t		bytes_read;
-	char	*read_bff;
+	ssize_t bytes_read;
+	char *read_bff;
 
-	read_bff = (char *)malloc(BUFFER_SIZE + 1);// Reservar espacio para leer BUFFER_SIZE
+	read_bff = (char *)malloc(BUFFER_SIZE + 1); // Reservar espacio para leer BUFFER_SIZE
 	if (!read_bff)
 		return (NULL);
-	if (!stored)// Inicializar stored como cadena vacía si es NULL
+	if (!stored) // Inicializar stored como cadena vacía si es NULL
 	{
 		stored = (char *)malloc(1);
 		if (!stored)
 			return (free(read_bff), NULL);
 		*stored = '\0';
 	}
-	bytes_read = read(fd, read_bff, BUFFER_SIZE);// Leer hasta BUFFER_SIZE bytes en read_bff
-	if (bytes_read <= 0)
+	while (1)
 	{
-		free(read_bff);
-		if (bytes_read == 0 && stored[0] != '\0')
-			return (stored);// Retornar el contenido acumulado si lo hay
-		return (free(stored), NULL);// liberamos y Error o sin contenido en stored
-	}
-	read_bff[bytes_read] = '\0';// colocamos el fin de string
-	stored = special_strjoin_(stored, read_bff);
-	return (free(read_bff), stored);
-}
-// SER CAPAZ DE LEER UNA LINEA QUE NO TENGA  \n  si no \0 final
+		bytes_read = read(fd, read_bff, BUFFER_SIZE); // Leer hasta BUFFER_SIZE bytes en read_bff
+		if (bytes_read <= 0)
+		{
+			free(read_bff);
+			if (bytes_read == 0 && stored[0] != '\0')
+				return (stored);		 // Retornar el contenido acumulado si lo hay
+			return (free(stored), NULL); // Error o sin contenido en stored
+		}
 
-char	*get_next_line(int fd)
+		// Colocamos fin de string temporalmente en read_bff para facilitar el strjoin
+		read_bff[bytes_read] = '\0';
+
+		stored = special_strjoin_(stored, read_bff);
+
+		// Verificar si el buffer leído tiene '\n'
+		if (ft_strchr(read_bff, '\n'))
+			break;
+	}
+	free(read_bff);
+	return (stored);
+}
+
+char *get_next_line(int fd)
 {
-	char			*line;
-	static char		*stored;
+	char *line;
+	static char *stored;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
 		return (NULL);
@@ -113,7 +122,7 @@ char	*get_next_line(int fd)
 
 int main(void)
 {
-	int fd = open("file.txt", O_RDONLY);
+	int fd = open("one_line.txt", O_RDONLY);
 	char *next_line;
 
 	if (fd == -1) {
@@ -129,7 +138,6 @@ int main(void)
 	close(fd);
 	return (0);
 }
-*/
+
 // Compilar: cc -g -fsanitize=address -o a.out get_next_line.c get_next_line_utils.c && ./a.out
-
-
+*/
