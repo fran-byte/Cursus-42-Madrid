@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 10:59:24 by frromero          #+#    #+#             */
-/*   Updated: 2024/11/05 22:02:26 by frromero         ###   ########.fr       */
+/*   Updated: 2024/11/06 08:27:57 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,15 +94,16 @@ char *read_join(char *stored, int fd) // Leer y concatenar en stored
 		if (bytes_read <= 0)
 		{
 			free(read_bff);
-			return (bytes_read == 0 && stored[0] != '\0') ? stored : (free(stored), NULL);
+			if (bytes_read == 0 && stored[0] != '\0')
+				return stored;
+			return (free(stored), NULL);
 		}
 		read_bff[bytes_read] = '\0';
 		stored = special_strjoin_(stored, read_bff);
 		if (ft_strchr(read_bff, '\n'))
 			break;
 	}
-	free(read_bff);
-	return (stored);
+	return (free(read_bff), stored);
 }
 
 char *get_next_line(int fd)
@@ -110,7 +111,7 @@ char *get_next_line(int fd)
 	char *line;
 	static char *stored;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)//truco para saber si el archivo esta disponible para leer
+	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0) // truco para saber si el archivo esta disponible para leer
 		return (NULL);
 	stored = read_join(stored, fd);
 	if (!stored)
