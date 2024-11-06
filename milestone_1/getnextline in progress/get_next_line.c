@@ -6,44 +6,44 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 10:59:24 by frromero          #+#    #+#             */
-/*   Updated: 2024/11/06 09:16:00 by frromero         ###   ########.fr       */
+/*   Updated: 2024/11/06 19:38:39 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char *my_line(char *stored)
+char	*my_line(char *stored)
 {
-	int i;
-	char *line;
-	int ln;
+	int			i;
+	char		*line;
+	int			ln;
 
 	i = 0;
 	ln = 0;
-	while (stored[ln] != '\n' && stored[ln] != '\0') // calculamos longitud de line
+	while (stored[ln] != '\n' && stored[ln] != '\0')
 		ln++;
 	if (*stored)
 	{
-		line = (char *)malloc((ln + 1) * sizeof(char) + 1); // reservamos tamaño de line
+		line = (char *)malloc((ln + 1) * sizeof(char) + 1);
 		if (line == NULL)
 			return (free(stored), NULL);
 		i = 0;
 		while (i <= ln)
 		{
-			line[i] = stored[i]; // rellenamos line con longitud stored hasta ln
+			line[i] = stored[i];
 			i++;
 		}
-		line[i] = '\0'; // aplicamos el final de string
+		line[i] = '\0';
 		return (line);
 	}
 	return (free(stored), NULL);
 }
 
-char *re_adj_storage(char *stored)
+char	*re_adj_storage(char *stored)
 {
-	int i;
-	int j;
-	char *swap_temp;
+	int		i;
+	int		j;
+	char	*swap_temp;
 
 	i = 0;
 	j = 0;
@@ -62,7 +62,8 @@ char *re_adj_storage(char *stored)
 	swap_temp[j] = '\0';
 	return (free(stored), swap_temp);
 }
-char *initialize_stored(char *stored, char *read_bff)
+
+char	*initialize_stored(char *stored, char *read_bff)
 {
 	if (!stored)
 	{
@@ -77,17 +78,16 @@ char *initialize_stored(char *stored, char *read_bff)
 	return (stored);
 }
 
-char *read_join(char *stored, int fd) // Leer y concatenar en stored
+char	*read_join(char *stored, int fd)
 {
-	ssize_t bytes_read;
-	char *read_bff;
+	ssize_t	bytes_read;
+	char	*read_bff;
 
 	read_bff = malloc(BUFFER_SIZE + 1);
 	if (!read_bff)
 		return (NULL);
-	stored = initialize_stored(stored, read_bff);
 	if (!stored)
-		return (NULL);
+		stored = initialize_stored(stored, read_bff);
 	while (1)
 	{
 		bytes_read = read(fd, read_bff, BUFFER_SIZE);
@@ -95,23 +95,23 @@ char *read_join(char *stored, int fd) // Leer y concatenar en stored
 		{
 			free(read_bff);
 			if (bytes_read == 0 && stored[0] != '\0')
-				return stored;
+				return (stored);
 			return (free(stored), NULL);
 		}
 		read_bff[bytes_read] = '\0';
 		stored = special_strjoin_(stored, read_bff);
 		if (ft_strchr(read_bff, '\n'))
-			break;
+			break ;
 	}
 	return (free(read_bff), stored);
 }
 
-char *get_next_line(int fd)
+char	*get_next_line(int fd)
 {
-	char *line;
-	static char *stored;
+	char			*line;
+	static char		*stored = NULL;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0) // truco para saber si el archivo esta disponible para leer
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	stored = read_join(stored, fd);
 	if (!stored)
@@ -120,28 +120,32 @@ char *get_next_line(int fd)
 	stored = re_adj_storage(stored);
 	return (line);
 }
+
 /*
 #include <fcntl.h>
 #include <stdio.h>
 
+// Compilar: cc -g -fsanitize=address -o a.out get_next_line.c
+get_next_line_utils.c && ./a.out
+// Compilar si vamos a pasar valgrind: sin fsanitize
+//cc -g3 -o a.out get_next_line.c get_next_line_utils.c && ./a.out
+
 int main(void)
 {
-	int fd = open("files/42_with_nl", O_RDONLY);
 	char *next_line;
+	int fd = open("files/42_with_nl", O_RDONLY);
 
-	if (fd == -1) {
+	if (fd == -1)
+	{
 		printf("Error: no se pudo abrir el archivo.\n");
-		free(next_line);
 		return (1);
 	}
-	while ((next_line = get_next_line(fd)) != NULL) {
+	while ((next_line = get_next_line(fd)) != NULL)
+	{
 		printf("%s", next_line);
 		free(next_line);
 	}
 	free(next_line);
 	close(fd);
 	return (0);
-}
-
-// Compilar: cc -g -fsanitize=address -o a.out get_next_line.c get_next_line_utils.c && ./a.out
-*/
+}*/
