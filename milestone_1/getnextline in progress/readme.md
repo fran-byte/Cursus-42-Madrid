@@ -44,8 +44,3 @@ Esta función:
   
   Esto garantiza que en la siguiente llamada a `get_next_line` se empiece directamente desde el punto donde se quedó.
 
-### 6. **Ejemplo de uso y prueba del código**
-
-El código de prueba en `main` abre el archivo `"files/42_with_nl"`, llama a `get_next_line` para leer cada línea del archivo y muestra cada línea hasta llegar al final. Luego libera la memoria y cierra el archivo.
-
-
