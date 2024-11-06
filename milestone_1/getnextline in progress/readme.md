@@ -10,7 +10,7 @@
 ### 1. **`get_next_line(int fd)`**
 
 Esta es la función principal que:
-- Controla si el archivo es accesible (`fd < 0`), si el tamaño del `BUFFER_SIZE` es válido o si el descriptor del archivo es accesible con `read(fd, 0, 0)`.
+- Controla si el archivo es accesible (`fd < 0`), si el tamaño del `BUFFER_SIZE` es válido.
 - Llama a `read_join`, que lee los datos del archivo y los almacena en `stored`.
 - Si `stored` contiene texto, extrae una línea completa a través de `my_line`.
 - Después de extraer la línea, llama a `re_adj_storage` para ajustar `stored` y prepararlo para la siguiente línea.
