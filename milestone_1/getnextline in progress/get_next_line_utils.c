@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 14:36:13 by frromero          #+#    #+#             */
-/*   Updated: 2024/11/04 23:54:07 by frromero         ###   ########.fr       */
+/*   Updated: 2024/11/06 19:40:59 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 size_t	ft_strlen(char *str)
 {
-	if (str == NULL)
-		return (0);
 	size_t	i;
 
 	i = 0;
+	if (str == NULL)
+		return (0);
 	while (str[i] != '\0')
 		i++;
 	return (i);
@@ -67,7 +67,7 @@ char	*special_strjoin_(char *stored, char *read_bff)
 	int		total_sz;
 	char	*str;
 
-	if (!read_bff)  //revisa esta
+	if (!read_bff)
 	{
 		read_bff = malloc(sizeof(char) + 1);
 		if (!read_bff)
