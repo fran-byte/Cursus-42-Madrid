@@ -10,6 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* This function reads from a file descriptor line by line. */
+/* It stores leftover text in a static buffer between calls, */
+/* handling partial lines across multiple reads. */
+/* The `my_line` function extracts a full line */
+
 #include "get_next_line.h"
 
 char	*my_line(char *stored)
