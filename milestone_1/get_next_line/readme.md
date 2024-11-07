@@ -55,6 +55,7 @@ Esta función:
 - Introducimos una dimensión mas a nuestra variable `static *stored[65536]` y en todas las líneas de esta función trabajaremos solo la dimensión que sea enviada por el `fd` que nos llegue a la función principal, quedando de la siguinte manera:
 
 ´´´c
+
 char	*get_next_line(int fd)
 {
 	char			*line;
@@ -69,4 +70,5 @@ char	*get_next_line(int fd)
 	stored[fd] = re_adj_storage(stored[fd]);
 	return (line);
 }
+
 ```
