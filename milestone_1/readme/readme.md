@@ -7,7 +7,7 @@
 2. **Gestión de Errores**: Verifica la accesibilidad del archivo y el tamaño del `BUFFER_SIZE`, y retorna `NULL` si algo falla.
 3. **Almacenamiento Estático**: `stored` es una variable estática que persiste entre llamadas a `get_next_line`, permitiendo que la lectura de líneas sea continua.
 
-
+   
 ### 1. **`get_next_line(int fd)`**
 
 Esta es la función principal que:
@@ -15,7 +15,7 @@ Esta es la función principal que:
 - Llama a `read_join`, que lee los datos del archivo y los almacena en `stored`.
 - Si `stored` contiene texto, extrae una línea completa a través de `my_line`.
 - Después de extraer la línea, llama a `re_adj_storage` para ajustar `stored` y prepararlo para la siguiente línea.
-
+  
   Finalmente, devuelve la línea leída o `NULL` si el archivo ha terminado o hay un error.
 
 ### 2. **`read_join(char *stored, int fd)`**
@@ -35,14 +35,14 @@ Esta función:
 - Extrae una línea completa de `stored`.
 - Calcula la longitud de la línea hasta encontrar un salto de línea o el final de la cadena.
 - Almacena la línea en `line`, asegurando que termine con `'\0'`.
-
+  
   Esto ayuda a separar cada línea para retornarla individualmente desde `get_next_line`.
 
 ### 5. **`re_adj_storage(char *stored)`**
 
 - Esta función ajusta `stored` eliminando la línea ya leída, de modo que solo se conserven los datos no procesados.
 - Si `stored` solo contiene una línea sin caracteres adicionales, libera `stored` y devuelve `NULL`.
-
+  
   Esto garantiza que en la siguiente llamada a `get_next_line` se empiece directamente desde el punto donde se quedó.
 
 # Bonus

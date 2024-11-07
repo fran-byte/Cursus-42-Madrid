@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 10:59:24 by frromero          #+#    #+#             */
-/*   Updated: 2024/11/06 19:38:39 by frromero         ###   ########.fr       */
+/*   Updated: 2024/11/07 20:44:59 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 /* The `my_line` function extracts a full line */
 
 #include "get_next_line.h"
+
+/* Extracts a line from the stored buffer up to a newline or end. */
 
 char	*my_line(char *stored)
 {
@@ -32,7 +34,6 @@ char	*my_line(char *stored)
 		line = (char *)malloc((ln + 1) * sizeof(char) + 1);
 		if (line == NULL)
 			return (free(stored), NULL);
-		i = 0;
 		while (i <= ln)
 		{
 			line[i] = stored[i];
@@ -43,6 +44,7 @@ char	*my_line(char *stored)
 	}
 	return (free(stored), NULL);
 }
+/* Re-adjusts the stored buffer by removing the first line. */
 
 char	*re_adj_storage(char *stored)
 {
@@ -67,6 +69,7 @@ char	*re_adj_storage(char *stored)
 	swap_temp[j] = '\0';
 	return (free(stored), swap_temp);
 }
+/* Initializes the stored buffer to an empty string if NULL. */
 
 char	*initialize_stored(char *stored, char *read_bff)
 {
@@ -82,6 +85,7 @@ char	*initialize_stored(char *stored, char *read_bff)
 	}
 	return (stored);
 }
+/* Reads from the file descriptor and joins data to the stored buffer. */
 
 char	*read_join(char *stored, int fd)
 {
@@ -120,7 +124,7 @@ char	*get_next_line(int fd)
 		return (NULL);
 	stored = read_join(stored, fd);
 	if (!stored)
-		return (free(stored), NULL);
+		return (NULL);
 	line = my_line(stored);
 	stored = re_adj_storage(stored);
 	return (line);
