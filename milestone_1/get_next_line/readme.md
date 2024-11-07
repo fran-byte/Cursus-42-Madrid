@@ -45,3 +45,28 @@ Esta función:
   
   Esto garantiza que en la siguiente llamada a `get_next_line` se empiece directamente desde el punto donde se quedó.
 
+# Bonus
+
+- Simplemente implementamos la posibilidad de leer de varios `fd` a la vez sin perder las lineas a las que pertenece cada uno.
+- Para ello solo hacemos una modificación substancial en el ´get_next_line.c´ para convertirlo en el `get_next_line_bonus.c`.
+
+## Mofificando **`get_next_line(int fd)`**
+
+-Introducimos una dimensión mas a nuestra variable `static *stored[65536]´ y enn todas las lineas de esta función trabajaremos solo la dimensión que sea enviada por el ´fd´ que nos llegue a la función principal, quedando de la siguinte manera:
+
+´´´c
+char	*get_next_line(int fd)
+{
+	char			*line;
+	static char		*stored[65536];
+
+	if (fd < 0 || BUFFER_SIZE <= 0)
+		return (NULL);
+	stored[fd] = read_join(stored[fd], fd);
+	if (!stored[fd])
+		return (free(stored[fd]), NULL);
+	line = my_line(stored[fd]);
+	stored[fd] = re_adj_storage(stored[fd]);
+	return (line);
+}
+```
