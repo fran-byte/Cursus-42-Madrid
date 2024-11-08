@@ -40,7 +40,8 @@ char	*my_line(char *stored)
 		line[i] = '\0';
 		return (line);
 	}
-	return (free(stored), NULL);
+	free(stored);
+	return (NULL);
 }
 
 char	*re_adj_storage(char *stored)
@@ -64,7 +65,8 @@ char	*re_adj_storage(char *stored)
 	while (stored[i])
 		swap_temp[j++] = stored[i++];
 	swap_temp[j] = '\0';
-	return (free(stored), swap_temp);
+	free(stored);
+	return (swap_temp);
 }
 
 char	*initialize_stored(char *stored, char *read_bff)
@@ -107,7 +109,8 @@ char	*read_join(char *stored, int fd)
 		if (ft_strchr(read_bff, '\n'))
 			break ;
 	}
-	return (free(read_bff), stored);
+	free(read_bff);
+	return (stored);
 }
 
 char	*get_next_line(int fd)
