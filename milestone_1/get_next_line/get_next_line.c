@@ -42,8 +42,10 @@ char	*my_line(char *stored)
 		line[i] = '\0';
 		return (line);
 	}
-	return (free(stored), NULL);
+	free(stored);
+	return (NULL);
 }
+
 /* Re-adjusts the stored buffer by removing the first line. */
 
 char	*re_adj_storage(char *stored)
@@ -67,8 +69,10 @@ char	*re_adj_storage(char *stored)
 	while (stored[i])
 		swap_temp[j++] = stored[i++];
 	swap_temp[j] = '\0';
-	return (free(stored), swap_temp);
+	free(stored);
+	return (swap_temp);
 }
+
 /* Initializes the stored buffer to an empty string if NULL. */
 
 char	*initialize_stored(char *stored, char *read_bff)
@@ -85,6 +89,7 @@ char	*initialize_stored(char *stored, char *read_bff)
 	}
 	return (stored);
 }
+
 /* Reads from the file descriptor and joins data to the stored buffer. */
 
 char	*read_join(char *stored, int fd)
@@ -112,7 +117,8 @@ char	*read_join(char *stored, int fd)
 		if (ft_strchr(read_bff, '\n'))
 			break ;
 	}
-	return (free(read_bff), stored);
+	free(read_bff);
+	return (stored);
 }
 
 char	*get_next_line(int fd)
