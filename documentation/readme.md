@@ -1,6 +1,6 @@
 # Documentación
-##**0 libft**](docu_libft.md)
-##**1 libft**](docu_libft.md)
+## **0 libft**](docu_libft.md)
+## **1 libft**](docu_libft.md)
 
 
 
