@@ -7,9 +7,7 @@
 Este repositorio contiene mis proyectos del curso.
 👉 [*Info para preparar los proyectos*](documentation/) 👈
 
-<p align="center" width="100%">
-# Proyectos del Cursus 42 Madrid
-</p>
+<p align="center" width="100%">Proyectos del Cursus 42 Madrid</p>
 
 
 ## [0](0)
