@@ -1,4 +1,3 @@
-:point_right: **[English Version](README_en.md)**
 
 ![](documentation/logo2.jpg)   
 👉 [*Info para preparar los proyectos*](documentation/) 👈
