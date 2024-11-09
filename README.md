@@ -1,5 +1,5 @@
 <p align="center" width="100%">
-    <img width="80%" src="documentation/42-Madrid.png"> 
+    <img width="45%" src="documentation/42-Madrid.png"> 
 </p>
  
 [42 Madrid](https://www.42madrid.com/) es un campus de programación gratuito y revolucionario. Abierto 24/7, permite aprender a tu ritmo con una duración media de tres años. Este repositorio contiene mis proyectos del curso.
