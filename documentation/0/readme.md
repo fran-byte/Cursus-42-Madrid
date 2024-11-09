@@ -8,3 +8,5 @@
 
 [3. Punteros](ptr.md)
 
+[4. Estructuras y Listas](list.md)
+
