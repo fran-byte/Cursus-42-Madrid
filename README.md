@@ -2,7 +2,7 @@
     <img width="45%" src="documentation/42-Madrid.png"> 
 </p>
  
-<p align="center" width="100%"><i>42 Madrid Campus de programación gratuito y revolucionario.</i></p>
+<p align="center" width="100%"><i><b>42 Madrid</b> Campus de programación gratuito y revolucionario.</i></p>
 
 <p align="center" width="100%"><i>Open 24/7, permite aprender a tu ritmo con una duración media de tres años.</i></p>
 
