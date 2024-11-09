@@ -1,6 +1,3 @@
-¡Por supuesto! Los punteros en C son un concepto fundamental y poderoso, ya que permiten manejar directamente la memoria y manipular datos de forma eficiente. Vamos a ver algunos aspectos prácticos para que entiendas su uso.
-
----
 
 ### 1. ¿Qué es un puntero?
 Un **puntero** es una variable que almacena la **dirección de memoria** de otra variable. En C, cada variable tiene una dirección en memoria, y los punteros nos permiten acceder y manipular directamente los datos en esa dirección.
