@@ -1,7 +1,7 @@
 
 
 
-**-[1.MAKEFILES](documentation/makefile.md)**
+**-[1. Makefiles](documentation/makefile.md)**
 
-**-[2.HEADERS](documentation/header.md)**
+**-[2. Headers](documentation/header.md)**
 
