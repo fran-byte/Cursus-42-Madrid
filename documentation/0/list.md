@@ -1,8 +1,5 @@
 # ESTRUCTURAS
 
-¡Entendido! Aquí tienes una explicación sobre estructuras en C con ejemplos, usando solo `while` en lugar de `for` para recorrer y trabajar con los datos.
-
----
 
 ### 1. ¿Qué es una estructura?
 
