@@ -15,7 +15,7 @@
 
 <h1 align="center"><a href="milestone_1">MileStone 1</a></h1>
 
-<p align="center" width="100%"><img src="documentation/milestone_1/born2beroot.png" width="50" /><img src="documentation/milestone_1/ft_printf.png" width="50" /><img src="documentation/milestone_1/get_nextline.png" width="50" /></p>
+<p align="center" width="100%"><img src="documentation/milestone_1/born2beroot.png" width="50" /><img src="documentation/milestone_1/ft_printf.png" width="50" /><img src="documentation/milestone_1/get_next_line.png" width="50" /></p>
 
 
 
