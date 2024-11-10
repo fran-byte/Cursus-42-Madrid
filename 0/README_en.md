@@ -1,5 +1,9 @@
 
-# LIBRARY OF BASIC FUNCTIONS (libft.a) 📚
+<p align="center">
+  <img src="../documentation/0/libft.png"/>
+</p>
+
+
 :point_right:**[Spanish Version](README.md)**
 <br>
 
