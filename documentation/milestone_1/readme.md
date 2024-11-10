@@ -9,12 +9,10 @@
 <p align="center" width="100%">Aunque todavía con algunas lagunas afrontamos los siguientes 3 proyectos</p>
   
 
-<p align="center" width="100%"><a href="milestone_1/"><img src="../documentation/milestone_1/born2beroot.png" width="72" /><a/><a href="milestone_1/"><img src="../documentation/milestone_1/ft_printf.png" width="72" /></a><a href="milestone_1/"><img src="../documentation/milestone_1/get_next_line.png" width="72" /></a></p>
+<p align="center" width="100%"><img src="born2beroot.png" width="72" /><img src="ft_printf.png" width="72" /><img src="get_next_line.png" width="72" /></p>
 
 1. [Tutorial sobre punteros, memoria dinámica, casteos...](ptr.md)
 
 2. [Creando un makefile](makefile.md)
 
-3. [Qué es un header?](header.md)
 
-4. [Estructuras y Listas](list.md)
