@@ -4,7 +4,7 @@
 
 <p align="center" width="100%"><img src="push_swap.png" width="72" />
 
-<p align="center" width="100%"><i>Estos ya son proyectos de mayor complejidad</p>
+<p align="center" width="100%"><i>Aquí empieza aunmentar la complejidad</p>
 
   
 
