@@ -203,7 +203,9 @@ int main() {
 
     return 0;
 }
-``
+```
+
+
 ---
 
 ### Resumen de los puntos clave:
