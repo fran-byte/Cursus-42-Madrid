@@ -7,6 +7,9 @@
 
 <p align="center" width="100%"><i>Teniendo ya asumido el proyecto de la libft</p>
 <p align="center" width="100%">Aunque todavía con algunas lagunas afrontamos los siguientes 3 proyectos</p>
+  
+
+<p align="center" width="100%"><a href="milestone_1/"><img src="../documentation/milestone_1/born2beroot.png" width="72" /><a/><a href="milestone_1/"><img src="../documentation/milestone_1/ft_printf.png" width="72" /></a><a href="milestone_1/"><img src="../documentation/milestone_1/get_next_line.png" width="72" /></a></p>
 
 1. [Tutorial sobre punteros, memoria dinámica, casteos...](ptr.md)
 
