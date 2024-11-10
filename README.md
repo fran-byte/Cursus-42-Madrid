@@ -6,7 +6,7 @@
 
 <p align="center" width="100%"><i>Open 24/7, permite aprender a tu ritmo con una duración media de tres años.</i></p>
 
-👉 <a href="documentation/">Recursos</a> 👈
+👉 <h2><a href="documentation/">Recursos</h2></a> 👈
 
 <h2 align="center" width=100%">- Proyectos Cursus 42 Madrid -</h2>
 
