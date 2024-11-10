@@ -13,8 +13,8 @@
 <h1 align="center"><a href="0">0</a></h1>
 <p align="center" width="100%"><img src="documentation/0/libft.png" width="50" /></p>
 
+<h1 align="center"><a href="milestone_1">MileStone 1</a></h1>
 
-## [MileStone 1](milestone_1)
 
 
 
