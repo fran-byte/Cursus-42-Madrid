@@ -1,6 +1,6 @@
 
 
-<h1 align="center" width="100%">Recursos necesarios para empezar libft</h1>
+<h1 align="center" width=72>Recursos necesarios para empezar libft</h1>
 
 <p align="center">
   <img src="libft.png"/>
