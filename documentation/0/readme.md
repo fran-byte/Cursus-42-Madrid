@@ -1,6 +1,7 @@
 
-
+<p align="center" width="100%">
 # Recursos necesarios para empezar libft
+</p>
 
 <p align="center" width="100%"><i>Mis conocimientos en programción erán mínimos cuando empecé este proyecto</p>
 <p align="center" width="100%">Hasta tal punto que ni siquiera tenia conocimientos sobre punteros</p>
