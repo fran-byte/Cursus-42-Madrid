@@ -2,6 +2,10 @@
 
 <h1 align="center" width="100%">Recursos necesarios para empezar libft</h1>
 
+<p align="center">
+  <img src="libft.png" alt="libft"/>
+</p>
+
 <p align="center" width="100%"><i>Mis conocimientos en programción erán mínimos cuando empecé este proyecto</p>
 <p align="center" width="100%">Hasta tal punto que ni siquiera tenia conocimientos sobre punteros más allá de los adquiridos durante la 'piscina'</p>
 
