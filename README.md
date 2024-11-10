@@ -8,7 +8,7 @@
 
 👉     [*Recursos*](documentation/)     👈
 
-<h2 align="center" style="color: #FF5733; width=100%">- Proyectos Cursus 42 Madrid -</h2>
+<h2 align="center" width=100%">- Proyectos Cursus 42 Madrid -</h2>
 
 <h2 align="center" style="color: #FF5733; width: 100%;">- Proyectos Cursus 42 Madrid -</h2>
 
