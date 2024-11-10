@@ -9,8 +9,8 @@
   
 
 
-1. [Tutorial sobre punteros, memoria dinámica, casteos...](ptr.md)
+1. [Debugger de terminal lldb](lldb_debugger.md)
 
-2. [Creando un makefile](makefile.md)
+2. [Fugas de memoria](memory_leaks.md)
 
 
