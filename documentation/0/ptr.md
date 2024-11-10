@@ -1,8 +1,11 @@
 
 ### 1. ¿Qué es un puntero?
+Los punteros en C **son fundamentales** para el acceso directo a la memoria, optimiza el rendimiento del programa y permite el manejo de datos de forma dinámica y eficiente.
 Un **puntero** es una variable que almacena la **dirección de memoria** de otra variable. En C, cada variable tiene una dirección en memoria, y los punteros nos permiten acceder y manipular directamente los datos en esa dirección.
 
 ### 2. Declaración de punteros
+Los punteros permiten identificar un espacio específico de memoria para un tipo de dato.
+Y deben estar siempre apuntando a una dirección de memoria válida; si no es así, se considera un puntero muerto o "**nulo**".
 Para declarar un puntero, usamos el tipo de dato de la variable que va a apuntar seguido de un asterisco (`*`).
 
 ```c
