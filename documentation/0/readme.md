@@ -3,7 +3,7 @@
 <h1 align="center" width="100%">Recursos necesarios para empezar libft</h1>
 
 <p align="center">
-  <img src="libft.png" width="90% alt="libft"/>
+  <img src="libft.png" width="30% alt="libft"/>
 </p>
 
 <p align="center" width="100%"><i>Mis conocimientos en programción erán mínimos cuando empecé este proyecto</p>
