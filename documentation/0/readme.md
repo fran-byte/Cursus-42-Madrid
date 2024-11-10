@@ -1,9 +1,9 @@
 
 
-<h1 align="center" width="72">Recursos necesarios para empezar libft</h1>
+<h1 align="center" width="100%">Recursos necesarios para empezar libft</h1>
 
 <p align="center">
-  <img src="libft.png"/>
+  <img src="libft.png" width="72"/>
 </p>
 
 <p align="center" width="100%"><i>Mis conocimientos en programción erán mínimos cuando empecé este proyecto</p>
