@@ -10,9 +10,8 @@
 
 <p align="center" width="100%">- Proyectos Cursus 42 Madrid -</p>
 
-
-## [0](0) 
-<p align="center"> <img src="documentation/0/libft.png" width="50" /> </p>
+<h1><a href="0">0</a></h1>
+ <img src="documentation/0/libft.png" width="50" /> </p>
 
 
 ## [MileStone 1](milestone_1)
