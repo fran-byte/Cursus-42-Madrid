@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="../documentation/0/libft.png" width="30%"/>
+  <img src="../documentation/0/libft.png" width="15%"/>
 </p>
 
 
