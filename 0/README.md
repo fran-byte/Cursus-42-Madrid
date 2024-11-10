@@ -1,5 +1,10 @@
 
-# BIBLIOTECA de FUNCIONES BÁSICAS ( libft.a ) 📚
+<p align="center">
+  <img src="../documentation/libft.png"/>
+</p>
+
+
+# BIBLIOTECA de FUNCIONES BÁSICAS libft.a
 :point_right:**[English Version](README_en.md)**
 <br>
 
