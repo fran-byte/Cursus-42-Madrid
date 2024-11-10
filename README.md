@@ -11,11 +11,11 @@
 <p align="center" width="100%">- Proyectos Cursus 42 Madrid -</p>
 
 <h1 align="center"><a href="0">0</a></h1>
-<p align="center" width="100%"><img src="documentation/0/libft.png" width="50" /></p>
+<p align="center" width="100%"><img src="documentation/0/libft.png" width="72" /></p>
 
 <h1 align="center"><a href="milestone_1">Milestone 1</a></h1>
 
-<p align="center" width="100%"><a href="milestone_1/born2beroot"><img src="documentation/milestone_1/born2beroot.png" width="50" /><a/><a href="milestone_1/printf/"><img src="documentation/milestone_1/ft_printf.png" width="50" /></a><a href="milestone_1/get_next_line/"><img src="documentation/milestone_1/get_next_line.png" width="50" /></a></p>
+<p align="center" width="100%"><a href="milestone_1/born2beroot"><img src="documentation/milestone_1/born2beroot.png" width="72" /><a/><a href="milestone_1/printf/"><img src="documentation/milestone_1/ft_printf.png" width="72" /></a><a href="milestone_1/get_next_line/"><img src="documentation/milestone_1/get_next_line.png" width="72" /></a></p>
 
 
 
