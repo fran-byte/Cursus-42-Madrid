@@ -10,7 +10,6 @@
 
 <h2 align="center" width=100%">- Proyectos Cursus 42 Madrid -</h2>
 
-<h2 align="center" style="color: #FF5733; width: 100%;">- Proyectos Cursus 42 Madrid -</h2>
 
 <h1 align="center"><a href="0">0</a></h1>
 <p align="center" width="100%"><a href="0/"><img src="documentation/0/libft.png" width="72" /></p>
