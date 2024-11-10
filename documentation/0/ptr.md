@@ -174,8 +174,84 @@ int main() {
 Antes de swap: x = 5, y = 10
 Después de swap: x = 10, y = 5
 ```
+### 8. Casteo (o *type casting*)
 
-### 8. Memoria Dinámica y `malloc`
+- Un "casteo" en programación es una conversión temporal de un tipo de dato a otro. En C, esta práctica permite transformar una variable o el resultado de una operación a un tipo de dato diferente.
+
+Por ejemplo, en C, al dividir dos enteros (`int`), el resultado también será un entero. Pero, si queremos obtener un resultado en forma de decimal (un `float` o `double`), podemos hacer un casteo para forzar a que el cálculo se realice en el tipo de dato adecuado.
+
+### Ejemplo básico de casteo
+
+Supongamos que tenemos dos enteros `a` y `b` y queremos calcular el resultado de `a / b` como decimal:
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a = 5;
+    int b = 2;
+    float resultado;
+
+    // Sin casteo
+    resultado = a / b;
+    printf("Resultado sin casteo: %f\n", resultado);  // Imprimirá 2.000000, pues a y b son enteros
+
+    // Con casteo
+    resultado = (float)a / b;
+    printf("Resultado con casteo: %f\n", resultado);  // Imprimirá 2.500000, como resultado decimal
+
+    return 0;
+}
+```
+
+**Explicación**:
+
+- **Sin casteo**: Cuando hacemos `a / b` sin casteo, ambos son `int`, por lo que el resultado será un `int`, descartando la parte decimal. Así, `5 / 2` devuelve `2`.
+  
+- **Con casteo**: En `(float)a / b`, `a` se convierte temporalmente en `float`, haciendo que la división se interprete como una operación entre `float` e `int`. En este caso, C convierte implícitamente `b` a `float` también, y el resultado es un `float` con el valor completo, `2.5`.
+
+
+### Importancia del casteo
+
+El casteo es útil porque:
+1. **Facilita conversiones** entre tipos compatibles para realizar cálculos correctos.
+2. **Permite operaciones de memoria dinámica** adaptando punteros genéricos a tipos específicos.
+3. **Evita errores de compilación** al indicar explícitamente qué tipo de dato esperamos en una operación o asignación.
+
+El casteo debe usarse con cuidado, ya que convierte temporalmente el tipo de dato pero no cambia el valor subyacente ni realiza verificación automática; un uso incorrecto podría causar errores en el programa.
+
+### 8. Memoria y casteo con punteros y `malloc`
+
+En C, `malloc` devuelve un puntero de tipo `void *`, un tipo genérico de puntero que puede apuntar a cualquier tipo de dato. Para usar el puntero que `malloc` devuelve, necesitamos "cast" (convertir temporalmente) este `void *` al tipo de puntero que queremos usar.
+
+**Ejemplo con `malloc` y casteo**:
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int *puntero = (int *)malloc(sizeof(int)); // Casteamos (int *) para indicar que es un puntero a int
+
+    if (puntero == NULL) {
+        printf("Error al asignar memoria.\n");
+        return 1;
+    }
+
+    *puntero = 10;
+    printf("Valor en puntero: %d\n", *puntero);
+
+    free(puntero); // Liberamos la memoria cuando ya no la necesitamos
+    return 0;
+}
+```
+
+**Explicación**:
+
+- `malloc` devuelve un puntero `void *`, que no tiene tipo específico.
+- `(int *)malloc(sizeof(int))` convierte este puntero genérico `void *` a `int *`, indicando que el puntero apunta a un espacio de memoria para un `int`.
+- Este casteo asegura que podamos usar el puntero para operar con datos de tipo `int` en ese espacio de memoria.
+
 
 - La memoria dinámica permite que un programa solicite y libere espacio en memoria según las necesidades en tiempo de ejecución. malloc es la función principal para asignar memoria dinámica en C. Esta función solicita un espacio en memoria del tamaño especificado y devuelve un puntero de tipo void * que apunta a ese espacio reservado. Debido a que el tipo devuelto es void, se requiere una conversión de tipo (type casting) para adaptarlo a las necesidades específicas del programa, como en struct nodo *ap_nodo = (struct nodo *)malloc(sizeof(struct nodo));.
 
