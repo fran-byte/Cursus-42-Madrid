@@ -1,12 +1,15 @@
 
 
-# Documentación para la libft
+# Recursos necesarios para empezar libft
 
-[1. Makefile](makefile.md)
+<p align="center" width="100%"><i>Mis conocimientos en programción erán mínimos cuando empecé este proyecto</p>
+<p align="center" width="100%"></p>Hasta tal punto que ni siquiera tenia conocimientos sobre punteros</i>p>
 
-[2. Header](header.md)
+[1. Punteros](ptr.md)
 
-[3. Punteros](ptr.md)
+[2. Creando un makefile](makefile.md)
+
+[3. Qué es un header?](header.md)
 
 [4. Estructuras y Listas](list.md)
 
