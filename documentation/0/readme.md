@@ -1,6 +1,6 @@
 
 <p align="center" width="100%">
-# Recursos necesarios para empezar libft
+<h1></h1>Recursos necesarios para empezar libft</h1>
 </p>
 
 <p align="center" width="100%"><i>Mis conocimientos en programción erán mínimos cuando empecé este proyecto</p>
