@@ -181,6 +181,30 @@ Después de swap: x = 10, y = 5
 
 -En estructuras de datos dinámicas, como listas enlazadas, malloc es indispensable, ya que permite asignar memoria para cada nodo o elemento a medida que se necesita. Una vez asignada, el puntero devuelto se puede almacenar en una variable para acceder y manipular el espacio de memoria reservado.
 
+- Supongamos que queremos almacenar un número entero de forma dinámica en memoria. Podemos usar malloc para solicitar un espacio de memoria adecuado y almacenar la dirección en un puntero. Esto permite asignar memoria solo cuando se necesita, optimizando el uso de recursos.
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int *puntero = (int *)malloc(sizeof(int)); // Usamos malloc para asignar memoria para un entero
+
+    if (puntero == NULL) {
+        printf("Error al asignar memoria.\n");
+        return 1; // Salir si no se pudo asignar memoria
+    }
+
+    *puntero = 25; // Almacenamos un valor en la memoria asignada
+    printf("El valor almacenado en memoria dinámica es: %d\n", *puntero);
+
+    free(puntero); // Liberamos la memoria asignada una vez que ya no la necesitamos
+
+    return 0;
+}
+```
+
+
 ### 9. Punteros y Estructuras `(->)`
 
 - Cuando se declara un puntero a una estructura en C, se usa el operador `->` para acceder a los miembros de esa estructura. El operador `->` permite manejar los elementos de una estructura a través de un puntero sin necesidad de copiar sus datos. En una estructura **struct** empleado que tiene miembros como nombre y sueldo, si se declara un puntero struct empleado *emp = &datos;, se puede acceder a los miembros usando emp->nombre y emp->sueldo.
