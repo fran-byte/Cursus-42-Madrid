@@ -1,6 +1,7 @@
 
 ### 1. ¿Qué es un puntero?
 Los punteros en C **son fundamentales** para el acceso directo a la memoria, optimiza el rendimiento del programa y permite el manejo de datos de forma dinámica y eficiente.
+
 Un **puntero** es una variable que almacena la **dirección de memoria** de otra variable. En C, cada variable tiene una dirección en memoria, y los punteros nos permiten acceder y manipular directamente los datos en esa dirección.
 
 ### 2. Declaración de punteros
@@ -16,7 +17,7 @@ char *q; // Declara un puntero a un caracter.
 ---
 
 ### 3. Operador de referencia (`&`) y operador de desreferencia (`*`)
-
+- En el contexto de los punteros, el operador `* tiene dos funciones principales: declara punteros y desreferencia punteros. La **desreferenciación** significa obtener el **valor** de la variable a la que apunta el puntero. 
 - `&` (operador de referencia): Obtiene la dirección de memoria de una variable.
 - `*` (operador de desreferencia): Accede al valor almacenado en la dirección de memoria apuntada.
 
@@ -113,7 +114,9 @@ Aquí, `p + i` apunta a la dirección de cada elemento en el arreglo `arr`, y `*
 ---
 
 ### 6. Punteros a punteros
-Un puntero puede apuntar a otro puntero, creando un "puntero a puntero".
+- Los punteros no solo pueden apuntar a variables simples, sino también a otros punteros ("puntero a puntero"). Un puntero que contiene la dirección de otro puntero se denomina puntero doble, y pueden existir punteros triples, etc., que permiten la manipulación de estructuras de datos complejas.
+- Estos niveles de punteros son útiles en estructuras como listas enlazadas y árboles, donde la capacidad de manejar referencias indirectas resulta en un acceso y modificación de datos más eficiente.
+
 
 ```c
 #include <stdio.h>
@@ -169,7 +172,29 @@ int main() {
 Antes de swap: x = 5, y = 10
 Después de swap: x = 10, y = 5
 ```
+### 8. Punteros y Estructuras (->)
 
+- Cuando se declara un puntero a una estructura en C, se usa el operador `->` para acceder a los miembros de esa estructura. El operador `->` permite manejar los elementos de una estructura a través de un puntero sin necesidad de copiar sus datos. En una estructura **struct** empleado que tiene miembros como nombre y sueldo, si se declara un puntero struct empleado *emp = &datos;, se puede acceder a los miembros usando emp->nombre y emp->sueldo.
+
+```c
+#include <stdio.h>
+
+struct empleado {
+    char nombre[20];
+    float sueldo;
+};
+
+int main() {
+    struct empleado datos = {"Juan", 3500.50};  // Creamos una variable de tipo struct empleado
+    struct empleado *emp = &datos;              // Declaramos un puntero a struct empleado y lo inicializamos con la dirección de datos
+
+    // Usamos el operador -> para acceder a los miembros de la estructura a través del puntero
+    printf("Nombre: %s\n", emp->nombre);
+    printf("Sueldo: %.2f\n", emp->sueldo);
+
+    return 0;
+}
+``
 ---
 
 ### Resumen de los puntos clave:
