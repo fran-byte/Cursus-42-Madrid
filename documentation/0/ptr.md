@@ -177,9 +177,9 @@ Después de swap: x = 10, y = 5
 
 ### 8. Memoria Dinámica y `malloc`
 
--La memoria dinámica permite que un programa solicite y libere espacio en memoria según las necesidades en tiempo de ejecución. malloc es la función principal para asignar memoria dinámica en C. Esta función solicita un espacio en memoria del tamaño especificado y devuelve un puntero de tipo void * que apunta a ese espacio reservado. Debido a que el tipo devuelto es void, se requiere una conversión de tipo (type casting) para adaptarlo a las necesidades específicas del programa, como en struct nodo *ap_nodo = (struct nodo *)malloc(sizeof(struct nodo));.
+- La memoria dinámica permite que un programa solicite y libere espacio en memoria según las necesidades en tiempo de ejecución. malloc es la función principal para asignar memoria dinámica en C. Esta función solicita un espacio en memoria del tamaño especificado y devuelve un puntero de tipo void * que apunta a ese espacio reservado. Debido a que el tipo devuelto es void, se requiere una conversión de tipo (type casting) para adaptarlo a las necesidades específicas del programa, como en struct nodo *ap_nodo = (struct nodo *)malloc(sizeof(struct nodo));.
 
--En estructuras de datos dinámicas, como listas enlazadas, malloc es indispensable, ya que permite asignar memoria para cada nodo o elemento a medida que se necesita. Una vez asignada, el puntero devuelto se puede almacenar en una variable para acceder y manipular el espacio de memoria reservado.
+- En estructuras de datos dinámicas, como listas enlazadas, malloc es indispensable, ya que permite asignar memoria para cada nodo o elemento a medida que se necesita. Una vez asignada, el puntero devuelto se puede almacenar en una variable para acceder y manipular el espacio de memoria reservado.
 
 - Supongamos que queremos almacenar un número entero de forma dinámica en memoria. Podemos usar malloc para solicitar un espacio de memoria adecuado y almacenar la dirección en un puntero. Esto permite asignar memoria solo cuando se necesita, optimizando el uso de recursos.
 
