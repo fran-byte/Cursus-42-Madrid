@@ -1,11 +1,11 @@
 
 ### 1. ¿Qué es un puntero?
-Los punteros en C **son fundamentales** para el acceso directo a la memoria, optimiza el rendimiento del programa y permite el manejo de datos de forma dinámica y eficiente.
+- Los punteros en C **son fundamentales** para el acceso directo a la memoria, optimiza el rendimiento del programa y permite el manejo de datos de forma dinámica y eficiente.
 
 Un **puntero** es una variable que almacena la **dirección de memoria** de otra variable. En C, cada variable tiene una dirección en memoria, y los punteros nos permiten acceder y manipular directamente los datos en esa dirección.
 
 ### 2. Declaración de punteros
-Los punteros permiten identificar un espacio específico de memoria para un tipo de dato.
+- Los punteros permiten identificar un espacio específico de memoria para un tipo de dato.
 Y deben estar siempre apuntando a una dirección de memoria válida; si no es así, se considera un puntero muerto o "**nulo**".
 Para declarar un puntero, usamos el tipo de dato de la variable que va a apuntar seguido de un asterisco (`*`).
 
@@ -53,7 +53,7 @@ El valor al que apunta p: 10
 
 ### 4. Manipulación de valores con punteros
 
-Puedes cambiar el valor de una variable indirectamente usando su puntero.
+- Puedes cambiar el valor de una variable indirectamente usando su puntero.
 
 ```c
 #include <stdio.h>
@@ -81,6 +81,8 @@ Nuevo valor de x: 50
 ---
 
 ### 5. Punteros y arreglos
+
+- Los arreglos en C son, de hecho, una forma de punteros, específicamente apuntando al primer elemento del arreglo. Declarar un arreglo char `arr[5]`; implica reservar espacio para 5 caracteres consecutivos, con el primer elemento apuntado por `arr`. Este puntero se puede usar con notación de índices, como en `arr[0]`, o mediante desreferenciación, usando `*(car + n)`, que permite acceder a cualquier posición n dentro del arreglo. Esta propiedad de los arreglos facilita el paso de arreglos a funciones, ya que el nombre del arreglo se usa directamente como puntero al primer elemento.
 En C, los arreglos y punteros están muy relacionados. El nombre de un arreglo actúa como un puntero constante al primer elemento del arreglo.
 
 ```c
@@ -172,7 +174,14 @@ int main() {
 Antes de swap: x = 5, y = 10
 Después de swap: x = 10, y = 5
 ```
-### 8. Punteros y Estructuras (->)
+
+### 8. Memoria Dinámica y `malloc`
+
+-La memoria dinámica permite que un programa solicite y libere espacio en memoria según las necesidades en tiempo de ejecución. malloc es la función principal para asignar memoria dinámica en C. Esta función solicita un espacio en memoria del tamaño especificado y devuelve un puntero de tipo void * que apunta a ese espacio reservado. Debido a que el tipo devuelto es void, se requiere una conversión de tipo (type casting) para adaptarlo a las necesidades específicas del programa, como en struct nodo *ap_nodo = (struct nodo *)malloc(sizeof(struct nodo));.
+
+-En estructuras de datos dinámicas, como listas enlazadas, malloc es indispensable, ya que permite asignar memoria para cada nodo o elemento a medida que se necesita. Una vez asignada, el puntero devuelto se puede almacenar en una variable para acceder y manipular el espacio de memoria reservado.
+
+### 9. Punteros y Estructuras `(->)`
 
 - Cuando se declara un puntero a una estructura en C, se usa el operador `->` para acceder a los miembros de esa estructura. El operador `->` permite manejar los elementos de una estructura a través de un puntero sin necesidad de copiar sus datos. En una estructura **struct** empleado que tiene miembros como nombre y sueldo, si se declara un puntero struct empleado *emp = &datos;, se puede acceder a los miembros usando emp->nombre y emp->sueldo.
 
