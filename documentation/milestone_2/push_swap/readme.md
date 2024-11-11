@@ -16,12 +16,13 @@
 
 ## 2. Teoría de Complejidad Algorítmica 
 
-👉  [link](teoria.md)
+ 👉  [link](teoria.md)
  - Análisis de complejidad (Big O): Para tener un buen desempeño en el proyecto, necesitas ser capaz de optimizar tu código. Debes saber cómo analizar la complejidad temporal y espacial de los algoritmos que uses. Esto es esencial para asegurarte de que tu solución sea eficiente.
  - O(n), O(n^2), O(log n), O(n log n): Familiarízate con las distintas clases de complejidad, ya que algunas operaciones del proyecto pueden tener un alto costo si no se gestionan bien.
 
 ## 3. Algoritmos de Ordenamiento
 
+ 👉  [link](ordenamiento.md)
  - Aunque no se te pide implementar un algoritmo de ordenación completo en Push_swap, necesitas comprender cómo funcionan los algoritmos de ordenación básicos. Algunos algoritmos que podrían ser útiles para este proyecto:
         Ordenamiento por selección (Selection sort)
         Ordenamiento por inserción (Insertion sort)
