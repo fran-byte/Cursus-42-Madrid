@@ -20,15 +20,8 @@ struct Student {
 
 **Ejemplo**:
 
-```c
-typedef struct {
-    char name[50];
-    int age;
-    float grade;
-} Student; // Alias para "struct Student"
-```
 
-Ahora, puedes declarar una variable de tipo `Student` sin usar `struct`:
+
 
 ```c
 Student estudent1;
@@ -62,3 +55,5 @@ int main() {
     return 0;
 }
 ```
+
+Ahora, puedes declarar una variable de tipo `Student` sin usar `struct`:
