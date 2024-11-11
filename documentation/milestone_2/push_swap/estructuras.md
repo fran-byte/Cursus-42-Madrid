@@ -1,9 +1,10 @@
 ### 1. **Definición Básica de una Estructura en C**
 
+Una estructura en C es un tipo de datos compuesto que permite agrupar diferentes tipos de datos bajo un mismo nombre. A diferencia de los tipos de datos básicos (como int, char, float), una estructura puede contener miembros de distintos tipos. Esto es útil cuando queremos representar objetos o entidades que tienen varias características, como un estudiante que tiene un nombre, edad y calificación.
 
+En el siguiente ejemplo estamos definiendo una estructura llamada Student que tiene tres miembros: un nombre, una edad y una calificación. Cada miembro puede ser de un tipo de datos diferente.
 
-    
-
+ 
 Una **estructura** en C agrupa diferentes tipos de datos bajo un mismo nombre.
 
 Ejemplo:
