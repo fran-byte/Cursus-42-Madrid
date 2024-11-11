@@ -1,9 +1,9 @@
 ### 1. **Definición Básica de una Estructura en C**
 
 
-<p align="center" width="100%">
+
     <img width="45%" src="declaracion_estructura.png"> 
-</p>
+
 
 Una **estructura** en C agrupa diferentes tipos de datos bajo un mismo nombre.
 
