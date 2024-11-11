@@ -96,6 +96,7 @@ typedef struct {
 
 int main() {
     // Declarar un puntero a una estructura Student
+    // Casteamos a un tipo estructura como es (Student *)
     Student *student1 = (Student *)malloc(sizeof(Student));
 
     // Verificar si malloc no falla
