@@ -9,7 +9,7 @@
   
 
 
-1. [Listas de estructuras](#)
+1. [Estructuras](#)
 
 
 
