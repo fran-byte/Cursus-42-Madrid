@@ -24,7 +24,7 @@ struct Student {
 
 
 ```c
-Student estudent1;
+Student student1;
 ```
 
 ### 3. **Ejemplo Completo con `typedef`**
