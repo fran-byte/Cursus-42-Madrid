@@ -14,8 +14,9 @@
 - **Pilas** (**Stacks**): 👉  [link](stacks.md) Esencial para este proyecto, ya que debes simular dos pilas (a y b) y realizar operaciones sobre ellas. Comprende cómo funcionan las pilas y cómo las operaciones como push, pop, y peek afectan los datos.
 - **Colas** (**Queues**): 👉  [link](stacks.md)  Aunque no se usan explícitamente en este proyecto, es importante que tengas una comprensión general de las colas, ya que están relacionadas con las pilas y te ayudarán a entender la manipulación de los datos en estructuras secuenciales.
 
-## 2. Teoría de Complejidad Algorítmica  👉  [link](teoria.md)
+## 2. Teoría de Complejidad Algorítmica 
 
+👉  [link](teoria.md)
  - Análisis de complejidad (Big O): Para tener un buen desempeño en el proyecto, necesitas ser capaz de optimizar tu código. Debes saber cómo analizar la complejidad temporal y espacial de los algoritmos que uses. Esto es esencial para asegurarte de que tu solución sea eficiente.
  - O(n), O(n^2), O(log n), O(n log n): Familiarízate con las distintas clases de complejidad, ya que algunas operaciones del proyecto pueden tener un alto costo si no se gestionan bien.
 
