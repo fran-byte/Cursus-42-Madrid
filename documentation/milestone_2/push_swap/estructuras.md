@@ -1,9 +1,6 @@
 ### 1. **Definición Básica de una Estructura en C**
 
-<p align="left" width="100%">
-    <img width="45%" src="declaracion_estructura.png"> 
 
-</p>
 
     
 
@@ -12,10 +9,10 @@ Una **estructura** en C agrupa diferentes tipos de datos bajo un mismo nombre.
 Ejemplo:
 
 ```c
-struct Student {
-    char name[50];
-    int age;
-    float grade;
+struct Student {     
+    char name[50];  //
+    int age;        //   Propiedades
+    float grade;    //
 };
 ```
 
