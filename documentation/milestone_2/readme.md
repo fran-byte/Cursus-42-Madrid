@@ -5,19 +5,3 @@
 <p align="center" width="100%"><img src="push_swap.png" width="72" />
 
 <p align="center" width="100%"><i>Aquí empieza aunmentar la complejidad</p>
-
-  
-
-
-1. [Estructuras](push_swap/estructuras.md)
-
-
-
-
-
-
-00. [https://github.com/gjmacias/push_swap](https://github.com/gjmacias/push_swap)
-
-
-
-
