@@ -9,7 +9,7 @@
 
 ## 1. Estructuras de Datos Básicas y Avanzadas
 
-
+- Estructuras [link](estructuras.md)
 - Listas enlazadas (Linked lists): Aunque el proyecto no te pide que uses una estructura de lista enlazada de forma explícita, comprender cómo funcionan las listas enlazadas es crucial para manejar las pilas de manera eficiente. Podrías estudiar listas simples, dobles y circulares.
 - Pilas (Stacks): Esencial para este proyecto, ya que debes simular dos pilas (a y b) y realizar operaciones sobre ellas. Comprende cómo funcionan las pilas y cómo las operaciones como push, pop, y peek afectan los datos.
 - Colas (Queues): Aunque no se usan explícitamente en este proyecto, es importante que tengas una comprensión general de las colas, ya que están relacionadas con las pilas y te ayudarán a entender la manipulación de los datos en estructuras secuenciales.
