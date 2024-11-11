@@ -30,7 +30,7 @@ Student student1;
 typedef struct {
     char name[50];
     int age;
-    grade calificacion;
+    float grade;
 } Student;
 
 int main() {
@@ -42,9 +42,9 @@ int main() {
     snprintf(student1.name, sizeof(student1.name), "Juan Pérez");
 
     // Imprimir los valores
-    printf("Nombre: %s\n", student1.name);
-    printf("Edad: %d\n", student1.age);
-    printf("Calificación: %.2f\n", student1.grade);
+    printf("Name: %s\n", student1.name);
+    printf("Age: %d\n", student1.age);
+    printf("Grade: %.2f\n", student1.grade);
 
     return 0;
 }
@@ -67,14 +67,14 @@ Para usar punteros con estructuras, debes seguir estos pasos:
 
 ### 5. **Ejemplo con punteros y asignación dinámica**
 
-Supongamos que tenemos la misma estructura `Estudiante` con un puntero para manipular sus datos dinámicamente.
+Supongamos que tenemos la misma estructura `Student` con un puntero para manipular sus datos dinámicamente.
 
 #### Sin punteros:
 
 ```c
-Estudiante estudiante1;
-estudiante1.edad = 20;
-estudiante1.grade = 8.5;
+Student student1;
+student1.age = 20;
+student1.grade = 8.5;
 ```
 
 #### Con punteros:
@@ -85,33 +85,33 @@ estudiante1.grade = 8.5;
 
 // Definición de la estructura con typedef
 typedef struct {
-    char nombre[50];
-    int edad;
+    char name[50];
+    int age;
     float grade;
-} Estudiante;
+} Student;
 
 int main() {
-    // Declarar un puntero a una estructura Estudiante
-    Estudiante *estudiante1 = (Estudiante *)malloc(sizeof(Estudiante));
+    // Declarar un puntero a una estructura Student
+    Student *student1 = (Student *)malloc(sizeof(Student));
 
     // Verificar si malloc no falla
-    if (estudiante1 == NULL) {
+    if (student1 == NULL) {
         printf("Error al asignar memoria.\n");
         return 1;  // Salir del programa si no hay memoria disponible
     }
 
     // Asignar valores directamente usando el puntero y el operador "->"
-    estudiante1->edad = 20;
-    estudiante1->grade = 8.5;
-    snprintf(estudiante1->nombre, sizeof(estudiante1->nombre), "Juan Pérez");
+    student1->age = 20;
+    student1->grade = 8.5;
+    snprintf(student1->name, sizeof(student1->name), "Juan Pérez");
 
     // Imprimir los valores usando el puntero
-    printf("Name: %s\n", estudiante1->nombre);
-    printf("Age: %d\n", estudiante1->edad);
-    printf("Grade: %.2f\n", estudiante1->grade);
+    printf("Name: %s\n", student1->name);
+    printf("Age: %d\n", student1->age);
+    printf("Grade: %.2f\n", student1->grade);
 
     // Liberar la memoria al final
-    free(estudiante1);
+    free(student1);
 
     return 0;
 }
@@ -119,10 +119,10 @@ int main() {
 
 ### 6. **Explicación del código con punteros**
 
-- **`Estudiante *estudiante1`**: Creamos un puntero a una estructura de tipo `Estudiante`.
-- **`malloc(sizeof(Estudiante))`**: Usamos `malloc` para asignar memoria dinámica para la estructura `Estudiante`. El tamaño de la memoria asignada es el tamaño de la estructura.
-- **`estudiante1->edad = 20;`**: Usamos el operador `->` para acceder y asignar valores a los miembros de la estructura a través del puntero.
-- **`free(estudiante1);`**: Es importante liberar la memoria que hemos asignado con `malloc` cuando ya no la necesitamos, usando `free()`.
+- **`Student *student1`**: Creamos un puntero a una estructura de tipo `Student`.
+- **`malloc(sizeof(Student))`**: Usamos `malloc` para asignar memoria dinámica para la estructura `Student`. El tamaño de la memoria asignada es el tamaño de la estructura.
+- **`student1->age = 20;`**: Usamos el operador `->` para acceder y asignar valores a los miembros de la estructura a través del puntero.
+- **`free(student1);`**: Es importante liberar la memoria que hemos asignado con `malloc` cuando ya no la necesitamos, usando `free()`.
 
 ### 7. **Ventajas de usar punteros**
 
