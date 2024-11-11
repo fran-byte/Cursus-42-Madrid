@@ -86,6 +86,7 @@ student1.grade = 8.5;
 ```c
 #include <stdio.h>
 #include <stdlib.h>  // Necesario para usar malloc
+#include <string.h>  // Necesario para usar strncpy
 
 // Definición de la estructura con typedef
 typedef struct {
@@ -96,7 +97,6 @@ typedef struct {
 
 int main() {
     // Declarar un puntero a una estructura Student
-    // Casteamos a un tipo estructura como es (Student *)
     Student *student1 = (Student *)malloc(sizeof(Student));
 
     // Verificar si malloc no falla
@@ -108,7 +108,13 @@ int main() {
     // Asignar valores directamente usando el puntero y el operador "->"
     student1->age = 20;
     student1->grade = 8.5;
-    snprintf(student1->name, sizeof(student1->name), "Juan Pérez");
+
+    // Usamos strncpy para asignar el nombre de forma segura
+    // Copiar hasta 49 caracteres (1 espacio para '\0' al final)
+    strncpy(student1->name, "Juan Pérez", sizeof(student1->name) - 1);
+
+    // Asegurar que la cadena esté terminada en '\0'
+    student1->name[sizeof(student1->name) - 1] = '\0';
 
     // Imprimir los valores usando el puntero
     printf("Name: %s\n", student1->name);
@@ -120,6 +126,7 @@ int main() {
 
     return 0;
 }
+
 ```
 
 ### 6. **Explicación del código con punteros**
