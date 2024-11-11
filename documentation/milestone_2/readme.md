@@ -9,7 +9,7 @@
   
 
 
-1. [Estructuras](estructuras.md)
+1. [Estructuras](push_swap/estructuras.md)
 
 
 
