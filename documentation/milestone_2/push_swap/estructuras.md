@@ -16,18 +16,12 @@ struct Student {
 
 `typedef` es una palabra clave que se utiliza para crear un alias o un nombre más corto para un tipo de dato.  `typedef` te permite evitar escribir `struct` cada vez que declares una variable de tipo estructura.
 
-#### Sintaxis con `typedef`:
-
-**Ejemplo**:
-
-
-
 
 ```c
 Student student1;
 ```
 
-### 3. **Ejemplo Completo con `typedef`**
+### 3. **Ejemplo con `typedef`**
 
 ```c
 #include <stdio.h>
