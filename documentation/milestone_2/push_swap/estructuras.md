@@ -142,7 +142,7 @@ int main() {
 - **Eficiencia**: Usar punteros permite manipular estructuras de forma más eficiente, ya que puedes pasar punteros a funciones en lugar de pasar grandes cantidades de datos (copias de estructuras).
 - **Memoria dinámica**: Puedes asignar memoria dinámica para estructuras, lo que es útil si no sabes cuántas estructuras necesitarás durante la ejecución del programa (por ejemplo, en estructuras de datos dinámicas como listas enlazadas, pilas, colas, etc.).
 
-### **Explicación sobre estructuras anidadas**
+### 8. **Explicación sobre estructuras anidadas**
 
 En C, **estructuras anidadas** son estructuras que contienen otras estructuras dentro de ellas. Es decir, puedes definir una estructura dentro de otra estructura como un campo. Este tipo de estructuras se usa comúnmente para modelar objetos más complejos, donde cada campo de la estructura principal puede representar una subestructura con su propia definición de campos.
 
@@ -164,7 +164,7 @@ En este caso:
 - `Inner` es la estructura anidada dentro de `Outer`.
 - Puedes acceder a los campos de la estructura anidada usando el operador de acceso a miembros (`.` o `->`).
 
-### **Modificación del código para añadir una estructura anidada (`address`)**
+### 8.1. **Modificación del código para añadir una estructura anidada (`address`)**
 
 Modidicamos el código anterior y añadimos una estructura anidada que representa una **dirección** (`address`), que puede tener campos como `street`, `city`, `zipCode`, etc. Esta estructura estará anidada dentro de la estructura `Student`.
 
