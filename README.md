@@ -8,7 +8,7 @@
 
  <h3 align="right">👉 <a href="documentation/">Recursos</a> 👈</h3>
 
-<h2 align="center" width=100%">- Proyectos Cursus 42 Madrid -</h2>
+<h2 align="center" width=100%">- Cursus 42 Madrid -</h2>
 
 
 <h1 align="center">Milestone 0</h1>
