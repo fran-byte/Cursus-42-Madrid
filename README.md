@@ -11,7 +11,7 @@
 <h2 align="center" width=100%">- Proyectos Cursus 42 Madrid -</h2>
 
 
-<h1 align="center">0</h1>
+<h1 align="center">Milestone 0</h1>
 <p align="center" width="100%"><a href="0/"><img src="documentation/0/libft.png" width="72" /></p>
 
 
