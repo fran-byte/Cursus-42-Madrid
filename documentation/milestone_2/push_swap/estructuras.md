@@ -4,7 +4,7 @@ Una estructura en C es un tipo de datos compuesto que permite agrupar diferentes
 
 En el siguiente ejemplo estamos definiendo una estructura llamada Student que tiene tres miembros: un nombre, una edad y una calificación. Cada miembro puede ser de un tipo de datos diferente.
 
-[Video sobre estructuras en C](https://www.youtube.com/watch?v=gW42twUueUE)
+[Otros recursos](https://docencia.eafranco.com/materiales/algoritmia/14/Tema14.pdf)
  
 Una **estructura** en C agrupa diferentes tipos de datos bajo un mismo nombre.
 
