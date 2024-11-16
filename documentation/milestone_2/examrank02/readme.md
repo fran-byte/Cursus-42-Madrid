@@ -205,6 +205,7 @@ char *ft_strpbrk(const char *s1, const char *s2);
 - Iteramos sobre `str` y conseguimos lu longitud `lenght`
 - Y ya operamos dentro de nuestro `while (++i < length / 2)` desde `[0]` hasta la mitad de la longitud.
 - Almacenamos en `temporary = str[i];`  y a continuacción almacenamos en `str[i] = str[length - 1 - i];` que será la diferencia de la longitud menos el incremento de `[i]` teniendo encuenta siempre un `-1` (ya que `lenght` siempre será uno más que el índice)
+- Y finalmente volcamos el temporal sobre `str` de esta forma ```str[length - 1 - i] = temporary;```
   
 ```
 Nombre de la asignación: ft_strrev
