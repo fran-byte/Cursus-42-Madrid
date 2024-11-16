@@ -23,7 +23,7 @@ int main()
 	printf("BUFFER_SIZE=%d\n", BUFFER_SIZE);
 	char *line1 = NULL;
 	char *line2 = NULL;
-	int fd = open("test", O_RDONLY);
+	int fd = open("test1", O_RDONLY);
 	int fd2 = open("test2", O_RDONLY);
 	int i = 0;
 
