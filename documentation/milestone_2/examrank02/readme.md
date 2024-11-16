@@ -443,7 +443,7 @@ devuelve el resultado.
 
 Su función debe declararse de la siguiente manera:
 
-swap_bits de caracteres sin firmar (octeto de caracteres sin firmar);
+swap_bits de caracteres sin firmar unsigned char swap_bits(unsigned char octet);
 
 Example:
 
