@@ -402,3 +402,29 @@ _____________
      \/
  1000 0010
 ```
+## snake_to_camel
+
+- Simplemente dentro de un ```while``` cuando localicemos un "_" incrementamos el índice y ```argv[1][i] = argv[1][i] - 32;```
+
+```
+Nombre de la tarea: snake_to_camel
+Archivos esperados: snake_to_camel.c
+Funciones permitidas: malloc, free, realloc, write
+-------------------------------------------------- ------------------------------
+
+Escribe un programa que tome una sola cadena en formato Snake_case
+y lo convierte en una cadena en formato lowerCamelCase.
+
+Una cadena Snake_case es una cadena donde cada palabra está en minúsculas, separada por
+un guión bajo "_".
+
+Una cadena lowerCamelCase es una cadena donde cada palabra comienza con una letra mayúscula
+excepto el primero.
+Examples:
+$>./camel_to_snake "here_is_a_snake_case_word"
+hereIsASnakeCaseWord
+$>./camel_to_snake "hello_world" | cat -e
+helloWorld$
+$>./camel_to_snake | cat -e
+$
+```
