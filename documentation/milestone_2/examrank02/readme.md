@@ -10,7 +10,7 @@
   
 ## alpha_mirror
 - Forma fácil y rápida si son simples caracteres alpha, es introducir un un `char []` en orden inverso:
-  ``` char [] = "zyxwvutsrqponmlkjihgfedcba"``` y recorrerlo con un indice, es decir, cuando el indice `0` sea `a` su nuevo índicee de `0` equivaldrá a `z`
+  ``` char [] = "zyxwvutsrqponmlkjihgfedcba"``` y recorrerlo con un índice, es decir, cuando el índice `0` sea `a` su nuevo índicee de `0` equivaldrá a `z`
 
 ```text  
 Nombre de la tarea: alpha_mirror
@@ -129,7 +129,7 @@ int ft_atoi(const char *str);
 
 ## ft_strcmp
 
-- Un ```while``` que entrará s1 y s2 tengan contenido y sus indices sean iguales y vamos incrementando  ```while(s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])``` en el momento que dejen de ser iguales hacemos la operación de resultado ```return (s1[i] - s2[i]);```
+- Un ```while``` que entrará s1 y s2 tengan contenido y sus índices sean iguales y vamos incrementando  ```while(s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])``` en el momento que dejen de ser iguales hacemos la operación de resultado ```return (s1[i] - s2[i]);```
 
 ```
 Nombre de la asignación: ft_strcmp
@@ -147,7 +147,7 @@ int ft_strcmp(char *s1, char *s2);
 ## ft_strcspn
 
 - Vamos a buscar la primera ocurrencia que se de en ```s[i]``` que esté contenido en ```reject[j]```
-- Es decir ```ft_strcspn("Hola Wolrd", "xxxdxxxx"));``` en este ejemeplo devolverá el indice donde está la primera letra coincidente será el indice```[9]```
+- Es decir ```ft_strcspn("Hola Wolrd", "xxxdxxxx"));``` en este ejemeplo devolverá el índice donde está la primera letra coincidente será el índice```[9]```
 - Creamos 2 ```while``` anidados el externo recorrerá ```s[i] != '\0'``` y el interno ```reject[j] != '\0'```
 
 ```
