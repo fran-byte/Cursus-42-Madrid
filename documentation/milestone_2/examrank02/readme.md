@@ -107,7 +107,7 @@ $
 - Primer ```while``` para avanzar por el ```str++``` entre espacios o tabulacciones
 - Un ```ìf``` para identificar el flag de signo ```sign = -1```
 - Otro ```ìf``` para el signo positivo avanzamos ```str++```
-- Y ya hacemos la conversión con un ```while``` si son caracteres numéricos aplicamos nuestra fórmula ´´´result = result * 10 + *str - '0';´´´
+- Y ya hacemos la conversión con un ```while``` si son caracteres numéricos aplicamos nuestra fórmula ```result = result * 10 + *str - '0';```
 
 ```
 Nombre de la asignación: ft_atoi
@@ -125,3 +125,19 @@ Su función debe declararse de la siguiente manera:
 int ft_atoi(const char *str);
 ```
 
+## ft_strcmp
+
+- Un ```while``` para que entre mientras s1 y s2 tengan contenido y sus indices sean iguales y vamos incrementando  ```while(s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])``` en el momento que dejen de ser iguales hacemos la operación de resultado ```return (s1[i] - s2[i]);```
+
+```
+Nombre de la asignación: ft_strcmp
+Archivos esperados: ft_strcmp.c
+Funciones permitidas:
+--------------------------------------------------------------------------------
+
+Reproduzca el comportamiento de la función strcmp (man strcmp).
+
+Su función debe declararse de la siguiente manera:
+
+int ft_strcmp(char *s1, char *s2);
+```
