@@ -430,7 +430,7 @@ $
 ```
 ## swap_bits
 
-- Hacemos simple movimientos de desplazamiento de bits ```return ((octet >> 4) | (octet << 4));```
+- Hacemos simples movimientos de desplazamiento de bits ```return ((octet >> 4) | (octet << 4));```
 
 ```
 Nombre de la tarea: swap_bits
