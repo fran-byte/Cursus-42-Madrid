@@ -428,3 +428,29 @@ helloWorld$
 $>./camel_to_snake | cat -e
 $
 ```
+## swap_bits
+
+- Hacemos simple movimientos de desplazamiento de bits ```return ((octet >> 4) | (octet << 4));```
+
+```
+Nombre de la tarea: swap_bits
+Archivos esperados: swap_bits.c
+Funciones permitidas:
+-------------------------------------------------- ------------------------------
+
+Escribe una función que tome un byte, intercambie sus mitades (como en el ejemplo) y
+devuelve el resultado.
+
+Su función debe declararse de la siguiente manera:
+
+swap_bits de caracteres sin firmar (octeto de caracteres sin firmar);
+
+Example:
+
+  1 byte
+_____________
+ 0100 | 0001
+     \ /
+     / \
+ 0001 | 0100
+```
