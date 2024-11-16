@@ -10,7 +10,7 @@
   
 ## alpha_mirror
 - Forma fácil y rápida si son simples caracteres alpha, es introducir un un `char []` en orden inverso:
-  ``` char [] = "zyxwvutsrqponmlkjihgfedcba"``` y recorrerlo con un indice cuando se a `a` será índice de `0` que equivaldrá a `z`
+  ``` char [] = "zyxwvutsrqponmlkjihgfedcba"``` y recorrerlo con un indice cuando el indice `0` sea `a` su nuevo índicee de `0` equivaldrá a `z`
 
 ```text  
 Nombre de la tarea: alpha_mirror
