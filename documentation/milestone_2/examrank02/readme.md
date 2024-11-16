@@ -347,6 +347,7 @@ Si la matriz está vacía, la función devuelve 0.
 
 ## print_bits
 
+- Partiendo que 1 byte (char) son 8 bits.
 - 
 
 ```
