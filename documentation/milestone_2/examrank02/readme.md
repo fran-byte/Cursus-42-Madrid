@@ -293,7 +293,7 @@ int	    is_power_of_2(unsigned int n);
 
 ## last_word
 
-- El código tendrá dos `while (str[i])`  con una condición `if (str[i] == ' ' && str[i + 1] >= 33 && str[i + 1] <= 126)` que viene a ser mientras encientre un ```str[i] == " "``` y ```[i+1]``` sea ascii imprimible alojaremos en ```j = i + 1``` (es decir j será el inicio de la palabra) con esto conseguiremos mientras iteramos sobre ```str[i]``` dejar en `j` el índice dde la última palabra.
+- El código tendrá dos `while (str[i])`  con una condición `if (str[i] == ' ' && str[i + 1] >= 33 && str[i + 1] <= 126)` que viene a ser, que mientras encuentre un ```str[i] == " "``` y ```[i+1]``` sea ascii imprimible alojaremos en ```j = i + 1``` (es decir j será el inicio de la palabra) con esto conseguiremos mientras iteramos sobre ```str[i]``` dejar en `j` el índice dde la última palabra.
 - Y ya teniendo este índice vamos a recorrer j ``` str[j] >= 33 && str[j] <= 127 ``` mientras sea imprimible e iremos imprimiendo.
 ```
 Nombre de la tarea: last_word
