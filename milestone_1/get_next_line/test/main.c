@@ -36,4 +36,12 @@ int main()
 	printf("%s\n", get_next_line(fd1));
 	printf("%s\n", get_next_line(fd1));
 	close(fd3);
+
+	printf("BUFFER_SIZE=%d\n", BUFFER_SIZE);
+	int fd0 = open("test3", O_RDONLY);
+
+	printf("%s\n", get_next_line(fd0));
+	printf("%s\n", get_next_line(fd0));
+	printf("%s\n", get_next_line(fd0));
+	close(fd3);
 }
