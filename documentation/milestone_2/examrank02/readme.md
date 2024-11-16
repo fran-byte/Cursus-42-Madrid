@@ -44,7 +44,7 @@ $>
 
 ## camel_to_snake
 
-- Vamos a ir imprimiendo los caracteres si son minúsculas y cuando encuenntre una mayúscula imprima una barra baja y el misma letra en minúscula.
+- Vamos a ir imprimiendo los caracteres si son minúsculas y cuando encuentre una mayúscula imprima una barra baja y la misma letra en minúscula.
 
 ```
 Nombre de la tarea: camel_to_snake
