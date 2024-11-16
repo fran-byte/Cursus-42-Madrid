@@ -372,3 +372,33 @@ void print_bits (unsigned char octet);
 
 Ejemplo, si pasa 2 a print_bits, imprimirá "00000010"
 ```
+## reverse_bits
+
+- Invierte los bits de un **byte**. Usamos `result` para almacenar el resultado y una iteracion de 8 veces.
+- En cada iteración:  
+- Extraemos el bit menos significativo de `octet` con `(octet % 2)` y lo añadimos a `result` desplazándolo.  
+- Eliminamos ese bit de `octet` con `octet / 2`.
+- Y al acabar `result` tiene los bits en orden  inverso.
+
+```
+Nombre de la asignación: reverse_bits
+Archivos esperados: reverse_bits.c
+Funciones permitidas:
+-------------------------------------------------- ------------------------------
+
+Escribe una función que tome un byte, lo invierta, poco a poco (como la
+ejemplo) y devuelve el resultado.
+
+Su función debe declararse de la siguiente manera:
+
+unsigned char	reverse_bits(unsigned char octet);
+
+Ejemplo:
+
+  1 byte
+_____________
+ 0100 0001
+     ||
+     \/
+ 1000 0010
+```
