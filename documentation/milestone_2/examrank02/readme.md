@@ -347,8 +347,15 @@ Si la matriz está vacía, la función devuelve 0.
 
 ## print_bits
 
-- Partiendo que 1 byte (char) son 8 bits.
-- 
+Un **byte** (`char`) tiene 8 bits, por lo que usaremos un contador `int i = 8;` para recorrerlos y una variable `unsigned char bit;` para almacenar cada bit.  
+
+- La idea es usar un bucle `while` que decremente `i` de 8 a 0. En cada iteración, aplicamos un desplazamiento de bits (`>>`) para mover el bit que queremos analizar al extremo menos significativo, seguido de una operación AND (`& 1`) para aislarlo.  
+
+- La expresión clave es:  
+```c
+bit = (octet >> i & 1) + '0';
+```  
+- Esto extrae el bit correspondiente y lo convierte a su representación ASCII ('0' o '1') para imprimirlo. Así, procesamos e imprimimos todos los bits del byte uno por uno. 
 
 ```
 Nombre de la tarea: print_bits
