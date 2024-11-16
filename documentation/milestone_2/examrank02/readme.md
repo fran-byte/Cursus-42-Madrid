@@ -205,7 +205,7 @@ char *ft_strpbrk(const char *s1, const char *s2);
 - Iteramos sobre `str` y conseguimos lu longitud `lenght`
 - Y ya operamos dentro de nuestro `while (++i < length / 2)` desde `[0]` hasta la mitad de la longitud.
 - Almacenamos en `temporary = str[i];`  y a continuacción almacenamos en `str[i] = str[length - 1 - i];` que será la diferencia de la longitud menos el incremento de `[i]` teniendo encuenta siempre un `-1` (ya que `lenght` siempre será uno más que el índice)
-- Y finalmente volcamos el temporal sobre `str` de esta forma ```str[length - 1 - i] = temporary;```
+- Y finalmente volcamos el temporal sobre `str` de esta forma ```str[length - 1 - i] = temporary;``` que será el string a devolver.
   
 ```
 Nombre de la asignación: ft_strrev
@@ -220,4 +220,35 @@ Debe devolver su parámetro.
 Su función debe declararse de la siguiente manera:
 
 char *ft_strrev(char *str);
+```
+## ft_strspn
+
+- Esta función calcula la longitud del segmento inicial de `s` que consta únicamente de caracteres en `accept`.
+- Es decir el índice de `s` del primer caracter que difiera de  `accept` si son todos iguales devolverá el indice completo de iterar `s`
+- En esta comparación ft_strspn("Hola mundo", "Hola Mundo"); nos devolverá el indice dode está `m` es decir `s[5]`
+
+- Podemos crear dos funciones una `principal size_t	ft_strspn(const char *s, const char *accept);` donde iteraremos sobre nuestra string `s` hasta encontrar en accept `if (ft_strchr(accept, s[i]) == 0)` ese caracter de `s[i]` para ello llamamos a la función `ft_strchr` que nos de volverá algo diferente a 0 cuando lo encuentre y en ese momento haremos un `break`para salirnos ddel `while` y ese índice es el que devolveremos.
+
+```
+Nombre de la tarea: ft_strspn
+Archivos esperados: ft_strspn.c
+Funciones permitidas: Ninguna
+-------------------------------------------------- -------------
+
+Reproducir exactamente el comportamiento de la función strspn. 
+(hombre strspn).
+
+La función debe crearse un prototipo de la siguiente manera:
+
+size_t ft_strspn(const char *s, const char *Assignment name	: ft_strspn
+Expected files	: ft_strspn.c
+Allowed functions: None
+---------------------------------------------------------------
+
+Reproduce exactly the behavior of the strspn function 
+(man strspn).
+
+The function should be prototyped as follows:
+
+size_t	ft_strspn(const char *s, const char *accept);
 ```
