@@ -6,6 +6,8 @@
 
 # Spoiler
 
+- Simplemente haré un repaso a los puntos exenciles de cada código.
+  
 ## alpha_mirror
 - Forma fácil y rápida si son simples caracteres alpha, es introducir un un `char []` en orden inverso:
   ``` char [] = "zyxwvutsrqponmlkjihgfedcba"``` y recorrerlo con un indice cuando se a `a` será índice de `0` que equivaldrá a `z`
@@ -144,7 +146,7 @@ int ft_strcmp(char *s1, char *s2);
 
 ## ft_strcspn
 
-- Vamos a buscar la primera ocurrencia del que se de en ```s[i]``` que esté contenido en ```reject[j]```
+- Vamos a buscar la primera ocurrencia que se de en ```s[i]``` que esté contenido en ```reject[j]```
 - Es decir ```ft_strcspn("Hola Wolrd", "xxxdxxxx"));``` en este ejemeplo devolverá el indice donde está la primera letra coincidente será el indice```[9]```
 - Creamos 2 ```while``` anidados el externo recorrerá ```s[i] != '\0'``` y el interno ```reject[j] != '\0'```
 
@@ -161,3 +163,20 @@ La función debe crearse como prototipo de la siguiente manera:
 
 size_t ft_strcspn(const char *s, const char *reject);
 ```
+
+## ft_strdup
+
+- Crearemos un espacio de memoria para nuestro duplicado ```strcpy = malloc(sizeof(*strcpy) * (length + 1));``` y luego hacer la copia dentro de un while `src[i]` hasta su fin  `strcpy[i] = src[i];` sin olvidarnos de introducir el fin de string ```\0```
+```
+Nombre de la asignación: ft_strdup
+Archivos esperados: ft_strdup.c
+Funciones permitidas: malloc
+--------------------------------------------------------------------------------
+
+Reproduzca el comportamiento de la función strdup (man strdup).
+
+Su función debe declararse de la siguiente manera:
+
+char *ft_strdup(char *src);
+```
+
