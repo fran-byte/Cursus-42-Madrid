@@ -236,7 +236,7 @@ Funciones permitidas: Ninguna
 -------------------------------------------------- -------------
 
 Reproducir exactamente el comportamiento de la función strspn. 
-(hombre strspn).
+(man strspn).
 
 La función debe crearse un prototipo de la siguiente manera:
 
