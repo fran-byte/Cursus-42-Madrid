@@ -454,3 +454,36 @@ _____________
      / \
  0001 | 0100
 ```
+
+## union
+-
+
+```
+Nombre de la tarea: union
+Archivos esperados: union.c
+Funciones permitidas: write
+-------------------------------------------------- ------------------------------
+
+Escriba un programa que tome dos cadenas y muestre, sin dobles, los
+caracteres que aparecen en cualquiera de las cadenas.
+
+La pantalla se mostrará en el orden en que aparecen los caracteres en la línea de comando y
+irá seguido de un \n.
+
+Si el número de argumentos no es 2, el programa muestra \n.
+
+Example:
+
+$>./union zpadinton "paqefwtdjetyiytjneytjoeyjnejeyj" | cat -e
+zpadintoqefwjy$
+$>./union ddf6vewg64f gtwthgdwthdwfteewhrtag6h4ffdhsd | cat -e
+df6vewg4thras$
+$>./union "rien" "cette phrase ne cache rien" | cat -e
+rienct phas$
+$>./union | cat -e
+$
+$>
+$>./union "rien" | cat -e
+$
+$>
+```
