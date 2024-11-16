@@ -21,7 +21,7 @@ int main()
 {
 	char *line;
 
-	printf("BUFFER_SIZE=%d\n", BUFFER_SIZE);
+	printf("\nBUFFER_SIZE=%d\n", BUFFER_SIZE);
 
 	int fd2 = open("test2", O_RDONLY);
 
