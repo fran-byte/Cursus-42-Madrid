@@ -271,3 +271,22 @@ rien$
 $>./inter | cat -e
 $
 ```
+
+## is_power_of_2
+
+- Para este ejercicio solo tener encuenta esta formula ```return (n & (n - 1)) == 0;``` y un caso base si number = 0, retornaremos 0.
+- Donde restamos a number -1 y 
+
+```
+Nombre de la tarea: is_power_of_2
+Archivos esperados: is_power_of_2.c
+Funciones permitidas: Ninguna
+-------------------------------------------------- ------------------------------
+
+Escribe una función que determine si un número dado es una potencia de 2.
+
+Esta función devuelve 1 si el número dado es una potencia de 2; en caso contrario, devuelve 0.
+
+Su función debe declararse de la siguiente manera:
+int	    is_power_of_2(unsigned int n);
+```
