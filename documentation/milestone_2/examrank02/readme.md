@@ -180,3 +180,21 @@ Su función debe declararse de la siguiente manera:
 char *ft_strdup(char *src);
 ```
 
+## ft_strpbrk
+
+- Si `!s1 || !s2` no existen salimos.
+- Harémos dos `while` anidados el primero `*s1` y un segundo `s2[i]` donde compararemos `if(*s1 == s2[i])` y si son iguales `return (char *) s1;`
+
+```
+Nombre de la asignación: ft_strpbrk
+Archivos esperados: ft_strpbrk.c
+Funciones permitidas: Ninguna
+---------------------------------------------------------------
+
+Reproduzca exactamente el comportamiento de la función strpbrk
+(man strpbrk).
+
+La función debe crearse como prototipo de la siguiente manera:
+
+char *ft_strpbrk(const char *s1, const char *s2);
+``
