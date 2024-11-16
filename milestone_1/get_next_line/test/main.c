@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_bonus.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 14:41:56 by frromero          #+#    #+#             */
-/*   Updated: 2024/11/16 15:07:43 by frromero         ###   ########.fr       */
+/*   Updated: 2024/11/16 15:46:30 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int main()
 	printf("%s\n", get_next_line(fd1));
 	printf("%s\n", get_next_line(fd1));
 	printf("%s\n", get_next_line(fd1));
-	close(fd3);
+	close(fd1);
 
 	printf("BUFFER_SIZE=%d\n", BUFFER_SIZE);
 	int fd0 = open("test3", O_RDONLY);
@@ -43,5 +43,5 @@ int main()
 	printf("%s\n", get_next_line(fd0));
 	printf("%s\n", get_next_line(fd0));
 	printf("%s\n", get_next_line(fd0));
-	close(fd3);
+	close(fd0);
 }
