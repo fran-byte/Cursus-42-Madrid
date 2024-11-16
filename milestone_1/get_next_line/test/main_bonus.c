@@ -37,7 +37,7 @@ int main()
 
 
 	printf("BUFFER_SIZE=%d\n", BUFFER_SIZE);
-	int fd3 = open("test", O_RDONLY);
+	int fd3 = open("test1", O_RDONLY);
 	int fd4 = open("test2", O_RDONLY);
 	i = 0;
 
