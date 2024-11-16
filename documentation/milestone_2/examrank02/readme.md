@@ -15,7 +15,7 @@
 ```text  
 Nombre de la tarea: alpha_mirror
 Archivos esperados: alpha_mirror.c
-Funciones permitidas: escribir
+Funciones permitidas: write
 --------------------------------------------------------------------------------
  
 Escriba un programa llamado alpha_mirror que tome una cadena y muestre esta cadena
@@ -250,7 +250,7 @@ size_t	ft_strspn(const char *s, const char *accept);
 ```
 Nombre de la tarea: inter
 Archivos esperados: inter.c
-Funciones permitidas: escribir
+Funciones permitidas: write
 -------------------------------------------------- ------------------------------
 
 Escriba un programa que tome dos cadenas y muestre, sin dobles, el
@@ -298,7 +298,7 @@ int	    is_power_of_2(unsigned int n);
 ```
 Nombre de la tarea: last_word
 Archivos esperados: last_word.c
-Funciones permitidas: escribir
+Funciones permitidas: write
 -------------------------------------------------- ---------------------
 
 Escriba un programa que tome una cadena y muestre su última palabra seguida de \n.
@@ -343,4 +343,22 @@ la matriz.
 La función devuelve el número más grande encontrado en la matriz.
 
 Si la matriz está vacía, la función devuelve 0.
+```
+
+## 
+
+```
+Nombre de la tarea: print_bits
+Archivos esperados: print_bits.c
+Funciones permitidas: write
+-------------------------------------------------- ------------------------------
+
+Escribe una función que tome un byte y lo imprima en binario SIN UNA NUEVA LÍNEA
+AL FINAL.
+
+Su función debe declararse de la siguiente manera:
+
+void print_bits (octeto de caracteres sin firmar);
+
+Ejemplo, si pasa 2 a print_bits, imprimirá "00000010"
 ```
