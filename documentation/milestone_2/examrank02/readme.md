@@ -240,5 +240,5 @@ Reproducir exactamente el comportamiento de la función strspn.
 
 La función debe crearse un prototipo de la siguiente manera:
 
-size_t ft_strspn(const char *s, const char *Assignment name	: 
+size_t	ft_strspn(const char *s, const char *accept);
 ```
