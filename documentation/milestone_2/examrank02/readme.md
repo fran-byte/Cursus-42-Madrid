@@ -322,3 +322,25 @@ $> ./last_word "  lorem,ipsum  " | cat -e
 lorem,ipsum$
 $>
 ```
+## max
+
+- Para conseguir el número mayor del array de enteros utilizaremos una variable ```int result;``` donde iremos dejando en una iteración cada  ```tab[i]``` solo en el caso que ```result``` sea menor que ```tab[i]```, es decir solo se irá almacenado en ```result``` el número mayor.
+
+
+```
+Nombre de la tarea: max.
+Archivos esperados: max.c
+Funciones permitidas:
+-------------------------------------------------- ------------------------------
+
+Escribe la siguiente función:
+
+int max(int* tab, unsigned int len);
+
+El primer parámetro es una matriz de int, el segundo es el número de elementos en
+la matriz.
+
+La función devuelve el número más grande encontrado en la matriz.
+
+Si la matriz está vacía, la función devuelve 0.
+```
