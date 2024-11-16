@@ -227,7 +227,7 @@ char *ft_strrev(char *str);
 - Es decir el índice de `s` del primer caracter que difiera de  `accept` si son todos iguales devolverá el indice completo de iterar `s`
 - En esta comparación ft_strspn("Hola mundo", "Hola Mundo"); nos devolverá el indice dode está `m` es decir `s[5]`
 
-- Podemos crear dos funciones una `principal size_t	ft_strspn(const char *s, const char *accept);` donde iteraremos sobre nuestra string `s` hasta encontrar en accept `if (ft_strchr(accept, s[i]) == 0)` ese caracter de `s[i]` para ello llamamos a la función `ft_strchr` que nos de volverá algo diferente a 0 cuando lo encuentre y en ese momento haremos un `break`para salirnos ddel `while` y ese índice es el que devolveremos.
+- Podemos crear dos funciones una `principal size_t	ft_strspn(const char *s, const char *accept);` donde iteraremos sobre nuestra string `s` hasta encontrar en accept `if (ft_strchr(accept, s[i]) == 0)` ese caracter de `s[i]` para ello llamamos a la función `ft_strchr` que nos de volverá algo diferente a 0 cuando lo encuentre y en ese momento haremos un `break`para salirnos del `while` y ese índice es el que devolveremos.
 
 ```
 Nombre de la tarea: ft_strspn
