@@ -347,7 +347,7 @@ Si la matriz está vacía, la función devuelve 0.
 
 ## print_bits
 
-Un **byte** (`char`) tiene 8 bits, por lo que usaremos un contador `int i = 8;` para recorrerlos y una variable `unsigned char bit;` para almacenar cada bit.  
+- Un **byte** (`char`) tiene 8 bits, por lo que usaremos un contador `int i = 8;` para recorrerlos y una variable `unsigned char bit;` para almacenar cada bit.  
 
 - La idea es usar un bucle `while` que decremente `i` de 8 a 0. En cada iteración, aplicamos un desplazamiento de bits (`>>`) para mover el bit que queremos analizar al extremo menos significativo, seguido de una operación AND (`& 1`) para aislarlo.  
 
