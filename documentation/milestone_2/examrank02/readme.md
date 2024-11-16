@@ -290,3 +290,35 @@ Esta función devuelve 1 si el número dado es una potencia de 2; en caso contra
 Su función debe declararse de la siguiente manera:
 int	    is_power_of_2(unsigned int n);
 ```
+
+## last_word
+
+- El c´digo tendrá dos `while (str[i])`  con una condición `if (str[i] == ' ' && str[i + 1] >= 33 && str[i + 1] <= 126)` que viene a ser mientras encientre un ```str[i] == " "``` y ```[i+1]``` sea ascii imprimible alojaremos en ```j = i + 1``` (es decir j será el inicio de la palabra) con esto conseguiremos mientras iteramos sobre ```str[i]``` dejar en `j` el índice dde la última palabra.
+- Y ya teniendo este índice vamos a recorrer j ``` str[j] >= 33 && str[j] <= 127 ``` mientras sea imprimible e iremos imprimiendo.
+```
+Nombre de la tarea: last_word
+Archivos esperados: last_word.c
+Funciones permitidas: escribir
+-------------------------------------------------- ---------------------
+
+Escriba un programa que tome una cadena y muestre su última palabra seguida de \n.
+
+Una palabra es una sección de cadena delimitada por espacios/tabulaciones o por el inicio/final de
+la cuerda.
+
+Si el número de parámetros no es 1 o no hay palabras, muestre una nueva línea.
+
+Ejemplo:
+
+$> ./last_word "FOR PONY" | cat -e
+PONY$
+$> ./last_word "this        ...       is sparta, then again, maybe    not" | cat -e
+not$
+$> ./last_word "   " | cat -e
+$
+$> ./last_word "a" "b" | cat -e
+$
+$> ./last_word "  lorem,ipsum  " | cat -e
+lorem,ipsum$
+$>
+```
