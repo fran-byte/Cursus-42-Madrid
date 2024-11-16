@@ -6,7 +6,7 @@
 
 # Spoiler
 
-- Simplemente haré un repaso a los puntos exenciles de cada código.
+- Simplemente haré un repaso a los puntos esenciles de cada código.
   
 ## alpha_mirror
 - Forma fácil y rápida si son simples caracteres alpha, es introducir un un `char []` en orden inverso:
