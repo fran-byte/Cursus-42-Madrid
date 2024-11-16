@@ -244,8 +244,8 @@ size_t	ft_strspn(const char *s, const char *accept);
 ```
 ## inter
 
-- Para llevar el control de los caracteres impresos y no volver a imprimir un repetido, creamos esta array de chars unsigned char `is_repeat[256] = {0};` y lo inicializamos a 0
-- Ahora crearemos dos `while` anidados el exteriro `while(s1[i] != '\0')` iterará sobre `s1` dentro tendremos una condicional que dará paso a otro while si se cumple `if (s1[i] == s2[j])`
+- Para llevar el control de los caracteres impresos y no volver a imprimir un repetido, creamos esta array de chars unsigned char `is_repeat[256] = {0};` y lo inicializamos a `0`
+- Ahora crearemos dos `while` anidados el exterior `while(s1[i] != '\0')` iterará sobre `s1` dentro tendremos una condicional que dará paso a otro while si se cumple `if (s1[i] == s2[j])` y dentro de este a su vez una condicional más `if (is_repeat[s1[i]] != 1)` que veremos si `is_repeat`fue modificado o no si permanece en `0` es que ese caracter no es repetido y lo imprimiremos y asignaremos a esa posición un `1` para no volver a repetirla `is_repeat[s1[i]] = 1;` 
 
 ```
 Nombre de la tarea: inter
