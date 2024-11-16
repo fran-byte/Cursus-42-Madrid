@@ -242,3 +242,32 @@ La función debe crearse un prototipo de la siguiente manera:
 
 size_t	ft_strspn(const char *s, const char *accept);
 ```
+## inter
+
+- Para llevar el control de los caracteres impresos y no volver a imprimir un repetido, creamos esta array de chars unsigned char `is_repeat[256] = {0};` y lo inicializamos a 0
+- Ahora crearemos dos `while` anidados el exteriro `while(s1[i] != '\0')` iterará sobre `s1` dentro tendremos una condicional que dará paso a otro while si se cumple `if (s1[i] == s2[j])`
+
+```
+Nombre de la tarea: inter
+Archivos esperados: inter.c
+Funciones permitidas: escribir
+-------------------------------------------------- ------------------------------
+
+Escriba un programa que tome dos cadenas y muestre, sin dobles, el
+caracteres que aparecen en ambas cadenas, en el orden en que aparecen en la primera
+cadena.
+
+Se printará seguido por un \n.
+
+Si el número de argumentos no es 2, el programa muestra \n.
+
+Ejemplos:
+$>./inter "padinton" "paqefwtdjetyiytjneytjoeyjnejeyj" | cat -e
+padinto$
+$>./inter ddf6vewg64f gtwthgdwthdwfteewhrtag6h4ffdhsd | cat -e
+df6ewg4$
+$>./inter "rien" "cette phrase ne cache rien" | cat -e
+rien$
+$>./inter | cat -e
+$
+```
