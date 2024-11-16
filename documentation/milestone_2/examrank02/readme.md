@@ -44,7 +44,7 @@ $>
 
 ## camel_to_snake
 
-- Vamos a ir imprimiendo los caracteres si son minúsculas y cuando encuenntre una mayúscula imprima una barra baja y el misma letra en minúsccula.
+- Vamos a ir imprimiendo los caracteres si son minúsculas y cuando encuenntre una mayúscula imprima una barra baja y el misma letra en minúscula.
 
 ```
 Nombre de la tarea: camel_to_snake
@@ -72,7 +72,7 @@ $
 
 ## do_op
 
-- Programa sencillo, donde solo printemamos ya directamente la operación revisando con un condicional el argumento 2 ```printf("%d", (atoi(argv[1]) + atoi(argv[3])));```
+- Programa sencillo, donde solo printeamos ya directamente la operación revisando con un condicional el argumento 2 ```printf("%d", (atoi(argv[1]) + atoi(argv[3])));```
 
 ``` 
 Nombre de la tarea: do_op
@@ -106,7 +106,7 @@ $
 ```
 ## ft_atoi
 
-- Primer ```while``` para avanzar por el ```str++``` entre espacios o tabulacciones
+- Primer ```while``` para avanzar por el ```str++``` entre espacios o tabulacciones.
 - Un ```ìf``` para identificar el flag de signo ```sign = -1```
 - Otro ```ìf``` para el signo positivo avanzamos ```str++```
 - Y ya hacemos la conversión con un ```while``` si son caracteres numéricos aplicamos nuestra fórmula ```result = result * 10 + *str - '0';```
@@ -183,7 +183,7 @@ char *ft_strdup(char *src);
 ## ft_strpbrk
 
 - Si `!s1 || !s2` no existen salimos.
-- Harémos dos `while` anidados el primero `*s1` y un segundo `s2[i]` donde compararemos `if(*s1 == s2[i])` y si son iguales `return (char *) s1;`
+- Haremos dos `while` anidados el primero `*s1` y un segundo `s2[i]` donde compararemos `if(*s1 == s2[i])` y si son iguales `return (char *) s1;`
 
 ```
 Nombre de la asignación: ft_strpbrk
@@ -197,4 +197,26 @@ Reproduzca exactamente el comportamiento de la función strpbrk
 La función debe crearse como prototipo de la siguiente manera:
 
 char *ft_strpbrk(const char *s1, const char *s2);
-``
+```
+
+## ft_strrev
+
+- Creamos un `char temporary;`.
+- Iteramos sobre `str` y conseguimos lu longitud `lenght`
+- Y ya operamos dentro de nuestro `while (++i < length / 2)` desde `[0]` hasta la mitad de la longitud.
+- Almacenamos en `temporary = str[i];`  y a continuacción almacenamos en `str[i] = str[length - 1 - i];` que será la diferencia de la longitud menos el incremento de `[i]` teniendo encuenta siempre un `-1` (ya que `lenght` siempre será uno más que el índice)
+  
+```
+Nombre de la asignación: ft_strrev
+Archivos esperados: ft_strrev.c
+Funciones permitidas:
+--------------------------------------------------------------------------------
+
+Escriba una función que invierta (en el lugar) una cadena.
+
+Debe devolver su parámetro.
+
+Su función debe declararse de la siguiente manera:
+
+char *ft_strrev(char *str);
+```
