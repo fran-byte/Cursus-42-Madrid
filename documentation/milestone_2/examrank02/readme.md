@@ -345,7 +345,9 @@ La función devuelve el número más grande encontrado en la matriz.
 Si la matriz está vacía, la función devuelve 0.
 ```
 
-## 
+## print_bits
+
+- 
 
 ```
 Nombre de la tarea: print_bits
@@ -358,7 +360,7 @@ AL FINAL.
 
 Su función debe declararse de la siguiente manera:
 
-void print_bits (octeto de caracteres sin firmar);
+void print_bits (unsigned char octet);
 
 Ejemplo, si pasa 2 a print_bits, imprimirá "00000010"
 ```
