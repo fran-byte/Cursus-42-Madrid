@@ -42,7 +42,7 @@ $>
 
 ## camel_to_snake
 
-- El objetivo es imprimir los caracteres si son minúsculas y cuando encuenntre una mayúscula imprima una barra baja y el misma letra en minúsccula.
+- Vamos a ir imprimiendo los caracteres si son minúsculas y cuando encuenntre una mayúscula imprima una barra baja y el misma letra en minúsccula.
 
 ```
 Nombre de la tarea: camel_to_snake
@@ -140,4 +140,24 @@ Reproduzca el comportamiento de la función strcmp (man strcmp).
 Su función debe declararse de la siguiente manera:
 
 int ft_strcmp(char *s1, char *s2);
+```
+
+## ft_strcspn
+
+- Vamos a buscar la primera ocurrencia del que se de en ```s[i]``` que esté contenido en ```reject[j]```
+- Es decir ```ft_strcspn("Hola Wolrd", "xxxdxxxx"));``` en este ejemeplo devolverá el indice donde está la primera letra coincidente será el indice```[9]```
+- Creamos 2 ```while``` anidados el externo recorrerá ```s[i] != '\0'``` y el interno ```reject[j] != '\0'```
+
+```
+Nombre de la asignación: ft_strcspn
+Archivos esperados: ft_strcspn.c
+Funciones permitidas: Ninguna
+---------------------------------------------------------------
+
+Reproduzca exactamente el comportamiento de la función strcspn
+(man strcspn).
+
+La función debe crearse como prototipo de la siguiente manera:
+
+size_t ft_strcspn(const char *s, const char *reject);
 ```
