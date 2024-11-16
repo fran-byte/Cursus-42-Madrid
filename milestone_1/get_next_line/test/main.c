@@ -30,10 +30,10 @@ int main()
 	close(fd2);
 
 	printf("BUFFER_SIZE=%d\n", BUFFER_SIZE);
-	int fd3 = open("test1", O_RDONLY);
+	int fd1 = open("test1", O_RDONLY);
 
-	printf("%s\n", get_next_line(fd3));
-	printf("%s\n", get_next_line(fd3));
-	printf("%s\n", get_next_line(fd3));
+	printf("%s\n", get_next_line(fd1));
+	printf("%s\n", get_next_line(fd1));
+	printf("%s\n", get_next_line(fd1));
 	close(fd3);
 }
