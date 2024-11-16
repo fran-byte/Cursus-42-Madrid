@@ -404,7 +404,7 @@ _____________
 ```
 ## snake_to_camel
 
-- Simplemente dentro de un ```while``` cuando localicemos un "_" incrementamos el índice y ```argv[1][i] = argv[1][i] - 32;```
+- Simplemente dentro de un ```while``` cuando localicemos un "_" incrementamos el índice y convertimos a mayúsculas ese caracter ```argv[1][i] = argv[1][i] - 32;```
 
 ```
 Nombre de la tarea: snake_to_camel
