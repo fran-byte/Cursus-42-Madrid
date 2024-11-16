@@ -129,7 +129,7 @@ int ft_atoi(const char *str);
 
 ## ft_strcmp
 
-- Un ```while``` para que entre mientras s1 y s2 tengan contenido y sus indices sean iguales y vamos incrementando  ```while(s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])``` en el momento que dejen de ser iguales hacemos la operación de resultado ```return (s1[i] - s2[i]);```
+- Un ```while``` que entrará s1 y s2 tengan contenido y sus indices sean iguales y vamos incrementando  ```while(s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])``` en el momento que dejen de ser iguales hacemos la operación de resultado ```return (s1[i] - s2[i]);```
 
 ```
 Nombre de la asignación: ft_strcmp
