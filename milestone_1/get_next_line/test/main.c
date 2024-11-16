@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 14:41:56 by frromero          #+#    #+#             */
-/*   Updated: 2024/11/16 15:46:30 by frromero         ###   ########.fr       */
+/*   Updated: 2024/11/16 15:55:53 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,28 +20,34 @@
 
 int main()
 {
+
+	char *line;
+
 	printf("BUFFER_SIZE=%d\n", BUFFER_SIZE);
 
 	int fd2 = open("test2", O_RDONLY);
 
-	printf("%s", get_next_line(fd2));
-	printf("%s", get_next_line(fd2));
-	printf("%s", get_next_line(fd2));
+	printf("%s", line = get_next_line(fd2));
+	printf("%s", line = get_next_line(fd2));
+	printf("%s", line = get_next_line(fd2));
+	free(line);
 	close(fd2);
 
-	printf("BUFFER_SIZE=%d\n", BUFFER_SIZE);
+
 	int fd1 = open("test1", O_RDONLY);
 
-	printf("%s", get_next_line(fd1));
-	printf("%s", get_next_line(fd1));
-	printf("%s", get_next_line(fd1));
+	printf("%s", line = get_next_line(fd1));
+	printf("%s", line = get_next_line(fd1));
+	printf("%s", line = get_next_line(fd1));
+	free(line);
 	close(fd1);
 
-	printf("BUFFER_SIZE=%d\n", BUFFER_SIZE);
+
 	int fd0 = open("test3", O_RDONLY);
 
-	printf("%s", get_next_line(fd0));
-	printf("%s", get_next_line(fd0));
-	printf("%s", get_next_line(fd0));
+	printf("%s", line = get_next_line(fd0));
+	printf("%s", line = get_next_line(fd0));
+	printf("%s", line = get_next_line(fd0));
+	free(line);
 	close(fd0);
 }
