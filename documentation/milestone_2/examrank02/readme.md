@@ -456,7 +456,11 @@ _____________
 ```
 
 ## union
--
+
+- Concatena los caracteres de ambas cadenas, asegurándose de imprimir cada carácter solo una vez, en el orden en que aparece por primera vez.
+- Usamos un arreglo de 256 elementos marcando así los impresos ```unsigned char seen[256] = {0};```
+- Recorre el primer while ```(av[1][i])``` y si ```!seen[(unsigned char)av[1][i]]``` quiere decir que si en ese ídice de seen no fue visto escribios con write y marcamos como visto y hacemos exactamente lo mismo lo mismo para el segundo while ```(av[2][j])```, ```!seen[(unsigned char)av[2][j]])```
+- Si un carácter no ha sido visto previamente, lo imprime y marca como visto. Al marcarlos hay que castearlos a un char ```seen[(unsigned char)av[2][j]] = 1;``` para indexar correctamente el arreglo seen[]
 
 ```
 Nombre de la tarea: union
