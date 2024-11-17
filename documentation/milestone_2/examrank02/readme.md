@@ -3,8 +3,8 @@
 
 
 <p align="center" width="100%"><img src="../examrank02.png" width="102" />
+ <h3 align="center">👉 <a href="#">Spolier Level 2</a> 👈 👉 <a href="#Spolier Level 3">Spolier Level 3</a> 👈< 👉 <a href="#">Spolier Level 4</a> 👈<</h3>
 
-# [Spoiler Level 2]() - - - - [Spoiler Level 3](/Spoiler Level 3)  - - - - [Spoiler Level 4]()
 
 - Simplemente haré un repaso a los puntos esenciles de cada ejercicio.
   
