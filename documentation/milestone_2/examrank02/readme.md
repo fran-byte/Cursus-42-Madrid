@@ -6,7 +6,8 @@
  <h3 align="center">👉 <a href="#">Spolier Level 2</a> 👈 - 👉 <a href="#readme.md#spoiler-level-3">Spolier Level 3</a> 👈 - 👉 <a href="#">Spolier Level 4</a> 👈</h3>
 
 - Simplemente haré un repaso a los puntos esenciles de cada ejercicio.
-  
+# Level 2
+
 ## alpha_mirror
 - Forma fácil y rápida si son simples caracteres alpha, es introducir un un `char []` en orden inverso:
   ``` char [] = "zyxwvutsrqponmlkjihgfedcba"``` y recorrerlo con un índice, es decir, cuando el índice `0` sea `a` su nuevo índice de `0` equivaldrá a `z`
