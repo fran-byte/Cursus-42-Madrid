@@ -8,4 +8,4 @@
 
 <h1 align="center"><a href="milestone_1">Milestone 2</a></h1>
 
-<p align="center" width="100%"><a href="milestone_2/"><img src="../documentation/milestone_2/push_swap.png" width="72" /><a/><a href="milestone_2/push_swap"><img src="../documentation/milestone_2/examrank02.png" width="102" /><a/>
+<p align="center" width="100%"><a href="milestone_2/"><img src="../documentation/milestone_2/push_swap.png" width="72" /><a/><a href="milestone_2/examrank02"><img src="../documentation/milestone_2/examrank02.png" width="102" /><a/>
