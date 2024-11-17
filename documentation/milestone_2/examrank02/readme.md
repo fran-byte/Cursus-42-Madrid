@@ -4,7 +4,7 @@
 
 <p align="center" width="100%"><img src="../examrank02.png" width="102" />
 
-# [Spoiler Level 2]()     [Spoiler Level 3]()
+# [Spoiler Level 2]() - [Spoiler Level 3]()  - [Spoiler Level 4]()
 
 - Simplemente haré un repaso a los puntos esenciles de cada ejercicio.
   
