@@ -19,7 +19,5 @@
 <h1 align="center">Milestone 1</h1>
 <p align="center" width="100%"><a href="milestone_1/born2beroot"><img src="documentation/milestone_1/born2beroot.png" width="72" /><a/><a href="milestone_1/printf/"><img src="documentation/milestone_1/ft_printf.png" width="72" /></a><a href="milestone_1/get_next_line/"><img src="documentation/milestone_1/get_next_line.png" width="72" /></a></p>
 <h1 align="center">Milestone 2</h1>
-<p align="center" width="100%"><a href="#"><img src="documentation/milestone_2/push_swap.png" width="72" /><a/>
+<p align="center" width="100%"><a href="milestone_2/push_swap/"><img src="documentation/milestone_2/push_swap.png" width="72" /><a/>
 
-
-milestone_2/push_swap/
