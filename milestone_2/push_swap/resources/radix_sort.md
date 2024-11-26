@@ -97,8 +97,8 @@ Después: stack_a = [3, 6], stack_b = [9].
 
 # 5. Procesar el bit más significativo (posición 2):
 
-``
-`9 (100): bit 2 es 1 → se queda en stack_a.
+```
+9 (100): bit 2 es 1 → se queda en stack_a.
 
 3 (011): bit 2 es 0 → se mueve a stack_b.
 
