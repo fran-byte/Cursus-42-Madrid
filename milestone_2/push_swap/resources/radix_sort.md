@@ -57,13 +57,15 @@ Supongamos que los números son 3, 6, 9 (en binario: 011, 110, 100):
 
 # 1. Procesar el bit menos significativo (posición 0):
 
-```3 (011): bit 0 es 1 → se queda en stack_a.
+```
+3 (011): bit 0 es 1 → se queda en stack_a.
 
 6 (110): bit 0 es 0 → se mueve a stack_b.
 
 9 (100): bit 0 es 0 → se mueve a stack_b.
 
-Después: stack_a = [3], stack_b = [6, 9].```
+Después: stack_a = [3], stack_b = [6, 9].
+```
 
 
 
@@ -75,13 +77,15 @@ Después: stack_a = [3], stack_b = [6, 9].```
 
 # 3. Procesar el siguiente bit (posición 1):
 
-```3 (011): bit 1 es 1 → se queda en stack_a.
+``
+`3 (011): bit 1 es 1 → se queda en stack_a.
 
 6 (110): bit 1 es 1 → se queda en stack_a.
 
 9 (100): bit 1 es 0 → se mueve a stack_b.
 
-Después: stack_a = [3, 6], stack_b = [9].```
+Después: stack_a = [3, 6], stack_b = [9].
+```
 
 
 
@@ -93,13 +97,15 @@ Después: stack_a = [3, 6], stack_b = [9].```
 
 # 5. Procesar el bit más significativo (posición 2):
 
-```9 (100): bit 2 es 1 → se queda en stack_a.
+``
+`9 (100): bit 2 es 1 → se queda en stack_a.
 
 3 (011): bit 2 es 0 → se mueve a stack_b.
 
 6 (110): bit 2 es 1 → se queda en stack_a.
 
-Después: stack_a = [9, 6], stack_b = [3].```
+Después: stack_a = [9, 6], stack_b = [3].
+```
 
 
 
