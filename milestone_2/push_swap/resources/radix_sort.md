@@ -77,8 +77,8 @@ Después: stack_a = [3], stack_b = [6, 9].
 
 # 3. Procesar el siguiente bit (posición 1):
 
-``
-`3 (011): bit 1 es 1 → se queda en stack_a.
+```
+3 (011): bit 1 es 1 → se queda en stack_a.
 
 6 (110): bit 1 es 1 → se queda en stack_a.
 
