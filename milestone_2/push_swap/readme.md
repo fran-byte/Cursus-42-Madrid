@@ -136,8 +136,7 @@ A   B
 
 1. **Mover el primer número (2) de A a B:**
    - El número **2** es el primero en la pila A y se mueve directamente a B.
-   - **Pila A:** `[7, 5, 4, 3, 6, 1]`  
-   - **Pila B:** `[2]`
+
 
 ```
 A   B
@@ -151,8 +150,6 @@ A   B
 
 2. **Mover el siguiente número (7) de A a B:**
    - El nodo objetivo de **7** en B es **2**, porque **7** es mayor que **2**. Entonces, **7** se coloca encima de **2**.
-   - **Pila A:** `[5, 4, 3, 6, 1]`  
-   - **Pila B:** `[7, 2]`
 
 ```
 A   B
@@ -168,6 +165,15 @@ Ahora, procederemos con el análisis adecuado para mover los **restantes número
 #### Paso 1: Análisis para el número **5** de A a B
 1. **Preparar el nodo objetivo de 5 en B**:
    - El nodo objetivo de **5** en **B** es **2** porque **2** es el número más cercano en **B** que es menor que **5**.
+
+```
+ A   B
+[5]  7
+ 4  [2]
+ 3
+ 6
+ 1
+```
    
 2. **Calcular el costo de inserción**:
    - **A** está en la posición correcta para mover **5**, no se requieren movimientos adicionales en A.
@@ -178,6 +184,15 @@ Ahora, procederemos con el análisis adecuado para mover los **restantes número
 #### Paso 2: Análisis para el número **4** de A a B
 1. **Preparar el nodo objetivo de 4 en B**:
    - El nodo objetivo de **4** en **B** es **2** porque **2** es el número más cercano en **B** que es menor que **4**.
+
+```
+ A   B
+ 5   7
+[4] [2]
+ 3
+ 6
+ 1
+```
    
 2. **Calcular el costo de inserción**:
    - **A** no está en la posición correcta para mover **4** necesitamos un `ra`.
@@ -189,6 +204,15 @@ Ahora, procederemos con el análisis adecuado para mover los **restantes número
 #### Paso 3: Análisis para el número **3** de A a B
 1. **Preparar el nodo objetivo de 3 en B**:
    - El nodo objetivo de **3** es **2** porque **2** es el número más cercano en **B** que es menor que **3**.
+
+```
+ A   B
+ 5   7
+ 4  [2]
+[3]
+ 6
+ 1
+```
    
 2. **Calcular el costo de inserción**:
    - **A** no está en la posición correcta para mover **3** necesitamos un `ra` `ra`.
@@ -199,6 +223,15 @@ Ahora, procederemos con el análisis adecuado para mover los **restantes número
 #### Paso 4: Análisis para el número **6** de A a B
 1. **Preparar el nodo objetivo de 6 en B**:
    - El nodo objetivo de **6** es **2** porque **2** es el número más cercano en **B** que es menor que **6**.
+
+```
+ A   B
+ 5   7
+ 4  [2]
+ 3
+[6]
+ 1
+```
    
 2. **Calcular el costo de inserción**:
    - **A** no está en la posición correcta para mover **6** necesitamos un `rra` `rra`.
@@ -210,6 +243,14 @@ Ahora, procederemos con el análisis adecuado para mover los **restantes número
 #### Paso 5: Análisis para el número **1** de A a B
 1. **Preparar el nodo objetivo de 1 en B**:
    - El nodo objetivo de **1** es el número **7** en **B** ya que **1** no es mayor que 2 es menor que todos los números en **B**.
+```
+ A   B
+ 5  [7]
+ 4   2
+ 3
+ 6
+[1]
+```
    
 2. **Calcular el costo de inserción**:
    - No es necesario hacer ninguna rotación en **A** o **B**. **1** debe ir debajo de **7**, por lo que simplemente lo empujamos a **B**.
