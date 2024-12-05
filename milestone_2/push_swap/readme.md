@@ -149,7 +149,7 @@ A   B
 ```
 
 2. **Mover el siguiente número (7) de A a B:**
-   - El nodo objetivo de **7** en B es **2**, porque **7** es mayor que **2**. Entonces, **7** se coloca encima de **2**.
+   - El número **7** es el segundo número en moverse directamente a B.
 
 ```
 A   B
