@@ -191,7 +191,7 @@ Ahora, procederemos con el análisis adecuado para mover los **restantes número
 ```
    
 2. **Calcular el costo de inserción**:
-   - **A** no está en la posición correcta para mover **4** necesitamos un `ra`.
+   - **A** no está en la posición correcta para mover **4** necesitamos un cambio `ra`.
    - En **B**, se necesita hacer un cambio porque **4** debe colocarse encima de **2** se hará `rb`.
 
    **Costo de inserción** = 2 (`ra` `rb`)
@@ -211,7 +211,7 @@ Ahora, procederemos con el análisis adecuado para mover los **restantes número
 ```
    
 2. **Calcular el costo de inserción**:
-   - **A** no está en la posición correcta para mover **3** necesitamos un `ra` `ra`.
+   - **A** no está en la posición correcta para mover **3** necesitamos dos cambios `ra` `ra`.
    - En **B**, se necesita hacer un cambio porque **3** debe colocarse encima de **2** se hará `rb`.
 
    **Costo de inserción** = 3 (`ra` `ra` `rb`).
@@ -230,7 +230,7 @@ Ahora, procederemos con el análisis adecuado para mover los **restantes número
 ```
    
 2. **Calcular el costo de inserción**:
-   - **A** no está en la posición correcta para mover **6** necesitamos un `rra` `rra`.
+   - **A** no está en la posición correcta para mover **6** necesitamos dos cambios `rra` `rra`.
    - En **B**, se necesita hacer un cambio porque **6** debe colocarse encima de **2** se hará `rb`.
    
    **Costo de inserción** = 3 (`rra` `rra` `rb`).
@@ -249,15 +249,15 @@ Ahora, procederemos con el análisis adecuado para mover los **restantes número
 ```
    
 2. **Calcular el costo de inserción**:
-   - No es necesario hacer ninguna rotación en **A** o **B**. **1** debe ir debajo de **7**, por lo que simplemente lo empujamos a **B**.
-   
-   **Costo de inserción** = 0 (sin rotaciones).
+   - **A** no está en la posición correcta para mover **1** necesitamos un cambio `rra`.
+    - En **B**, se no se necesita hacer cambios porque **1** puede colocarse encima de **7**.
+      
+   **Costo de inserción** = 1 (`rra`).
 
 
 
 
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
----
+
 
 ### **Resultado Final:**
 La pila **A** está ahora ordenada en orden ascendente:
