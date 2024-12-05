@@ -259,8 +259,16 @@ Ahora, procederemos con el análisis adecuado para mover los **restantes número
 
  - **Costo de inserción** = 1 (`rb`) para el número **5**
  - **Costo de inserción** = 1 (`rra`) para el número **1**
- - Al ser iguales, lo tomamos por orden y el primero en analizar fue el número **5**
+ - Al ser iguales, tomamos por orden y el primero en analizar fue el número **5**
 
+```
+ A   B         A   B (rb)    (pb) A   B
+[5]  7        [5] [2]             4  [5]
+ 4  [2]        4   7              3  [2]
+ 3             3                  6
+ 6             6                  1
+ 1             1
+```
 
 
 ### **Resultado Final:**
