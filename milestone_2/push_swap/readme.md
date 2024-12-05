@@ -116,7 +116,7 @@
 ```
 
 ```
-A   B
+A   B   (TOP)
 2   
 7
 5
@@ -125,10 +125,6 @@ A   B
 6
 1
 ```
-
-- El número **1** está en el fondo de la pila.
-- El número **2** está en la parte superior (top) de la pila.
-
 
 ---
 
