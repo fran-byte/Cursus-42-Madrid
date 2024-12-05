@@ -112,104 +112,146 @@
 
 ### **Pila A Inicial:**
 ```
-[1, 6, 3, 4, 5, 7, 2]
+./push_swap 1 6 3 4 5 7 2
 ```
+
+```
+A   B
+2   
+7
+5
+4
+3
+6
+1
+```
+
 - El número **1** está en el fondo de la pila.
 - El número **2** está en la parte superior (top) de la pila.
+
 
 ---
 
 ### **Fase 1: Mover los números de A a B hasta que en A queden solo tres números**
 
-1. **Mover el primer número (1) de A a B:**
-   - No es necesario hacer ningún cálculo, simplemente empujamos el número **1** de A a B.
-   - **Pila A:** `[6, 3, 4, 5, 7, 2]`  
-   - **Pila B:** `[1]` (Orden descendente en B)
+1. **Mover el primer número (2) de A a B:**
+   - El número **2** es el primero en la pila A y se mueve directamente a B.
+   - **Pila A:** `[7, 5, 4, 3, 6, 1]`  
+   - **Pila B:** `[2]` (Orden descendente en B)
 
-2. **Mover el siguiente número (6) de A a B:**
-   - Como **6** es el siguiente número más grande, se empuja directamente a B.
-   - **Pila A:** `[3, 4, 5, 7, 2]`  
-   - **Pila B:** `[6, 1]` (Orden descendente en B)
+```
+A   B
+7   2  
+5
+4
+3
+6
+1
+```
 
-3. **Mover el siguiente número (3) de A a B:**
-   - El nodo objetivo de **3** en B es **6**, ya que **3** es menor que **6** pero mayor que **1**. Entonces **3** se coloca sobre **6**.
-   - **Pila A:** `[4, 5, 7, 2]`  
-   - **Pila B:** `[6, 3, 1]` (Orden descendente en B)
+2. **Mover el siguiente número (7) de A a B:**
+   - El nodo objetivo de **7** en B es **2**, porque **7** es mayor que **2**. Entonces, **7** se coloca encima de **2**.
+   - **Pila A:** `[5, 4, 3, 6, 1]`  
+   - **Pila B:** `[7, 2]` (Orden descendente en B)
+
+```
+A   B
+5   7
+4   2
+3
+6
+1
+```
+
+3. **Mover el siguiente número (5) de A a B:**
+   - El nodo objetivo de **5** en B es **7**, ya que **5** es menor que **7** pero mayor que **2**. Entonces, **5** se coloca sobre **7**.
+   - **Pila A:** `[4, 3, 6, 1]`  
+   - **Pila B:** `[7, 5, 2]` (Orden descendente en B)
+  
+```
+A   B
+5   7
+4   2
+3
+6
+1
+```
 
 4. **Mover el siguiente número (4) de A a B:**
-   - El nodo objetivo de **4** es **5**, ya que **4** es menor que **5** pero mayor que **3**. Esto requiere que se realice una rotación inversa en B para mover **5** a la parte superior.
-   - **Pila A:** `[5, 7, 2]`  
-   - **Pila B:** `[6, 5, 4, 3, 1]` (Orden descendente en B)
+   - El nodo objetivo de **4** en B es **5**, ya que **4** es menor que **5** pero mayor que **2**. Entonces, **4** se coloca sobre **5**.
+   - **Pila A:** `[3, 6, 1]`  
+   - **Pila B:** `[7, 5, 4, 2]` (Orden descendente en B)
 
-5. **Mover el siguiente número (5) de A a B:**
-   - El nodo objetivo de **5** es **6**, ya que **5** es menor que **6** pero mayor que **3**. Se empuja **5** sobre **6**.
-   - **Pila A:** `[7, 2]`  
-   - **Pila B:** `[6, 5, 4, 3, 1]` (Orden descendente en B)
+5. **Mover el siguiente número (3) de A a B:**
+   - El nodo objetivo de **3** en B es **4**, ya que **3** es menor que **4** pero mayor que **2**. Entonces, **3** se coloca sobre **4**.
+   - **Pila A:** `[6, 1]`  
+   - **Pila B:** `[7, 5, 4, 3, 2]` (Orden descendente en B)
 
-6. **Mover el siguiente número (7) de A a B:**
-   - El nodo objetivo de **7** es **6**, ya que **7** es mayor que todos los demás en B. Por lo tanto, **7** se empuja directamente sobre **6**.
-   - **Pila A:** `[2]`  
-   - **Pila B:** `[7, 6, 5, 4, 3, 1]` (Orden descendente en B)
+6. **Mover el siguiente número (6) de A a B:**
+   - El nodo objetivo de **6** en B es **7**, porque **6** es menor que **7** pero mayor que todos los demás en B. Entonces, **6** se coloca sobre **7**.
+   - **Pila A:** `[1]`  
+   - **Pila B:** `[7, 6, 5, 4, 3, 2]` (Orden descendente en B)
 
-7. **Mover el siguiente número (2) de A a B:**
-   - El nodo objetivo de **2** es **3**, ya que **2** es menor que **3** pero mayor que **1**. Se empuja **2** sobre **3**.
+7. **Mover el siguiente número (1) de A a B:**
+   - El nodo objetivo de **1** en B es el número más grande en B (que es **7**). Como **1** es menor que todos los demás, se coloca sobre el número más grande.
    - **Pila A:** `[]` (vacía)  
    - **Pila B:** `[7, 6, 5, 4, 3, 2, 1]` (Orden descendente en B)
 
 ---
 
 ### **Fase 2: Ordenar los tres números restantes en A**
-En este caso, la fase de ordenar los tres números en A no es necesaria, ya que A está vacío. Así que pasamos directamente a la siguiente fase.
+Dado que la **pila A está vacía**, esta fase no es necesaria.
 
 ---
 
 ### **Fase 3: Mover los números de B a A**
 
-Ahora, vamos a devolver los números de B a A, manteniendo el orden ascendente en A. Recordemos que en B, los números están en orden descendente.
+Ahora vamos a mover los números de **B** a **A**, manteniendo el orden ascendente en **A**. Recordemos que **B** está en orden descendente.
 
 1. **Mover 7 desde B a A:**
-   - El nodo objetivo de **7** en A es el número **2**, ya que **7** es mayor que todos los demás números en A.
+   - El nodo objetivo de **7** en A es el número más pequeño en A (que aún no está allí). Como no hay números en A, simplemente empujamos **7**.
    - **Pila A:** `[7]`  
    - **Pila B:** `[6, 5, 4, 3, 2, 1]`
 
 2. **Mover 6 desde B a A:**
-   - El nodo objetivo de **6** en A es **7**, ya que **6** es menor que **7** pero mayor que los demás.
+   - El nodo objetivo de **6** en A es **7**, porque **6** es menor que **7** pero mayor que los demás. Se coloca **6** sobre **7**.
    - **Pila A:** `[6, 7]`  
    - **Pila B:** `[5, 4, 3, 2, 1]`
 
 3. **Mover 5 desde B a A:**
-   - El nodo objetivo de **5** en A es **6**, porque **5** es menor que **6** pero mayor que los demás.
+   - El nodo objetivo de **5** en A es **6**, porque **5** es menor que **6** pero mayor que los demás. Se coloca **5** sobre **6**.
    - **Pila A:** `[5, 6, 7]`  
    - **Pila B:** `[4, 3, 2, 1]`
 
 4. **Mover 4 desde B a A:**
-   - El nodo objetivo de **4** en A es **5**, ya que **4** es menor que **5** pero mayor que **3**.
+   - El nodo objetivo de **4** en A es **5**, porque **4** es menor que **5** pero mayor que los demás. Se coloca **4** sobre **5**.
    - **Pila A:** `[4, 5, 6, 7]`  
    - **Pila B:** `[3, 2, 1]`
 
 5. **Mover 3 desde B a A:**
-   - El nodo objetivo de **3** en A es **4**, ya que **3** es menor que **4** pero mayor que **2**.
+   - El nodo objetivo de **3** en A es **4**, porque **3** es menor que **4** pero mayor que los demás. Se coloca **3** sobre **4**.
    - **Pila A:** `[3, 4, 5, 6, 7]`  
    - **Pila B:** `[2, 1]`
 
 6. **Mover 2 desde B a A:**
-   - El nodo objetivo de **2** en A es **3**, ya que **2** es menor que **3** pero mayor que **1**.
+   - El nodo objetivo de **2** en A es **3**, porque **2** es menor que **3** pero mayor que **1**. Se coloca **2** sobre **3**.
    - **Pila A:** `[2, 3, 4, 5, 6, 7]`  
    - **Pila B:** `[1]`
 
 7. **Mover 1 desde B a A:**
-   - El nodo objetivo de **1** en A es **2**, ya que **1** es el número más pequeño y debe ir al fondo de la pila.
+   - El nodo objetivo de **1** en A es el número más pequeño, que debe ir al fondo de la pila. Se coloca **1** en la parte inferior de A.
    - **Pila A:** `[1, 2, 3, 4, 5, 6, 7]`  
    - **Pila B:** `[]` (vacía)
 
 ---
 
 ### **Resultado Final:**
-La pila A está ordenada en orden ascendente:
+La pila **A** está ordenada en orden ascendente:
 
 ```
 [1, 2, 3, 4, 5, 6, 7]
 ```
+
 
 ---
 ## Verificación:
