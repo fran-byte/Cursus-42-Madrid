@@ -175,7 +175,7 @@ Ahora, procederemos con el análisis adecuado para mover los **restantes número
    - **A** está en la posición correcta para mover **5**, no se requieren movimientos adicionales en A.
    - En **B**, se necesita hacer un cambio porque **5** debe colocarse encima de **2** se hará `rb`. 
    
-   **Costo de inserción** = 1 (rb)
+   **Costo de inserción** = 1 (`rb`)
 
 #### Paso 2: Análisis para el número **4** de A a B
 1. **Preparar el nodo objetivo de 4 en B**:
@@ -255,7 +255,11 @@ Ahora, procederemos con el análisis adecuado para mover los **restantes número
    **Costo de inserción** = 1 (`rra`).
 
 
+## Los costes de inserción mas baratos son:
 
+ - **Costo de inserción** = 1 (`rb`) para el número **5**
+ - **Costo de inserción** = 1 (`rra`) para el número **1**
+ - Al ser iguales, lo tomamos por orden y el primero en analizar fue el número **5**
 
 
 
