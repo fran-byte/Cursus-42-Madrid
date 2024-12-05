@@ -307,8 +307,15 @@ Ahora, procederemos con el análisis adecuado para mover los **restantes número
  6   7
      5
 ```
+# **Fase 3: Pasar números de B a A**
+- Recordamos:
+- Cada número en **B** necesita un "nodo objetivo" en **A**, que es:
+     - El número más grande en **A** que sea **menor** que el número que estás empujando.
+     - Si no hay ningún número menor en **A**, el nodo objetivo será el número más pequeño en **A**.
+     - 
+## Volvemos a repetir el proceso de nodo objetivo / Coste en sentido contrario:
 
-
+---
 
 ### **Resultado Final:**
 La pila **A** está ahora ordenada en orden ascendente:
@@ -319,7 +326,7 @@ La pila **A** está ahora ordenada en orden ascendente:
 
 ---
 
-Este es el proceso corregido y detallado, teniendo en cuenta la preparación del **nodo objetivo**, el **cálculo del costo de inserción**, y la **selección del nodo más barato** para los números restantes en **A**. ¡Gracias por tu paciencia! Si tienes más preguntas o dudas, no dudes en preguntar.
+
 
 ---
 ## Verificación:
