@@ -269,6 +269,33 @@ Ahora, procederemos con el análisis adecuado para mover los **restantes número
  6                  6                  1
  1                  1
 ```
+## Volvemos a repetir el proceso de nodo objetivo / Coste:
+
+```
+ A   B
+ 4   5
+ 3   2
+ 6   7
+ 1
+```
+- En este caso el mas barato es el número **4**
+
+```
+ A   B              A   B              A   B
+[4]  5             [4] [2]             3  [4]
+ 3  [2]   (rb) ->   3   7    (pb) ->   6  [2]
+ 6   7              6   5              1   7
+ 1                                         5
+```
+- Ya que **4** es mayor que **2** y menor que el resto de **B**
+```
+ A   B
+[4]  5
+ 3  [2]
+ 6   7
+ 1
+```
+
 
 
 ### **Resultado Final:**
