@@ -262,12 +262,12 @@ Ahora, procederemos con el análisis adecuado para mover los **restantes número
  - Al ser iguales, tomamos por orden y el primero en analizar fue el número **5**
 
 ```
- A   B         A   B (rb)    (pb) A   B
-[5]  7        [5] [2]             4  [5]
- 4  [2]        4   7              3  [2]
- 3             3                  6   7
- 6             6                  1
- 1             1
+ A   B              A   B              A   B
+[5]  7             [5] [2]             4  [5]
+ 4  [2]             4   7              3  [2]
+ 3        (rb) ->   3        (pb) ->   6   7
+ 6                  6                  1
+ 1                  1
 ```
 
 
