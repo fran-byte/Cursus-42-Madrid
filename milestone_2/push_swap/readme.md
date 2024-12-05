@@ -265,7 +265,7 @@ Ahora, procederemos con el análisis adecuado para mover los **restantes número
  A   B         A   B (rb)    (pb) A   B
 [5]  7        [5] [2]             4  [5]
  4  [2]        4   7              3  [2]
- 3             3                  6
+ 3             3                  6   7
  6             6                  1
  1             1
 ```
