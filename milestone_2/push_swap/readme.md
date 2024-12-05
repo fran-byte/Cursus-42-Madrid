@@ -44,7 +44,7 @@
 
 - Tiene dos fases principales: 
 
-1. **Mover números del stack A al stack B** hasta que en A queden solo tres números.
+1. **Mover números del stack A al stack B** hasta que en A queden solo tres números, que ordenaremos facilmente en A.
 2. **Mover números de regreso desde el stack B al stack A**, asegurando que queden correctamente ordenados en A.
 
 ### **Fase 1: Pasar números de A a B**
