@@ -152,7 +152,7 @@ A   B
 2. **Mover el siguiente número (7) de A a B:**
    - El nodo objetivo de **7** en B es **2**, porque **7** es mayor que **2**. Entonces, **7** se coloca encima de **2**.
    - **Pila A:** `[5, 4, 3, 6, 1]`  
-   - **Pila B:** `[7, 2]` (Orden descendente en B)
+   - **Pila B:** `[7, 2]`
 
 ```
 A   B
@@ -165,124 +165,61 @@ A   B
  
 Ahora, procederemos con el análisis adecuado para mover los **restantes números de A** a B, siguiendo los pasos del algoritmo:
 
-#### Paso 1: Mover el número **5** de A a B
+#### Paso 1: Análisis para el número **5** de A a B
 1. **Preparar el nodo objetivo de 5 en B**:
    - El nodo objetivo de **5** en **B** es **2** porque **2** es el número más cercano en **B** que es menor que **5**.
    
 2. **Calcular el costo de inserción**:
    - **A** está en la posición correcta para mover **5**, no se requieren movimientos adicionales en A.
-   - En **B**, se necesita hacer un cambio porque **5** debe colocarse encima de **2** se hará `sa`. 
+   - En **B**, se necesita hacer un cambio porque **5** debe colocarse encima de **2** se hará `rb`. 
    
-   **Costo de inserción** = 1 
+   **Costo de inserción** = 1 (rb)
 
-3. **Resultado**:
-   - **Pila A:** `[4, 3, 6, 1]`
-   - **Pila B:** `[5, 7, 2]` (Orden descendente en B)
-
-#### Paso 2: Mover el número **4** de A a B
+#### Paso 2: Análisis para el número **4** de A a B
 1. **Preparar el nodo objetivo de 4 en B**:
-   - El nodo objetivo de **4** es **5** (ya que **4** es menor que **5** pero mayor que **2**).
+   - El nodo objetivo de **4** en **B** es **2** porque **2** es el número más cercano en **B** que es menor que **4**.
    
 2. **Calcular el costo de inserción**:
-   - **A** está en la posición correcta para mover **4**.
-   - En **B**, **4** debe ir encima de **5**, sin rotación.
+   - **A** no está en la posición correcta para mover **4** necesitamos un `ra`.
+   - En **B**, se necesita hacer un cambio porque **4** debe colocarse encima de **2** se hará `rb`.
 
-   **Costo de inserción** = 0 (sin rotaciones).
+   **Costo de inserción** = 2 (`ra` `rb`)
 
-3. **Resultado**:
-   - **Pila A:** `[3, 6, 1]`
-   - **Pila B:** `[4, 5, 7, 2]` (Orden descendente en B)
 
-#### Paso 3: Mover el número **3** de A a B
+#### Paso 3: Análisis para el número **3** de A a B
 1. **Preparar el nodo objetivo de 3 en B**:
-   - El nodo objetivo de **3** es **4** (porque **3** es menor que **4** pero mayor que **2**).
+   - El nodo objetivo de **3** es **2** porque **2** es el número más cercano en **B** que es menor que **3**.
    
 2. **Calcular el costo de inserción**:
-   - **A** está en la posición correcta para mover **3**.
-   - En **B**, **3** debe ir encima de **4**, sin rotación.
+   - **A** no está en la posición correcta para mover **3** necesitamos un `ra` `ra`.
+   - En **B**, se necesita hacer un cambio porque **3** debe colocarse encima de **2** se hará `rb`.
 
-   **Costo de inserción** = 0 (sin rotaciones).
+   **Costo de inserción** = 3 (`ra` `ra` `rb`).
 
-3. **Resultado**:
-   - **Pila A:** `[6, 1]`
-   - **Pila B:** `[3, 4, 5, 7, 2]` (Orden descendente en B)
-
-#### Paso 4: Mover el número **6** de A a B
+#### Paso 4: Análisis para el número **6** de A a B
 1. **Preparar el nodo objetivo de 6 en B**:
-   - El nodo objetivo de **6** es **7** (porque **6** es menor que **7** pero mayor que los demás).
+   - El nodo objetivo de **6** es **2** porque **2** es el número más cercano en **B** que es menor que **6**.
    
 2. **Calcular el costo de inserción**:
-   - **A** está en la posición correcta para mover **6**.
-   - En **B**, **6** debe ir encima de **7**, sin necesidad de rotación.
+   - **A** no está en la posición correcta para mover **6** necesitamos un `rra` `rra`.
+   - En **B**, se necesita hacer un cambio porque **6** debe colocarse encima de **2** se hará `rb`.
    
-   **Costo de inserción** = 0 (sin rotaciones).
+   **Costo de inserción** = 3 (`rra` `rra` `rb`).
 
-3. **Resultado**:
-   - **Pila A:** `[1]`
-   - **Pila B:** `[6, 3, 4, 5, 7, 2]` (Orden descendente en B)
 
-#### Paso 5: Mover el número **1** de A a B
+#### Paso 5: Análisis para el número **1** de A a B
 1. **Preparar el nodo objetivo de 1 en B**:
-   - El nodo objetivo de **1** es el número **7** en **B** ya que **1** es menor que todos los números en **B**.
+   - El nodo objetivo de **1** es el número **7** en **B** ya que **1** no es mayor que 2 es menor que todos los números en **B**.
    
 2. **Calcular el costo de inserción**:
    - No es necesario hacer ninguna rotación en **A** o **B**. **1** debe ir debajo de **7**, por lo que simplemente lo empujamos a **B**.
    
    **Costo de inserción** = 0 (sin rotaciones).
 
-3. **Resultado**:
-   - **Pila A:** `[]` (vacía)
-   - **Pila B:** `[7, 6, 5, 4, 3, 2, 1]` (Orden descendente en B)
 
----
 
-### **Fase 2: Ordenar los tres números restantes en A**
 
-En este caso, **A está vacía**, por lo que esta fase no es necesaria.
-
----
-
-### **Fase 3: Mover los números de B a A**
-
-Ahora que hemos movido todos los números a **B**, necesitamos devolverlos a **A** en orden ascendente. Para ello, aplicamos el proceso de mover los números de **B** a **A**, asegurando que **A** se mantenga en orden ascendente.
-
-1. **Mover 7 desde B a A**:
-   - **7** es el nodo objetivo para **A** porque es el número más grande de **A**. 
-   - **Pila A:** `[7]`
-   - **Pila B:** `[6, 5, 4, 3, 2, 1]`
-
-2. **Mover 6 desde B a A**:
-   - El nodo objetivo de **6** en **A** es **7**, ya que **6** es menor que **7** pero mayor que los demás.
-   - **Pila A:** `[6, 7]`
-   - **Pila B:** `[5, 4, 3, 2, 1]`
-
-3. **Mover 5 desde B a A**:
-   - El nodo objetivo de **5** en **A** es **6**, ya que **5** es menor que **6** pero mayor que los demás.
-   - **Pila A:** `[5, 6, 7]`
-   - **Pila B:** `[4, 3, 2, 1]`
-
-4. **Mover 4 desde B a A**:
-   - El nodo objetivo de **4** en **A** es **5**, ya que **4** es menor que **5** pero mayor que los demás.
-   - **Pila A:** `[4, 5, 6, 7]`
-   - **Pila B:** `[3, 2, 1]`
-
-5. **Mover 3 desde B a A**:
-   - El nodo objetivo de **3** en **A** es **4**, ya que **3** es menor que **4** pero mayor que los demás.
-   - **Pila A:** `[3, 4, 5, 6, 7]`
-   - **Pila B:** `[2, 1]`
-
-6. **Mover 2 desde B a A**:
-   - El nodo objetivo de **2** en **A** es **3**, ya que **2** es menor que **3** pero mayor que **1**.
-   - **Pila A:** `[2, 3, 4, 5, 6, 7]`
-   - **Pila B:** `[1]`
-
-7. **Mover 1 desde B a A**:
-   - **1** es el número más pequeño y debe ir
-
- al fondo de la pila **A**.
-   - **Pila A:** `[1, 2, 3, 4, 5, 6, 7]`
-   - **Pila B:** `[]` (vacía)
-
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ---
 
 ### **Resultado Final:**
