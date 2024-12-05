@@ -127,8 +127,7 @@ A   B   (TOP)
 ```
 
 ---
-
-### **Fase 1: Mover los números de A a B hasta que en A queden solo tres números**
+# **Fase 1: Mover los números de A a B hasta que en A queden solo tres números**
 
 1. **Mover el primer número (2) de A a B:**
    - El número **2** es el primero en la pila A y se mueve directamente a B.
@@ -255,7 +254,7 @@ Ahora, procederemos con el análisis adecuado para mover los **restantes número
    **Costo de inserción** = 1 (`rra`).
 
 
-## Los costes de inserción mas baratos son:
+### Los costes de inserción mas baratos son:
 
  - **Costo de inserción** = 1 (`rb`) para el número **5**
  - **Costo de inserción** = 1 (`rra`) para el número **1**
@@ -285,15 +284,28 @@ Ahora, procederemos con el análisis adecuado para mover los **restantes número
 [4]  5             [4] [2]             3  [4]
  3  [2]   (rb) ->   3   7    (pb) ->   6  [2]
  6   7              6   5              1   7
- 1                                         5
+ 1                  1                      5
 ```
 - Ya que **4** es mayor que **2** y menor que el resto de **B**
 ```
  A   B
-[4]  5
- 3  [2]
+ 3   4
+ 6   2
+ 1   7
+     5
+```
+# **Fase 2: Ordenar los tres números restantes en A**
+1. **Algoritmo de tres números:**
+   - Si los números en A no están en orden ascendente:
+     - Encuentra el número más grande y colócalo en la **parte inferior** usando rotaciones.
+     - Intercambia los dos números superiores si es necesario para que queden en orden ascendente.
+
+```
+ A   B
+ 1   4
+ 3   2
  6   7
- 1
+     5
 ```
 
 
