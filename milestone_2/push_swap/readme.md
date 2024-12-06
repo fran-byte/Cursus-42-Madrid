@@ -257,6 +257,10 @@ A   B
  
 Ahora, procederemos con el análisis adecuado para mover los **restantes números de A** a B, siguiendo los pasos del algoritmo:
 
+- Cada número en **A** necesita un "nodo objetivo" en **B**, que es:
+     - El número más grande en **B** que sea **mayor** que el número que estás empujando de B, es decir, este "nodo objetivo" es un nodo que es más pequeño que el nodo en A, pero debe ser el más grande de los más pequeños.
+     - Si no hay ningún número menor en **B** que el que vamos a empujar, el nodo objetivo pasará a ser el número más grande en **A**.
+     - 
 #### Paso 1: Análisis para el número **5** de A a B
 1. **Preparar el nodo objetivo de 5 en B**:
    - El nodo objetivo de **5** en **B** es **2** porque **2** es el número más cercano en **B** que es menor que **5**.
