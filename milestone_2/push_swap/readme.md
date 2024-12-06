@@ -92,15 +92,13 @@ La función `ft_split` se encuentra en un archivo separado debido a su complejid
 ### `init_stack_one_arg` / `init_stack`
 - Depende si entra como un solo argumento `init_stack_one_arg` o multiples argumentos `init_stack`
 
-Inicializa la pila, creando la pila (es decir, una lista enlazada en el heap). Básicamente, este es el creador de la pila. 
-La función se asegura de evitar repeticiones, manejar desbordamientos de enteros y gestionar las conexiones entre nodos. Al final, se libera cualquier memoria innecesaria para evitar pérdidas.
+- Inicializa la pila, creando la pila (es decir, una lista enlazada en el heap). Básicamente, este es el creador de la pila.
+  
+- La función se asegura de evitar repeticiones, manejar desbordamientos de enteros y gestionar las conexiones entre nodos. Al final, se libera cualquier memoria innecesaria para evitar pérdidas.
 
-Ahora tenemos una lista enlazada correctamente configurada en el heap, lista para ser utilizada en el algoritmo. ¿Qué opinas? Con la animación es bastante directo.
+- Ahora tenemos una lista enlazada correctamente configurada en el heap, lista para ser utilizada en el algoritmo.
 
-Esto resume cómo funciona `init_stack_one_arg` / `init_stack` y las herramientas relacionadas. Ahora estamos listos para implementar comandos como `swap`, `rotate`, y `push` para trabajar con nuestra pila bajo las restricciones definidas.
-
-
-Estamos en una fase en la que debemos agregar funcionalidades a nuestra pila: permitir que los nodos se muevan, específicamente para realizar las operaciones de intercambio, rotación, rotación inversa y empuje.
+- Estamos en una fase en la que debemos agregar funcionalidades a nuestra pila: permitir que los nodos se muevan, específicamente para realizar las operaciones de intercambio, rotación, rotación inversa y empuje.
 
 ## Instrucciones Básicas:
 ## sa (swap a):
