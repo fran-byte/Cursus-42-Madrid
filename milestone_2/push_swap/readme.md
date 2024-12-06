@@ -26,11 +26,11 @@ Para probar si el algoritmo funciona, utilizamos un **tester online**. Por ejemp
 
 Los valores de salida, como un **máximo de 665 instrucciones** y un promedio de 606, indican que el algoritmo está funcionando correctamente.  
 
-Con los comandos que puedo usar, necesito todas estas instrucciones en promedio. Con este algoritmo, **606 instrucciones**. Ahora intentemos con **500 números**, pero lo más importante para mí son los **resultados** 
+Lo más importante son los **resultados** 
 
-Para **500 números**, obtengo en promedio **5,510 instrucciones**. Básicamente, funciona. Ese es el punto principal. Ahora vamos a practicar un poco con el código. Como puedes ver, puedo ejecutar `push_swap` con valores aleatorios. Por ejemplo: **2, 1, 34**, y como salida obtengo **sa**, que significa "intercambiar".  
+Para **500 números**, se pude obtener un promedio **5,510 instrucciones**. Básicamente, funciona. Ese es el punto principal. Puedo ejecutar `push_swap` con valores aleatorios. Por ejemplo: **2, 1, 34**, y como salida obtengo **sa**, que significa "intercambiar".  
 
-También puedo llamar a este algoritmo con muchos números. Por ejemplo, usando valores como **-42**, y como puedes ver, obtengo una lista más larga de comandos. Es importante notar que puedo pasar como entrada una **serie de números entre comillas**. Aunque parecen iguales, para la línea de comandos no son lo mismo: un caso son **verdaderos argumentos separados**, y el otro es una sola cadena de texto.  
+Es importante notar que puedo pasar como entrada una **serie de números entre comillas**. Aunque parecen iguales, para la línea de comandos no son lo mismo: un caso son **verdaderos argumentos separados**, y el otro es una sola cadena de texto.  
 
 El algoritmo no funcionará si hay errores en la entrada, como escribir un valor no numérico. Esto forma parte de la **fase de control**.  
 
