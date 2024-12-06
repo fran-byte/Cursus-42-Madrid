@@ -418,5 +418,66 @@ Ahora, procederemos con el análisis adecuado para mover los **restantes número
      - Si no hay ningún número mayor en **A** que el que vamos a empujar, el nodo objetivo pasará a ser el número más pequeño en **A**.
      - Aplicando siempre la regla de costes de movimientos, se pasará el número mas barato.
        
+- En este caso el mas barato es el número **4**
+```
+ A   B              A  B             A  B
+ 1  [4]            [6][4]           [4] 2
+ 3   2   (rra)->    1  2    (pa)->  [6] 7
+[6]  7              3  7             1  5
+     5                 5             3
+```
+# Volvemos a repetir el proceso de nodo objetivo / Coste:
 
+- En este caso el mas barato es el número **2**
 
+```
+ A  B              A  B             A  B
+ 4 [2]            [3][2]           [2] 7
+ 6  7   (rra)->    4  7    (pa)->  [3] 5
+ 1  5              6  5             4
+[3]                1                6
+                                    1
+```
+
+# Volvemos a repetir el proceso de nodo objetivo / Coste:
+
+- En este caso el mas barato es el número **7**
+
+```
+ A  B             A  B            A  B
+ 2 [7]           [1][7]          [7] 5
+ 3  5             2  5           [1]
+ 4     (rra)->    3      (pa)->   2
+ 6                4               3
+[1]               6               4
+                                  6
+```
+- Ya solo nos queda el nímero **5**
+
+```
+ A  B            A  B           A  B
+ 7 [5]          [6][5]         [5]
+ 1               7             [6]
+ 2               1              7
+ 3     (rra)->   2    (pa)->    1
+ 4               3              2
+[6]              4              3
+                                4
+                                 
+```
+- Y por ultimo ya solo nos queda buscar el numero menor si está en la parte superior hacemos `ra`hasta ordenarlo y so no 'rra'.
+  en nuestro caso `ra` `ra``ra` :
+
+```
+ A  B                        A  B
+[5]                          1
+[6]                          2
+ 7                           3
+ 1    (ra)->(ra)->(ra)->     4
+ 2                           5
+ 3                           6
+ 4                           7
+
+```
+
+  
