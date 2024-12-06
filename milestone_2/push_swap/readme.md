@@ -452,7 +452,7 @@ Ahora, procederemos con el análisis adecuado para mover los **restantes número
 [1]               6               4
                                   6
 ```
-- Ya solo nos queda el nímero **5**
+- Ya solo nos queda el número **5**
 
 ```
  A  B            A  B           A  B
@@ -465,8 +465,9 @@ Ahora, procederemos con el análisis adecuado para mover los **restantes número
                                 4
                                  
 ```
-- Y por ultimo ya solo nos queda buscar el numero menor si está en la parte superior hacemos `ra`hasta ordenarlo y so no 'rra'.
-  en nuestro caso `ra` `ra``ra` :
+- Y por último ya solo nos queda buscar el número menor si está en la parte superior hacemos tantos `ra`hasta ordenarlo
+  y si esta en la inferior hacemos tantos 'rra' hasta ordenarlo.
+- En nuestro caso `ra` `ra``ra` :
 
 ```
  A  B                        A  B
