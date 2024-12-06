@@ -465,7 +465,8 @@ Ahora, procederemos con el análisis adecuado para mover los **restantes número
                                 4
                                  
 ```
-**Fase final: Ajustar el número más pequeño en A**
+# Fase final: Ajustar el número más pequeño en A
+
 - Y por último ya solo nos queda buscar el número menor si está entre los numeros de la parte superior hacemos tantos `ra`hasta ordenarlo y si está entre los números dela parte inferior `rra` para llevarlo al Top.
 
 - En nuestro caso `ra` `ra` `ra` :
