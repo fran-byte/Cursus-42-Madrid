@@ -413,25 +413,9 @@ Ahora, procederemos con el análisis adecuado para mover los **restantes número
      - El número más grande en **A** que sea **menor** que el número que estás empujando.
      - Si no hay ningún número menor en **A**, el nodo objetivo será el número más pequeño en **A**.
      - 
-## Volvemos a repetir el proceso de nodo objetivo / Coste en sentido contrario:
-
----
-
-### **Resultado Final:**
-La pila **A** está ahora ordenada en orden ascendente:
-
-```
-[1, 2, 3, 4, 5, 6, 7]
-```
-
----
 
 
-
----
-
-
-¿Qué hacemos después? Tenemos que realizar una inserción precisa de los nodos desde B a A, y esta es, por supuesto, la parte difícil, tenemos que idear una estrategia. Decido que cada nodo de B tendrá un nodo "Target" (objetivo), ¿y qué es este nodo objetivo? es un nodo que es más grande que el nodo en B. En este caso, estoy usando 42 como ejemplo. Pero no solo debe ser más grande, debe ser el más pequeño de los más grandes. Esto es un poco difícil de entender, pero denme tiempo. Por el contrario, 1,337 obtiene -21. Esta vez no es más grande porque 1,337 es el más grande, así que no puedo encontrar nada más grande en la pila A. Así que busco el más pequeño, esa es la clave.
+Decido que cada nodo de B tendrá un nodo "Target" (objetivo), ¿y qué es este nodo objetivo? es un nodo que es más grande que el nodo en B. En este caso, estoy usando 42 como ejemplo. Pero no solo debe ser más grande, debe ser el más pequeño de los más grandes. Esto es un poco difícil de entender, pero denme tiempo. Por el contrario, 1,337 obtiene -21. Esta vez no es más grande porque 1,337 es el más grande, así que no puedo encontrar nada más grande en la pila A. Así que busco el más pequeño, esa es la clave.
 
 Probablemente es mejor explicar este punto con un caso real cuando tengo muchos nodos. Ahora miren cuidadosamente aquí. Cada nodo de B tiene que estar vinculado a un nodo de A. Es decir, cada nodo debe tener un nodo "Target" que sea más grande, como les acabo de decir, pero al mismo tiempo tiene que ser la mejor opción para la etapa actual. Por ejemplo, -48 querría tomar como objetivo algo que sea más grande, pero debe ser el más pequeño de los más grandes. Así que, ¿cuál es en este caso? Tengo -21, -16 y 96. El más pequeño de los más grandes es -21. Entonces, -48 obtiene como objetivo -21. ¿Por qué? Porque quiero empujar este nodo justo encima de -21, respetando el orden ascendente. Así que si pongo -48 justo encima de -21, tengo la propiedad ascendente. Sencillo. 
 
