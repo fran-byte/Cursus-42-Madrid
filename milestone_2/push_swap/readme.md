@@ -127,15 +127,14 @@ Estamos en una fase en la que debemos agregar funcionalidades a nuestra pila: pe
 - Aplica rra y rrb simultáneamente.
 
 
-En conclusión, estas operaciones son simplemente tareas de "conectar y desconectar" punteros en una lista enlazada. Al principio puede parecer complicado, pero una vez que te familiarizas, no es difícil. Además, este enfoque es elegante y fácil de implementar. Usar una lista enlazada facilita estas manipulaciones de datos, aunque también podrías usar un arreglo, dependiendo de tus preferencias.
+Estas operaciones son simplemente tareas de "conectar y desconectar" punteros en una lista enlazada. Este enfoque es elegante y fácil de implementar. Usar una lista enlazada facilita estas manipulaciones de datos, aunque también podrías usar un arreglo, dependiendo de tus preferencias.
 
-Finalmente, después de implementar estas operaciones, podemos usar el algoritmo para ordenar una serie de números generados aleatoriamente utilizando solo estas instrucciones, logrando resolver el problema de manera eficiente dentro de las restricciones dadas.
+Después de implementar estas operaciones, podemos usar el algoritmo para ordenar una serie de números generados aleatoriamente utilizando solo estas instrucciones, logrando resolver el problema de manera eficiente dentro de las restricciones dadas.
 
-Ahora vamos a entender muy bien los algoritmos que voy a usar. Primero que nada, tengo un archivo llamado *sort_up_to_five.c * en el que tengo todo lo necesario para realizar este tipo de ordenamiento. ¿Cuál es la idea del *sort_up_to_five.c *? Bueno, si tengo 5, 4 o solo 3 nodos, este ultimo va a ser súper trivial ordenar estos elementos.
+Primero que nada, tengo un archivo llamado *sort_up_to_five.c* en el que tengo todo lo necesario para realizar este tipo de ordenamiento. 
+¿Cuál es la idea del *sort_up_to_five.c *? Ordenar 5, 4 o solo 3 nodos, este último va a ser una ordenación trivial.
 
-Ahora, el problema real, claro, es ordenar una serie de números más grande que tres nodos.
-
-Por supuesto, vamos a necesitar el stack B. En este caso, no podemos hacer magia solo con el stack A como cuando teníamos solo tres nodos. ¿Qué hago entonces? Sé que para ordenar tres elementos es como mi caso base. Cuando tengo tres elementos en mi stack, realizo *tiny sort*. Esto es mi caso base, lo puedo hacer muy fácilmente. Así que empujo todos los elementos a B hasta que solo queden tres elementos en A.
+Para ordenar una cantidad de numeros mayores a 3, vamos a necesitar el stack B.  Sé que para ordenar tres elementos es como mi caso base. Cuando tengo tres elementos en mi stack, realizo *sort_three*. Esto es mi caso base, lo puedo hacer muy fácilmente. Así que empujo todos los elementos a B hasta que solo queden tres elementos en A.
 
 Una vez que tenga esta situación, la repito, realizando *sort_three* en A. 
 
