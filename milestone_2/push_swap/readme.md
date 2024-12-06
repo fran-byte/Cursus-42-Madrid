@@ -333,32 +333,6 @@ La pila **A** está ahora ordenada en orden ascendente:
 - Se puede implementar un módulo de verificación para asegurarse de que la secuencia de instrucciones ordena correctamente los números.
 
 
-# Posible estructura:
-
-## push_swap()
-
-```
-
-                                 |___ get_numbers
-     |_____read_input____________|___ check_duplicates
-     |____ initialize_______     |___ validate_imput
-     |____ algorithm___     |    
-                       |    |           
-                       |    |________ create_stacks                   |_ sa 
-                       |                                              |_ sb
-                       |_____________ choose_algorithm                |_ ss
-                       |_____________ divide_piles                    |_ pa                         |__ swap
-                       |_____________ compare_elements                |_ pb                         |__ rotate
-                       |_____________ perform_Operations _____________|_ ra       -> aux_functions _|__ reverse_rotate
-                       |_____________ check_condition                 |_ rb                         |__ calculate_cost
-                                                                      |_ rr                         |__ find_cheapest_move
-                                                                      |_ rra
-                                                                      |_ rrb
-                                                                      |_ rrr
-                                 
-
-```
-
 
 
 
