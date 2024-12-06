@@ -336,6 +336,9 @@ La pila **A** está ahora ordenada en orden ascendente:
 # Posible estructura:
 
 ## push_swap()
+
+```
+
                                  |___ get_numbers
      |_____read_input____________|___ check_duplicates
      |____ initialize_______     |___ validate_imput
@@ -353,3 +356,95 @@ La pila **A** está ahora ordenada en orden ascendente:
                                                                       |_ rrb
                                                                       |_ rrr
                                  
+
+```
+
+
+
+
+### Explorando el proyecto
+El proyecto está compuesto por muchos archivos, organizados en un **directorio**. Por ejemplo:  
+- **`push_swap.c`**: contiene la función principal, el "corazón" del programa.  
+- **Archivos `.h`** (headers): contienen prototipos de funciones necesarias y declaraciones compartidas entre los archivos del proyecto.  
+
+El **header file** es clave para proyectos más grandes porque permite la organización modular del código. Por ejemplo, declara funciones para crear pilas, manejar errores, y administrar nodos.  
+
+### Estructura del programa
+Todo programa en C comienza con la función `main`, que sirve como punto de entrada al proceso. En un buen diseño, la función `main` actúa como un resumen del proyecto. Observando esta estructura:  
+
+1. **Control de entrada:** Verifica si los datos de entrada son válidos.  
+2. **Inicialización:** Crea las pilas necesarias y configura las condiciones iniciales.  
+3. **Ejecución del algoritmo:** Ordena los números según las reglas definidas.  
+4. **Limpieza:** Libera la memoria utilizada para evitar fugas.  
+
+Por ejemplo: en el código, vemos que `stack_init` probablemente inicializa la pila, y luego hay una verificación para determinar si la pila ya está ordenada o no.  
+
+### Probar el algoritmo
+Para probar si el algoritmo funciona, utilizamos un **tester online**. Por ejemplo:  
+- Probamos con **100 números** y realizamos **50 pruebas**.  
+- Los resultados muestran cuántos movimientos (instrucciones) fueron necesarios para ordenar correctamente los números.  
+
+Los valores de salida, como un **máximo de 665 instrucciones** y un promedio de 606, indican que el algoritmo está funcionando correctamente.  
+
+Con los comandos que puedo usar, necesito todas estas instrucciones en promedio. Con este algoritmo, **606 instrucciones**. Ahora intentemos con **500 números**, pero lo más importante para mí son los **resultados** 
+
+Para **500 números**, obtengo en promedio **5,510 instrucciones**. Básicamente, funciona. Ese es el punto principal. Ahora vamos a practicar un poco con el código. Como puedes ver, puedo ejecutar `push_swap` con valores aleatorios. Por ejemplo: **2, 1, 34**, y como salida obtengo **sa**, que significa "intercambiar".  
+
+También puedo llamar a este algoritmo con muchos números. Por ejemplo, usando valores como **-42**, y como puedes ver, obtengo una lista más larga de comandos. Es importante notar que puedo pasar como entrada una **serie de números entre comillas**. Aunque parecen iguales, para la línea de comandos no son lo mismo: un caso son **verdaderos argumentos separados**, y el otro es una sola cadena de texto.  
+
+El algoritmo no funcionará si hay errores en la entrada, como escribir un valor no numérico. Esto forma parte de la **fase de control**.  
+
+### ¿Qué es una pila (stack)?  
+Una pila es una estructura de datos muy básica, parecida a una pila de platos. Imagina que tienes varios elementos apilados uno sobre otro. El **tope de la pila** es como el plato superior. Puedes:  
+- **Push**: Añadir un elemento al tope de la pila.  
+- **Pop**: Retirar el elemento superior.  
+
+
+### Implementación de la pila  
+He decidido usar una **lista enlazada** porque es una estructura flexible y bien adaptada a este tipo de problemas. Alternativamente, podrías usar un arreglo (array), donde cada elemento representa un "plato" en la pila, pero implementar las operaciones necesarias con un arreglo puede ser más complicado.  
+
+Cada estructura de datos tiene ventajas y desventajas:  
+- **Listas enlazadas**: Muy flexibles y fáciles de manipular, pero más complejas en términos de manejo de punteros.  
+- **Arreglos**: Más sencillos de manejar en memoria, pero menos flexibles para operaciones dinámicas.  
+
+En mi implementación, cada nodo de la lista enlazada tiene:  
+1. Un valor (el número).  
+2. Un puntero al nodo anterior.  
+3. Un puntero al nodo siguiente.  
+
+Esto permite crear una **lista doblemente enlazada**, donde los nodos están conectados entre sí.  
+
+### ¿Qué es un nodo?  
+Un nodo es una **estructura (struct)** en C que actúa como un contenedor de datos. A diferencia de un arreglo, donde todos los elementos deben ser del mismo tipo, una estructura permite almacenar datos de diferentes tipos en un solo contenedor.  
+
+En este proyecto, un nodo contiene:  
+- El valor (número) a almacenar.  
+- Punteros al nodo siguiente y al anterior.  
+- Metadatos adicionales, como posición actual o coste de movimiento, que son útiles para el algoritmo.  
+
+#### Código del nodo  
+El nodo se define en el archivo `push_swap.h`, para que pueda ser usado en cualquier parte del proyecto. La definición incluye:  
+- **Punteros** al nodo anterior y siguiente.  
+- **Datos del algoritmo** (como posición y otros).  
+
+Usamos **typedef** para simplificar el nombre de la estructura, de manera que podamos referirnos al nodo como `t_list` en lugar de escribir `struct t_list` cada vez. Esto mejora la legibilidad y la organización del código.  
+
+En resumen, un nodo es una pequeña unidad de datos que se conecta a otros nodos, formando la base de una lista enlazada. Este enfoque permite implementar las operaciones de pila (push, pop, swap) de manera más sencilla y eficiente en el contexto del proyecto `push_swap`.
+
+
+### Explicación de la función principal
+En la función `main`, declaramos inmediatamente un puntero a un nodo llamado `stack_a`. Esto significa que `stack_a` es un puntero a un nodo que, inicialmente, está fuera del stack. Como mencioné antes, comenzamos con un puntero nulo. Este puntero no apunta a ningún lugar, por lo que no puede causar daños ni errores de segmentación.
+
+#### Verificación inicial
+Primero realizamos algunas verificaciones:
+1. Si el contador de argumentos (`argc`) es igual a 1, significa que no hay argumentos de entrada. Este caso ocurre cuando solo se proporciona el programa en sí (por ejemplo, solo `push_swap` u otro similar).
+2. Si el contador de argumentos es igual a 2, pero el primer carácter del argumento de entrada es un carácter nulo (`'\0'`), significa que la cadena está vacía. En cualquiera de estos casos, simplemente salimos de la función devolviendo 1. 
+
+Estas condiciones manejan los casos donde no hay entrada o donde la cadena proporcionada está vacía. Por lo tanto, el programa no realiza ninguna acción adicional.
+
+#### Manejo de entradas válidas
+Si los argumentos son dos y la cadena no está vacía, asignamos un nuevo valor al vector de argumentos. Utilizamos la función `ft_split`, que toma como entrada el argumento en la posición 1 (`argv[1]`) y un separador, en este caso un espacio (`' '`). 
+
+### Función `ft_split`
+La función `ft_split` se encuentra en un archivo separado debido a su complejidad. Esta función realiza una separación de la cadena basándose en el separador y devuelve un nuevo arreglo. En el programa principal, se usa con una sola línea de código, pero en realidad contiene múltiples funciones internas (en este caso, tres) y suma más de 100 líneas de código.
+
