@@ -212,7 +212,7 @@ La función `ft_split` se encuentra en un archivo separado debido a su complejid
 
 ### **Pila A Inicial:**
 ```
-./push_swap 1 6 3 4 5 7 2
+./push_swap 2 7 5 4 3 6 1
 ```
 
 ```
