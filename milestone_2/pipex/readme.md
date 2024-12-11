@@ -4,6 +4,17 @@
 
  La ejecución es de la siguiente forma: `./pipex infile cmd1 cmd2 outfile`, y se comporta como la línea en la shell: `< infile cmd1 | cmd2 > outfile`.
 
+ ## Funciones autorizadas para el proyecto:
+
+ • open, close, read, write,
+malloc, free, perror,
+strerror, access, dup, dup2,
+execve, exit, fork, pipe,
+unlink, wait, waitpid
+
+• ft_printf and any equivalent
+YOU coded
+
 
 ### 1. **Teoría de fondo — `pipe()`, `fork()`, `dup2()` y `execve()`**
 
