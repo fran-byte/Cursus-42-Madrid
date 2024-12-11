@@ -6,17 +6,18 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 16:56:47 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/09 23:42:27 by frromero         ###   ########.fr       */
+/*   Updated: 2024/12/11 15:35:11 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/* - find_smallest_in_a: Finds the smallest element in stack_a and returns it.
-   - find_target_a: Finds the smallest element in stack_a that is larger than a
-   given node from stack_b, or returns the smallest element if no such node
-   exists.
-   - calculate_cost_for_a: Calculates the cost (in moves) to place a node from
-   stack_b to its correct position in stack_a.*/
 
-find_lowest_cost_node_a: Finds the node in stack_a with the lowest move cost to place it in stack_b
+/*	- find_smallest_in_a: Finds the smallest element in stack_a and returns it.
+	- find_target_a: Finds the smallest element in stack_a that is larger than a
+	given node from stack_b, or returns the smallest element if no such node
+	exists.
+	- calculate_cost_for_a: Calculates the cost (in moves) to place a node from
+	stack_b to its correct position in stack_a.
+	find_lowest_cost_node_a: Finds the node in stack_a with the lowest move cost
+	to place it in stack_b*/
 
 #include "../inc/push_swap.h"
 
