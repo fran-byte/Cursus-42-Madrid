@@ -12,7 +12,7 @@
 
 /* This program initializes a linked list from command line arguments,
    storing integers as nodes. Each integer is converted from a string using
-    `ft_atoi`, and nodes are added to the front of the list. */
+    `ft_atoi`, and nodes are added to the back of the list. */
 
 #include "../inc/push_swap.h"
 
