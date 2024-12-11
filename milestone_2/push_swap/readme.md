@@ -2,72 +2,74 @@
 
 # push_swap
 
-### Explorando el proyecto
-El proyecto está compuesto por muchos archivos, organizados en un **directorio**. Por ejemplo:  
-- **`push_swap.c`**: contiene la función principal, el "corazón" del programa.  
-- **Archivos `.h`** (headers): contienen prototipos de funciones necesarias y declaraciones compartidas entre los archivos del proyecto.  
+<p align="center" width="100%"><a href="milestone_2/"><img src="../../img/milestone_2/fifo.gif" width="72" />
 
-El **header file** es clave para proyectos más grandes porque permite la organización modular del código. Por ejemplo, declara funciones para crear pilas, manejar errores, y administrar nodos.  
+### Explorando el proyecto
+El proyecto está compuesto por muchos archivos, organizados en un **directorio**. Por ejemplo:
+- **`push_swap.c`**: contiene la función principal, el "corazón" del programa.
+- **Archivos `.h`** (headers): contienen prototipos de funciones necesarias y declaraciones compartidas entre los archivos del proyecto.
+
+El **header file** es clave para proyectos más grandes porque permite la organización modular del código. Por ejemplo, declara funciones para crear pilas, manejar errores, y administrar nodos.
 
 ### Estructura del programa
-Todo programa en C comienza con la función `main`, que sirve como punto de entrada al proceso. En un buen diseño, la función `main` actúa como un resumen del proyecto. Observando esta estructura:  
+Todo programa en C comienza con la función `main`, que sirve como punto de entrada al proceso. En un buen diseño, la función `main` actúa como un resumen del proyecto. Observando esta estructura:
 
-1. **Control de entrada:** El programa recibe una lista de números enteros como argumentos de la línea de comandos y verifica si los datos de entrada son válidos .  
+1. **Control de entrada:** El programa recibe una lista de números enteros como argumentos de la línea de comandos y verifica si los datos de entrada son válidos .
 2. **Inicialización:** Se crean las dos pilas (A y B) y se inicializan con los números de entrada en la pila A.
-3. **Ejecución del algoritmo:** Ordena los números según las reglas definidas.  
-4. **Limpieza:** Libera la memoria utilizada para evitar fugas.  
+3. **Ejecución del algoritmo:** Ordena los números según las reglas definidas.
+4. **Limpieza:** Libera la memoria utilizada para evitar fugas.
 
-Por ejemplo: en el código, vemos que `init_stack` y `init_stack_one_arg` inicializan la pila, y luego hay una verificación para determinar si la pila ya está ordenada o no.  
+Por ejemplo: en el código, vemos que `init_stack` y `init_stack_one_arg` inicializan la pila, y luego hay una verificación para determinar si la pila ya está ordenada o no.
 
 ### Probar el algoritmo
-Para probar si el algoritmo funciona, utilizamos un **tester online**. Por ejemplo:  
+Para probar si el algoritmo funciona, utilizamos un **tester online**. Por ejemplo:
 - Probamos con **100 números** y realizamos **50 pruebas** deben de ser inferiores a **700** movimientos.
-- Los resultados muestran cuántos movimientos (instrucciones) fueron necesarios para ordenar correctamente los números.  
+- Los resultados muestran cuántos movimientos (instrucciones) fueron necesarios para ordenar correctamente los números.
 
-Los valores de salida, como un **máximo de 655 instrucciones** y un promedio de 606, indican que el algoritmo está funcionando correctamente.  
+Los valores de salida, como un **máximo de 655 instrucciones** y un promedio de 606, indican que el algoritmo está funcionando correctamente.
 
-Lo más importante son los **resultados** 
+Lo más importante son los **resultados**
 
-Para **500 números**, se pude obtener un promedio **5,510 instrucciones**. Básicamente, funciona. Ese es el punto principal. Puedo ejecutar `push_swap` con valores aleatorios. Por ejemplo: **2, 1, 34**, y como salida obtengo **sa**, que significa "intercambiar".  
+Para **500 números**, se pude obtener un promedio **5,510 instrucciones**. Básicamente, funciona. Ese es el punto principal. Puedo ejecutar `push_swap` con valores aleatorios. Por ejemplo: **2, 1, 34**, y como salida obtengo **sa**, que significa "intercambiar".
 
-Es importante notar que puedo pasar como entrada una **serie de números entre comillas**. Aunque parecen iguales, para la línea de comandos no son lo mismo: un caso son **verdaderos argumentos separados**, y el otro es una sola cadena de texto.  
+Es importante notar que puedo pasar como entrada una **serie de números entre comillas**. Aunque parecen iguales, para la línea de comandos no son lo mismo: un caso son **verdaderos argumentos separados**, y el otro es una sola cadena de texto.
 
-El algoritmo no funcionará si hay errores en la entrada, como escribir un valor no numérico. Esto forma parte de la **fase de control**.  
+El algoritmo no funcionará si hay errores en la entrada, como escribir un valor no numérico. Esto forma parte de la **fase de control**.
 
-### ¿Qué es una pila (stack)?  
-Una pila es una estructura de datos muy básica, parecida a una pila de platos. Imagina que tienes varios elementos apilados uno sobre otro. El **tope de la pila** es como el plato superior. Puedes:  
-- **Push**: Añadir un elemento al tope de la pila.  
-- **Pop**: Retirar el elemento superior.  
+### ¿Qué es una pila (stack)?
+Una pila es una estructura de datos muy básica, parecida a una pila de platos. Imagina que tienes varios elementos apilados uno sobre otro. El **tope de la pila** es como el plato superior. Puedes:
+- **Push**: Añadir un elemento al tope de la pila.
+- **Pop**: Retirar el elemento superior.
 
 
-### Implementación de la pila  
-He decidido usar una **lista enlazada** porque es una estructura flexible y bien adaptada a este tipo de problemas. Alternativamente, podrías usar un arreglo (array), donde cada elemento representa un "plato" en la pila, pero implementar las operaciones necesarias con un arreglo puede ser más complicado.  
+### Implementación de la pila
+He decidido usar una **lista enlazada** porque es una estructura flexible y bien adaptada a este tipo de problemas. Alternativamente, podrías usar un arreglo (array), donde cada elemento representa un "plato" en la pila, pero implementar las operaciones necesarias con un arreglo puede ser más complicado.
 
-Cada estructura de datos tiene ventajas y desventajas:  
-- **Listas enlazadas**: Muy flexibles y fáciles de manipular, pero más complejas en términos de manejo de punteros.  
-- **Arreglos**: Más sencillos de manejar en memoria, pero menos flexibles para operaciones dinámicas.  
+Cada estructura de datos tiene ventajas y desventajas:
+- **Listas enlazadas**: Muy flexibles y fáciles de manipular, pero más complejas en términos de manejo de punteros.
+- **Arreglos**: Más sencillos de manejar en memoria, pero menos flexibles para operaciones dinámicas.
 
-En mi implementación, cada nodo de la lista enlazada tiene:  
-1. Un valor (el número).  
-2. Un puntero al nodo anterior.  
-3. Un puntero al nodo siguiente.  
+En mi implementación, cada nodo de la lista enlazada tiene:
+1. Un valor (el número).
+2. Un puntero al nodo anterior.
+3. Un puntero al nodo siguiente.
 
-Esto permite crear una **lista doblemente enlazada**, donde los nodos están conectados entre sí.  
+Esto permite crear una **lista doblemente enlazada**, donde los nodos están conectados entre sí.
 
-### ¿Qué es un nodo?  
-Un nodo es una **estructura (struct)** en C que actúa como un contenedor de datos. A diferencia de un arreglo, donde todos los elementos deben ser del mismo tipo, una estructura permite almacenar datos de diferentes tipos en un solo contenedor.  
+### ¿Qué es un nodo?
+Un nodo es una **estructura (struct)** en C que actúa como un contenedor de datos. A diferencia de un arreglo, donde todos los elementos deben ser del mismo tipo, una estructura permite almacenar datos de diferentes tipos en un solo contenedor.
 
-En este proyecto, un nodo contiene:  
-- El valor (número) a almacenar.  
-- Punteros al nodo siguiente y al anterior.  
-- Metadatos adicionales, como posición actual o coste de movimiento, que son útiles para el algoritmo.  
+En este proyecto, un nodo contiene:
+- El valor (número) a almacenar.
+- Punteros al nodo siguiente y al anterior.
+- Metadatos adicionales, como posición actual o coste de movimiento, que son útiles para el algoritmo.
 
-#### Código del nodo  
-El nodo se define en el archivo `push_swap.h`, para que pueda ser usado en cualquier parte del proyecto. La definición incluye:  
-- **Punteros** al nodo anterior y siguiente.  
-- **Datos del algoritmo** (como posición y otros).  
+#### Código del nodo
+El nodo se define en el archivo `push_swap.h`, para que pueda ser usado en cualquier parte del proyecto. La definición incluye:
+- **Punteros** al nodo anterior y siguiente.
+- **Datos del algoritmo** (como posición y otros).
 
-Usamos **typedef** para simplificar el nombre de la estructura, de manera que podamos referirnos al nodo como `t_list` en lugar de escribir `struct t_list` cada vez. Esto mejora la legibilidad y la organización del código.  
+Usamos **typedef** para simplificar el nombre de la estructura, de manera que podamos referirnos al nodo como `t_list` en lugar de escribir `struct t_list` cada vez. Esto mejora la legibilidad y la organización del código.
 
 En resumen, un nodo es una pequeña unidad de datos que se conecta a otros nodos, formando la base de una lista enlazada. Este enfoque permite implementar las operaciones de pila (push, pop, swap) de manera más sencilla y eficiente en el contexto del proyecto `push_swap`.
 
@@ -78,12 +80,12 @@ En la función `main`, declaramos inmediatamente un puntero a un nodo llamado `s
 #### Verificación inicial
 Primero realizamos algunas verificaciones:
 1. Si el contador de argumentos (`argc`) es igual a 1, significa que no hay argumentos de entrada. Este caso ocurre cuando solo se proporciona el programa en sí (por ejemplo, solo `push_swap` u otro similar).
-2. Si el contador de argumentos es igual a 2, pero el primer carácter del argumento de entrada es un carácter nulo (`'\0'`), significa que la cadena está vacía. En cualquiera de estos casos, simplemente salimos de la función devolviendo 1. 
+2. Si el contador de argumentos es igual a 2, pero el primer carácter del argumento de entrada es un carácter nulo (`'\0'`), significa que la cadena está vacía. En cualquiera de estos casos, simplemente salimos de la función devolviendo 1.
 
 Estas condiciones manejan los casos donde no hay entrada o donde la cadena proporcionada está vacía. Por lo tanto, el programa no realiza ninguna acción adicional.
 
 #### Manejo de entradas válidas
-Si los argumentos son dos y la cadena no está vacía, asignamos un nuevo valor al vector de argumentos. Utilizamos la función `ft_split`, que toma como entrada el argumento en la posición 1 (`argv[1]`) y un separador, en este caso un espacio (`' '`). 
+Si los argumentos son dos y la cadena no está vacía, asignamos un nuevo valor al vector de argumentos. Utilizamos la función `ft_split`, que toma como entrada el argumento en la posición 1 (`argv[1]`) y un separador, en este caso un espacio (`' '`).
 
 ### Función `ft_split`
 La función `ft_split` se encuentra en un archivo separado debido a su complejidad. Esta función realiza una separación de la cadena basándose en el separador y devuelve un nuevo arreglo. En el programa principal, se usa con una sola línea de código, pero en realidad contiene múltiples funciones internas (en este caso, tres) y suma más de 100 líneas de código.
@@ -93,7 +95,7 @@ La función `ft_split` se encuentra en un archivo separado debido a su complejid
 - Depende si entra como un solo argumento `init_stack_one_arg` o multiples argumentos `init_stack`
 
 - Inicializa la pila, creando la pila (es decir, una lista enlazada en el heap). Básicamente, este es el creador de la pila.
-  
+
 - La función se asegura de evitar repeticiones, manejar desbordamientos de enteros y gestionar las conexiones entre nodos. Al final, se libera cualquier memoria innecesaria para evitar pérdidas.
 
 - Ahora tenemos una lista enlazada correctamente configurada en el heap, lista para ser utilizada en el algoritmo.
@@ -129,20 +131,20 @@ La función `ft_split` se encuentra en un archivo separado debido a su complejid
 
 - Después de implementar estas operaciones, podemos usar el algoritmo para ordenar una serie de números generados aleatoriamente utilizando solo estas instrucciones, logrando resolver el problema de manera eficiente dentro de las restricciones dadas.
 
-- Primero que nada, tengo un archivo llamado *sort_up_to_five.c* en el que tengo todo lo necesario para realizar este tipo de ordenamiento básico. 
+- Primero que nada, tengo un archivo llamado *sort_up_to_five.c* en el que tengo todo lo necesario para realizar este tipo de ordenamiento básico.
 ¿Cuál es la idea del *sort_up_to_five.c *? Ordenar 5, 4 o solo 3 nodos, este último va a ser una ordenación trivial.
 
 - Para ordenar una cantidad de numeros mayores a 3, vamos a necesitar el stack B.
-  
+
 - Entonces la idea es empujar aplicando el algoritmo que veremos después todos los elementosde A a B hasta que solo queden tres elementos en A.
 
-- Una vez que tenga esta situación, realizando *sort_three* en A. 
+- Una vez que tenga esta situación, realizando *sort_three* en A.
 
 
 ## 4. Algoritmo de Ordenación:
 ## Implementaré el algoritmo llamado "Turco":
 
-- Tiene dos fases principales: 
+- Tiene dos fases principales:
 
 1. **Mover números del stack A al stack B** hasta que en A queden solo tres números, que ordenaremos facilmente en A.
 2. **Mover números de regreso desde el stack B al stack A**, asegurando que queden correctamente ordenados en A.
@@ -217,7 +219,7 @@ La función `ft_split` se encuentra en un archivo separado debido a su complejid
 
 ```
 A   B   (TOP)
-2   
+2
 7
 5
 4
@@ -235,7 +237,7 @@ A   B   (TOP)
 
 ```
 A   B
-7  [2]  
+7  [2]
 5
 4
 3
@@ -254,13 +256,13 @@ A   B
 6
 1
 ```
- 
+
 Ahora, procederemos con el análisis adecuado para mover los **restantes números de A** a B, siguiendo los pasos del algoritmo:
 
 - Cada número en **A** necesita un "nodo objetivo" en **B**, que es:
      - El número más pequeño en **B** que sea **mayor** que el número que estás empujando de B, es decir, este "nodo objetivo" es un nodo que es más pequeño que el nodo en A, pero debe ser el más grande de los más pequeños.
      - Si no hay ningún número menor en **B** que el que vamos a empujar, el nodo objetivo pasará a ser el número más grande en **A**.
-     - 
+     -
 #### Paso 1: Análisis para el número **5** de A a B
 1. **Preparar el nodo objetivo de 5 en B**:
    - El nodo objetivo de **5** en **B** es **2** porque **2** es el número más cercano en **B** que es menor que **5**.
@@ -273,11 +275,11 @@ Ahora, procederemos con el análisis adecuado para mover los **restantes número
  6
  1
 ```
-   
+
 2. **Calcular el costo de inserción**:
    - **A** está en la posición correcta para mover **5**, no se requieren movimientos adicionales en A.
-   - En **B**, se necesita hacer un cambio porque **5** debe colocarse encima de **2** se hará `rb`. 
-   
+   - En **B**, se necesita hacer un cambio porque **5** debe colocarse encima de **2** se hará `rb`.
+
    **Costo de inserción** = 1 (`rb`)
 
 #### Paso 2: Análisis para el número **4** de A a B
@@ -292,7 +294,7 @@ Ahora, procederemos con el análisis adecuado para mover los **restantes número
  6
  1
 ```
-   
+
 2. **Calcular el costo de inserción**:
    - **A** no está en la posición correcta para mover **4** necesitamos un cambio `ra`.
    - En **B**, se necesita hacer un cambio porque **4** debe colocarse encima de **2** se hará `rb`.
@@ -312,7 +314,7 @@ Ahora, procederemos con el análisis adecuado para mover los **restantes número
  6
  1
 ```
-   
+
 2. **Calcular el costo de inserción**:
    - **A** no está en la posición correcta para mover **3** necesitamos dos cambios `ra` `ra`.
    - En **B**, se necesita hacer un cambio porque **3** debe colocarse encima de **2** se hará `rb`.
@@ -331,11 +333,11 @@ Ahora, procederemos con el análisis adecuado para mover los **restantes número
 [6]
  1
 ```
-   
+
 2. **Calcular el costo de inserción**:
    - **A** no está en la posición correcta para mover **6** necesitamos dos cambios `rra` `rra`.
    - En **B**, se necesita hacer un cambio porque **6** debe colocarse encima de **2** se hará `rb`.
-   
+
    **Costo de inserción** = 3 (`rra` `rra` `rb`).
 
 
@@ -350,11 +352,11 @@ Ahora, procederemos con el análisis adecuado para mover los **restantes número
  6
 [1]
 ```
-   
+
 2. **Calcular el costo de inserción**:
    - **A** no está en la posición correcta para mover **1** necesitamos un cambio `rra`.
     - En **B**, se no se necesita hacer cambios porque **1** puede colocarse encima de **7**.
-      
+
    **Costo de inserción** = 1 (`rra`).
 
 
@@ -417,7 +419,7 @@ Ahora, procederemos con el análisis adecuado para mover los **restantes número
      - El número más grande en **A** que sea **menor** que el número que estás empujando de B, es decir, este "nodo objetivo" es un nodo que es más grande que el nodo en B, pero debe ser el más pequeño de los más grandes.
      - Si no hay ningún número mayor en **A** que el que vamos a empujar, el nodo objetivo pasará a ser el número más pequeño en **A**.
      - Aplicando siempre la regla de costes de movimientos, se pasará el número mas barato.
-       
+
 - En este caso el mas barato es el número **4**
 ```
  A   B              A  B             A  B
@@ -463,7 +465,7 @@ Ahora, procederemos con el análisis adecuado para mover los **restantes número
  4               3              2
 [6]              4              3
                                 4
-                                 
+
 ```
 # Fase final: Ajustar el número más pequeño en A
 
@@ -483,4 +485,4 @@ Ahora, procederemos con el análisis adecuado para mover los **restantes número
 
 ```
 
-  
+
