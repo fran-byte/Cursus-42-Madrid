@@ -21,7 +21,7 @@ Por ejemplo: en el código, vemos que `init_stack_mult_args` y `init_stack_one_a
 
 ### Probar el algoritmo
 Para probar si el algoritmo funciona, utilizamos un **tester online**. Por ejemplo:  
-- Probamos con **100 números** y realizamos **50 pruebas** deben de ser inferiores a 700 movimientos.
+- Probamos con **100 números** y realizamos **50 pruebas** deben de ser inferiores a **700** movimientos.
 - Los resultados muestran cuántos movimientos (instrucciones) fueron necesarios para ordenar correctamente los números.  
 
 Los valores de salida, como un **máximo de 655 instrucciones** y un promedio de 606, indican que el algoritmo está funcionando correctamente.  
