@@ -17,7 +17,7 @@ Todo programa en C comienza con la función `main`, que sirve como punto de entr
 3. **Ejecución del algoritmo:** Ordena los números según las reglas definidas.  
 4. **Limpieza:** Libera la memoria utilizada para evitar fugas.  
 
-Por ejemplo: en el código, vemos que `init_stack_mult_args` y `init_stack_one_arg' inicializan la pila, y luego hay una verificación para determinar si la pila ya está ordenada o no.  
+Por ejemplo: en el código, vemos que `init_stack` y `init_stack_one_arg` inicializan la pila, y luego hay una verificación para determinar si la pila ya está ordenada o no.  
 
 ### Probar el algoritmo
 Para probar si el algoritmo funciona, utilizamos un **tester online**. Por ejemplo:  
