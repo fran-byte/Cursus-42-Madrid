@@ -2,7 +2,7 @@
 <h1 align="center" width="100%">Recursos para push_swap</h1>
 
 
-<p align="center" width="100%"><img src="../push_swap.png" width="72" />
+<p align="center" width="100%"><img src="../../../img/milestone_2/push_swap.png" width="72" />
 
 
 
@@ -14,7 +14,7 @@
 - **Pilas** (**Stacks**): 👉  [link](stacks.md) Esencial para este proyecto, ya que debes simular dos pilas (a y b) y realizar operaciones sobre ellas. Comprende cómo funcionan las pilas y cómo las operaciones como push, pop, y peek afectan los datos.
 - **Colas** (**Queues**): 👉  [link](stacks.md)  Aunque no se usan explícitamente en este proyecto, es importante que tengas una comprensión general de las colas, ya que están relacionadas con las pilas y te ayudarán a entender la manipulación de los datos en estructuras secuenciales.
 
-## 2. Teoría de Complejidad Algorítmica 
+## 2. Teoría de Complejidad Algorítmica
 
  👉  [link](teoria.md)
  - Análisis de complejidad (Big O): Para tener un buen desempeño en el proyecto, necesitas ser capaz de optimizar tu código. Debes saber cómo analizar la complejidad temporal y espacial de los algoritmos que uses. Esto es esencial para asegurarte de que tu solución sea eficiente.
