@@ -5,9 +5,9 @@
 <p align="center" width="100%"><a href="milestone_2/"><img src="../../img/milestone_2/fifo.gif" width="200" />
 
 ### Explorando el proyecto
-El proyecto está compuesto por muchos archivos, organizados en un **directorio**. Por ejemplo:
+El proyecto está compuesto por muchos archivos, organizados en un **directorio**.
 - **`push_swap.c`**: contiene la función principal, el "corazón" del programa.
-- **Archivos `.h`** (headers): contienen prototipos de funciones necesarias y declaraciones compartidas entre los archivos del proyecto.
+- **Archivos `.h`** (header): contienen prototipos de funciones necesarias y declaraciones compartidas entre los archivos del proyecto.
 
 El **header file** es clave para proyectos más grandes porque permite la organización modular del código. Por ejemplo, declara funciones para crear pilas, manejar errores, y administrar nodos.
 
