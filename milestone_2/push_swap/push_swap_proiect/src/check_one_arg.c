@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 00:07:51 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/11 21:16:57 by frromero         ###   ########.fr       */
+/*   Updated: 2024/12/11 23:12:49 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,28 +91,28 @@ static int	has_one_element(char **gv)
 
 char	**check_with_one_arg(int gc, char **gv)
 {
-	char	**sp_argv;
+	char	**split_argv;
 	int		i;
 
 	i = 0;
 	if (gc == 2)
 	{
-		sp_argv = one_argument(gv[1], ' ');
-		if (has_one_element(sp_argv))
+		split_argv = one_argument(gv[1], ' ');
+		if (has_one_element(split_argv))
 		{
-			free_arguments(sp_argv);
+			free_arguments(split_argv);
 			program_exit();
 		}
-		while (sp_argv[i] != NULL)
+		while (split_argv[i] != NULL)
 			i++;
-		if (inputs_are_digits(i, sp_argv) == -1
-			|| inputs_has_dup(i, sp_argv) == -1)
+		if (inputs_are_digits(i, split_argv) == -1
+			|| inputs_has_dup(i, split_argv) == -1)
 		{
-			free_arguments(sp_argv);
+			free_arguments(split_argv);
 			program_error();
 		}
-		int_check_limit(i, sp_argv);
-		return (sp_argv);
+		int_check_limit(i, split_argv);
+		return (split_argv);
 	}
 	return (0);
 }

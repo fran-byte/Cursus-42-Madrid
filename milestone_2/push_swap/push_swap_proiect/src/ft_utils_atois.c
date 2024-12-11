@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 19:34:33 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/10 20:07:34 by frromero         ###   ########.fr       */
+/*   Updated: 2024/12/11 21:37:20 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	ft_atoi(const char *str)
 
 /* Necessary to free integers from the ft_split function.*/
 
-int	ft_atoi_special(const char *str, char **numbers)
+void	ft_atoi_special(const char *str, char **numbers)
 {
 	int	sign;
 	int	nb;
@@ -79,5 +79,4 @@ int	ft_atoi_special(const char *str, char **numbers)
 		nb = nb * 10 + (str[i] - '0');
 		i++;
 	}
-	return (nb * sign);
 }

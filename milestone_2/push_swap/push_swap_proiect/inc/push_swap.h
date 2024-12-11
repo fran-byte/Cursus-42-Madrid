@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 22:49:16 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/10 20:17:02 by frromero         ###   ########.fr       */
+/*   Updated: 2024/12/11 21:29:25 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct s_list
 
 int		ft_lstsize(t_list *lst);
 int		ft_atoi(const char *str);
-int		ft_atoi_special(const char *str, char **numbers);
+void	ft_atoi_special(const char *str, char **numbers);
 int		is_sorted(t_list *lst);
 int		ft_strcmp(char *s1, char *s2);
 int		minimum(t_list **stack, int number);

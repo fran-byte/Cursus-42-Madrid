@@ -6,7 +6,7 @@
 #    By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/18 23:08:43 by frromero          #+#    #+#              #
-#    Updated: 2024/12/11 15:51:23 by frromero         ###   ########.fr        #
+#    Updated: 2024/12/11 21:42:16 by frromero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,8 @@ all:	${NAME}
 # Links the object files and header files to create the executable
 ${NAME}: ${OBJS} $(INCLUDE)
 
-	@${CC} ${CFLAGS} ${SRCS} ${CFLAGS} -o ${NAME}
+	@${CC} -g  ${SRCS} -o ${NAME}
+#@${CC} ${CFLAGS} ${SRCS} ${CFLAGS} -o ${NAME}
 	@echo "\n✨ Created $(NAME) ✨\n"
 
 # Cleans up object files and dependencies
@@ -71,4 +72,4 @@ re: fclean all
 # Marks rules as not corresponding to real files
 .PHONY: all clean fclean re
 
-# for debugger: #@${CC} -g  ${SRCS} -o ${NAME}
+
