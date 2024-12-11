@@ -1,4 +1,7 @@
 # get_next_line
+
+<p align="center" width="100%"><a href="milestone_2/"><img src="../../img/milestone_2/get_next_line.gif" width="200" />
+
 - Esta función lee línea por línea desde un `fd` file descriptor. Guarda el texto restante en un buffer estático entre llamadas, manejando líneas parciales en varias lecturas. La función `my_line` extrae una línea completa, y `re_adj_storage` ajusta el buffer para la próxima llamada.
 
 ### Consideraciones Importantes:
