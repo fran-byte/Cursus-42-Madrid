@@ -12,6 +12,15 @@
 
 #include "../inc/push_swap.h"
 
+/* - find_largest_in_b: Finds the largest element in stack_b and returns it.
+   - find_target: Finds the largest element in stack_b that is smaller than a
+  given node from stack_a, or returns the largest element if no such node
+  exists.
+   - calculate_cost: Calculates the cost (in moves) to place a node from
+   stack_a to its correct position in stack_b.
+   - find_lowest_cost_node_b: Finds the node in stack_a with the lowest move
+   cost to place it in stack_b. */
+
 t_list	*find_largest_in_b(t_list *stack_b)
 {
 	t_list	*current;
