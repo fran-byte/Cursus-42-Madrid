@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 00:07:51 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/10 21:00:54 by frromero         ###   ########.fr       */
+/*   Updated: 2024/12/11 21:16:57 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ char	**check_with_one_arg(int gc, char **gv)
 	if (gc == 2)
 	{
 		sp_argv = one_argument(gv[1], ' ');
-		if (has_one_element(sp_argv) <= 1)
+		if (has_one_element(sp_argv))
 		{
 			free_arguments(sp_argv);
 			program_exit();

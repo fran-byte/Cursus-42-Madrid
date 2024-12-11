@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 17:47:26 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/10 19:28:48 by frromero         ###   ########.fr       */
+/*   Updated: 2024/12/11 21:19:28 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void	check(int argc, char **argv, t_list **stack)
 
 	new_node = NULL;
 	i = 0;
+	if (argc < 2)
+		program_exit();
 	if (argc == 2)
 	{
 		while (check_with_one_arg(argc, argv)[i] != NULL)
