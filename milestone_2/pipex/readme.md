@@ -6,14 +6,9 @@
 
  ## Funciones autorizadas para el proyecto:
 
- • open, close, read, write,
-malloc, free, perror,
-strerror, access, dup, dup2,
-execve, exit, fork, pipe,
-unlink, wait, waitpid
+ • open, close, read, write, malloc, free, perror, strerror, access, dup, dup2, execve, exit, fork, pipe, unlink, wait, waitpid
 
-• ft_printf and any equivalent
-YOU coded
+• ft_printf y cualquier equivalente que TÚ hayas programado.
 
 
 ### 1. **Teoría de fondo — `pipe()`, `fork()`, `dup2()` y `execve()`**
