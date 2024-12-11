@@ -11,8 +11,8 @@
 /* ************************************************************************** */
 
 /* Creates a new node for a singly linked list using malloc. The number
-   of the node is initialized with the provided parameter 'number', and
-   the 'next' pointer is set to NULL. The node is not yet linked to a list.*/
+   of the node is initialized with the provided parameter 'number', the 'prev'
+   and 'next' pointers are set to NULL. The node is not yet linked to a list.*/
 
 #include "../inc/push_swap.h"
 
