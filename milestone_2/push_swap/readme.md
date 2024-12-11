@@ -17,14 +17,14 @@ Todo programa en C comienza con la función `main`, que sirve como punto de entr
 3. **Ejecución del algoritmo:** Ordena los números según las reglas definidas.  
 4. **Limpieza:** Libera la memoria utilizada para evitar fugas.  
 
-Por ejemplo: en el código, vemos que `stack_init` probablemente inicializa la pila, y luego hay una verificación para determinar si la pila ya está ordenada o no.  
+Por ejemplo: en el código, vemos que `init_stack_mult_args` y `init_stack_one_arg' inicializan la pila, y luego hay una verificación para determinar si la pila ya está ordenada o no.  
 
 ### Probar el algoritmo
 Para probar si el algoritmo funciona, utilizamos un **tester online**. Por ejemplo:  
-- Probamos con **100 números** y realizamos **50 pruebas**.  
+- Probamos con **100 números** y realizamos **50 pruebas** deben de ser inferiores a 700 movimientos.
 - Los resultados muestran cuántos movimientos (instrucciones) fueron necesarios para ordenar correctamente los números.  
 
-Los valores de salida, como un **máximo de 665 instrucciones** y un promedio de 606, indican que el algoritmo está funcionando correctamente.  
+Los valores de salida, como un **máximo de 655 instrucciones** y un promedio de 606, indican que el algoritmo está funcionando correctamente.  
 
 Lo más importante son los **resultados** 
 
