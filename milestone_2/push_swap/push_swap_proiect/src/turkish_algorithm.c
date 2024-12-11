@@ -10,6 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* - calculate_move: Determines the number of moves needed to place a node a
+   the top of the stack.
+   - move_nodes: Moves a specified node to the top of the stack using rotation
+   operations.
+   - last_step: Ensures the stack is sorted by moving the smallest element to
+   the top if needed.
+   - turkish_algorithm: Implements the sorting algorithm */
+
 #include "../inc/push_swap.h"
 
 static int	calculate_move(t_list *stack, t_list *node)
