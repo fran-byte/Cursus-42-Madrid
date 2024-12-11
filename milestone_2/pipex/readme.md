@@ -20,10 +20,19 @@ La estructura de la función `pipex` es la siguiente:
 **Esquema visual**:
 
 ```
-infile                                    outfile
- |                                         |
- |--> cmd1 (lee infile, escribe en end[1]) --> end[1] --> cmd2 (lee de end[0], escribe en outfile)
-              end[0] <-- cmd1 (lee de end[1], escribe en end[0])
+infile                               outfile
+   |                                    |
+   |                                    |
+   |                                    |
+   v                                    v
+  cmd1  -->  (lee de infile, escribe en end[1])
+                    |
+                    v
+                 end[1]  <---->  end[0]
+                    |
+                    v
+                 cmd2  -->  (lee de end[0], escribe en outfile)
+
 ```
 
 ### 2. **Cómo hacer pipex con dos procesos hijos**
