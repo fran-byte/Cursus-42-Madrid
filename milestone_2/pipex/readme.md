@@ -1,8 +1,8 @@
 # pipex
 
- Reproduce el comportamiento del comando `|` en la shell, usando C.
+ - Reproduce el comportamiento del comando `|` en la shell, usando C.
 
- La ejecución es de la siguiente forma: `./pipex infile cmd1 cmd2 outfile`, y se comporta como la línea en la shell: `< infile cmd1 | cmd2 > outfile`.
+ - La ejecución es de la siguiente forma: `./pipex infile cmd1 cmd2 outfile`, y se comporta como la línea en la shell: `< infile cmd1 | cmd2 > outfile`.
 
  ## Funciones autorizadas para el proyecto:
 
@@ -43,11 +43,11 @@ infile                               outfile
 
 ### 2. **Cómo hacer pipex con dos procesos hijos**
 
-En lugar de tener un solo hijo ejecutando un comando, puedes dividir el trabajo en dos procesos hijos. Cada hijo ejecutará uno de los comandos (`cmd1` y `cmd2`), y el proceso padre simplemente supervisará su ejecución. El proceso padre esperará a que ambos hijos terminen.
+- En lugar de tener un solo hijo ejecutando un comando, puedes dividir el trabajo en dos procesos hijos. Cada hijo ejecutará uno de los comandos (`cmd1` y `cmd2`), y el proceso padre simplemente supervisará su ejecución. El proceso padre esperará a que ambos hijos terminen.
 
 ### 3. **La función `access()`**
 
-Cuando el comando no se encuentra, como al intentar ejecutar un archivo que no existe, el programa debería verificar si el comando es accesible antes de intentar ejecutarlo. Esto se logra usando la función `access()`, que verifica si el archivo (o comando) existe y es ejecutable.
+- Cuando el comando no se encuentra, como al intentar ejecutar un archivo que no existe, el programa debería verificar si el comando es accesible antes de intentar ejecutarlo. - Esto se logra usando la función `access()`, que verifica si el archivo (o comando) existe y es ejecutable.
 
 ### 4. **Problemas comunes encontrados**
 - **Cierre incorrecto de extremos del pipe**: Si uno de los extremos del pipe no se cierra correctamente, el proceso en espera no terminará correctamente.
