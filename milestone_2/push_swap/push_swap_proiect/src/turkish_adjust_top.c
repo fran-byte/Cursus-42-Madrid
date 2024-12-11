@@ -10,6 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*  - calculate_move: Computes the number of moves needed to bring a node to the
+    top of the stack.
+    - execute_single_stack_moves_a: Executes the rotations required to move a
+    node to the top of stack a.
+    - execute_single_stack_moves_b: Executes the rotations required to move a
+    node to the top of stack b.
+    - execute_moves: Performs simultaneous rotations on both stacks, optimizing
+    the moves.
+    - move_nodes_to_top: Moves a node from stack_a and a target node from
+    stack_b to the top of their respective stacks. */
+
 #include "../inc/push_swap.h"
 
 static int	calculate_move(t_list *stack, t_list *node)
