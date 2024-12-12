@@ -153,18 +153,14 @@ La estructura de la función `pipex` es la siguiente:
 **Esquema visual**:
 
 ```
-infile                               outfile
-   |                                    |
-   |                                    |
-   |                                    |
-   v                                    v
-  cmd1  -->  (lee de infile, escribe en end[1])
-                    |
-                    v
-                 end[1]  <---->  end[0]
-                    |
-                    v
-                 cmd2  -->  (lee de end[0], escribe en outfile)
+               Shell (Padre)
+                  |
+     -----------------------------------
+     |                                 |
+  grep (Hijo 1)                 wc (Hijo 2)
+     |                                 |
+  Lee de infile              Lee de pipe y escribe
+                                  en outfile
 
 ```
 
