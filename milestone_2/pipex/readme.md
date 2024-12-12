@@ -31,7 +31,10 @@ Flujos en la Terminal
 
 ## stdin (Standard Input): 
 
-- Es la entrada estándar. Por defecto, es el teclado, pero puede redirigirse a otras fuentes como archivos o la salida de otros programas.
+- Fuente predeterminada la entrada estándar. Por defecto, es el **TECLADO**
+- Pudes cargar datos tambien desde **ARCHIVOS** (con redirección <)
+- o cargar esos datos desde la **Salida** de **OTROS COMANDOS** como (**pipes |**)
+  
 ## stdout (Standard Output):
 
 - Es la salida estándar. Por defecto, es la pantalla de la terminal, pero puede redirigirse a archivos.
