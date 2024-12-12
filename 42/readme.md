@@ -24,3 +24,29 @@
    - Los estudiantes adquieren competencias técnicas y de resolución de problemas que los preparan para las demandas del mercado laboral tecnológico.
 
 42 Madrid es impulsada por la Fundación Telefónica y está situada en Las Tablas, Madrid. Este campus forma parte de una red global que incluye otros centros en ciudades como París, Silicon Valley, Lisboa y São Paulo. Es una opción muy valorada por quienes buscan una formación tecnológica no convencional y orientada al futuro.
+
+
+-----------------
+
+42 Madrid is an educational campus focused on programming and technology, and it is part of the global **42 network**, a disruptive learning initiative created by École 42 in Paris. It is renowned for its innovative methodology, which eliminates traditional classes, teachers, and fixed schedules, emphasizing collaborative, autonomous, and practical learning.
+
+### Key Features:
+1. **Unique Educational Model**:
+   - Project-based and peer-to-peer learning.
+   - No classes or teachers: students solve programming challenges and projects independently or by collaborating with others.
+
+2. **Accessible and Free**:
+   - Participation in 42 Madrid is completely free, with no tuition or fees required.
+
+3. **No Academic Prerequisites**:
+   - No prior university degree or programming knowledge is needed.
+   - Candidates must go through a selection process, which includes an online test and an intensive trial period known as **The Piscine**.
+
+4. **Modern Learning Environment**:
+   - Facilities are open 24/7.
+   - Promotes creativity, autonomy, and teamwork.
+
+5. **Focus on Real-World Skills**:
+   - Students develop technical and problem-solving skills tailored to the demands of the tech job market.
+
+42 Madrid is powered by Fundación Telefónica and is located in Las Tablas, Madrid. It is part of a global network with campuses in cities such as Paris, Silicon Valley, Lisbon, and São Paulo. It’s highly valued by those seeking unconventional, future-oriented tech training.
