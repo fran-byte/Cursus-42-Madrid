@@ -170,7 +170,8 @@ La estructura de la función `pipex` es la siguiente:
 
 Copiar
 grep a1 < infile | wc -w > outfile
-De esta manera, podemos ver mejor que el contenido del infilees utilizado por el grepcomando.
+De esta manera, podemos ver mejor que el contenido del `infile` es utilizado por el comando `grep`
+
 ### 2. **Cómo hacer pipex con dos procesos hijos**
 
 - En lugar de tener un solo hijo ejecutando un comando, puedes dividir el trabajo en dos procesos hijos. Cada hijo ejecutará uno de los comandos (`cmd1` y `cmd2`), y el proceso padre simplemente supervisará su ejecución. El proceso padre esperará a que ambos hijos terminen.
