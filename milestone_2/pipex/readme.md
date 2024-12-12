@@ -29,18 +29,31 @@ Flujos en la Terminal
 
 - En un sistema UNIX (como Linux o macOS), los procesos se comunican a través de lo que se llama **flujos estándar**. Hay tres flujos principales:
 
-## stdin (Standard Input): 
+## 1- stdin (Standard Input): 
 
 - Fuente predeterminada la entrada estándar. Por defecto, es el **TECLADO**
 - Pudes cargar datos tambien desde **ARCHIVOS** (con redirección <)
 - o cargar esos datos desde la **Salida** de **OTROS COMANDOS** como (**pipes |**)
   
-## stdout (Standard Output):
+## 2- stdout (Standard Output):
 
-- Es la salida estándar. Por defecto, es la pantalla de la terminal, pero puede redirigirse a archivos.
-## stderr (Standard Error):
+- **PANTALLA** del Terminal (predeterminado)
+- **ARCHIVOS** (con redirección > o >>)
+- Entrada de **OTROS COMANDOS** (pipes |)
 
+
+## 3- stderr (Standard Error):
 - Es el flujo de error estándar, utilizado para imprimir mensajes de error, también redirigible.
+- **Pantalla** del Terminal (por defecto).
+- **Archivos** (con redirección 2> o 2>>).
+- **Combinación** de stderr y stdout (con &> o 2>&1).
+- **Redirección a /dev/null** (descartar los errores).
+- **Archivos especiales** de dispositivos en /dev (como /dev/tty, /dev/console, etc.).
+- **Archivos de registro** del sistema (logs).
+- Redirección a **otros procesos** o programas (a través de pipes o comandos).
+- Entrada en **programas gráficos** o **interfaces interactivas.**
+
+
 
 ## Proceso de redirección con <
 
@@ -61,7 +74,9 @@ Cuando usas el operador < para redirigir un archivo a un comando, el sistema rea
 - En términos técnicos, el archivo no se "almacena" en algún lugar especial, sino que el contenido se coloca en el buffer (un área de memoria temporal) que maneja el flujo de entrada estándar del proceso. El proceso recibe estos datos como si estuvieran siendo introducidos por el usuario, **pero en realidad son leídos desde el archivo**.
 
 - **El comando lee desde stdin**: El comando, como grep en tu ejemplo, recibe los datos desde stdin como si el usuario los hubiera tecleado y el comando procesa esos datos de acuerdo con su lógica (por ejemplo, buscando un patrón).
-  
+
+
+
 ---
 
 ### **1. Abrir el archivo de entrada (`infile`) y redirigirlo al `stdin`**
