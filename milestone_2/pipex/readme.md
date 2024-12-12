@@ -11,14 +11,6 @@
 
  - La ejecución es de la siguiente forma: `./pipex infile cmd1 cmd2 outfile`, y se comporta como la línea en la shell:  `< infile cmd1 | cmd2 > outfile`.
 
-## El flujo básico para dos comandos sería:
-
-    - Abrir el archivo de entrada [infile] y redirigirlo al stdin (standar input).
-    - Crear una tubería entre cmd1 y cmd2.
-    - Redirigir la salida de cmd1 al extremo de escritura del pipe.
-    - Redirigir la entrada de cmd2 al extremo de lectura del pipe.
-    - Abrir el archivo de salida [outfile] y redirigirlo al stdout.
-
 ---
 
 ## RESOLVIENDO DUDAS:
@@ -52,7 +44,14 @@ Flujos en la Terminal
 - Entrada en **programas gráficos** o **interfaces interactivas.**
 
 
+## El flujo básico para dos comandos sería:
 
+    - Abrir el archivo de entrada [infile] y redirigirlo al stdin (standar input).
+    - Crear una tubería entre cmd1 y cmd2.
+    - Redirigir la salida de cmd1 al extremo de escritura del pipe.
+    - Redirigir la entrada de cmd2 al extremo de lectura del pipe.
+    - Abrir el archivo de salida [outfile] y redirigirlo al stdout.
+    
 ## Proceso de redirección con <
 
 `< infile grep a1 | wc -w > outfile`
