@@ -1,11 +1,13 @@
-<p align="center" width="100%"><a href="milestone_2/"><img src="../../img/milestone_2/pipex.png" width="72" />
+<p align="center" width="100%"><a href="milestone_2/"><img src="../../img/milestone_2/pipex.png" width="72" /></p>
 
 
 # pipex (recursos)
 
 -El proyecto pipex  es un desafío en el que se reproduce el comportamiento de las tuberías `|` y redirecciones de entrada/salida de la shell usando C.
 
-# Símbolo | 
+<p align="center" width="100%"><a href="milestone_2/"><img src="../../img/milestone_2/Unix_pipe_and_fork.svg width="512"/></p>
+
+# Símbolo |
 
 - Redirige el output del comando de la izquierda al input del comando de la derecha, reproduciendo el comportamiento del comando `|` en la shell, usando C.
 
@@ -19,12 +21,12 @@ Flujos en la Terminal
 
 - En un sistema UNIX (como Linux o macOS), los procesos se comunican a través de lo que se llama **flujos estándar**. Hay tres flujos principales:
 
-## 1- stdin (Standard Input): 
+## 1- stdin (Standard Input):
 
 - Fuente predeterminada la entrada estándar. Por defecto, es el **TECLADO**
 - Pudes cargar datos tambien desde **ARCHIVOS** (con redirección <)
 - o cargar esos datos desde la **Salida** de **OTROS COMANDOS** como (**pipes |**)
-  
+
 ## 2- stdout (Standard Output):
 
 - **PANTALLA** del Terminal (predeterminado)
@@ -51,7 +53,7 @@ Flujos en la Terminal
     - Redirigir la salida de cmd1 al extremo de escritura del pipe.
     - Redirigir la entrada de cmd2 al extremo de lectura del pipe.
     - Abrir el archivo de salida [outfile] y redirigirlo al stdout (standar output)
-    
+
 ## Proceso de redirección con <
 
 `< infile grep a1 | wc -w > outfile`
@@ -113,12 +115,12 @@ Cuando usas el operador < para redirigir un archivo a un comando, el sistema rea
 
 Este flujo asegura que los datos pasen correctamente desde el archivo de entrada al primer comando, luego a través del pipe hacia el segundo comando, y finalmente al archivo de salida. Si hay más comandos, el flujo se encadena repitiendo los pasos de las tuberías.
 
-# Símbolo < 
+# Símbolo <
 - Es un símbolo de "redirección de entrada".
 
 
 
-# Símbolo >> 
+# Símbolo >>
 
 - El >> hace casi lo mismo que el > . Reemplaza el contenido del archivo de la derecha con el resultado del comando de la izquierda. El símbolo >> agrega el resultado del comando de la izquierda al final del archivo.
 
