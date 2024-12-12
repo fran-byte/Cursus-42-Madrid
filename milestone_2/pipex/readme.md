@@ -1,7 +1,7 @@
 <p align="center" width="100%"><a href="milestone_2/"><img src="../../img/milestone_2/pipex.png" width="72" />
 
 
-# pipex
+# pipex (recursos)
 
 -El proyecto pipex  es un desafío en el que se reproduce el comportamiento de las tuberías `|` y redirecciones de entrada/salida de la shell usando C.
 
