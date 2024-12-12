@@ -15,12 +15,52 @@
 
 ## El flujo básico para dos comandos sería:
 
-    - Abrir el archivo de entrada [infile] y redirigirlo al stdin.
+    - Abrir el archivo de entrada [infile] y redirigirlo al stdin (standar input).
     - Crear una tubería entre cmd1 y cmd2.
     - Redirigir la salida de cmd1 al extremo de escritura del pipe.
     - Redirigir la entrada de cmd2 al extremo de lectura del pipe.
     - Abrir el archivo de salida [outfile] y redirigirlo al stdout.
 
+---
+
+## RESOLVIENDO DUDAS:
+
+Flujos en la Terminal
+
+- En un sistema UNIX (como Linux o macOS), los procesos se comunican a través de lo que se llama **flujos estándar**. Hay tres flujos principales:
+
+## stdin (Standard Input): 
+
+- Es la entrada estándar. Por defecto, es el teclado, pero puede redirigirse a otras fuentes como archivos o la salida de otros programas.
+## stdout (Standard Output):
+
+- Es la salida estándar. Por defecto, es la pantalla de la terminal, pero puede redirigirse a archivos.
+## stderr (Standard Error):
+
+- Es el flujo de error estándar, utilizado para imprimir mensajes de error, también redirigible.
+
+## Proceso de redirección con <
+
+`< infile grep a1 | wc -w > outfile`
+
+- En ese caso, el símbolo < redirige el contenido de `infile` a `standard input` de modo que cuando `grep` se lee desde standard input, obtiene el contenido de infile.
+
+- Utilicemos una sintaxis más fácil de entender que funcione de la misma manera.
+
+`grep a1 < infile | wc -w > outfile`
+
+Cuando usas el operador < para redirigir un archivo a un comando, el sistema realiza los siguientes pasos internos:
+
+- El archivo se abre: El sistema operativo abre el archivo especificado (archivo) y obtiene un descriptor de archivo, que es un número que hace referencia al archivo en la memoria.
+
+- El contenido del archivo se pasa a stdin: El archivo se lee secuencialmente línea por línea, y cada línea de texto se envía al flujo de entrada estándar (stdin) del comando que está recibiendo la redirección.
+
+- En términos técnicos, el archivo no se "almacena" en algún lugar especial, sino que el contenido se coloca en el buffer (un área de memoria temporal) que maneja el flujo de entrada estándar del proceso. El proceso recibe estos datos como si estuvieran siendo introducidos por el usuario, pero en realidad son leídos desde el archivo.
+
+- El comando lee desde stdin:
+        El comando, como grep en tu ejemplo, recibe los datos desde stdin como si el usuario los hubiera tecleado.
+        No se almacena permanentemente en algún lugar. Los datos fluyen directamente desde el archivo al programa que está ejecutando el comando, y el comando procesa esos datos de acuerdo con su lógica (por ejemplo, buscando un patrón).
+  
 ---
 
 ### **1. Abrir el archivo de entrada (`infile`) y redirigirlo al `stdin`**
@@ -63,13 +103,7 @@ Este flujo asegura que los datos pasen correctamente desde el archivo de entrada
 # Símbolo < 
 - Es un símbolo de "redirección de entrada".
 
-`< infile grep a1 | wc -w > outfile`
 
-- En ese caso, el símbolo < redirige el contenido de `infile` a `standard input` de modo que cuando `grep` se lee desde standard input, obtiene el contenido de infile.
-
-- Utilicemos una sintaxis más fácil de entender que funcione de la misma manera.
-
-`grep a1 < infile | wc -w > outfile`
 
 # Símbolo >> 
 
