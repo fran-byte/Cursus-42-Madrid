@@ -1,6 +1,6 @@
 
 <p align="center" width="100%">
-    <img width="45%" src="../img/42-Madrid.png"> </p> </p>
+    <a href="https://www.42madrid.com/"> <img width="45%" src="../img/42-Madrid.png"> </a></p>
 
 [42 Madrid](https://www.42madrid.com/) es un campus educativo de programación y tecnología que forma parte de la red global **42**, una iniciativa de aprendizaje disruptiva creada por la École 42 en París. Es conocida por su metodología innovadora, que elimina clases tradicionales, profesores y horarios fijos, enfocándose en el aprendizaje colaborativo, autónomo y práctico.
 
