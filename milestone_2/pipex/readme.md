@@ -25,6 +25,45 @@
     - Redirigir la entrada de cmd2 al extremo de lectura del pipe.
     - Abrir el archivo de salida [outfile] y redirigirlo al stdout.
 
+---
+
+### **1. Abrir el archivo de entrada (`infile`) y redirigirlo al `stdin`**
+- El archivo de entrada se abre en modo lectura.
+- El descriptor del archivo se conecta a la entrada estándar (`stdin`) del proceso que ejecutará el primer comando. Esto asegura que el comando pueda leer los datos del archivo en lugar de esperar entrada del teclado.
+- Se hace redirigiendo `stdin` al descriptor del archivo usando una llamada al sistema.
+
+---
+
+### **2. Crear una tubería entre `cmd1` y `cmd2`**
+- Una tubería es un canal de comunicación entre procesos, compuesto por dos extremos:
+  - Un extremo para **escribir** datos.
+  - Otro extremo para **leer** los datos escritos.
+- La función `pipe()` crea este canal de comunicación.
+- Este canal se usará para enviar la salida del primer comando (`cmd1`) como entrada para el segundo comando (`cmd2`).
+
+---
+
+### **3. Redirigir la salida de `cmd1` al extremo de escritura del pipe**
+- Se redirige la salida estándar (`stdout`) del proceso que ejecuta el primer comando hacia el extremo de escritura del pipe.
+- Esto asegura que cualquier salida producida por `cmd1` se envíe al pipe en lugar de aparecer en la pantalla o un archivo.
+
+---
+
+### **4. Redirigir la entrada de `cmd2` al extremo de lectura del pipe**
+- Se conecta el extremo de lectura del pipe a la entrada estándar (`stdin`) del proceso que ejecutará el segundo comando.
+- Esto permite que `cmd2` reciba como entrada los datos que el primer comando escribió en el pipe.
+
+---
+
+### **5. Abrir el archivo de salida (`outfile`) y redirigirlo al `stdout`**
+- El archivo de salida se abre en modo escritura. Si no existe, se crea. Si ya existe, puede sobrescribirse o añadirse al final según el símbolo utilizado (`>` o `>>`).
+- El descriptor del archivo se conecta a la salida estándar (`stdout`) del proceso que ejecuta el segundo comando.
+- Esto asegura que cualquier salida producida por `cmd2` se escriba en el archivo de salida en lugar de aparecer en la pantalla.
+
+---
+
+Este flujo asegura que los datos pasen correctamente desde el archivo de entrada al primer comando, luego a través del pipe hacia el segundo comando, y finalmente al archivo de salida. Si hay más comandos, el flujo se encadena repitiendo los pasos de las tuberías.
+
 # Símbolo < 
 - Es un símbolo de "redirección de entrada".
 
