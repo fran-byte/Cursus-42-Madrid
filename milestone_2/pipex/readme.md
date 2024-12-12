@@ -51,15 +51,13 @@ Flujos en la Terminal
 
 Cuando usas el operador < para redirigir un archivo a un comando, el sistema realiza los siguientes pasos internos:
 
-- El archivo se abre: El sistema operativo abre el archivo especificado (archivo) y obtiene un descriptor de archivo, que es un número que hace referencia al archivo en la memoria.
+- **El archivo se abre**: El sistema operativo abre el archivo especificado (infile) y obtiene un descriptor de archivo, que es un número que hace referencia al archivo en la memoria.
 
-- El contenido del archivo se pasa a stdin: El archivo se lee secuencialmente línea por línea, y cada línea de texto se envía al flujo de entrada estándar (stdin) del comando que está recibiendo la redirección.
+- **El contenido del archivo se pasa a stdin**: El archivo se lee secuencialmente línea por línea, y cada línea de texto se envía al flujo de entrada estándar (stdin) del comando que está recibiendo la redirección.
 
-- En términos técnicos, el archivo no se "almacena" en algún lugar especial, sino que el contenido se coloca en el buffer (un área de memoria temporal) que maneja el flujo de entrada estándar del proceso. El proceso recibe estos datos como si estuvieran siendo introducidos por el usuario, pero en realidad son leídos desde el archivo.
+- En términos técnicos, el archivo no se "almacena" en algún lugar especial, sino que el contenido se coloca en el buffer (un área de memoria temporal) que maneja el flujo de entrada estándar del proceso. El proceso recibe estos datos como si estuvieran siendo introducidos por el usuario, **pero en realidad son leídos desde el archivo**.
 
-- El comando lee desde stdin:
-        El comando, como grep en tu ejemplo, recibe los datos desde stdin como si el usuario los hubiera tecleado.
-        No se almacena permanentemente en algún lugar. Los datos fluyen directamente desde el archivo al programa que está ejecutando el comando, y el comando procesa esos datos de acuerdo con su lógica (por ejemplo, buscando un patrón).
+- **El comando lee desde stdin**: El comando, como grep en tu ejemplo, recibe los datos desde stdin como si el usuario los hubiera tecleado y el comando procesa esos datos de acuerdo con su lógica (por ejemplo, buscando un patrón).
   
 ---
 
