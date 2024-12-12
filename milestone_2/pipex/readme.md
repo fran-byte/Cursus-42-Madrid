@@ -5,10 +5,6 @@
 
 -El proyecto pipex  es un desafío en el que se reproduce el comportamiento de las tuberías `|` y redirecciones de entrada/salida de la shell usando C.
 
- Esquema del Programa
-
-
-
 # Símbolo | 
 
 - Redirige el output del comando de la izquierda al input del comando de la derecha, reproduciendo el comportamiento del comando `|` en la shell, usando C.
