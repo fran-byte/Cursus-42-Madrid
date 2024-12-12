@@ -1,8 +1,8 @@
 <p align="center" width="100%">
-    <img width="45%" src="img/42-Madrid.png">
+    <img width="45%" src="img/42-Madrid.png">  [![frromero's 42 stats](https://badge.mediaplus.ma/darkblue/frromero?UM6P=off)](https://github.com/oakoudad/badge42)
 </p>
 
-[![frromero's 42 stats](https://badge.mediaplus.ma/darkblue/frromero?UM6P=off)](https://github.com/oakoudad/badge42)
+
 
 <p align="center" width="100%"><i><b>42 Madrid</b> Campus de programación gratuito y revolucionario.</i></p>
 
