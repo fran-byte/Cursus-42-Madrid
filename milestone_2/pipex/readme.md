@@ -82,7 +82,16 @@ De esta manera, podemos ver mejor que el contenido del infilees utilizado por el
 
 ### 3. **La función `access()`**
 
-- Cuando el comando no se encuentra, como al intentar ejecutar un archivo que no existe, el programa debería verificar si el comando es accesible antes de intentar ejecutarlo. - Esto se logra usando la función `access()`, que verifica si el archivo (o comando) existe y es ejecutable.
+- Cuando el comando no se encuentra, como al intentar ejecutar un archivo que no existe, el programa debería verificar si el comando es accesible antes de intentar ejecutarlo.
+- Esto se logra usando la función `access()`, que verifica si el archivo (o comando) existe y es ejecutable.
+`int access(const char *pathname, int mode);`
+`access()` Comprueba si el programa puede acceder al archivo pathname.
+
+`mode` especifica las comprobaciones de accesibilidad que se realizarán y es el valor:
+`F_OK`comprueba la existencia del archivo.
+`R_OK`,` W_OK`, y `X_OK`comprueba si el archivo existe y otorga permisos de lectura, escritura y ejecución, respectivamente.
+
+En caso de éxito (se conceden todos los permisos solicitados), se devuelve cero. En caso de error (se deniega al menos un bit de modeun permiso solicitado o se produce algún otro error), se devuelve -1 y errnose configura de forma adecuada.
 
 ### 4. **Problemas comunes encontrados**
 - **Cierre incorrecto de extremos del pipe**: Si uno de los extremos del pipe no se cierra correctamente, el proceso en espera no terminará correctamente.
