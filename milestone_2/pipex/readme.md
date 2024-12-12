@@ -2,11 +2,39 @@
 
 # pipex
 
+# Símbolo | 
+
+ redirige el output del comando de la izquierda al inpu tdel comando de la derecha.
+ 
  - Reproduce el comportamiento del comando `|` en la shell, usando C.
 
  - La ejecución es de la siguiente forma: `./pipex infile cmd1 cmd2 outfile`, y se comporta como la línea en la shell:
 
  - `< infile cmd1 | cmd2 > outfile`.
+
+# Símbolo < 
+Es un símbolo de "redirección de entrada".
+
+`< infile grep a1 | wc -w > outfile`
+
+En ese caso, el <símbolo redirige el contenido de `infile` a `standard input` de modo que cuando `grep` se lee desde standard input, obtiene el contenido de infile.
+
+Utilicemos una sintaxis más fácil de entender que funcione de la misma manera.
+
+`grep a1 < infile | wc -w > outfile`
+
+# Símbolo >> 
+
+- El >> hace casi lo mismo que el > . Reemplaza el contenido del archivo de la derecha con el resultado del comando de la izquierda. El símbolo >> agrega el resultado del comando de la izquierda al final del archivo.
+
+# Símbolo << (para el bonus)
+
+
+- Es una "redirección" de entrada. Hace que el shell lea desde la entrada estándar hasta que encuentre solo un valor específico LIMITER en la entrada estándar. Veamos el ejemplo del tema.
+
+`cmd << LIMITER | cmd1 >> file`
+
+- Como puedes ver, el primer comando `cat` esperó hasta que escribí LIM y solo LIM en la entrada estándar antes de continuar. Debería pipex hacer lo mismo.
 
  ## Funciones autorizadas para el proyecto:
 
@@ -45,16 +73,7 @@ infile                               outfile
 
 ```
 
-# < símbolo
-Es un símbolo de "redirección de entrada".
 
-`< infile grep a1 | wc -w > outfile`
-
-En ese caso, el <símbolo redirige el contenido de `infile` a `standard input` de modo que cuando `grep` se lee desde standard input, obtiene el contenido de infile.
-
-Utilicemos una sintaxis más fácil de entender que funcione de la misma manera.
-
-`grep a1 < infile | wc -w > outfile`
 
 Copiar
 grep a1 < infile | wc -w > outfile
