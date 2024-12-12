@@ -46,11 +46,11 @@ Flujos en la Terminal
 
 ## El flujo básico para dos comandos sería:
 
-    - Abrir el archivo de entrada [infile] y redirigirlo al stdin (standar input).
+    - Abrir el archivo de entrada [infile] y redirigirlo al stdin (standar input)
     - Crear una tubería entre cmd1 y cmd2.
     - Redirigir la salida de cmd1 al extremo de escritura del pipe.
     - Redirigir la entrada de cmd2 al extremo de lectura del pipe.
-    - Abrir el archivo de salida [outfile] y redirigirlo al stdout.
+    - Abrir el archivo de salida [outfile] y redirigirlo al stdout (standar output)
     
 ## Proceso de redirección con <
 
