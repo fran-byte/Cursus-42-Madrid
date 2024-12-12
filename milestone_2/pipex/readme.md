@@ -45,6 +45,20 @@ infile                               outfile
 
 ```
 
+# < símbolo
+Es un símbolo de "redirección de entrada".
+
+`< infile grep a1 | wc -w > outfile`
+
+En ese caso, el <símbolo redirige el contenido de `infile` a `standard input` de modo que cuando `grep` se lee desde standard input, obtiene el contenido de infile.
+
+Utilicemos una sintaxis más fácil de entender que funcione de la misma manera.
+
+`grep a1 < infile | wc -w > outfile`
+
+Copiar
+grep a1 < infile | wc -w > outfile
+De esta manera, podemos ver mejor que el contenido del infilees utilizado por el grepcomando.
 ### 2. **Cómo hacer pipex con dos procesos hijos**
 
 - En lugar de tener un solo hijo ejecutando un comando, puedes dividir el trabajo en dos procesos hijos. Cada hijo ejecutará uno de los comandos (`cmd1` y `cmd2`), y el proceso padre simplemente supervisará su ejecución. El proceso padre esperará a que ambos hijos terminen.
