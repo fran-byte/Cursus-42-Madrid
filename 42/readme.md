@@ -1,5 +1,6 @@
+
 <p align="center" width="100%">
-<a href="https://github.com/oakoudad/badge42"><img src="https://badge.mediaplus.ma/greenbinary/frromero?1337Badge=off&UM6P=off" alt="frromero's 42 stats" /></a></p>
+    <img width="45%" src="../img/42-Madrid.png"> </p> </p>
 
 [42 Madrid](https://www.42madrid.com/) es un campus educativo de programación y tecnología que forma parte de la red global **42**, una iniciativa de aprendizaje disruptiva creada por la École 42 en París. Es conocida por su metodología innovadora, que elimina clases tradicionales, profesores y horarios fijos, enfocándose en el aprendizaje colaborativo, autónomo y práctico.
 
