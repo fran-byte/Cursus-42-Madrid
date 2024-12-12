@@ -15,7 +15,7 @@ Es un símbolo de "redirección de entrada".
 
 `< infile grep a1 | wc -w > outfile`
 
-En ese caso, el <símbolo redirige el contenido de `infile` a `standard input` de modo que cuando `grep` se lee desde standard input, obtiene el contenido de infile.
+En ese caso, el símbolo < redirige el contenido de `infile` a `standard input` de modo que cuando `grep` se lee desde standard input, obtiene el contenido de infile.
 
 Utilicemos una sintaxis más fácil de entender que funcione de la misma manera.
 
