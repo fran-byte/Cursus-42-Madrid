@@ -84,8 +84,8 @@ De esta manera, podemos ver mejor que el contenido del infilees utilizado por el
 
 - Cuando el comando no se encuentra, como al intentar ejecutar un archivo que no existe, el programa debería verificar si el comando es accesible antes de intentar ejecutarlo.
 - Esto se logra usando la función `access()`, que verifica si el archivo (o comando) existe y es ejecutable.
-`int access(const char *pathname, int mode);`
-`access()` Comprueba si el programa puede acceder al archivo pathname.
+- `int access(const char *pathname, int mode);`
+- `access()` Comprueba si el programa puede acceder al archivo pathname.
 
 `mode` especifica las comprobaciones de accesibilidad que se realizaránr:
 `F_OK`comprueba la existencia del archivo.
