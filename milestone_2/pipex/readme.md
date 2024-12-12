@@ -87,11 +87,11 @@ De esta manera, podemos ver mejor que el contenido del infilees utilizado por el
 `int access(const char *pathname, int mode);`
 `access()` Comprueba si el programa puede acceder al archivo pathname.
 
-`mode` especifica las comprobaciones de accesibilidad que se realizarán y es el valor:
+`mode` especifica las comprobaciones de accesibilidad que se realizaránr:
 `F_OK`comprueba la existencia del archivo.
 `R_OK`,` W_OK`, y `X_OK`comprueba si el archivo existe y otorga permisos de lectura, escritura y ejecución, respectivamente.
 
-En caso de éxito (se conceden todos los permisos solicitados), se devuelve cero. En caso de error (se deniega al menos un bit de modeun permiso solicitado o se produce algún otro error), se devuelve -1 y errnose configura de forma adecuada.
+- En caso de éxito (se conceden todos los permisos solicitados), se devuelve cero. En caso de error (se deniega al menos un bit de modeun permiso solicitado o se produce algún otro error), se devuelve -1 y errnose configura de forma adecuada.
 
 ### 4. **Problemas comunes encontrados**
 - **Cierre incorrecto de extremos del pipe**: Si uno de los extremos del pipe no se cierra correctamente, el proceso en espera no terminará correctamente.
