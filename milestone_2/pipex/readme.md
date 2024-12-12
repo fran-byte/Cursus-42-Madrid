@@ -4,20 +4,20 @@
 
 # Símbolo | 
 
- Redirige el output del comando de la izquierda al input del comando de la derecha, reproduciendo el comportamiento del comando `|` en la shell, usando C.
+- Redirige el output del comando de la izquierda al input del comando de la derecha, reproduciendo el comportamiento del comando `|` en la shell, usando C.
 
  - La ejecución es de la siguiente forma: `./pipex infile cmd1 cmd2 outfile`, y se comporta como la línea en la shell:
 
  - `< infile cmd1 | cmd2 > outfile`.
 
 # Símbolo < 
-Es un símbolo de "redirección de entrada".
+- Es un símbolo de "redirección de entrada".
 
 `< infile grep a1 | wc -w > outfile`
 
-En ese caso, el símbolo < redirige el contenido de `infile` a `standard input` de modo que cuando `grep` se lee desde standard input, obtiene el contenido de infile.
+- En ese caso, el símbolo < redirige el contenido de `infile` a `standard input` de modo que cuando `grep` se lee desde standard input, obtiene el contenido de infile.
 
-Utilicemos una sintaxis más fácil de entender que funcione de la misma manera.
+- Utilicemos una sintaxis más fácil de entender que funcione de la misma manera.
 
 `grep a1 < infile | wc -w > outfile`
 
