@@ -152,6 +152,8 @@ La estructura de la función `pipex` es la siguiente:
 
 **Esquema visual**:
 
+`< infile grep a1 | wc -w > outfile`
+
 ```
                Shell (Padre)
                   |
