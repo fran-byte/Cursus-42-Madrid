@@ -5,6 +5,10 @@
 
 -El proyecto pipex  es un desafío en el que se reproduce el comportamiento de las tuberías `|` y redirecciones de entrada/salida de la shell usando C.
 
+ Esquema del Programa
+
+
+
 # Símbolo | 
 
 - Redirige el output del comando de la izquierda al input del comando de la derecha, reproduciendo el comportamiento del comando `|` en la shell, usando C.
@@ -12,6 +16,14 @@
  - La ejecución es de la siguiente forma: `./pipex infile cmd1 cmd2 outfile`, y se comporta como la línea en la shell:
 
  - `< infile cmd1 | cmd2 > outfile`.
+
+## El flujo básico para dos comandos sería:
+
+    Abrir el archivo de entrada (infile) y redirigirlo al stdin.
+    Crear una tubería entre cmd1 y cmd2.
+    Redirigir la salida de cmd1 al extremo de escritura del pipe.
+    Redirigir la entrada de cmd2 al extremo de lectura del pipe.
+    Abrir el archivo de salida (outfile) y redirigirlo al stdout.
 
 # Símbolo < 
 - Es un símbolo de "redirección de entrada".
