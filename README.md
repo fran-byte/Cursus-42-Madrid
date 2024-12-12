@@ -1,6 +1,5 @@
 <p align="center" width="100%">
-    <img width="45%" src="img/42-Madrid.png">  [![frromero's 42 stats](https://badge.mediaplus.ma/darkblue/frromero?UM6P=off)](https://github.com/oakoudad/badge42)
-</p>
+    <img width="45%" src="img/42-Madrid.png">  <a href="https://github.com/oakoudad/badge42"><img src="https://badge.mediaplus.ma/greenbinary/frromero?1337Badge=off&UM6P=off" alt="frromero's 42 stats" /></a>
 
 
 
