@@ -4,9 +4,7 @@
 
 # Símbolo | 
 
- redirige el output del comando de la izquierda al inpu tdel comando de la derecha.
- 
- - Reproduce el comportamiento del comando `|` en la shell, usando C.
+ Redirige el output del comando de la izquierda al input del comando de la derecha, reproduciendo el comportamiento del comando `|` en la shell, usando C.
 
  - La ejecución es de la siguiente forma: `./pipex infile cmd1 cmd2 outfile`, y se comporta como la línea en la shell:
 
