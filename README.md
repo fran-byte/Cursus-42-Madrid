@@ -1,7 +1,7 @@
 <p align="center" width="100%">
-    <img width="45%" src="img/42-Madrid.png">  <a href="https://github.com/oakoudad/badge42"><img src="https://badge.mediaplus.ma/greenbinary/frromero?1337Badge=off&UM6P=off" alt="frromero's 42 stats" /></a>
-
-
+    <img width="45%" src="img/42-Madrid.png"> </p> 
+<p align="center" width="100%">
+    <a href="https://github.com/oakoudad/badge42"><img src="https://badge.mediaplus.ma/greenbinary/frromero?1337Badge=off&UM6P=off" alt="frromero's 42 stats" /></a></p>
 
 <p align="center" width="100%"><i><b>42 Madrid</b> Campus de programación gratuito y revolucionario.</i></p>
 
