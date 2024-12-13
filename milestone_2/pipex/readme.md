@@ -120,7 +120,7 @@ Este flujo asegura que los datos pasen correctamente desde el archivo de entrada
 
 - El >> hace casi lo mismo que el > . Reemplaza el contenido del archivo de la derecha con el resultado del comando de la izquierda. El símbolo >> agrega el resultado del comando de la izquierda al final del archivo.
 
-# Símbolo << (para el bonus)
+# Símbolo <<
 
 
 - Es una "redirección" de entrada. Hace que el shell lea desde la entrada estándar hasta que encuentre solo un valor específico LIMITER en la entrada estándar. Veamos el ejemplo del tema.
