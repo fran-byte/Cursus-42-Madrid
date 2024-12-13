@@ -4,7 +4,7 @@
     <a href="42"><img src="https://badge.mediaplus.ma/darkblue/frromero?1337Badge=off&UM6P=off" alt="frromero's 42 stats" /></a></p>
 
 
-<p align="center" width="100%"><i><b>42 Madrid</b> Campus de programación gratuito y revolucionario.</i></p>
+<p align="center" width="100%"><i><b>42 Madrid</b> Campus de programación gratuito. Open 24/. </i></p>
 
 <p align="center" width="100%"><i>Open 24/7, permite aprender a tu ritmo con una duración media de tres años.</i></p>
 
