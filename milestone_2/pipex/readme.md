@@ -60,10 +60,6 @@ Flujos en la Terminal
 
 - En ese caso, el símbolo < redirige el contenido de `infile` a `standard input` de modo que cuando `grep` se lee desde standard input, obtiene el contenido de infile.
 
-- Utilicemos una sintaxis más fácil de entender que funcione de la misma manera.
-
-`grep a1 < infile | wc -w > outfile`
-
 Cuando usas el operador < para redirigir un archivo a un comando, el sistema realiza los siguientes pasos internos:
 
 - **El archivo se abre**: El sistema operativo abre el archivo especificado (infile) y obtiene un descriptor de archivo, que es un número que hace referencia al archivo en la memoria.
