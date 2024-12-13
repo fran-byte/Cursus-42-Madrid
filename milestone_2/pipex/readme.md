@@ -189,9 +189,9 @@ pipe()
             |--close end[1]
             |--execve(cmd2)
  
-# pipe() sends the output of the first execve() as input to the second execve()
-# fork() runs two processes (i.e. two commands) in one single program
-# dup2() swaps our files with stdin and stdout
+# pipe() Enviamos la salida del 1º execve() como entrada al 2º execve()
+# fork() Abrimos 2 procesos (two commands) en un solo programa
+# dup2() intercambia nuestros archivos con stdin y stdout
 ```
 
 
