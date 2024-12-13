@@ -276,6 +276,13 @@ como stdin para cmd1                              como stdout para cmd2
 
 ```
 
+## Intercambiamos fds a stdin/stdout con dup2()
+El MAN nos dice:
+
+`int dup2(int fd1, int fd2)` : cerrará fd2 y duplicará el valor de fd2 en fd1
+dicho de otra manera, redirigirá fd1 a fd2
+
+
 ### 3. **La función `access()`**
 
 - Cuando el comando no se encuentra, como al intentar ejecutar un archivo que no existe, el programa debería verificar si el comando es accesible antes de intentar ejecutarlo.
