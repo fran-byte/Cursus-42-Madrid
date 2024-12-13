@@ -211,6 +211,24 @@ De esta manera, podemos ver mejor que el contenido del `infile` es utilizado por
 
 - En caso de éxito (se conceden todos los permisos solicitados), se devuelve `cero`. En caso de error (se deniega al menos un bit de mode, un permiso solicitado o se produce algún otro error), se devuelve `-1` y `errno` se configura de forma adecuada.
 
+``` 
+access()
+ |
+ |-- Verifica si el archivo (o comando) es accesible
+      |
+      |-- Comprueba si el archivo existe y es ejecutable
+      :     |-- int access(const char *pathname, int mode)
+      :     |-- mode especifica las comprobaciones de accesibilidad:
+      :           |-- F_OK: existencia del archivo
+      :           |-- R_OK: permisos de lectura
+      :           |-- W_OK: permisos de escritura
+      :           |-- X_OK: permisos de ejecución
+      :
+      |-- Devuelve 0 si se conceden todos los permisos solicitados
+      |-- Devuelve -1 y configura errno en caso de error
+```
+
+
 ### 4. **Problemas comunes encontrados**
 - **Cierre incorrecto de extremos del pipe**: Si uno de los extremos del pipe no se cierra correctamente, el proceso en espera no terminará correctamente.
 - **Uso de `perror("Error")` para depuración**: Se recomienda usar `perror` para verificar qué está fallando en el programa, especialmente después de llamadas a `fork()` y `execve()`.
