@@ -1,4 +1,4 @@
-<p align="center" width="100%"><a href="milestone_2/"><img src="../../img/milestone_2/push_swap.png" width="72" />
+
 
 # push_swap
 
