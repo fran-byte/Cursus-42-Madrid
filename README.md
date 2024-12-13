@@ -1,5 +1,5 @@
 <p align="center" width="100%">
-    <img width="40%" src="img/logo5.png"> </p> 
+    <a href="42"><img width="40%" src="img/logo5.png"></a> </p> 
 <p align="center" width="100%">
     <a href="42"><img src="https://badge.mediaplus.ma/water/frromero?1337Badge=off&UM6P=off" alt="frromero's 42 stats" /></a></p>
 
