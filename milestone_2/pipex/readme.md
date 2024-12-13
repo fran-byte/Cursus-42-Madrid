@@ -156,7 +156,7 @@ La estructura de la función `pipex` es la siguiente:
                        Shell (Padre)
                             |
               -----------------------------------
-              |                                  |
+              |                                 |
         grep (Hijo 1)                     wc (Hijo 2)
               |                                 |
         Lee de infile                Lee de pipe y escribe
@@ -166,7 +166,7 @@ La estructura de la función `pipex` es la siguiente:
 
 ```
             [Proceso A]             [Proceso B]
-                 |                       |
+                 |                        |
            (pd[0]) <----- pipe ----- (pd[1])
                  |                        |
            Read end                   Write end
