@@ -185,7 +185,7 @@ De esta manera, podemos ver mejor que el contenido del `infile` es utilizado por
 `F_OK`comprueba la existencia del archivo.
 `R_OK`,` W_OK`, y `X_OK`comprueba si el archivo existe y otorga permisos de lectura, escritura y ejecución, respectivamente.
 
-- En caso de éxito (se conceden todos los permisos solicitados), se devuelve cero. En caso de error (se deniega al menos un bit de mode, un permiso solicitado o se produce algún otro error), se devuelve -1 y errnose configura de forma adecuada.
+- En caso de éxito (se conceden todos los permisos solicitados), se devuelve `cero`. En caso de error (se deniega al menos un bit de mode, un permiso solicitado o se produce algún otro error), se devuelve `-1` y `errno` se configura de forma adecuada.
 
 ### 4. **Problemas comunes encontrados**
 - **Cierre incorrecto de extremos del pipe**: Si uno de los extremos del pipe no se cierra correctamente, el proceso en espera no terminará correctamente.
