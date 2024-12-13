@@ -2,7 +2,7 @@
 
 # push_swap
 
-<p align="center" width="100%"><a href="milestone_2/"><img src="../../img/milestone_2/fifo.gif" width="200" />
+
 
 ### Explorando el proyecto
 El proyecto está compuesto por muchos archivos, organizados en un **directorio**.
