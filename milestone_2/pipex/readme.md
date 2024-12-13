@@ -254,7 +254,7 @@ Nuestra tabla de fds ahora se ve así:
 ```
 
 ## Intercambiando fds con dup2()
-- Para el proceso hijo, queremos que infile sea nuestro stdin (como entrada), y `end[1]` sea nuestro stdout (escribimos en `end[1]` la salida de `cmd1`)
+- Para el proceso hijo, queremos que `infile` sea nuestro stdin (como entrada), y `end[1]` sea nuestro stdout (escribimos en `end[1]` la salida de `cmd1`)
 En el proceso padre, queremos que `end[0]` sea nuestro stdin (`end[0]` lee de `end[1]` la salida de `cmd1`), y outfile sea nuestro stdout (escribimos en él la salida de `cmd2`)
 Visualmente,
 ```
