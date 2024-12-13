@@ -166,15 +166,8 @@ La estructura de la función `pipex` es la siguiente:
 ### 2. **Cómo hacer pipex con dos procesos hijos**
 
 - En lugar de tener un solo hijo ejecutando un comando, puedes dividir el trabajo en dos procesos hijos. Cada hijo ejecutará uno de los comandos (`cmd1` y `cmd2`), y el proceso padre simplemente supervisará su ejecución. El proceso padre esperará a que ambos hijos terminen.
-- 
-```
-            [Proceso A]             [Proceso B]
-                 |                        |
-           (pd[0]) <----- pipe ----- (pd[1])
-                 |                        |
-           Read end                   Write end
 
-```
+
 ```
 # ./pipex infile cmd1 cmd2 outfile
 
