@@ -192,11 +192,89 @@ pipe()
 
 
 
-Copiar
-grep a1 < infile | wc -w > outfile
-De esta manera, podemos ver mejor que el contenido del `infile` es utilizado por el comando `grep`
+## Configurando el pipe
+``` 
+void    pipex(int f1, int f2)
+{
+    int end[2];    pipe(end);
+}
 
+// pipe() toma un array de dos int y los enlaza
+// lo que se hace en end[0] es visible en end[1], y viceversa
+// pipe() asigna un fd a cada extremo
+// Los fds son descriptores de archivos
+// dado que los archivos se pueden leer y escribir, al obtener un fd cada uno, los dos extremos pueden comunicarse
+// end[1] escribirá en su propio fd, y end[0] leerá el fd de end[1] y escribirá en el suyo propio
 
+```
+## Proceos fork()
+
+```
+void    pipex(int f1, int f2)
+{
+    int   end[2];
+    pid_t parent;    pipe(end);
+    parent = fork();
+    if (parent < 0)
+         return (perror("Fork: "));
+    if (!parent) // si fork() devuelve 0, estamos en el proceso hijo
+        child_process(f1, cmd1);
+    else
+        parent_process(f2, cmd2);
+}
+
+// fork() divide el proceso en dos subprocesos -> paralelos, simultáneos, ocurren al mismo tiempo
+// devuelve 0 para el proceso hijo, un valor distinto de cero para el proceso padre, y -1 en caso de error
+```
+## File Descriptors (FD)
+
+pipex se ejecuta de esta forma: `./pipex infile cmd1 cmd2 outfile`
+Los FDs 0, 1 y 2 están asignados por defecto a `stdin`, `stdou`t y `stderr`
+infile, outfile, el pipe, stdin y stdout son todos `FDs`
+En Linux, puedes verificar tus fds actualmente abiertos con el comando `ls -la /proc/$$/fd`
+
+```
+Nuestra tabla de fds ahora se ve así:
+
+                           -----------------    
+                 0         |     stdin     |  
+                           -----------------    
+                 1         |     stdout    |    
+                           -----------------    
+                 2         |     stderr    |  
+                           -----------------
+                 3         |     infile    |  // open()
+                           -----------------
+                 4         |     outfile   |  // open()
+                           -----------------
+                 5         |     end[0]    | 
+                           -----------------
+                 6         |     end[1]    |  
+                           -----------------
+```
+
+## Intercambiando fds con dup2()
+- Para el proceso hijo, queremos que infile sea nuestro stdin (como entrada), y `end[1]` sea nuestro stdout (escribimos en `end[1]` la salida de `cmd1`)
+En el proceso padre, queremos que `end[0]` sea nuestro stdin (`end[0]` lee de `end[1]` la salida de `cmd1`), y outfile sea nuestro stdout (escribimos en él la salida de `cmd2`)
+Visualmente,
+```
+// cada cmd necesita un stdin (entrada) y devuelve una salida (a stdout)
+   
+    infile                                             outfile
+como stdin para cmd1                              como stdout para cmd2            
+       |                        PIPE                        ↑
+       |           |---------------------------|            |
+       ↓             |                       |              |
+      cmd1   -->    end[1]       ↔       end[0]   -->     cmd2           
+                     |                       |
+            cmd1   |---------------------------|  end[0]
+           salida                               lee end[1]
+    se escribe en end[1]              y envía la salida de cmd1 a cmd2
+                                 
+       (end[1] se convierte                 (end[0] se convierte 
+        en stdout de cmd1)                    en stdin de cmd2)
+
+```
 
 ### 3. **La función `access()`**
 
