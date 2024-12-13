@@ -1,7 +1,8 @@
 <p align="center" width="100%">
     <img width="45%" src="img/logo5.png"> </p> 
 <p align="center" width="100%">
-    <a href="42"><img src="https://badge.mediaplus.ma/greenbinary/frromero?1337Badge=off&UM6P=off" alt="frromero's 42 stats" /></a></p>
+    <a href="42"><img src="https://badge.mediaplus.ma/darkblue/frromero?1337Badge=off&UM6P=off" alt="frromero's 42 stats" /></a></p>
+
 
 <p align="center" width="100%"><i><b>42 Madrid</b> Campus de programación gratuito y revolucionario.</i></p>
 
