@@ -153,14 +153,14 @@ La estructura de la función `pipex` es la siguiente:
 `< infile grep a1 | wc -w > outfile`
 
 ```
-               Shell (Padre)
-                  |
-     -----------------------------------
-     |                                 |
-  grep (Hijo 1)                 wc (Hijo 2)
-     |                                 |
-  Lee de infile              Lee de pipe y escribe
-                                  en outfile
+                       Shell (Padre)
+                            |
+              -----------------------------------
+              |                                 |
+        grep (Hijo 1)                     wc (Hijo 2)
+              |                                 |
+        Lee de infile                Lee de pipe y escribe
+                                            en outfile
 
 ```
 
