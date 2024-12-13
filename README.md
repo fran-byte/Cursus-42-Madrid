@@ -4,7 +4,8 @@
     <a href="42"><img src="https://badge.mediaplus.ma/water/frromero?1337Badge=off&UM6P=off" alt="frromero's 42 stats" /></a></p>
 
 
-<p align="center" width="100%"><i>Estos son los proyectos de <b>42 Madrid</b> Campus de programación gratuito. Open 24/7 </i></p>
+<p align="center" width="100%"><i><b>42 Madrid</b> Campus de programación gratuito. Open 24/7 </i></p>
+<p align="center" width="100%"><i><b>- P R O Y E C T O S -</b> </i></p>
 
 
 
