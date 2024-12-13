@@ -207,7 +207,7 @@ void    pipex(int f1, int f2)
 // end[1] escribirá en su propio fd, y end[0] leerá el fd de end[1] y escribirá en el suyo propio
 
 ```
-## Proceos fork()
+## Procesos fork()
 
 ```
 void    pipex(int f1, int f2)
