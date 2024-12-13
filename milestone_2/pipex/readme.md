@@ -164,6 +164,16 @@ La estructura de la función `pipex` es la siguiente:
 
 ```
 
+```
+            [Proceso A]             [Proceso B]
+                 |                       |
+           (pd[0]) <----- pipe ----- (pd[1])
+                 |                        |
+           Read end                   Write end
+
+```
+
+
 
 
 Copiar
