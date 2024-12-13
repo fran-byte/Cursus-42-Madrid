@@ -5,7 +5,7 @@
 
 
 <p align="center" width="100%"><i><b>42 Madrid</b> Campus de programación gratuito. Open 24/7 </i></p>
-<p align="center" width="100%"><i><b>- P R O Y E C T O S -</b> </i></p>
+<p align="center" width="100%"><b>- P R O Y E C T O S -</b></p>
 
 
 
