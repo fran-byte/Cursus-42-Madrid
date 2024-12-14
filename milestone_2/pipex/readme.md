@@ -341,3 +341,4 @@ access()
    - No manejar comandos inválidos o archivos inexistentes correctamente.
    - No simular el comportamiento de Bash, donde errores en comandos no detienen el programa.
 
+[links:]( https://www.cs.buap.mx/~hilario_sm/slide/SO-1/Pipe.pdf)
