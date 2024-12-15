@@ -184,7 +184,7 @@ pipe()
             |--dup2()
             |--close end[1]
             |--execve(cmd2)
- 
+
 # pipe() Enviamos la salida del 1º execve() como entrada al 2º execve()
 # fork() Abrimos 2 procesos (two commands) en un solo programa
 # dup2() intercambia nuestros archivos con stdin y stdout
@@ -193,7 +193,12 @@ pipe()
 
 
 ## Configurando el pipe
-``` 
+
+
+<p align="center" width="100%"><a href="#"><img src="42_Madrid/img/milestone_2/pipe.gif" width="800" /><a/></p>
+
+
+```
 void    pipex(int f1, int f2)
 {
     int end[2];    pipe(end);
@@ -236,20 +241,20 @@ En Linux, puedes verificar tus fds actualmente abiertos con el comando `ls -la /
 ```
 Nuestra tabla de fds ahora se ve así:
 
-                           -----------------    
-                 0         |     stdin     |  
-                           -----------------    
-                 1         |     stdout    |    
-                           -----------------    
-                 2         |     stderr    |  
+                           -----------------
+                 0         |     stdin     |
+                           -----------------
+                 1         |     stdout    |
+                           -----------------
+                 2         |     stderr    |
                            -----------------
                  3         |     infile    |  // open()
                            -----------------
                  4         |     outfile   |  // open()
                            -----------------
-                 5         |     end[0]    | 
+                 5         |     end[0]    |
                            -----------------
-                 6         |     end[1]    |  
+                 6         |     end[1]    |
                            -----------------
 ```
 
@@ -259,19 +264,19 @@ En el proceso padre, queremos que `end[0]` sea nuestro stdin (`end[0]` lee de `e
 Visualmente,
 ```
 // cada cmd necesita un stdin (entrada) y devuelve una salida (a stdout)
-   
+
     infile                                             outfile
-como stdin para cmd1                              como stdout para cmd2            
+como stdin para cmd1                              como stdout para cmd2
        |                        PIPE                        ↑
        |           |---------------------------|            |
        ↓             |                       |              |
-      cmd1   -->    end[1]       ↔       end[0]   -->     cmd2           
+      cmd1   -->    end[1]       ↔       end[0]   -->     cmd2
                      |                       |
             cmd1   |---------------------------|  end[0]
            salida                               lee end[1]
     se escribe en end[1]              y envía la salida de cmd1 a cmd2
-                                 
-       (end[1] se convierte                 (end[0] se convierte 
+
+       (end[1] se convierte                 (end[0] se convierte
         en stdout de cmd1)                    en stdin de cmd2)
 
 ```
@@ -296,7 +301,7 @@ dicho de otra manera, redirigirá fd1 a fd2
 
 - En caso de éxito (se conceden todos los permisos solicitados), se devuelve `cero`. En caso de error (se deniega al menos un bit de mode, un permiso solicitado o se produce algún otro error), se devuelve `-1` y `errno` se configura de forma adecuada.
 
-``` 
+```
 access()
  |
  |-- Verifica si el archivo (o comando) es accesible
