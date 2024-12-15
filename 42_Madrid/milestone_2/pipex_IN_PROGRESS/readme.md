@@ -195,7 +195,7 @@ pipe()
 ## Configurando el pipe
 
 
-<p align="center" width="100%"><a href="#"><img src="42_Madrid/img/milestone_2/pipe.gif" width="800" /><a/></p>
+<p align="center" width="100%"><a href="#"><img src="42_Madrid/img/milestone_2/pipe.gif" width="800" /></a></p>
 
 
 ```
