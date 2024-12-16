@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/14 18:23:15 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/16 20:38:10 by frromero         ###   ########.fr       */
+/*   Created: 2024/12/16 20:20:13 by frromero          #+#    #+#             */
+/*   Updated: 2024/12/16 20:38:15 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+# include"pipex.h"
 
-#include <stdlib.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <sys/types.h>
-#include <sys/wait.h>
-#include <stdio.h>
+void check_input(int argc, char **argv)
+{
+	if (argc != 5)
+	{
+		write(2, "\nUsage: ./pipex infile \"cmd1\" \"cmd2\" outfile\n\n", 46);
+		exit(EXIT_FAILURE);
+	}
+}
 
-void check_input(int argc, char **argv);
-int	open_file(char *filename);
+int	open_file(char *filename)
+{
+	int fd;
 
-#endif
+	fd = open(filename, O_RDONLY, 0);
+	if (fd == -1)
+	{
+		perror("Error opening file");
+		exit(EXIT_FAILURE);
+	}
+	return (fd);
+}

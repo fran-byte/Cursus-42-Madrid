@@ -6,40 +6,18 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 18:22:21 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/16 20:11:16 by frromero         ###   ########.fr       */
+/*   Updated: 2024/12/16 20:39:19 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include"pipex.h"
-
-void check_input(int argc, char **argv)
-{
-	if (argc != 5)
-	{
-		write(2, "\nUsage: ./pipex infile \"cmd1\" \"cmd2\" outfile\n\n", 46);
-		exit(EXIT_FAILURE);
-	}
-}
-
-int open_file(char *filename, int flags, int perms)
-{
-	int fd;
-
-	fd = open(filename, flags, perms);
-	if (fd == -1)
-	{
-		perror("Error opening file");
-		exit(EXIT_FAILURE);
-	}
-	return (fd);
-}
 
 void child_process(int *fd, char **argv)// Proceso hijo: Ejecuta el primer comando
 {
 	int infile;
 	char *cmd_args[4];
 
-	infile = open_file(argv[1], O_RDONLY, 0); // Abre el archivo de entrada
+	infile = open_file(argv[1]); // Abre el archivo de entrada
 	dup2(infile, STDIN_FILENO);// Redirige stdin al archivo de entrada
 	dup2(fd[1], STDOUT_FILENO);// Redirige stdout al extremo de escritura del pipe
 	close(infile);// Cierra descriptores innecesarios
@@ -59,7 +37,7 @@ void parent_process(int *fd, char **argv)// Proceso padre: Ejecuta el segundo co
 	int outfile;
 	char *cmd_args[4];
 
-	outfile = open_file(argv[4], O_WRONLY | O_CREAT | O_TRUNC, 0644); // Abre el archivo de salida
+	outfile = open(argv[4], O_WRONLY | O_CREAT | O_TRUNC, 0644); // Abre el archivo de salida
 	dup2(fd[0], STDIN_FILENO);// Redirige stdin al extremo de lectura del pipe
 	dup2(outfile, STDOUT_FILENO);// Redirige stdout al archivo de salida
 	close(outfile);// Cierra descriptores innecesarios
