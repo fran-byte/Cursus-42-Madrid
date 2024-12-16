@@ -44,7 +44,7 @@ Flujos en la Terminal
 - Entrada en **programas gráficos** o **interfaces interactivas.**
 
 
-## El flujo básico para dos comandos sería:
+# El flujo básico para dos comandos sería:
 
     - Abrir el archivo de entrada [infile] y redirigirlo al stdin (standar input)
     - Crear una tubería entre cmd1 y cmd2.
