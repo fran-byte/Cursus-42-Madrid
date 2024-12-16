@@ -5,8 +5,6 @@
 
 -El proyecto pipex  es un desafío en el que se reproduce el comportamiento de las tuberías `|` y redirecciones de entrada/salida de la shell usando C.
 
-<p align="center" width="100%"><a href="milestone_2/"><img src="../../img/milestone_2/Unix_pipe_and_fork.png" width="512"/></p>
-
 # Símbolo |
 
 - Redirige el output del comando de la izquierda al input del comando de la derecha, reproduciendo el comportamiento del comando `|` en la shell, usando C.
@@ -21,20 +19,20 @@ Flujos en la Terminal
 
 - En un sistema UNIX (como Linux o macOS), los procesos se comunican a través de lo que se llama **flujos estándar**. Hay tres flujos principales:
 
-## 1- stdin (Standard Input):
+## 1- STDIN (Standard Input):
 
 - Fuente predeterminada la entrada estándar. Por defecto, es el **TECLADO**
 - Pudes cargar datos tambien desde **ARCHIVOS** (con redirección <)
 - o cargar esos datos desde la **Salida** de **OTROS COMANDOS** como (**pipes |**)
 
-## 2- stdout (Standard Output):
+## 2- STDOUT (Standard Output):
 
 - **PANTALLA** del Terminal (predeterminado)
 - **ARCHIVOS** (con redirección > o >>)
 - Entrada de **OTROS COMANDOS** (pipes |)
 
 
-## 3- stderr (Standard Error):
+## 3- STDERR (Standard Error):
 - Es el flujo de error estándar, utilizado para imprimir mensajes de error, también redirigible.
 - **Pantalla** del Terminal (por defecto).
 - **Archivos** (con redirección 2> o 2>>).
