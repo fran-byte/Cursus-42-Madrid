@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 18:22:21 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/16 20:39:19 by frromero         ###   ########.fr       */
+/*   Updated: 2024/12/16 21:37:08 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void pipex(char **argv)// Función principal del pipex
 
 int main(int argc, char **argv)
 {
-	check_input(argc, argv);
+	check_input(argc);
 	pipex(argv);
 	return (0);
 }

@@ -6,13 +6,13 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 20:20:13 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/16 20:38:15 by frromero         ###   ########.fr       */
+/*   Updated: 2024/12/16 21:37:05 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include"pipex.h"
 
-void check_input(int argc, char **argv)
+void check_input(int argc)
 {
 	if (argc != 5)
 	{

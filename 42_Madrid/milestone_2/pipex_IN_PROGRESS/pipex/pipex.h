@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 18:23:15 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/16 20:38:10 by frromero         ###   ########.fr       */
+/*   Updated: 2024/12/16 21:37:04 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 #include <sys/wait.h>
 #include <stdio.h>
 
-void check_input(int argc, char **argv);
+void check_input(int argc);
 int	open_file(char *filename);
 
 #endif
