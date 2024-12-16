@@ -6,16 +6,11 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 18:22:21 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/16 20:00:56 by frromero         ###   ########.fr       */
+/*   Updated: 2024/12/16 20:04:05 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <sys/types.h>
-#include <sys/wait.h>
-#include <stdio.h>
+# include"pipex.h"
 
 void check_input(int argc, char **argv)
 {
