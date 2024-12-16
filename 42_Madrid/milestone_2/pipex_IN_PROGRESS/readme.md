@@ -148,6 +148,10 @@ La estructura de la función `pipex` es la siguiente:
 - El comando `cmd1` escribe su salida en el pipe, que luego se pasa al segundo comando (`cmd2`).
 - El archivo de salida (`outfile`) recibe la salida del segundo comando.
 
+
+<p align="center" width="100%"><a href="#"><img src="../../img/milestone_2/pipe2.gif" width="800" /></a></p>
+
+
 **Esquema visual**:
 
 `< infile grep a1 | wc -w > outfile`
@@ -195,7 +199,6 @@ pipe()
 ## Configurando el pipe
 
 
-<p align="center" width="100%"><a href="#"><img src="../../img/milestone_2/pipe.gif" width="800" /></a></p>
 
 
 ```
