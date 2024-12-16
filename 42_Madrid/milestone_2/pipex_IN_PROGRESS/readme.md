@@ -55,22 +55,6 @@ Flujos en la Terminal
 <p align="center" width="100%"><a href="#"><img src="../../img/milestone_2/pipex_flujo.png" width="500" /></a></p>
 
 
-## Proceso de redirección con <
-
-`< infile grep a1 | wc -w > outfile`
-
-- En ese caso, el símbolo < redirige el contenido de `infile` a `standard input` de modo que cuando `grep` se lee desde standard input, obtiene el contenido de infile.
-
-Cuando usas el operador < para redirigir un archivo a un comando, el sistema realiza los siguientes pasos internos:
-
-- **El archivo se abre**: El sistema operativo abre el archivo especificado (infile) y obtiene un descriptor de archivo, que es un número que hace referencia al archivo en la memoria.
-
-- **El contenido del archivo se pasa a stdin**: El archivo se lee secuencialmente línea por línea, y cada línea de texto se envía al flujo de entrada estándar (stdin) del comando que está recibiendo la redirección.
-
-- En términos técnicos, el archivo no se "almacena" en algún lugar especial, sino que el contenido se coloca en el buffer (un área de memoria temporal) que maneja el flujo de entrada estándar del proceso. El proceso recibe estos datos como si estuvieran siendo introducidos por el usuario, **pero en realidad son leídos desde el archivo**.
-
-- **El comando lee desde stdin**: El comando, como grep en tu ejemplo, recibe los datos desde stdin como si el usuario los hubiera tecleado y el comando procesa esos datos de acuerdo con su lógica (por ejemplo, buscando un patrón).
-
 
 
 ---
@@ -112,23 +96,7 @@ Cuando usas el operador < para redirigir un archivo a un comando, el sistema rea
 
 Este flujo asegura que los datos pasen correctamente desde el archivo de entrada al primer comando, luego a través del pipe hacia el segundo comando, y finalmente al archivo de salida. Si hay más comandos, el flujo se encadena repitiendo los pasos de las tuberías.
 
-# Símbolo <
-- Es un símbolo de "redirección de entrada".
 
-
-
-# Símbolo >>
-
-- El >> hace casi lo mismo que el > . Reemplaza el contenido del archivo de la derecha con el resultado del comando de la izquierda. El símbolo >> agrega el resultado del comando de la izquierda al final del archivo.
-
-# Símbolo <<
-
-
-- Es una "redirección" de entrada. Hace que el shell lea desde la entrada estándar hasta que encuentre solo un valor específico LIMITER en la entrada estándar. Veamos el ejemplo del tema.
-
-`cmd << LIMITER | cmd1 >> file`
-
-- Como puedes ver, el primer comando `cat` esperó hasta que escribí LIM y solo LIM en la entrada estándar antes de continuar. Debería pipex hacer lo mismo.
 
  ## Funciones autorizadas para el proyecto:
 
@@ -137,7 +105,7 @@ Este flujo asegura que los datos pasen correctamente desde el archivo de entrada
 • `ft_printf` y cualquier equivalente que TÚ hayas programado.
 
 
-### 1. **Teoría de fondo — `pipe()`, `fork()`, `dup2()` y `execve()`**
+###  **Teoría de fondo — `pipe()`, `fork()`, `dup2()` y `execve()`**
 
 - **`pipe()`**: Crea un canal de comunicación entre dos extremos (en este caso, dos descriptores de archivo). El primer extremo (`end[0]`) se utiliza para leer, y el segundo (`end[1]`) para escribir. Esto permite que un proceso hijo escriba datos en el pipe, y el proceso padre los lea.
 - **`fork()`**: Divide el proceso principal en dos procesos (uno hijo y uno padre). Devuelve 0 al proceso hijo y un número mayor que 0 al proceso padre.
@@ -153,177 +121,8 @@ La estructura de la función `pipex` es la siguiente:
 <p align="center" width="100%"><a href="#"><img src="../../img/milestone_2/pipe2.gif" width="500" /></a></p>
 
 
-**Esquema visual**:
 
-`< infile grep a1 | wc -w > outfile`
-
-```
-                       Shell (Padre)
-                            |
-              -----------------------------------
-              |                                 |
-        grep (Hijo 1)                     wc (Hijo 2)
-              |                                 |
-        Lee de infile                Lee de pipe y escribe
-                                            en outfile
-
-```
-### 2. **Cómo hacer pipex con dos procesos hijos**
-
-- En lugar de tener un solo hijo ejecutando un comando, puedes dividir el trabajo en dos procesos hijos. Cada hijo ejecutará uno de los comandos (`cmd1` y `cmd2`), y el proceso padre simplemente supervisará su ejecución. El proceso padre esperará a que ambos hijos terminen.
-
-
-```
-# ./pipex infile cmd1 cmd2 outfile
-
-pipe()
- |
- |-- fork()
-      |
-      |-- child // cmd1
-      :     |--dup2()
-      :     |--close end[0]
-      :     |--execve(cmd1)
-      :
-      |-- parent // cmd2
-            |--dup2()
-            |--close end[1]
-            |--execve(cmd2)
-
-# pipe() Enviamos la salida del 1º execve() como entrada al 2º execve()
-# fork() Abrimos 2 procesos (two commands) en un solo programa
-# dup2() intercambia nuestros archivos con stdin y stdout
-```
-
-
-
-## Configurando el pipe
-
-
-
-
-```
-void    pipex(int f1, int f2)
-{
-    int end[2];    pipe(end);
-}
-
-// pipe() toma un array de dos int y los enlaza
-// lo que se hace en end[0] es visible en end[1], y viceversa
-// pipe() asigna un fd a cada extremo
-// Los fds son descriptores de archivos
-// dado que los archivos se pueden leer y escribir, al obtener un fd cada uno, los dos extremos pueden comunicarse
-// end[1] escribirá en su propio fd, y end[0] leerá el fd de end[1] y escribirá en el suyo propio
-
-```
-## Procesos fork()
-
-```
-void    pipex(int f1, int f2)
-{
-    int   end[2];
-    pid_t parent;    pipe(end);
-    parent = fork();
-    if (parent < 0)
-         return (perror("Fork: "));
-    if (!parent) // si fork() devuelve 0, estamos en el proceso hijo
-        child_process(f1, cmd1);
-    else
-        parent_process(f2, cmd2);
-}
-
-// fork() divide el proceso en dos subprocesos -> paralelos, simultáneos, ocurren al mismo tiempo
-// devuelve 0 para el proceso hijo, un valor distinto de cero para el proceso padre, y -1 en caso de error
-```
-## File Descriptors (FD)
-
-pipex se ejecuta de esta forma: `./pipex infile cmd1 cmd2 outfile`
-Los FDs 0, 1 y 2 están asignados por defecto a `stdin`, `stdou`t y `stderr`
-infile, outfile, el pipe, stdin y stdout son todos `FDs`
-En Linux, puedes verificar tus fds actualmente abiertos con el comando `ls -la /proc/$$/fd`
-
-```
-Nuestra tabla de fds ahora se ve así:
-
-                           -----------------
-                 0         |     stdin     |
-                           -----------------
-                 1         |     stdout    |
-                           -----------------
-                 2         |     stderr    |
-                           -----------------
-                 3         |     infile    |  // open()
-                           -----------------
-                 4         |     outfile   |  // open()
-                           -----------------
-                 5         |     end[0]    |
-                           -----------------
-                 6         |     end[1]    |
-                           -----------------
-```
-
-## Intercambiando fds con dup2()
-- Para el proceso hijo, queremos que `infile` sea nuestro stdin (como entrada), y `end[1]` sea nuestro stdout (escribimos en `end[1]` la salida de `cmd1`)
-En el proceso padre, queremos que `end[0]` sea nuestro stdin (`end[0]` lee de `end[1]` la salida de `cmd1`), y outfile sea nuestro stdout (escribimos en él la salida de `cmd2`)
-Visualmente,
-```
-// cada cmd necesita un stdin (entrada) y devuelve una salida (a stdout)
-
-    infile                                             outfile
-como stdin para cmd1                              como stdout para cmd2
-       |                        PIPE                        ↑
-       |           |---------------------------|            |
-       ↓             |                       |              |
-      cmd1   -->    end[1]       ↔       end[0]   -->     cmd2
-                     |                       |
-            cmd1   |---------------------------|  end[0]
-           salida                               lee end[1]
-    se escribe en end[1]              y envía la salida de cmd1 a cmd2
-
-       (end[1] se convierte                 (end[0] se convierte
-        en stdout de cmd1)                    en stdin de cmd2)
-
-```
-
-## Intercambiamos fds a stdin/stdout con dup2()
-El MAN nos dice:
-
-`int dup2(int fd1, int fd2)` : cerrará fd2 y duplicará el valor de fd2 en fd1
-dicho de otra manera, redirigirá fd1 a fd2
-
-
-### 3. **La función `access()`**
-
-- Cuando el comando no se encuentra, como al intentar ejecutar un archivo que no existe, el programa debería verificar si el comando es accesible antes de intentar ejecutarlo.
-- Esto se logra usando la función `access()`, que verifica si el archivo (o comando) existe y es ejecutable.
-- `int access(const char *pathname, int mode);`
-- `access()` Comprueba si el programa puede acceder al archivo pathname.
-
-`mode` especifica las comprobaciones de accesibilidad que se realizaránr:
-`F_OK`comprueba la existencia del archivo.
-`R_OK`,` W_OK`, y `X_OK`comprueba si el archivo existe y otorga permisos de lectura, escritura y ejecución, respectivamente.
-
-- En caso de éxito (se conceden todos los permisos solicitados), se devuelve `cero`. En caso de error (se deniega al menos un bit de mode, un permiso solicitado o se produce algún otro error), se devuelve `-1` y `errno` se configura de forma adecuada.
-
-```
-access()
- |
- |-- Verifica si el archivo (o comando) es accesible
-      |
-      |-- Comprueba si el archivo existe y es ejecutable
-      :     |-- int access(const char *pathname, int mode)
-      :     |-- mode especifica las comprobaciones de accesibilidad:
-      :           |-- F_OK: existencia del archivo
-      :           |-- R_OK: permisos de lectura
-      :           |-- W_OK: permisos de escritura
-      :           |-- X_OK: permisos de ejecución
-      :
-      |-- Devuelve 0 si se conceden todos los permisos solicitados
-      |-- Devuelve -1 y configura errno en caso de error
-```
-
-
-### 4. **Problemas comunes encontrados**
+###  **Problemas comunes encontrados**
 - **Cierre incorrecto de extremos del pipe**: Si uno de los extremos del pipe no se cierra correctamente, el proceso en espera no terminará correctamente.
 - **Uso de `perror("Error")` para depuración**: Se recomienda usar `perror` para verificar qué está fallando en el programa, especialmente después de llamadas a `fork()` y `execve()`.
 - **Derechos de acceso a archivos**: Se debe manejar correctamente los permisos de los archivos cuando se abren con `open()` y asegurarse de que sean legibles y escribibles.
