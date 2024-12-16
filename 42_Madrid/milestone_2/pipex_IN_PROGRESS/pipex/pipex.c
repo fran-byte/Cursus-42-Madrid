@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 18:22:21 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/16 21:37:08 by frromero         ###   ########.fr       */
+/*   Updated: 2024/12/16 21:39:54 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void parent_process(int *fd, char **argv)// Proceso padre: Ejecuta el segundo co
 	exit(EXIT_FAILURE);
 }
 
-void pipex(char **argv)// Función principal del pipex
+void pipex(char **argv)
 {
 	int fd[2];
 	pid_t pid;
