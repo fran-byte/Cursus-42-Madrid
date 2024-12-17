@@ -6,18 +6,29 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 18:22:21 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/16 21:39:54 by frromero         ###   ########.fr       */
+/*   Updated: 2024/12/18 00:34:29 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include"pipex.h"
+
+/*
+./pipex infile "cat" "cat" outfile;       // Copia el contenido de `infile` sin cambios en `outfile`.
+./pipex infile "cat" "wc -l" outfile;     // Cuenta las líneas de `infile` y guarda el número en `outfile`.
+./pipex infile "grep 123" "wc -l" outfile;// Filtra líneas que contienen "123" y cuenta cuántas hay en `outfile`.
+./pipex infile "cat" "sort" outfile;      // Ordena alfabéticamente las líneas de `infile` en `outfile`.
+./pipex infile "cat" "uniq" outfile;      // Elimina líneas consecutivas duplicadas de `infile` en `outfile`.
+./pipex infile "head -n 10" "tail -n 5" outfile; // Extrae las primeras 10 líneas de `infile` y de esas, las últimas 5 a `outfile`.
+./pipex infile "cat" "cut -c 1-2" outfile;// Extrae los primeros dos caracteres de cada línea de `infile` en `outfile`.
+*/
+
+# include"../inc/pipex.h"
 
 void child_process(int *fd, char **argv)// Proceso hijo: Ejecuta el primer comando
 {
 	int infile;
 	char *cmd_args[4];
 
-	infile = open_file(argv[1]); // Abre el archivo de entrada
+	infile = open(argv[1], O_RDONLY); // Abre el archivo de entrada
 	dup2(infile, STDIN_FILENO);// Redirige stdin al archivo de entrada
 	dup2(fd[1], STDOUT_FILENO);// Redirige stdout al extremo de escritura del pipe
 	close(infile);// Cierra descriptores innecesarios
