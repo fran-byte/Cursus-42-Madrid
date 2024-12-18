@@ -137,15 +137,6 @@ La estructura de la función `pipex` es la siguiente:
    - **`unlink(1)`**: Elimina archivos del sistema.
    - **`wait(2)`**: Suspende el proceso padre hasta que el hijo termine.
 
-2. **Estructura del programa:**
-   - **Parsing**: Comprueba argumentos, abre archivos y analiza comandos usando estructuras como `t_pipex`.
-   - **Ejecución**: Duplica flujos de entrada/salida con `dup2`, maneja procesos con `fork`, y ejecuta comandos con `execve`.
-   - **Limpieza**: Cierra archivos, libera memoria y espera procesos hijos con `wait`.
-
-3. **Errores comunes:**
-   - No usar `unlink` para eliminar archivos temporales.
-   - No ajustar permisos de archivos según el modo (`here_doc`).
-   - No manejar comandos inválidos o archivos inexistentes correctamente.
-   - No simular el comportamiento de Bash, donde errores en comandos no detienen el programa.
+a.
 
 [links:]( https://www.cs.buap.mx/~hilario_sm/slide/SO-1/Pipe.pdf)
