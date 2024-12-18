@@ -118,7 +118,6 @@ La estructura de la función `pipex` es la siguiente:
 - El archivo de salida (`outfile`) recibe la salida del segundo comando.
 
 
-<p align="center" width="100%"><a href="#"><img src="../../img/milestone_2/pipe2.gif" width="500" /></a></p>
 
 
 
