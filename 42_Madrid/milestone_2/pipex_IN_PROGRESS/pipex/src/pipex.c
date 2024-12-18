@@ -6,11 +6,11 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 18:22:21 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/18 16:38:26 by frromero         ###   ########.fr       */
+/*   Updated: 2024/12/18 17:53:21 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+/* PROYENCTO A RETIRAR y MODIFICAR PUEDE NO PASAR LA EVALUACIÓN */
 /*
 ./pipex infile "cat" "cat" outfile; //Copia el contenido de `infile` sin
  	cambios en `outfile`.
@@ -29,7 +29,7 @@
 */
 
 # include"../inc/pipex.h"
-
+/* PROYENCTO A RETIRAR y MODIFICAR PUEDE NO PASAR LA EVALUACIÓN */
 void child_process(int *fd, char **argv)
 {
 	int infile;
