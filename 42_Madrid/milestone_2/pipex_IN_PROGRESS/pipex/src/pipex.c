@@ -48,7 +48,7 @@ void parent_process(int *fd, char **argv)// Proceso padre: Ejecuta el segundo co
 	int outfile;
 	char *cmd_args[4];
 
-	outfile = open(argv[4], O_WRONLY | O_CREAT | O_TRUNC, 0644); // Abre el archivo de salida
+	outfile = open(argv[4], O_RDWR | O_CREAT | O_TRUNC, 0644); // Abre el archivo de salida
 	dup2(fd[0], STDIN_FILENO);// Redirige stdin al extremo de lectura del pipe
 	dup2(outfile, STDOUT_FILENO);// Redirige stdout al archivo de salida
 	close(outfile);// Cierra descriptores innecesarios
