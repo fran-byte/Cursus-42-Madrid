@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/14 18:23:15 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/19 00:18:56 by frromero         ###   ########.fr       */
+/*   Created: 2024/09/14 10:31:41 by frromero          #+#    #+#             */
+/*   Updated: 2024/09/26 17:21:25 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+/* Calculates the length of the string, excluding the null-terminating */
+/* byte ('\0'). Returns the total number of characters */
 
-# include "../libft/libft.h"
-# include <stdlib.h>
-# include <unistd.h>
-# include <fcntl.h>
-# include <sys/types.h>
-# include <sys/wait.h>
-# include <stdio.h>
+#include "libft.h"
 
-void	check_input(int argc);
-char	**get_cmd(char *argv);
-char	*get_path(char *cmd, char **envp);
-void	free_tab(char **tab);
-void	error(char *str);
+size_t	ft_strlen(const char *str)
+{
+	int	i;
 
-#endif
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+}

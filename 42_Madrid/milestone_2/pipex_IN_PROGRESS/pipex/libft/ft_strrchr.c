@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/14 18:23:15 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/19 00:18:56 by frromero         ###   ########.fr       */
+/*   Created: 2024/09/15 16:40:08 by frromero          #+#    #+#             */
+/*   Updated: 2024/09/30 17:34:17 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+/* Finds the last occurrence of a character `c` in the string `s`. */
+/* If found, returns a pointer to the character; otherwise, returns `NULL`. */
 
-# include "../libft/libft.h"
-# include <stdlib.h>
-# include <unistd.h>
-# include <fcntl.h>
-# include <sys/types.h>
-# include <sys/wait.h>
-# include <stdio.h>
+#include "libft.h"
 
-void	check_input(int argc);
-char	**get_cmd(char *argv);
-char	*get_path(char *cmd, char **envp);
-void	free_tab(char **tab);
-void	error(char *str);
+char	*ft_strrchr(const char *s, int c)
+{
+	int	sz_s;
 
-#endif
+	sz_s = ft_strlen(s);
+	while (sz_s >= 0)
+	{
+		if (s[sz_s] == (char)c)
+		{
+			return ((char *)&s[sz_s]);
+		}
+		sz_s--;
+	}
+	return (NULL);
+}

@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/14 18:23:15 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/19 00:18:56 by frromero         ###   ########.fr       */
+/*   Created: 2024/09/13 20:32:54 by frromero          #+#    #+#             */
+/*   Updated: 2024/09/26 16:25:43 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+/*Checks if the character is alphabetic (either uppercase or lowercase) */
+/* Returns Non-Zero for true and 0 for false */
 
-# include "../libft/libft.h"
-# include <stdlib.h>
-# include <unistd.h>
-# include <fcntl.h>
-# include <sys/types.h>
-# include <sys/wait.h>
-# include <stdio.h>
+#include "libft.h"
 
-void	check_input(int argc);
-char	**get_cmd(char *argv);
-char	*get_path(char *cmd, char **envp);
-void	free_tab(char **tab);
-void	error(char *str);
-
-#endif
+int	ft_isalpha(int c)
+{
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+		return (1);
+	return (0);
+}

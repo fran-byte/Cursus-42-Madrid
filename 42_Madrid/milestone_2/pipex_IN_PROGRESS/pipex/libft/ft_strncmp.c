@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/14 18:23:15 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/19 00:18:56 by frromero         ###   ########.fr       */
+/*   Created: 2024/09/16 22:46:06 by frromero          #+#    #+#             */
+/*   Updated: 2024/09/30 17:42:43 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+/* Compares the first `n` characters of two strings (`s1` and `s2`). */
+/* Returns a negative, zero, or positive integer based on the comparison */
 
-# include "../libft/libft.h"
-# include <stdlib.h>
-# include <unistd.h>
-# include <fcntl.h>
-# include <sys/types.h>
-# include <sys/wait.h>
-# include <stdio.h>
+#include "libft.h"
 
-void	check_input(int argc);
-char	**get_cmd(char *argv);
-char	*get_path(char *cmd, char **envp);
-void	free_tab(char **tab);
-void	error(char *str);
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+	size_t	i;
 
-#endif
+	i = 0;
+	while (*s1 && i < n && (*s1 == *s2))
+	{
+		i++;
+		s1++;
+		s2++;
+	}
+	if (i == n)
+		return (0);
+	return ((unsigned char) *s1 - (unsigned char) *s2);
+}
