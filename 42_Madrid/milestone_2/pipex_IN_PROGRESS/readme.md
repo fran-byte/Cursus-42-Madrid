@@ -104,7 +104,7 @@ Este flujo asegura que los datos pasen correctamente desde el archivo de entrada
 
 • `ft_printf` y cualquier equivalente que TÚ hayas programado.
 
-# Función execve
+# A parte de pipe() y fork() otra función a destacar execve
 ```
 #include <unistd.h>
 
