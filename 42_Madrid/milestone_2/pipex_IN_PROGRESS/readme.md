@@ -112,7 +112,9 @@ Este flujo asegura que los datos pasen correctamente desde el archivo de entrada
 ```
 
 `execve()`  ejecuta  el  programa  indicado por `filename`
+
 `argv`  es un array de cadenas de argumentos pasados al nuevo programa.
+
 `envp` es un array de cadenas, convencionalmente de la forma `clave=valor`, que se pasan  como  entorno  al  nuevo programa.
 
 <p align="center" width="100%"><a href="#"><img src="../../img/milestone_2/execve.png" width="575" /></a></p>
