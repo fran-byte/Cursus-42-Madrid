@@ -140,6 +140,5 @@ La estructura de la función `pipex` es la siguiente:
    - **`unlink(1)`**: Elimina archivos del sistema.
    - **`wait(2)`**: Suspende el proceso padre hasta que el hijo termine.
 
-a.
 
 [links:]( https://www.cs.buap.mx/~hilario_sm/slide/SO-1/Pipe.pdf)
