@@ -2,6 +2,8 @@
 
 Es un proyecto introductorio en la creación de videojuegos 2D simples utilizando gráficos básicos con la biblioteca **MiniLibX**. El objetivo principal es la familiarización con la manipulación de gráficos, eventos del teclado y la creación de mapas, mientras se aplican principios de programación estructurada.
 
+<p align="center" width="100%"><a href="#"><img src="../../img/milestone_2/so_long.png" width="500" /></a></p>
+
 ### Resumen del proyecto:
 1. **Objetivo**: Crear un pequeño juego en 2D donde un personaje se mueve por un mapa recolectando objetos, alcanzando un punto de salida para ganar.
 2. **Elementos principales**:
