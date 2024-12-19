@@ -207,7 +207,6 @@ MiniLibX también permite renderizar texto simple en la ventana con la función 
 | Textos                  | `mlx_string_put()`                   | Renderizar texto básico                      |
 | Cierre                  | `mlx_destroy_window()`               | Liberar recursos al finalizar el programa    |
 
-Estas funciones y herramientas convierten a MiniLibX en una biblioteca útil y sencilla para proyectos básicos en gráficos 2D.
 
 
 
