@@ -137,6 +137,7 @@ Este flujo asegura que los datos pasen correctamente desde el archivo de entrada
 ## Diagrama de flujo de obtención de path
 
 - Aparte de la logica y estructura de nuestro programa pipex, tenemos una subrutina importante que es la obtención de `path` o ruta, para alimentar la función `execve`
+- La variable de entorno `PATH` en Unix/Linux es una lista de directorios (carpetas) que contienen los ejecutables que el sistema puede encontrar y ejecutar directamente desde la línea de comandos, sin necesidad de especificar su ruta completa.
 
 <p align="center" width="100%"><a href="#"><img src="../../img/milestone_2/pipex_sub.png" width="975" /></a></p>
 
