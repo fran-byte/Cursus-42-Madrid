@@ -209,7 +209,7 @@ La función `ft_split` se encuentra en un archivo separado debido a su complejid
   - Usa rotaciones (rotate o reverse rotate) para llevarlo a la cima.
 
 ---
-<p align="center" width="100%"><a href="#"><img src="../../img/milestone_2/push_flujo.png" width="575" /></a></p>
+<p align="center" width="100%"><a href="#"><img src="../../img/milestone_2/push_flujo.png" width="950" /></a></p>
 
 
 ## EJEMPLO:
