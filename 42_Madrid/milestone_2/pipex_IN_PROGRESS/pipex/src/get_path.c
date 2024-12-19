@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 21:10:41 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/19 00:28:57 by frromero         ###   ########.fr       */
+/*   Updated: 2024/12/19 16:54:44 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static char	**split_path_directories(char *path_env)
 	return (ft_split(path_env, ':'));
 }
 
-static char	*construct_command_path(char *directory, char *cmd)
+static char	*construct_cmd_path(char *directory, char *cmd)
 {
 	char	*full_path;
 	char	*command_path;
@@ -66,7 +66,7 @@ char	*get_path(char *cmd, char **envp)
 	i = 0;
 	while (directories[i])
 	{
-		command_path = construct_command_path(directories[i], cmd);
+		command_path = construct_cmd_path(directories[i], cmd);
 		if (command_path)
 		{
 			free_tab(directories);
