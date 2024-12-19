@@ -52,6 +52,20 @@ Flujos en la Terminal
     - Redirigir la entrada de cmd2 al extremo de lectura del pipe.
     - Abrir el archivo de salida [outfile] y redirigirlo al stdout (standar output)
 
+###  **Teoría de fondo — `pipe()`, `fork()`, `dup2()` y `execve()`**
+
+- **`pipe()`**: Crea un canal de comunicación entre dos extremos (en este caso, dos descriptores de archivo). El primer extremo (`end[0]`) se utiliza para leer, y el segundo (`end[1]`) para escribir. Esto permite que un proceso hijo escriba datos en el pipe, y el proceso padre los lea.
+- **`fork()`**: Divide el proceso principal en dos procesos (uno hijo y uno padre). Devuelve 0 al proceso hijo y un número mayor que 0 al proceso padre.
+- **`dup2()`**: Permite redirigir la entrada y salida estándar a otros descriptores de archivo, por ejemplo, redirigir la salida estándar de un proceso a la entrada de otro.
+- **`execve()`**: Ejecuta un comando en el sistema, permitiendo que el proceso cargue y ejecute el binario del comando.
+
+La estructura de la función `pipex` es la siguiente:
+- El archivo de entrada (`infile`) se establece como la entrada estándar del primer comando (`cmd1`).
+- El comando `cmd1` escribe su salida en el pipe, que luego se pasa al segundo comando (`cmd2`).
+- El archivo de salida (`outfile`) recibe la salida del segundo comando.
+
+
+
 <p align="center" width="100%"><a href="#"><img src="../../img/milestone_2/pipex_flujo.png" width="550" /></a></p>
 
 
@@ -125,18 +139,6 @@ Este flujo asegura que los datos pasen correctamente desde el archivo de entrada
 - Aparte de la logica y estructura de nuestro programa pipex, tenemos una subrutina importante que es la obtención de `path` o ruta, para alimentar la función `execve`
 
 <p align="center" width="100%"><a href="#"><img src="../../img/milestone_2/pipex_sub.png" width="975" /></a></p>
-
-###  **Teoría de fondo — `pipe()`, `fork()`, `dup2()` y `execve()`**
-
-- **`pipe()`**: Crea un canal de comunicación entre dos extremos (en este caso, dos descriptores de archivo). El primer extremo (`end[0]`) se utiliza para leer, y el segundo (`end[1]`) para escribir. Esto permite que un proceso hijo escriba datos en el pipe, y el proceso padre los lea.
-- **`fork()`**: Divide el proceso principal en dos procesos (uno hijo y uno padre). Devuelve 0 al proceso hijo y un número mayor que 0 al proceso padre.
-- **`dup2()`**: Permite redirigir la entrada y salida estándar a otros descriptores de archivo, por ejemplo, redirigir la salida estándar de un proceso a la entrada de otro.
-- **`execve()`**: Ejecuta un comando en el sistema, permitiendo que el proceso cargue y ejecute el binario del comando.
-
-La estructura de la función `pipex` es la siguiente:
-- El archivo de entrada (`infile`) se establece como la entrada estándar del primer comando (`cmd1`).
-- El comando `cmd1` escribe su salida en el pipe, que luego se pasa al segundo comando (`cmd2`).
-- El archivo de salida (`outfile`) recibe la salida del segundo comando.
 
 
 
