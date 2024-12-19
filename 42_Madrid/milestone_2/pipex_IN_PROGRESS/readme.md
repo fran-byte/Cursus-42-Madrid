@@ -104,6 +104,9 @@ Este flujo asegura que los datos pasen correctamente desde el archivo de entrada
 
 • `ft_printf` y cualquier equivalente que TÚ hayas programado.
 
+## Diagrama de flujo de obtención de path
+
+<p align="center" width="100%"><a href="#"><img src="../../img/milestone_2/pipex_sub.png" width="500" /></a></p>
 
 ###  **Teoría de fondo — `pipe()`, `fork()`, `dup2()` y `execve()`**
 
