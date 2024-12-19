@@ -52,7 +52,7 @@ Flujos en la Terminal
     - Redirigir la entrada de cmd2 al extremo de lectura del pipe.
     - Abrir el archivo de salida [outfile] y redirigirlo al stdout (standar output)
 
-<p align="center" width="100%"><a href="#"><img src="../../img/milestone_2/pipex_flujo.png" width="500" /></a></p>
+<p align="center" width="100%"><a href="#"><img src="../../img/milestone_2/pipex_flujo.png" width="550" /></a></p>
 
 
 
