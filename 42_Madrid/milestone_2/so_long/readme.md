@@ -23,6 +23,7 @@ Es un proyecto introductorio en la creación de videojuegos 2D simples utilizand
    - Validación y parsing de datos.
    - Organización de un proyecto en C.
 
+<p align="center" width="100%"><a href="#"><img src="../../img/milestone_2/so_flujo.png" width="800" /></a></p>
 
 # MiniLibX:
 
