@@ -33,130 +33,181 @@ Es un proyecto introductorio en la creación de videojuegos 2D simples utilizand
 2. **Compatibilidad Limitada**: Está diseñada para funcionar exclusivamente en entornos Unix-like (macOS y Linux) y utiliza dependencias como X11 en Linux y OpenGL para macOS.
 3. **Gráficos Básicos**: Soporta operaciones elementales como dibujar píxeles, líneas, formas simples y manejar imágenes.
 4. **Gestión de Eventos**: Ofrece herramientas para capturar y manejar interacciones del usuario, como entradas de teclado y ratón.
-5. **Uso Educativo**: No es una biblioteca estándar en la industria, pero es ideal para introducir a los estudiantes de 42 en conceptos gráficos.
+5. **Uso Educativo**: No es una biblioteca estándar en la industria, pero es ideal para introducirte en los conceptos gráficos.
 
 ---
 
 ### **Componentes y Funcionalidades**
-#### 1. **Inicialización**
-   Antes de cualquier operación gráfica, necesitas **inicializar** MiniLibX y abrir una ventana:
-   ```c
-   void *mlx_ptr = mlx_init(); // Inicializa MiniLibX
-   void *win_ptr = mlx_new_window(mlx_ptr, ancho, alto, "Titulo"); // Crea una ventana
-   ```
 
-#### 2. **Colores**
-   Los colores se definen en formato hexadecimal de 32 bits: `0xRRGGBB`.
-   - Ejemplo: `0xFFFFFF` representa blanco, `0xFF0000` es rojo.
+#### **1. Inicialización**
+La base de cualquier aplicación con MiniLibX comienza con la inicialización del entorno gráfico. Esto establece una conexión con el sistema gráfico subyacente, como **X11** en Linux o **OpenGL** en macOS.
 
-#### 3. **Dibujo de Píxeles**
-   Puedes dibujar un píxel en la ventana usando:
-   ```c
-   mlx_pixel_put(mlx_ptr, win_ptr, x, y, color);
-   ```
+- **Funciones principales**:
+  - `mlx_init()`:
+    - Inicializa MiniLibX y devuelve un puntero a la conexión gráfica.
+    - Es obligatorio llamar a esta función antes de cualquier otra operación.
+  - `mlx_new_window()`:
+    - Crea una nueva ventana gráfica con un tamaño especificado.
+    - Permite asignarle un título visible en la barra de la ventana.
 
-#### 4. **Manipulación de Imágenes**
-   - Crear una imagen:
-     ```c
-     void *img_ptr = mlx_new_image(mlx_ptr, ancho, alto);
-     ```
-   - Dibujar en la imagen manipulando su memoria:
-     ```c
-     char *img_data = mlx_get_data_addr(img_ptr, &bits_per_pixel, &size_line, &endian);
-     ```
-   - Mostrar la imagen en la ventana:
-     ```c
-     mlx_put_image_to_window(mlx_ptr, win_ptr, img_ptr, x, y);
-     ```
-
-#### 5. **Carga de Texturas**
-   MiniLibX permite cargar imágenes en formato `.xpm` para utilizarlas como texturas:
-   ```c
-   void *img = mlx_xpm_file_to_image(mlx_ptr, "file.xpm", &width, &height);
-   ```
-
-#### 6. **Gestión de Eventos**
-   MiniLibX captura eventos como teclas presionadas, movimientos del ratón o clics. Se manejan mediante *hooks* (funciones callback):
-   ```c
-   mlx_key_hook(win_ptr, funcion_de_evento, parametro);
-   mlx_mouse_hook(win_ptr, funcion_de_evento, parametro);
-   mlx_hook(win_ptr, evento, mascara, funcion_de_evento, parametro);
-   ```
-   - Ejemplo de eventos:
-     - `2`: Presión de una tecla.
-     - `17`: Cerrar ventana.
-   - La función `mlx_loop()` activa el ciclo principal, manteniendo la ventana abierta:
-     ```c
-     mlx_loop(mlx_ptr);
-     ```
-
-#### 7. **Cierre Limpio**
-   Al finalizar, es fundamental liberar recursos:
-   ```c
-   mlx_destroy_window(mlx_ptr, win_ptr);
-   mlx_destroy_image(mlx_ptr, img_ptr);
-   ```
+  **Ejemplo**:
+  ```c
+  void *mlx_ptr = mlx_init(); // Inicialización
+  void *win_ptr = mlx_new_window(mlx_ptr, 800, 600, "Ventana de Ejemplo");
+  ```
 
 ---
 
-### **Dependencias y Configuración**
-#### En **macOS**:
-   - MiniLibX utiliza OpenGL y puede instalarse fácilmente desde los repositorios de 42 o mediante un `Makefile` configurado.
-   - No requiere configuración adicional.
+#### **2. Colores**
+MiniLibX usa colores en formato hexadecimal RGB (8 bits por canal). Esto permite definir colores personalizados para dibujar en la ventana o en imágenes.
 
-#### En **Linux**:
-   - Requiere instalar las dependencias de **X11**:
-     ```bash
-     sudo apt-get install libx11-dev libxext-dev
-     ```
+- **Formato de color**: `0xRRGGBB`
+  - Ejemplo:
+    - `0xFFFFFF` → Blanco.
+    - `0x000000` → Negro.
+    - `0xFF0000` → Rojo.
+    - `0x00FF00` → Verde.
+    - `0x0000FF` → Azul.
 
----
+- **Función principal**:
+  - `mlx_pixel_put()`:
+    - Dibuja un píxel individual en las coordenadas `(x, y)` de la ventana.
+    - Requiere especificar el color en formato hexadecimal.
 
-### **Ventajas y Limitaciones**
-
-#### **Ventajas**:
-1. **Simplicidad**: Es ideal para aprender los fundamentos de gráficos 2D en C.
-2. **Integración**: Diseñada específicamente para proyectos en 42, por lo que tiene una curva de aprendizaje adaptada al currículum.
-3. **Ligera y Directa**: No introduce conceptos avanzados innecesarios para principiantes.
-
-#### **Limitaciones**:
-1. **Portabilidad**: Funciona únicamente en sistemas Unix-like, con una implementación específica para macOS y Linux.
-2. **Capacidades Limitadas**: No soporta gráficos 3D ni operaciones avanzadas como sombreado o transformación.
-3. **Falta de Documentación Oficial**: La documentación oficial es escasa, lo que obliga a los usuarios a aprender a través de ejemplos y proyectos previos.
-
+  **Ejemplo**:
+  ```c
+  mlx_pixel_put(mlx_ptr, win_ptr, 100, 100, 0x00FF00); // Dibuja un píxel verde en (100, 100)
+  ```
 
 ---
 
-### **Ejemplo Completo**
-```c
-#include "mlx.h"
-#include <stdlib.h>
+#### **3. Dibujo de Gráficos**
+MiniLibX permite dibujar formas básicas y trabajar directamente con píxeles en la ventana o en imágenes. Aunque no incluye funciones para formas complejas como círculos o polígonos, se pueden implementar usando algoritmos propios.
 
-int cerrar_ventana(int keycode, void *param)
-{
-    (void)keycode;
-    (void)param;
-    exit(0);
-}
+- **Píxeles**:
+  - Se dibujan con `mlx_pixel_put()`, pero este método es lento para dibujos grandes porque opera directamente en la ventana.
 
-int main()
-{
-    void *mlx;
-    void *win;
+- **Imágenes y mapas de bits**:
+  - Crear una imagen:
+    - `mlx_new_image()` crea un área en memoria donde se pueden dibujar píxeles más eficientemente.
+  - Manipular la memoria de la imagen:
+    - `mlx_get_data_addr()` permite acceder a los datos de la imagen como un buffer de bytes, optimizando el rendimiento al escribir píxeles directamente en memoria.
 
-    // Inicialización
-    mlx = mlx_init();
-    win = mlx_new_window(mlx, 800, 600, "MiniLibX Example");
+  **Ejemplo**:
+  ```c
+  void *img = mlx_new_image(mlx_ptr, 800, 600);
+  char *data = mlx_get_data_addr(img, &bpp, &size_line, &endian);
 
-    // Dibujar un píxel
-    mlx_pixel_put(mlx, win, 400, 300, 0xFF0000); // Píxel rojo en el centro
+  // Modificar píxeles manualmente
+  int x = 100, y = 50;
+  int color = 0xFF0000; // Rojo
+  *(int *)(data + (y * size_line + x * (bpp / 8))) = color;
+  ```
 
-    // Hook para cerrar la ventana
-    mlx_hook(win, 17, 0, cerrar_ventana, NULL);
+- **Mostrar la imagen**:
+  - `mlx_put_image_to_window()` copia la imagen procesada en memoria a la ventana gráfica.
 
-    // Loop principal
-    mlx_loop(mlx);
+---
 
-    return (0);
-}
-```
+#### **4. Carga y Manejo de Imágenes**
+MiniLibX permite cargar texturas en formato `.xpm` para su uso en el programa. Este formato es compatible con X11 y es ideal para cargar imágenes externas como sprites o fondos.
+
+- **Funciones principales**:
+  - `mlx_xpm_file_to_image()`:
+    - Carga una imagen `.xpm` desde un archivo y la convierte en un formato manejable por MiniLibX.
+    - Devuelve un puntero a la imagen, y también permite obtener su tamaño.
+  - `mlx_put_image_to_window()`:
+    - Dibuja una imagen cargada o creada en la ventana.
+
+  **Ejemplo**:
+  ```c
+  void *img = mlx_xpm_file_to_image(mlx_ptr, "sprite.xpm", &width, &height);
+  mlx_put_image_to_window(mlx_ptr, win_ptr, img, 100, 100); // Mostrar en la ventana
+  ```
+
+---
+
+#### **5. Gestión de Eventos**
+MiniLibX permite manejar eventos como teclas presionadas, movimientos del ratón o el cierre de la ventana. Los eventos se gestionan mediante *hooks*, que son funciones callback que se activan cuando ocurre un evento específico.
+
+- **Eventos comunes**:
+  - `2`: Presión de una tecla.
+  - `3`: Soltado de una tecla.
+  - `4`: Movimiento del ratón.
+  - `5`: Clic del ratón.
+  - `17`: Cerrar la ventana.
+
+- **Funciones principales**:
+  - `mlx_key_hook()`:
+    - Maneja eventos de teclado. Llama a una función cuando una tecla es presionada.
+  - `mlx_mouse_hook()`:
+    - Captura eventos del ratón, como clics.
+  - `mlx_hook()`:
+    - Permite manejar eventos más generales, especificando el código del evento.
+
+- **Ciclo principal**:
+  - `mlx_loop()`:
+    - Inicia un bucle que mantiene la ventana abierta y procesa los eventos registrados.
+
+  **Ejemplo**:
+  ```c
+  int handle_keypress(int keycode, void *param)
+  {
+      if (keycode == 53) // Código para tecla Esc en macOS
+          exit(0);
+      return (0);
+  }
+
+  mlx_key_hook(win_ptr, handle_keypress, NULL); // Asocia la función a eventos de teclado
+  mlx_loop(mlx_ptr); // Inicia el ciclo principal
+  ```
+
+---
+
+#### **6. Cierre Limpio**
+Es fundamental liberar los recursos utilizados para evitar fugas de memoria. MiniLibX ofrece funciones para cerrar ventanas y destruir imágenes.
+
+- **Funciones principales**:
+  - `mlx_destroy_window()`:
+    - Cierra y libera la memoria de una ventana.
+  - `mlx_destroy_image()`:
+    - Libera la memoria asociada a una imagen creada o cargada.
+
+  **Ejemplo**:
+  ```c
+  mlx_destroy_window(mlx_ptr, win_ptr);
+  mlx_destroy_image(mlx_ptr, img_ptr);
+  ```
+
+---
+
+#### **7. Textos**
+MiniLibX también permite renderizar texto simple en la ventana con la función `mlx_string_put()`.
+
+- **Función principal**:
+  - `mlx_string_put()`:
+    - Dibuja un texto en las coordenadas `(x, y)` de la ventana.
+    - Usa colores en formato hexadecimal.
+
+  **Ejemplo**:
+  ```c
+  mlx_string_put(mlx_ptr, win_ptr, 50, 50, 0xFFFFFF, "Hola, MiniLibX!");
+  ```
+
+---
+
+### **Resumen de Componentes**
+| **Componente**         | **Función Principal**                 | **Uso**                                      |
+|-------------------------|---------------------------------------|----------------------------------------------|
+| Ventanas                | `mlx_new_window()`                   | Crear y manejar ventanas gráficas            |
+| Píxeles                 | `mlx_pixel_put()`                    | Dibujar píxeles individuales                 |
+| Imágenes                | `mlx_new_image()` y `mlx_put_image()`| Crear, manipular y mostrar imágenes          |
+| Texturas                | `mlx_xpm_file_to_image()`            | Cargar texturas desde archivos `.xpm`        |
+| Eventos                 | `mlx_key_hook()` y `mlx_hook()`      | Capturar teclas, ratón y otros eventos       |
+| Textos                  | `mlx_string_put()`                   | Renderizar texto básico                      |
+| Cierre                  | `mlx_destroy_window()`               | Liberar recursos al finalizar el programa    |
+
+Estas funciones y herramientas convierten a MiniLibX en una biblioteca útil y sencilla para proyectos básicos en gráficos 2D.
+
+
+
