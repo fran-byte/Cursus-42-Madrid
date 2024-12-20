@@ -201,16 +201,20 @@ MiniLibX también permite renderizar texto simple en la ventana con la función 
 ---
 
 ### **Resumen de Componentes**
-| **Componente**         | **Función Principal**                 | **Uso**                                      |
-|-------------------------|---------------------------------------|----------------------------------------------|
-| Ventanas                | `mlx_new_window()`                   | Crear y manejar ventanas gráficas            |
-| Píxeles                 | `mlx_pixel_put()`                    | Dibujar píxeles individuales                 |
-| Imágenes                | `mlx_new_image()` y `mlx_put_image()`| Crear, manipular y mostrar imágenes          |
-| Texturas                | `mlx_xpm_file_to_image()`            | Cargar texturas desde archivos `.xpm`        |
-| Eventos                 | `mlx_key_hook()` y `mlx_hook()`      | Capturar teclas, ratón y otros eventos       |
-| Textos                  | `mlx_string_put()`                   | Renderizar texto básico                      |
-| Cierre                  | `mlx_destroy_window()`               | Liberar recursos al finalizar el programa    |
 
+
+| Componente  | Función Principal                      | Uso                                           |
+|-------------|----------------------------------------|-----------------------------------------------|
+| Ventanas    | `mlx_new_window()`                    | Crear y manejar ventanas gráficas            |
+| Píxeles     | `mlx_pixel_put()`                     | Dibujar píxeles individuales                 |
+| Imágenes    | `mlx_new_image()` y `mlx_put_image()` | Crear, manipular y mostrar imágenes          |
+| Texturas    | `mlx_xpm_file_to_image()`             | Cargar texturas desde archivos `.xpm`        |
+| Eventos     | `mlx_key_hook()` y `mlx_hook()`       | Capturar teclas, ratón y otros eventos       |
+| Textos      | `mlx_string_put()`                    | Renderizar texto básico                      |
+| Cierre      | `mlx_destroy_window()`                | Liberar recursos al finalizar el programa    |
+
+
+```
 
 # Estructura de archivos:
 
@@ -240,4 +244,4 @@ so_long/
 │
 ├── Makefile              # Para compilar el proyecto
 
-
+```
