@@ -6,14 +6,14 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 20:14:46 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/20 20:45:35 by frromero         ###   ########.fr       */
+/*   Updated: 2024/12/20 21:00:24 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include"../inc/so_long.h"
 # include "../inc/so_long_data.h"
 
-int	parsing(int argc, char **argv)
+int	parse(int argc, char **argv)
 {
 	int	ln;
 	int	fd;
