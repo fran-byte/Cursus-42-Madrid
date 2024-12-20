@@ -203,7 +203,7 @@ MiniLibX también permite renderizar texto simple en la ventana con la función 
 
 
 | **Componente**         | **Función Principal**                 | **Uso**                                      |
-```
+
 |-------------------------|---------------------------------------|----------------------------------------------|
 | Ventanas                | `mlx_new_window()`                   | Crear y manejar ventanas gráficas            |
 | Píxeles                 | `mlx_pixel_put()`                    | Dibujar píxeles individuales                 |
@@ -213,6 +213,7 @@ MiniLibX también permite renderizar texto simple en la ventana con la función 
 | Textos                  | `mlx_string_put()`                   | Renderizar texto básico                      |
 | Cierre                  | `mlx_destroy_window()`               | Liberar recursos al finalizar el programa    |
 
+```
 
 # Estructura de archivos:
 
