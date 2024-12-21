@@ -101,7 +101,7 @@ static void	pipex(char **argv, char **envp)
 
 int	main(int argc, char **argv, char **envp)
 {
-	check_input(argc);
+	check_input(argc, argv);
 	pipex(argv, envp);
 	return (0);
 }
