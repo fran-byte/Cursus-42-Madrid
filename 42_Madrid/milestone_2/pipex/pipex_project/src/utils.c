@@ -15,9 +15,9 @@
 
 #include "../inc/pipex.h"
 
-void	check_input(int argc)
+void	check_input(int argc, char **argv)
 {
-	if (argc != 5)
+	if (argc != 5 || argv[2][0] == '\0' || argv[3][0] == '\0')
 	{
 		write(2, "\nUsage: ./pipex infile \"cmd1\" \"cmd2\" outfile\n\n", 46);
 		exit(EXIT_FAILURE);
