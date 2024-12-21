@@ -21,7 +21,7 @@
 # include <sys/wait.h>
 # include <stdio.h>
 
-void	check_input(int argc);
+void	check_input(int argc, char **argv);
 char	**get_cmd(char *argv);
 char	*get_path(char *cmd, char **envp);
 void	free_tab(char **tab);
