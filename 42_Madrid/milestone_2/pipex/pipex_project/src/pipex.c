@@ -6,100 +6,107 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 18:22:21 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/19 00:25:25 by frromero         ###   ########.fr       */
+/*   Updated: 2024/12/22 13:29:49 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*	This program simulates the pipex command. It creates a pipe, forks a child
-	process to execute the first command, and a parent process to execute
-	the second. It handles file input/output and error checking for command
-	execution:      ./pipex infile "cat" "sort" outfile */
+/* This program simulates the pipex command. It creates a pipe, forks a child
+   process to execute the first command, and a parent process to execute
+   the second. It handles file input/output and error checking for command
+   execution:      ./pipex infile "cat" "sort" outfile */
 
 #include "../inc/pipex.h"
 
-static void	closed(int *fd, int file)
+static void	child_one(int *fd_pipe, char **argv, char **envp)
 {
-	close(file);
-	close(fd[0]);
-	close(fd[1]);
-}
-
-static void	child_process(int *fd, char **argv, char **envp)
-{
-	int		infile;
+	int		fd_infile;
 	char	**cmd;
 	char	*path;
 
-	infile = open(argv[1], O_RDONLY);
-	if (infile == -1)
-	{
-		error(argv[1]);
-	}
 	cmd = get_cmd(argv[2]);
 	path = get_path(cmd[0], envp);
+	fd_infile = open(argv[1], O_RDONLY);
+	if (fd_infile < 0)
+		error("file Error");
+	close(fd_pipe[0]);
+	dup2(fd_infile, STDIN_FILENO);
+	dup2(fd_pipe[1], STDOUT_FILENO);
 	if (!path)
 	{
 		free_tab(cmd);
 		write(2, "Error: Command not found\n", 25);
 		exit(EXIT_FAILURE);
 	}
-	dup2(infile, STDIN_FILENO);
-	dup2(fd[1], STDOUT_FILENO);
-	closed(fd, infile);
 	execve(path, cmd, envp);
-	error("Error");
+	error("execve Error");
 }
 
-static void	parent_process(int *fd, char **argv, char **envp)
+static void	child_two(int *fd_pipe, char **argv, char **envp)
 {
-	int		outfile;
+	int		fd_outfile;
 	char	**cmd;
 	char	*path;
 
 	cmd = get_cmd(argv[3]);
 	path = get_path(cmd[0], envp);
+	fd_outfile = open(argv[4], O_WRONLY | O_CREAT | O_TRUNC, 0666);
+	if (fd_outfile < 0)
+		error("file Error");
+	close(fd_pipe[1]);
+	dup2(fd_outfile, STDOUT_FILENO);
+	dup2(fd_pipe[0], STDIN_FILENO);
 	if (!path)
 	{
 		free_tab(cmd);
 		write(2, "Error: Command not found\n", 25);
 		exit(EXIT_FAILURE);
 	}
-	outfile = open(argv[4], O_RDWR | O_CREAT | O_TRUNC, 0644);
-	if (outfile == -1)
-	{
-		free_tab(cmd);
-		free(path);
-		error(argv[4]);
-	}
-	dup2(fd[0], STDIN_FILENO);
-	dup2(outfile, STDOUT_FILENO);
-	closed(fd, outfile);
 	execve(path, cmd, envp);
-	error("Error");
+	error("execve Error");
 }
-
-static void	pipex(char **argv, char **envp)
+static void	wait_for_children(pid_t pid1, pid_t pid2)
 {
-	int		fd[2];
-	pid_t	pid;
-	int		pipe_result;
+	int sta;
 
-	pipe_result = pipe(fd);
-	if (pipe_result == -1)
-		error("pipe Error");
-	pid = fork();
-	if (pid == -1)
-		error("fork Error");
-	if (pid == 0)
-		child_process(fd, argv, envp);
-	else
+	waitpid(pid1, &sta, 0);
+	if (WIFEXITED(sta))
 	{
-		parent_process(fd, argv, envp);
-		waitpid(pid, NULL, 0);
+		int status = WEXITSTATUS(sta);
+		if (status != 0)
+			exit(EXIT_FAILURE);
+	}
+	waitpid(pid2, &sta, 0);
+	if (WIFEXITED(sta))
+	{
+		int status = WEXITSTATUS(sta);
+		if (status != 0)
+			exit(EXIT_FAILURE);
 	}
 }
 
-int	main(int argc, char **argv, char **envp)
+static void pipex(char **argv, char **envp)
+{
+	int fd_pipe[2];
+	pid_t pid1;
+	pid_t pid2;
+	if (pipe(fd_pipe) < 0)
+		error("pipe Error");
+	pid1 = fork();
+	if (pid1 < 0)
+		error("fork Error");
+	if (pid1 == 0)
+		child_one(fd_pipe, argv, envp);
+	pid2 = fork();
+	if (pid2 < 0)
+		error("fork Error");
+	if (pid2 == 0)
+		child_two(fd_pipe, argv, envp);
+	close(fd_pipe[0]);
+	close(fd_pipe[1]);
+	wait_for_children(pid1, pid2); /* Proceso padre esperando*/
+}
+
+int main(int argc, char **argv, char **envp)
 {
 	check_input(argc, argv);
 	pipex(argv, envp);
