@@ -66,7 +66,7 @@ La estructura de la función `pipex` es la siguiente:
 
 
 
-<p align="center" width="100%"><a href="#"><img src="../../img/milestone_2/pipex_flujo.png" width="550" /></a></p>
+<p align="center" width="100%"><a href="#"><img src="../../img/milestone_2/pipex_flujo.png" width="850" /></a></p>
 
 
 
