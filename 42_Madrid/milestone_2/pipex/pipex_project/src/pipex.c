@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 18:22:21 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/22 13:29:49 by frromero         ###   ########.fr       */
+/*   Updated: 2024/12/22 13:32:54 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ static void	child_two(int *fd_pipe, char **argv, char **envp)
 }
 static void	wait_for_children(pid_t pid1, pid_t pid2)
 {
-	int sta;
+	int	sta;
 
 	waitpid(pid1, &sta, 0);
 	if (WIFEXITED(sta))
@@ -84,11 +84,12 @@ static void	wait_for_children(pid_t pid1, pid_t pid2)
 	}
 }
 
-static void pipex(char **argv, char **envp)
+static void	pipex(char **argv, char **envp)
 {
-	int fd_pipe[2];
-	pid_t pid1;
-	pid_t pid2;
+	int		fd_pipe[2];
+	pid_t	pid1;
+	pid_t	pid2;
+
 	if (pipe(fd_pipe) < 0)
 		error("pipe Error");
 	pid1 = fork();
@@ -106,7 +107,7 @@ static void pipex(char **argv, char **envp)
 	wait_for_children(pid1, pid2); /* Proceso padre esperando*/
 }
 
-int main(int argc, char **argv, char **envp)
+int	main(int argc, char **argv, char **envp)
 {
 	check_input(argc, argv);
 	pipex(argv, envp);
