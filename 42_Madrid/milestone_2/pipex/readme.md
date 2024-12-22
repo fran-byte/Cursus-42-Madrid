@@ -1,7 +1,7 @@
 
 
 
-# pipex
+# pipex (en proceso aun  por errores, lo volveré a realizar con 1 padre y 2 hijos) 
 
 - El proyecto pipex  es un desafío en el que se reproduce el comportamiento de las tuberías `|` y redirecciones de entrada/salida de la shell usando C.
 
