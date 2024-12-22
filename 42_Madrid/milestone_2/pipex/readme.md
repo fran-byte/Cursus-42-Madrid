@@ -1,7 +1,7 @@
 
 
 
-# pipex (en proceso aun  por errores, lo volveré a realizar con 1 padre y 2 hijos) 
+# pipex
 
 - El proyecto pipex  es un desafío en el que se reproduce el comportamiento de las tuberías `|` y redirecciones de entrada/salida de la shell usando C.
 
@@ -55,7 +55,7 @@ Flujos en la Terminal
 ###  **Teoría de fondo — `pipe()`, `fork()`, `dup2()` y `execve()`**
 
 - **`pipe()`**: Crea un canal de comunicación entre dos extremos (en este caso, dos descriptores de archivo). El primer extremo (`fd[0]`) se utiliza para leer, y el segundo (`fd[1]`) para escribir. Esto permite que un proceso hijo escriba datos en el pipe, y el proceso padre los lea.
-- **`fork()`**: Divide el proceso principal en dos procesos (uno hijo y uno padre). Devuelve 0 al proceso hijo y un número mayor que 0 al proceso padre.
+- Los dos **`fork()`**: Dividen el proceso principal en dos procesos hijos (pid1 y pdi2). Devuelven 0 a los procesos hijos y un número mayor que 0 al proceso padre.
 - **`dup2()`**: Permite redirigir la entrada y salida estándar a otros descriptores de archivo, por ejemplo, redirigir la salida estándar de un proceso a la entrada de otro.
 - **`execve()`**: Ejecuta un comando en el sistema, permitiendo que el proceso cargue y ejecute el binario del comando.
 
