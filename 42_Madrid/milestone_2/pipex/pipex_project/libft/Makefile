@@ -40,8 +40,8 @@ all: ${NAME}
 
 # create the library from object files
 ${NAME}: ${OBJ}
-	${AR} ${NAME} ${OBJ}
-	@echo "\n****** Library ${NAME} created ******"
+	@${AR} ${NAME} ${OBJ}
+	@echo "\n✨ library libft created ✨\n"
 
 # compile the bonus part
 bonus: ${BONUS_OBJ}
@@ -49,15 +49,15 @@ bonus: ${BONUS_OBJ}
 
 # compile source files into object files
 %.o: %.c
-	${CC} ${FLAG} -c $< -o $@
+	@${CC} ${FLAG} -c $< -o $@
 
 # remove object files
 clean:
-	${RM} ${OBJ} ${BONUS_OBJ}
+	@${RM} ${OBJ} ${BONUS_OBJ}
 
 # remove object files and the library
 fclean: clean
-	${RM} ${NAME}
+	@${RM} ${NAME}
 
 # rebuild everything (clean and then compile everything)
 re: fclean all

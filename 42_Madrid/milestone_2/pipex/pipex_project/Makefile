@@ -6,7 +6,7 @@
 #    By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/16 21:12:48 by frromero          #+#    #+#              #
-#    Updated: 2024/12/18 21:11:34 by frromero         ###   ########.fr        #
+#    Updated: 2024/12/22 12:22:05 by frromero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,30 +16,33 @@ NAME = pipex
 # Define source files
 SRCS = ./src/pipex.c ./src/utils.c ./src/get_path.c
 
-# Define object files
-OBJS = $(SRCS:.c=.o)
-
-# Define the include directory for header files
-INCLUDE = ./inc/pipex.h
+LIB = libft/libft.a
 
 # Define the compiler
 CC = cc
 
 # Enable common and extra compiler warnings and treat them as errors
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -I inc -I libft
+
+# Define object files
+OBJS = $(SRCS:./src/%.c=./src/%.o)
+
+# Define the include directory for header files
+INCLUDE = ./inc/pipex.h
 
 # Default rule to build the program
-all:	${NAME}
-
-# Compile .c files into .o files
-%.o: %.c
-	@echo "◎ Compiling 👽 → $<"
-	@${CC} -c $< -o $@
+all: ${NAME}
 
 # Links the object files and creates the executable
 ${NAME}: ${OBJS}
-	@${CC} ${CFLAGS} ${OBJS} -g -Llibft -lft -o ${NAME}
+	@$(MAKE) -C libft  -s
+	@${CC} ${CFLAGS} ${OBJS} $(LIB) -o ${NAME}  # Crear ejecutable
 	@echo "\n✨ Created $(NAME) ✨\n"
+
+# Compile .c files into .o files
+./src/%.o: ./src/%.c
+	@echo "◎ Compiling 👽 → $<"
+	@${CC} ${CFLAGS} -c $< -o $@
 
 # Clean up object files
 clean:
@@ -47,8 +50,8 @@ clean:
 	@echo "\n✨ All objects cleaned successfully 🚀 ✨\n"
 
 # Clean up object files, dependencies, and the executable
-fclean:
-	@${RM} ${OBJS}
+fclean: clean
+	@$(MAKE) -C libft fclean -s
 	@${RM} ${NAME}
 	@echo "\n✨ 🚀 Objects and executables cleaned ✨\n"
 
