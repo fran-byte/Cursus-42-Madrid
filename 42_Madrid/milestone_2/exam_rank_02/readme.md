@@ -32,4 +32,12 @@ Allowed functions: atoi, printf, write
 
 ## ft_strcmp
 
+int    ft_strcmp(char *s1, char *s2);
+
 <p align="center" width="100%"><a href="#"><img src="img/ft_strcmp.png" width="350" /></p>
+
+## ft_strcspn
+
+size_t	ft_strcspn(const char *s, const char *reject);
+
+<p align="center" width="100%"><a href="#"><img src="img/ft_strcspn.png" width="350" /></p>
