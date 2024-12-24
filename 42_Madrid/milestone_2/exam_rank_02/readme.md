@@ -28,4 +28,4 @@ Allowed functions: atoi, printf, write
 
 ## ft_atoi
 
-<p align="center" width="100%"><a href="#"><img src="img/ft_atoi.png" width="250" /></p>
+<p align="center" width="100%"><a href="#"><img src="img/ft_atoi.png" width="350" /></p>
