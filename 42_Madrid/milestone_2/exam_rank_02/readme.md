@@ -41,3 +41,9 @@ int    ft_strcmp(char *s1, char *s2);
 size_t	ft_strcspn(const char *s, const char *reject);
 
 <p align="center" width="100%"><a href="#"><img src="img/ft_strcspn.png" width="350" /></p>
+
+## ft_strdup
+
+char	*ft_strdup(char *src)
+
+<p align="center" width="100%"><a href="#"><img src="img/ft_strdup.png" width="350" /></p>
