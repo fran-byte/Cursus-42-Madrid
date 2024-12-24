@@ -47,3 +47,9 @@ size_t	ft_strcspn(const char *s, const char *reject);
 char	*ft_strdup(char *src)
 
 <p align="center" width="100%"><a href="#"><img src="img/ft_strdup.png" width="350" /></p>
+
+## ft_strpbrk
+
+char	*ft_strpbrk(const char *s1, const char *s2);
+
+<p align="center" width="100%"><a href="#"><img src="img/ft_strpbrk.png" width="350" /></p>
