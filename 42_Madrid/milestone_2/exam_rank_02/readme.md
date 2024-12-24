@@ -1,4 +1,4 @@
-# Exam Rank 02
+# Exam Rank 02 ( Spoiler )
 
 ## alpha_mirror
 
