@@ -59,3 +59,9 @@ char	*ft_strpbrk(const char *s1, const char *s2);
 char    *ft_strrev(char *str);
 
 <p align="center" width="100%"><a href="#"><img src="img/ft_strrev.png" width="350" /></p>
+
+## ft_strspn
+
+size_t	ft_strspn(const char *s, const char *accept);
+
+<p align="center" width="100%"><a href="#"><img src="img/ft_strspn.png" width="350" /></p>
