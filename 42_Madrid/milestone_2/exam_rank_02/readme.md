@@ -62,3 +62,7 @@ size_t	ft_strspn(const char *s, const char *accept);
 ## inter
 
 <p align="center" width="100%"><a href="#"><img src="img/inter.png" width="350" /></p>
+
+## is_power_of_2
+
+<p align="center" width="100%"><a href="#"><img src="img/is_power_of_2.png" width="350" /></p>
