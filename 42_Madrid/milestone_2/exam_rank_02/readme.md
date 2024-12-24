@@ -25,3 +25,7 @@
 Allowed functions: atoi, printf, write
 
 <p align="center" width="100%"><a href="#"><img src="img/do_op.png" width="250" /></p>
+
+## ft_atoi
+
+<p align="center" width="100%"><a href="#"><img src="img/ft_atoi.png" width="250" /></p>
