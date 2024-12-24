@@ -58,3 +58,7 @@ char    *ft_strrev(char *str);
 size_t	ft_strspn(const char *s, const char *accept);
 
 <p align="center" width="100%"><a href="#"><img src="img/ft_strspn.png" width="350" /></p>
+
+## inter
+
+<p align="center" width="100%"><a href="#"><img src="img/inter.png" width="350" /></p>
