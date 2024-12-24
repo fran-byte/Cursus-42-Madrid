@@ -53,3 +53,9 @@ char	*ft_strdup(char *src)
 char	*ft_strpbrk(const char *s1, const char *s2);
 
 <p align="center" width="100%"><a href="#"><img src="img/ft_strpbrk.png" width="350" /></p>
+
+## ft_strrev
+
+char    *ft_strrev(char *str);
+
+<p align="center" width="100%"><a href="#"><img src="img/ft_strrev.png" width="350" /></p>
