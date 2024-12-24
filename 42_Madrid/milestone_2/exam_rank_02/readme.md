@@ -19,3 +19,9 @@
 ## camel_to_snake
 
 <p align="center" width="100%"><a href="#"><img src="img/camel_to_snake.png" width="250" /></p>
+
+## do_op
+
+Allowed functions: atoi, printf, write
+
+<p align="center" width="100%"><a href="#"><img src="img/do_op.png" width="250" /></p>
