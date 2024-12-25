@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 18:42:54 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/20 21:01:01 by frromero         ###   ########.fr       */
+/*   Updated: 2024/12/23 19:26:54 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,17 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include "../libft/libft.h"
+# include "../libft/get_next_line.h"
+# include "../libft/get_next_line_bonus.h"
+# include "so_long_data.h"
 
-void	file_error(void);
-void	general_error(void);
-void	map_error(void);
-void	argument_error(void);
-int	parse(int argc, char **argv);
-void	check_map(int fd);
+void	x_error(char *x);
+void 	free_map_error(t_map *map, char *msg_error);
+int		parse(int argc, char **argv);
+void	validate_map_dimensions(int fd, char **argv, t_map *map);
+void	validate_map_items(t_map *map);
+void	validate_wall_map(t_map *map);
+int		open_file(char **argv);
 
 #endif
 
