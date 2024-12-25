@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 10:27:15 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/23 19:11:43 by frromero         ###   ########.fr       */
+/*   Updated: 2024/12/26 00:36:25 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void print_map(t_map *map)
 {
-	size_t i;
+	int i;
 
 	i = 0;
 	if (map == NULL || map->grid == NULL)
@@ -38,10 +38,10 @@ int open_file(char **argv)
 
 int height_calculator(int fd)
 {
-	size_t height;
-	size_t width;
+	int height;
+	int width;
 	char *line;
-	size_t len;
+	int len;
 
 	height = 0;
 	width = 0;
@@ -66,34 +66,22 @@ int height_calculator(int fd)
 
 void free_map_error(t_map *map, char *msg_error)
 {
-	size_t i;
+	int i;
 
+	i = 0;
 	if (map)
 	{
-		i = 0;
 		while (i < map->height)
 		{
 			free(map->grid[i]);
 			i++;
 		}
 		free(map->grid);
+		if (map->collectibles_x)
+			free(map->collectibles_x);
+		if (map->collectibles_y)
+			free(map->collectibles_y);
 		free(map);
 	}
 	x_error(msg_error);
-}
-void free_map(t_map *map)
-{
-	size_t i;
-
-	if (map)
-	{
-		i = 0;
-		while (i < map->height)
-		{
-			free(map->grid[i]);
-			i++;
-		}
-		free(map->grid);
-		free(map);
-	}
 }

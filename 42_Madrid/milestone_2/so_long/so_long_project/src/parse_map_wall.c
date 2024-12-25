@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 19:24:41 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/23 20:39:05 by frromero         ###   ########.fr       */
+/*   Updated: 2024/12/25 18:16:44 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 
 int	scan_lines(char *line)
 {
-	size_t	i;
-	size_t len;
+	int	i;
+	int len;
 
 	i = 0;
-	len = ft_strlen(line) - 1;
+	len = (int)ft_strlen(line) - 1;
 	while (line[i])
 	{
 		if (line[0] != '1' || line[len - 1] != '1')
@@ -31,11 +31,11 @@ int	scan_lines(char *line)
 
 int	scan_lines_up_down(char *line)
 {
-	size_t	i;
-	size_t len;
+	int	i;
+	int len;
 
 	i = 0;
-	len = ft_strlen(line) - 1;
+	len = (int)ft_strlen(line) - 1;
 	while (i < len)
 	{
 		if (line[i] != '1')
@@ -48,7 +48,7 @@ int	scan_lines_up_down(char *line)
 
 void	validate_wall_map(t_map *map)
 {
-	size_t	i;
+	int	i;
 
 	i = 1;
 	if (scan_lines_up_down(map->grid[map->height - 1]) == -1

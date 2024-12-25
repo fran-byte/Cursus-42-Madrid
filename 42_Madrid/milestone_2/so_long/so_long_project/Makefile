@@ -6,7 +6,7 @@
 #    By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/21 21:12:48 by frromero          #+#    #+#              #
-#    Updated: 2024/12/25 17:38:06 by frromero         ###   ########.fr        #
+#    Updated: 2024/12/25 23:36:47 by frromero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ NAME = so_long
 
 # Define source files
 SRCS =	./src/so_long.c ./src/parse_exit_error.c ./src/parse_input.c \
-		./src/parse_map.c ./src/utils_so_long.c ./src/parse_map_wall.c
+		./src/parse_map.c ./src/utils_so_long.c ./src/parse_map_wall.c \
+		./src/parse_map_playable.c ./src/utils_so_long_two.c
 
 LIB = libft/libft.a
 
@@ -23,8 +24,8 @@ LIB = libft/libft.a
 CC = cc
 
 # Enable common and extra compiler warnings and treat them as errors
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g3 -I inc -I libft
-
+CFLAGS = -Wall -Wextra -Werror -g3 -I inc -I libft
+#CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g3 -I inc -I libft
 # Define object files
 OBJS = $(SRCS:./src/%.c=./src/%.o)
 

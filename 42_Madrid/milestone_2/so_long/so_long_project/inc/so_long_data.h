@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 18:40:24 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/23 14:32:32 by frromero         ###   ########.fr       */
+/*   Updated: 2024/12/26 00:36:43 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,25 @@
 
 typedef struct s_map {
 	char **grid;
-	size_t width;
-	size_t height;
+	int width;
+	int height;
 	int player_x;
 	int player_y;
+	int collectibles;
+    int *collectibles_x;
+    int *collectibles_y;
+	int	exit_x;
+	int	exit_y;
+
 } t_map;
 
 void	free_map(t_map *map);
 int		height_calculator(int fd);
 void	print_map(t_map *map);
+char	**duplicate_grid(char **grid, int height);
+void	free_grid(char **grid, int height);
+int		is_exit_reachable(char **grid, int x, int y, t_map *map);
+void	validate_map_playable(t_map *map);
 
 
 
