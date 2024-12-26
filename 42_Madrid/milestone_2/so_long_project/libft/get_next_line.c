@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 10:59:24 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/22 20:22:16 by frromero         ###   ########.fr       */
+/*   Updated: 2024/12/26 12:45:02 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,10 @@ char	*re_adj_storage(char *stored)
 	}
 	swap_temp = (char *)malloc((ft_strlen(stored) - i + 1) * sizeof(char));
 	if (!swap_temp)
+	{
+		free(stored);
 		return (NULL);
+	}
 	while (stored[i])
 		swap_temp[j++] = stored[i++];
 	swap_temp[j] = '\0';
@@ -127,7 +130,14 @@ char	*get_next_line(int fd)
 	static char		*stored = NULL;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
+	{
+		if (stored)
+		{
+			free(stored);
+			stored = NULL;
+		}
 		return (NULL);
+	}
 	stored = read_join(stored, fd);
 	if (!stored)
 		return (NULL);

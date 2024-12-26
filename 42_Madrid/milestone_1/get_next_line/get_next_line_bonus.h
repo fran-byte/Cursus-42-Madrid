@@ -6,14 +6,14 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 14:35:27 by frromero          #+#    #+#             */
-/*   Updated: 2024/11/07 08:09:32 by frromero         ###   ########.fr       */
+/*   Updated: 2024/12/26 13:40:32 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_BONUS_H
 # define GET_NEXT_LINE_BONUS_H
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
+#  define BUFFER_SIZE 1024
 # endif
 # include <unistd.h>
 # include <stdlib.h>

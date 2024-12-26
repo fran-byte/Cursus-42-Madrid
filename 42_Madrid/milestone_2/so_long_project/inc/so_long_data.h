@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 18:40:24 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/26 00:36:43 by frromero         ###   ########.fr       */
+/*   Updated: 2024/12/26 12:01:20 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ typedef struct s_map {
 } t_map;
 
 void	free_map(t_map *map);
-int		height_calculator(int fd);
+int		height_calculator(int fd, t_map *map);
 void	print_map(t_map *map);
 char	**duplicate_grid(char **grid, int height);
 void	free_grid(char **grid, int height);

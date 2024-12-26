@@ -6,14 +6,14 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 10:27:15 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/26 00:36:25 by frromero         ###   ########.fr       */
+/*   Updated: 2024/12/26 13:30:48 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 #include "../inc/so_long_data.h"
 
-void print_map(t_map *map)
+void print_map(t_map *map)  /* eliminar cuando esté completo el proyecto */
 {
 	int i;
 
@@ -35,8 +35,13 @@ int open_file(char **argv)
 		x_error("File Open Error\n");
 	return (fd);
 }
+static void free_calculator(t_map *map)
+{
+			free(map);
+			x_error("Invalid size Map\n");
+}
 
-int height_calculator(int fd)
+int height_calculator(int fd, t_map *map)
 {
 	int height;
 	int width;
@@ -52,14 +57,15 @@ int height_calculator(int fd)
 			width = len;
 		else if (len != width || width < 3)
 		{
+			close(fd);
 			free(line);
-			x_error("Invalid size Map\n");
+			free_calculator(map);
 		}
 		height++;
 		free(line);
 	}
 	if (height < 3 || height == width)
-		x_error("Invalid size Map\n");
+		free_calculator(map);
 	close(fd);
 	return (height);
 }

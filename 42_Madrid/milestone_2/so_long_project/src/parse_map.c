@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 20:48:28 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/26 00:37:35 by frromero         ###   ########.fr       */
+/*   Updated: 2024/12/26 13:13:27 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,14 +84,16 @@ void validate_map_items(t_map *map)
 		free_map_error(map, "Invalid number of items in map\n");
 }
 
-void validate_map_dimensions(int fd, char **argv, t_map *map)
+void	validate_map_dimensions(int fd, char **argv, t_map *map)
 {
 	int i;
 	char *line;
 
 	i = 0;
-	map->height = height_calculator(fd); // REVISAR POR POSIBLE LICKS **********************
+	map->height = height_calculator(fd, map); // REVISAR POR POSIBLE LEACKS **********************
 	fd = open_file(argv);
+
+	// Reserva memoria para el puntero `grid` (matriz de caracteres)
 	map->grid = malloc(sizeof(char *) * map->height);
 	if (!map->grid)
 	{
@@ -99,21 +101,34 @@ void validate_map_dimensions(int fd, char **argv, t_map *map)
 		close(fd);
 		return;
 	}
+
+	// Leer las líneas del archivo y reservar memoria para cada fila
 	while ((line = get_next_line(fd)) != NULL)
 	{
 		if (i == 0)
 			map->width = ft_strlen(line) - 1;
+
+		// Reservar memoria para cada fila de la cuadrícula
 		map->grid[i] = malloc(ft_strlen(line) + 1);
 		if (!map->grid[i])
 		{
+			// Si ocurre un error, liberar la memoria reservada hasta ahora
 			free(line);
+			while (i > 0)
+			{
+				free(map->grid[--i]); // Liberar las filas anteriores
+			}
+			free(map->grid); // Liberar la matriz
 			free_map_error(map, "MALLOC ERROR\n");
 			close(fd);
 			return;
 		}
+
+		// Copiar la línea en la fila correspondiente de `grid`
 		ft_strlcpy(map->grid[i], line, ft_strlen(line) + 1);
-		free(line);
+		free(line); // Liberar la línea leída
 		i++;
 	}
+
 	close(fd);
 }

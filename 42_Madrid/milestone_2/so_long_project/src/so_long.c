@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 18:38:43 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/26 00:21:49 by frromero         ###   ########.fr       */
+/*   Updated: 2024/12/26 13:35:42 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,5 @@ int	main(int argc, char **argv)
 
 	return (0);
 }
+
+/* valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all ./p */

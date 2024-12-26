@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 10:59:24 by frromero          #+#    #+#             */
-/*   Updated: 2024/11/07 20:44:59 by frromero         ###   ########.fr       */
+/*   Updated: 2024/12/26 13:41:49 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 /* The `my_line` function extracts a full line */
 
 #include "get_next_line.h"
-
-/* Extracts a line from the stored buffer up to a newline or end. */
 
 char	*my_line(char *stored)
 {
@@ -46,8 +44,6 @@ char	*my_line(char *stored)
 	return (NULL);
 }
 
-/* Re-adjusts the stored buffer by removing the first line. */
-
 char	*re_adj_storage(char *stored)
 {
 	int		i;
@@ -73,8 +69,6 @@ char	*re_adj_storage(char *stored)
 	return (swap_temp);
 }
 
-/* Initializes the stored buffer to an empty string if NULL. */
-
 char	*initialize_stored(char *stored, char *read_bff)
 {
 	if (!stored)
@@ -89,8 +83,6 @@ char	*initialize_stored(char *stored, char *read_bff)
 	}
 	return (stored);
 }
-
-/* Reads from the file descriptor and joins data to the stored buffer. */
 
 char	*read_join(char *stored, int fd)
 {
@@ -135,32 +127,3 @@ char	*get_next_line(int fd)
 	stored = re_adj_storage(stored);
 	return (line);
 }
-
-/*
-#include <fcntl.h>
-#include <stdio.h>
-
-// Compilar: cc -g -fsanitize=address -o a.out get_next_line.c
-get_next_line_utils.c && ./a.out
-// Compilar si vamos a pasar valgrind: sin fsanitize
-//cc -g3 -o a.out get_next_line.c get_next_line_utils.c && ./a.out
-
-int main(void)
-{
-	char *next_line;
-	int fd = open("files/42_with_nl", O_RDONLY);
-
-	if (fd == -1)
-	{
-		printf("Error: no se pudo abrir el archivo.\n");
-		return (1);
-	}
-	while ((next_line = get_next_line(fd)) != NULL)
-	{
-		printf("%s", next_line);
-		free(next_line);
-	}
-	free(next_line);
-	close(fd);
-	return (0);
-}*/
