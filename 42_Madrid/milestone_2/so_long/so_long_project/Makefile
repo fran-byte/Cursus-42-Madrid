@@ -6,7 +6,7 @@
 #    By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/21 21:12:48 by frromero          #+#    #+#              #
-#    Updated: 2024/12/25 23:36:47 by frromero         ###   ########.fr        #
+#    Updated: 2024/12/26 20:33:43 by frromero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,11 @@
 NAME = so_long
 
 # Define source files
-SRCS =	./src/so_long.c ./src/parse_exit_error.c ./src/parse_input.c \
-		./src/parse_map.c ./src/utils_so_long.c ./src/parse_map_wall.c \
-		./src/parse_map_playable.c ./src/utils_so_long_two.c
+SRCS = 	./src/so_long.c ./src/exit_error.c ./src/parse_input.c \
+		./src/parse_map_items.c ./src/utils_so_long.c ./src/parse_map_wall.c \
+		./src/parse_map_playable.c ./src/utils_so_free.c \
+		./src/parse_map_validation.c ./src/parse_map_dimensions.c \
+		./src/init_game.c
 
 LIB = libft/libft.a
 
@@ -30,26 +32,29 @@ CFLAGS = -Wall -Wextra -Werror -g3 -I inc -I libft
 OBJS = $(SRCS:./src/%.c=./src/%.o)
 
 # Define the include directory for header files
-INCLUDE = ./inc/so_long.h ./inc/so_long_data.h
+INCLUDE = ./inc/so_long.h ./inc/so_long_data.h ./inc/mlx.h
+
+# External library flags
+MLX_FLAGS = -L./minilibx-linux -lmlx -lXext -lX11 -lm
 
 # Default rule to build the program
 all: ${NAME}
 
-# Links the object files and creates the executable
+# Links the object files and creates the executablemake
 ${NAME}: ${OBJS}
-	@$(MAKE) -C libft  -s
-	@${CC} ${CFLAGS} ${OBJS} $(LIB) -o ${NAME}
+	@$(MAKE) -C libft -s
+	@${CC} ${CFLAGS} ${OBJS} $(LIB) $(MLX_FLAGS) -o ${NAME}
 	@echo "\n✨ Created $(NAME) ✨\n"
 
 # Compile .c files into .o files
 ./src/%.o: ./src/%.c
-	@echo "◎ Compiling 👽 → $<"
+	@echo "◎ Compiling  → $<"
 	@${CC} ${CFLAGS} -c $< -o $@
 
 # Clean up object files
 clean:
 	@${RM} ${OBJS}
-	@echo "\n✨ All objects cleaned successfully 🚀 ✨\n"
+	@echo "\n✨ All objects cleaned successfully  ✨\n"
 
 # Clean up object files, dependencies, and the executable
 fclean: clean

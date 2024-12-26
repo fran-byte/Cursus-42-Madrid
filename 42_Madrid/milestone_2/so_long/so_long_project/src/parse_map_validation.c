@@ -1,47 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_so_long_two.c                                :+:      :+:    :+:   */
+/*   parse_map_validation.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/25 20:22:37 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/25 23:53:03 by frromero         ###   ########.fr       */
+/*   Created: 2024/12/26 16:58:12 by frromero          #+#    #+#             */
+/*   Updated: 2024/12/26 17:20:30 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 #include "../inc/so_long_data.h"
 
-#include <stdlib.h>
-
-void safe_free(void **ptr)
+void parse_map_validation(t_map *map)
 {
-	if (ptr && *ptr)
-	{
-		free(*ptr);
-		*ptr = NULL;
-	}
+	validate_map_items(map);
+	validate_wall_map(map);
+	validate_map_playable(map);
 }
-
-void free_map(t_map *map)
-{
-	int i;
-
-	i = 0;
-	if (map)
-	{
-		while (i < map->height)
-		{
-			free(map->grid[i]);
-			i++;
-		}
-		free(map->grid);
-		if (map->collectibles_x)
-			free(map->collectibles_x);
-		if (map->collectibles_y)
-			free(map->collectibles_y);
-		free(map);
-	}
-}
-

@@ -1,43 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_so_long.c                                    :+:      :+:    :+:   */
+/*   utils_so_free.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/23 10:27:15 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/26 17:51:33 by frromero         ###   ########.fr       */
+/*   Created: 2024/12/25 20:22:37 by frromero          #+#    #+#             */
+/*   Updated: 2024/12/26 17:56:04 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 #include "../inc/so_long_data.h"
 
-void print_map(t_map *map)  /* eliminar cuando esté completo el proyecto */
-{
-	int i;
+#include <stdlib.h>
 
-	i = 0;
-	if (map == NULL || map->grid == NULL)
-		x_error("Invalid map to print\n");
-	while (i < map->height)
+void safe_free(void **ptr)
+{
+	if (ptr && *ptr)
 	{
-		write(1, map->grid[i], ft_strlen(map->grid[i]));
-		i++;
+		free(*ptr);
+		*ptr = NULL;
 	}
 }
-
-int open_file(char **argv)
+void free_calculator(t_map *map)
 {
-	int fd;
-	fd = open(argv[1], O_RDONLY);
-	if (fd < 0)
-		x_error("File Open Error\n");
-	return (fd);
+			free(map);
+			x_error("Invalid size Map\n");
 }
 
-
-void free_map_error(t_map *map, char *msg_error)
+void free_map(t_map *map)
 {
 	int i;
 
@@ -56,5 +48,5 @@ void free_map_error(t_map *map, char *msg_error)
 			free(map->collectibles_y);
 		free(map);
 	}
-	x_error(msg_error);
 }
+
