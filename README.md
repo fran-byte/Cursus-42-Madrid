@@ -12,6 +12,6 @@
 <h2 align="center">Milestone 1</h2>
 <p align="center" width="100%"><a href="42_Madrid/milestone_1/born2beroot"><img src="42_Madrid/img/milestone_1/born2beroot.png" width="72" /><a/><a href="42_Madrid/milestone_1/printf/"><img src="42_Madrid/img/milestone_1/ft_printf.png" width="72" /></a><a href="42_Madrid/milestone_1/get_next_line/"><img src="42_Madrid/img/milestone_1/get_next_line.png" width="72" /></a></p>
 <h2 align="center">Milestone 2</h2>
-<p align="center" width="100%"><a href="42_Madrid/milestone_2/push_swap/"><img src="42_Madrid/img/milestone_2/push_swap.png" width="72" /><a/><a href="42_Madrid/milestone_2/pipex/"><img src="42_Madrid/img/milestone_2/pipex.png" width="72" /><a/><a/><a href="42_Madrid/milestone_2/so_long_project/"><img src="42_Madrid/img/milestone_2/so_long_ico.png" width="72" /><a/></p>
+<p align="center" width="100%"><a href="42_Madrid/milestone_2/push_swap/"><img src="42_Madrid/img/milestone_2/push_swap.png" width="72" /><a/><a href="42_Madrid/milestone_2/pipex/"><img src="42_Madrid/img/milestone_2/pipex.png" width="72" /><a/><a/><a href="42_Madrid/milestone_2/so_long/"><img src="42_Madrid/img/milestone_2/so_long_ico.png" width="72" /><a/></p>
 
 
