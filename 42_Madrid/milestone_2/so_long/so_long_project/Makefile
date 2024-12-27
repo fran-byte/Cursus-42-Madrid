@@ -6,7 +6,7 @@
 #    By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/21 21:12:48 by frromero          #+#    #+#              #
-#    Updated: 2024/12/26 20:33:43 by frromero         ###   ########.fr        #
+#    Updated: 2024/12/27 07:22:28 by frromero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME = so_long
 
 # Define source files
-SRCS = 	./src/so_long.c ./src/exit_error.c ./src/parse_input.c \
+SRCS = 	./src/so_long.c ./src/exit_error.c ./src/parse_arguments.c \
 		./src/parse_map_items.c ./src/utils_so_long.c ./src/parse_map_wall.c \
 		./src/parse_map_playable.c ./src/utils_so_free.c \
 		./src/parse_map_validation.c ./src/parse_map_dimensions.c \

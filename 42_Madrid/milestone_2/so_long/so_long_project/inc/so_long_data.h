@@ -6,15 +6,9 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 18:40:24 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/26 21:43:26 by frromero         ###   ########.fr       */
+/*   Updated: 2024/12/27 07:33:24 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/* **grid is a 2D array to store the map
-    width is a Map width
-    height is a Map height
-    player_x is a Player's X coordinate
-    player_y is a Player's Y coordinate */
 
 #ifndef SO_LONG_DATA_H
 # define SO_LONG_DATA_H
@@ -22,6 +16,8 @@
 # include "so_long.h"
 # include "../minilibx-linux/mlx.h"
 
+/*	Represents the game map: contains the grid, dimensions, player position,
+	collectibles, and the exit. */
 typedef struct s_map {
 	char **grid;
 	int width;
@@ -36,7 +32,26 @@ typedef struct s_map {
 
 } t_map;
 
-void	draw_map(t_data *data);
+/*	Represents the global game state, including the map, the MiniLibX
+	connection, the window, and the game status. */
+typedef struct s_game {
+    t_map map;
+    void *mlx;
+    void *window;
+    int moves;
+    int game_over;
+} t_game;
+
+/* 	Handles textures and sprites for rendering game elements such as the player,
+	 walls, and collectibles. */
+typedef struct s_sprites {
+    void *player;
+    void *wall;
+    void *collectible;
+    void *exit;
+    void *floor;
+} t_sprites;
+
 
 
 
