@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 11:25:56 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/02 13:03:45 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/02 14:38:49 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void move_player(t_game *game, int dx, int dy)
 			mlx_put_image_to_window(game->mlx, game->window, game->sprites.exit, new_x * TILE_SIZE, new_y * TILE_SIZE);
 
 			game->game_over = 1; /* GAME OVER */
-			printf("¡Has llegado a la salida!\n");
+			printf("Estás en EXIT\n");   // BORRAR ****************************
 			exit_game(game);
 			return;
 		}
