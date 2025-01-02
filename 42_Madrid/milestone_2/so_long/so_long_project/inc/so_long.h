@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 18:42:54 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/26 21:43:17 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/02 14:43:47 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void	validate_map_items(t_map *map);
 void	validate_wall_map(t_map *map);
 int		open_file(char **argv);
 void	parse_map_validation(t_map *map);
-void	free_calculator(t_map *map);
 void	free_map(t_map *map);
 int		height_calculator(int fd, t_map *map);
 void	print_map(t_map *map);
