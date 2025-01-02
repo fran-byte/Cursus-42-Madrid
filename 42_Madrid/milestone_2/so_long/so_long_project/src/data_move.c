@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 11:25:56 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/02 14:40:19 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/02 15:11:21 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void move_player(t_game *game, int dx, int dy)
 		mlx_put_image_to_window(game->mlx, game->window, game->sprites.exit, new_x * TILE_SIZE, new_y * TILE_SIZE);
 
 		/* Si el jugador pasa por la salida antes de recoger todos los coleccionables, no hace nada adicional*/
+		if(game->map.grid[new_y][new_x] == 'E' && game->map.collectibles != 0)
 		{
 			game->map.grid[new_y][new_x] = 'E';
 			/* Si no ha recogido todos los coleccionables, no cambia el estado */
