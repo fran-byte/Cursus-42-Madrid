@@ -6,7 +6,7 @@
 #    By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/21 21:12:48 by frromero          #+#    #+#              #
-#    Updated: 2024/12/27 07:22:28 by frromero         ###   ########.fr        #
+#    Updated: 2024/12/27 13:23:12 by frromero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ SRCS = 	./src/so_long.c ./src/exit_error.c ./src/parse_arguments.c \
 		./src/parse_map_items.c ./src/utils_so_long.c ./src/parse_map_wall.c \
 		./src/parse_map_playable.c ./src/utils_so_free.c \
 		./src/parse_map_validation.c ./src/parse_map_dimensions.c \
-		./src/init_game.c
+		./src/data_exit_game.c ./src/data_init_game.c \
+		./src/data_key_press.c ./src/data_move.c ./src/data_render.c
 
 LIB = libft/libft.a
 

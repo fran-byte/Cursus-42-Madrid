@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 17:34:39 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/26 17:37:49 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/02 13:04:53 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int allocate_map_grid(t_map *map, int fd)
 	map->grid = malloc(sizeof(char *) * map->height);
 	if (!map->grid)
 	{
-		free_map_error(map, "MALLOC ERROR\n");
+		free_map_error(map, "Error\nMALLOC ERROR\n");
 		close(fd);
 		return (0);
 	}
@@ -42,7 +42,7 @@ void fill_map_grid(int fd, t_map *map)
 			while (i > 0)
 				free(map->grid[--i]);
 			free(map->grid);
-			free_map_error(map, "MALLOC ERROR\n");
+			free_map_error(map, "Error\nMALLOC ERROR\n");
 			close(fd);
 			return;
 		}
@@ -88,9 +88,7 @@ void validate_map_dimensions(int fd, char **argv, t_map *map)
 		close(fd);
 		return;
 	}
-
 	if (!allocate_map_grid(map, fd))
 		return;
-
 	fill_map_grid(fd, map);
 }

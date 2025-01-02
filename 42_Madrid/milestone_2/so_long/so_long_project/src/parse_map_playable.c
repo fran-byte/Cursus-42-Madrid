@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 17:54:49 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/26 00:16:24 by frromero         ###   ########.fr       */
+/*   Updated: 2024/12/27 17:13:42 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,16 +95,16 @@ void validate_map_playable(t_map *map)
 	exit_accessible = 0;
 	temp_grid = duplicate_grid(map->grid, map->height);
 	if (!temp_grid)
-		free_map_error(map, "Memory allocation error\n");
+		free_map_error(map, "Error\nMemory allocation error\n");
 	flood_fill(temp_grid, map->player_x, map->player_y, map, &collectible_count);
 	free_grid(temp_grid, map->height);
 	if (collectible_count > 0)
-		free_map_error(map, "Not all collectibles are reachable\n");
+		free_map_error(map, "Error\nNot all collectibles are reachable\n");
 	temp_grid = duplicate_grid(map->grid, map->height);
 	if (!temp_grid)
-		free_map_error(map, "Memory allocation error\n");
+		free_map_error(map, "Error\nMemory allocation error\n");
 	exit_accessible = is_exit_reachable(temp_grid, map->player_x, map->player_y, map);
 	free_grid(temp_grid, map->height);
 	if (!exit_accessible)
-		free_map_error(map, "Exit is not reachable\n");
+		free_map_error(map, "Error\nExit is not reachable\n");
 }

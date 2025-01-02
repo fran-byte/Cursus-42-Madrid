@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 20:48:28 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/26 17:56:14 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/01 23:32:47 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void initialize_map_items(t_map *map)
 	map->collectibles_x = malloc(sizeof(int) * map->height * map->width);
 	map->collectibles_y = malloc(sizeof(int) * map->height * map->width);
 	if (!map->collectibles_x || !map->collectibles_y)
-		free_map_error(map, "MALLOC ERROR\n");
+		free_map_error(map, "Error\nMalloc Error\n");
 	map->collectibles = 0;
 }
 
@@ -85,7 +85,7 @@ void validate_map_items(t_map *map)
 	initialize_map_items(map);
 	count_and_store_items(map, &e, &p, &c);
 	if (e != 1 || p != 1 || c < 1)
-		free_map_error(map, "Invalid number of items in map\n");
+		free_map_error(map, "Error\nInvalid number of items in map\n");
 }
 
 

@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 10:27:15 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/26 17:51:33 by frromero         ###   ########.fr       */
+/*   Updated: 2024/12/27 17:15:00 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void print_map(t_map *map)  /* eliminar cuando esté completo el proyecto */
 
 	i = 0;
 	if (map == NULL || map->grid == NULL)
-		x_error("Invalid map to print\n");
+		x_error("Error\nInvalid map to print\n");
 	while (i < map->height)
 	{
 		write(1, map->grid[i], ft_strlen(map->grid[i]));
@@ -32,7 +32,7 @@ int open_file(char **argv)
 	int fd;
 	fd = open(argv[1], O_RDONLY);
 	if (fd < 0)
-		x_error("File Open Error\n");
+		x_error("Error\nFile Open Error\n");
 	return (fd);
 }
 

@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 19:24:41 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/25 18:16:44 by frromero         ###   ########.fr       */
+/*   Updated: 2024/12/27 17:14:20 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,11 @@ void	validate_wall_map(t_map *map)
 	i = 1;
 	if (scan_lines_up_down(map->grid[map->height - 1]) == -1
 		|| scan_lines_up_down(map->grid[0]) == -1)
-		free_map_error(map, "Invalid map: The wall is open\n");
+		free_map_error(map, "Error\nInvalid map: The wall is open\n");
 	while (i < map->height - 1)
 	{
 		if (scan_lines(map->grid[i]) == -1)
-			free_map_error(map, "Invalid map: The wall is open\n");
+			free_map_error(map, "Error\nInvalid map: The wall is open\n");
 		i++;
 	}
 
