@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 20:48:28 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/01 23:32:47 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/02 18:09:27 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,8 @@ int search_items(char *line, int *e, int *p, int *c)
 	i = 0;
 	while (line[i])
 	{
-		if (line[i] != '1' && line[i] != '0' && line[i] != 'E' && line[i] != 'C'
-			&& line[i] != 'P' && line[i] != '\n')
-				return (-1);
+		if (line[i] != '1' && line[i] != '0' && line[i] != 'E' && line[i] != 'C' && line[i] != 'P' && line[i] != '\n')
+			return (-1);
 		else if (line[i] == 'E')
 			(*e)++;
 		else if (line[i] == 'P')
@@ -46,6 +45,29 @@ void initialize_map_items(t_map *map)
 	map->collectibles = 0;
 }
 
+static void put_item(t_map *map, int x, int y, int *e, int *p, int *c)
+{
+	if (map->grid[x][y] == 'E')
+	{
+		(*e)++;
+		map->exit_x = x;
+		map->exit_y = y;
+	}
+	else if (map->grid[x][y] == 'P')
+	{
+		(*p)++;
+		map->player_x = x;
+		map->player_y = y;
+	}
+	else if (map->grid[x][y] == 'C')
+	{
+		(*c)++;
+		map->collectibles_x[map->collectibles] = x;
+		map->collectibles_y[map->collectibles] = y;
+		map->collectibles++;
+	}
+}
+
 void count_and_store_items(t_map *map, int *e, int *p, int *c)
 {
 	int x;
@@ -59,14 +81,7 @@ void count_and_store_items(t_map *map, int *e, int *p, int *c)
 		y = 0;
 		while (y < line_len)
 		{
-			if (map->grid[x][y] == 'E')
-				(*e)++, map->exit_x = x, map->exit_y = y;
-			else if (map->grid[x][y] == 'P')
-				(*p)++, map->player_x = x, map->player_y = y;
-			else if (map->grid[x][y] == 'C')
-				(*c)++, map->collectibles_x[map->collectibles] = x,
-					map->collectibles_y[map->collectibles] = y,
-						map->collectibles++;
+			put_item(map, x, y, e, p, c); // Llamada a la función modularizada
 			y++;
 		}
 		x++;
@@ -87,5 +102,3 @@ void validate_map_items(t_map *map)
 	if (e != 1 || p != 1 || c < 1)
 		free_map_error(map, "Error\nInvalid number of items in map\n");
 }
-
-
