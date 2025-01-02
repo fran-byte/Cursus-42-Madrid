@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 11:25:56 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/02 14:39:30 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/02 14:40:19 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void move_player(t_game *game, int dx, int dy)
 		game->map.player_y = new_y;
 		game->moves++;
 
-		/* Renderiza la nueva posición del jugador*/
+		/* Renderiza la nueva posición de player*/
 		mlx_put_image_to_window(game->mlx, game->window, game->sprites.player, new_x * TILE_SIZE, new_y * TILE_SIZE);
 		mlx_put_image_to_window(game->mlx, game->window, game->sprites.exit, new_x * TILE_SIZE, new_y * TILE_SIZE);
 
