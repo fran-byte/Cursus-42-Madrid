@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 18:38:43 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/02 17:45:12 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/02 19:15:25 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	main(int argc, char **argv)
 	validate_map_dimensions(fd, argv, map);
 	parse_map_validation(map);
 	game.map = *map;
+	free(map);
 	initialize_game(&game);
 	render_map(&game, &game.sprites);
 	mlx_hook(game.window, 2, 1L << 0, handle_keypress, &game);

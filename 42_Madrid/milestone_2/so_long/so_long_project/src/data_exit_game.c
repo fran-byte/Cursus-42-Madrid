@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 11:42:01 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/02 18:17:54 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/02 19:14:49 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,11 @@ int exit_game(t_game *game)
 		free(game->map.collectibles_x);
 	if (game->map.collectibles_y != NULL)
 		free(game->map.collectibles_y);
+
 	/*cerramos la ventana y salimos*/
 	mlx_destroy_window(game->mlx, game->window);
 	mlx_destroy_display(game->mlx); /* Destruir el display si es necesario*/
+	free(game->mlx);
 	exit(0);
 	return (0);
 }
