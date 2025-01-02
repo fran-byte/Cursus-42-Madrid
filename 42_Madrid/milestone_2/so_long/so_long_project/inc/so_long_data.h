@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 18:40:24 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/01 23:36:36 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/02 13:10:55 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ typedef struct s_game {
 	t_sprites sprites;
 } t_game;
 
-/*	keycodes para las teclas comunes */
+/*	keycodes */
 
 # define ESC_KEY 65307
 # define W_KEY  119
