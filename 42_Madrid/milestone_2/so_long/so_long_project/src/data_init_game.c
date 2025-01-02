@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 11:56:46 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/02 14:36:43 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/02 18:27:25 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static void	load_texture(t_game *game, void **sprite, char *path,
 }
 /*	Initializes the game by setting up the MiniLibX connection, creating the
 	window, and loading textures for the game objects. Also sets the player's
-	initial position and prints debug information. */
+	initial position. */
 
 void	initialize_game(t_game *game)
 {
