@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 11:25:56 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/02 15:11:21 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/02 15:13:19 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void move_player(t_game *game, int dx, int dy)
 		{
 			game->map.grid[new_y][new_x] = 'E';
 			/* Si no ha recogido todos los coleccionables, no cambia el estado */
-			printf("Aún te faltan coleccionables para salir.\n");   // BORRAR ****************************
+			printf("Aún faltan coleccionables para salir.\n");   // BORRAR ****************************
 		}
 	}
 
