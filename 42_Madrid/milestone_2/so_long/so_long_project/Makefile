@@ -6,7 +6,7 @@
 #    By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/21 21:12:48 by frromero          #+#    #+#              #
-#    Updated: 2025/01/05 14:37:19 by frromero         ###   ########.fr        #
+#    Updated: 2025/01/05 15:53:04 by frromero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRCS = 	./src/so_long.c ./src/exit_error.c ./src/parse_arguments.c \
 
 LIB = libft/libft.a
 MINILIBX = minilibx-linux/libmlx.a
-
+DIR_MINILIBX = minilibx-linux
 # Define the compiler
 CC = cc
 
@@ -34,7 +34,7 @@ CFLAGS = -Wall -Wextra -Werror -g3 -I inc -I libft
 OBJS = $(SRCS:./src/%.c=./src/%.o)
 
 # Define the include directory for header files
-INCLUDE = ./inc/so_long.h ./inc/so_long_data.h ./inc/mlx.h
+INCLUDE = ./inc/so_long.h ./inc/so_long_data.h ./minilibx-linux/mlx.h
 
 # External library flags
 MLX_FLAGS = -L./minilibx-linux -lmlx -lXext -lX11 -lm
@@ -45,8 +45,10 @@ all: ${NAME}
 # Links the object files and creates the executablemake
 ${NAME}: ${OBJS}
 	@$(MAKE) -C libft -s
+	@$(MAKE) -C $(DIR_MINILIBX) -s
 	@${CC} ${CFLAGS} ${OBJS} $(LIB) $(MINILIBX ) $(MLX_FLAGS) -o ${NAME}
 	@echo "\n✨ Created $(NAME) ✨\n"
+
 
 # Compile .c files into .o files
 ./src/%.o: ./src/%.c
@@ -56,11 +58,13 @@ ${NAME}: ${OBJS}
 # Clean up object files
 clean:
 	@${RM} ${OBJS}
+	@${RM} minilibx-linux/obj/*.*
 	@echo "\n✨ All objects cleaned successfully  ✨\n"
 
 # Clean up object files, dependencies, and the executable
 fclean: clean
 	@$(MAKE) -C libft fclean -s
+	@$(MAKE) -C $(DIR_MINILIBX) clean -s
 	@${RM} ${NAME}
 	@echo "\n✨ 🚀 Objects and executables cleaned ✨\n"
 
