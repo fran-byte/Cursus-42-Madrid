@@ -6,7 +6,7 @@
 #    By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/21 21:12:48 by frromero          #+#    #+#              #
-#    Updated: 2025/01/02 19:58:46 by frromero         ###   ########.fr        #
+#    Updated: 2025/01/05 14:37:19 by frromero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRCS = 	./src/so_long.c ./src/exit_error.c ./src/parse_arguments.c \
 		./src/data_key_press.c ./src/data_move.c ./src/data_render.c
 
 LIB = libft/libft.a
+MINILIBX = minilibx-linux/libmlx.a
 
 # Define the compiler
 CC = cc
@@ -44,7 +45,7 @@ all: ${NAME}
 # Links the object files and creates the executablemake
 ${NAME}: ${OBJS}
 	@$(MAKE) -C libft -s
-	@${CC} ${CFLAGS} ${OBJS} $(LIB) $(MLX_FLAGS) -o ${NAME}
+	@${CC} ${CFLAGS} ${OBJS} $(LIB) $(MINILIBX ) $(MLX_FLAGS) -o ${NAME}
 	@echo "\n✨ Created $(NAME) ✨\n"
 
 # Compile .c files into .o files
