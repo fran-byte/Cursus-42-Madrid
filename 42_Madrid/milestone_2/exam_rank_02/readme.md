@@ -5,6 +5,7 @@
 # -> Level 1
 
 ## first_word
+```
 while ( ==32 || ==9)
 
 i++;
@@ -12,8 +13,9 @@ i++;
 while ( != 32 && != 9) && argv[1][i])
 
 write (
-
+```
 ## fizzbuzz
+```
 i % 3 == 0 && i % 5 == 0
 
 	write(1, "fizzbuzz", 8);
@@ -31,8 +33,9 @@ str[10] = "0123456789";
 		print_nb(number / 10); // Recursividad
 
 	write(1, &str[number % 10], 1);
-
+```
 ## ft_putstr
+```
 while(*str)
 
 	write
@@ -53,15 +56,17 @@ tmp = *a;
 *a = *b;
 
 *b = tmp;
-
+```
 ## repeat_alpha
+```
 rep = argv[1][i] - 'a' + 1;
 
 while(rep--)
 
 	write(1, &argv[1][i], 1);
-
+```
 ## rev_print
+```
 while(str[i])
 
 		i++;
@@ -69,8 +74,9 @@ while(str[i])
 while(--lenght >= 0)
 
 		write(1, &str[i], 1);
-
+```
 ## rot_13
+```
 c = argv[1][i];
 
 if( >= 'a' &&  <= 'm' )
@@ -82,8 +88,9 @@ if( >= 'n' &&  <= 'z' )
 	c = argv[1][i] - 13;
 
 write ( c
-
+```
 ## rotone
+```
 if ( >= 'a' &&  <= 'y' )
 
 	c = 1;
@@ -95,13 +102,15 @@ else if( == 'z'   )
 c = argv[1][i] + c;
 
 write ( c
-
+```
 ## search_and_replace
+```
 if([1][i] == [2][0])
 
 	write( [3][0]
-
+```
 ## ulstr
+```
 if(>= 'a' &&  <= 'z')
 
 	c = -32;
@@ -113,6 +122,7 @@ if(>= 'A' &&  <= 'Z')
 c = argv[1][i] + c;
 
 write ( c
+```
 
 # -> Level 2
 
