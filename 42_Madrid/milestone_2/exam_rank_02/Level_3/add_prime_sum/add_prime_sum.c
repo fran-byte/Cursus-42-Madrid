@@ -27,9 +27,10 @@ int	is_prime(int num)
 
 	if (num <= 1)
 		return (0);
-	while (i * i <= num)
+	// solo se prueben divisores hasta la raíz cuadrada de num
+	while (i * i <= num) 
 	{
-		if (num % i == 0)
+		if (num % i == 0) // si es divisible entre i, NO es primo
 			return (0);
 		i++;
 	}
@@ -55,7 +56,7 @@ int main(int ac, char **av)
 		while (nbr > 0)
 		{
 			if (is_prime(nbr))
-				sum += nbr;
+				sum = sum + nbr;
 			nbr--;
 		}
 		put_nbr(sum);
