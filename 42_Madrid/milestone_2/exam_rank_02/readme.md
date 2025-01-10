@@ -42,7 +42,7 @@ while ( s2[i] )
 ## ft_strlen
 ```
 while ( str[i] )
-		i++
+	i++
 ```
 ## ft_swap
 ```
@@ -418,4 +418,214 @@ result = result * str_base + c
 while ( begin_list->next )
 		size++
 		begin_list = begin_list->next
+```
+# ft_range
+int	*ft_range(int start, int end)
+```
+dist = abs( end - start ) + 1
+	array = (int *)malloc((sizeof int) * dist)
+
+	if ( start < end )
+			while(start <= end)
+				array[i] = start
+				i++
+				start++
+	else
+	   lo contrario si start > end
+```
+
+# ft_rrange
+int	*ft_rrange(int start, int end)
+
+```
+dist = abs(end - start) + 1
+	array = malloc((sizeof array) * dist)
+
+	if (end > start)
+		while(start <= end)
+			array[i] = end
+			end--
+			i++
+	else
+		lo contrario si end < start
+
+```
+
+# hidenp
+
+```
+while ( [1][i] != '\0')
+
+			while ( [2][j] != '\0')
+				if ( [1][i] ==  [2][j])
+					break
+				j++;
+			i++;
+
+
+			if ( [2][j] == '\0' &&  [1][i] == '\0')
+					write( "0"
+					write( "\n"
+					return(0)
+		write ( "1"
+
+```
+
+# lcm
+unsigned int lcm(unsigned int a, unsigned int b)
+
+```
+if (a == 0 || b == 0) Si son iguales el lcm = mcm es 0
+		return ( 0 )
+
+	if (a > b) Dependemos si a o b uno es mayor que el otro
+		n = a
+	else
+		n = b
+
+	while (1)
+		if (n % a == 0 && n % b == 0)
+			return (n)
+		++n;
+```
+
+# paramsum
+
+```
+creamos la funcion putnbr:
+ft_putnbr:
+
+	if(nb >= 10)
+		ft_putnbr(nb / 10); ** RECURSIVIDAD **
+	c = nb % 10 + '0'   conversión int a ascii
+	write ( &c
+}
+
+
+main:
+	if(argc >= 2)
+		ft_putnbr(argc - 1) Enviamos el nº de Argumentos
+	else
+		write(  "0"
+```
+
+# pgcd
+```
+Creamos la función gcd (MCD  Máximo Común Divisor):
+
+void ft_gcd(int a, int b)
+{
+
+gcd = 1
+
+	if (a > b)
+		n = a
+	else
+		n = b
+	while (1)
+
+		if ( n % b == 0 && n % a == 0 )
+			printf("%d", n);
+			break;
+		n++;
+
+main:
+
+	if(argc == 3)
+		ft_gcd ( atoi( argv[1] ), atoi( argv[2] ))
+	printf("\n");
+
+```
+
+# print_hex
+
+```
+--> creamos la impresion en base 16:
+
+void print_hex(int nb)
+
+	char hex[]="0123456789abcdef"
+	if(nb >= 16)
+		print_hex(nb / 16)
+	write(  &hex[nb % 16]
+
+--> un atoi:
+
+int ft_atoi(char *str)
+
+--> main:
+		print_hex(ft_atoi(argv[1]));
+
+```
+
+# rstr_capitalizer
+
+```
+	while(argv[i])
+
+		j = 0
+		while(argv[i][j])
+
+			if ( [i][j] >= 'A' &&  [i][j] <= 'Z') && [i][j + 1] != ' ')
+					argv[i][j] = argv[i][j] + 32
+
+			if ( [i][j] >= 'a' && [i][j] <= 'z') && [i][j + 1] == ' ' || [i][j + 1] == '\0')
+					argv[i][j] = argv[i][j] - 32
+
+			write( &argv[i][j]
+			j++
+		write(1, "\n", 1)
+		i++
+```
+
+# str_capitalizer
+```
+while(argv[i])
+			j = 0
+			while(  argv[i][j]  )
+				if([i][j] >= 'A' &&  [i][j] <= 'Z')
+					 [i][j] =  [i][j] + 32
+
+				if(([i][j] >= 'a' && [i][j] <= 'z') && [i][j - 1] == ' ')
+					[i][j] = [i][j] - 32
+
+				if([i][0] >= 'a' && [i][0] <= 'z')
+					[i][j] = [i][j] - 32
+
+				write(   &argv[i][j]
+				j++
+			write( "\n"
+			i++;
+```
+# tab_mult
+
+```
+--> Creamos un atoi:
+int	atoi(char *str)
+
+--> un strlen:
+int ft_strlen(char *str)
+
+--> un put_nbr:
+void put_nbr(int nb)  ** Funcion recursiva **
+
+--> main:
+
+		number = x_atoi(argv[1])
+		while(i < 10)
+
+			c = i + '0'
+			result = i * number;
+			write(1, &c, 1)
+			write(  " x "
+
+			str = argv[1]
+			write(1,  str,  ft_strlen( argv[1] ))
+			write( " = "
+
+			put_nbr(result)
+			write(  "\n"
+
+			i++
+
 ```
