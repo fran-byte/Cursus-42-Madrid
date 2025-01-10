@@ -4,7 +4,7 @@
 
  <h1> LEVEL 1 </h1>
 
- <span style="font-size: 2em;">:rocket: :rocket: :rocket:</span>
+ # :rocket: :rocket: :rocket:
 
 ## first_word
 ```
@@ -97,7 +97,8 @@ write ( &c
 ```
 
  <h1> LEVEL 2 </h1>
- <span style="font-size: 2em;">:rocket: :rocket: :rocket:</span>
+
+ # :rocket: :rocket: :rocket:
 
 ## alpha_mirror
 ```
@@ -319,4 +320,4 @@ while (  [2][j] != '\0' )
 
   # :rocket: :rocket: :rocket:
 
- <span style="font-size: 2em;">:rocket: :rocket: :rocket:</span>
+
