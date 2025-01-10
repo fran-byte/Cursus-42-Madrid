@@ -1,6 +1,6 @@
 # EXAM RANK 02
 
-- ***Después de que hayas practicado el código*** de cada uno de los ejercicios, acontinuación marcaré solo las líneas de código exenciales de cada uno de ellos, para visualizar el código completo y los subjects, podeis navegar por las carpetas de este directorio.
+- ***Después de que hayas practicado el código*** de cada uno de los ejercicios, acontinuación marcaré solo las líneas de **seudo-código** exenciales de cada uno de ellos, para visualizar el código y los subjects, podeis navegar por las carpetas de este directorio.
 
  <h1> LEVEL 1 </h1>
 
@@ -321,3 +321,101 @@ while (  [2][j] != '\0' )
   # :rocket: :rocket: :rocket: :rocket: :rocket: :rocket: :rocket: :rocket: :rocket:
 
 
+# add_prine_sum
+
+```
+--> creamos atoi:
+int	ft_atoi(char *s)
+
+--> creamos put_nbr:
+void	put_nbr(int n)
+
+--> creamos is_prime:
+int	is_prime(int num)
+{
+	int	i = 2;
+
+	if (num <= 1)
+		return (0);
+	// solo se prueben divisores hasta la raíz cuadrada de num
+	while (i * i <= num)
+	{
+		if (num % i == 0) // si es divisible entre i, NO es primo
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+--> main:
+
+	while (nbr > 0)
+		if ( is_prime(nbr) ) // Si es (true  (1))
+			sum = sum + nbr
+		nbr--;
+	put_nbr(sum)
+
+if (ac != 2)
+	put_nbr(0);
+
+
+```
+
+# epur_str
+
+```
+while (  ' '||  '\t' )
+	i++
+	while( [1][i] )
+		if( == ' ' ||  == '\t')
+			flag = 1
+		if( != ' ' ||  != '\t')
+			if(flag == 1)
+				write ( " "
+			write( [1][i]
+			flag = 0;
+		}
+		i++;
+```
+
+# expand_str
+Es igual al anterior pero dejando "3 espacios"
+```
+while (  ' '||  '\t' )
+	i++
+	while( [1][i] )
+		if( == ' ' ||  == '\t')
+			flag = 1
+		if( != ' ' ||  != '\t')
+			if(flag == 1)
+				write ( "   "  / 3 ESPACIOS
+			write( [1][i]
+			flag = 0;
+		}
+		i++;
+
+					write(1, "   ", 3);
+```
+# atoi_base
+igual al atoi pero con base segun el ejercicio hasta base 16:
+
+```
+if( >= '0' &&  <= '9')
+	c = str[i] - '0'
+
+else if( >= 'a' && <= 'f')
+	c = str[i] - 'a' + 10;
+.......
+...
+else
+	break
+result = result * str_base + c
+
+```
+# ft_list_size
+
+```
+while ( begin_list->next )
+		size++
+		begin_list = begin_list->next
+```
