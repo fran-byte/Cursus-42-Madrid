@@ -2,7 +2,8 @@
 
 - ***Después de que hayas practicado el código*** de cada uno de los ejercicios, acontinuación marcaré solo las líneas de código exenciales de cada uno de ellos, para visualizar el código completo y los subjects, podeis navegar por las carpetas de este directorio.
 
-:rocket: :rocket: <h1> LEVEL 1 </h1>
+ <h1> LEVEL 1 </h1>
+ :rocket: :rocket::rocket: :rocket::rocket: :rocket:
 
 ## first_word
 ```
@@ -94,7 +95,8 @@ c = argv[1][i] + c;
 write ( &c
 ```
 
-:rocket::rocket: #  <h1> LEVEL 2 </h1>
+ <h1> LEVEL 2 </h1>
+:rocket::rocket: # :rocket::rocket: # :rocket::rocket: #
 
 ## alpha_mirror
 ```
@@ -312,4 +314,5 @@ while (  [2][j] != '\0' )
 				i++
 ```
 
-:rocket::rocket: <h1> LEVEL 3 </h1>
+ <h1> LEVEL 3 </h1>
+:rocket::rocket::rocket::rocket::rocket::rocket:
