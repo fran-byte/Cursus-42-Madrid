@@ -2,7 +2,7 @@
 
 - ***Después de que hayas practicado el código*** de cada uno de los ejercicios, acontinuación marcaré solo las líneas de código exenciales de cada uno de ellos, para visualizar el código completo y los subjects, podeis navegar por las carpetas de este directorio.
 
-# Level 1
+# ----- Level 1
 
 ## first_word
 while ( ==32 || ==9)
@@ -81,6 +81,6 @@ if(>= 'A' &&  <= 'Z')
 c = argv[1][i] + c;
 write ( c
 
-# Level 2
+# ----- Level 2
 
 ##
