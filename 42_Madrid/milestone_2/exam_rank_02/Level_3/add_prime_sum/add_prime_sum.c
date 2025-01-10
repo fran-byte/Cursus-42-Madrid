@@ -55,7 +55,7 @@ int main(int ac, char **av)
 		while (nbr > 0)
 		{
 			if (is_prime(nbr))
-				sum += nbr;
+				sum = sum + nbr;
 			nbr--;
 		}
 		put_nbr(sum);
