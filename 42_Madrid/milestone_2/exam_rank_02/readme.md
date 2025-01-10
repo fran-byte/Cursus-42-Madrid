@@ -1,6 +1,7 @@
 # EXAM RANK 02 (Spolier de Seudo-código)
 
-- ***Después de que hayas practicado ya todo el código*** y los subjects, en las carpetas de este directorio
+- ***Después de que hayas practicado ya todo el código*** y los subjects, en las carpetas de este directorio ☝
+
 
 - Os dejo un  **seudo-código** exenciales de cada uno de ellos:
 
