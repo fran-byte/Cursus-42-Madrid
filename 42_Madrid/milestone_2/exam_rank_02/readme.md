@@ -13,7 +13,6 @@ write (
 ## fizzbuzz
 i % 3 == 0 && i % 5 == 0
 	write(1, "fizzbuzz", 8);
-...
 else
 	print_nb(i);
 
