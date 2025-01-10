@@ -2,7 +2,7 @@
 
 - ***Después de que hayas practicado el código*** de cada uno de los ejercicios, acontinuación marcaré solo las líneas de código exenciales de cada uno de ellos, para visualizar el código completo y los subjects, podeis navegar por las carpetas de este directorio.
 
-# -- > LEVEL 1
+:rocket: :rocket: # LEVEL 1
 
 ## first_word
 ```
@@ -30,7 +30,6 @@ str[10] = "0123456789"
 while ( *str )
 	write
 ```
-
 
 ## ft_strcpy
 ```
@@ -95,7 +94,7 @@ c = argv[1][i] + c;
 write ( &c
 ```
 
-# -- > LEVEL 2
+:rocket::rocket: #  LEVEL 2
 
 ## alpha_mirror
 ```
@@ -313,5 +312,5 @@ while (  [2][j] != '\0' )
 				i++
 ```
 
-# -- > LEVEL 3
+:rocket::rocket: ## LEVEL 3
 
