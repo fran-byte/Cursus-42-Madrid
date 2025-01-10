@@ -19,7 +19,7 @@ int	*ft_range(int start, int end)
 	int i = 0;
 
 	dist = abs(end - start) + 1;
-	array = (int)malloc((sizeof array) * dist);
+	array = (int)malloc((sizeof int) * dist);
 	if(!array)
 		return(NULL);
 	if(start < end)
