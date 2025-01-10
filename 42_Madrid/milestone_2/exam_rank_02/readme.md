@@ -18,7 +18,7 @@ else
 
 Función: print_nb(int i)
 
-	str[10] = "0123456789";
+str[10] = "0123456789";
 
 	(number > 9)
 		print_nb(number / 10); // Recursividad
