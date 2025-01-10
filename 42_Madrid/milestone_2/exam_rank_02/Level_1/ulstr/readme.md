@@ -1,3 +1,4 @@
+```
 Nombre de la asignación  : ulstr
 Archivos esperados   : ulstr.c
 Funciones permitidas: write
@@ -12,7 +13,7 @@ Si el número de argumentos no es 1, el programa muestra '\n'.
 
 Ejemplos:
 
-```bash
+
 $>./ulstr "L'eSPrit nE peUt plUs pRogResSer s'Il staGne et sI peRsIsTent VAnIte et auto-justification." | cat -e
 l'EspRIT Ne PEuT PLuS PrOGrESsER S'iL STAgNE ET Si PErSiStENT vaNiTE ET AUTO-JUSTIFICATION.$
 $>./ulstr "S'enTOuRer dE sECreT eSt uN sIGnE De mAnQuE De coNNaiSSanCe.  " | cat -e
