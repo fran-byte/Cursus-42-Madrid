@@ -6,7 +6,7 @@ Funciones permitidas: write
 
 Escribe un programa que tome una cadena y la muestre, reemplazando cada una de sus letras por la letra 13 espacios adelante en el orden alfabético.
 
-'z' se convierte en 'm' y 'Z' se convierte en 'M'. El caso de las letras permanece sin cambios.
+'z' se convierte en 'm' y 'Z' se convierte en 'M'. El caso del resto de caracteres permanecen sin cambios.
 
 La salida será seguida por un salto de línea.
 

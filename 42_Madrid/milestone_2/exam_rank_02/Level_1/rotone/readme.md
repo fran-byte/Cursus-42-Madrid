@@ -6,7 +6,7 @@ Funciones permitidas: write
 
 Escribe un programa que tome una cadena y la muestre, reemplazando cada una de sus letras por la siguiente en el orden alfabético.
 
-'z' se convierte en 'a' y 'Z' se convierte en 'A'. El caso de las letras permanece sin cambios.
+'z' se convierte en 'a' y 'Z' se convierte en 'A'. El caso del resto de caracteres permanecen sin cambios.
 
 La salida será seguida por un salto de línea.
 
