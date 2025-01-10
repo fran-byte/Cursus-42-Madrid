@@ -23,9 +23,9 @@ int	main(int argc, char **argv)
 				i++;
 		while(argv[1][i])
 		{
-			if(argv[1][i]== ' ')
+			if(argv[1][i] == ' ' || argv[1][i] == '\t')
 				flag = 1;
-			if(argv[1][i] != ' ')
+			if(argv[1][i] != ' ' || argv[1][i] != '\t')
 			{
 				if(flag == 1)
 					write(1, " ", 1);
