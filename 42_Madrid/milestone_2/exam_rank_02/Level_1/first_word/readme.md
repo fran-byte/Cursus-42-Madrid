@@ -1,5 +1,5 @@
 
----
+```
 
 ### **Nombre de la asignación**: `first_word`
 **Archivos esperados**: `first_word.c`
@@ -17,7 +17,7 @@ Si el número de parámetros no es 1, o si no hay palabras, simplemente muestra 
 
 ### **Ejemplos**:
 
-```bash
+
 $> ./first_word "FOR PONY" | cat -e
 FOR$
 $> ./first_word "this        ...    is sparta, then again, maybe    not" | cat -e

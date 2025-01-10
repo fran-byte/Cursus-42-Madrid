@@ -1,3 +1,4 @@
+```
 Nombre de la asignación: `fizzbuzz`
 Archivos esperados: `fizzbuzz.c`
 Funciones permitidas: `write`
@@ -16,7 +17,7 @@ Si el número es múltiplo de 3 y de 5, imprime `fizzbuzz` en su lugar.
 
 Ejemplo:
 
-```bash
+
 $>./fizzbuzz
 1
 2

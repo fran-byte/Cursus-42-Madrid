@@ -1,3 +1,4 @@
+```
 Nombre de la asignación  : rev_print
 Archivos esperados   : rev_print.c
 Funciones permitidas: write
@@ -14,7 +15,7 @@ Tu función debe ser declarada de la siguiente manera:
 char *rev_print(char *str);
 
 Ejemplos:
-```bash
+
 int main(void)
 {
   rev_print("Hello world");

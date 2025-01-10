@@ -1,3 +1,4 @@
+```
 Nombre de la asignación: `repeat_alpha`
 Archivos esperados: `repeat_alpha.c`
 Funciones permitidas: `write`
@@ -16,7 +17,7 @@ Si el número de argumentos no es 1, simplemente muestra un salto de línea.
 
 Ejemplos:
 
-```bash
+
 $>./repeat_alpha "abc"
 abbccc
 $>./repeat_alpha "Alex." | cat -e

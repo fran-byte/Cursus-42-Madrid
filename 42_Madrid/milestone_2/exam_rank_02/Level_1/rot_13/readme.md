@@ -1,7 +1,8 @@
+```
 Nombre de la asignación  : rot_13
 Archivos esperados   : rot_13.c
 Funciones permitidas: write
---------------------------------------------------------------------------------
+--------------------------------------------------------------------------
 
 Escribe un programa que tome una cadena y la muestre, reemplazando cada una de sus letras por la letra 13 espacios adelante en el orden alfabético.
 
@@ -13,7 +14,7 @@ Si el número de argumentos no es 1, el programa muestra un salto de línea.
 
 Ejemplo:
 
-```bash
+
 $>./rot_13 "abc"
 nop
 $>./rot_13 "My horse is Amazing." | cat -e

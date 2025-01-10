@@ -1,7 +1,8 @@
+```
 Nombre de la asignación  : search_and_replace
 Archivos esperados   : search_and_replace.c
 Funciones permitidas: write, exit
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------
 
 Escribe un programa llamado search_and_replace que tome 3 argumentos, el primer argumento es una cadena en la que se reemplazará una letra (segundo argumento) por otra (tercer argumento).
 
@@ -11,7 +12,7 @@ Si el segundo argumento no está contenido en el primero (la cadena), el program
 
 Ejemplos:
 
-```bash
+
 $>./search_and_replace "Papache est un sabre" "a" "o"
 Popoche est un sobre
 $>./search_and_replace "zaz" "art" "zul" | cat -e

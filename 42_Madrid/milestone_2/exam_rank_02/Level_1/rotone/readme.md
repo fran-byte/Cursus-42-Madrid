@@ -1,7 +1,8 @@
+```
 Nombre de la asignación  : rotone
 Archivos esperados   : rotone.c
 Funciones permitidas: write
---------------------------------------------------------------------------------
+------------------------------------------------------------------------
 
 Escribe un programa que tome una cadena y la muestre, reemplazando cada una de sus letras por la siguiente en el orden alfabético.
 
@@ -13,7 +14,7 @@ Si el número de argumentos no es 1, el programa muestra un salto de línea.
 
 Ejemplo:
 
-```bash
+
 $>./rotone "abc"
 bcd
 $>./rotone "Les stagiaires du staff ne sentent pas toujours tres bon." | cat -e
