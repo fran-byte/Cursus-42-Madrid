@@ -1,4 +1,4 @@
-# EXAM RANK 02
+# EXAM RANK 02 (Spolier de Seudo-código)
 
 - ***Después de que hayas practicado el código*** de cada uno de los ejercicios, acontinuación marcaré solo las líneas de **seudo-código** exenciales de cada uno de ellos, para visualizar el código y los subjects, podeis navegar por las carpetas de este directorio.
 
