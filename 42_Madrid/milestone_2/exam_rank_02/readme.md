@@ -1,4 +1,4 @@
-# CÓDIGO COMPLETO ☝🏽 en las Carpetas
+# CÓDIGO COMPLETO ☝🏽 y subjects en las Carpetas
 
 # EXAM RANK 02 (solo "Seudo-código")
 
