@@ -3,7 +3,7 @@
 - ***Después de que hayas practicado ya todo el código*** y los subjects, en las carpetas de este directorio  ☝🏽
 
 
-- Os dejo un  **seudo-código** exenciales de cada uno de ellos:
+- Os dejo "pedacitos" de **seudo-código** exencial de cada uno de los ejercicios:
 
  <h1> LEVEL 1 </h1>
 
