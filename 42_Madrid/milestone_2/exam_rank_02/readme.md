@@ -40,6 +40,7 @@ while ( *str )
 ```
 while ( s2[i] )
 	s1[i] = s2[i]
+s1[i] = '\0'
 ```
 
 ## ft_strlen
