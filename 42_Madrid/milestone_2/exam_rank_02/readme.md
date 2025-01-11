@@ -12,7 +12,7 @@
 ## first_word
 ```
 while ( ==32 || ==9)
-i++;
+i++
 while ( != 32 && != 9) && argv[1][i])
 write (
 ```
@@ -50,9 +50,9 @@ while ( str[i] )
 ```
 ## ft_swap
 ```
-tmp = *a;
-*a = *b;
-*b = tmp;
+tmp = *a
+*a = *b
+*b = tmp
 ```
 ## repeat_alpha
 ```
@@ -81,7 +81,7 @@ write ( &c
 if ( >= 'a' &&  <= 'y' )
    c = 1
 else if( == 'z'   )
-   c = -25;
+   c = -25
 c = argv[1][i] + c
 write ( &c
 ```
@@ -93,9 +93,9 @@ if ( [1][i] == [2][0] )
 ## ulstr
 ```
 if ( >= 'a' &&  <= 'z' )
-   c = -32;
+   c = -32
 if ( >= 'A' &&  <= 'Z' )
-   c = 32;
+   c = 32
 c = argv[1][i] + c;
 write ( &c
 ```
@@ -223,15 +223,15 @@ return ( count )
 char rep[256] = {0}; // Plantilla para repetidos
 
 while(argv[1][i] != '\0')
-   j = 0;
+   j = 0
       while( [2][j] != '\0')
          if( [1][i] == [2][j] && rep[(int)argv[1][i]] == 0)
             write(  &argv[1][i]   )
             rep[(int)argv[1][i]] = 1 //  MARCADO - REPETIDO
          }
-         j++;
+         j++
       }
-      i++;
+      i++
 ```
 ## is_power_of_2
 ```
@@ -257,7 +257,7 @@ while([1][lenght])
 ## max
 int		max(int* tab, unsigned int len)
 ```
-number = tab[0];
+number = tab[0]
    while ( len )
       if ( number < tab[i] )
          number = tab[i]
@@ -346,7 +346,7 @@ int	is_prime(int num)
 	{
            if (num % i == 0) // si es divisible entre i, NO es primo
               return (0)
-           i++;
+           i++
 	}
 	return (1)
 
@@ -376,7 +376,7 @@ while (  ' '||  '\t' )
          if(flag == 1)
             write ( " "
          write( [1][i]
-         flag = 0;
+         flag = 0
       }
       i++
 ```
@@ -393,7 +393,7 @@ while (  ' '||  '\t' )
          if(flag == 1)
             write ( "   " // 3 ESPACIOS
          write( [1][i]
-         flag = 0;
+         flag = 0
       }
       i++
 ```
@@ -405,7 +405,7 @@ if( >= '0' &&  <= '9')
    c = str[i] - '0'
 
 else if( >= 'a' && <= 'f')
-   c = str[i] - 'a' + 10;
+   c = str[i] - 'a' + 10
 .......
 ...
 else
@@ -526,7 +526,7 @@ else
 while (1)
    if ( n % b == 0 && n % a == 0 )
       printf("%d", n)
-      break;
+      break
    n++
 
 main:
@@ -615,7 +615,7 @@ number = x_atoi(argv[1])
 while(i < 10)
 
    c = i + '0'
-   result = i * number;
+   result = i * number
    write(1, &c, 1)
    write(  " x "
 
