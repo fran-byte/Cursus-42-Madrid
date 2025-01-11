@@ -1,9 +1,9 @@
 ```
-**Nombre de la asignación:** rostring
-**Archivos esperados:** rostring.c
-**Funciones permitidas:** write, malloc, free
+Nombre de la asignación: rostring
+Archivos esperados: rostring.c
+Funciones permitidas: write, malloc, free
 
----
+--------------------------------------------------------------------------
 
 Escribe un programa que tome una cadena y la muestre después de rotarla un "palabra" hacia la izquierda.
 

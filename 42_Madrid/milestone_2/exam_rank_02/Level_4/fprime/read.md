@@ -1,9 +1,9 @@
 ```
-**Nombre de la asignación:** fprime
-**Archivos esperados:** fprime.c
-**Funciones permitidas:** printf, atoi
+Nombre de la asignación: fprime
+Archivos esperados: fprime.c
+Funciones permitidas: printf, atoi
 
----
+--------------------------------------------------------------------------
 
 Escribe un programa que tome un entero positivo y muestre sus factores primos en la salida estándar, seguido de un salto de línea.
 

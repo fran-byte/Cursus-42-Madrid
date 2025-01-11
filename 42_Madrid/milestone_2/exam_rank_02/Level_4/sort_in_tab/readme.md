@@ -1,9 +1,9 @@
 ```
-**Nombre de la asignación:** sort_int_tab
-**Archivos esperados:** sort_int_tab.c
-**Funciones permitidas:** ninguna
+Nombre de la asignación: sort_int_tab
+Archivos esperados: sort_int_tab.c
+Funciones permitidas: ninguna
 
----
+--------------------------------------------------------------------------
 
 Escribe la siguiente función:
 

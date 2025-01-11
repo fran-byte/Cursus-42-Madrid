@@ -1,9 +1,9 @@
 ```
-**Nombre de la asignación:** sort_list
-**Archivos esperados:** sort_list.c
-**Funciones permitidas:** ninguna
+Nombre de la asignación: sort_list
+Archivos esperados: sort_list.c
+Funciones permitidas: ninguna
 
----
+--------------------------------------------------------------------------
 
 Escribe la siguiente función:
 

@@ -1,10 +1,10 @@
 
 ```
-**Nombre de la tarea:** flood_fill
-**Archivos esperados:** *.c, *.h
-**Funciones permitidas:** Ninguna
+Nombre de la tarea: flood_fill
+Archivos esperados: *.c, *.h
+Funciones permitidas: Ninguna
 
----
+--------------------------------------------------------------------------
 
 Escribe una función que tome como argumentos un **char \*\*** que representa un array bidimensional de caracteres, un **t_point** que representa las dimensiones de este array y un **t_point** que representa el punto de inicio.
 

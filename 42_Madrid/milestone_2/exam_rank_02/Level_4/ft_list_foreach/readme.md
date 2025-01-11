@@ -1,9 +1,9 @@
 ```
-**Nombre de la asignación:** ft_list_foreach
-**Archivos esperados:** ft_list_foreach.c, ft_list.h
-**Funciones permitidas:** ninguna
+Nombre de la asignación: ft_list_foreach
+Archivos esperados: ft_list_foreach.c, ft_list.h
+Funciones permitidas: ninguna
 
----
+--------------------------------------------------------------------------
 
 Escribe una función que tome una lista y un puntero a una función, y aplique esta función a cada elemento de la lista.
 

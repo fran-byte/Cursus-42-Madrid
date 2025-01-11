@@ -1,9 +1,9 @@
 ```
-**Nombre de la asignación:** rev_wstr
-**Archivos esperados:** rev_wstr.c
-**Funciones permitidas:** write, malloc, free
+Nombre de la asignación: rev_wstr
+Archivos esperados: rev_wstr.c
+Funciones permitidas: write, malloc, free
 
----
+--------------------------------------------------------------------------
 
 Escribe un programa que tome una cadena como parámetro y muestre sus palabras en orden inverso.
 

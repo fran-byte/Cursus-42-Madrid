@@ -1,9 +1,9 @@
 ```
-**Nombre de la asignación:** ft_split
-**Archivos esperados:** ft_split.c
-**Funciones permitidas:** malloc
+Nombre de la asignación: ft_split
+Archivos esperados: ft_split.c
+Funciones permitidas: malloc
 
----
+--------------------------------------------------------------------------
 
 Escribe una función que tome una cadena (`string`), la divida en palabras y las devuelva como un array de cadenas terminado en `NULL`.
 
