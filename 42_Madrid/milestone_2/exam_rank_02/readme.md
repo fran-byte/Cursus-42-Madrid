@@ -128,16 +128,16 @@ int	ft_atoi(const char *str)
 ```
 while( " ")
 i++
-	if ( + || - )
-		if ( + )
-			i++
-		else
-			i++
-			sign = -1
+   if ( + || - )
+      if ( + )
+         i++
+       else
+         i++
+         sign = -1
 
 while ( >= '0' && <= '9')
-		number = 10 * number + (int)str[i] - '0'
-		i++
+   number = 10 * number + (int)str[i] - '0'
+   i++
 ```
 ## ft_strcmp
 int    ft_strcmp(char *s1, char *s2)
