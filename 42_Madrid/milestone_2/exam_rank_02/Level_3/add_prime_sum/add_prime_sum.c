@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   add_prime_sum.c                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/10 11:14:40 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/10 11:14:43 by frromero         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include <unistd.h>
 
 int	ft_atoi(char *s)
@@ -28,7 +16,7 @@ int	is_prime(int num)
 	if (num <= 1)
 		return (0);
 	// solo se prueben divisores hasta la raíz cuadrada de num
-	while (i * i <= num) 
+	while (i * i <= num)
 	{
 		if (num % i == 0) // si es divisible entre i, NO es primo
 			return (0);
