@@ -1,4 +1,4 @@
-# EXAM RANK 02 (Spolier de Seudo-código)
+# EXAM RANK 02 (Spolier de Seudo-código) CÓDIGO COMPLETO ☝🏽
 
 - ***Después de que hayas practicado ya todo el código*** y los subjects, en las carpetas de este directorio  ☝🏽
 
