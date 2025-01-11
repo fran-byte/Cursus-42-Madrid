@@ -1,3 +1,4 @@
+```
 **Nombre de la asignación:** ft_itoa
 **Archivos esperados:** ft_itoa.c
 **Funciones permitidas:** malloc
@@ -9,6 +10,5 @@ La función devuelve el resultado en un array de tipo `char` que debes asignar d
 
 Tu función debe ser declarada de la siguiente manera:
 
-```c
 char	*ft_itoa(int nbr);
 ```

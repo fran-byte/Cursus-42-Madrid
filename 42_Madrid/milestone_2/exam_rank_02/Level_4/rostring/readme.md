@@ -1,3 +1,4 @@
+```
 **Nombre de la asignación:** rostring
 **Archivos esperados:** rostring.c
 **Funciones permitidas:** write, malloc, free
@@ -16,7 +17,7 @@ Si hay menos de un argumento, el programa muestra `\n`.
 
 **Ejemplo:**
 
-```bash
+
 $>./rostring "abc   " | cat -e
 abc$
 $>

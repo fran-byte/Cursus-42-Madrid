@@ -1,3 +1,4 @@
+```
 **Nombre de la asignación:** rev_wstr
 **Archivos esperados:** rev_wstr.c
 **Funciones permitidas:** write, malloc, free
@@ -14,7 +15,7 @@ En los parámetros que se probarán, no habrá espacios "adicionales" (es decir,
 
 **Ejemplos:**
 
-```bash
+
 $> ./rev_wstr "You hate people! But I love gatherings. Isn't it ironic?" | cat -e
 ironic? it Isn't gatherings. love I But people! hate You$
 $> ./rev_wstr "abcdefghijklm"

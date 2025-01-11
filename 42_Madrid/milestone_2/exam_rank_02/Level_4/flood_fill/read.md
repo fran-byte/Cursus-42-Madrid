@@ -1,4 +1,5 @@
 
+```
 **Nombre de la tarea:** flood_fill
 **Archivos esperados:** *.c, *.h
 **Funciones permitidas:** Ninguna
@@ -13,19 +14,19 @@ La función `flood_fill` **no rellenará en diagonal**.
 
 La función `flood_fill` debe estar prototipada de la siguiente manera:
 
-```c
+
 void  flood_fill(char **tab, t_point size, t_point begin);
-```
+
 
 La estructura `t_point` está prototipada de la siguiente forma:
 
-```c
+
 typedef struct  s_point
 {
   int           x;
   int           y;
 }               t_point;
-```
+
 
 ---
 
@@ -33,7 +34,7 @@ typedef struct  s_point
 
 Archivo `test.c`:
 
-```c
+
 #include <stdlib.h>
 #include <stdio.h>
 #include "flood_fill.h"
@@ -76,11 +77,11 @@ int main(void)
 		printf("%s\n", area[i]);
 	return (0);
 }
-```
+
 
 Salida esperada:
 
-```shell
+
 $> gcc flood_fill.c test.c -o test; ./test
 11111111
 10001001

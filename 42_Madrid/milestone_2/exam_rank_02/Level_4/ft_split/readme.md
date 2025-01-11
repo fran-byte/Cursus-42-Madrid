@@ -1,3 +1,4 @@
+```
 **Nombre de la asignación:** ft_split
 **Archivos esperados:** ft_split.c
 **Funciones permitidas:** malloc
@@ -10,6 +11,5 @@ Una "palabra" se define como una parte de la cadena delimitada por espacios, tab
 
 Tu función debe declararse de la siguiente manera:
 
-```c
 char    **ft_split(char *str);
 ```

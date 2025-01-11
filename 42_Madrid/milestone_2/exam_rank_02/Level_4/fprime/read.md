@@ -1,4 +1,4 @@
-
+```
 **Nombre de la asignación:** fprime
 **Archivos esperados:** fprime.c
 **Funciones permitidas:** printf, atoi
@@ -15,7 +15,7 @@ La entrada, cuando hay una, será válida.
 
 **Ejemplos:**
 
-```bash
+
 $> ./fprime 225225 | cat -e
 3*3*5*5*7*11*13$
 $> ./fprime 8333325 | cat -e
