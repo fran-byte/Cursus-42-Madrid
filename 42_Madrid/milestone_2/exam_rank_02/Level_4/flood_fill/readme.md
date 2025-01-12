@@ -6,9 +6,13 @@ Funciones permitidas: Ninguna
 
 --------------------------------------------------------------------------
 
-Escribe una función que tome como argumentos un **char \*\*** que representa un array bidimensional de caracteres, un **t_point** que representa las dimensiones de este array y un **t_point** que representa el punto de inicio.
+Escribe una función que tome como argumentos un **char \*\*** que representa un array bidimensional de
+caracteres, un **t_point** que representa las dimensiones de este array y un **t_point** que representa
+el punto de inicio.
 
-A partir del punto de inicio dado, `begin`, esta función debe rellenar toda una zona reemplazando los caracteres dentro de ella con el carácter `'F'`. Una zona es un grupo de caracteres iguales delimitados horizontal o verticalmente por otros caracteres o por los límites del array.
+A partir del punto de inicio dado, `begin`, esta función debe rellenar toda una zona reemplazando los
+caracteres dentro de ella con el carácter `'F'`. Una zona es un grupo de caracteres iguales delimitados
+horizontal o verticalmente por otros caracteres o por los límites del array.
 
 La función `flood_fill` **no rellenará en diagonal**.
 
