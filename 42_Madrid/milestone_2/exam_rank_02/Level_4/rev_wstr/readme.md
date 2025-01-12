@@ -11,7 +11,8 @@ Una "palabra" es una parte de la cadena delimitada por espacios y/o tabulaciones
 
 Si el número de parámetros es diferente de 1, el programa mostrará un `\n`.
 
-En los parámetros que se probarán, no habrá espacios "adicionales" (es decir, no habrá espacios adicionales al principio o al final de la cadena, y las palabras siempre estarán separadas por exactamente un espacio).
+En los parámetros que se probarán, no habrá espacios "adicionales" (es decir, no habrá espacios adicionales
+al principio o al final de la cadena, y las palabras siempre estarán separadas por exactamente un espacio).
 
 **Ejemplos:**
 
