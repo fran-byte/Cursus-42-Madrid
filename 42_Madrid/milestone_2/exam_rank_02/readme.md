@@ -1,6 +1,6 @@
 # CÓDIGO COMPLETO ☝🏽 y subjects en las Carpetas
 
-# EXAM RANK 02 (solo "Seudo-código")
+# "Pedacitos" de "Seudo-código" 👇🏽
 
 - ***Después de que hayas practicado ya todo el código*** y los subjects, en las carpetas de este directorio  ☝🏽
 
