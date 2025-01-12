@@ -5,9 +5,11 @@ Funciones permitidas: printf, atoi
 
 --------------------------------------------------------------------------
 
-Escribe un programa que tome un entero positivo y muestre sus factores primos en la salida estándar, seguido de un salto de línea.
+Escribe un programa que tome un entero positivo y muestre sus factores primos en la salida estándar,
+seguido de un salto de línea.
 
-Los factores deben mostrarse en orden ascendente y separados por '*', de modo que la expresión en la salida dé el resultado correcto.
+Los factores deben mostrarse en orden ascendente y separados por '*', de modo que la expresión en
+la salida dé el resultado correcto.
 
 Si el número de parámetros no es 1, simplemente muestra un salto de línea.
 
