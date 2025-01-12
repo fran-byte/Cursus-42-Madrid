@@ -5,7 +5,8 @@ Funciones permitidas: malloc
 
 --------------------------------------------------------------------------
 
-Escribe una función que tome un entero (`int`) y lo convierta en una cadena terminada en null (`null-terminated string`).
+Escribe una función que tome un entero (`int`) y lo convierta en una cadena terminada
+en null (`null-terminated string`).
 La función devuelve el resultado en un array de tipo `char` que debes asignar dinámicamente.
 
 Tu función debe ser declarada de la siguiente manera:
