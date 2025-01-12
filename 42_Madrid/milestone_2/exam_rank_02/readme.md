@@ -656,7 +656,7 @@ if (nb < 0)
   i = 1
   nb = -nb
 
-len = ft_len(nb); // Funcion consigue len
+len = ft_len(nb);
 str = (char *)malloc((len + 1 + i) * sizeof(char))
 str[0] = '-'
 str[len+i] = '\0'
@@ -666,3 +666,4 @@ str[len+i] = '\0'
       len--
 
 ```
+# 
