@@ -9,7 +9,8 @@ Escribe un programa que tome una cadena y la muestre después de rotarla un "pal
 
 Por lo tanto, la primera palabra se convierte en la última, y las demás permanecen en el mismo orden.
 
-Una "palabra" se define como una parte de la cadena delimitada por espacios/tabulaciones, o por el inicio/fin de la cadena.
+Una "palabra" se define como una parte de la cadena delimitada por espacios/tabulaciones, o por el
+inicio/fin de la cadena.
 
 En la salida, las palabras estarán separadas por un solo espacio.
 
