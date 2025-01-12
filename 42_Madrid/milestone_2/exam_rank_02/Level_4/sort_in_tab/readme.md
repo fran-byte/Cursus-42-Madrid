@@ -11,7 +11,8 @@ Escribe la siguiente función:
 void sort_int_tab(int *tab, unsigned int size);
 
 
-Debe ordenar (en su lugar) el array de enteros `tab`, que contiene exactamente `size` elementos, en orden ascendente.
+Debe ordenar (en su lugar) el array de enteros `tab`, que contiene exactamente `size` elementos, en orden
+ascendente.
 
 Los duplicados deben preservarse.
 
