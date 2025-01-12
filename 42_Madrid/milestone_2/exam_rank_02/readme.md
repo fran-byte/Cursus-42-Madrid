@@ -648,3 +648,21 @@ while (number >= ++i)
       i = 1;  // Reseteamos a 1 + el incremento del while = 2
               // ya que ese divisor (i) podria dividir de nuevo
 ```
+
+# ft_itoa
+
+```
+if (nb < 0)
+  i = 1
+  nb = -nb
+
+len = ft_len(nb); // Funcion consigue len
+str = (char *)malloc((len + 1 + i) * sizeof(char))
+str[0] = '-'
+str[len+i] = '\0'
+   while((len -1 + i) >= i)
+      str[len + i - 1] = nb%10 + '0'
+      nb = nb /10
+      len--
+
+```
