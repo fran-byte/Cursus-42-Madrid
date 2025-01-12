@@ -18,7 +18,7 @@ t_list *sort_list(t_list *lst, int (*cmp)(int, int))
 
 	start = lst;
 
-	while (lst != NULL && lst->next != NULL) //Mientras tengamos nodo y el nodo siguiente a comparar
+	while (lst != NULL && lst->next != NULL) //Mientras tengamos "nodo" y el "nodo siguiente" para comparar
 	{
 		if ((*cmp)(lst->data, lst->next->data) == 0) // Si no están en orden
 		{  // Intercambiamos los valores
