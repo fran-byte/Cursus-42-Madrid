@@ -15,7 +15,7 @@ Si el número de parámetros no es 1, simplemente muestra un salto de línea.
 
 La entrada, cuando hay una, será válida.
 
-**Ejemplos:**
+Ejemplos:
 
 
 $> ./fprime 225225 | cat -e
