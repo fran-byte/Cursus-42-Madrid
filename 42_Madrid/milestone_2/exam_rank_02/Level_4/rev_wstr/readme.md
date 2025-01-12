@@ -7,7 +7,8 @@ Funciones permitidas: write, malloc, free
 
 Escribe un programa que tome una cadena como parámetro y muestre sus palabras en orden inverso.
 
-Una "palabra" es una parte de la cadena delimitada por espacios y/o tabulaciones, o por el inicio/fin de la cadena.
+Una "palabra" es una parte de la cadena delimitada por espacios y/o tabulaciones, o por el inicio/fin
+de la cadena.
 
 Si el número de parámetros es diferente de 1, el programa mostrará un `\n`.
 
