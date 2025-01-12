@@ -633,4 +633,18 @@ while(i < 10)
 
   # :rocket: :rocket: :rocket: :rocket: :rocket: :rocket: :rocket: :rocket: :rocket:
 
-  
+  # fprime
+
+```
+if (number == 1)
+   printf( 1
+while (number >= ++i)
+   if (number % i == 0)
+      printf( i
+      if (number == i)
+         break ; // Nos salimos llegamos number
+      printf( *
+      number /= i;
+      i = 1;  // Reseteamos a 1 + el incremento del while = 2
+              // ya que ese divisor (i) podria dividir de nuevo
+```
