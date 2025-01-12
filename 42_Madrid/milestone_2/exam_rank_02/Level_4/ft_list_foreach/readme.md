@@ -5,7 +5,8 @@ Funciones permitidas: ninguna
 
 --------------------------------------------------------------------------
 
-Escribe una función que tome una lista y un puntero a una función, y aplique esta función a cada elemento de la lista.
+Escribe una función que tome una lista y un puntero a una función, y aplique esta función a cada
+elemento de la lista.
 
 Debe declararse de la siguiente manera:
 
