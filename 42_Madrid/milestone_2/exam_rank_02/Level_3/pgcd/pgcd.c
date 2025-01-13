@@ -1,31 +1,24 @@
-# include <stdio.h>
-# include <stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-void ft_gcd(int a, int b)
+int main(int argc, char const *argv[])
 {
-	int n = 0;
-	int gcd = 1;
+	int nbr1;
+	int nbr2;
 
-	if (a > b)
-		n = a;
-	else
-		n = b;
-	while(1)
+	if (argc == 3)
 	{
-		if(n % b == 0 && n % a == 0)
+		if ((nbr1 = atoi(argv[1])) > 0 && (nbr2 = atoi(argv[2])) > 0)
 		{
-			printf("%d", n);
-			break;
+			while (nbr2 != 0)
+			{
+				int temp = nbr2;
+				nbr2 = nbr1 % nbr2;
+				nbr1 = temp;
+			}
+			printf("%d", nbr1);
 		}
-		n++;
 	}
-}
-
-
-int	main(int argc, char **argv)
-{
-	if(argc == 3)
-		ft_gcd(atoi(argv[1]), atoi(argv[2]));
 	printf("\n");
-	return(0);
+	return (0);
 }
