@@ -715,4 +715,25 @@ while (str[i])
 
 word_array[k] = NULL;
 
+
+```
+
+# rev_wstr
+
+```
+while(argv[1][i] != '\0')
+   i++
+i--   // retrocedemos al caracter imprimible.
+while(i >= 0)
+   while ( Sean ESPACIOS, TAB...
+      i--
+      end = i
+   while(argv[1][i] && NO Sean ESPACIOS, TAB...
+      i--
+      start = i + 1
+      while(start <= end)
+         write (1, &argv[1][start],1)
+         start++	
+      if (i >=0) // no estamos en la primera posición
+         write(1, " ", 1);
 ```
