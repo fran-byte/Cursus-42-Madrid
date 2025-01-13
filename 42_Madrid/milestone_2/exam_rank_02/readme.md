@@ -731,9 +731,9 @@ while(i >= 0)
    while(argv[1][i] && NO Sean ESPACIOS, TAB...
       i--
       start = i + 1
-      while(start <= end)
-         write (1, &argv[1][start],1)
-         start++	
-      if (i >=0) // no estamos en la primera posición
-         write(1, " ", 1);
+   while(start <= end)
+      write (1, &argv[1][start],1)
+      start++	
+   if (i >=0) // no estamos en la primera posición
+      write(1, " ", 1);
 ```
