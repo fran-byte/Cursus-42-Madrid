@@ -61,6 +61,8 @@ while (rep--)
 ```
 ## rev_print
 ```
+while (str[lenght]
+   lenght++
 while ( str[i])
    i++
 while (--lenght >= 0)
