@@ -732,8 +732,8 @@ while(i >= 0)
       i--
       start = i + 1
    while(start <= end)
-      write (1, &argv[1][start],1)
+      write [1][start]
       start++	
    if (i >=0) // no estamos en la primera posición
-      write(1, " ", 1);
+      write( " "
 ```
