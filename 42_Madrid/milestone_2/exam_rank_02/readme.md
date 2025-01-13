@@ -673,3 +673,45 @@ while (begin_list)
    (*f)(begin_list->data)
    begin_list = begin_list->next
 ```
+
+# ft_split
+char    **ft_split(char *str)
+```
+
+--> Creamos la funcion strncpy que utilizaremos en la fase final:
+
+char *ft_strncpy(char *s1, char *s2, int n)
+
+while (i <= n && s2[i])
+   s1[i] = s2[i]
+s1[i] = '\0'
+return s1
+
+char    **ft_split(char *str)
+...
+// CONTAR PALABRAS Y ASIGNAR MEMORIA para el array
+while (str[i])
+   while (str[i] && (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'))
+      i++
+   if (str[i])
+      wc++
+   while (str[i] && (str[i] != ' ' && str[i] != '\t' && str[i] != '\n'))
+      i++
+word_array = (char **)malloc(sizeof(char *) * (wc + 1))
+   i = 0
+
+// ASIGNAR MEMMORIA a cada PALABRA y COPIARLAS de nuestra string (str) a word_array[k]
+
+while (str[i])
+   while (str[i] && (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'))
+      i++
+   j = i
+   while (str[i] && (str[i] != ' ' && str[i] != '\t' && str[i] != '\n'))
+      i++
+   if (i > j)
+      word_array[k] = (char *)malloc(sizeof(char) * ((i - j) + 1))
+      ft_strncpy (word_array[k++], &str[j], (i - j))
+
+word_array[k] = NULL;
+
+```
