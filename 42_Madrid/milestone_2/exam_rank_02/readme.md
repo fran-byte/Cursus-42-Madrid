@@ -692,11 +692,11 @@ char    **ft_split(char *str)
 ...
 // CONTAR PALABRAS Y ASIGNAR MEMORIA para el array
 while (str[i])
-   while (str[i] && (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'))
+   while (str[i] ESPACIOS, TAB, etc...
       i++
    if (str[i])
       wc++
-   while (str[i] && (str[i] != ' ' && str[i] != '\t' && str[i] != '\n'))
+   while (str[i] && NO ESPACIOS...
       i++
 word_array = (char **)malloc(sizeof(char *) * (wc + 1))
    i = 0
@@ -704,10 +704,10 @@ word_array = (char **)malloc(sizeof(char *) * (wc + 1))
 // ASIGNAR MEMORIA a cada PALABRA y COPIARLAS de nuestra string (str) a word_array[k]
 
 while (str[i])
-   while (str[i] && (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'))
+    while (str[i] ESPACIOS, etc...
       i++
    j = i
-   while (str[i] && (str[i] != ' ' && str[i] != '\t' && str[i] != '\n'))
+   while (str[i] && NO ESPACIOS...
       i++
    if (i > j)
       word_array[k] = (char *)malloc(sizeof(char) * ((i - j) + 1))
