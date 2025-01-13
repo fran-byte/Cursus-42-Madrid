@@ -700,7 +700,7 @@ while (str[i])
 word_array = (char **)malloc(sizeof(char *) * (wc + 1))
    i = 0
 
-// ASIGNAR MEMMORIA a cada PALABRA y COPIARLAS de nuestra string (str) a word_array[k]
+// ASIGNAR MEMORIA a cada PALABRA y COPIARLAS de nuestra string (str) a word_array[k]
 
 while (str[i])
    while (str[i] && (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'))
