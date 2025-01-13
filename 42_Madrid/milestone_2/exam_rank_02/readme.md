@@ -510,29 +510,14 @@ main:
 
 # pgcd
 ```
-Creamos la función gcd (MCD  Máximo Común Divisor):
+if ((nbr1 = atoi(argv[1])) > 0 && (nbr2 = atoi(argv[2])) > 0)
+   while (nbr2 != 0)
 
-void ft_gcd(int a, int b)
-{
+      int temp = nbr2
+      nbr2 = nbr1 % nbr2
+      nbr1 = temp
 
-gcd = 1
-
-if (a > b)
-   n = a
-else
-    n = b
-
-while (1)
-   if ( n % b == 0 && n % a == 0 )
-      printf("%d", n)
-      break
-   n++
-
-main:
-
-if(argc == 3)
-   ft_gcd ( atoi( argv[1] ), atoi( argv[2] ))
-      printf("\n")
+   printf("%d", nbr1)
 
 ```
 
