@@ -63,8 +63,6 @@ while (rep--)
 ```
 while (str[lenght]
    lenght++
-while ( str[i])
-   i++
 while (--lenght >= 0)
    write( &str[i]
 ```
