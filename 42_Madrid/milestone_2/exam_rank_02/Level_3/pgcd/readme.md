@@ -4,9 +4,11 @@ Archivos esperados   : pgcd.c
 Funciones permitidas: printf, atoi, malloc, free
 --------------------------------------------------------------------------------
 
-Escribe un programa que tome dos cadenas representando dos enteros estrictamente positivos que caben en un int.
+Escribe un programa que tome dos cadenas representando dos enteros estrictamente positivos que caben
+ en un int.
 
-El programa debe mostrar su máximo común divisor seguido de un salto de línea (siempre es un número estrictamente positivo).
+El programa debe mostrar su máximo común divisor seguido de un salto de línea (siempre es un número
+estrictamente positivo).
 
 Si el número de parámetros no es 2, el programa debe mostrar un salto de línea.
 
