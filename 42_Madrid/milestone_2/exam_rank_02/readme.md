@@ -439,7 +439,8 @@ para la distancia, usamos una función para hacer una resta de números Absoluto
 int	*ft_rrange(int start, int end)
 
 ```
-dist = abs(end - start) + 1
+dist = para la distancia, usamos una función para hacer una resta de números Absolutos + 1
+
    array = malloc((sizeof array) * dist)
 
    if (end > start)
