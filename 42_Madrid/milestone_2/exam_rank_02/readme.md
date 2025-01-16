@@ -422,7 +422,8 @@ while ( begin_list->next )
 # ft_range
 int	*ft_range(int start, int end)
 ```
-dist = abs( end - start ) + 1
+para la distancia, usamos una función para hacer una resta de números Absolutos + 1
+
    array = (int *)malloc((sizeof int) * dist)
 
    if ( start < end )
