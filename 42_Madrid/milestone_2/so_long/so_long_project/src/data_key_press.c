@@ -6,12 +6,17 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 11:28:55 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/01 21:32:28 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/16 19:56:07 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 #include "../inc/so_long_data.h"
+
+/* Handles key presses:
+   - ESC_KEY: Exits the game.
+   - W, A, S, D: Moves the player in the corresponding direction.
+   - Re-renders the map after handling input.*/
 
 int handle_keypress(int keycode, t_game *game)
 {

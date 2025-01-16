@@ -6,12 +6,16 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 20:14:46 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/27 17:12:10 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/16 20:00:44 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include"../inc/so_long.h"
 # include "../inc/so_long_data.h"
+
+/* Validates program arguments and opens the map file:
+   - Checks if the number of arguments is exactly 2
+   - Verifies ".ber" extension. */
 
 int	parse_arguments(int argc, char **argv)
 {

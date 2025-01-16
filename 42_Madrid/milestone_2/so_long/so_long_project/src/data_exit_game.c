@@ -6,12 +6,16 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 11:42:01 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/16 16:42:20 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/16 20:13:50 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 #include "../inc/so_long_data.h"
+
+/* Frees all allocated textures (images) used in the game:
+   - Checks if each texture is not NULL before destroying it.
+   - Uses `mlx_destroy_image` to deallocate memory for each texture. */
 
 void free_textures(t_game *game)
 {
@@ -27,6 +31,12 @@ void free_textures(t_game *game)
 		mlx_destroy_image(game->mlx, game->sprites.floor);
 }
 
+/* Frees all allocated resources and exits the game:
+   - Calls `free_textures` to release textures.
+   - Frees the map grid row by row, then the grid itself.
+   - Frees additional map resources such as collectible arrays.
+   - Destroys the game window and display, then frees the MiniLibX context.
+   - Calls `exit(0)` to terminate the program with a success status. */
 
 int exit_game(t_game *game)
 {

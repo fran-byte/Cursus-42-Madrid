@@ -6,14 +6,20 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 11:25:56 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/16 16:36:01 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/16 19:57:22 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 #include "../inc/so_long_data.h"
 
-#include <stdio.h>
+/* Updates the player's position and map state:
+   - Collects items ('C') and decreases the collectible count.
+   - Handles exit ('E') logic based on remaining collectibles.
+   - Updates the player's position on the grid.
+   - Increments the move counter. */
+
+
 void handle_player_movement(t_game *game, int new_x, int new_y)
 {
 	if (game->map.grid[new_y][new_x] == 'C')
@@ -38,6 +44,10 @@ void handle_player_movement(t_game *game, int new_x, int new_y)
 	game->map.player_y = new_y;
 	game->moves++;
 }
+
+/* Calculates the player's new position based on movement direction.
+   - Checks for collisions with walls ('1').
+   - Calls `handle_player_movement` if movement is valid. */
 
 void move_player(t_game *game, int dx, int dy)
 {
