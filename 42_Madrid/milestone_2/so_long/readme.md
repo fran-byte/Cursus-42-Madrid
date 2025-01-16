@@ -29,19 +29,29 @@ Es un proyecto introductorio en la creación de videojuegos 2D simples utilizand
 ## so_long.c
 
 - Mi programa principal se encarga de gestionar las directrices oportunas para el funcionamiento general del juego:
-- 
+  
   **PRIMERA PARTE** Apertura de mapa y validación de cada uno de los argumentos de entrada:
+  
         ".ber"
+  
         - Rectangular y rodeado de paredes "1" con un interior con espacios vacios "0"
+  
         - 1 Solo Jugador "P"
+  
         - Al menos 1 Coleccionable "C" y accesible
+  
         - 1 Sola Salida "E" y accesible
+  
         - Al menos 1 camino válido
   
    **SEGUNDA PARTE** Donde empezamos a trabajar con la minilibx
+  
      - **Inicialización** del juego:
+       
      - **Renderizado y eventos**: Dibuja el mapa y configura eventos para manejar las pulsaciones de teclas y el cierre de la ventana.
+       
      - **Bucle de eventos**: Llama a `mlx_loop` para mantener el juego en ejecución, gestionando la interacción con el usuario.
+       
 
 
 
