@@ -215,33 +215,3 @@ MiniLibX también permite renderizar texto simple en la ventana con la función 
 
 
 ```
-
-# Estructura de archivos:
-
-so_long/
-│
-├── src/
-│   ├── main.c            # Punto de entrada del juego
-│   ├── map.c             # Lógica de carga y manejo de mapas
-│   ├── player.c          # Lógica del jugador y su movimiento
-│   ├── render.c          # Funciones relacionadas con el renderizado de gráficos
-│   └── utils.c           # Funciones utilitarias (por ejemplo, manejo de errores, temporizadores)
-│
-├── includes/
-│   ├── so_long.h         # Archivo principal de cabeceras que incluye las estructuras y funciones del proyecto
-│   ├── player.h          # Cabeceras relacionadas con el jugador
-│   ├── map.h             # Cabeceras relacionadas con el mapa
-│   └── render.h          # Cabeceras relacionadas con la renderización
-│
-├── images/               # Carpeta para los archivos de imágenes (sprites, fondo, etc.)
-│   ├── player.xpm
-│   ├── background.xpm
-│   └── wall.xpm
-│
-├── libft/                # Biblioteca personal de funciones útiles (si no usas la estándar de C)
-│   ├── ft_printf.c       # Implementación de printf
-│   └── ft_memset.c       # Otras funciones de utilidad
-│
-├── Makefile              # Para compilar el proyecto
-
-```
