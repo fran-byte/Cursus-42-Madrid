@@ -423,6 +423,7 @@ while ( begin_list->next )
 int	*ft_range(int start, int end)
 ```
 para la distancia, usamos una función para hacer una resta de números Absolutos + 1
+(abs) no se puede utilizar
 
    array = (int *)malloc((sizeof int) * dist)
 
@@ -440,6 +441,7 @@ int	*ft_rrange(int start, int end)
 
 ```
 dist = para la distancia, usamos una función para hacer una resta de números Absolutos + 1
+(abs) no se puede utilizar
 
    array = malloc((sizeof array) * dist)
 
@@ -720,7 +722,7 @@ while(i >= 0)
       start = i + 1
    while(start <= end)
       write [1][start]
-      start++	
+      start++
    if (i >=0) // no estamos en la primera posición
       write( " "
 ```
