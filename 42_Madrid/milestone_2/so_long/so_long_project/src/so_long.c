@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 18:38:43 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/02 20:01:11 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/16 18:32:32 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,9 @@ int	main(int argc, char **argv)
 	if (!map)
 		x_error("Error\nMalloc Error");
 	validate_map_dimensions(fd, argv, map);
-	parse_map_validation(map);
+	validate_map_items(map);
+	validate_wall_map(map);
+	validate_map_playable(map);
 	game.map = *map;
 	free(map);
 	initialize_game(&game);
@@ -40,6 +42,5 @@ int	main(int argc, char **argv)
 	mlx_loop(game.mlx);
 	return (0);
 }
-/* valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all ./so_long maps/2.ber*/
-/* valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all --verbose --suppressions=valgrind.supp ./so_long maps/2.ber */
-/* valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all --verbose --suppressions=valgrind.supp ./so_long maps/2.ber */
+/* valgrind --leak-check=full --track-origins=yes
+--show-leak-kinds=all ./so_long maps/2.ber*/

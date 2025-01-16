@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 10:48:01 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/05 14:25:06 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/16 16:29:51 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void render_map(t_game *game, t_sprites *sprites)
 		{
 			cell = game->map.grid[y][x];
 			void *sprite;
-			sprite = NULL;  // inicializamos sprite a null
+			sprite = NULL;
 			if (cell == '1')
 				sprite = sprites->wall;
 			else if (cell == '0')

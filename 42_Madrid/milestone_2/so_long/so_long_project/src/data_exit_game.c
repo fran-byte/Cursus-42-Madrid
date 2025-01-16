@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 11:42:01 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/02 19:14:49 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/16 16:42:20 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ void free_textures(t_game *game)
 		mlx_destroy_image(game->mlx, game->sprites.floor);
 }
 
+
 int exit_game(t_game *game)
 {
 	int i;
 
 	free_textures(game);
-	/*Liberamos el mapa (grid, collectibles_x, collectibles_y)*/
 	if (game->map.grid != NULL)
 	{
 		i = 0;
@@ -48,10 +48,8 @@ int exit_game(t_game *game)
 		free(game->map.collectibles_x);
 	if (game->map.collectibles_y != NULL)
 		free(game->map.collectibles_y);
-
-	/*cerramos la ventana y salimos*/
 	mlx_destroy_window(game->mlx, game->window);
-	mlx_destroy_display(game->mlx); /* Destruir el display si es necesario*/
+	mlx_destroy_display(game->mlx);
 	free(game->mlx);
 	exit(0);
 	return (0);

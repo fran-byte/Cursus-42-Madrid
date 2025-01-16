@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 11:56:46 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/02 18:27:25 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/16 16:40:28 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ static void	load_texture(t_game *game, void **sprite, char *path,
 
 void	initialize_game(t_game *game)
 {
-	int img_width;
-	int img_height;
+	int img_w;
+	int img_h;
 
 	game->mlx = mlx_init();
 	if (!game->mlx)
@@ -52,11 +52,12 @@ void	initialize_game(t_game *game)
 		free(game->mlx);
 		x_error("Error\nError creating the window\n");
 	}
-	load_texture(game, &game->sprites.player, "textures/player.xpm", &img_width, &img_height);
-	load_texture(game, &game->sprites.wall, "textures/wall.xpm", &img_width, &img_height);
-	load_texture(game, &game->sprites.collectible, "textures/collect.xpm", &img_width, &img_height);
-	load_texture(game, &game->sprites.exit, "textures/exit.xpm", &img_width, &img_height);
-	load_texture(game, &game->sprites.floor, "textures/floor.xpm", &img_width, &img_height);
+	load_texture(game, &game->sprites.player, "tex/player.xpm", &img_w, &img_h);
+	load_texture(game, &game->sprites.wall, "tex/wall.xpm", &img_w, &img_h);
+	load_texture(game, &game->sprites.collectible, "tex/collect.xpm", &img_w,
+		&img_h);
+	load_texture(game, &game->sprites.exit, "tex/exit.xpm", &img_w, &img_h);
+	load_texture(game, &game->sprites.floor, "tex/floor.xpm", &img_w, &img_h);
 	game->map.player_x = 1;
 	game->map.player_y = 1;
 }

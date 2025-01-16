@@ -6,34 +6,42 @@
 #    By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/21 21:12:48 by frromero          #+#    #+#              #
-#    Updated: 2025/01/05 15:53:04 by frromero         ###   ########.fr        #
+#    Updated: 2025/01/16 18:33:06 by frromero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Program name
 NAME = so_long
 
-# Define source files
-SRCS = 	./src/so_long.c ./src/exit_error.c ./src/parse_arguments.c \
-		./src/parse_map_items.c ./src/utils_so_long.c ./src/parse_map_wall.c \
-		./src/parse_map_playable.c ./src/utils_so_free.c \
-		./src/parse_map_validation.c ./src/parse_map_dimensions.c \
+# Source files
+SRCS = 	./src/so_long.c ./src/parse_arguments.c \
+		./src/parse_map_items.c ./src/parse_map_wall.c \
+		./src/parse_map_playable.c ./src/utils_free_and_open.c \
+		./src/parse_map_dimensions.c \
 		./src/data_exit_game.c ./src/data_init_game.c \
 		./src/data_key_press.c ./src/data_move.c ./src/data_render.c
 
+# Paths
 LIB = libft/libft.a
 MINILIBX = minilibx-linux/libmlx.a
 DIR_MINILIBX = minilibx-linux
-# Define the compiler
+
+# Compiler
 CC = cc
 
-# Enable common and extra compiler warnings and treat them as errors
-CFLAGS = -Wall -Wextra -Werror -g3 -I inc -I libft
-#CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g3 -I inc -I libft
-# Define object files
+# Flags
+# CFLAGS =	-Wall -Wextra -Werror -g3 -I inc -I libft
+
+
+# Flags
+CFLAGS =	-Wall -Wextra -Werror \
+			-fsanitize=address -fsanitize=undefined \
+			-g3 -I inc -I libft
+
+# Object files
 OBJS = $(SRCS:./src/%.c=./src/%.o)
 
-# Define the include directory for header files
+# Include directory for header files
 INCLUDE = ./inc/so_long.h ./inc/so_long_data.h ./minilibx-linux/mlx.h
 
 # External library flags
@@ -48,7 +56,6 @@ ${NAME}: ${OBJS}
 	@$(MAKE) -C $(DIR_MINILIBX) -s
 	@${CC} ${CFLAGS} ${OBJS} $(LIB) $(MINILIBX ) $(MLX_FLAGS) -o ${NAME}
 	@echo "\n✨ Created $(NAME) ✨\n"
-
 
 # Compile .c files into .o files
 ./src/%.o: ./src/%.c

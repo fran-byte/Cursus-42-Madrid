@@ -6,12 +6,15 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 20:48:28 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/02 18:09:27 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/16 18:29:53 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 #include "../inc/so_long_data.h"
+
+/* Scans a line of the map for valid characters ('1', '0', 'E', 'C', 'P').
+   Counts occurrences of exit ('E'), player ('P'), and collectibles ('C'). */
 
 int search_items(char *line, int *e, int *p, int *c)
 {
@@ -20,8 +23,9 @@ int search_items(char *line, int *e, int *p, int *c)
 	i = 0;
 	while (line[i])
 	{
-		if (line[i] != '1' && line[i] != '0' && line[i] != 'E' && line[i] != 'C' && line[i] != 'P' && line[i] != '\n')
-			return (-1);
+		if (line[i] != '1' && line[i] != '0' && line[i] != 'E' && line[i] != 'C'
+			&& line[i] != 'P' && line[i] != '\n')
+				return (-1);
 		else if (line[i] == 'E')
 			(*e)++;
 		else if (line[i] == 'P')
@@ -32,6 +36,9 @@ int search_items(char *line, int *e, int *p, int *c)
 	}
 	return (0);
 }
+/* Initializes map item positions (player, exit, and collectibles) and allocates
+	memory for collectible coordinates. */
+
 void initialize_map_items(t_map *map)
 {
 	map->player_x = -1;
@@ -44,6 +51,9 @@ void initialize_map_items(t_map *map)
 		free_map_error(map, "Error\nMalloc Error\n");
 	map->collectibles = 0;
 }
+
+/* Places an item (exit, player, or collectible) on the map, updating
+	positions and counts. */
 
 static void put_item(t_map *map, int x, int y, int *e, int *p, int *c)
 {
@@ -68,6 +78,9 @@ static void put_item(t_map *map, int x, int y, int *e, int *p, int *c)
 	}
 }
 
+/* Iterates over the map grid to count and store positions of items
+	(exit, player, collectibles). */
+
 void count_and_store_items(t_map *map, int *e, int *p, int *c)
 {
 	int x;
@@ -87,6 +100,10 @@ void count_and_store_items(t_map *map, int *e, int *p, int *c)
 		x++;
 	}
 }
+
+/* Validates the number of items (exit, player, collectibles) and ensures
+	correct map setup. */
+
 
 void validate_map_items(t_map *map)
 {

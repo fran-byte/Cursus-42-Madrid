@@ -6,24 +6,14 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 17:34:39 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/02 14:42:43 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/16 18:07:52 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../inc/so_long.h"
 # include "../inc/so_long_data.h"
 
-int allocate_map_grid(t_map *map, int fd)
-{
-	map->grid = malloc(sizeof(char *) * map->height);
-	if (!map->grid)
-	{
-		free_map_error(map, "Error\nMalloc Error\n");
-		close(fd);
-		return (0);
-	}
-	return 1;
-}
+/* Fills the map grid with lines read from the file. */
 
 void fill_map_grid(int fd, t_map *map)
 {
@@ -52,11 +42,29 @@ void fill_map_grid(int fd, t_map *map)
 	}
 	close(fd);
 }
+
+/* Allocates memory for the map grid (a 2D array of strings).*/
+
+int allocate_map_grid(t_map *map, int fd)
+{
+	map->grid = malloc(sizeof(char *) * map->height);
+	if (!map->grid)
+	{
+		free_map_error(map, "Error\nMalloc Error\n");
+		close(fd);
+		return (0);
+	}
+	return 1;
+}
+
+/* Frees the allocated memory if the map size is invalid. */
+
 static void free_calculator(t_map *map)
 {
 			free(map);
 			x_error("Error\nInvalid size Map\n");
 }
+/* Calculates the map's height and validates the width of each line. */
 
 int height_calculator(int fd, t_map *map)
 {
@@ -84,6 +92,7 @@ int height_calculator(int fd, t_map *map)
 	close(fd);
 	return (height);
 }
+/* Validates the map dimensions (height and width) and fills the map grid. */
 
 void validate_map_dimensions(int fd, char **argv, t_map *map)
 {
