@@ -26,6 +26,8 @@ Es un proyecto introductorio en la creación de videojuegos 2D simples utilizand
 
 <p align="center" width="100%"><a href="#"><img src="../../img/milestone_2/so_flujo.png" width="800" /></a></p>  
 
+# Organización general de archivos y funciones de mi proyecto:
+
 <p align="center" width="100%">
   <a href="../../img/milestone_2/so_long_esquema.png" target="_blank">
     <img src="../../img/milestone_2/so_long_esquema.png" width="800" />
