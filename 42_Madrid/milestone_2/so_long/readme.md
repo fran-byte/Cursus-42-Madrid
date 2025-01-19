@@ -32,6 +32,7 @@ Es un proyecto introductorio en la creación de videojuegos 2D simples utilizand
     <img src="../../img/milestone_2/so_long_esquema.png" width="800" />
   </a>
 </p>
+
 # MiniLibX:
 
 **MiniLibX** (Mini Library X) es una biblioteca gráfica diseñada por y para la comunidad de la escuela 42. Es un entorno liviano y simplificado que permite trabajar con gráficos 2D y eventos en el lenguaje de programación C.
