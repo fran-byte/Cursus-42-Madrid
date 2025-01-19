@@ -6,12 +6,12 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 20:14:46 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/16 20:00:44 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/18 14:31:42 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include"../inc/so_long.h"
-# include "../inc/so_long_data.h"
+#include "../inc/so_long.h"
+#include "../inc/so_long_data.h"
 
 /* Validates program arguments and opens the map file:
    - Checks if the number of arguments is exactly 2

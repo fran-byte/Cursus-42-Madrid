@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 19:24:41 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/16 20:08:52 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/18 18:17:25 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
    - Returns -1 if the line does not start or end with '1'.
    - Returns 0 if the line is valid. */
 
-int	scan_lines(char *line)
+static int	scan_lines(char *line)
 {
 	int	i;
-	int len;
+	int	len;
 
 	i = 0;
 	len = (int)ft_strlen(line) - 1;
@@ -36,10 +36,10 @@ int	scan_lines(char *line)
    - Returns -1 if any character is not '1'.
    - Returns 0 if the line is valid. */
 
-int	scan_lines_up_down(char *line)
+static int	scan_lines_up_down(char *line)
 {
 	int	i;
-	int len;
+	int	len;
 
 	i = 0;
 	len = (int)ft_strlen(line) - 1;
@@ -51,7 +51,6 @@ int	scan_lines_up_down(char *line)
 	}
 	return (0);
 }
-
 
 /* Validates the map's wall boundaries:
    - Ensures the top and bottom rows are entirely '1' using `scan_lines_up_down`
@@ -72,6 +71,4 @@ void	validate_wall_map(t_map *map)
 			free_map_error(map, "Error\nInvalid map: The wall is open\n");
 		i++;
 	}
-
-
 }

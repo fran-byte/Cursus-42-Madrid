@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 20:22:37 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/16 20:25:10 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/18 15:50:00 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 /* Open file descriptor */
 
-int open_file(char **argv)
+int	open_file(char **argv)
 {
-	int fd;
+	int	fd;
 
 	fd = open(argv[1], O_RDONLY);
 	if (fd < 0)
@@ -29,9 +29,9 @@ int open_file(char **argv)
    - Frees the main grid array, as well as the collectible coordinates arrays.
    - Ensures no memory leaks occur by checking for valid pointers. */
 
-void free_map(t_map *map)
+void	free_map(t_map *map)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (map)
@@ -55,9 +55,9 @@ void free_map(t_map *map)
    - Displays a custom error message provided as an argument.
    - Exits the program immediately after cleaning up resources. */
 
-void free_map_error(t_map *map, char *msg_error)
+void	free_map_error(t_map *map, char *msg_error)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (map)
@@ -85,4 +85,15 @@ void	x_error(char *x)
 {
 	write(2, x, ft_strlen(x));
 	exit(EXIT_FAILURE);
+}
+
+void	free_map_grid(t_map *map, char *line, int i, int fd)
+{
+	free(line);
+	while (i > 0)
+		free(map->grid[--i]);
+	free(map->grid);
+	free_map_error(map, "Error\nMalloc Error\n");
+	close(fd);
+	return ;
 }

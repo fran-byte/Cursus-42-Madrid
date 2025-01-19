@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 11:42:01 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/16 20:13:50 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/19 18:20:17 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,21 @@
 /* Frees all allocated textures (images) used in the game:
    - Checks if each texture is not NULL before destroying it.
    - Uses `mlx_destroy_image` to deallocate memory for each texture. */
-
-void free_textures(t_game *game)
+static void	report(t_game *game)
 {
+	char *str_moves;
+
+	str_moves = ft_itoa(game->moves);
+	write(1, "\n- S O  L O N G -\n",  18);
+	write(1, "\n- GAME  OVER  -\n\n",  18);
+	write(1, "-  Moves : ", 11);
+	write (1, str_moves, ft_strlen(str_moves));
+	write(1, "\n\n", 2);
+	free(str_moves);
+}
+void	free_textures(t_game *game)
+{
+	report(game);
 	if (game->sprites.player)
 		mlx_destroy_image(game->mlx, game->sprites.player);
 	if (game->sprites.wall)
@@ -38,9 +50,9 @@ void free_textures(t_game *game)
    - Destroys the game window and display, then frees the MiniLibX context.
    - Calls `exit(0)` to terminate the program with a success status. */
 
-int exit_game(t_game *game)
+int	exit_game(t_game *game)
 {
-	int i;
+	int	i;
 
 	free_textures(game);
 	if (game->map.grid != NULL)

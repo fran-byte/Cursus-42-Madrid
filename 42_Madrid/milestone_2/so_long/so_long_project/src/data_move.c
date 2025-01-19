@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 11:25:56 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/16 19:57:22 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/19 17:57:38 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@
    - Updates the player's position on the grid.
    - Increments the move counter. */
 
-
-void handle_player_movement(t_game *game, int new_x, int new_y)
+static void	handle_player_movement(t_game *game, int new_x, int new_y)
 {
 	if (game->map.grid[new_y][new_x] == 'C')
 		game->map.collectibles--;
@@ -33,7 +32,7 @@ void handle_player_movement(t_game *game, int new_x, int new_y)
 			game->game_over = 1;
 			game->moves++;
 			exit_game(game);
-			return;
+			return ;
 		}
 		else
 			game->map.grid[new_y][new_x] = 'E';
@@ -49,15 +48,13 @@ void handle_player_movement(t_game *game, int new_x, int new_y)
    - Checks for collisions with walls ('1').
    - Calls `handle_player_movement` if movement is valid. */
 
-void move_player(t_game *game, int dx, int dy)
+void	move_player(t_game *game, int dx, int dy)
 {
-	int new_x;
-	int new_y;
+	int	new_x;
+	int	new_y;
 
 	new_x = game->map.player_x + dx;
 	new_y = game->map.player_y + dy;
-
 	if (game->map.grid[new_y][new_x] != '1')
 		handle_player_movement(game, new_x, new_y);
 }
-

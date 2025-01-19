@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/frromero/Escritorio/so_long/so_long_project/src",
-      "program": "/home/frromero/Escritorio/so_long/so_long_project/src/build/Debug/outDebug",
+      "cwd": "/home/frromero/Documents/so_long_intra/src",
+      "program": "/home/frromero/Documents/so_long_intra/src/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

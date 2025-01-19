@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 18:38:43 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/16 18:32:32 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/18 20:15:36 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 	- Validates arguments and map structure.
 	- Initializes game data and window using MiniLibX.
 	- Renders the map and configures event hooks for input handling.
-	- Enters the main event loop to keep the game running. */
+	- Enters the main event loop to keep the game running.  */
 
-# include "../inc/so_long.h"
-# include "../inc/so_long_data.h"
+#include "../inc/so_long.h"
+#include "../inc/so_long_data.h"
 
 int	main(int argc, char **argv)
 {

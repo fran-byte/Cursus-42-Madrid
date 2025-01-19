@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 17:54:49 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/16 20:06:48 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/18 18:20:39 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,49 +17,50 @@
    - Marks visited cells as 'V' to avoid revisiting.
    - Decrements the collectible count when a collectible is found. */
 
-void flood_fill(char **grid, int x, int y, t_map *map, int *collectible_count)
+static void	flood_fill(char **grid, int x, int y, t_map *map)
 {
 	if (x < 0 || y < 0 || x >= map->width || y >= map->height
 		|| grid[y][x] == '1')
-			return;
+		return ;
 	if (grid[y][x] == 'V')
-		return;
+		return ;
 	if (grid[y][x] == 'C')
-		(*collectible_count)--;
+		map->collectible_count--;
 	grid[y][x] = 'V';
-	flood_fill(grid, x + 1, y, map, collectible_count);
-	flood_fill(grid, x - 1, y, map, collectible_count);
-	flood_fill(grid, x, y + 1, map, collectible_count);
-	flood_fill(grid, x, y - 1, map, collectible_count);
+	flood_fill(grid, x + 1, y, map);
+	flood_fill(grid, x - 1, y, map);
+	flood_fill(grid, x, y + 1, map);
+	flood_fill(grid, x, y - 1, map);
 }
+
 /* Checks if the exit is reachable using a flood-fill approach:
    - Returns 1 if the exit is found, 0 otherwise.
    - Marks visited cells as 'V' to avoid revisiting. */
 
-int is_exit_reachable(char **grid, int x, int y, t_map *map)
+int	is_exit_reachable(char **grid, int x, int y, t_map *map)
 {
 	if (x < 0 || y < 0 || x >= map->width || y >= map->height
 		|| grid[y][x] == '1')
-			return (0);
+		return (0);
 	if (grid[y][x] == 'E')
 		return (1);
 	if (grid[y][x] == 'V')
 		return (0);
 	grid[y][x] = 'V';
-	return (is_exit_reachable(grid, x + 1, y, map) ||
-			is_exit_reachable(grid, x - 1, y, map) ||
-			is_exit_reachable(grid, x, y + 1, map) ||
-			is_exit_reachable(grid, x, y - 1, map));
+	return (is_exit_reachable(grid, x + 1, y, map)
+		|| is_exit_reachable(grid, x - 1, y, map)
+		|| is_exit_reachable(grid, x, y + 1, map)
+		|| is_exit_reachable(grid, x, y - 1, map));
 }
 /* Creates a duplicate of the map grid:
    - Allocates memory for a new grid and copies the content of the
    		original grid.
    - Returns NULL if memory allocation fails. */
 
-char **duplicate_grid(char **grid, int height)
+char	**duplicate_grid(char **grid, int height)
 {
-	char **new_grid;
-	int i;
+	char	**new_grid;
+	int		i;
 
 	i = 0;
 	new_grid = malloc(sizeof(char *) * height);
@@ -84,9 +85,11 @@ char **duplicate_grid(char **grid, int height)
 }
 /* Frees the memory allocated for a grid */
 
-void free_grid(char **grid, int height)
+void	free_grid(char **grid, int height)
 {
-	int i = 0;
+	int	i;
+
+	i = 0;
 	while (i < height)
 	{
 		free(grid[i]);
@@ -100,25 +103,26 @@ void free_grid(char **grid, int height)
    - Uses temporary duplicated grids to avoid modifying the original
      map grid. */
 
-void validate_map_playable(t_map *map)
+void	validate_map_playable(t_map *map)
 {
-	int collectible_count;
-	int exit_accessible;
-	char **temp_grid;
+	int		exit_accessible;
+	char	**temp_grid;
 
-	collectible_count = (map->collectibles);
+	map->collectible_count = (map->collectibles);
 	exit_accessible = 0;
 	temp_grid = duplicate_grid(map->grid, map->height);
 	if (!temp_grid)
 		free_map_error(map, "Error\nMemory allocation error\n");
-	flood_fill(temp_grid, map->player_x, map->player_y, map, &collectible_count);
+	flood_fill(temp_grid, map->player_x, map->player_y,
+		map);
 	free_grid(temp_grid, map->height);
-	if (collectible_count > 0)
+	if (map->collectible_count > 0)
 		free_map_error(map, "Error\nNot all collectibles are reachable\n");
 	temp_grid = duplicate_grid(map->grid, map->height);
 	if (!temp_grid)
 		free_map_error(map, "Error\nMemory allocation error\n");
-	exit_accessible = is_exit_reachable(temp_grid, map->player_x, map->player_y, map);
+	exit_accessible = is_exit_reachable(temp_grid, map->player_x,
+			map->player_y, map);
 	free_grid(temp_grid, map->height);
 	if (!exit_accessible)
 		free_map_error(map, "Error\nExit is not reachable\n");

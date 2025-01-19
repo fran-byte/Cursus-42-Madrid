@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 14:35:27 by frromero          #+#    #+#             */
-/*   Updated: 2024/12/22 20:46:09 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/18 16:38:16 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 # include <stdlib.h>
 # include <limits.h>
 # include "libft.h"
-
 
 char	*special_strjoin_(char *read_bff, char *stored);
 char	*my_line(char *stored);

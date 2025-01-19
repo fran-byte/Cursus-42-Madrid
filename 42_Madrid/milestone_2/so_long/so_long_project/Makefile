@@ -6,7 +6,7 @@
 #    By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/21 21:12:48 by frromero          #+#    #+#              #
-#    Updated: 2025/01/16 18:33:06 by frromero         ###   ########.fr        #
+#    Updated: 2025/01/18 15:36:49 by frromero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ NAME = so_long
 SRCS = 	./src/so_long.c ./src/parse_arguments.c \
 		./src/parse_map_items.c ./src/parse_map_wall.c \
 		./src/parse_map_playable.c ./src/utils_free_and_open.c \
-		./src/parse_map_dimensions.c \
+		./src/parse_map_dimensions.c ./src/parse_map_items_put.c \
 		./src/data_exit_game.c ./src/data_init_game.c \
 		./src/data_key_press.c ./src/data_move.c ./src/data_render.c
 
@@ -31,9 +31,6 @@ CC = cc
 
 # Flags
 # CFLAGS =	-Wall -Wextra -Werror -g3 -I inc -I libft
-
-
-# Flags
 CFLAGS =	-Wall -Wextra -Werror \
 			-fsanitize=address -fsanitize=undefined \
 			-g3 -I inc -I libft

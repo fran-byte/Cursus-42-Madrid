@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 11:28:55 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/16 19:56:07 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/18 14:21:15 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
    - W, A, S, D: Moves the player in the corresponding direction.
    - Re-renders the map after handling input.*/
 
-int handle_keypress(int keycode, t_game *game)
+int	handle_keypress(int keycode, t_game *game)
 {
 	if (keycode == ESC_KEY)
 		exit_game(game);
