@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 11:42:01 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/19 18:20:17 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/22 21:02:23 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,16 @@ static void	report(t_game *game)
 	char *str_moves;
 
 	str_moves = ft_itoa(game->moves);
-	write(1, "\n- S O  L O N G -\n",  18);
-	write(1, "\n- GAME  OVER  -\n\n",  18);
-	write(1, "-  Moves : ", 11);
+	write(1, "\n\n ▗▄▄▖ ▗▄▖ ▗▖  ▗▖▗▄▄▄▖         ▗▄▖ ▗▖  ▗▖▗▄▄▄▖▗▄▄▖\
+	\n▐▌   ▐▌ ▐▌▐▛▚▞▜▌▐▌           ▐▌ ▐▌▐▌  ▐▌▐▌   ▐▌ ▐▌\
+	\n▐▌▝▜▌▐▛▀▜▌▐▌  ▐▌▐▛▀▀▘        ▐▌ ▐▌▐▌  ▐▌▐▛▀▀▘▐▛▀▚▖\
+	\n▝▚▄▞▘▐▌ ▐▌▐▌  ▐▌▐▙▄▄▖        ▝▚▄▞▘ ▝▚▞▘ ▐▙▄▄▖▐▌ ▐▌\n", 474);
+	write(1, "\n  Moves : ", 11);
 	write (1, str_moves, ft_strlen(str_moves));
+	if (game->game_over == 1)
+		write(1, "\n  You Win !\n", 13);
+	else
+		write(1, "\n  You loose !\n", 15);
 	write(1, "\n\n", 2);
 	free(str_moves);
 }

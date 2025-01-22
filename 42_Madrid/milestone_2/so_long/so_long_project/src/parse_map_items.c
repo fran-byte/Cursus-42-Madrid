@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 20:48:28 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/18 20:13:17 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/22 17:15:52 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,22 +38,22 @@ static void	count_and_store_items(t_map *map, int *e, int *p, int *c)
 	int	y;
 	int	line_len;
 
-	x = 0;
-	while (x < map->height)
+	y = 0;
+	while (y < map->height)
 	{
-		line_len = ft_strlen(map->grid[x]);
-		y = 0;
-		while (y < line_len)
+		line_len = ft_strlen(map->grid[y]);
+		x = 0;
+		while (x < line_len)
 		{
-			if (map->grid[x][y] == 'E')
+			if (map->grid[y][x] == 'E')
 				put_item_e(map, x, y, e);
-			else if (map->grid[x][y] == 'P')
+			else if (map->grid[y][x] == 'P')
 				put_item_p(map, x, y, p);
-			else if (map->grid[x][y] == 'C')
+			else if (map->grid[y][x] == 'C')
 				put_item_c(map, x, y, c);
-			y++;
+			x++;
 		}
-		x++;
+		y++;
 	}
 }
 

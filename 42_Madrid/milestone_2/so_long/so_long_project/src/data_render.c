@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 10:48:01 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/19 13:47:36 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/22 16:23:54 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ static void	render_mlx(t_game *game, void *texture, int *x, int *y)
 		*x * TILE_SIZE, *y * TILE_SIZE);
 	str_moves = ft_itoa(game->moves);
 	str_collects = ft_itoa(game->map.collectibles);
-	mlx_string_put(game->mlx, game->window, 65, 38, 0xFFFFFF, "M O V E S :");
-	mlx_string_put(game->mlx, game->window, 210, 38, 0xFFFFFF, str_moves);
-	mlx_string_put(game->mlx, game->window, 300, 38, 0xFFFFFF, "C O W S :");
-	mlx_string_put(game->mlx, game->window, 420, 38, 0xFFFFFF, str_collects);
+	mlx_string_put(game->mlx, game->window, 5, 26, 0xFFFFFF, "MOVES");
+	mlx_string_put(game->mlx, game->window, 85, 26, 0xff0000, str_moves);
+	mlx_string_put(game->mlx, game->window, 143, 26, 0xFFFFFF, "FRUITS");
+	mlx_string_put(game->mlx, game->window, 233, 26, 0xff0000, str_collects);
 	free(str_moves);
 	free(str_collects);
 	*x = *x + 1;

@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 11:56:46 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/18 20:32:48 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/21 19:56:35 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,6 @@ void	initialize_game(t_game *game)
 	load_texture(game, &game->sprites.collectible, "tex/collect.xpm");
 	load_texture(game, &game->sprites.exit, "tex/exit.xpm");
 	load_texture(game, &game->sprites.floor, "tex/floor.xpm");
-	game->map.player_x = 1;
-	game->map.player_y = 1;
 	game->moves = 0;
 	mlx_set_font(game->mlx, game->window, "12x24romankana");
 }
