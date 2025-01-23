@@ -112,4 +112,5 @@ int main() {
 #### Explicación del Ejemplo:
 
 **Mutex**: pthread_mutex_t lock se utiliza para proteger el acceso a la variable counter.
+
 **Sección Crítica**: Los hilos incrementan el contador dentro de una sección crítica protegida por el mutex.
