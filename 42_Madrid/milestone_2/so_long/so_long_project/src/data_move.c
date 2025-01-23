@@ -6,12 +6,14 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 11:25:56 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/23 16:59:21 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/23 17:07:25 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 #include "../inc/so_long_data.h"
+
+/* Logs the player's total move count to the terminal. */
 
 static void	terminal_moves(t_game *game)
 {
@@ -22,6 +24,8 @@ static void	terminal_moves(t_game *game)
 	write(1, "\n", 1);
 	free (str);
 }
+
+/* Handles player movement, interactions, and game state updates. */
 
 void	move_player(t_game *game, int dx, int dy)
 {
