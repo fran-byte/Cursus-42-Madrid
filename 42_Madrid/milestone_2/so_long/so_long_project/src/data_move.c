@@ -6,12 +6,22 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 11:25:56 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/22 20:05:37 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/23 16:59:21 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 #include "../inc/so_long_data.h"
+
+static void	terminal_moves(t_game *game)
+{
+	char	*str;
+
+	str = ft_itoa(game->moves);
+	write(1, str, ft_strlen(str));
+	write(1, "\n", 1);
+	free (str);
+}
 
 void	move_player(t_game *game, int dx, int dy)
 {
@@ -37,5 +47,6 @@ void	move_player(t_game *game, int dx, int dy)
 		game->map.player_x = new_x;
 		game->map.player_y = new_y;
 		game->moves++;
+		terminal_moves(game);
 	}
 }
