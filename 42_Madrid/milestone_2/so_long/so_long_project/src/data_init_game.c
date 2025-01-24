@@ -57,5 +57,6 @@ void	initialize_game(t_game *game)
 	load_texture(game, &game->sprites.exit, "tex/exit.xpm");
 	load_texture(game, &game->sprites.floor, "tex/floor.xpm");
 	game->moves = 0;
+	game->game_over = 0;
 	mlx_set_font(game->mlx, game->window, "12x24romankana");
 }
