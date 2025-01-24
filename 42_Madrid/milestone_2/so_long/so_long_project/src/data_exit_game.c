@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 11:42:01 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/22 21:02:23 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/24 19:20:17 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,10 @@
 /* Frees all allocated textures (images) used in the game:
    - Checks if each texture is not NULL before destroying it.
    - Uses `mlx_destroy_image` to deallocate memory for each texture. */
+
 static void	report(t_game *game)
 {
-	char *str_moves;
+	char	*str_moves;
 
 	str_moves = ft_itoa(game->moves);
 	write(1, "\n\n ▗▄▄▖ ▗▄▖ ▗▖  ▗▖▗▄▄▄▖         ▗▄▖ ▗▖  ▗▖▗▄▄▄▖▗▄▄▖\
@@ -34,6 +35,7 @@ static void	report(t_game *game)
 	write(1, "\n\n", 2);
 	free(str_moves);
 }
+
 void	free_textures(t_game *game)
 {
 	report(game);
