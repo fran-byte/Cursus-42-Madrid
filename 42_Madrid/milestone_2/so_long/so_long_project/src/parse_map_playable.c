@@ -6,17 +6,23 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 17:54:49 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/22 18:20:59 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/26 00:04:29 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 #include "../inc/so_long_data.h"
 
-/* Performs a flood-fill algorithm to check if all collectibles are reachable:
-   - Marks visited cells as 'V' to avoid revisiting.
-   - Decrements the collectible count when a collectible is found. */
-
+/**
+ * Flood-fill algorithm to check if all collectibles are reachable.
+ * Marks visited cells as 'V' to avoid revisiting.
+ * Decrements collectible count when a collectible is found.
+ *
+ * @param grid  Map grid.
+ * @param x     Current x-coordinate.
+ * @param y     Current y-coordinate.
+ * @param map   Map structure.
+ */
 static void	flood_fill(char **grid, int x, int y, t_map *map)
 {
 	if (x < 0 || y < 0 || x >= map->width || y >= map->height
@@ -33,10 +39,18 @@ static void	flood_fill(char **grid, int x, int y, t_map *map)
 	flood_fill(grid, x, y - 1, map);
 }
 
-/* Checks if the exit is reachable using a flood-fill approach:
-   - Returns 1 if the exit is found, 0 otherwise.
-   - Marks visited cells as 'V' to avoid revisiting. */
-
+/**
+ * Checks if the exit is reachable from the player's position using a
+ * flood-fill approach.
+ * Marks visited cells as 'V' to avoid revisiting.
+ *
+ * @param grid  Map grid.
+ * @param x     Current x-coordinate.
+ * @param y     Current y-coordinate.
+ * @param map   Map structure.
+ *
+ * @return 1 if exit is reachable, 0 otherwise.
+ */
 int	is_exit_reachable(char **grid, int x, int y, t_map *map)
 {
 	if (x < 0 || y < 0 || x >= map->width || y >= map->height
@@ -52,11 +66,17 @@ int	is_exit_reachable(char **grid, int x, int y, t_map *map)
 		|| is_exit_reachable(grid, x, y + 1, map)
 		|| is_exit_reachable(grid, x, y - 1, map));
 }
-/* Creates a duplicate of the map grid:
-   - Allocates memory for a new grid and copies the content of the
-   		original grid.
-   - Returns NULL if memory allocation fails. */
-
+/**
+ * Creates a duplicate of the map grid.
+ * Allocates memory for a new grid and copies the content from the
+ * original grid.
+ * If memory allocation fails, returns NULL.
+ *
+ * @param grid   Original map grid.
+ * @param height Map height (number of rows).
+ *
+ * @return A new grid, or NULL if allocation fails.
+ */
 char	**duplicate_grid(char **grid, int height)
 {
 	char	**new_grid;
@@ -83,8 +103,12 @@ char	**duplicate_grid(char **grid, int height)
 	}
 	return (new_grid);
 }
-/* Frees the memory allocated for a grid */
-
+/**
+ * Frees the memory allocated for a grid.
+ *
+ * @param grid   Map grid.
+ * @param height Map height (number of rows).
+ */
 void	free_grid(char **grid, int height)
 {
 	int	i;
@@ -97,12 +121,13 @@ void	free_grid(char **grid, int height)
 	}
 	free(grid);
 }
-/* Validates that the map is playable:
-   - Ensures all collectibles are reachable by the player.
-   - Ensures the exit is reachable by the player.
-   - Uses temporary duplicated grids to avoid modifying the original
-     map grid. */
-
+/**
+ * Validates if the map is playable.
+ * Ensures all collectibles and the exit are reachable.
+ * Uses duplicated grids to avoid modifying the original grid.
+ *
+ * @param map   Map structure.
+ */
 void	validate_map_playable(t_map *map)
 {
 	int		exit_accessible;

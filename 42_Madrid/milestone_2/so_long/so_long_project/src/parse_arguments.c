@@ -6,17 +6,29 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 20:14:46 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/18 14:31:42 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/25 23:45:07 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 #include "../inc/so_long_data.h"
 
-/* Validates program arguments and opens the map file:
-   - Checks if the number of arguments is exactly 2
-   - Verifies ".ber" extension. */
 
+/**
+ * Validates the program's command-line arguments and opens the map file.
+ *
+ * This function performs the following checks:
+ * - Ensures that the program receives exactly 2 arguments.
+ * - Verifies that the map file has the correct `.ber` extension.
+ *
+ * If any of these checks fail, it terminates the program with an error message.
+ * If the arguments are valid, it opens the map file for reading.
+ *
+ * @param argc The number of command-line arguments passed to the program.
+ * @param argv The array of command-line arguments.
+ *
+ * @return The file descriptor of the opened map file.
+ */
 int	parse_arguments(int argc, char **argv)
 {
 	int	ln;

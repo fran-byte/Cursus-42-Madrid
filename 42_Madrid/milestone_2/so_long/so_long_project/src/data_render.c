@@ -6,24 +6,25 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 10:48:01 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/22 16:23:54 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/25 23:42:57 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 #include "../inc/so_long_data.h"
 
-/* Renders the game map to the window:
-   - Iterates through the grid of the map.
-   - Determines the correct sprite for each cell:
-     - '1': Wall sprite.
-     - '0': Floor sprite.
-     - 'C': Collectible sprite.
-     - 'E': Exit sprite.
-     - 'P': Player sprite.
-   - Places the sprite on the window at the corresponding position.
-   - Uses `mlx_put_image_to_window` to draw each sprite scaled by `TILE_SIZE`.*/
-
+/**
+ * Draws a specific texture at the given grid position and updates the HUD.
+ *
+ * This function places a texture on the game window based on the current grid
+ * cell position and updates the HUD with the current move count and remaining
+ * collectibles.
+ *
+ * @param game Pointer to the game structure.
+ * @param texture Pointer to the texture to be rendered.
+ * @param x Pointer to the horizontal grid position (will be incremented).
+ * @param y Pointer to the vertical grid position.
+ */
 static void	render_mlx(t_game *game, void *texture, int *x, int *y)
 {
 	char	*str_moves;
@@ -41,7 +42,24 @@ static void	render_mlx(t_game *game, void *texture, int *x, int *y)
 	free(str_collects);
 	*x = *x + 1;
 }
-
+/**
+ * Renders the entire game map by iterating through each grid cell and
+ * placing the appropriate sprite.
+ *
+ * This function determines the type of sprite to render based on the map's grid
+ * values:
+ * - '1': Wall sprite.
+ * - '0': Floor sprite.
+ * - 'C': Collectible sprite.
+ * - 'E': Exit sprite.
+ * - 'P': Player sprite.
+ *
+ * Each sprite is drawn at its corresponding position in the game window using
+ * the MiniLibX `mlx_put_image_to_window` function.
+ *
+ * @param game Pointer to the game structure.
+ * @param sprites Pointer to the sprites structure containing textures.
+ */
 void	render_map(t_game *game, t_sprites *sprites)
 {
 	int		y;

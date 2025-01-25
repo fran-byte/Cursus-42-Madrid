@@ -6,17 +6,19 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 19:24:41 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/18 18:17:25 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/26 00:07:54 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 #include "../inc/so_long_data.h"
 
-/* Checks if the first and last characters of a line are '1':
-   - Returns -1 if the line does not start or end with '1'.
-   - Returns 0 if the line is valid. */
-
+/**
+ * Checks if the first and last characters of a line are '1'.
+ *
+ * @param line  The line to check.
+ * @return -1 if the line does not start or end with '1', 0 if valid.
+ */
 static int	scan_lines(char *line)
 {
 	int	i;
@@ -32,10 +34,12 @@ static int	scan_lines(char *line)
 	}
 	return (0);
 }
-/* Verifies if all characters in the top or bottom line are '1':
-   - Returns -1 if any character is not '1'.
-   - Returns 0 if the line is valid. */
-
+/**
+ * Checks if all characters in the top or bottom row are '1'.
+ *
+ * @param line  The line to check.
+ * @return -1 if any character is not '1', 0 if valid.
+ */
 static int	scan_lines_up_down(char *line)
 {
 	int	i;
@@ -52,11 +56,16 @@ static int	scan_lines_up_down(char *line)
 	return (0);
 }
 
-/* Validates the map's wall boundaries:
-   - Ensures the top and bottom rows are entirely '1' using `scan_lines_up_down`
-   - Checks if the sides of each middle row are '1' using `scan_lines`.
-   - If any validation fails, triggers an error and exits. */
-
+/**
+ * Validates the wall boundaries of the map.
+ * Ensures the top and bottom rows are filled with '1'.
+ * Ensures the left and right sides of each middle row are '1'.
+ *
+ * @param map   The map structure to validate.
+ *
+ * @return void If any validation fails, an error is triggered and
+ * the program exits.
+ */
 void	validate_wall_map(t_map *map)
 {
 	int	i;

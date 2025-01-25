@@ -6,19 +6,32 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 18:38:43 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/21 18:15:33 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/26 00:15:51 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*	Main function of the program:
-	- Validates arguments and map structure.
-	- Initializes game data and window using MiniLibX.
-	- Renders the map and configures event hooks for input handling.
-	- Enters the main event loop to keep the game running.  */
 
 #include "../inc/so_long.h"
 #include "../inc/so_long_data.h"
 
+/**
+ * Main entry point for the game.
+ *
+ * @param argc  Number of arguments passed to the program.
+ * @param argv  Array of argument strings.
+ * @return      0 if the program executes successfully.
+ *
+ * 1. Parse and validate the input arguments.
+ *
+ * 2. Dynamically allocate memory for the map.
+ *
+ * 3. Validate the map dimensions, items, walls, and accessibility.
+ *
+ * 4. Initialize the game data and game window.
+ *
+ * 5. Render the map and set up input handling via event hooks.
+ *
+ * 6. Enter the main game loop.
+ */
 int	main(int argc, char **argv)
 {
 	int		fd;

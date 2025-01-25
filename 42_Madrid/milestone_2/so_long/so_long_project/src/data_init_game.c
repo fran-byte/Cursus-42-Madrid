@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 11:56:46 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/21 19:56:35 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/25 23:35:23 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,15 @@
 
 #include <stdio.h>
 
-/*	This function loads a texture from the specified file path into the provided
-	sprite pointer. If loading fails, it frees previously loaded textures,
-	destroys the window, and exits the program */
-
+/**
+ * Loads a texture from the specified file path into the provided sprite pointer.
+ * If loading fails, it frees previously loaded textures, destroys the window,
+ * and exits the program.
+ *
+ * @param game Pointer to the game structure.
+ * @param sprite Pointer to the texture sprite to load.
+ * @param path File path of the texture to load.
+ */
 static void	load_texture(t_game *game, void **sprite, char *path)
 {
 	int	img_width;
@@ -34,10 +39,13 @@ static void	load_texture(t_game *game, void **sprite, char *path)
 		x_error("Error\nError loading the texture\n");
 	}
 }
-/*	Initializes the game by setting up the MiniLibX connection, creating the
-	window, and loading textures for the game objects. Also sets the player's
-	initial position. */
-
+/**
+ * Initializes the game by setting up the MiniLibX connection, creating the
+ * window, and loading textures for the game objects. Also sets the player's
+ * initial position and initializes game state variables.
+ *
+ * @param game Pointer to the game structure.
+ */
 void	initialize_game(t_game *game)
 {
 	game->mlx = mlx_init();
