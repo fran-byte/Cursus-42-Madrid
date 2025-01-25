@@ -13,10 +13,14 @@
 #include "../inc/so_long.h"
 #include "../inc/so_long_data.h"
 
-/* Frees all allocated textures (images) used in the game:
-   - Checks if each texture is not NULL before destroying it.
-   - Uses `mlx_destroy_image` to deallocate memory for each texture. */
-
+/**
+ * Reports the game's current status to the console.
+ * - Converts the number of moves to a string and displays it.
+ * - Prints the game result ("You Win!" or "You Lose!") based on game state.
+ * - Frees the allocated memory for the string of moves.
+ *
+ * @param game Pointer to the game structure.
+ */
 static void	report(t_game *game)
 {
 	char	*str_moves;
