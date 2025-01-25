@@ -47,7 +47,7 @@ int main() {
     }
 
     printf("Hilo terminado\n");
-    return 0;
+    return (0);
 }
 ```
 
