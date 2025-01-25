@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 11:42:01 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/25 23:06:59 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/25 23:10:33 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,13 @@ static void	report(t_game *game)
 	free(str_moves);
 }
 
+/**
+ * Frees all allocated textures (images) used in the game.
+ * - Checks if each texture is not NULL before destroying it.
+ * - Uses `mlx_destroy_image` to deallocate memory for each texture.
+ *
+ * @param game Pointer to the game structure.
+ */
 void	free_textures(t_game *game)
 {
 	report(game);
@@ -55,13 +62,17 @@ void	free_textures(t_game *game)
 		mlx_destroy_image(game->mlx, game->sprites.floor);
 }
 
-/* Frees all allocated resources and exits the game:
-   - Calls `free_textures` to release textures.
-   - Frees the map grid row by row, then the grid itself.
-   - Frees additional map resources such as collectible arrays.
-   - Destroys the game window and display, then frees the MiniLibX context.
-   - Calls `exit(0)` to terminate the program with a success status. */
-
+/**
+ * Frees all allocated resources and exits the game.
+ * - Calls `free_textures` to release textures.
+ * - Frees the map grid row by row, then the grid itself.
+ * - Frees additional map resources such as collectible arrays.
+ * - Destroys the game window and display, then frees the MiniLibX context.
+ * - Calls `exit(0)` to terminate the program with a success status.
+ *
+ * @param game Pointer to the game structure.
+ * @return Always returns 0.
+ */
 int	exit_game(t_game *game)
 {
 	int	i;
