@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 10:48:01 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/25 23:42:57 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/26 00:22:30 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 #include "../inc/so_long_data.h"
 
 /**
- * Draws a specific texture at the given grid position and updates the HUD.
+ * Draws a specific texture at the given grid position and updates the
+ * Heads-Up Display.
  *
  * This function places a texture on the game window based on the current grid
- * cell position and updates the HUD with the current move count and remaining
- * collectibles.
+ * cell position and updates the Display with the current move count and
+ * remaining collectibles.
  *
  * @param game Pointer to the game structure.
  * @param texture Pointer to the texture to be rendered.
