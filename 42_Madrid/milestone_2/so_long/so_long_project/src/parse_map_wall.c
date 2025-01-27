@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 19:24:41 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/26 00:07:54 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/27 16:19:56 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ static int	scan_lines(char *line)
 	}
 	return (0);
 }
+
 /**
  * Checks if all characters in the top or bottom row are '1'.
  *

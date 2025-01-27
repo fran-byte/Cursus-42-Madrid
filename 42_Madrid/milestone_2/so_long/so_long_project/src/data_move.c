@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 11:25:56 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/25 23:40:08 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/27 16:22:46 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ static void	terminal_moves(t_game *game)
  * the game ends.
  *
  * @param game Pointer to the game structure.
- * @param dx Horizontal movement delta (-1 for left, 1 for right, 0 for no movement).
+ * @param dx Horizontal movement delta (-1 for left, 1 for right,
+ * 0 for no movement).
  * @param dy Vertical movement delta (-1 for up, 1 for down, 0 for no movement).
  */
 void	move_player(t_game *game, int dx, int dy)

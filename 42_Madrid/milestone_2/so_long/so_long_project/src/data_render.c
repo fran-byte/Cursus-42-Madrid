@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 10:48:01 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/26 00:22:30 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/27 16:28:54 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ static void	render_mlx(t_game *game, void *texture, int *x, int *y)
 	free(str_collects);
 	*x = *x + 1;
 }
+
 /**
  * Renders the entire game map by iterating through each grid cell and
  * placing the appropriate sprite.

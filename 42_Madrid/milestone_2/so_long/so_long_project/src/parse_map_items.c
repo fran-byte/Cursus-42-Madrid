@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 20:48:28 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/25 23:59:23 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/27 16:28:22 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,8 @@ static void	count_and_store_items(t_map *map, int *e, int *p, int *c)
 
 /**
  * Validates the number of items (exit, player, collectibles) on the map.
- * Ensures that there is exactly one exit, one player, and at least one collectible.
+ * Ensures that there is exactly one exit, one player, and at least
+ * one collectible.
  * If this condition is not met, `free_map_error` is called to handle the error.
  *
  * @param map Map structure.

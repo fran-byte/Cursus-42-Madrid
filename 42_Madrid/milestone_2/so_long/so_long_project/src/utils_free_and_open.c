@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 20:22:37 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/26 00:13:12 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/27 16:30:18 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int	open_file(char **argv)
 		x_error("Error\nFile Open Error\n");
 	return (fd);
 }
+
 /**
  * Frees all allocated memory in the map structure.
  *
@@ -61,6 +62,7 @@ void	free_map(t_map *map)
 			free(map->collectibles_y);
 	}
 }
+
 /**
  * Frees all allocated resources in the map structure and exits with an error.
  *
@@ -106,6 +108,7 @@ void	x_error(char *x)
 	write(2, x, ft_strlen(x));
 	exit(EXIT_FAILURE);
 }
+
 /**
  * Frees the map grid, a specific line, and other resources when an error occurs.
  *

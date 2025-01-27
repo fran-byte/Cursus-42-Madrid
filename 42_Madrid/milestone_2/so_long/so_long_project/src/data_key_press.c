@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 11:28:55 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/25 23:37:31 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/27 16:26:42 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@
  * - `S_KEY`: Moves the player down.
  * - `D_KEY`: Moves the player right.
  *
- * After handling input, the function re-renders the map to reflect the player's movement.
+ * After handling input, the function re-renders the map to reflect the
+ * player's movement.
  *
  * @param keycode The key pressed by the user.
  * @param game Pointer to the game structure.

@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 11:56:46 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/25 23:35:23 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/27 16:29:21 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ static void	load_texture(t_game *game, void **sprite, char *path)
 		x_error("Error\nError loading the texture\n");
 	}
 }
+
 /**
  * Initializes the game by setting up the MiniLibX connection, creating the
  * window, and loading textures for the game objects. Also sets the player's

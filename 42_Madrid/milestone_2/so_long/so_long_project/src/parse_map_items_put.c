@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 15:25:58 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/25 23:55:20 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/27 16:27:27 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	put_item_e(t_map *map, int x, int y, int *e)
 	map->exit_x = x;
 	map->exit_y = y;
 }
+
 /**
  * Sets the player's position and increments the player counter.
  *
@@ -41,6 +42,7 @@ void	put_item_p(t_map *map, int x, int y, int *p)
 	map->player_x = x;
 	map->player_y = y;
 }
+
 /**
  * Sets the collectible position and increments the collectible counter.
  *

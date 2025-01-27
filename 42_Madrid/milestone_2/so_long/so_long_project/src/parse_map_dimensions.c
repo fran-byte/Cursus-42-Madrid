@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 17:34:39 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/25 23:51:12 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/27 16:26:01 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
  *
  * This function reads the map file line by line, allocates memory for each row,
  * and copies each line into the map grid. It also sets the map's width based
- * on the first line. If memory allocation fails, it frees any previously allocated
+ * on the first line. If memory allocation fails, it frees any previously
+ * allocated
  * memory and exits the program.
  *
  * @param fd The file descriptor of the map file.
@@ -85,6 +86,7 @@ static void	free_calculator(t_map *map)
 	free(map);
 	x_error("Error\nInvalid size Map\n");
 }
+
 /**
  * Calculates the height of the map and validates the width of each line.
  *
@@ -126,6 +128,7 @@ int	height_calculator(int fd, t_map *map)
 	close(fd);
 	return (height);
 }
+
 /**
  * Validates the map dimensions and fills the map grid.
  *

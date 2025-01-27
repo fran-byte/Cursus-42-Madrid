@@ -6,7 +6,7 @@
 /*   By: frromero <frromero@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 17:54:49 by frromero          #+#    #+#             */
-/*   Updated: 2025/01/26 00:04:29 by frromero         ###   ########.fr       */
+/*   Updated: 2025/01/27 16:23:37 by frromero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ int	is_exit_reachable(char **grid, int x, int y, t_map *map)
 		|| is_exit_reachable(grid, x, y + 1, map)
 		|| is_exit_reachable(grid, x, y - 1, map));
 }
+
 /**
  * Creates a duplicate of the map grid.
  * Allocates memory for a new grid and copies the content from the
@@ -103,6 +104,7 @@ char	**duplicate_grid(char **grid, int height)
 	}
 	return (new_grid);
 }
+
 /**
  * Frees the memory allocated for a grid.
  *
@@ -121,6 +123,7 @@ void	free_grid(char **grid, int height)
 	}
 	free(grid);
 }
+
 /**
  * Validates if the map is playable.
  * Ensures all collectibles and the exit are reachable.
