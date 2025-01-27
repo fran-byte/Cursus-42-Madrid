@@ -24,7 +24,7 @@ La premisa es la siguiente podríamos iniciar por ejemplo con un nº de filósof
 - La principal dificultad radica en que los recursos compartidos (los tenedores) son limitados. Si los filósofos no se sincronizan adecuadamente, pueden surgir varios problemas:
 
 ## 1.2 Problemas principales
-Interbloqueo o deadlock:
+**Interbloqueo o deadlock:**
 
 - Esto ocurre cuando cada filósofo toma un tenedor y espera indefinidamente por el otro. En este estado, ningún filósofo puede avanzar, y el sistema queda completamente bloqueado.
 
@@ -87,7 +87,7 @@ Interbloqueo o deadlock:
 En esta estrategia, los filósofos toman los tenedores en un orden específico. Por ejemplo:
 
 - Algunos filósofos pueden tomar primero el tenedor de la izquierda y luego el de la derecha, mientras que otros toman primero el de la derecha. Esto evita que todos intenten acceder a los mismos recursos al mismo tiempo.
-- 
+  
 ## 3.2 Control del número de filósofos
 Otra solución consiste en limitar el número de filósofos que pueden intentar comer al mismo tiempo. Esto garantiza que siempre haya suficientes tenedores disponibles para al menos un filósofo.
 
