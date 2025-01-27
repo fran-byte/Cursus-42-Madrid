@@ -94,7 +94,4 @@ Otra solución consiste en limitar el número de filósofos que pueden intentar 
 ## 3.3 Introducción de jerarquías
 Puedes asignar una jerarquía a los tenedores y forzar a los filósofos a tomarlos en un orden estricto (por ejemplo, siempre de menor a mayor). Esto elimina los ciclos en el sistema, evitando el riesgo de interbloqueo.
 
-## 4. Conclusión
-
-- El proyecto Philosophers es una introducción práctica al mundo de la programación concurrente y te prepara para enfrentar desafíos reales en el desarrollo de sistemas modernos. Además de los conceptos técnicos, te enseña a analizar problemas, diseñar soluciones eficientes y garantizar la estabilidad y sincronización de un sistema.
 
