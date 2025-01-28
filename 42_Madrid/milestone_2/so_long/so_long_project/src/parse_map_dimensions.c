@@ -123,7 +123,7 @@ int	height_calculator(int fd, t_map *map)
 		free(line);
 		line = get_next_line(fd);
 	}
-	if (invalid || height < 3 || height == width)
+	if (invalid || height < 3)
 		free_calculator(map);
 	close(fd);
 	return (height);
