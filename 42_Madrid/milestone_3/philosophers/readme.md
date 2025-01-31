@@ -97,7 +97,7 @@ Puedes asignar una jerarquía a los tenedores y forzar a los filósofos a tomarl
 ### **Descripción del Proyecto**
 El proyecto **Philosophers** es un ejercicio clásico de programación concurrente que simula el problema de los filósofos comensales. El objetivo es gestionar la sincronización de múltiples hilos (filósofos) que comparten recursos (tenedores) para evitar condiciones de carrera y deadlocks. A continuación, te doy un resumen del proyecto basado en los archivos que has compartido:
 
-# **Estructura del Proyecto de mi Proyecto**
+# **Estructura de mi Proyecto**
 El proyecto está dividido en varios archivos:
 
 1. **philo.c**: Contiene la función principal (`main`) y la validación de los argumentos de entrada.
