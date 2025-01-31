@@ -147,7 +147,7 @@ El archivo **philo_monitor_deaths.c** contiene la función `monitor_deaths`, que
    - Se utiliza un mutex (`state_mutex`) para proteger el acceso a la variable `last_meal` de cada filósofo, evitando condiciones de carrera.
 
 ### **Casos de Prueba**
-El archivo `philo_start.c` incluye varios casos de prueba para verificar el comportamiento del programa:
+El archivo `philo_start.c` incluye varios casos /* Comentados */ de prueba para verificar el comportamiento del programa:
 - **Sin muertes**: Ejemplos donde los filósofos no deberían morir.
 - **Con muertes**: Ejemplos donde al menos un filósofo debería morir.
 - **Errores**: Ejemplos con argumentos inválidos que deberían hacer que el programa muestre un mensaje de error y no se ejecute.
