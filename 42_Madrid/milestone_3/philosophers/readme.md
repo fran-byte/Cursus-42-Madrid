@@ -107,7 +107,7 @@ El proyecto está dividido en varios archivos:
 5. **philo_monitor_deaths.c**: Contiene la lógica para monitorear si algún filósofo ha muerto de hambre.
 6. **philo.h**: Es el archivo de cabecera que contiene las definiciones de estructuras, constantes y prototipos de funciones.
 
-<p align="center" width="100%"><a href="#"><img src="../../img/milestone_3/philo.png" width="500" /></a></p>
+<p align="center" width="100%"><a href="#"><img src="../../img/milestone_3/philo.png" width="900" /></a></p>
 
 ### **Funcionalidades Clave**
 1. **Validación de Argumentos**:
