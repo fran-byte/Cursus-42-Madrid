@@ -104,7 +104,7 @@ El proyecto está dividido en varios archivos:
 2. **philo_utils.c**: Implementa funciones utilitarias como la obtención del tiempo actual, la conversión de cadenas a números, y la función de suspensión del programa.
 3. **philo_start.c**: Se encarga de la inicialización y ejecución de la simulación, incluyendo la creación de hilos y la gestión de mutex.
 4. **philo_create.c**: Implementa la lógica de los filósofos, incluyendo cómo toman los tenedores, comen, duermen y piensan.
-5. **philo_monitor_deaths.c**: Contiene la lógica para monitorear si algún filósofo ha muerto de hambre.
+5. **philo_monitor_deaths.c**: Contiene la lógica para monitorear si algún filósofo ha muerto de hambre, o el nº de comidas ha finalizado (argumento opcional)
 6. **philo.h**: Es el archivo de cabecera que contiene las definiciones de estructuras, constantes y prototipos de funciones.
 
 <p align="center" width="100%"><a href="#"><img src="../../img/milestone_3/philo.png" width="900" /></a></p>
@@ -114,18 +114,18 @@ El proyecto está dividido en varios archivos:
    - El programa recibe 4 o 5 argumentos: número de filósofos, tiempo para morir, tiempo para comer, tiempo para dormir, y opcionalmente, el número de veces que cada filósofo debe comer.
    - Los argumentos deben ser números positivos, y el programa muestra un mensaje de error si no son válidos.
 
-2. **Inicialización de la Simulación**:
-   - Se inicializan los filósofos, los tenedores (mutex), y se establece el tiempo de inicio de la simulación.
-   - Cada filósofo tiene un hilo asociado que ejecuta su ciclo de vida.
+2. **Inicialización de la Simulación**: 
+   - `init_simulation` Se inicializan los filósofos, los tenedores (mutex), y se establece el tiempo de inicio de la simulación.
+   - `create_philos` Cada filósofo tiene un hilo asociado que ejecuta su ciclo de vida.
 
 3. **Ciclo de Vida del Filósofo**:
-   - **Tomar tenedores**: Los filósofos intentan tomar los tenedores izquierdo y derecho. Si solo hay un filósofo, se maneja como un caso especial.
+   - **Tomar tenedores**: `take_forks` Los filósofos intentan tomar los tenedores izquierdo y derecho. Si solo hay un filósofo, se maneja como un caso especial.
    - **Comer**: Una vez que un filósofo tiene ambos tenedores, come durante un tiempo especificado.
    - **Dormir**: Después de comer, el filósofo duerme durante un tiempo especificado.
    - **Pensar**: Finalmente, el filósofo piensa antes de intentar comer nuevamente.
 
 4. **Monitoreo de la Simulación**:
-   - Un hilo monitor verifica si algún filósofo ha muerto de hambre (si ha pasado demasiado tiempo desde su última comida).
+   - `monitor_deaths`es un hilo monitor que verifica si algún filósofo ha muerto de hambre (si ha pasado demasiado tiempo desde su última comida).
    - Si un filósofo muere, la simulación se detiene y se imprime un mensaje indicando su muerte.
 
 5. **Sincronización**:
@@ -133,7 +133,7 @@ El proyecto está dividido en varios archivos:
    - Se utiliza un mutex para proteger la impresión de mensajes en la consola, evitando que los mensajes se solapen.
 
 ### **Funcionalidad de Monitoreo de Muertes**
-El archivo **philo_monitor_deaths.c** contiene la función `monitor_deaths`, que es un hilo independiente que verifica constantemente si algún filósofo ha muerto de hambre. Aquí está el resumen de su funcionamiento:
+El archivo **philo_monitor_deaths.c** contiene la función `monitor_deaths`, que es un hilo independiente que verifica constantemente si algún filósofo ha muerto de hambre o que el ciclo de comidas en el argumento[5] ha concluido. Aquí está el resumen de su funcionamiento:
 
 1. **Verificación Continua**:
    - El hilo monitor revisa el tiempo transcurrido desde la última comida de cada filósofo.
