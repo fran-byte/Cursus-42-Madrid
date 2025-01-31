@@ -94,4 +94,88 @@ Otra solución consiste en limitar el número de filósofos que pueden intentar 
 ## 3.3 Introducción de jerarquías
 Puedes asignar una jerarquía a los tenedores y forzar a los filósofos a tomarlos en un orden estricto (por ejemplo, siempre de menor a mayor). Esto elimina los ciclos en el sistema, evitando el riesgo de interbloqueo.
 
+### **Descripción del Proyecto**
+El proyecto **Philosophers** es un ejercicio clásico de programación concurrente que simula el problema de los filósofos comensales. El objetivo es gestionar la sincronización de múltiples hilos (filósofos) que comparten recursos (tenedores) para evitar condiciones de carrera y deadlocks. A continuación, te doy un resumen del proyecto basado en los archivos que has compartido:
+
+# **Estructura del Proyecto de mi Proyecto**
+El proyecto está dividido en varios archivos:
+
+1. **philo.c**: Contiene la función principal (`main`) y la validación de los argumentos de entrada.
+2. **philo_utils.c**: Implementa funciones utilitarias como la obtención del tiempo actual, la conversión de cadenas a números, y la función de suspensión del programa.
+3. **philo_start.c**: Se encarga de la inicialización y ejecución de la simulación, incluyendo la creación de hilos y la gestión de mutex.
+4. **philo_create.c**: Implementa la lógica de los filósofos, incluyendo cómo toman los tenedores, comen, duermen y piensan.
+5. **philo_monitor_deaths.c**: Contiene la lógica para monitorear si algún filósofo ha muerto de hambre.
+6. **philo.h**: Es el archivo de cabecera que contiene las definiciones de estructuras, constantes y prototipos de funciones.
+
+### **Funcionalidades Clave**
+1. **Validación de Argumentos**:
+   - El programa recibe 4 o 5 argumentos: número de filósofos, tiempo para morir, tiempo para comer, tiempo para dormir, y opcionalmente, el número de veces que cada filósofo debe comer.
+   - Los argumentos deben ser números positivos, y el programa muestra un mensaje de error si no son válidos.
+
+2. **Inicialización de la Simulación**:
+   - Se inicializan los filósofos, los tenedores (mutex), y se establece el tiempo de inicio de la simulación.
+   - Cada filósofo tiene un hilo asociado que ejecuta su ciclo de vida.
+
+3. **Ciclo de Vida del Filósofo**:
+   - **Tomar tenedores**: Los filósofos intentan tomar los tenedores izquierdo y derecho. Si solo hay un filósofo, se maneja como un caso especial.
+   - **Comer**: Una vez que un filósofo tiene ambos tenedores, come durante un tiempo especificado.
+   - **Dormir**: Después de comer, el filósofo duerme durante un tiempo especificado.
+   - **Pensar**: Finalmente, el filósofo piensa antes de intentar comer nuevamente.
+
+4. **Monitoreo de la Simulación**:
+   - Un hilo monitor verifica si algún filósofo ha muerto de hambre (si ha pasado demasiado tiempo desde su última comida).
+   - Si un filósofo muere, la simulación se detiene y se imprime un mensaje indicando su muerte.
+
+5. **Sincronización**:
+   - Se utilizan mutex para garantizar que solo un filósofo pueda tomar un tenedor a la vez.
+   - Se utiliza un mutex para proteger la impresión de mensajes en la consola, evitando que los mensajes se solapen.
+
+### **Funcionalidad de Monitoreo de Muertes**
+El archivo **philo_monitor_deaths.c** contiene la función `monitor_deaths`, que es un hilo independiente que verifica constantemente si algún filósofo ha muerto de hambre. Aquí está el resumen de su funcionamiento:
+
+1. **Verificación Continua**:
+   - El hilo monitor revisa el tiempo transcurrido desde la última comida de cada filósofo.
+   - Si el tiempo desde la última comida de un filósofo supera el tiempo permitido para morir (`time_to_die`), se considera que el filósofo ha muerto.
+
+2. **Acción ante la Muerte**:
+   - Si un filósofo muere, se imprime un mensaje indicando su muerte.
+   - La simulación se detiene (`sim->is_running = 0`), y todos los hilos de los filósofos terminan su ejecución.
+
+3. **Uso de Mutex**:
+   - Se utiliza un mutex (`state_mutex`) para proteger el acceso a la variable `last_meal` de cada filósofo, evitando condiciones de carrera.
+
+### **Casos de Prueba**
+El archivo `philo_start.c` incluye varios casos de prueba para verificar el comportamiento del programa:
+- **Sin muertes**: Ejemplos donde los filósofos no deberían morir.
+- **Con muertes**: Ejemplos donde al menos un filósofo debería morir.
+- **Errores**: Ejemplos con argumentos inválidos que deberían hacer que el programa muestre un mensaje de error y no se ejecute.
+
+```
+/*
+ * Test cases for the philosophers program:
+ * ./philo 5 800 200 200        no one should die
+ * ./philo 5 600 150 150        no one should die ***
+ * ./philo 4 410 200 200        no one should die
+ * ./philo 100 800 200 200      no one should die
+ * ./philo 105 800 200 200      no one should die
+ * ./philo 200 800 200 200      no one should die
+ *
+ * ./philo 1 800 200 200        a philo should die
+ * ./philo 4 310 200 100        a philo should die
+ * ./philo 4 200 205 200        a philo should die
+ *
+ * ./philo -5 600 200 200       should error and not run (no crashing)
+ * ./philo 4 -5 200 200         should error and not run (no crashing)
+ * ./philo 4 600 -5 200         should error and not run (no crashing)
+ * ./philo 4 600 200 -5         should error and not run (no crashing)
+ * ./philo 4 600 200 200 -5     should error and not run (no crashing)
+ *
+ * Valgrind command to check for memory leaks:
+ * valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all ./philo
+ */
+```
+
+
+### **Uso de Valgrind**
+Como siempre se recomienda usar **Valgrind** para verificar fugas de memoria y errores de manejo de memoria durante la ejecución del programa.
 
