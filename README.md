@@ -7,8 +7,10 @@
 
 
 
+<div align="center">
+
 # CommonCore
-	
+
 | Milestone | 💻 Proyectos | 📝 Documentación |
 |------|:------------:|:------------------:|
 | [![Milestone 1](https://img.shields.io/badge/%20%20Milestone%201%20-1eb437)](#)  | [![libft](https://img.shields.io/badge/%20%20libft%20%20-1eb437)](42_Madrid/0/) | [![Mandatory & Bonus](https://img.shields.io/badge/Mandatory%20&%20Bonus-1eb437)](42_Madrid/0/) |
@@ -19,4 +21,4 @@
 |  [![Milestone 3](https://img.shields.io/badge/%20%20Milestone%203%20-c3331c)](#)  |[![pipex](https://img.shields.io/badge/%20%20pipex%20%20-c3331c)](42_Madrid/milestone_2/pipex/) | [![Mandatory](https://img.shields.io/badge/Mandatory-c3331c)](42_Madrid/milestone_2/pipex/) |
 |  [![Milestone 3](https://img.shields.io/badge/%20%20Milestone%203%20-c3331c)](#)  |[![so_long](https://img.shields.io/badge/%20%20so_long%20%20-c3331c)](42_Madrid/milestone_2/so_long/) | [![Mandatory](https://img.shields.io/badge/Mandatory-c3331c)](42_Madrid/milestone_2/so_long/) |
 
-
+</div>
