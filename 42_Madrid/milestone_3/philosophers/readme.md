@@ -1,6 +1,6 @@
 <div align="center">
 
-<a href="#"><img src="https://img.shields.io/badge/%20%20so_long%20%20-00008b" style="width:140px;height:40px;"></a>
+<a href="#"><img src="https://img.shields.io/badge/%20%20philosophers%20%20-00008b" style="width:140px;height:40px;"></a>
 
 </div>
 
