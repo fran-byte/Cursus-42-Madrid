@@ -4,7 +4,7 @@
 <p align="center" width="100%">
     <a href="42_Madrid/42"><img src="https://badge.mediaplus.ma/greenbinary/frromero?1337Badge=off&UM6P=off" alt="frromero's 42 stats" /></a></p>
 
-<h2 align="center" width="100%"><b>-&nbsp;&nbsp;P&nbsp;&nbsp;R&nbsp;&nbsp;O&nbsp;&nbsp;Y&nbsp;&nbsp;E&nbsp;&nbsp;C&nbsp;&nbsp;T&nbsp;&nbsp;O&nbsp;&nbsp;S&nbsp;&nbsp;-</b></h2>
+
 
 
 # CommonCore
@@ -19,4 +19,4 @@
 |  [![Milestone 3](https://img.shields.io/badge/%20%20Milestone%203%20-c3331c)](#)  |[![pipex](https://img.shields.io/badge/%20%20pipex%20%20-c3331c)](42_Madrid/milestone_2/pipex/) | [![Mandatory](https://img.shields.io/badge/Mandatory-c3331c)](42_Madrid/milestone_2/pipex/) |
 |  [![Milestone 3](https://img.shields.io/badge/%20%20Milestone%203%20-c3331c)](#)  |[![so_long](https://img.shields.io/badge/%20%20so_long%20%20-c3331c)](42_Madrid/milestone_2/so_long/) | [![Mandatory](https://img.shields.io/badge/Mandatory-c3331c)](42_Madrid/milestone_2/so_long/) |
 
-</h2>
+
