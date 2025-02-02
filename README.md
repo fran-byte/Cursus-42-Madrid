@@ -15,3 +15,18 @@
 <p align="center" width="100%"><a href="42_Madrid/milestone_2/push_swap/"><img src="42_Madrid/img/milestone_2/push_swap.png" width="72" /><a/><a href="42_Madrid/milestone_2/pipex/"><img src="42_Madrid/img/milestone_2/pipex.png" width="72" /><a/><a/><a href="42_Madrid/milestone_2/so_long/"><img src="42_Madrid/img/milestone_2/so_long_ico.png" width="72" /><a/><a href="42_Madrid/milestone_2/exam_rank_02/"><img src="42_Madrid/img/milestone_2/examrank02.png" width="120" /><a/></p>
 <h2 align="center">Milestone 3</h2>
 
+
+# CommonCore
+	
+| Milestone | 💻 Project | 📝 Documentation |
+|------|:-------:|:------------------:|
+| 0️⃣ | **libft** | [![Documentation](42_Madrid/0/) 📗 |
+| 1️⃣ | **Born2beroot** |[![Documentation](42_Madrid/milestone_1/born2beroot) 📘 |
+| 1️⃣ | **ft_printf** | [![Documentation](42_Madrid/milestone_1/printf/) 📘 |
+| 1️⃣ | **get_next_line** | [![Documentation](42_Madrid/milestone_1/get_next_line/) 📘 |
+| 2️⃣ | **push_swap** | [![Documentation](42_Madrid/milestone_2/push_swap/) 📕 |
+| 2️⃣ | **pipex** | [![Documentation](42_Madrid/milestone_2/pipex) 📕 |
+| 2️⃣ | **so_long** | [![Documentation](42_Madrid/milestone_2/so_long/) 📕 |
+
+
+
