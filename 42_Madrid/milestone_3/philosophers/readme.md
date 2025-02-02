@@ -1,3 +1,10 @@
+<div align="center">
+
+<a href="#"><img src="https://img.shields.io/badge/%20%20so_long%20%20-00008b" style="width:140px;height:40px;"></a>
+
+</div>
+
+
 # Introducción al Proyecto Philosophers
 
 - Este proyecto se centra en la programación concurrente. Te reta a resolver un problema clásico de la programación, diseñado para enseñar cómo gestionar recursos compartidos entre múltiples procesos de forma eficiente y sincronizada. Los conceptos clave de este proyecto son la concurrencia, la sincronización y el uso de **hilos** y **mutexes**.
