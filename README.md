@@ -11,7 +11,7 @@
 	
 | Milestone | 💻 Proyectos | 📝 Documentación |
 |------|:------------:|:------------------:|
-| [![Milestone 1](https://img.shields.io/badge/%20%20Milestone%201%20-1eb437)]  |[![libft](https://img.shields.io/badge/%20%20libft%20%20-1eb437)](42_Madrid/0/) | [![Mandatory & Bonus](https://img.shields.io/badge/Mandatory%20&%20Bonus-0077B5)](42_Madrid/0/) |
+| [!Milestone 1(https://img.shields.io/badge/%20%20Milestone%201%20-1eb437)]  |[![libft](https://img.shields.io/badge/%20%20libft%20%20-1eb437)](42_Madrid/0/) | [![Mandatory & Bonus](https://img.shields.io/badge/Mandatory%20&%20Bonus-0077B5)](42_Madrid/0/) |
 | 1️⃣  |[![Born2beroot](https://img.shields.io/badge/%20%20Born2beroot%20%20-1c70c3)](42_Madrid/milestone_1/born2beroot) | [![Mandatory](https://img.shields.io/badge/Mandatory-0077B5)](42_Madrid/milestone_1/born2beroot) |
 | 1️⃣  |[![ft_printf](https://img.shields.io/badge/%20%20ft_printf%20%20-1c70c3)](42_Madrid/milestone_1/printf/) | [![Mandatory](https://img.shields.io/badge/Mandatory-0077B5)](42_Madrid/milestone_1/printf/) |
 | 1️⃣  |[![get_next_line](https://img.shields.io/badge/%20%20get_next_line%20%20-1c70c3)](42_Madrid/milestone_1/get_next_line/) | [![Mandatory & Bonus](https://img.shields.io/badge/Mandatory%20&%20Bonus-0077B5)](42_Madrid/milestone_1/get_next_line/) |
