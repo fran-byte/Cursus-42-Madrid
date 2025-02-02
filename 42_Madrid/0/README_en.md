@@ -1,9 +1,10 @@
 
-<p align="center">
-  <img src="../documentation/0/libft.png"/>
-</p>
+<div align="center">
+
+<a href="#"><img src="https://img.shields.io/badge/%20%20libft%20%20-228B22" style="width:100px;height:40px;"></a>
 
 
+</div>
 :point_right:**[Spanish Version](README.md)**
 <br>
 
