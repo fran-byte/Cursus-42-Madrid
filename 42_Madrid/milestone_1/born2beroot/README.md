@@ -1055,9 +1055,4 @@ sudo crontab -u root -e
 ```
 y comentar la linea donde hace referencia a nuestro ```monitoring.sh```
 
-# Contacto
 
-◦ Email: frromero@student.42madrid.com
-
-### - intranet de 42
-[AQUÍ](https://profile.intra.42.fr/users/frromero)
