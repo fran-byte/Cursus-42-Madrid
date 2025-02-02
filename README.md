@@ -8,7 +8,7 @@
 
 # CommonCore
 
-|  [![Milestone](https://img.shields.io/badge/%20%20Milestone%20%20-000000)](#) | [![Milestone](https://img.shields.io/badge/%20%20Proyectos%20%20-000000)](#) | [![Milestone](https://img.shields.io/badge/%20%20Documentación%20%20-000000)](#) |
+|  [![MILESTONE](https://img.shields.io/badge/%20%20MILESTONE%20%20-000000)](#) | [![PROYECTOS](https://img.shields.io/badge/%20%20PROYECTOS%20%20-000000)](#) | [![DOCUMENTACIÓN](https://img.shields.io/badge/%20%20DOCUMENTACIÓN%20%20-000000)](#) |
 |------|:------------:|:------------------:|
 | [![Milestone 1](https://img.shields.io/badge/%20%20Milestone%201%20-228B22)](#)  | [![libft](https://img.shields.io/badge/%20%20libft%20%20-228B22)](42_Madrid/0/) | [![Mandatory & Bonus](https://img.shields.io/badge/Mandatory%20&%20Bonus-228B22)](42_Madrid/0/) |
 | [![Milestone 2](https://img.shields.io/badge/%20%20Milestone%202%20-4682B4)](#)  | [![Born2beroot](https://img.shields.io/badge/%20%20Born2beroot%20%20-4682B4)](42_Madrid/milestone_1/born2beroot) | [![Mandatory](https://img.shields.io/badge/Mandatory-4682B4)](42_Madrid/milestone_1/born2beroot) |
