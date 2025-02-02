@@ -1,8 +1,8 @@
-
+<div align="center">
 
 [![Milestone 1](https://img.shields.io/badge/%20%20Milestone%201%20-228B22)](#)
 
-
+</div>
 
 
 :point_right:**[English Version](README_en.md)**
