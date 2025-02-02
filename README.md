@@ -18,7 +18,7 @@
 
 # CommonCore
 	
-| Milestone | 💻 Project | 📝 Documentation |
+| Milestone | 💻 Projectos | 📝 Documentación |
 |------|:------------:|:------------------:|
 | 0️⃣ | **libft** | [![Documentation](https://img.shields.io/badge/Documentation-0077B5)](42_Madrid/0/) 📗 |
 | 1️⃣ | **Born2beroot** |[![Documentation](https://img.shields.io/badge/Documentation-0077B5)](42_Madrid/milestone_1/born2beroot) 📘 |
