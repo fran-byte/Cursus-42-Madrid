@@ -15,8 +15,8 @@
 | 1️⃣  |[![Born2beroot](https://img.shields.io/badge/%20%20Born2beroot%20%20-1c70c3)](42_Madrid/milestone_1/born2beroot) | [![Documentación](https://img.shields.io/badge/Documentación-0077B5)](42_Madrid/milestone_1/born2beroot) |
 | 1️⃣  |[![ft_printf](https://img.shields.io/badge/%20%20ft_printf%20%20-1c70c3)](42_Madrid/milestone_1/printf/) | [![Documentación](https://img.shields.io/badge/Documentación-0077B5)](42_Madrid/milestone_1/printf/) |
 | 1️⃣  |[![get_next_line](https://img.shields.io/badge/%20%20get_next_line%20%20-1c70c3)](42_Madrid/milestone_1/get_next_line/) | [![Documentación](https://img.shields.io/badge/Documentación-0077B5)](42_Madrid/milestone_1/get_next_line/) |
-| 2️⃣  |[![push_swap](https://img.shields.io/badge/%20%20push_swapf%20%20-c3331c)](42_Madrid/milestone_2/push_swap/) | [![Documentación](https://img.shields.io/badge/Documentación-0077B5)](42_Madrid/milestone_2/push_swap/) |
-| 2️⃣  |[![pipex](https://img.shields.io/badge/%20%20pipexf%20%20-c3331c)](42_Madrid/milestone_2/pipex/) | [![Documentación](https://img.shields.io/badge/Documentación-0077B5)](42_Madrid/milestone_2/pipex/) |
-| 2️⃣  |[![so_long](https://img.shields.io/badge/%20%20so_longf%20%20-c3331c)](42_Madrid/milestone_2/so_long/) | [![Documentación](https://img.shields.io/badge/Documentación-0077B5)](42_Madrid/milestone_2/so_long/) |
+| 2️⃣  |[![push_swap](https://img.shields.io/badge/%20%20push_swap%20%20-c3331c)](42_Madrid/milestone_2/push_swap/) | [![Documentación](https://img.shields.io/badge/Documentación-0077B5)](42_Madrid/milestone_2/push_swap/) |
+| 2️⃣  |[![pipex](https://img.shields.io/badge/%20%20pipex%20%20-c3331c)](42_Madrid/milestone_2/pipex/) | [![Documentación](https://img.shields.io/badge/Documentación-0077B5)](42_Madrid/milestone_2/pipex/) |
+| 2️⃣  |[![so_long](https://img.shields.io/badge/%20%20so_long%20%20-c3331c)](42_Madrid/milestone_2/so_long/) | [![Documentación](https://img.shields.io/badge/Documentación-0077B5)](42_Madrid/milestone_2/so_long/) |
 
 </h2>
