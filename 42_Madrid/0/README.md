@@ -2,7 +2,7 @@
 <p align="center">
 [![Milestone 1](https://img.shields.io/badge/%20%20Milestone%201%20-228B22)](#)
 </p>
-
+| [![Milestone 1](https://img.shields.io/badge/%20%20Milestone%201%20-228B22)](#)  | [![libft](https://img.shields.io/badge/%20%20libft%20%20-228B22)](42_Madrid/0/) | [![Mandatory & Bonus](https://img.shields.io/badge/Mandatory%20&%20Bonus-228B22)](42_Madrid/0/) |
 
 
 :point_right:**[English Version](README_en.md)**
