@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="../img/0/libft.png" width="80"/>
+[![Milestone 1](https://img.shields.io/badge/%20%20Milestone%201%20-228B22)](#)
 </p>
 
 
