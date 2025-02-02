@@ -1,6 +1,6 @@
 <div align="center">
 
-<a href="#"><img src="https://img.shields.io/badge/%20%20libft%20%20-228B22" style="width:100px;height:40px;"></a>
+<a href="#"><img src="https://img.shields.io/badge/%20%20libft%20%20-228B22" style="width:75px;height:40px;"></a>
 
 
 </div>
