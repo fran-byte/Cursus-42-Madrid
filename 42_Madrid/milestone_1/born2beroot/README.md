@@ -1,3 +1,5 @@
+<a href="#"><img src="https://img.shields.io/badge/%20%20Born2beroott%20%20-4682B4" style="width:75px;height:40px;"></a>
+
 # Born2BeRoot en Debian
 
 # Tutorial  (Solamente Parte Obligatoria)
