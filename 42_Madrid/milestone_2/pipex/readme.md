@@ -1,6 +1,6 @@
 <div align="center">
 
-<a href="#"><img src="https://img.shields.io/badge/%20%20pipex%20%20-1e90ff" style="width:125px;height:40px;"></a>
+<a href="#"><img src="https://img.shields.io/badge/%20%20pipex%20%20-1e90ff" style="width:100px;height:40px;"></a>
 
 </div>
 
