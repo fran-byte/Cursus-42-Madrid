@@ -156,8 +156,3 @@ A   B
 7
 ```
 
----
-
-## Resumen
-
-El proyecto `push_swap` es una implementación eficiente para ordenar números utilizando dos pilas y un conjunto limitado de operaciones. El algoritmo se divide en fases claras que garantizan un ordenamiento óptimo con el menor número de movimientos posible.
