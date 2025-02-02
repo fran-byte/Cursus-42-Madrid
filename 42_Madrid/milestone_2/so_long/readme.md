@@ -1,3 +1,10 @@
+<div align="center">
+
+<a href="#"><img src="https://img.shields.io/badge/%20%20so_long%20%20-1e90ff" style="width:140px;height:40px;"></a>
+
+</div>
+
+
 # so_long
 
 Es un proyecto introductorio en la creación de videojuegos 2D simples utilizando gráficos básicos con la biblioteca **MiniLibX**. El objetivo principal es la familiarización con la manipulación de gráficos, eventos del teclado y la creación de mapas, mientras se aplican principios de programación estructurada.
