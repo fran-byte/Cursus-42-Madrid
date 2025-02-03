@@ -12,7 +12,7 @@
 
 
     
-# C o m m o n   C o r e
+# C o m m o n    C o r e
 
 |  [![MILESTONE](https://img.shields.io/badge/%20M%20I%20L%20E%20S%20T%20O%20N%20E%20-787a77)](#) | [![PROYECTOS](https://img.shields.io/badge/%20P%20R%20O%20Y%20E%20C%20T%20O%20-787a77)](#) |  [![PROYECTOS](https://img.shields.io/badge/%20P%20R%20O%20Y%20E%20C%20T%20O%20-787a77)](#) | [![PROYECTOS](https://img.shields.io/badge/%20P%20R%20O%20Y%20E%20C%20T%20O%20-787a77)](#) | 
 |------|:------------:|:------------------:|:------------------:|
