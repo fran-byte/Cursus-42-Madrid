@@ -102,7 +102,7 @@ Otra solución consiste en limitar el número de filósofos que pueden intentar 
 Puedes asignar una jerarquía a los tenedores y forzar a los filósofos a tomarlos en un orden estricto (por ejemplo, siempre de menor a mayor). Esto elimina los ciclos en el sistema, evitando el riesgo de interbloqueo.
 
 ### **Descripción del Proyecto**
-El proyecto **Philosophers** es un ejercicio clásico de programación concurrente que simula el problema de los filósofos comensales. El objetivo es gestionar la sincronización de múltiples hilos (filósofos) que comparten recursos (tenedores) para evitar condiciones de carrera y deadlocks. A continuación, te doy un resumen del proyecto basado en los archivos que has compartido:
+El proyecto **Philosophers** es un ejercicio clásico de programación concurrente que simula el problema de los filósofos comensales. El objetivo es gestionar la sincronización de múltiples hilos (filósofos) que comparten recursos (tenedores) para evitar condiciones de carrera y deadlocks.
 
 # **Estructura de mi Proyecto**
 El proyecto está dividido en varios archivos:
