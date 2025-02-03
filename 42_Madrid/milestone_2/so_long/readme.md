@@ -37,7 +37,7 @@ Este proyecto es una introducción a la creación de videojuegos 2D utilizando l
 
 
 
-<p align="center" width="100%"><a href="#"><img src="../../img/milestone_3/so_flujo.png" width="900" /></a></p>
+<p align="center" width="100%"><a href="#"><img src="../../img/milestone_2/so_flujo.png" width="900" /></a></p>
 ---
 
 ## MiniLibX: Biblioteca Gráfica
