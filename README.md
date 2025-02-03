@@ -16,5 +16,34 @@
 |  [![Milestone 3](https://img.shields.io/badge/%20%203%20-1E90FF)](42_Madrid/milestone_3/)  | [![philosophers](https://img.shields.io/badge/%20%20philosophers%20%20-1E90FF)](42_Madrid/milestone_3/philosophers/) |&nbsp; |&nbsp; |
  
 </div>
-
+<table>
+    <tr>
+        <th><a href="#"><img src="https://img.shields.io/badge/%20MILESTONE%20-787a77"></a></th>
+        <th colspan="3"><a href="#"><img src="https://img.shields.io/badge/%20PROYECTOS%20-fb5858"></a></th>
+    </tr>
+    <tr>
+        <td><a href="42_Madrid/0/"><img src="https://img.shields.io/badge/%20%200%20-228B22"></a></td>
+        <td><a href="42_Madrid/0/"><img src="https://img.shields.io/badge/%20%20libft%20%20-228B22"></a></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><a href="42_Madrid/milestone_1/"><img src="https://img.shields.io/badge/%20%201%20-1E90FF"></a></td>
+        <td><a href="42_Madrid/milestone_1/born2beroot"><img src="https://img.shields.io/badge/%20%20Born2beroot%20%20-1E90FF"></a></td>
+        <td><a href="42_Madrid/milestone_1/printf/"><img src="https://img.shields.io/badge/%20%20ft_printf%20%20-1E90FF"></a></td>
+        <td><a href="42_Madrid/milestone_1/get_next_line/"><img src="https://img.shields.io/badge/%20%20get_next_line%20%20-1E90FF"></a></td>
+    </tr>
+    <tr>
+        <td><a href="42_Madrid/milestone_2/"><img src="https://img.shields.io/badge/%20%202%20-228B22"></a></td>
+        <td><a href="42_Madrid/milestone_2/push_swap/"><img src="https://img.shields.io/badge/%20%20push_swap%20%20-228B22"></a></td>
+        <td><a href="42_Madrid/milestone_2/pipex/"><img src="https://img.shields.io/badge/%20%20pipex%20%20-228B22"></a></td>
+        <td><a href="42_Madrid/milestone_2/so_long/"><img src="https://img.shields.io/badge/%20%20so_long%20%20-228B22"></a></td>
+    </tr>
+    <tr>
+        <td><a href="42_Madrid/milestone_3/"><img src="https://img.shields.io/badge/%20%203%20-1E90FF"></a></td>
+        <td><a href="42_Madrid/milestone_3/philosophers/"><img src="https://img.shields.io/badge/%20%20philosophers%20%20-1E90FF"></a></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
 
