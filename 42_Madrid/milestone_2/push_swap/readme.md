@@ -21,6 +21,9 @@ Este proyecto implementa un algoritmo para ordenar una lista de números utiliza
 | **`sort_large.c`**    | Implementa el algoritmo para ordenar pilas con más de 5 números.                |
 | **`operations.c`**    | Contiene las operaciones básicas como `swap`, `push`, `rotate` y `reverse rotate`. |
 
+
+<p align="center" width="100%"><a href="#"><img src="../../img/milestone_3/push_flujo.png" width="900" /></a></p>
+
 ---
 
 ## Instrucciones Básicas
