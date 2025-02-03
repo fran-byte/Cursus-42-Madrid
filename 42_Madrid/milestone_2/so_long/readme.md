@@ -35,6 +35,9 @@ Este proyecto es una introducción a la creación de videojuegos 2D utilizando l
 | **`player.c`**        | Controla el movimiento y las interacciones del personaje.                       |
 | **`utils.c`**         | Funciones auxiliares para manejo de memoria, errores, etc.                      |
 
+
+
+<p align="center" width="100%"><a href="#"><img src="../../img/milestone_3/so_long_flujo.png" width="900" /></a></p>
 ---
 
 ## MiniLibX: Biblioteca Gráfica
