@@ -23,9 +23,15 @@
   ## Algunas líneas de ataque para realizar el proyecto podrían ser estas:
 
 1️⃣ Hacer que la shell lea comandos y los imprima (readline()).
+
 2️⃣ Separar los comandos en tokens (ls -l → ["ls", "-l"]).
+
 3️⃣ Ejecutar comandos con execve() (ls, pwd, echo).
+
 4️⃣ Implementar built-ins (cd, pwd, exit).
+
 5️⃣ Añadir pipes (|) y redirecciones (<, >, >>, <<).
+
 6️⃣ Manejar señales (Ctrl+C, Ctrl+D).
+
 7️⃣ Y finalmente si no queremos que nos tiren el proyecto, depurar errores y comprobar memory leaks.
