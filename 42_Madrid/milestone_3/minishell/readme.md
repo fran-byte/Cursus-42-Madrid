@@ -50,6 +50,7 @@
 -Para ejecutar los comandos:
 
 **fork()**: Necesitamos crear un nuevo proceso usando fork() para ejecutar el comando. El proceso padre se encargará de esperar el proceso hijo con wait().
+
 **execve()**: Después de hacer el fork, el proceso hijo debe usar execve() para ejecutar el comando con los argumentos proporcionados.
 Buscar en el PATH: Si el comando no contiene una ruta absoluta, debemoss buscarlo en las rutas definidas en la variable de entorno PATH.
 
@@ -66,13 +67,17 @@ env: Muestra las variables de entorno.
 - Los pipes permiten ejecutar varios comandos en cadena, donde la salida de un comando se convierte en la entrada de otro. Para esto:
 
 **pipe()**: Crea un pipe utilizando pipe() y redirige las entradas y salidas estándar (stdin, stdout) usando dup2().
+
 **fork()**: Crea procesos hijos para cada comando en el pipeline.
+
 **wait()**: Asegúrate de esperar a que todos los procesos hijos terminen.
 
 - Las redirecciones permiten que la entrada o salida de un comando sea redirigida a un archivo.
 
 **Redirección de salida (>)**: Abre un archivo en modo escritura y redirige la salida estándar (stdout) al archivo.
+
 **Redirección de entrada (<)**: Redirige la entrada estándar (stdin) desde un archivo.
+
 **Redirección de salida append (>>)**: Abre un archivo en modo append para agregar contenido en lugar de sobrescribirlo.
 
 6️⃣ **Manejo de Variables de Entorno**
