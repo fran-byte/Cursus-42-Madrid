@@ -34,6 +34,7 @@
     <tr>
         <td><a href="42_Madrid/milestone_3/"><img src="https://img.shields.io/badge/%20%203%20-1E90FF"></a></td>
         <td><a href="42_Madrid/milestone_3/philosophers/"><img src="https://img.shields.io/badge/%20%20philosophers%20%20-1E90FF"></a></td>
+         <td><a href="42_Madrid/milestone_3/minishell/"><img src="https://img.shields.io/badge/%20%20minishell%20%20-1E90FF"></a></td>
         <td></td>
         <td></td>
     </tr>
