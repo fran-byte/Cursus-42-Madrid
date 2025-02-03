@@ -33,6 +33,7 @@
 
 
 .....
+
 2️⃣ Separar los comandos en tokens (ls -l → ["ls", "-l"]).
 
 3️⃣ Ejecutar comandos con execve() (ls, pwd, echo).
