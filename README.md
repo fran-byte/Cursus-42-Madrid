@@ -6,7 +6,7 @@
 
 [![frromero's 42 stats](https://badge.mediaplus.ma/greenbinary/frromero?1337Badge=off&UM6P=off)](https://profile.intra.42.fr/users/frromero)
 
-<a href="#"><img src="https://img.shields.io/badge/%20%CommonCore%20%20-c988f9" style="width:75px;height:40px;"></a>
+<a href="#"><img src="https://img.shields.io/badge/%20%CommonCore%20-c988f9" style="width:75px;height:40px;"></a>
 
 # CommonCore
 
