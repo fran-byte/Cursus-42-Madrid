@@ -7,6 +7,7 @@
 [![frromero's 42 stats](https://badge.mediaplus.ma/greenbinary/frromero?1337Badge=off&UM6P=off)](https://profile.intra.42.fr/users/frromero)
 
 <a href="#"><img src="https://img.shields.io/badge/%20%CommonCore%20%20-c988f9" style="width:75px;height:40px;"></a>
+
 # CommonCore
 
 |  [![MILESTONE](https://img.shields.io/badge/%20M%20I%20L%20E%20S%20T%20O%20N%20E%20-787a77)](#) | [![PROYECTOS](https://img.shields.io/badge/%20P%20R%20O%20Y%20E%20C%20T%20O%20-787a77)](#) |  [![PROYECTOS](https://img.shields.io/badge/%20P%20R%20O%20Y%20E%20C%20T%20O%20-787a77)](#) | [![PROYECTOS](https://img.shields.io/badge/%20P%20R%20O%20Y%20E%20C%20T%20O%20-787a77)](#) | 
