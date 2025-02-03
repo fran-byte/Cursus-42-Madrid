@@ -8,7 +8,7 @@
 
 # CommonCore
 
-|  [![MILESTONE](https://img.shields.io/badge/%20M%20I%20L%20E%20S%20T%20O%20N%20E%20-787a77)](#) | [![PROYECTOS](https://img.shields.io/badge/%20P%20R%20O%20Y%20E%20C%20T%20O%20-787a77)](#) |  [![PROYECTOS](https://img.shields.io/badge/%20P%20R%20O%20Y%20E%20C%20T%20O%20-787a77)](#) | [![PROYECTOS](https://img.shields.io/badge/%20P%20R%20O%20Y%20E%20C%20T%20O%20-787a77)](#) | [![MANDATORY BONUS](https://img.shields.io/badge/MANDATORY BONUS-787a77)](#) |
+|  [![MILESTONE](https://img.shields.io/badge/%20M%20I%20L%20E%20S%20T%20O%20N%20E%20-787a77)](#) | [![PROYECTOS](https://img.shields.io/badge/%20P%20R%20O%20Y%20E%20C%20T%20O%20-787a77)](#) |  [![PROYECTOS](https://img.shields.io/badge/%20P%20R%20O%20Y%20E%20C%20T%20O%20-787a77)](#) | [![PROYECTOS](https://img.shields.io/badge/%20P%20R%20O%20Y%20E%20C%20T%20O%20-787a77)](#) |  [![PROYECTOS](https://img.shields.io/badge/%20P%20R%20O%20Y%20E%20C%20T%20O%20-787a77)](#) | |
 |------|:------------:|:------------------:|:------------------:| |:------------------:| 
 | [![Milestone 0](https://img.shields.io/badge/%20%20Milestone%200%20-228B22)](#)  | [![libft](https://img.shields.io/badge/%20%20libft%20%20-228B22)](42_Madrid/0/) | [![Mandatory & Bonus](https://img.shields.io/badge/Mandatory%20&%20Bonus-228B22)](42_Madrid/0/) |
 | [![Milestone 1](https://img.shields.io/badge/%20%20Milestone%201%20-1E90FF)](#)  | [![Born2beroot](https://img.shields.io/badge/%20%20Born2beroot%20%20-1E90FF)](42_Madrid/milestone_1/born2beroot) | [![ft_printf](https://img.shields.io/badge/%20%20ft_printf%20%20-1E90FF)](42_Madrid/milestone_1/printf/) | [![get_next_line](https://img.shields.io/badge/%20%20get_next_line%20%20-1E90FF)](42_Madrid/milestone_1/get_next_line/) |
