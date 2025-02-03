@@ -24,6 +24,7 @@
 
 1️⃣ Hacer que la shell lea comandos y los imprima (readline()).
    En esta parte debemos gestionar:
+  
    -`' '` Comilla simple NO INTERPRETARÁ los metacaracteres y debe ser tratado como una cadena literal:  minishell> echo 'Esto no es un comando; ni un metacaracter'
     
    - `" "` Comilla doble NO INTERPRETARÁ los metacaracteres con EXCEPCIÓN del simbolo `$` ya que lo utilizaremos para dirigirnos a variables:
