@@ -22,6 +22,8 @@ Esta función lee línea por línea desde un `fd` (file descriptor). Utiliza un 
 
 A continuación, se describe el propósito de cada función clave en el proyecto:
 
+<p align="center" width="100%"><a href="#"><img src="../../img/milestone_3/get_nect_line.png" width="900" /></a></p>
+
 | **Función**              | **Descripción**                                                                                     |
 |--------------------------|-----------------------------------------------------------------------------------------------------|
 | **`get_next_line(int fd)`** | Función principal que controla el flujo de lectura. Verifica el archivo y llama a otras funciones. |
