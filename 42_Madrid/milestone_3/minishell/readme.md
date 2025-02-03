@@ -13,7 +13,7 @@
   una versión reducida de la **Shell de Unix**
 
   ## Que debe de hacer nuestra shell:
-  - Lo primero es mostrar nuestro **prompt:** ´m̀inishell>´
+  - Lo primero es mostrar nuestro prompt: **minishell>**
   - Leerá una entrada por la terminal con `readline()` y deberá ser capaz interpretar los comandos
     introducidos en ella (ls, echo, cat, etc.) y guardarlos en el historial.
   - Debe manejar pipes (|), redirecciones (<, >, >>, <<).
