@@ -26,6 +26,8 @@ Esto equivale a la siguiente línea en la shell:
 
 ---
 
+<p align="center" width="100%"><a href="#"><img src="../../img/milestone_3/pipex_flujo.png" width="900" /></a></p>
+
 ## Funciones Clave
 
 | **Función**       | **Descripción**                                                                 |
