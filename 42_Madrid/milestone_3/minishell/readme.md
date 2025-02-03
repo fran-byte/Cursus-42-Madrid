@@ -26,11 +26,15 @@
    En esta parte debemos gestionar:
   
 - `' '` Comilla simple NO INTERPRETARÁ los metacaracteres y debe ser tratado como una cadena literal:
+
   **minishell>** echo 'Esto no es un comando; ni un metacaracter'
  
 - `" "` Comilla doble NO INTERPRETARÁ los metacaracteres con EXCEPCIÓN del simbolo `$` ya que lo utilizaremos para dirigirnos a variables:
-     **minishell>** saludo = "42 Madrid"
-     **minishell>** "Hola $saludo"
+
+  **minishell>** saludo = "42 Madrid"
+
+  **minishell>** "Hola $saludo"
+  
 - Por otro lado no se deben interpretar las comillas sin cerrar ni los caracteres especiales: \ (barra invertida) o ; (punto y coma).
 
 
