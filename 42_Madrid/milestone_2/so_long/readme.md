@@ -180,7 +180,7 @@ El mapa debe cumplir las siguientes reglas:
 
 ```plaintext
 1111111111
-1001000001
+100100E001
 101100C001
 10P0010001
 1111111111
