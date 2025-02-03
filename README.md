@@ -15,7 +15,6 @@
 | [![Milestone 2](https://img.shields.io/badge/%20%20Milestone%202%20-228B22)](#)  | [![push_swap](https://img.shields.io/badge/%20%20push_swap%20%20-228B22)](42_Madrid/milestone_2/push_swap/) | [![pipex](https://img.shields.io/badge/%20%20pipex%20%20-228B22)](42_Madrid/milestone_2/pipex/) | [![so_long](https://img.shields.io/badge/%20%20so_long%20%20-228B22)](42_Madrid/milestone_2/so_long/) |
 | [![Milestone 3](https://img.shields.io/badge/%20%20Milestone%203%20-1E90FF)](#)  | [![philosophers](https://img.shields.io/badge/%20%20philosophers%20%20-1E90FF)](42_Madrid/milestone_3/philosophers/) | | |
  
-
 </div>
 
 
