@@ -11,7 +11,7 @@
 <table align="center">
     <tr>
         <th><a href="#"><img src="https://img.shields.io/badge/%20MILESTONE%20-787a77"></a></th>
-        <th colspan="3"><a href="#"><img src="https://img.shields.io/badge/_%20P%20R%20O%20Y%20E%20C%20T%20O%20S%20_;-fb5858"></a></th>
+        <th colspan="3"><a href="#"><img src="https://img.shields.io/badge/%20.%20P%20R%20O%20Y%20E%20C%20T%20O%20S%20.%20-fb5858"></a></th>
     </tr>
     <tr>
         <td><a href="42_Madrid/0/"><img src="https://img.shields.io/badge/%20%200%20-228B22"></a></td>
