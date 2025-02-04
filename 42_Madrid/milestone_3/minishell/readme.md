@@ -20,6 +20,6 @@
   - Debe implementar algunos built-ins (cd, pwd, exit, export, etc.).
   - Debe capturar señales (Ctrl+C, Ctrl+D, Ctrl+\).
  
-<p align="center" width="100%"><a href="#"><img src="../../img/milestone_3/minishell.png" width="1000" /></a></p>
+<p align="center" width="100%"><a href="#"><img src="../../img/milestone_3/minishell.png" width="1300" /></a></p>
 
 
