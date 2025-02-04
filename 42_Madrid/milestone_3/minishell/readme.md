@@ -20,6 +20,6 @@
   - Debe implementar algunos built-ins (cd, pwd, exit, export, etc.).
   - Debe capturar señales (Ctrl+C, Ctrl+D, Ctrl+\).
  
-<p align="center" width="100%"><a href="#"><img src="../../img/milestone_3/minishell.png" width="900" /></a></p>
-La minishell debe manejar variables de entorno. Esto incluye poder obtener, establecer y eliminar variables de entorno.
+<p align="center" width="100%"><a href="#"><img src="../../img/milestone_3/minishell.png" width="1000" /></a></p>
+
 
