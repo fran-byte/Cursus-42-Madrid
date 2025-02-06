@@ -32,7 +32,7 @@
         <td><a href="42_Madrid/milestone_2/so_long/"><img src="https://img.shields.io/badge/%20%20so_long%20%20-228B22"></a></td>
     </tr>
     <tr>
-        <td><a href="42_Madrid/milestone_3/"><img src="https://img.shields.io/badge/%20%203%20-1E90FF"></a></td>
+        <td><a href="42_Madrid/milestone_3/"><img src="https://img.shields.io/badge/%20%203%20-dee840"></a></td>
         <td><a href="42_Madrid/milestone_3/philosophers/"><img src="https://img.shields.io/badge/%20%20philosophers%20%20-dee840"></a></td>
          <td><a href="42_Madrid/milestone_3/minishell/"><img src="https://img.shields.io/badge/%20%20minishell%20%20-dee840"></a></td>
         <td></td>
