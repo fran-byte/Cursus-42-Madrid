@@ -26,10 +26,10 @@
         <td><a href="42_Madrid/milestone_1/get_next_line/"><img src="https://img.shields.io/badge/%20%20get_next_line%20%20-1E90FF"></a></td>
     </tr>
     <tr>
-        <td><a href="42_Madrid/milestone_2/"><img src="https://img.shields.io/badge/%20%202%20-228B22"></a></td>
-        <td><a href="42_Madrid/milestone_2/push_swap/"><img src="https://img.shields.io/badge/%20%20push_swap%20%20-228B22"></a></td>
-        <td><a href="42_Madrid/milestone_2/pipex/"><img src="https://img.shields.io/badge/%20%20pipex%20%20-228B22"></a></td>
-        <td><a href="42_Madrid/milestone_2/so_long/"><img src="https://img.shields.io/badge/%20%20so_long%20%20-228B22"></a></td>
+        <td><a href="42_Madrid/milestone_2/"><img src="https://img.shields.io/badge/%20%202%20-e840e5"></a></td>
+        <td><a href="42_Madrid/milestone_2/push_swap/"><img src="https://img.shields.io/badge/%20%20push_swap%20%20-e840e5"></a></td>
+        <td><a href="42_Madrid/milestone_2/pipex/"><img src="https://img.shields.io/badge/%20%20pipex%20%20-e840e5"></a></td>
+        <td><a href="42_Madrid/milestone_2/so_long/"><img src="https://img.shields.io/badge/%20%20so_long%20%20-e840e5"></a></td>
     </tr>
     <tr>
         <td><a href="42_Madrid/milestone_3/"><img src="https://img.shields.io/badge/%20%203%20-dee840"></a></td>
