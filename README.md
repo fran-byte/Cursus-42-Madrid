@@ -1,6 +1,4 @@
 <p align="center" width="100%">
-
-
     
 <a href="42_Madrid/42"><img width="40%" src="42_Madrid/img/logo5.png"></a> </p>
     
