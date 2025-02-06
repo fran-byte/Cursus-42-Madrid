@@ -1,4 +1,7 @@
 <p align="center" width="100%">
+
+[![R-CMD-check](https://github.com/r-lib/marquee/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/r-lib/marquee/actions/workflows/R-CMD-check.yaml)
+    
     <a href="42_Madrid/42"><img width="40%" src="42_Madrid/img/logo5.png"></a> </p>
 <p align="center" width="100%"><i>Campus de programación. Open 24/7 </i></p>
 
@@ -44,7 +47,7 @@
 
 
 
-[![R-CMD-check](https://github.com/r-lib/marquee/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/r-lib/marquee/actions/workflows/R-CMD-check.yaml)
+
 
 
 
