@@ -28,7 +28,7 @@ Esto equivale a la siguiente línea en la shell:
 
 ---
 
-<p align="center" width="100%"><a href="#"><img src="../../img/milestone_2/pipex_flujo0.png" width="900" /></a></p>
+<p align="center" width="100%"><a href="#"><img src="../../img/milestone_2/pipex_flujo0.png" width="700" /></a></p>
 
 ## Funciones Clave
 
