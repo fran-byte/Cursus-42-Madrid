@@ -43,7 +43,7 @@
 
 
 
-[![R-CMD-check](https://github.com/r-lib/marquee/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/r-lib/marquee/actions/workflows/R-CMD-check.yaml)
+[![42-Madrid](https://github.com/r-lib/marquee/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/r-lib/marquee/actions/workflows/R-CMD-check.yaml)
 
 
 
