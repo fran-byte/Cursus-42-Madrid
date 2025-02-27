@@ -7,6 +7,12 @@
 [![frromero's 42 stats](https://badge.mediaplus.ma/greenbinary/frromero?1337Badge=off&UM6P=off)](https://profile.intra.42.fr/users/frromero)
 
 # C o m m o n    C o r e
+<table align="center">
+    <tr>
+        <th><a href="#"><img src="https://img.shields.io/badge/%20MILESTONE%20-787a77"></a></th>
+        <th colspan="3"><a href="#"><img src="https://img.shields.io/badge/Resumen Comados Unix-787a77"></a></th>
+    </tr>
+</table>
 
 <table align="center">
     <tr>
