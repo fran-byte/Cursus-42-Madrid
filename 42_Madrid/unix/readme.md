@@ -1,5 +1,5 @@
 # Resumen Comandos Unix
-#### **Información del Sistema**
+### **Información del Sistema**
 | Comando | Descripción |
 |---|---|
 | `uname` | Muestra información básica del sistema Unix. |
@@ -19,7 +19,7 @@
 | `last reboot` | Muestra el historial de reinicios del sistema. |
 | `man COMANDO` | Muestra el manual de un COMANDO específico. Presiona `q` para salir. |
 
-#### **Redirección de Entrada/Salida**
+### **Redirección de Entrada/Salida**
 | Comando | Descripción |
 |---|---|
 | `echo TEXTO` | Muestra una línea de TEXTO o el contenido de una variable. |
@@ -129,13 +129,13 @@
 
 ---
 
-#### **Variables**
+### **Variables**
 | Sintaxis | Descripción |
 |---|---|
 | `VAR="valor"` | Define una variable. |
 | `echo $VAR` | Muestra el valor de `VAR`. |
 
-#### **Estructuras de Control**
+### **Estructuras de Control**
 ```sh
 if [ condición ]; then
   # Código si es verdadero
@@ -144,7 +144,7 @@ else
 fi
 ```
 
-#### **Bucles**
+### **Bucles**
 ```sh
 for i in 1 2 3; do
   echo $i
