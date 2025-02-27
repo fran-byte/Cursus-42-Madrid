@@ -91,6 +91,7 @@
 | Comando | Descripción |
 |---|---|
 | `ssh usuario@servidor` | Conecta a un servidor remoto como `usuario`. |
+| `ssh access`           | Conéctese para acceder con su nombre de usuario local. |
 | `scp -r origen destino` | Copia recursivamente archivos entre servidores. |
 | `sftp usuario@servidor` | Conexión segura para transferencia de archivos. |
 
