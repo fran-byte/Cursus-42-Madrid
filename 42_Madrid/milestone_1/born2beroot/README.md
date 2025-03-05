@@ -8,7 +8,7 @@
 
 # Born2BeRoot en Debian
 
- [![Estructura de archivos en linux](https://img.shields.io/badge/%20Estructura de archivos de Linux%20-c988f9)](estructura_directorios_linux.md)
+ [![Estructura de archivos en linux](https://img.shields.io/badge/%20Estructura%20de%20archivos%20de%20Linux%20-c988f9)](estructura_directorios_linux.md)
 
 # Tutorial  (Solamente Parte Obligatoria)
 
