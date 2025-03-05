@@ -1,5 +1,5 @@
 
-# Estructura de Directorios en Linux Mint Mate
+# Estructura de Directorios en Linux
 
 ## / (Directorio raíz)
 Contiene todos los demás directorios y archivos del sistema.
@@ -125,5 +125,4 @@ Archivos temporales creados por aplicaciones y el sistema.
 ***/var/cache/*** Archivos de caché. 
 ***/var/lib/*** Datos de estado de aplicaciones.
 
-Espero que este desglose más detallado te sea útil. Si tienes alguna pregunta específica sobre algún directorio o archivo, ¡no dudes en preguntar! 😊
 
