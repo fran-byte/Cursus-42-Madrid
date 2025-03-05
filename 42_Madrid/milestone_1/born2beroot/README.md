@@ -8,6 +8,8 @@
 
 # Born2BeRoot en Debian
 
+ [![Estructura de archivos en linux](https://img.shields.io/badge/%20Estructura de archivos de Linux%20-c988f9)](estructura_directorios_linux.md)
+
 # Tutorial  (Solamente Parte Obligatoria)
 
 ➤ Creamos la máquina virtual y la imagen de Debian en mi directorio **sgoinfre**, un servidor accesible desde la red de la Escuela 42. Este servidor de documentos tiene un directorio con tu nombre de usuario al que solo tú puedes acceder, a diferencia de **goinfre**. La carpeta **sgoinfre** permite almacenar más documentos y su contenido es diferente en cada computadora.
