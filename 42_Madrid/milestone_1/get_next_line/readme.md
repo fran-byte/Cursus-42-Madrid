@@ -35,7 +35,8 @@ A continuación, se describe el propósito de cada función clave en el proyecto
 
 ---
 Si quieres linkar tu main a la función (gnl) para el testeo:
-gcc -Wall -Wextra -Werror -I./includes main.c -L./libs -lget_next_line -o a.out
+gcc main.c get_next_line.c get_next_line_utils.c -o p
+
 
 
 ---
