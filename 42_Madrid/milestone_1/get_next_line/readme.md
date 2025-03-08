@@ -34,7 +34,11 @@ A continuación, se describe el propósito de cada función clave en el proyecto
 | **`re_adj_storage(char *stored)`** | Ajusta `stored` eliminando la línea ya leída, preparándolo para la siguiente llamada.           |
 
 ---
+Si quieres linkar tu main a la función (gnl) para el testeo:
+gcc -Wall -Wextra -Werror -I./includes main.c -L./libs -lget_next_line -o a.out
 
+
+---
 ## Bonus: Lectura de Múltiples `fd`
 
 - **Implementación**: Se permite leer de varios `fd` simultáneamente sin perder las líneas correspondientes a cada uno.
