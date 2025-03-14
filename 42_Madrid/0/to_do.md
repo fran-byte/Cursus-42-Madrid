@@ -180,4 +180,4 @@ gcc -Iincludes test_ft_strlen.c libft.a -o test && ./test
 - **Manejo de Memoria**: Verifica siempre el retorno de `malloc`.
 - **Casos Extremos**: Cadenas vacías, NULLs, valores numéricos límite.
 - **Optimización**: Usa `valgrind` para detectar fugas de memoria.
-- **Normas**: Asegúrate de seguir las todas las normas de estilo (norminette) (ej: 25 líneas por función, 4 argumentos máx. por función, 5 variables máx. por función, etc).
+- **Normas**: Asegúrate de seguir todas las normas de estilo (norminette) (ej: 25 líneas por función, 4 argumentos máx. por función, 5 variables máx. por función, etc).
