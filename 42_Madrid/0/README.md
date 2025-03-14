@@ -6,7 +6,7 @@
 
 
 </div>
-
+ [![COMO EMPEZAR](https://img.shields.io/badge/%20<<%20C%20o%20m%20m%20o%20%20%20%20E%20m%20p%20e%20z%20a%20r%20-c988f9)](to_do.md)
 
 :point_right:**[English Version](README_en.md)**
 <br>
