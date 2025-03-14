@@ -42,7 +42,9 @@ int     ft_strcmp(const char *s1, const char *s2);
 
 size_t ft_strlen(const char *s)
 {
-    size_t len = 0;
+    size_t len;
+
+    len = 0;
     while (s[len])
         len++;
     return (len);
@@ -56,8 +58,9 @@ size_t ft_strlen(const char *s)
 char *ft_strdup(const char *s)
 {
     char *dup;
-    size_t len = ft_strlen(s) + 1;
+    size_t len;
 
+    len = ft_strlen(s) + 1;
     dup = (char *)malloc(len);
     if (!dup)
         return (NULL);
@@ -75,7 +78,9 @@ char *ft_strdup(const char *s)
 
 static int  count_words(const char *s, char c)
 {
-    int count = 0;
+    int count;
+
+    count = 0;
     while (*s)
     {
         while (*s == c)
