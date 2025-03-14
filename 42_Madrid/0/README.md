@@ -7,7 +7,7 @@
 
 </div>
 
- [![COMOEMPEZAR](https://img.shields.io/badge/%20C%20o%20m%20o%20%20%>20%>20%>20%20E%20m%20p%20e%20z%20a%20r%20>>%20-2ff907)](to_do.md)
+ [![COMOEMPEZAR](https://img.shields.io/badge/%20C%20o%20m%20o%20%>20%>20%>%20E%20m%20p%20e%20z%20a%20r%20>>%20-2ff907)](to_do.md)
 
 :point_right:**[English Version](README_en.md)**
 <br>
