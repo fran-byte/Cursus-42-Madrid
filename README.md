@@ -9,11 +9,11 @@
 # C o m m o n    C o r e
 
 <table align="center">
-    <tr>
+   
         
-        <th colspan="3"><a href="42_Madrid/unix"><img src="https://img.shields.io/badge/Resumen Comados Unix-787a77"></a></th>
+        <a href="42_Madrid/unix"><img src="https://img.shields.io/badge/Resumen Comados Unix-787a77"></a>
     
-    </tr>    
+    
 </table>
 
 <table align="center">
