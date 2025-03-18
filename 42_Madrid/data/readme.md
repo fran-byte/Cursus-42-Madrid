@@ -787,6 +787,7 @@ while (i < 5) {
   - Ejemplo:
   
     ```c
+    
     #include <pthread.h>
     #include <stdio.h>
     #include <stdlib.h>
@@ -817,32 +818,32 @@ while (i < 5) {
         return NULL;
     }
 
-int main() {
-    pthread_t hilos[NUM_FILOSOFOS];
-    int ids[NUM_FILOSOFOS];
-    int i = 0;
-
-    while (i < NUM_FILOSOFOS) {
-        pthread_mutex_init(&tenedores[i], NULL);
-        ids[i] = i;
-        pthread_create(&hilos[i], NULL, filosofo, &ids[i]);
-        i++;
-    }
-
-    i = 0;
-    while (i < NUM_FILOSOFOS) {
-        pthread_join(hilos[i], NULL);
-        i++;
-    }
-
-    i = 0;
-    while (i < NUM_FILOSOFOS) {
-        pthread_mutex_destroy(&tenedores[i]);
-        i++;
-    }
-
-    return 0;
-}
+      int main() {
+          pthread_t hilos[NUM_FILOSOFOS];
+          int ids[NUM_FILOSOFOS];
+          int i = 0;
+      
+          while (i < NUM_FILOSOFOS) {
+              pthread_mutex_init(&tenedores[i], NULL);
+              ids[i] = i;
+              pthread_create(&hilos[i], NULL, filosofo, &ids[i]);
+              i++;
+          }
+      
+          i = 0;
+          while (i < NUM_FILOSOFOS) {
+              pthread_join(hilos[i], NULL);
+              i++;
+          }
+      
+          i = 0;
+          while (i < NUM_FILOSOFOS) {
+              pthread_mutex_destroy(&tenedores[i]);
+              i++;
+          }
+      
+          return 0;
+      }
 
     ```
 
