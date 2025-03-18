@@ -1164,5 +1164,4 @@ int main() {
 }
 ```
 
-El proyecto final servirá como una síntesis de las habilidades adquiridas, similar a la integración de múltiples herramientas vistas en los proyectos de 42 Madrid.
 
