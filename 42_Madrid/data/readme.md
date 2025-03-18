@@ -785,6 +785,7 @@ while (i < 5) {
 - **Implementar una versión simplificada del problema de los filósofos comiendo:**
   - El problema de los filósofos comiendo es un clásico problema de sincronización que ilustra la gestión de recursos compartidos y la prevención de deadlocks.
   - Ejemplo:
+  
     ```c
     #include <pthread.h>
     #include <stdio.h>
@@ -842,6 +843,7 @@ int main() {
 
     return 0;
 }
+
     ```
 
 - **Enfatizar la sincronización de hilos y la gestión correcta de recursos compartidos para evitar bloqueos:**
