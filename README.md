@@ -10,6 +10,9 @@
 <table align="center">
     <tr>
            <th colspan="3"><a href="42_Madrid/unix"><img src="https://img.shields.io/badge/Resumen Comados Unix-787a77"></a></th>
+        
+        <th colspan="3"><a href="42_Madrid/cursus_data"><img src="https://img.shields.io/badge/Fundamentos en C para 42 Madrid Common Core-787a77"></a></th>
+        
     </tr>
 </table>
 
