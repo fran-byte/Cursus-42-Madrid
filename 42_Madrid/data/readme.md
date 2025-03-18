@@ -212,41 +212,46 @@
 
 - **Implementar un bucle que lea datos carácter a carácter o por bloques, gestionando correctamente el buffer y la terminación de la lectura:**
   ```c
-  #include <stdio.h>
-  #include <stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-  #define BUFFER_SIZE 1024
+#define BUFFER_SIZE 1024
 
-  char *get_next_line(FILE *file) {
-      char *line = malloc(BUFFER_SIZE);
-      if (!line) return NULL;
+char *get_next_line(FILE *file) {
+    char *line = malloc(BUFFER_SIZE);
+    if (!line) return NULL;
 
-      int c, i = 0;
-      while ((c = fgetc(file)) != EOF && c != '\n') {
-          line[i++] = c;
-          if (i >= BUFFER_SIZE - 1) {
-              BUFFER_SIZE *= 2;
-              line = realloc(line, BUFFER_SIZE);
-              if (!line) return NULL;
-          }
-      }
-      line[i] = '\0';
-      return (c == EOF && i == 0) ? NULL : line;
-  }
+    int c, i = 0;
+    while ((c = fgetc(file)) != EOF && c != '\n') {
+        line[i++] = c;
+        if (i >= BUFFER_SIZE - 1) {
+            BUFFER_SIZE *= 2;
+            line = realloc(line, BUFFER_SIZE);
+            if (!line) return NULL;
+        }
+    }
+    line[i] = '\0';
+    if (c == EOF && i == 0) {
+        free(line);
+        return NULL;
+    } else {
+        return line;
+    }
+}
 
-  int main() {
-      FILE *file = fopen("archivo.txt", "r");
-      if (!file) return 1;
+int main() {
+    FILE *file = fopen("archivo.txt", "r");
+    if (!file) return 1;
 
-      char *line;
-      while ((line = get_next_line(file)) != NULL) {
-          printf("%s\n", line);
-          free(line);
-      }
+    char *line;
+    while ((line = get_next_line(file)) != NULL) {
+        printf("%s\n", line);
+        free(line);
+    }
 
-      fclose(file);
-      return 0;
-  }
+    fclose(file);
+    return 0;
+}
   ```
 
 - **Introducir el manejo de errores y la verificación de fin de archivo (EOF):**
