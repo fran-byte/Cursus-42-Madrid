@@ -397,14 +397,17 @@
 - **Aritmética de punteros y relación con arrays:**
   - Los punteros pueden ser incrementados o decrementados para apuntar a diferentes posiciones de memoria.
   - Relación con arrays: El nombre de un array es un puntero al primer elemento del array.
+    
     ```c
-int arr[5] = {1, 2, 3, 4, 5};
-int *ptr = arr;
-int i = 0;
-while (i < 5) {
-    printf("%d ", *(ptr + i));
-    i++;
-}
+    
+      int arr[5] = {1, 2, 3, 4, 5};
+      int *ptr = arr;
+      int i = 0;
+      while (i < 5) {
+          printf("%d ", *(ptr + i));
+          i++;
+      }
+
     ```
 
 - **Punteros a funciones y a estructuras:**
