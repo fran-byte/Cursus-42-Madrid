@@ -11,7 +11,7 @@
 <p align="center">
    
         
-        <a href="42_Madrid/unix"><img src="https://img.shields.io/badge/Resumen Comados Unix-787a77"></a>
+        <a href="42_Madrid/unix"><img src="https://img.shields.io/badge/Resumen.Comados.Unix-787a77"></a>
     
     
 </p>
