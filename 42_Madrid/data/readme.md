@@ -1,6 +1,4 @@
 
-¡Entendido! Aquí tienes una expansión detallada de los fundamentos teóricos del Capítulo 1:
-
 ### Capítulo 1: Fundamentos de C
 
 #### Temas Teóricos
