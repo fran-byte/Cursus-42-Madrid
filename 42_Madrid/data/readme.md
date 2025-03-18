@@ -108,14 +108,18 @@
 
   - Ejemplo de comparación de cadenas:
     ```c
-    int ft_strncmp(const char *s1, const char *s2, size_t n) {
-        while (n && *s1 && (*s1 == *s2)) {
-            s1++;
-            s2++;
-            n--;
-        }
-        return n == 0 ? 0 : *(unsigned char *)s1 - *(unsigned char *)s2;
+int ft_strncmp(const char *s1, const char *s2, size_t n) {
+    while (n && *s1 && (*s1 == *s2)) {
+        s1++;
+        s2++;
+        n--;
     }
+    if (n == 0) {
+        return 0;
+    } else {
+        return *(unsigned char *)s1 - *(unsigned char *)s2;
+    }
+}
     ```
 
   - Ejemplo de copia de cadenas:
@@ -150,7 +154,7 @@
         // Código a ejecutar si la condición es falsa
     }
     ```
-  - **`switch`:** Permite seleccionar una de varias opciones basadas en el valor de una expresión.
+  - **`switch`:** Permite seleccionar una de varias opciones basadas en el valor de una expresión.(No la utilizaremos en el cursus de 42 Madrid)
     ```c
     switch (expresion) {
         case valor1:
@@ -164,7 +168,7 @@
     }
     ```
 
-- **Operador ternario y evaluación de condiciones complejas:**
+- **Operador ternario y evaluación de condiciones complejas:** (No la utilizaremos en el cursus de 42 Madrid)
   - **Operador ternario (`?:`):** Permite evaluar una expresión y devolver un valor basado en una condición.
     ```c
     condicion ? valor_si_verdadero : valor_si_falso;
@@ -179,7 +183,7 @@
 **Bucles:**
 
 - **Bucles `for`, `while` y `do-while`:**
-  - **`for`:** Utilizado para iterar un número específico de veces.
+  - **`for`:** Utilizado para iterar un número específico de veces. (No la utilizaremos en el cursus de 42 Madrid)
     ```c
     for (inicializacion; condicion; incremento) {
         // Código a ejecutar en cada iteración
@@ -191,7 +195,7 @@
         // Código a ejecutar mientras la condición sea verdadera
     }
     ```
-  - **`do-while`:** Similar a `while`, pero garantiza que el bloque de código se ejecute al menos una vez.
+  - **`do-while`:** Similar a `while`, pero garantiza que el bloque de código se ejecute al menos una vez. (No la utilizaremos en el cursus de 42 Madrid)
     ```c
     do {
         // Código a ejecutar al menos una vez
@@ -251,7 +255,6 @@
   - Verificar si se ha alcanzado el final del archivo (EOF) y manejar adecuadamente la memoria asignada.
 
 
-¡Por supuesto! Aquí tienes una expansión detallada del Capítulo 3:
 
 ### Capítulo 3: Funciones
 
@@ -388,11 +391,13 @@
   - Los punteros pueden ser incrementados o decrementados para apuntar a diferentes posiciones de memoria.
   - Relación con arrays: El nombre de un array es un puntero al primer elemento del array.
     ```c
-    int arr[5] = {1, 2, 3, 4, 5};
-    int *ptr = arr;
-    for (int i = 0; i < 5; i++) {
-        printf("%d ", *(ptr + i));
-    }
+int arr[5] = {1, 2, 3, 4, 5};
+int *ptr = arr;
+int i = 0;
+while (i < 5) {
+    printf("%d ", *(ptr + i));
+    i++;
+}
     ```
 
 - **Punteros a funciones y a estructuras:**
@@ -812,26 +817,32 @@
         return NULL;
     }
 
-    int main() {
-        pthread_t hilos[NUM_FILOSOFOS];
-        int ids[NUM_FILOSOFOS];
+int main() {
+    pthread_t hilos[NUM_FILOSOFOS];
+    int ids[NUM_FILOSOFOS];
+    int i = 0;
 
-        for (int i = 0; i < NUM_FILOSOFOS; i++) {
-            pthread_mutex_init(&tenedores[i], NULL);
-            ids[i] = i;
-            pthread_create(&hilos[i], NULL, filosofo, &ids[i]);
-        }
-
-        for (int i = 0; i < NUM_FILOSOFOS; i++) {
-            pthread_join(hilos[i], NULL);
-        }
-
-        for (int i = 0; i < NUM_FILOSOFOS; i++) {
-            pthread_mutex_destroy(&tenedores[i]);
-        }
-
-        return 0;
+    while (i < NUM_FILOSOFOS) {
+        pthread_mutex_init(&tenedores[i], NULL);
+        ids[i] = i;
+        pthread_create(&hilos[i], NULL, filosofo, &ids[i]);
+        i++;
     }
+
+    i = 0;
+    while (i < NUM_FILOSOFOS) {
+        pthread_join(hilos[i], NULL);
+        i++;
+    }
+
+    i = 0;
+    while (i < NUM_FILOSOFOS) {
+        pthread_mutex_destroy(&tenedores[i]);
+        i++;
+    }
+
+    return 0;
+}
     ```
 
 - **Enfatizar la sincronización de hilos y la gestión correcta de recursos compartidos para evitar bloqueos:**
