@@ -9,8 +9,8 @@
 # C o m m o n    C o r e
 
 <p align="center">
-    <a href="42_Madrid/unix"><img src="https://img.shields.io/badge/Resumen..Comados..Unix-787a77"></a>
-     <a href="42_Madrid/data"><img src="https://img.shields.io/badge/..Curso...en...C...para...seguir...el...CommonCore-787a77"></a>
+    <a href="42_Madrid/unix"><img src="https://img.shields.io/badge/Resumen%20Comados%20Unix-787a77"></a>
+     <a href="42_Madrid/data"><img src="https://img.shields.io/badge/%20Curso%20en%20C%20para%20seguir%20el%20CommonCore-787a77"></a>
 </p>
 
 <table align="center">
